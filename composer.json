@@ -1,0 +1,31 @@
+{
+  "name": "packaged-ui/elegance",
+  "description": "User Interface",
+  "license": "MIT",
+  "authors": [
+    {
+      "name": "Brooke Bryan",
+      "email": "brooke@bajb.net"
+    }
+  ],
+  "require": {
+    "php": ">=7.1",
+    "packaged/dispatch": "2.0.0-beta2",
+    "packaged/glimpse": "~2.0",
+    "packaged/safehtml": "~2.0"
+  },
+  "require-dev": {
+    "cubex/framework": "3.0.0-beta2"
+  },
+  "autoload": {
+    "psr-4": {
+      "PackagedUi\\Elegance\\": "src"
+    }
+  },
+  "repositories": [
+    {
+      "type": "vcs",
+      "url": "git@github.com:packaged/glimpse.git"
+    }
+  ]
+}
