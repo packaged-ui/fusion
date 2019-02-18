@@ -102,16 +102,12 @@ address {
   line-height: inherit;
 }
 
-.blockquote {
-  margin-bottom: 1rem;
-  font-size: 1.1175rem;
-}
-
 blockquote {
-  margin: 0 0 1rem;
+  font-size: 1.1175rem;
+  margin: 0 0 1rem 0;
 }
 
-.blockquote-footer {
+blockquote footer, .blockquote-footer {
   display: block;
   font-size: 80%;
   color: #a3a4a6;
@@ -130,6 +126,14 @@ ol, ul, dl {
 .list-inline {
   padding-left: 0;
   list-style: none;
+}
+
+.list-inline li {
+  display: inline-block;
+}
+
+.list-inline li:not(:last-child) {
+  margin-right: .5rem;
 }
 
 dt {
@@ -153,11 +157,17 @@ code {
 }
 
 kbd {
-  padding: .2rem .4rem;
-  font-size: 87.5%;
-  color: #fff;
-  background-color: rgba(24, 28, 33, 0.9);
-  border-radius: .125rem;
+  background-color: #eee;
+  border-radius: 3px;
+  border: 1px solid #b4b4b4;
+  box-shadow: 0 1px 1px rgba(0, 0, 0, .2), 0 2px 0 0 rgba(255, 255, 255, .7) inset;
+  color: #333;
+  display: inline-block;
+  font-size: .85em;
+  font-weight: 700;
+  line-height: 1;
+  padding: 2px 4px;
+  white-space: nowrap;
 }
 
 pre {

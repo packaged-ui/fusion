@@ -2,10 +2,14 @@
 namespace PackagedUi\Elegance\Demo;
 
 use Packaged\Dispatch\ResourceManager;
+use Packaged\Glimpse\Tags\Layout\Footer;
 use Packaged\Glimpse\Tags\LineBreak;
+use Packaged\Glimpse\Tags\Lists\UnorderedList;
 use Packaged\Glimpse\Tags\Text\Abbreviation;
 use Packaged\Glimpse\Tags\Text\Address;
 use Packaged\Glimpse\Tags\Text\BlockQuote;
+use Packaged\Glimpse\Tags\Text\Citation;
+use Packaged\Glimpse\Tags\Text\CodeBlock;
 use Packaged\Glimpse\Tags\Text\DeletedText;
 use Packaged\Glimpse\Tags\Text\HeadingFive;
 use Packaged\Glimpse\Tags\Text\HeadingFour;
@@ -14,12 +18,16 @@ use Packaged\Glimpse\Tags\Text\HeadingSix;
 use Packaged\Glimpse\Tags\Text\HeadingThree;
 use Packaged\Glimpse\Tags\Text\HeadingTwo;
 use Packaged\Glimpse\Tags\Text\ItalicText;
+use Packaged\Glimpse\Tags\Text\KeyboardInput;
 use Packaged\Glimpse\Tags\Text\MarkedText;
 use Packaged\Glimpse\Tags\Text\NoLongerAccurateText;
 use Packaged\Glimpse\Tags\Text\Paragraph;
+use Packaged\Glimpse\Tags\Text\PreFormattedText;
+use Packaged\Glimpse\Tags\Text\ProgramOutputText;
 use Packaged\Glimpse\Tags\Text\SmallText;
 use Packaged\Glimpse\Tags\Text\StrongText;
 use Packaged\Glimpse\Tags\Text\UnderlinedText;
+use Packaged\Glimpse\Tags\Text\Variable;
 
 class Typography extends DemoSection
 {
@@ -81,7 +89,43 @@ class Typography extends DemoSection
       ]
     );
 
-    $return[] = BlockQuote::create($lorem)->addClass('blockquote');
+    $return[] = BlockQuote::create($lorem);
+    $return[] = BlockQuote::create(
+      [$lorem, Footer::create(['- Someone famous in ', Citation::create('Source Title')])]
+    );
+
+    $return[] = UnorderedList::create()
+      ->addItem('Lorem ipsum dolor sit amet')
+      ->addItem('Consectetur adipiscing elit')
+      ->addItem('Integer molestie lorem at massa');
+
+    $return[] = UnorderedList::create()->addClass('list-unstyled')
+      ->addItem('Lorem ipsum dolor sit amet')
+      ->addItem('Consectetur adipiscing elit')
+      ->addItem('Integer molestie lorem at massa');
+
+    $return[] = UnorderedList::create()->addClass('list-inline')
+      ->addItem('Lorem ipsum dolor sit amet')
+      ->addItem('Consectetur adipiscing elit')
+      ->addItem('Integer molestie lorem at massa');
+
+    $return[] = Paragraph::create(["For exmple, ", CodeBlock::create('<section>'), ' should be wrapped as inline.']);
+    $return[] = Paragraph::create(
+      ["To switch directories, type ", KeyboardInput::create('cd'), ' followed by the name of the directory.']
+    );
+    $return[] = Paragraph::create(
+      [
+        "To edit settings, press ",
+        KeyboardInput::create('ctrl'),
+        ' + ',
+        KeyboardInput::create(','),
+      ]
+    );
+    $return[] = PreFormattedText::create('<p>Pre formatted text...</p>');
+    $return[] = Paragraph::create(
+      [Variable::create('y'), ' = ', Variable::create('mx'), ' + ', Variable::create('b')]
+    );
+    $return[] = ProgramOutputText::create('This text is meant to be treated as sample output from a computer program.');
 
     return $return;
   }
