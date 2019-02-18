@@ -11,11 +11,13 @@ class Demo
 {
   public function render()
   {
+    Elegance::includeGoogleFont();
     $rm = ResourceManager::component(new Elegance());
     $rm->requireCss(Elegance::FILE_BASE_CSS);
     $rendered = '';
 
     $rendered .= (new Typography())->produceSafeHTML()->getContent();
+    $rendered .= (new Buttons())->produceSafeHTML()->getContent();
 
     $content = '<!doctype html> <html> <head> <meta charset="UTF-8"> '
       . Dispatch::instance()->store()->generateHtmlIncludes(ResourceStore::TYPE_CSS)
