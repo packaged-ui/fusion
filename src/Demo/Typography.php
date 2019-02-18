@@ -4,6 +4,9 @@ namespace PackagedUi\Elegance\Demo;
 use Packaged\Glimpse\Tags\Layout\Footer;
 use Packaged\Glimpse\Tags\LineBreak;
 use Packaged\Glimpse\Tags\Lists\UnorderedList;
+use Packaged\Glimpse\Tags\Media\Figure;
+use Packaged\Glimpse\Tags\Media\FigureCaption;
+use Packaged\Glimpse\Tags\Media\Image;
 use Packaged\Glimpse\Tags\Text\Abbreviation;
 use Packaged\Glimpse\Tags\Text\Address;
 use Packaged\Glimpse\Tags\Text\BlockQuote;
@@ -135,6 +138,8 @@ class Typography extends DemoSection
       [Variable::create('y'), ' = ', Variable::create('mx'), ' + ', Variable::create('b')]
     );
     $return[] = ProgramOutputText::create('This text is meant to be treated as sample output from a computer program.');
+
+    $return[] = Figure::forImage(Image::create('https://picsum.photos/400/200'), FigureCaption::create('Random image'));
 
     return $return;
   }
