@@ -1,7 +1,6 @@
 <?php
 namespace PackagedUi\Elegance\Demo;
 
-use Packaged\Dispatch\ResourceManager;
 use Packaged\Glimpse\Tags\Layout\Footer;
 use Packaged\Glimpse\Tags\LineBreak;
 use Packaged\Glimpse\Tags\Lists\UnorderedList;
@@ -28,19 +27,15 @@ use Packaged\Glimpse\Tags\Text\SmallText;
 use Packaged\Glimpse\Tags\Text\StrongText;
 use Packaged\Glimpse\Tags\Text\UnderlinedText;
 use Packaged\Glimpse\Tags\Text\Variable;
+use PackagedUi\Elegance\Elegance;
 
 class Typography extends DemoSection
 {
-  public function __construct()
-  {
-    ResourceManager::resources()->requireCss('css/typography.css');
-  }
-
   protected function _content()
   {
     $return = [];
 
-    $secondary = SmallText::create('Secondary text')->addClass('text-muted');
+    $secondary = SmallText::create('Secondary text')->addClass(Elegance::TEXT_MUTED);
     $return[] = HeadingOne::create(['h1. Heading ', $secondary]);
     $return[] = HeadingTwo::create(['h2. Heading ', $secondary]);
     $return[] = HeadingThree::create(['h3. Heading ', $secondary]);
@@ -48,14 +43,14 @@ class Typography extends DemoSection
     $return[] = HeadingFive::create(['h5. Heading ', $secondary]);
     $return[] = HeadingSix::create(['h6. Heading ', $secondary]);
 
-    $return[] = HeadingOne::create('Display 1')->addClass('display-1');
-    $return[] = HeadingOne::create('Display 2')->addClass('display-2');
-    $return[] = HeadingOne::create('Display 3')->addClass('display-3');
-    $return[] = HeadingOne::create('Display 4')->addClass('display-4');
+    $return[] = HeadingOne::create('Display 1')->addClass(Elegance::DISPLAY1);
+    $return[] = HeadingOne::create('Display 2')->addClass(Elegance::DISPLAY2);
+    $return[] = HeadingOne::create('Display 3')->addClass(Elegance::DISPLAY3);
+    $return[] = HeadingOne::create('Display 4')->addClass(Elegance::DISPLAY4);
 
     $lorem = 'Lorem ipsum dolor sit amet, ad tibique blandit qui, error zril eleifend ut vel. Et paulo labores molestiae has, ei eos virtute dolorem.';
     $return[] = Paragraph::create($lorem);
-    $return[] = Paragraph::create($lorem)->addClass('lead');
+    $return[] = Paragraph::create($lorem)->addClass(Elegance::LEAD_TEXT);
 
     $return[] = Paragraph::create(['You can use the mark tag to ', MarkedText::create('highlight'), ' text']);
     $return[] = Paragraph::create(DeletedText::create('This line of text is meant to be treated as deleted text.'));
@@ -71,7 +66,7 @@ class Typography extends DemoSection
     );
     $return[] = Paragraph::create(
       [
-        Abbreviation::create('html', 'HyperText Markup Language')->addClass('initialism'),
+        Abbreviation::create('html', 'HyperText Markup Language')->addClass(Elegance::INITIALISM),
         ' is the best thing since sliced bread.',
       ]
     );
@@ -99,12 +94,12 @@ class Typography extends DemoSection
       ->addItem('Consectetur adipiscing elit')
       ->addItem('Integer molestie lorem at massa');
 
-    $return[] = UnorderedList::create()->addClass('list-unstyled')
+    $return[] = UnorderedList::create()->addClass(Elegance::LIST_UNSTYLED)
       ->addItem('Lorem ipsum dolor sit amet')
       ->addItem('Consectetur adipiscing elit')
       ->addItem('Integer molestie lorem at massa');
 
-    $return[] = UnorderedList::create()->addClass('list-inline')
+    $return[] = UnorderedList::create()->addClass(Elegance::LIST_INLINE)
       ->addItem('Lorem ipsum dolor sit amet')
       ->addItem('Consectetur adipiscing elit')
       ->addItem('Integer molestie lorem at massa');
