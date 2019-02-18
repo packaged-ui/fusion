@@ -29,4 +29,13 @@ interface TypographyInterface
   const TEXT_LIGHT = 'text-light';
   const TEXT_LIGHTER = 'text-lighter';
   const TEXT_LIGHTEST = 'text-lightest';
+
+  const TEXT_TINY = 'text-tiny';
+  const TEXT_BIG = 'text-big';
+  const TEXT_LARGE = 'text-large';
+  const TEXT_XLARGE = 'text-xlarge';
+
+  const FONT_WEIGHT_BOLDER = 'font-weight-bolder';
+  const FONT_WEIGHT_SEMIBOLD = 'font-weight-semibold';
+  const FONT_WEIGHT_LIGHT = 'font-weight-light';
 }

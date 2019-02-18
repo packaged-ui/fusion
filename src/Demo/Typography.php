@@ -107,6 +107,29 @@ class Typography extends DemoSection
       ->addItem(Paragraph::create('Lighter')->addClass(Elegance::TEXT_LIGHTER))
       ->addItem(Paragraph::create('Lightest')->addClass(Elegance::TEXT_LIGHTEST));
 
+    $return[] = UnorderedList::create()->addClass(Elegance::LIST_UNSTYLED)
+      ->addItem(Paragraph::create([CodeBlock::create('.text-tiny'), ' - Text Tiny'])->addClass(Elegance::TEXT_TINY))
+      ->addItem(Paragraph::create([CodeBlock::create('.text-big'), ' - Text Big'])->addClass(Elegance::TEXT_BIG))
+      ->addItem(Paragraph::create([CodeBlock::create('.text-large'), ' - Text Large'])->addClass(Elegance::TEXT_LARGE))
+      ->addItem(
+        Paragraph::create([CodeBlock::create('.text-xlarge'), ' - Text Extra Large'])->addClass(Elegance::TEXT_XLARGE)
+      );
+
+    $return[] = UnorderedList::create()->addClass(Elegance::LIST_UNSTYLED)
+      ->addItem(
+        Paragraph::create([CodeBlock::create('.font-weight-bolder'), ' - Bolder'])->addClass(
+          Elegance::FONT_WEIGHT_BOLDER
+        )
+      )
+      ->addItem(
+        Paragraph::create([CodeBlock::create('.font-weight-semibold'), ' - Semibold'])->addClass(
+          Elegance::FONT_WEIGHT_SEMIBOLD
+        )
+      )
+      ->addItem(
+        Paragraph::create([CodeBlock::create('.font-weight-light'), ' - Light'])->addClass(Elegance::FONT_WEIGHT_LIGHT)
+      );
+
     $return[] = UnorderedList::create()
       ->addItem('Lorem ipsum dolor sit amet')
       ->addItem('Consectetur adipiscing elit')
@@ -141,7 +164,8 @@ class Typography extends DemoSection
     $return[] = ProgramOutputText::create('This text is meant to be treated as sample output from a computer program.');
 
     $return[] = Div::create(
-      Figure::forImage(Image::create('https://picsum.photos/400/200'), FigureCaption::create('Random image')));
+      Figure::forImage(Image::create('https://picsum.photos/400/200'), FigureCaption::create('Random image'))
+    );
 
     return $return;
   }

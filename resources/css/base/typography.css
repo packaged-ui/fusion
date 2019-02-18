@@ -249,3 +249,31 @@ figcaption {
 .text-lightest {
   color: var(--elegance-lightest-colour);
 }
+
+.text-tiny {
+  font-size: 70% !important;
+}
+
+.text-big {
+  font-size: 112% !important;
+}
+
+.text-large {
+  font-size: 150% !important;
+}
+
+.text-xlarge {
+  font-size: 170% !important;
+}
+
+.font-weight-bolder {
+  font-weight: 900 !important;
+}
+
+.font-weight-semibold {
+  font-weight: 500 !important;
+}
+
+.font-weight-light {
+  font-weight: 300 !important;
+}
