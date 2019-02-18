@@ -146,13 +146,13 @@ dd {
 }
 
 pre, code, kbd, samp {
-  font-family: "SFMono-Regular", Menlo, Monaco, Consolas, "Liberation Mono", "Courier New", monospace;
+  font-family: var(--elegance-mono-font);
   font-size: 1em;
 }
 
 code {
   font-size: 87.5%;
-  color: #e83e8c;
+  color: var(--elegance-code-colour);
   word-break: break-word;
 }
 
@@ -181,10 +181,6 @@ pre {
   -ms-overflow-style: scrollbar;
 }
 
-.text-muted {
-  opacity: 0.70;
-}
-
 .text-right {
   text-align: right !important;
 }
@@ -195,4 +191,49 @@ pre {
 
 .text-center {
   text-align: center !important;
+}
+
+
+.text-primary {
+  color: var(--elegance-primary-colour);
+}
+
+.text-secondary {
+  color: var(--elegance-secondary-colour);
+}
+
+.text-success {
+  color: var(--elegance-success-colour);
+}
+
+.text-danger {
+  color: var(--elegance-danger-colour);
+}
+
+.text-warning {
+  color: var(--elegance-warning-colour);
+}
+
+.text-info {
+  color: var(--elegance-info-colour);
+}
+
+.text-dark {
+  color: var(--elegance-dark-colour);
+}
+
+.text-muted {
+  color: var(--elegance-muted-colour);
+}
+
+.text-light {
+  color: var(--elegance-light-colour);
+}
+
+.text-lighter {
+  color: var(--elegance-lighter-colour);
+}
+
+.text-lightest {
+  color: var(--elegance-lightest-colour);
 }

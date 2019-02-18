@@ -89,6 +89,19 @@ class Typography extends DemoSection
       [$lorem, Footer::create(['- Someone famous in ', Citation::create('Source Title')])]
     );
 
+    $return[] = UnorderedList::create()->addClass(Elegance::LIST_UNSTYLED)
+      ->addItem(Paragraph::create('Primary')->addClass(Elegance::TEXT_PRIMARY))
+      ->addItem(Paragraph::create('Secondary')->addClass(Elegance::TEXT_SECONDARY))
+      ->addItem(Paragraph::create('Success')->addClass(Elegance::TEXT_SUCCESS))
+      ->addItem(Paragraph::create('Danger')->addClass(Elegance::TEXT_DANGER))
+      ->addItem(Paragraph::create('Warning')->addClass(Elegance::TEXT_WARNING))
+      ->addItem(Paragraph::create('Info')->addClass(Elegance::TEXT_INFO))
+      ->addItem(Paragraph::create('Dark')->addClass(Elegance::TEXT_DARK))
+      ->addItem(Paragraph::create('Muted')->addClass(Elegance::TEXT_MUTED))
+      ->addItem(Paragraph::create('Light')->addClass(Elegance::TEXT_LIGHT))
+      ->addItem(Paragraph::create('Lighter')->addClass(Elegance::TEXT_LIGHTER))
+      ->addItem(Paragraph::create('Lightest')->addClass(Elegance::TEXT_LIGHTEST));
+
     $return[] = UnorderedList::create()
       ->addItem('Lorem ipsum dolor sit amet')
       ->addItem('Consectetur adipiscing elit')

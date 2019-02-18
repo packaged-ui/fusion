@@ -1,7 +1,28 @@
+:root {
+  --elegance-font: "Roboto", -apple-system, BlinkMacSystemFont, "Segoe UI", "Oxygen", "Ubuntu", "Cantarell", "Fira Sans", "Droid Sans", "Helvetica Neue", sans-serif;
+  --elegance-mono-font: "SFMono-Regular", Menlo, Monaco, Consolas, "Liberation Mono", "Courier New", monospace;
+  --elegance-font-size: .894rem;
+
+  --elegance-primary-colour: #1C84C6;
+  --elegance-secondary-colour: #8897AA;
+  --elegance-success-colour: #28A745;
+  --elegance-danger-colour: #DC3545;
+  --elegance-warning-colour: #F8AC59;
+  --elegance-info-colour: #10B6E0;
+  --elegance-code-colour: #E83E8C;
+
+  --elegance-dark-colour: rgba(24, 28, 33, 1);
+  --elegance-text-colour: rgba(24, 28, 33, 0.8);
+  --elegance-muted-colour: rgba(24, 28, 33, 0.65);
+  --elegance-light-colour: rgba(24, 28, 33, 0.5);
+  --elegance-lighter-colour: rgba(24, 28, 33, 0.4);
+  --elegance-lightest-colour: rgba(24, 28, 33, 0.2);
+}
+
 body {
-  font-family: "Roboto", -apple-system, BlinkMacSystemFont, "Segoe UI", "Oxygen", "Ubuntu", "Cantarell", "Fira Sans", "Droid Sans", "Helvetica Neue", sans-serif;
-  font-size: .894rem;
+  font-family: var(--elegance-font);
+  font-size: var(--elegance-font-size);
   font-weight: 400;
   line-height: 1.47;
-  color: #4E5155;
+  color: var(--elegance-text-colour);
 }
