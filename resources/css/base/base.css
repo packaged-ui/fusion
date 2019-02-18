@@ -15,8 +15,8 @@
   --elegance-text-colour: rgba(24, 28, 33, 0.8);
   --elegance-muted-colour: rgba(24, 28, 33, 0.65);
   --elegance-light-colour: rgba(24, 28, 33, 0.5);
-  --elegance-lighter-colour: rgba(24, 28, 33, 0.4);
-  --elegance-lightest-colour: rgba(24, 28, 33, 0.2);
+  --elegance-lighter-colour: rgba(24, 28, 33, 0.3);
+  --elegance-lightest-colour: rgba(24, 28, 33, 0.1);
 }
 
 body {

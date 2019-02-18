@@ -181,6 +181,18 @@ pre {
   -ms-overflow-style: scrollbar;
 }
 
+figure {
+  display: inline-flex;
+  flex-flow: column;
+  margin: .5rem;
+}
+
+figcaption {
+  color: var(--elegance-muted-colour);
+  background-color: var(--elegance-lightest-colour);
+  padding: 3px;
+}
+
 .text-right {
   text-align: right !important;
 }

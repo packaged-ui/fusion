@@ -1,6 +1,7 @@
 <?php
 namespace PackagedUi\Elegance\Demo;
 
+use Packaged\Glimpse\Tags\Div;
 use Packaged\Glimpse\Tags\Layout\Footer;
 use Packaged\Glimpse\Tags\LineBreak;
 use Packaged\Glimpse\Tags\Lists\UnorderedList;
@@ -139,7 +140,8 @@ class Typography extends DemoSection
     );
     $return[] = ProgramOutputText::create('This text is meant to be treated as sample output from a computer program.');
 
-    $return[] = Figure::forImage(Image::create('https://picsum.photos/400/200'), FigureCaption::create('Random image'));
+    $return[] = Div::create(
+      Figure::forImage(Image::create('https://picsum.photos/400/200'), FigureCaption::create('Random image')));
 
     return $return;
   }
