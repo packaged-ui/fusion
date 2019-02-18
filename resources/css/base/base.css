@@ -49,3 +49,7 @@ body {
   -moz-osx-font-smoothing: grayscale;
   text-rendering: optimizeLegibility;
 }
+
+.inline-block{
+  display: inline-block;
+}

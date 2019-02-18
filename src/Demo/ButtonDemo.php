@@ -5,7 +5,7 @@ use Packaged\Glimpse\Tags\Button;
 use Packaged\Glimpse\Tags\HorizontalRule;
 use PackagedUi\Elegance\Elegance;
 
-class Buttons extends DemoSection
+class ButtonDemo extends DemoSection
 {
   protected function _content()
   {

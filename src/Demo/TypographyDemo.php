@@ -33,7 +33,7 @@ use Packaged\Glimpse\Tags\Text\UnderlinedText;
 use Packaged\Glimpse\Tags\Text\Variable;
 use PackagedUi\Elegance\Elegance;
 
-class Typography extends DemoSection
+class TypographyDemo extends DemoSection
 {
   protected function _content()
   {

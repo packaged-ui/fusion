@@ -16,8 +16,11 @@ class Demo
     $rm->requireCss(Elegance::FILE_BASE_CSS);
     $rendered = '';
 
-    $rendered .= (new Typography())->produceSafeHTML()->getContent();
-    $rendered .= (new Buttons())->produceSafeHTML()->getContent();
+    $rendered .= (new TypographyDemo())->produceSafeHTML()->getContent();
+    $rendered .= '<hr/>';
+    $rendered .= (new ButtonDemo())->produceSafeHTML()->getContent();
+    $rendered .= '<hr/>';
+    $rendered .= (new BadgeDemo())->produceSafeHTML()->getContent();
 
     $content = '<!doctype html> <html> <head> <meta charset="UTF-8"> '
       . Dispatch::instance()->store()->generateHtmlIncludes(ResourceStore::TYPE_CSS)
