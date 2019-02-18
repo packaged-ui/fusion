@@ -35,7 +35,7 @@ class Typography extends DemoSection
   {
     $return = [];
 
-    $secondary = SmallText::create('Secondary text')->addClass(Elegance::TEXT_MUTED);
+    $secondary = SmallText::create('Additional text')->addClass(Elegance::TEXT_MUTED);
     $return[] = HeadingOne::create(['h1. Heading ', $secondary]);
     $return[] = HeadingTwo::create(['h2. Heading ', $secondary]);
     $return[] = HeadingThree::create(['h3. Heading ', $secondary]);
@@ -89,7 +89,7 @@ class Typography extends DemoSection
       [$lorem, Footer::create(['- Someone famous in ', Citation::create('Source Title')])]
     );
 
-    $return[] = UnorderedList::create()->addClass(Elegance::LIST_UNSTYLED)
+    $return[] = UnorderedList::create()->addClass(Elegance::LIST_INLINE)
       ->addItem(Paragraph::create('Primary')->addClass(Elegance::TEXT_PRIMARY))
       ->addItem(Paragraph::create('Secondary')->addClass(Elegance::TEXT_SECONDARY))
       ->addItem(Paragraph::create('Success')->addClass(Elegance::TEXT_SUCCESS))
@@ -97,6 +97,7 @@ class Typography extends DemoSection
       ->addItem(Paragraph::create('Warning')->addClass(Elegance::TEXT_WARNING))
       ->addItem(Paragraph::create('Info')->addClass(Elegance::TEXT_INFO))
       ->addItem(Paragraph::create('Dark')->addClass(Elegance::TEXT_DARK))
+      ->addItem(Paragraph::create('Default'))
       ->addItem(Paragraph::create('Muted')->addClass(Elegance::TEXT_MUTED))
       ->addItem(Paragraph::create('Light')->addClass(Elegance::TEXT_LIGHT))
       ->addItem(Paragraph::create('Lighter')->addClass(Elegance::TEXT_LIGHTER))
