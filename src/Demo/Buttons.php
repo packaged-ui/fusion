@@ -58,6 +58,8 @@ class Buttons extends DemoSection
       Elegance::BUTTON_LARGE,
       Elegance::BUTTON_SMALL,
       Elegance::BUTTON_XSMALL,
+      Elegance::BUTTON_DISABLED,
+      Elegance::BUTTON_FAB,
     ];
 
     foreach($styles as $style)
@@ -67,6 +69,10 @@ class Buttons extends DemoSection
       foreach($primaryButtons as $button)
       {
         $btn = clone $button;
+        if($style === Elegance::BUTTON_DISABLED)
+        {
+          $btn->setAttribute('disabled', null);
+        }
         $return[] = $btn->addClass($style)->setContent($style);
       }
     }

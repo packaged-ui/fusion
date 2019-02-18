@@ -21,7 +21,7 @@ class Demo
 
     $content = '<!doctype html> <html> <head> <meta charset="UTF-8"> '
       . Dispatch::instance()->store()->generateHtmlIncludes(ResourceStore::TYPE_CSS)
-      . ' </head> <body> '
+      . ' </head> <body style="padding: 30px;"> '
       . $rendered
       . Dispatch::instance()->store()->generateHtmlIncludes(ResourceStore::TYPE_JS)
       . ' </body></html>';

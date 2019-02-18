@@ -16,9 +16,12 @@ interface ButtonInferface
   const BUTTON_FLAT = 'btn-flat';
   const BUTTON_OUTLINE = 'btn-outline';
   const BUTTON_ROUND = 'btn-round';
+  const BUTTON_FAB = 'btn-fab';
 
   const BUTTON_XLARGE = 'btn-xl';
   const BUTTON_LARGE = 'btn-large';
   const BUTTON_SMALL = 'btn-small';
   const BUTTON_XSMALL = 'btn-xs';
+
+  const BUTTON_DISABLED = 'btn-disabled';
 }
