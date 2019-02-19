@@ -4,6 +4,7 @@ namespace PackagedUi\Elegance\Demo;
 use Packaged\Glimpse\Tags\Button;
 use Packaged\Glimpse\Tags\HorizontalRule;
 use Packaged\Glimpse\Tags\Link;
+use PackagedUi\Elegance\Button\EleganceButton;
 use PackagedUi\Elegance\Elegance;
 
 class ButtonDemo extends DemoSection
@@ -11,18 +12,6 @@ class ButtonDemo extends DemoSection
   protected function _content()
   {
     $return = [];
-
-    $return[] = Button::create("Default");
-    $return[] = Button::create("Primary")->addClass(Elegance::BUTTON_PRIMARY);
-    $return[] = Button::create("Secondary")->addClass(Elegance::BUTTON_SECONDARY);
-    $return[] = Button::create("Success")->addClass(Elegance::BUTTON_SUCCESS);
-    $return[] = Button::create("Danger")->addClass(Elegance::BUTTON_DANGER);
-    $return[] = Button::create("Warning")->addClass(Elegance::BUTTON_WARNING);
-    $return[] = Button::create("Info")->addClass(Elegance::BUTTON_INFO);
-    $return[] = Button::create("Dark")->addClass(Elegance::BUTTON_DARK);
-    $return[] = Button::create("Link")->addClass(Elegance::BUTTON_LINK);
-
-    $return[] = HorizontalRule::create();
 
     $return[] = Link::create("#", "Default")->addClass(Elegance::BUTTON);
     $return[] = Link::create("#", "Primary")->addClass(Elegance::BUTTON_PRIMARY, Elegance::BUTTON);
@@ -36,34 +25,44 @@ class ButtonDemo extends DemoSection
 
     $return[] = HorizontalRule::create();
 
-    $return[] = Button::create("Default")->addClass(Elegance::BUTTON_OUTLINE);
-    $return[] = Button::create("Primary")->addClass(Elegance::BUTTON_OUTLINE)->addClass(Elegance::BUTTON_PRIMARY);
-    $return[] = Button::create("Secondary")->addClass(Elegance::BUTTON_OUTLINE)->addClass(Elegance::BUTTON_SECONDARY);
-    $return[] = Button::create("Success")->addClass(Elegance::BUTTON_OUTLINE)->addClass(Elegance::BUTTON_SUCCESS);
-    $return[] = Button::create("Danger")->addClass(Elegance::BUTTON_OUTLINE)->addClass(Elegance::BUTTON_DANGER);
-    $return[] = Button::create("Warning")->addClass(Elegance::BUTTON_OUTLINE)->addClass(Elegance::BUTTON_WARNING);
-    $return[] = Button::create("Info")->addClass(Elegance::BUTTON_OUTLINE)->addClass(Elegance::BUTTON_INFO);
-    $return[] = Button::create("Dark")->addClass(Elegance::BUTTON_OUTLINE)->addClass(Elegance::BUTTON_DARK);
-    $return[] = Button::create("Link")->addClass(Elegance::BUTTON_OUTLINE)->addClass(Elegance::BUTTON_LINK);
+    $return[] = EleganceButton::create("Default");
+    $return[] = EleganceButton::create("Primary")->primary();
+    $return[] = EleganceButton::create("Secondary")->secondary();
+    $return[] = EleganceButton::create("Success")->success();
+    $return[] = EleganceButton::create("Danger")->danger();
+    $return[] = EleganceButton::create("Warning")->warning();
+    $return[] = EleganceButton::create("Info")->info();
+    $return[] = EleganceButton::create("Dark")->dark();
+    $return[] = EleganceButton::create("Link")->link();
 
     $return[] = HorizontalRule::create();
 
-    $return[] = Button::create("Default")->addClass(Elegance::BUTTON_FLAT);
-    $return[] = Button::create("Primary")->addClass(Elegance::BUTTON_FLAT)->addClass(Elegance::BUTTON_PRIMARY);
-    $return[] = Button::create("Secondary")->addClass(Elegance::BUTTON_FLAT)->addClass(Elegance::BUTTON_SECONDARY);
-    $return[] = Button::create("Success")->addClass(Elegance::BUTTON_FLAT)->addClass(Elegance::BUTTON_SUCCESS);
-    $return[] = Button::create("Danger")->addClass(Elegance::BUTTON_FLAT)->addClass(Elegance::BUTTON_DANGER);
-    $return[] = Button::create("Warning")->addClass(Elegance::BUTTON_FLAT)->addClass(Elegance::BUTTON_WARNING);
-    $return[] = Button::create("Info")->addClass(Elegance::BUTTON_FLAT)->addClass(Elegance::BUTTON_INFO);
-    $return[] = Button::create("Dark")->addClass(Elegance::BUTTON_FLAT)->addClass(Elegance::BUTTON_DARK);
-    $return[] = Button::create("Link")->addClass(Elegance::BUTTON_FLAT)->addClass(Elegance::BUTTON_LINK);
+    $return[] = EleganceButton::create("Default")->outline();
+    $return[] = EleganceButton::create("Primary")->outline()->primary();
+    $return[] = EleganceButton::create("Secondary")->outline()->secondary();
+    $return[] = EleganceButton::create("Success")->outline()->success();
+    $return[] = EleganceButton::create("Danger")->outline()->danger();
+    $return[] = EleganceButton::create("Warning")->outline()->warning();
+    $return[] = EleganceButton::create("Info")->outline()->info();
+    $return[] = EleganceButton::create("Dark")->outline()->dark();
+    $return[] = EleganceButton::create("Link")->outline()->link();
+
+    $return[] = HorizontalRule::create();
+
+    $return[] = EleganceButton::create("Default")->flat();
+    $return[] = EleganceButton::create("Primary")->flat()->primary();
+    $return[] = EleganceButton::create("Secondary")->flat()->secondary();
+    $return[] = EleganceButton::create("Success")->flat()->success();
+    $return[] = EleganceButton::create("Danger")->flat()->danger();
+    $return[] = EleganceButton::create("Warning")->flat()->warning();
+    $return[] = EleganceButton::create("Info")->flat()->info();
+    $return[] = EleganceButton::create("Dark")->flat()->dark();
+    $return[] = EleganceButton::create("Link")->flat()->link();
 
     $primaryButtons = [];
-    $primaryButtons[] = Button::create("Primary")->addClass(Elegance::BUTTON_PRIMARY);
-    $primaryButtons[] = Button::create("Primary")->addClass(Elegance::BUTTON_OUTLINE)->addClass(
-      Elegance::BUTTON_PRIMARY
-    );
-    $primaryButtons[] = Button::create("Primary")->addClass(Elegance::BUTTON_FLAT)->addClass(Elegance::BUTTON_PRIMARY);
+    $primaryButtons[] = EleganceButton::create("Primary")->primary();
+    $primaryButtons[] = EleganceButton::create("Primary")->outline()->primary();
+    $primaryButtons[] = EleganceButton::create("Primary")->flat()->primary();
 
     $styles = [
       Elegance::BUTTON_ROUND,
