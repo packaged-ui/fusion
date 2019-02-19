@@ -4,6 +4,7 @@ namespace PackagedUi\Elegance\Demo;
 use Packaged\Glimpse\Tags\Div;
 use Packaged\Glimpse\Tags\Layout\Footer;
 use Packaged\Glimpse\Tags\LineBreak;
+use Packaged\Glimpse\Tags\Link;
 use Packaged\Glimpse\Tags\Lists\UnorderedList;
 use Packaged\Glimpse\Tags\Media\Figure;
 use Packaged\Glimpse\Tags\Media\FigureCaption;
@@ -51,6 +52,7 @@ class TypographyDemo extends DemoSection
     $return[] = HeadingOne::create('Display 2')->addClass(Elegance::DISPLAY2);
     $return[] = HeadingOne::create('Display 3')->addClass(Elegance::DISPLAY3);
     $return[] = HeadingOne::create('Display 4')->addClass(Elegance::DISPLAY4);
+    $return[] = Link::create("#",'Link');
 
     $lorem = 'Lorem ipsum dolor sit amet, ad tibique blandit qui, error zril eleifend ut vel. Et paulo labores molestiae has, ei eos virtute dolorem.';
     $return[] = Paragraph::create($lorem);

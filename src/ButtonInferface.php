@@ -17,6 +17,7 @@ interface ButtonInferface
   const BUTTON_OUTLINE = 'btn-outline';
   const BUTTON_ROUND = 'btn-round';
   const BUTTON_FAB = 'btn-fab';
+  const BUTTON_RAISED = 'btn-raised';
 
   const BUTTON_XLARGE = 'btn-xl';
   const BUTTON_LARGE = 'btn-large';
