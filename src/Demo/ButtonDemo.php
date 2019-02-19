@@ -1,7 +1,6 @@
 <?php
 namespace PackagedUi\Elegance\Demo;
 
-use Packaged\Glimpse\Tags\Button;
 use Packaged\Glimpse\Tags\HorizontalRule;
 use Packaged\Glimpse\Tags\Link;
 use PackagedUi\Elegance\Button\EleganceButton;
@@ -78,15 +77,19 @@ class ButtonDemo extends DemoSection
     foreach($styles as $style)
     {
       $return[] = HorizontalRule::create();
-      /** @var Button $button */
+      /** @var EleganceButton $button */
       foreach($primaryButtons as $button)
       {
         $btn = clone $button;
         if($style === Elegance::BUTTON_DISABLED)
         {
-          $btn->setAttribute('disabled', null);
+          $btn->disable();
         }
-        $return[] = $btn->addClass($style)->setContent($style);
+        else
+        {
+          $btn->addClass($style);
+        }
+        $return[] = $btn->setContent($style);
       }
     }
 

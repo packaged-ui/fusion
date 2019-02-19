@@ -107,4 +107,11 @@ class EleganceButton extends Button
     $this->addClass(ButtonInferface::BUTTON_LINK);
     return $this;
   }
+
+  public function disable()
+  {
+    $this->addClass(ButtonInferface::BUTTON_DISABLED);
+    $this->setAttribute('disabled', null);
+    return $this;
+  }
 }
