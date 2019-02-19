@@ -1,0 +1,31 @@
+table {
+  border-collapse: collapse !important;
+  background-color: transparent;
+  width: 100%;
+}
+
+table th, table td {
+  padding: .625rem;
+}
+
+table th {
+  font-weight: 500;
+  text-align: inherit;
+}
+
+table thead th {
+  vertical-align: bottom;
+  border-bottom: 2px solid #f1f1f2;
+}
+
+table.table-bordered {
+  border: 1px solid #f1f1f2;
+}
+
+.table-bordered th, .table-bordered td {
+  border: 1px solid #f1f1f2;
+}
+
+.table-striped tbody tr:nth-of-type(odd) {
+  background-color: var(--elegance-lightest-solid-colour);
+}

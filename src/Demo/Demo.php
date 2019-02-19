@@ -31,6 +31,7 @@ class Demo implements ContextAware
     $elements['button'] = new ButtonDemo();
     $elements['badge'] = new BadgeDemo();
     $elements['grid'] = new GridDemo();
+    $elements['table'] = new TableDemo();
 
     $path = ltrim($this->getContext()->getRequest()->path(), '/');
     switch($path)
@@ -39,6 +40,7 @@ class Demo implements ContextAware
         foreach($elements as $class)
         {
           $rendered .= $class->produceSafeHTML()->getContent();
+          $rendered .= '<br/>';
         }
         break;
       default:

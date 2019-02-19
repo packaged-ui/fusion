@@ -2,7 +2,7 @@
 namespace PackagedUi\Elegance\Demo;
 
 use Packaged\Dispatch\ResourceManager;
-use Packaged\Glimpse\Tags\HorizontalRule;
+use Packaged\Glimpse\Tags\LineBreak;
 use PackagedUi\Elegance\Layout\Grid\GridCell;
 use PackagedUi\Elegance\Layout\Grid\GridInner;
 use PackagedUi\Elegance\Layout\Grid\GridLayout;
@@ -54,7 +54,7 @@ class GridDemo extends DemoSection
       )
     );
 
-    $return[] = HorizontalRule::create();
+    $return[] = LineBreak::create();
 
     $return[] = GridLayout::create(
       GridInner::create(
@@ -75,7 +75,7 @@ class GridDemo extends DemoSection
       )
     );
 
-    $return[] = HorizontalRule::create();
+    $return[] = LineBreak::create();
 
     $return[] = GridLayout::create(
       GridInner::create(
@@ -91,7 +91,7 @@ class GridDemo extends DemoSection
       )
     );
 
-    $return[] = HorizontalRule::create();
+    $return[] = LineBreak::create();
 
     $return[] = GridLayout::create(
       GridInner::create(
@@ -103,7 +103,7 @@ class GridDemo extends DemoSection
       )
     )->addClass('alignment-demo');
 
-    $return[] = HorizontalRule::create();
+    $return[] = LineBreak::create();
 
     $return[] = GridLayout::create(
       GridInner::create(

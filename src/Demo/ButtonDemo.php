@@ -1,7 +1,7 @@
 <?php
 namespace PackagedUi\Elegance\Demo;
 
-use Packaged\Glimpse\Tags\HorizontalRule;
+use Packaged\Glimpse\Tags\LineBreak;
 use Packaged\Glimpse\Tags\Link;
 use PackagedUi\Elegance\Button\EleganceButton;
 use PackagedUi\Elegance\Elegance;
@@ -22,7 +22,8 @@ class ButtonDemo extends DemoSection
     $return[] = Link::create("#", "Dark")->addClass(Elegance::BUTTON_DARK, Elegance::BUTTON);
     $return[] = Link::create("#", "Link")->addClass(Elegance::BUTTON_LINK, Elegance::BUTTON);
 
-    $return[] = HorizontalRule::create();
+    $return[] = LineBreak::create();
+    $return[] = LineBreak::create();
 
     $return[] = EleganceButton::create("Default");
     $return[] = EleganceButton::create("Primary")->primary();
@@ -34,7 +35,8 @@ class ButtonDemo extends DemoSection
     $return[] = EleganceButton::create("Dark")->dark();
     $return[] = EleganceButton::create("Link")->link();
 
-    $return[] = HorizontalRule::create();
+    $return[] = LineBreak::create();
+    $return[] = LineBreak::create();
 
     $return[] = EleganceButton::create("Default")->outline();
     $return[] = EleganceButton::create("Primary")->outline()->primary();
@@ -46,7 +48,8 @@ class ButtonDemo extends DemoSection
     $return[] = EleganceButton::create("Dark")->outline()->dark();
     $return[] = EleganceButton::create("Link")->outline()->link();
 
-    $return[] = HorizontalRule::create();
+    $return[] = LineBreak::create();
+    $return[] = LineBreak::create();
 
     $return[] = EleganceButton::create("Default")->flat();
     $return[] = EleganceButton::create("Primary")->flat()->primary();
@@ -76,7 +79,8 @@ class ButtonDemo extends DemoSection
 
     foreach($styles as $style)
     {
-      $return[] = HorizontalRule::create();
+      $return[] = LineBreak::create();
+      $return[] = LineBreak::create();
       /** @var EleganceButton $button */
       foreach($primaryButtons as $button)
       {
