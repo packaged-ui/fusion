@@ -20,10 +20,20 @@ module.exports = function (grunt) {
             }
           ]
         }
-      }
+      },
+      watch:  {
+        scripts: {
+          files:   ['resources/css/**/*.css'],
+          tasks:   ['cssmin'],
+          options: {
+            spawn: false,
+          },
+        },
+      },
     }
   );
 
   grunt.loadNpmTasks('grunt-contrib-cssmin');
-  grunt.registerTask('default', ['cssmin']);
+  grunt.loadNpmTasks('grunt-contrib-watch');
+  grunt.registerTask('default', ['cssmin', 'watch']);
 };

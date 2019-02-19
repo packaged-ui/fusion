@@ -14,5 +14,5 @@ Dispatch::bind(new Dispatch(__DIR__, $dispatchPath));
 
 $router = Router::i();
 $router->handleFunc($dispatchPath, function (Context $c) { return Dispatch::instance()->handle($c->getRequest()); });
-$router->handleFunc("/", function () { return (new Demo())->render(); });
+$router->handleFunc("/", function (Context $c) { return (new Demo($c))->render(); });
 $launcher->handle($router);
