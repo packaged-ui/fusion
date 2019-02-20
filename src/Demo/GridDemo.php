@@ -142,7 +142,7 @@ class GridDemo extends DemoSection
           GridCell::create("")->setSizes(6, 8),
           GridCell::create("", 12),
         ]
-      )->addClass('layout-grid__inner--bordered')
+      )->bordered()
     );
 
     return $return;
