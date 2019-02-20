@@ -3,10 +3,6 @@
   --elegance-mono-font: "SFMono-Regular", Menlo, Monaco, Consolas, "Liberation Mono", "Courier New", monospace;
   --elegance-font-size: .894rem;
 
-  --elegance-link-colour: rgba(30, 112, 205, 1);
-  --elegance-link-hover-colour: rgba(60, 138, 226, 1);
-  --elegance-link-lighter-colour: rgba(60, 138, 226, 0.5);
-  --elegance-link-lightest-colour: rgba(60, 138, 226, 0.2);
   --elegance-primary-colour: rgba(72, 66, 183, 1);
   --elegance-primary-lighter-colour: rgba(72, 66, 183, 0.5);
   --elegance-primary-lightest-colour: rgba(72, 66, 183, 0.2);
@@ -28,6 +24,10 @@
   --elegance-code-colour: rgba(232, 62, 140, 1);
   --elegance-code-lighter-colour: rgba(232, 62, 140, 0.5);
   --elegance-code-lightest-colour: rgba(232, 62, 140, 0.2);
+
+  --elegance-link-colour: var(--elegance-primary-colour);
+  --elegance-link-lighter-colour: var(--elegance-primary-lighter-colour);
+  --elegance-link-lightest-colour: var(--elegance-primary-lightest-colour);
 
   --elegance-dark-colour: rgba(24, 28, 33, 1);
   --elegance-text-colour: rgba(24, 28, 33, 0.8);
@@ -62,5 +62,5 @@ a {
 }
 
 a:hover, a:active {
-  color: var(--elegance-link-hover-colour);
+  color: var(--elegance-link-lighter-colour);
 }
