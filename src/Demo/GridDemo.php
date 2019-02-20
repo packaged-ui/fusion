@@ -122,6 +122,17 @@ class GridDemo extends DemoSection
       )
     );
 
+    $return[] = LineBreak::create();
+
+    $return[] = GridLayout::create(
+      GridInner::create(
+        [
+          GridCell::create("")->setSizes(6, 8),
+          GridCell::create("")->setSizes(6, 8),
+        ]
+      )
+    );
+
     return $return;
   }
 }

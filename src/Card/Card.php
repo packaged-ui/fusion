@@ -1,6 +1,7 @@
 <?php
 namespace PackagedUi\Elegance\Card;
 
+use Packaged\Glimpse\Core\HtmlTag;
 use Packaged\Glimpse\Tags\Div;
 
 class Card extends Div
@@ -8,10 +9,11 @@ class Card extends Div
   protected $_header;
   protected $_withContentContainer = true;
 
-  public function __construct($content = null)
+  protected function _prepareForProduce(): HtmlTag
   {
-    parent::__construct($content);
-    $this->addClass('card');
+    $ele = parent::_prepareForProduce();
+    $ele->addClass('card');
+    return $ele;
   }
 
   public function disableContentContainer()
