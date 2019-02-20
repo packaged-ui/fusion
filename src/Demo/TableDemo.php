@@ -1,14 +1,13 @@
 <?php
 namespace PackagedUi\Elegance\Demo;
 
-use Packaged\Glimpse\Tags\Table\Table;
 use Packaged\Glimpse\Tags\Table\TableBody;
 use Packaged\Glimpse\Tags\Table\TableCell;
 use Packaged\Glimpse\Tags\Table\TableHead;
 use Packaged\Glimpse\Tags\Table\TableHeading;
 use Packaged\Glimpse\Tags\Table\TableRow;
 use PackagedUi\Elegance\Card\Card;
-use PackagedUi\Elegance\Elegance;
+use PackagedUi\Elegance\Table\EleganceTable;
 
 class TableDemo extends DemoSection
 {
@@ -24,7 +23,7 @@ class TableDemo extends DemoSection
     ];
 
     $return[] = Card::create(
-      Table::create(
+      EleganceTable::create(
         [
           TableHead::create(TableHeading::collection($headings)),
           TableBody::create(
@@ -33,7 +32,7 @@ class TableDemo extends DemoSection
             TableRow::create(TableCell::collection($cells[2]))
           ),
         ]
-      )->addClass(Elegance::TABLE_BORDERED, Elegance::TABLE_STRIPED)
+      )->striped()->bordered()
     )->disableContentContainer();
     return $return;
   }
