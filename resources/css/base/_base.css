@@ -39,6 +39,7 @@
 }
 
 body {
+  background: #f9f9f9;
   font-family: var(--elegance-font);
   font-size: var(--elegance-font-size);
   font-weight: 400;

@@ -14,7 +14,7 @@ table th {
 }
 
 table thead th {
-  vertical-align: bottom;
+  vertical-align: middle;
   border-bottom: 2px solid #f1f1f2;
 }
 
@@ -22,10 +22,14 @@ table.table-bordered {
   border: 1px solid #f1f1f2;
 }
 
-.table-bordered th, .table-bordered td {
+table.table-bordered thead th {
+  border-bottom-width: 2px;
+}
+
+table.table-bordered th, table.table-bordered td {
   border: 1px solid #f1f1f2;
 }
 
-.table-striped tbody tr:nth-of-type(odd) {
+table.table-striped tbody tr:nth-of-type(odd) {
   background-color: var(--elegance-lightest-solid-colour);
 }

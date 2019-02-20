@@ -3,8 +3,10 @@ namespace PackagedUi\Elegance;
 
 use Packaged\Dispatch\Component\DispatchableComponent;
 use Packaged\Dispatch\ResourceManager;
+use PackagedUi\Elegance\Layout\TableInterface;
 
-class Elegance implements DispatchableComponent, LayoutInterface, TypographyInterface, ButtonInferface, BadgeInterface
+class Elegance implements DispatchableComponent, LayoutInterface, TypographyInterface, ButtonInferface, BadgeInterface,
+                          TableInterface
 {
   const FILE_BASE_CSS = 'css/base.min.css';
 

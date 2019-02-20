@@ -54,7 +54,7 @@ class Demo implements ContextAware
 
     $content = '<!doctype html> <html> <head> <meta charset="UTF-8"> '
       . Dispatch::instance()->store()->generateHtmlIncludes(ResourceStore::TYPE_CSS)
-      . ' </head> <body class="demo-page" style="padding: 30px; background: #f8f8f8;"> '
+      . ' </head> <body class="demo-page" style="padding: 30px;"> '
       . $rendered
       . Dispatch::instance()->store()->generateHtmlIncludes(ResourceStore::TYPE_JS)
       . ' </body></html>';
