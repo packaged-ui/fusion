@@ -1,4 +1,5 @@
 table {
+  --elegance-table-border-color: #f1f1f2;
   border-collapse: collapse !important;
   background-color: transparent;
   width: 100%;
@@ -8,18 +9,15 @@ table th, table td {
   padding: .625rem;
 }
 
-table th {
+table thead th {
+  vertical-align: middle;
+  border-bottom: 1px solid var(--elegance-table-border-color);
   font-weight: 500;
   text-align: inherit;
 }
 
-table thead th {
-  vertical-align: middle;
-  border-bottom: 2px solid #f1f1f2;
-}
-
 table.table-bordered {
-  border: 1px solid #f1f1f2;
+  border: 1px solid var(--elegance-table-border-color);
 }
 
 table.table-bordered thead th {
@@ -27,7 +25,7 @@ table.table-bordered thead th {
 }
 
 table.table-bordered th, table.table-bordered td {
-  border: 1px solid #f1f1f2;
+  border: 1px solid var(--elegance-table-border-color);
 }
 
 table.table-striped tbody tr:nth-of-type(odd) {

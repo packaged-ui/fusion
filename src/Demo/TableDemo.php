@@ -1,6 +1,7 @@
 <?php
 namespace PackagedUi\Elegance\Demo;
 
+use Packaged\Glimpse\Tags\LineBreak;
 use Packaged\Glimpse\Tags\Table\TableBody;
 use Packaged\Glimpse\Tags\Table\TableCell;
 use Packaged\Glimpse\Tags\Table\TableHead;
@@ -32,8 +33,54 @@ class TableDemo extends DemoSection
             TableRow::create(TableCell::collection($cells[2]))
           ),
         ]
-      )->striped()->bordered()
+      )
     )->disableContentContainer();
+
+    $return[] = LineBreak::create();
+
+    $return[] = Card::create(
+      EleganceTable::create(
+        [
+          TableHead::create(TableHeading::collection($headings)),
+          TableBody::create(
+            TableRow::create(TableCell::collection($cells[0])),
+            TableRow::create(TableCell::collection($cells[1])),
+            TableRow::create(TableCell::collection($cells[2]))
+          ),
+        ]
+      )->striped()
+    )->disableContentContainer();
+
+    $return[] = LineBreak::create();
+
+    $return[] = Card::create(
+      EleganceTable::create(
+        [
+          TableHead::create(TableHeading::collection($headings)),
+          TableBody::create(
+            TableRow::create(TableCell::collection($cells[0])),
+            TableRow::create(TableCell::collection($cells[1])),
+            TableRow::create(TableCell::collection($cells[2]))
+          ),
+        ]
+      )->bordered()
+    )->disableContentContainer();
+
+    $return[] = LineBreak::create();
+
+    $return[] = Card::create(
+      EleganceTable::create(
+        [
+          TableHead::create(TableHeading::collection($headings)),
+          TableBody::create(
+            TableRow::create(TableCell::collection($cells[0])),
+            TableRow::create(TableCell::collection($cells[1])),
+            TableRow::create(TableCell::collection($cells[2]))
+          ),
+        ]
+      )->bordered()->striped()
+    )->disableContentContainer();
+
     return $return;
   }
 }
