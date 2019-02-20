@@ -5,11 +5,11 @@
 
   --elegance-link-colour: rgba(30, 112, 205, 1);
   --elegance-link-hover-colour: rgba(60, 138, 226, 1);
-  --elegance-link-lighter-colour: rgba(30, 112, 205, 0.5);
-  --elegance-link-lightest-colour: rgba(30, 112, 205, 0.2);
-  --elegance-primary-colour: rgba(28, 132, 198, 1);
-  --elegance-primary-lighter-colour: rgba(28, 132, 198, 0.5);
-  --elegance-primary-lightest-colour: rgba(28, 132, 198, 0.2);
+  --elegance-link-lighter-colour: rgba(60, 138, 226, 0.5);
+  --elegance-link-lightest-colour: rgba(60, 138, 226, 0.2);
+  --elegance-primary-colour: rgba(72, 66, 183, 1);
+  --elegance-primary-lighter-colour: rgba(72, 66, 183, 0.5);
+  --elegance-primary-lightest-colour: rgba(72, 66, 183, 0.2);
   --elegance-secondary-colour: rgba(136, 151, 170, 1);
   --elegance-secondary-lighter-colour: rgba(136, 151, 170, 0.5);
   --elegance-secondary-lightest-colour: rgba(136, 151, 170, 0.2);

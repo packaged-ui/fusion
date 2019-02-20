@@ -32,6 +32,7 @@ class Demo implements ContextAware
     $elements['badge'] = new BadgeDemo();
     $elements['grid'] = new GridDemo();
     $elements['table'] = new TableDemo();
+    $elements['card'] = new CardDemo();
 
     $path = ltrim($this->getContext()->getRequest()->path(), '/');
     switch($path)
@@ -53,7 +54,7 @@ class Demo implements ContextAware
 
     $content = '<!doctype html> <html> <head> <meta charset="UTF-8"> '
       . Dispatch::instance()->store()->generateHtmlIncludes(ResourceStore::TYPE_CSS)
-      . ' </head> <body class="demo-page" style="padding: 30px;"> '
+      . ' </head> <body class="demo-page" style="padding: 30px; background: #f8f8f8;"> '
       . $rendered
       . Dispatch::instance()->store()->generateHtmlIncludes(ResourceStore::TYPE_JS)
       . ' </body></html>';
