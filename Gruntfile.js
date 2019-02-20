@@ -5,6 +5,7 @@ module.exports = function (grunt) {
         grouped: {
           files: {
             'resources/css/base.min.css': [
+              'resources/css/base/_base.css',
               'resources/css/base/*.css'
             ]
           }
