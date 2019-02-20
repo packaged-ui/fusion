@@ -36,6 +36,8 @@
   --elegance-lighter-colour: rgba(24, 28, 33, 0.3);
   --elegance-lightest-colour: rgba(24, 28, 33, 0.1);
   --elegance-lightest-solid-colour: rgba(24, 28, 33, 0.04);
+
+  --elegance-content-background-colour: #ffffff;
 }
 
 body {

@@ -1,5 +1,5 @@
 table {
-  --elegance-table-border-color: #f1f1f2;
+  --elegance-table-border-color: var(--elegance-lightest-colour);
   border-collapse: collapse !important;
   background-color: transparent;
   width: 100%;
