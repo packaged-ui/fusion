@@ -1,0 +1,15 @@
+.progress {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  height: .25rem;
+  overflow: hidden;
+  font-size: 0;
+  background-color: rgba(24, 28, 33, 0.03);
+  border-radius: 0;
+}
+
+.progress-bar {
+  background-color: #26B4FF;
+  color: #fff;
+}

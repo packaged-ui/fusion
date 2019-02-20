@@ -33,6 +33,7 @@ class Demo implements ContextAware
     $elements['grid'] = new GridDemo();
     $elements['table'] = new TableDemo();
     $elements['card'] = new CardDemo();
+    $elements['progress'] = new ProgressDemo();
 
     $path = ltrim($this->getContext()->getRequest()->path(), '/');
     switch($path)
