@@ -1,7 +1,5 @@
 button, .btn {
   text-transform: uppercase;
-  color: var(--elegance-text-colour);
-
   display: inline-block;
   font-weight: 500;
   text-align: center;
@@ -29,10 +27,12 @@ button, .btn {
   --button-active-color: var(--elegance-lighter-colour);
   --button-focus-color: var(--elegance-lightest-colour);
   --button-inverse-color: var(--elegance-text-colour);
+  color: var(--button-inverse-color);
 }
 
 button:hover, .btn:hover {
   opacity: 1;
+  color: var(--button-inverse-color);
   box-shadow: 0 2px 1px -2px rgba(0, 0, 0, .1), 0 2px 2px 0 rgba(0, 0, 0, .1), 0 1px 5px 0 rgba(0, 0, 0, .08);
 }
 
@@ -53,7 +53,7 @@ button.btn-primary, .btn.btn-primary {
   --button-active-color: var(--elegance-primary-lighter-colour);
   --button-focus-color: var(--elegance-primary-lightest-colour);
   --button-inverse-color: #fff;
-  color: var(--button-inverse-color);
+
   background-color: var(--button-color);
 }
 
@@ -62,7 +62,6 @@ button.btn-secondary, .btn.btn-secondary {
   --button-active-color: var(--elegance-secondary-lighter-colour);
   --button-focus-color: var(--elegance-secondary-lightest-colour);
   --button-inverse-color: #fff;
-  color: var(--button-inverse-color);
   background-color: var(--button-color);
 }
 
@@ -79,7 +78,6 @@ button.btn-success, .btn.btn-success {
   --button-active-color: var(--elegance-success-lighter-colour);
   --button-focus-color: var(--elegance-success-lightest-colour);
   --button-inverse-color: #fff;
-  color: var(--button-inverse-color);
   background-color: var(--button-color);
 }
 
@@ -88,7 +86,6 @@ button.btn-warning, .btn.btn-warning {
   --button-active-color: var(--elegance-warning-lighter-colour);
   --button-focus-color: var(--elegance-warning-lightest-colour);
   --button-inverse-color: #fff;
-  color: var(--button-inverse-color);
   background-color: var(--button-color);
 }
 
@@ -97,7 +94,6 @@ button.btn-info, .btn.btn-info {
   --button-active-color: var(--elegance-info-lighter-colour);
   --button-focus-color: var(--elegance-info-lightest-colour);
   --button-inverse-color: #fff;
-  color: var(--button-inverse-color);
   background-color: var(--button-color);
 }
 
@@ -106,7 +102,6 @@ button.btn-danger, .btn.btn-danger {
   --button-active-color: var(--elegance-danger-lighter-colour);
   --button-focus-color: var(--elegance-danger-lightest-colour);
   --button-inverse-color: #fff;
-  color: var(--button-inverse-color);
   background-color: var(--button-color);
 }
 
@@ -115,7 +110,6 @@ button.btn-dark, .btn.btn-dark {
   --button-active-color: var(--elegance-lighter-colour);
   --button-focus-color: var(--elegance-lightest-colour);
   --button-inverse-color: #fff;
-  color: var(--button-inverse-color);
   background-color: var(--button-color);
 }
 
