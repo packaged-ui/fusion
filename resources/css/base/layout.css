@@ -1,11 +1,3 @@
-:root {
-  --elegance-spacing-extra-large: 24px;
-  --elegance-spacing-large: 16px;
-  --elegance-spacing-medium: 8px;
-  --elegance-spacing-small: 4px;
-  --elegance-spacing-extra-small: 2px;
-}
-
 .dib {
   display: inline-block !important;
 }
