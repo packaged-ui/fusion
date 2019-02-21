@@ -1,6 +1,6 @@
 table {
   --elegance-table-border-color: rgb(var(--elegance-divider-color));
-  --elegance-table-stripe-color: rgb(var(--color-grey-100));
+  --elegance-table-stripe-color: rgb(var(--elegance-lightest-color));
   border-collapse: collapse !important;
   background-color: transparent;
   width: 100%;
