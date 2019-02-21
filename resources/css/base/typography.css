@@ -5,7 +5,6 @@ h1, h2, h3, h4, h5, h6, .h1, .h2, .h3, .h4, .h5, .h6 {
   font-family: inherit;
   font-weight: 500;
   line-height: 1.1;
-  color: rgba(var(--elegance-text-color), var(--text-opacity));
 }
 
 h1, .h1 {
@@ -30,10 +29,6 @@ h5, .h5 {
 
 h6, .h6 {
   font-size: .894rem;
-}
-
-p, em, strong, b, i, small, .small, td, th {
-  color: rgba(var(--elegance-text-color), var(--text-opacity));
 }
 
 small, .small {

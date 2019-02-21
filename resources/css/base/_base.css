@@ -64,13 +64,16 @@ body {
   font-size: var(--elegance-font-size);
   font-weight: 400;
   line-height: 1.47;
-  color: rgba(var(--elegance-text-color), var(--text-opacity));
 
   -moz-font-feature-settings: "liga" on;
   -webkit-font-smoothing: antialiased;
   font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
   text-rendering: optimizeLegibility;
+}
+
+* {
+  color: rgba(var(--elegance-text-color), var(--text-opacity));
 }
 
 a {
