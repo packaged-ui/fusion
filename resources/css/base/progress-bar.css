@@ -6,7 +6,7 @@
   height: .25rem;
   overflow: hidden;
   font-size: 0;
-  background-color: rgba(var(--elegance-progress-bar-color), 0.08);
+  background-color: rgba(var(--elegance-progress-bar-color), 0.28);
   border-radius: 0;
 }
 
