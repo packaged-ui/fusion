@@ -1,5 +1,5 @@
 .progress {
-  --elegance-progress-bar-color: var(--elegance-color-primary);
+  --elegance-progress-bar-color: var(--elegance-color-accent);
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
