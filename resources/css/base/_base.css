@@ -46,18 +46,6 @@
   --elegance-code-color-text: var(--color-text-light);
 }
 
-body.dark {
-  --elegance-divider-color: var(--color-black);
-
-  --elegance-text-color: var(--color-text-light);
-  --elegance-foreground-color: var(--color-grey-100);
-  --elegance-background-color: var(--color-grey-900);
-  --elegance-content-background-color: var(--color-grey-800);
-
-  --elegance-lightest-color: var(--color-grey-700);
-  --elegance-lighter-color: var(--color-grey-600);
-}
-
 body {
   background: rgb(var(--elegance-background-color));
   font-family: var(--elegance-font);
