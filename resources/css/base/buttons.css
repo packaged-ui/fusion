@@ -17,7 +17,7 @@ button, .btn {
   line-height: 1.47;
   border-radius: .2rem;
   -webkit-transition: all 0.2s ease-in-out;
-  transition: all 0.2s ease-in-out;
+  transition: all 0.1s ease-in-out;
   overflow: visible;
   margin: 2px;
   -webkit-tap-highlight-color: transparent;
@@ -25,6 +25,10 @@ button, .btn {
   font-family: var(--elegance-font);
   outline: 0;
   opacity: 0.95;
+
+  --button-active-color: var(--elegance-lighter-colour);
+  --button-focus-color: var(--elegance-lightest-colour);
+  --button-inverse-color: var(--elegance-text-colour);
 }
 
 button:hover, .btn:hover {
@@ -45,216 +49,112 @@ button:not(:disabled):not(.disabled), .btn:not(:disabled):not(.disabled) {
 }
 
 button.btn-primary, .btn.btn-primary {
-  background-color: var(--elegance-primary-colour);
-  color: #fff;
+  --button-color: var(--elegance-primary-colour);
+  --button-active-color: var(--elegance-primary-lighter-colour);
+  --button-focus-color: var(--elegance-primary-lightest-colour);
+  --button-inverse-color: #fff;
+  color: var(--button-inverse-color);
+  background-color: var(--button-color);
 }
 
 button.btn-secondary, .btn.btn-secondary {
-  background-color: var(--elegance-secondary-colour);
-  color: #fff;
+  --button-color: var(--elegance-secondary-colour);
+  --button-active-color: var(--elegance-secondary-lighter-colour);
+  --button-focus-color: var(--elegance-secondary-lightest-colour);
+  --button-inverse-color: #fff;
+  color: var(--button-inverse-color);
+  background-color: var(--button-color);
 }
 
 button.btn-link, .btn.btn-link {
-  color: var(--elegance-link-colour);
+  --button-color: var(--elegance-link-colour);
+  --button-active-color: var(--elegance-link-lighter-colour);
+  --button-focus-color: var(--elegance-link-lightest-colour);
+  --button-inverse-color: #fff;
+  color: var(--button-color);
 }
 
 button.btn-success, .btn.btn-success {
-  background-color: var(--elegance-success-colour);
-  color: #fff;
+  --button-color: var(--elegance-success-colour);
+  --button-active-color: var(--elegance-success-lighter-colour);
+  --button-focus-color: var(--elegance-success-lightest-colour);
+  --button-inverse-color: #fff;
+  color: var(--button-inverse-color);
+  background-color: var(--button-color);
 }
 
 button.btn-warning, .btn.btn-warning {
-  background-color: var(--elegance-warning-colour);
-  color: #fff;
+  --button-color: var(--elegance-warning-colour);
+  --button-active-color: var(--elegance-warning-lighter-colour);
+  --button-focus-color: var(--elegance-warning-lightest-colour);
+  --button-inverse-color: #fff;
+  color: var(--button-inverse-color);
+  background-color: var(--button-color);
 }
 
 button.btn-info, .btn.btn-info {
-  background-color: var(--elegance-info-colour);
-  color: #fff;
+  --button-color: var(--elegance-info-colour);
+  --button-active-color: var(--elegance-info-lighter-colour);
+  --button-focus-color: var(--elegance-info-lightest-colour);
+  --button-inverse-color: #fff;
+  color: var(--button-inverse-color);
+  background-color: var(--button-color);
 }
 
 button.btn-danger, .btn.btn-danger {
-  background-color: var(--elegance-danger-colour);
-  color: #fff;
+  --button-color: var(--elegance-danger-colour);
+  --button-active-color: var(--elegance-danger-lighter-colour);
+  --button-focus-color: var(--elegance-danger-lightest-colour);
+  --button-inverse-color: #fff;
+  color: var(--button-inverse-color);
+  background-color: var(--button-color);
 }
 
 button.btn-dark, .btn.btn-dark {
-  background-color: var(--elegance-dark-colour);
-  color: #fff;
+  --button-color: var(--elegance-dark-colour);
+  --button-active-color: var(--elegance-lighter-colour);
+  --button-focus-color: var(--elegance-lightest-colour);
+  --button-inverse-color: #fff;
+  color: var(--button-inverse-color);
+  background-color: var(--button-color);
 }
 
 
 button.btn-flat, .btn-flat, button.btn-outline, .btn-outline {
   background-color: transparent;
   border-color: transparent;
+  color: var(--button-color);
 }
 
 .btn-flat:active, button.btn-flat:active {
-  background-color: var(--elegance-lightest-colour);
+  background-color: var(--button-active-color) !important;
 }
 
-.btn-flat.btn-primary, button.btn-flat.btn-primary {
-  color: var(--elegance-primary-colour);
+.btn-flat:focus, button.btn-flat:focus, button.btn-flat.btn--active, .btn-flat.btn--active {
+  background-color: var(--button-focus-color);
 }
-
-.btn-flat.btn-primary:active, button.btn-flat.btn-primary:active {
-  background-color: var(--elegance-primary-lightest-colour);
-}
-
-.btn-flat.btn-secondary, button.btn-flat.btn-secondary {
-  color: var(--elegance-secondary-colour);
-}
-
-.btn-flat.btn-secondary:active, button.btn-flat.btn-secondary:active {
-  background-color: var(--elegance-secondary-lightest-colour);
-}
-
-.btn-flat.btn-link, button.btn-flat.btn-link {
-  color: var(--elegance-link-colour);
-}
-
-.btn-flat.btn-link:active, button.btn-flat.btn-link:active {
-  background-color: var(--elegance-link-lightest-colour);
-}
-
-.btn-flat.btn-success, button.btn-flat.btn-success {
-  color: var(--elegance-success-colour);
-}
-
-.btn-flat.btn-success:active, button.btn-flat.btn-success:active {
-  background-color: var(--elegance-success-lightest-colour);
-}
-
-.btn-flat.btn-warning, button.btn-flat.btn-warning {
-  color: var(--elegance-warning-colour);
-}
-
-.btn-flat.btn-warning:active, button.btn-flat.btn-warning:active {
-  background-color: var(--elegance-warning-lightest-colour);
-}
-
-.btn-flat.btn-info, button.btn-flat.btn-info {
-  color: var(--elegance-info-colour);
-}
-
-.btn-flat.btn-info:active, button.btn-flat.btn-info:active {
-  background-color: var(--elegance-info-lightest-colour);
-}
-
-.btn-flat.btn-danger, button.btn-flat.btn-danger {
-  color: var(--elegance-danger-colour);
-}
-
-.btn-flat.btn-danger:active, button.btn-flat.btn-danger:active {
-  background-color: var(--elegance-danger-lightest-colour);
-}
-
-.btn-flat.btn-dark, button.btn-flat.btn-dark {
-  color: var(--elegance-dark-colour);
-}
-
-.btn-flat.btn-dark:active, button.btn-flat.btn-dark:active {
-  background-color: var(--elegance-lightest-colour);
-}
-
 
 button.btn-outline, .btn-outline {
-  border: 1px solid;
+  border: 1px solid var(--button-color);
+  color: var(--button-color);
 }
 
-.btn-outline:hover, button.btn-outline:hover,
-.btn-outline:active, button.btn-outline:active {
-  color: var(--elegance-text-colour);
-  background-color: var(--elegance-lightest-colour);
+.btn-outline:hover, button.btn-outline:hover, .btn-outline:active, button.btn-outline:active {
+  color: var(--button-color);
   box-shadow: 0 2px 4px -1px rgba(0, 0, 0, 0.15), 0 4px 5px 0 rgba(0, 0, 0, 0.1), 0 1px 10px 0 rgba(0, 0, 0, 0.06);
 }
 
-.btn-outline.btn-primary, button.btn-outline.btn-primary {
-  color: var(--elegance-primary-colour);
-  border-color: var(--elegance-primary-colour);
+.btn-outline:hover, button.btn-outline:hover {
+  background-color: var(--button-color) !important;
+  color: var(--button-inverse-color);
 }
 
-.btn-outline.btn-primary:hover, button.btn-outline.btn-primary:hover,
-.btn-outline.btn-primary:active, button.btn-outline.btn-primary:active {
-  background-color: var(--elegance-primary-colour);
-  color: #fff;
+.btn-outline:active, button.btn-outline:active {
+  background-color: var(--button-active-color);
 }
 
-.btn-outline.btn-secondary, button.btn-outline.btn-secondary {
-  color: var(--elegance-secondary-colour);
-  border-color: var(--elegance-secondary-colour);
-}
-
-.btn-outline.btn-secondary:hover, button.btn-outline.btn-secondary:hover,
-.btn-outline.btn-secondary:active, button.btn-outline.btn-secondary:active {
-  background-color: var(--elegance-secondary-colour);
-  color: #fff;
-}
-
-.btn-outline.btn-link, button.btn-outline.btn-link {
-  color: var(--elegance-link-colour);
-  border-color: var(--elegance-link-colour);
-}
-
-.btn-outline.btn-link:hover, button.btn-outline.btn-link:hover,
-.btn-outline.btn-link:active, button.btn-outline.btn-link:active {
-  background-color: var(--elegance-link-colour);
-  color: #fff;
-}
-
-.btn-outline.btn-success, button.btn-outline.btn-success {
-  color: var(--elegance-success-colour);
-  border-color: var(--elegance-success-colour);
-}
-
-.btn-outline.btn-success:hover, button.btn-outline.btn-success:hover,
-.btn-outline.btn-success:active, button.btn-outline.btn-success:active {
-  background-color: var(--elegance-success-colour);
-  color: #fff;
-}
-
-.btn-outline.btn-warning, button.btn-outline.btn-warning {
-  color: var(--elegance-warning-colour);
-  border-color: var(--elegance-warning-colour);
-}
-
-.btn-outline.btn-warning:hover, button.btn-outline.btn-warning:hover,
-.btn-outline.btn-warning:active, button.btn-outline.btn-warning:active {
-  background-color: var(--elegance-warning-colour);
-  color: #fff;
-}
-
-.btn-outline.btn-info, button.btn-outline.btn-info {
-  color: var(--elegance-info-colour);
-  border-color: var(--elegance-info-colour);
-}
-
-.btn-outline.btn-info:hover, button.btn-outline.btn-info:hover,
-.btn-outline.btn-info:active, button.btn-outline.btn-info:active {
-  background-color: var(--elegance-info-colour);
-  color: #fff;
-}
-
-.btn-outline.btn-danger, button.btn-outline.btn-danger {
-  color: var(--elegance-danger-colour);
-  border-color: var(--elegance-danger-colour);
-}
-
-.btn-outline.btn-danger:hover, button.btn-outline.btn-danger:hover,
-.btn-outline.btn-danger:active, button.btn-outline.btn-danger:active {
-  background-color: var(--elegance-danger-colour);
-  color: #fff;
-}
-
-.btn-outline.btn-dark, button.btn-outline.btn-dark {
-  color: var(--elegance-dark-colour);
-  border-color: var(--elegance-dark-colour);
-}
-
-.btn-outline.btn-dark:hover, button.btn-outline.btn-dark:hover,
-.btn-outline.btn-dark:active, button.btn-outline.btn-dark:active {
-  background-color: var(--elegance-dark-colour);
-  color: #fff;
+.btn-outline:focus, button.btn-outline:focus, button.btn-outline.btn--active, .btn-outline.btn--active {
+  background-color: var(--button-focus-color);
 }
 
 button.btn-round, .btn.btn-round {
