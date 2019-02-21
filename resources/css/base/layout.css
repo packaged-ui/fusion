@@ -1,0 +1,252 @@
+:root {
+  --elegance-spacing-extra-large: 24px;
+  --elegance-spacing-large: 16px;
+  --elegance-spacing-medium: 8px;
+  --elegance-spacing-small: 4px;
+  --elegance-spacing-extra-small: 2px;
+}
+
+.dib {
+  display: inline-block !important;
+}
+
+.db {
+  display: block !important;
+}
+
+.dn {
+  display: none !important;
+}
+
+.dt {
+  width: 100% !important;
+  display: table !important;
+}
+
+.dtr {
+  display: table-row !important;
+}
+
+.dtc {
+  display: table-cell !important;
+}
+
+.df {
+  display: flex !important;
+}
+
+.df--grow {
+  flex-grow: 1;
+}
+
+.pxl {
+  padding: var(--elegance-spacing-extra-large) !important;
+}
+
+.pl {
+  padding: var(--elegance-spacing-large) !important;
+}
+
+.pm {
+  padding: var(--elegance-spacing-medium) !important;
+}
+
+.ps {
+  padding: var(--elegance-spacing-small) !important;
+}
+
+.pxs {
+  padding: var(--elegance-spacing-extra-small) !important;
+}
+
+.pxl-l {
+  padding-left: var(--elegance-spacing-extra-large) !important;
+}
+
+.pl-l {
+  padding-left: var(--elegance-spacing-large) !important;
+}
+
+.pm-l {
+  padding-left: var(--elegance-spacing-medium) !important;
+}
+
+.ps-l {
+  padding-left: var(--elegance-spacing-small) !important;
+}
+
+.pxs-l {
+  padding-left: var(--elegance-spacing-extra-small) !important;
+}
+
+.pxl-r {
+  padding-right: var(--elegance-spacing-extra-large) !important;
+}
+
+.pl-r {
+  padding-right: var(--elegance-spacing-large) !important;
+}
+
+.pm-r {
+  padding-right: var(--elegance-spacing-medium) !important;
+}
+
+.ps-r {
+  padding-right: var(--elegance-spacing-small) !important;
+}
+
+.pxs-r {
+  padding-right: var(--elegance-spacing-extra-small) !important;
+}
+
+.pxl-t {
+  padding-top: var(--elegance-spacing-extra-large) !important;
+}
+
+.pl-t {
+  padding-top: var(--elegance-spacing-large) !important;
+}
+
+.pm-t {
+  padding-top: var(--elegance-spacing-medium) !important;
+}
+
+.ps-t {
+  padding-top: var(--elegance-spacing-small) !important;
+}
+
+.pxs-t {
+  padding-top: var(--elegance-spacing-extra-small) !important;
+}
+
+.pxl-b {
+  padding-bottom: var(--elegance-spacing-extra-large) !important;
+}
+
+.pl-b {
+  padding-bottom: var(--elegance-spacing-large) !important;
+}
+
+.pm-b {
+  padding-bottom: var(--elegance-spacing-medium) !important;
+}
+
+.ps-b {
+  padding-bottom: var(--elegance-spacing-small) !important;
+}
+
+.pxs-b {
+  padding-bottom: var(--elegance-spacing-extra-small) !important;
+}
+
+.mxl {
+  margin: var(--elegance-spacing-extra-large) !important;
+}
+
+.ml {
+  margin: var(--elegance-spacing-large) !important;
+}
+
+.mm {
+  margin: var(--elegance-spacing-medium) !important;
+}
+
+.ms {
+  margin: var(--elegance-spacing-small) !important;
+}
+
+.mxs {
+  margin: var(--elegance-spacing-extra-small) !important;
+}
+
+.mxl-l {
+  margin-left: var(--elegance-spacing-extra-large) !important;
+}
+
+.ml-l {
+  margin-left: var(--elegance-spacing-large) !important;
+}
+
+.mm-l {
+  margin-left: var(--elegance-spacing-medium) !important;
+}
+
+.ms-l {
+  margin-left: var(--elegance-spacing-small) !important;
+}
+
+.mxs-l {
+  margin-left: var(--elegance-spacing-extra-small) !important;
+}
+
+.mxl-r {
+  margin-right: var(--elegance-spacing-extra-large) !important;
+}
+
+.ml-r {
+  margin-right: var(--elegance-spacing-large) !important;
+}
+
+.mm-r {
+  margin-right: var(--elegance-spacing-medium) !important;
+}
+
+.ms-r {
+  margin-right: var(--elegance-spacing-small) !important;
+}
+
+.mxs-r {
+  margin-right: var(--elegance-spacing-extra-small) !important;
+}
+
+.mxl-t {
+  margin-top: var(--elegance-spacing-extra-large) !important;
+}
+
+.ml-t {
+  margin-top: var(--elegance-spacing-large) !important;
+}
+
+.mm-t {
+  margin-top: var(--elegance-spacing-medium) !important;
+}
+
+.ms-t {
+  margin-top: var(--elegance-spacing-small) !important;
+}
+
+.mxs-t {
+  margin-top: var(--elegance-spacing-extra-small) !important;
+}
+
+.mxl-b {
+  margin-bottom: var(--elegance-spacing-extra-large) !important;
+}
+
+.ml-b {
+  margin-bottom: var(--elegance-spacing-large) !important;
+}
+
+.mm-b {
+  margin-bottom: var(--elegance-spacing-medium) !important;
+}
+
+.ms-b {
+  margin-bottom: var(--elegance-spacing-small) !important;
+}
+
+.mxs-b {
+  margin-bottom: var(--elegance-spacing-extra-small) !important;
+}
+
+.at {
+  vertical-align: top !important;
+}
+
+.ab {
+  vertical-align: bottom !important;
+}
+
+.am {
+  vertical-align: middle !important;
+}

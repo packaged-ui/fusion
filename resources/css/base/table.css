@@ -1,5 +1,6 @@
 table {
-  --elegance-table-border-color: var(--elegance-lightest-colour);
+  --elegance-table-border-color: rgb(var(--elegance-divider-color));
+  --elegance-table-stripe-color: rgb(var(--color-grey-100));
   border-collapse: collapse !important;
   background-color: transparent;
   width: 100%;
@@ -10,6 +11,7 @@ table th, table td {
 }
 
 table thead th {
+  --text-opacity: 0.87;
   vertical-align: middle;
   border-bottom: 1px solid var(--elegance-table-border-color);
   font-weight: 500;
@@ -29,5 +31,5 @@ table.table-bordered th, table.table-bordered td {
 }
 
 table.table-striped tbody tr:nth-of-type(odd) {
-  background-color: var(--elegance-lightest-solid-colour);
+  background-color: var(--elegance-table-stripe-color);
 }

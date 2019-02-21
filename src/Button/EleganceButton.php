@@ -66,9 +66,9 @@ class EleganceButton extends Button
     return $this;
   }
 
-  public function secondary()
+  public function accent()
   {
-    $this->addClass(ButtonInferface::BUTTON_SECONDARY);
+    $this->addClass(ButtonInferface::BUTTON_ACCENT);
     return $this;
   }
 
@@ -95,19 +95,7 @@ class EleganceButton extends Button
     $this->addClass(ButtonInferface::BUTTON_INFO);
     return $this;
   }
-
-  public function dark()
-  {
-    $this->addClass(ButtonInferface::BUTTON_DARK);
-    return $this;
-  }
-
-  public function link()
-  {
-    $this->addClass(ButtonInferface::BUTTON_LINK);
-    return $this;
-  }
-
+  
   public function disable()
   {
     $this->addClass(ButtonInferface::BUTTON_DISABLED);

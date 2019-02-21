@@ -5,7 +5,7 @@ module.exports = function (grunt) {
         grouped: {
           files: {
             'resources/css/base.min.css': [
-              'resources/css/base/_reset.css',
+              'node_modules/normalize.css/normalize.css',
               'resources/css/base/_base.css',
               'resources/css/base/*.css'
             ]

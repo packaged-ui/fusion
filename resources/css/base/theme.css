@@ -1,0 +1,53 @@
+.thm-bgp {
+  background-color: rgb(var(--elegance-color-primary));
+  --elegance-text-color: var(--elegance-color-primary-text);
+}
+
+.thm-p {
+  color: rgb(var(--elegance-color-primary));
+}
+
+.thm-bgpd {
+  background-color: rgb(var(--elegance-color-primary-dark));
+  --elegance-text-color: var(--elegance-color-primary-dark-text);
+}
+
+.thm-pd {
+  color: rgb(var(--elegance-color-primary-dark));
+}
+
+.thm-bgpl {
+  background-color: rgb(var(--elegance-color-primary-light));
+  --elegance-text-color: var(--elegance-color-primary-light-text);
+}
+
+.thm-pl {
+  color: rgb(var(--elegance-color-primary-light));
+}
+
+.thm-bga {
+  background-color: rgb(var(--elegance-color-accent));
+  --elegance-text-color: var(--elegance-color-accent-text);
+}
+
+.thm-a {
+  color: rgb(var(--elegance-color-accent));
+}
+
+.thm-bgad {
+  background-color: rgb(var(--elegance-color-accent-dark));
+  --elegance-text-color: var(--elegance-color-accent-dark-text);
+}
+
+.thm-ad {
+  color: rgb(var(--elegance-color-accent-dark));
+}
+
+.thm-bgal {
+  background-color: rgb(var(--elegance-color-accent-light));
+  --elegance-text-color: var(--elegance-color-accent-light-text);
+}
+
+.thm-al {
+  color: rgb(var(--elegance-color-accent-light));
+}

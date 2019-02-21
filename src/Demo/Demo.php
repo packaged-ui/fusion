@@ -28,6 +28,8 @@ class Demo implements ContextAware
 
     $elements = [];
     $elements['typography'] = new TypographyDemo();
+    $elements['layout'] = new LayoutDemo();
+    $elements['theme'] = new ThemeDemo();
     $elements['button'] = new ButtonDemo();
     $elements['badge'] = new BadgeDemo();
     $elements['grid'] = new GridDemo();

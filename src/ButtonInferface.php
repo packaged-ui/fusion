@@ -5,13 +5,11 @@ interface ButtonInferface
 {
   const BUTTON = 'btn';
   const BUTTON_PRIMARY = 'btn-primary';
-  const BUTTON_SECONDARY = 'btn-secondary';
+  const BUTTON_ACCENT = 'btn-accent';
   const BUTTON_SUCCESS = 'btn-success';
   const BUTTON_DANGER = 'btn-danger';
   const BUTTON_WARNING = 'btn-warning';
   const BUTTON_INFO = 'btn-info';
-  const BUTTON_DARK = 'btn-dark';
-  const BUTTON_LINK = 'btn-link';
 
   const BUTTON_FLAT = 'btn-flat';
   const BUTTON_OUTLINE = 'btn-outline';

@@ -1,4 +1,5 @@
 .badge {
+  --badge-color: #ff4081;
   position: relative;
   white-space: nowrap;
   margin-right: 24px;
@@ -31,42 +32,17 @@
   position: absolute;
   top: -11px;
   right: -24px;
-  font-family: "Roboto", "Helvetica", "Arial", sans-serif;
+  font-family: var(--elegance-font);
   font-weight: 600;
   font-size: 12px;
   line-height: 22px;
   width: 22px;
   height: 22px;
   border-radius: 50%;
-  background: #ff4081;
+  background-color: var(--badge-color);
   color: #fff;
 }
 
 .badge[data-badge].badge--overlap:after {
   right: -10px;
-}
-
-
-.badge-primary.badge[data-badge]:after {
-  background-color: var(--elegance-primary-colour);
-}
-
-.badge-secondary.badge[data-badge]:after {
-  background-color: var(--elegance-secondary-colour);
-}
-
-.badge-success.badge[data-badge]:after {
-  background-color: var(--elegance-success-colour);
-}
-
-.badge-danger.badge[data-badge]:after {
-  background-color: var(--elegance-danger-colour);
-}
-
-.badge-warning.badge[data-badge]:after {
-  background-color: var(--elegance-warning-colour);
-}
-
-.badge-info.badge[data-badge]:after {
-  background-color: var(--elegance-info-colour);
 }

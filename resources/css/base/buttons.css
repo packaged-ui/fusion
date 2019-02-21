@@ -1,4 +1,7 @@
 button, .btn {
+  --button-color: var(--elegance-foreground-color);
+  --button-text-color: var(--elegance-background-color);
+
   text-transform: uppercase;
   display: inline-block;
   font-weight: 500;
@@ -22,18 +25,18 @@ button, .btn {
   text-decoration: none;
   font-family: var(--elegance-font);
   outline: 0;
-  opacity: 0.95;
 
-  --button-active-color: var(--elegance-lighter-colour);
-  --button-focus-color: var(--elegance-lightest-colour);
-  --button-inverse-color: var(--elegance-text-colour);
-  color: var(--button-inverse-color);
+  color: rgba(var(--button-text-color), 0.95);
+  background-color: rgba(var(--button-color), 0.9);
 }
 
 button:hover, .btn:hover {
-  opacity: 1;
-  color: var(--button-inverse-color);
+  text-decoration: none;
   box-shadow: 0 2px 1px -2px rgba(0, 0, 0, .1), 0 2px 2px 0 rgba(0, 0, 0, .1), 0 1px 5px 0 rgba(0, 0, 0, .08);
+}
+
+button:hover, .btn:hover, button:focus, button.btn--active, .btn--active {
+  background-color: rgba(var(--button-color), 1);
 }
 
 .btn-raised {
@@ -49,106 +52,60 @@ button:not(:disabled):not(.disabled), .btn:not(:disabled):not(.disabled) {
 }
 
 button.btn-primary, .btn.btn-primary {
-  --button-color: var(--elegance-primary-colour);
-  --button-active-color: var(--elegance-primary-lighter-colour);
-  --button-focus-color: var(--elegance-primary-lightest-colour);
-  --button-inverse-color: #fff;
-
-  background-color: var(--button-color);
+  --button-color: var(--elegance-color-primary);
+  --button-text-color: var(--elegance-color-primary-text);
 }
 
-button.btn-secondary, .btn.btn-secondary {
-  --button-color: var(--elegance-secondary-colour);
-  --button-active-color: var(--elegance-secondary-lighter-colour);
-  --button-focus-color: var(--elegance-secondary-lightest-colour);
-  --button-inverse-color: #fff;
-  background-color: var(--button-color);
-}
-
-button.btn-link, .btn.btn-link {
-  --button-color: var(--elegance-link-colour);
-  --button-active-color: var(--elegance-link-lighter-colour);
-  --button-focus-color: var(--elegance-link-lightest-colour);
-  --button-inverse-color: #fff;
-  color: var(--button-color);
+button.btn-accent, .btn.btn-accent {
+  --button-color: var(--elegance-color-accent);
+  --button-text-color: var(--elegance-color-accent-text);
 }
 
 button.btn-success, .btn.btn-success {
-  --button-color: var(--elegance-success-colour);
-  --button-active-color: var(--elegance-success-lighter-colour);
-  --button-focus-color: var(--elegance-success-lightest-colour);
-  --button-inverse-color: #fff;
-  background-color: var(--button-color);
+  --button-color: var(--elegance-success-color);
+  --button-text-color: var(--elegance-success-color-text);
 }
 
 button.btn-warning, .btn.btn-warning {
-  --button-color: var(--elegance-warning-colour);
-  --button-active-color: var(--elegance-warning-lighter-colour);
-  --button-focus-color: var(--elegance-warning-lightest-colour);
-  --button-inverse-color: #fff;
-  background-color: var(--button-color);
+  --button-color: var(--elegance-warning-color);
+  --button-text-color: var(--elegance-warning-color-text);
 }
 
 button.btn-info, .btn.btn-info {
-  --button-color: var(--elegance-info-colour);
-  --button-active-color: var(--elegance-info-lighter-colour);
-  --button-focus-color: var(--elegance-info-lightest-colour);
-  --button-inverse-color: #fff;
-  background-color: var(--button-color);
+  --button-color: var(--elegance-info-color);
+  --button-text-color: var(--elegance-info-color-text);
 }
 
 button.btn-danger, .btn.btn-danger {
-  --button-color: var(--elegance-danger-colour);
-  --button-active-color: var(--elegance-danger-lighter-colour);
-  --button-focus-color: var(--elegance-danger-lightest-colour);
-  --button-inverse-color: #fff;
-  background-color: var(--button-color);
+  --button-color: var(--elegance-danger-color);
+  --button-text-color: var(--elegance-danger-color-text);
 }
-
-button.btn-dark, .btn.btn-dark {
-  --button-color: var(--elegance-dark-colour);
-  --button-active-color: var(--elegance-lighter-colour);
-  --button-focus-color: var(--elegance-lightest-colour);
-  --button-inverse-color: #fff;
-  background-color: var(--button-color);
-}
-
 
 button.btn-flat, .btn-flat, button.btn-outline, .btn-outline {
   background-color: transparent;
   border-color: transparent;
-  color: var(--button-color);
+  color: rgb(var(--button-color));
 }
 
-.btn-flat:active, button.btn-flat:active {
-  background-color: var(--button-active-color) !important;
+.btn-flat:active, button.btn-flat:active, .btn-outline:active, button.btn-outline:active {
+  background-color: rgba(var(--button-color), 0.2) !important;
 }
 
-.btn-flat:focus, button.btn-flat:focus, button.btn-flat.btn--active, .btn-flat.btn--active {
-  background-color: var(--button-focus-color);
+.btn-flat:focus, button.btn-flat:focus, button.btn-flat.btn--active, .btn-flat.btn--active,
+.btn-outline:focus, button.btn-outline:focus, button.btn-outline.btn--active, .btn-outline.btn--active {
+  background-color: rgba(var(--button-color), 0.12);
 }
 
 button.btn-outline, .btn-outline {
-  border: 1px solid var(--button-color);
-  color: var(--button-color);
+  border: 1px solid rgb(var(--button-color));
+  color: rgb(var(--button-color));
 }
 
 .btn-outline:hover, button.btn-outline:hover, .btn-outline:active, button.btn-outline:active {
-  color: var(--button-color);
+  background-color: rgb(var(--button-color)) !important;
+  border-color: rgb(var(--button-color));
+  color: rgb(var(--button-text-color));
   box-shadow: 0 2px 4px -1px rgba(0, 0, 0, 0.15), 0 4px 5px 0 rgba(0, 0, 0, 0.1), 0 1px 10px 0 rgba(0, 0, 0, 0.06);
-}
-
-.btn-outline:hover, button.btn-outline:hover {
-  background-color: var(--button-color) !important;
-  color: var(--button-inverse-color);
-}
-
-.btn-outline:active, button.btn-outline:active {
-  background-color: var(--button-active-color);
-}
-
-.btn-outline:focus, button.btn-outline:focus, button.btn-outline.btn--active, .btn-outline.btn--active {
-  background-color: var(--button-focus-color);
 }
 
 button.btn-round, .btn.btn-round {
@@ -177,21 +134,15 @@ button.btn-xs, .btn.btn-xs {
   border-radius: .125rem;
 }
 
-button.btn-fab, .btn.btn-fab {
-  -webkit-border-radius: 25px;
-  -moz-border-radius: 25px;
-  border-radius: 25px;
-
-  box-shadow: 0 3px 5px -1px rgba(0, 0, 0, .2), 0 6px 10px 0 rgba(0, 0, 0, .14), 0 1px 18px 0 rgba(0, 0, 0, .12) !important;
-}
 
 button.disabled, button:disabled, .btn-disabled, .btn:disabled {
   opacity: .65;
   box-shadow: none;
 }
 
-button.btn-outline.disabled, button.btn-outline:disabled, .btn-outline.btn-disabled, .btn-outline.btn:disabled {
-  background: transparent !important;
-  box-shadow: none;
-  color: var(--elegance-text-colour) !important;
+.btn-outline.disabled:hover, button.btn-outline.disabled:hover, .btn-outline.disabled:active, button.btn-outline.disabled:active,
+.btn-outline:disabled:hover, button.btn-outline:disabled:hover, .btn-outline:disabled:active, button.btn-outline:disabled:active {
+  background-color: transparent !important;
+  color: rgb(var(--button-color)) !important;
+  box-shadow: none !important;
 }

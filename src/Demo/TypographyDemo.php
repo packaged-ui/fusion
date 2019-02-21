@@ -5,6 +5,8 @@ use Packaged\Glimpse\Tags\Div;
 use Packaged\Glimpse\Tags\Layout\Footer;
 use Packaged\Glimpse\Tags\LineBreak;
 use Packaged\Glimpse\Tags\Link;
+use Packaged\Glimpse\Tags\Lists\ListItem;
+use Packaged\Glimpse\Tags\Lists\OrderedList;
 use Packaged\Glimpse\Tags\Lists\UnorderedList;
 use Packaged\Glimpse\Tags\Media\Figure;
 use Packaged\Glimpse\Tags\Media\FigureCaption;
@@ -15,6 +17,7 @@ use Packaged\Glimpse\Tags\Text\BlockQuote;
 use Packaged\Glimpse\Tags\Text\Citation;
 use Packaged\Glimpse\Tags\Text\CodeBlock;
 use Packaged\Glimpse\Tags\Text\DeletedText;
+use Packaged\Glimpse\Tags\Text\EmphasizedText;
 use Packaged\Glimpse\Tags\Text\HeadingFive;
 use Packaged\Glimpse\Tags\Text\HeadingFour;
 use Packaged\Glimpse\Tags\Text\HeadingOne;
@@ -40,7 +43,7 @@ class TypographyDemo extends DemoSection
   {
     $return = [];
 
-    $secondary = SmallText::create('Additional text')->addClass(Elegance::TEXT_MUTED);
+    $secondary = SmallText::create('Additional text')->addClass(Elegance::TEXT_MEDIUM_EMPHASIS);
     $return[] = HeadingOne::create(['h1. Heading ', $secondary]);
     $return[] = HeadingTwo::create(['h2. Heading ', $secondary]);
     $return[] = HeadingThree::create(['h3. Heading ', $secondary]);
@@ -52,7 +55,7 @@ class TypographyDemo extends DemoSection
     $return[] = HeadingOne::create('Display 2')->addClass(Elegance::DISPLAY2);
     $return[] = HeadingOne::create('Display 3')->addClass(Elegance::DISPLAY3);
     $return[] = HeadingOne::create('Display 4')->addClass(Elegance::DISPLAY4);
-    $return[] = Link::create("#",'Link');
+    $return[] = Link::create("#", 'Link');
 
     $lorem = 'Lorem ipsum dolor sit amet, ad tibique blandit qui, error zril eleifend ut vel. Et paulo labores molestiae has, ei eos virtute dolorem.';
     $return[] = Paragraph::create($lorem);
@@ -66,6 +69,7 @@ class TypographyDemo extends DemoSection
     $return[] = Paragraph::create(UnderlinedText::create('This line of text will render as underlined'));
     $return[] = Paragraph::create(SmallText::create('This line of text is meant to be treated as fine print.'));
     $return[] = Paragraph::create(StrongText::create('rendered as bold text'));
+    $return[] = Paragraph::create(EmphasizedText::create('rendered as emphasized text'));
     $return[] = Paragraph::create(ItalicText::create('rendered as italicized text'));
     $return[] = Paragraph::create(
       ['An abbreviation of the word attribute is ', Abbreviation::create('attr', 'abbreviation'), '.']
@@ -96,18 +100,17 @@ class TypographyDemo extends DemoSection
     );
 
     $return[] = UnorderedList::create()->addClass(Elegance::LIST_INLINE)
-      ->addItem(Paragraph::create('Primary')->addClass(Elegance::TEXT_PRIMARY))
-      ->addItem(Paragraph::create('Secondary')->addClass(Elegance::TEXT_SECONDARY))
+      ->addItem(Paragraph::create('Primary')->addClass(Elegance::THEME_PRIMARY))
+      ->addItem(Paragraph::create('Accent')->addClass(Elegance::THEME_ACCENT))
       ->addItem(Paragraph::create('Success')->addClass(Elegance::TEXT_SUCCESS))
       ->addItem(Paragraph::create('Danger')->addClass(Elegance::TEXT_DANGER))
       ->addItem(Paragraph::create('Warning')->addClass(Elegance::TEXT_WARNING))
       ->addItem(Paragraph::create('Info')->addClass(Elegance::TEXT_INFO))
-      ->addItem(Paragraph::create('Dark')->addClass(Elegance::TEXT_DARK))
       ->addItem(Paragraph::create('Default'))
-      ->addItem(Paragraph::create('Muted')->addClass(Elegance::TEXT_MUTED))
-      ->addItem(Paragraph::create('Light')->addClass(Elegance::TEXT_LIGHT))
-      ->addItem(Paragraph::create('Lighter')->addClass(Elegance::TEXT_LIGHTER))
-      ->addItem(Paragraph::create('Lightest')->addClass(Elegance::TEXT_LIGHTEST));
+      ->addItem(Paragraph::create('Opaque')->addClass(Elegance::TEXT_OPAQUE))
+      ->addItem(Paragraph::create('High Emphasis')->addClass(Elegance::TEXT_HIGH_EMPHASIS))
+      ->addItem(Paragraph::create('Medium Emphasis')->addClass(Elegance::TEXT_MEDIUM_EMPHASIS))
+      ->addItem(Paragraph::create('Disabled')->addClass(Elegance::TEXT_DISABLED));
 
     $return[] = UnorderedList::create()->addClass(Elegance::LIST_UNSTYLED)
       ->addItem(Paragraph::create([CodeBlock::create('.text-tiny'), ' - Text Tiny'])->addClass(Elegance::TEXT_TINY))
@@ -133,6 +136,15 @@ class TypographyDemo extends DemoSection
       );
 
     $return[] = UnorderedList::create()
+      ->addItem('Unordered List')
+      ->addItem('Lorem ipsum dolor sit amet')
+      ->addItem(
+        ListItem::create(["List Item", UnorderedList::create()->addItems(ListItem::collection(["A", "B", "C"]))])
+      )
+      ->addItem('Integer molestie lorem at massa');
+
+    $return[] = OrderedList::create()
+      ->addItem('Unordered List')
       ->addItem('Lorem ipsum dolor sit amet')
       ->addItem('Consectetur adipiscing elit')
       ->addItem('Integer molestie lorem at massa');

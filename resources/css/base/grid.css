@@ -9,8 +9,8 @@
   --layout-grid-gutter-phone: 16px;
   --layout-grid-column-width-phone: 72px;
 
-  --layout-grid-bordered-color: var(--elegance-lightest-colour);
-  --layout-grid-bordered-cell-color: var(--elegance-content-background-colour);
+  --layout-grid-bordered-color: rgb(var(--elegance-divider-color));
+  --layout-grid-bordered-cell-color: rgb(var(--elegance-content-background-color));
 }
 
 @media (min-width: 840px) {

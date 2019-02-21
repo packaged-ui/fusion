@@ -18,15 +18,6 @@ class BadgeDemo extends DemoSection
       Elegance::BADGE_ADDED_MARGIN,
       Elegance::DISPLAY_INLINE_BLOCK
     );
-
-    $return[] = Badge::create(Span::create('Inbox'), 54)->addClass(
-      Elegance::DISPLAY_INLINE_BLOCK,
-      Elegance::BADGE_PRIMARY
-    );
-    $return[] = Badge::create(Span::create('Inbox'), '99+')->addClass(
-      Elegance::DISPLAY_INLINE_BLOCK,
-      Elegance::BADGE_SUCCESS
-    );
     return $return;
   }
 }

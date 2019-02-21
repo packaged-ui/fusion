@@ -2,51 +2,51 @@
   --elegance-font: "Roboto", -apple-system, BlinkMacSystemFont, "Segoe UI", "Oxygen", "Ubuntu", "Cantarell", "Fira Sans", "Droid Sans", "Helvetica Neue", sans-serif;
   --elegance-mono-font: "SFMono-Regular", Menlo, Monaco, Consolas, "Liberation Mono", "Courier New", monospace;
   --elegance-font-size: .894rem;
+  --text-opacity: 0.70;
 
-  --elegance-primary-colour: rgba(72, 66, 183, 1);
-  --elegance-primary-lighter-colour: rgba(72, 66, 183, 0.5);
-  --elegance-primary-lightest-colour: rgba(72, 66, 183, 0.2);
-  --elegance-secondary-colour: rgba(136, 151, 170, 1);
-  --elegance-secondary-lighter-colour: rgba(136, 151, 170, 0.5);
-  --elegance-secondary-lightest-colour: rgba(136, 151, 170, 0.2);
-  --elegance-success-colour: rgba(2, 188, 119, 1);
-  --elegance-success-lighter-colour: rgba(2, 188, 119, 0.5);
-  --elegance-success-lightest-colour: rgba(2, 188, 119, 0.2);
-  --elegance-danger-colour: rgba(217, 83, 79, 1);
-  --elegance-danger-lighter-colour: rgba(217, 83, 79, 0.5);
-  --elegance-danger-lightest-colour: rgba(217, 83, 79, 0.2);
-  --elegance-warning-colour: rgba(248, 172, 89, 1);
-  --elegance-warning-lighter-colour: rgba(248, 172, 89, 0.5);
-  --elegance-warning-lightest-colour: rgba(248, 172, 89, 0.2);
-  --elegance-info-colour: rgba(16, 182, 224, 1);
-  --elegance-info-lighter-colour: rgba(16, 182, 224, 0.5);
-  --elegance-info-lightest-colour: rgba(16, 182, 224, 0.2);
-  --elegance-code-colour: rgba(232, 62, 140, 1);
-  --elegance-code-lighter-colour: rgba(232, 62, 140, 0.5);
-  --elegance-code-lightest-colour: rgba(232, 62, 140, 0.2);
+  --elegance-color-primary-light: var(--color-deep-purple-200);
+  --elegance-color-primary-light-text: var(--color-deep-purple-200-text);
+  --elegance-color-primary-dark: var(--color-deep-purple-900);
+  --elegance-color-primary-dark-text: var(--color-deep-purple-900-text);
+  --elegance-color-primary: var(--color-deep-purple-700);
+  --elegance-color-primary-text: var(--color-deep-purple-700-text);
 
-  --elegance-link-colour: var(--elegance-primary-colour);
-  --elegance-link-lighter-colour: var(--elegance-primary-lighter-colour);
-  --elegance-link-lightest-colour: var(--elegance-primary-lightest-colour);
+  --elegance-color-accent-light: var(--color-deep-orange-200);
+  --elegance-color-accent-light-text: var(--color-deep-orange-200-text);
+  --elegance-color-accent-dark: var(--color-deep-orange-900);
+  --elegance-color-accent-dark-text: var(--color-deep-orange-900-text);
+  --elegance-color-accent: var(--color-deep-orange-700);
+  --elegance-color-accent-text: var(--color-deep-orange-700-text);
 
-  --elegance-dark-colour: rgba(24, 28, 33, 1);
-  --elegance-text-colour: rgba(24, 28, 33, 0.8);
-  --elegance-muted-colour: rgba(24, 28, 33, 0.65);
-  --elegance-light-colour: rgba(24, 28, 33, 0.5);
-  --elegance-lighter-colour: rgba(24, 28, 33, 0.3);
-  --elegance-lightest-colour: rgba(24, 28, 33, 0.1);
-  --elegance-lightest-solid-colour: rgba(24, 28, 33, 0.04);
+  --elegance-divider-color: var(--color-grey-200);
 
-  --elegance-content-background-colour: #ffffff;
+  --elegance-text-color: var(--color-text-dark);
+  --elegance-foreground-color: var(--color-grey-700);
+  --elegance-background-color: var(--color-grey-50);
+  --elegance-content-background-color: var(--color-white);
+
+  --elegance-lightest-color: var(--color-grey-100);
+  --elegance-lighter-color: var(--color-grey-300);
+
+  --elegance-success-color: 2, 188, 119;
+  --elegance-success-color-text: var(--color-text-light);
+  --elegance-danger-color: 176, 0, 32;
+  --elegance-danger-color-text: var(--color-text-light);
+  --elegance-warning-color: 248, 172, 89;
+  --elegance-warning-color-text: var(--color-text-light);
+  --elegance-info-color: 16, 182, 224;
+  --elegance-info-color-text: var(--color-text-light);
+  --elegance-code-color: 232, 62, 140;
+  --elegance-code-color-text: var(--color-text-light);
 }
 
 body {
-  background: #f9f9f9;
+  background: rgb(var(--elegance-background-color));
   font-family: var(--elegance-font);
   font-size: var(--elegance-font-size);
   font-weight: 400;
   line-height: 1.47;
-  color: var(--elegance-text-colour);
+  color: rgba(var(--elegance-text-color), var(--text-opacity));
 
   -moz-font-feature-settings: "liga" on;
   -webkit-font-smoothing: antialiased;
@@ -55,15 +55,12 @@ body {
   text-rendering: optimizeLegibility;
 }
 
-.inline-block {
-  display: inline-block;
-}
-
 a {
-  color: var(--elegance-link-colour);
+  --elegance-text-color: var(--elegance-color-accent);
+  color: rgb(var(--elegance-color-accent));
   text-decoration: none;
 }
 
 a:hover, a:active {
-  color: var(--elegance-link-lighter-colour);
+  text-decoration: underline;
 }
