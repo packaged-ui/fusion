@@ -9,7 +9,7 @@
   flex-direction: column;
   min-width: 0;
   word-wrap: break-word;
-  background-color: rgb(var(--elegance-content-background-color));
+  background-color: rgb(var(--el-content-background-color));
   border: 0 solid rgba(24, 28, 33, 0.06);
   border-radius: .125rem;
   background-clip: padding-box;
@@ -21,7 +21,7 @@
   padding: .875rem 1.5rem;
   margin-bottom: 0;
   background-color: transparent;
-  border-bottom: 1px solid rgb(var(--elegance-divider-color));
+  border-bottom: 1px solid rgb(var(--el-divider-color));
 }
 
 .card-content {

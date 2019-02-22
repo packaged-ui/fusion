@@ -1,21 +1,21 @@
 @media (prefers-color-scheme: dark) {
   body {
-    --elegance-divider-color: var(--color-black);
-    --elegance-text-color: var(--color-text-light);
-    --elegance-foreground-color: var(--color-grey-100);
-    --elegance-background-color: var(--color-grey-900);
-    --elegance-content-background-color: var(--color-grey-800);
-    --elegance-lightest-color: var(--color-grey-700);
-    --elegance-lighter-color: var(--color-grey-600);
+    --el-divider-color: var(--rgb-black);
+    --el-text-color: var(--rgb-text-light);
+    --el-foreground-color: var(--rgb-grey-100);
+    --el-background-color: var(--rgb-grey-900);
+    --el-content-background-color: var(--rgb-grey-800);
+    --el-lightest-color: var(--rgb-grey-700);
+    --el-lighter-color: var(--rgb-grey-600);
   }
 }
 
 body.dark {
-  --elegance-divider-color: var(--color-black);
-  --elegance-text-color: var(--color-text-light);
-  --elegance-foreground-color: var(--color-grey-100);
-  --elegance-background-color: var(--color-grey-900);
-  --elegance-content-background-color: var(--color-grey-800);
-  --elegance-lightest-color: var(--color-grey-700);
-  --elegance-lighter-color: var(--color-grey-600);
+  --el-divider-color: var(--rgb-black);
+  --el-text-color: var(--rgb-text-light);
+  --el-foreground-color: var(--rgb-grey-100);
+  --el-background-color: var(--rgb-grey-900);
+  --el-content-background-color: var(--rgb-grey-800);
+  --el-lightest-color: var(--rgb-grey-700);
+  --el-lighter-color: var(--rgb-grey-600);
 }

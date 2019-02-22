@@ -11,7 +11,7 @@ class GridLayout extends AbstractContainerTag
   protected function _prepareForProduce(): HtmlTag
   {
     $ele = parent::_prepareForProduce();
-    $ele->addClass('layout-grid');
+    $ele->addClass('grid');
     return $ele;
   }
 }

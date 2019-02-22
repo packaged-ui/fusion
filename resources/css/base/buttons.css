@@ -1,7 +1,39 @@
 button, .btn {
-  --button-color: var(--elegance-foreground-color);
-  --button-text-color: var(--elegance-background-color);
+  --button-color: var(--el-color-default);
+  --button-text-color: var(--el-color-default-text);
+}
 
+button.btn-primary, .btn.btn-primary {
+  --button-color: var(--el-color-primary);
+  --button-text-color: var(--el-color-primary-text);
+}
+
+button.btn-accent, .btn.btn-accent {
+  --button-color: var(--el-color-accent);
+  --button-text-color: var(--el-color-accent-text);
+}
+
+button.btn-success, .btn.btn-success {
+  --button-color: var(--el-success-color);
+  --button-text-color: var(--el-success-color-text);
+}
+
+button.btn-warning, .btn.btn-warning {
+  --button-color: var(--el-warning-color);
+  --button-text-color: var(--el-warning-color-text);
+}
+
+button.btn-info, .btn.btn-info {
+  --button-color: var(--el-info-color);
+  --button-text-color: var(--el-info-color-text);
+}
+
+button.btn-danger, .btn.btn-danger {
+  --button-color: var(--el-danger-color);
+  --button-text-color: var(--el-danger-color-text);
+}
+
+button, .btn {
   text-transform: uppercase;
   display: inline-block;
   font-weight: 500;
@@ -14,7 +46,7 @@ button, .btn {
   user-select: none;
   border: 1px solid rgba(0, 0, 0, 0.1);
   padding: .3rem 1rem;
-  font-size: var(--elegance-font-size);
+  font-size: var(--el-font-size);
   line-height: 1.47;
   border-radius: .2rem;
   -webkit-transition: all 0.2s ease-in-out;
@@ -23,7 +55,7 @@ button, .btn {
   margin: 2px;
   -webkit-tap-highlight-color: transparent;
   text-decoration: none;
-  font-family: var(--elegance-font);
+  font-family: var(--el-font);
   outline: 0;
 
   color: rgba(var(--button-text-color), 0.95);
@@ -49,36 +81,6 @@ button.btn-raised:hover, .btn.btn-raised:hover {
 
 button:not(:disabled):not(.disabled), .btn:not(:disabled):not(.disabled) {
   cursor: pointer;
-}
-
-button.btn-primary, .btn.btn-primary {
-  --button-color: var(--elegance-color-primary);
-  --button-text-color: var(--elegance-color-primary-text);
-}
-
-button.btn-accent, .btn.btn-accent {
-  --button-color: var(--elegance-color-accent);
-  --button-text-color: var(--elegance-color-accent-text);
-}
-
-button.btn-success, .btn.btn-success {
-  --button-color: var(--elegance-success-color);
-  --button-text-color: var(--elegance-success-color-text);
-}
-
-button.btn-warning, .btn.btn-warning {
-  --button-color: var(--elegance-warning-color);
-  --button-text-color: var(--elegance-warning-color-text);
-}
-
-button.btn-info, .btn.btn-info {
-  --button-color: var(--elegance-info-color);
-  --button-text-color: var(--elegance-info-color-text);
-}
-
-button.btn-danger, .btn.btn-danger {
-  --button-color: var(--elegance-danger-color);
-  --button-text-color: var(--elegance-danger-color-text);
 }
 
 button.btn-flat, .btn-flat, button.btn-outline, .btn-outline {

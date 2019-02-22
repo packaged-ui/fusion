@@ -3,8 +3,8 @@ button.btn-fab, .btn.btn-fab {
   -moz-border-radius: 25px;
   border-radius: 25px;
   box-shadow: 0 3px 5px -1px rgba(0, 0, 0, .2), 0 6px 10px 0 rgba(0, 0, 0, .14), 0 1px 18px 0 rgba(0, 0, 0, .12) !important;
-  background: rgb(var(--elegance-color-accent));
-  color: rgb(var(--elegance-color-accent-text));
+  background: rgb(var(--el-color-accent));
+  color: rgb(var(--el-color-accent-text));
   width: 40px;
   height: 40px;
 }

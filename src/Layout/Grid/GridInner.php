@@ -12,10 +12,10 @@ class GridInner extends AbstractContainerTag
   protected function _prepareForProduce(): HtmlTag
   {
     $ele = parent::_prepareForProduce();
-    $ele->addClass('layout-grid__inner');
+    $ele->addClass('grid__inner');
     if($this->_bordered)
     {
-      $ele->addClass('layout-grid__inner--bordered');
+      $ele->addClass('grid__inner--bordered');
     }
     return $ele;
   }

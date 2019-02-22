@@ -1,16 +1,16 @@
 .progress {
-  --elegance-progress-bar-color: var(--elegance-color-accent);
+  --el-progress-bar-color: var(--el-color-accent);
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
   height: .25rem;
   overflow: hidden;
   font-size: 0;
-  background-color: rgba(var(--elegance-progress-bar-color), 0.28);
+  background-color: rgba(var(--el-progress-bar-color), 0.28);
   border-radius: 0;
 }
 
 .progress-bar {
-  background-color: rgb(var(--elegance-progress-bar-color));
+  background-color: rgb(var(--el-progress-bar-color));
   color: #fff;
 }

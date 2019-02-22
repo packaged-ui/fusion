@@ -1,6 +1,6 @@
 table {
-  --elegance-table-border-color: rgb(var(--elegance-divider-color));
-  --elegance-table-stripe-color: rgb(var(--elegance-lightest-color));
+  --el-table-border-color: rgb(var(--el-divider-color));
+  --el-table-stripe-color: rgb(var(--el-lightest-color));
   border-collapse: collapse !important;
   background-color: transparent;
   width: 100%;
@@ -13,13 +13,13 @@ table th, table td {
 table thead th {
   --text-opacity: 0.87;
   vertical-align: middle;
-  border-bottom: 1px solid var(--elegance-table-border-color);
+  border-bottom: 1px solid var(--el-table-border-color);
   font-weight: 500;
   text-align: inherit;
 }
 
 table.table-bordered {
-  border: 1px solid var(--elegance-table-border-color);
+  border: 1px solid var(--el-table-border-color);
 }
 
 table.table-bordered thead th {
@@ -27,9 +27,9 @@ table.table-bordered thead th {
 }
 
 table.table-bordered th, table.table-bordered td {
-  border: 1px solid var(--elegance-table-border-color);
+  border: 1px solid var(--el-table-border-color);
 }
 
 table.table-striped tbody tr:nth-of-type(odd) {
-  background-color: var(--elegance-table-stripe-color);
+  background-color: var(--el-table-stripe-color);
 }

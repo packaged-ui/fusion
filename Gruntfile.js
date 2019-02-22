@@ -3,7 +3,11 @@ module.exports = function (grunt) {
     {
       cssmin: {
         grouped: {
-          files: {
+          options: {
+            shorthandCompacting: true,
+            keepSpecialComments: 0
+          },
+          files:   {
             'resources/css/base.min.css': [
               'node_modules/normalize.css/normalize.css',
               'resources/css/base/_base.css',

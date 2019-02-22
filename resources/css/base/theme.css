@@ -1,53 +1,53 @@
 .thm-bgp {
-  background-color: rgb(var(--elegance-color-primary));
-  --elegance-text-color: var(--elegance-color-primary-text);
+  background-color: rgb(var(--el-color-primary));
+  --el-text-color: var(--el-color-primary-text);
 }
 
 .thm-p {
-  color: rgb(var(--elegance-color-primary));
+  color: rgb(var(--el-color-primary));
 }
 
 .thm-bgpd {
-  background-color: rgb(var(--elegance-color-primary-dark));
-  --elegance-text-color: var(--elegance-color-primary-dark-text);
+  background-color: rgb(var(--el-color-primary-dark));
+  --el-text-color: var(--el-color-primary-dark-text);
 }
 
 .thm-pd {
-  color: rgb(var(--elegance-color-primary-dark));
+  color: rgb(var(--el-color-primary-dark));
 }
 
 .thm-bgpl {
-  background-color: rgb(var(--elegance-color-primary-light));
-  --elegance-text-color: var(--elegance-color-primary-light-text);
+  background-color: rgb(var(--el-color-primary-light));
+  --el-text-color: var(--el-color-primary-light-text);
 }
 
 .thm-pl {
-  color: rgb(var(--elegance-color-primary-light));
+  color: rgb(var(--el-color-primary-light));
 }
 
 .thm-bga {
-  background-color: rgb(var(--elegance-color-accent));
-  --elegance-text-color: var(--elegance-color-accent-text);
+  background-color: rgb(var(--el-color-accent));
+  --el-text-color: var(--el-color-accent-text);
 }
 
 .thm-a {
-  color: rgb(var(--elegance-color-accent));
+  color: rgb(var(--el-color-accent));
 }
 
 .thm-bgad {
-  background-color: rgb(var(--elegance-color-accent-dark));
-  --elegance-text-color: var(--elegance-color-accent-dark-text);
+  background-color: rgb(var(--el-color-accent-dark));
+  --el-text-color: var(--el-color-accent-dark-text);
 }
 
 .thm-ad {
-  color: rgb(var(--elegance-color-accent-dark));
+  color: rgb(var(--el-color-accent-dark));
 }
 
 .thm-bgal {
-  background-color: rgb(var(--elegance-color-accent-light));
-  --elegance-text-color: var(--elegance-color-accent-light-text);
+  background-color: rgb(var(--el-color-accent-light));
+  --el-text-color: var(--el-color-accent-light-text);
 }
 
 .thm-al {
-  color: rgb(var(--elegance-color-accent-light));
+  color: rgb(var(--el-color-accent-light));
 }

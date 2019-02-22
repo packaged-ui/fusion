@@ -6,9 +6,9 @@ use Packaged\Glimpse\Tags\Div;
 
 class GridCell extends Div
 {
-  const CLASS_ALIGN_TOP = 'layout-grid__cell--align-top';
-  const CLASS_ALIGN_MIDDLE = 'layout-grid__cell--align-middle';
-  const CLASS_ALIGN_BOTTOM = 'layout-grid__cell--align-bottom';
+  const CLASS_ALIGN_TOP = 'grid__cell--align-top';
+  const CLASS_ALIGN_MIDDLE = 'grid__cell--align-middle';
+  const CLASS_ALIGN_BOTTOM = 'grid__cell--align-bottom';
 
   const DEVICE_DESKTOP = 'desktop';
   const DEVICE_TABLET = 'tablet';
@@ -19,11 +19,11 @@ class GridCell extends Div
   protected function _prepareForProduce(): HtmlTag
   {
     $ele = parent::_prepareForProduce();
-    $ele->addClass('layout-grid__cell');
+    $ele->addClass('grid__cell');
 
     foreach($this->_sizes as $device => $span)
     {
-      $ele->addClass('layout-grid__cell--span-' . $span . (empty($device) ? '' : '-' . $device));
+      $ele->addClass('grid__cell--span-' . $span . (empty($device) ? '' : '-' . $device));
     }
 
     return $ele;

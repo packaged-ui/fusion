@@ -13,21 +13,21 @@ class GridDemo extends DemoSection
   {
     ResourceManager::inline()->requireCss(
       "
-    .layout-grid{
+    .grid{
       background: rgba(0,0,0,.2);
       min-width: 360px;
     }
     
-    .layout-grid__cell{
+    .grid__cell{
       background: rgba(0,0,0,.2);
       min-height: 100px;
     }
     
-    .alignment-demo, .alignment-demo .layout-grid__inner{
+    .alignment-demo, .alignment-demo .grid__inner{
       min-height: 200px;
     }
     
-    .alignment-demo .layout-grid__cell{
+    .alignment-demo .grid__cell{
       min-height: 50px;
       max-height: 50px;
     }
