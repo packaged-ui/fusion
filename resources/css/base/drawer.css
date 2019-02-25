@@ -29,13 +29,24 @@
 
   display: flex;
   flex-direction: column;
+  flex-shrink: 0;
+}
+
+.drawer__content {
+  height: 100%;
+  overflow-y: auto;
+}
+
+.drawer__header {
+  min-height: 64px;
+  padding: 16px 16px 4px 16px;
 }
 
 .drawer.open {
   --drawer-width: var(--drawer-open-width);
 }
 
-.drawer__inner {
+.drawer__header, .drawer__content {
   width: var(--drawer-desktop-width);
 }
 

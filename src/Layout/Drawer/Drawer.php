@@ -20,6 +20,7 @@ class Drawer extends AbstractContainerTag
 
   protected $_state = self::STATE_CLOSED;
   protected $_reveal = self::REVEAL_NONE;
+  protected $_header = [];
   protected $_appContent = [];
 
   /**
@@ -62,7 +63,21 @@ class Drawer extends AbstractContainerTag
 
   protected function _getContentForRender()
   {
-    return Div::create(parent::_getContentForRender())->addClass('drawer__inner');
+    $content = [];
+
+    if($this->_header)
+    {
+      $content[] = Div::create($this->_header)->addClass('drawer__header');
+    }
+    $content[] = Div::create(parent::_getContentForRender())->addClass('drawer__content');
+
+    return $content;
+  }
+
+  public function setHeader(...$content)
+  {
+    $this->_header = $content;
+    return $this;
   }
 
   public function setAppContent(...$content)

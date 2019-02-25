@@ -3,6 +3,7 @@ namespace PackagedUi\Elegance\Demo;
 
 use Packaged\Glimpse\Tags\Lists\ListItem;
 use Packaged\Glimpse\Tags\Lists\UnorderedList;
+use Packaged\Glimpse\Tags\Text\HeadingSix;
 use Packaged\Glimpse\Tags\Text\HeadingThree;
 use Packaged\SafeHtml\SafeHtml;
 use PackagedUi\Elegance\Elegance;
@@ -24,12 +25,73 @@ class DrawerDemo extends DemoSection
               'Shared with me',
               'Starred',
               'Recent',
+              'All Photos',
+              'Shared with me',
+              'Starred',
+              'Recent',
+              'All Photos',
+              'Shared with me',
+              'Starred',
+              'Recent',
+              'All Photos',
+              'Shared with me',
+              'Starred',
+              'Recent',
+              'All Photos',
+              'Shared with me',
+              'Starred',
+              'Recent',
+              'All Photos',
+              'Shared with me',
+              'Starred',
+              'Recent',
+              'All Photos',
+              'Shared with me',
+              'Starred',
+              'Recent',
+              'All Photos',
+              'Shared with me',
+              'Starred',
+              'Recent',
+              'All Photos',
+              'Shared with me',
+              'Starred',
+              'Recent',
+              'All Photos',
+              'Shared with me',
+              'Starred',
+              'Recent',
+              'All Photos',
+              'Shared with me',
+              'Starred',
+              'Recent',
+              'All Photos',
+              'Shared with me',
+              'Starred',
+              'Recent',
+              'All Photos',
+              'Shared with me',
+              'Starred',
+              'Recent',
+              'All Photos',
+              'Shared with me',
+              'Starred',
+              'Recent',
+              'All Photos',
+              'Shared with me',
+              'Starred',
+              'Recent',
+              'All Photos',
+              'Shared with me',
+              'Starred',
+              'Recent',
             ]
           )
         )
       )
+        ->setHeader(HeadingThree::create("My App"), HeadingSix::create("Sub Title"))
         ->setState(Drawer::STATE_NARROW)
-        ->setReveal(Drawer::REVEAL_MODAL)
+        ->setReveal(Drawer::REVEAL_PEEK)
         ->setAppContent(new TypographyDemo());
 
     return SafeHtml::escape($return);
