@@ -1,0 +1,29 @@
+window.Elegance = window.Elegance || {};
+
+(function (window, document, undefined) {
+  window.Elegance.on = function (delegate, eventName, selector, callback) {
+    if(callback === undefined)
+    {
+      callback = selector;
+      selector = '';
+    }
+    delegate.addEventListener(
+      eventName,
+      function (e) {
+        if(!selector)
+        {
+          return callback(e);
+        }
+        var t = e.target;
+        do
+        {
+          if(t.matches(selector))
+          {
+            return callback(e);
+          }
+        }
+        while(t.parentElement && (t = t.parentElement))
+      }
+    );
+  };
+}(window, document));

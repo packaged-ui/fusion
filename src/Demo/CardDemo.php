@@ -2,6 +2,7 @@
 namespace PackagedUi\Elegance\Demo;
 
 use Packaged\Glimpse\Tags\LineBreak;
+use Packaged\SafeHtml\SafeHtml;
 use PackagedUi\Elegance\Button\EleganceButton;
 use PackagedUi\Elegance\Card\Card;
 use PackagedUi\Elegance\Layout\Flex;
@@ -9,7 +10,7 @@ use PackagedUi\Elegance\Layout\FlexGrow;
 
 class CardDemo extends DemoSection
 {
-  protected function _content()
+  protected function _content(): SafeHtml
   {
     $return = [];
 
@@ -24,6 +25,6 @@ class CardDemo extends DemoSection
     $return[] = Card::create('Card Content')->setHeader($header);
     $return[] = LineBreak::create();
     $return[] = Card::create('Card Content')->disableContentContainer();
-    return $return;
+    return SafeHtml::escape($return);
   }
 }
