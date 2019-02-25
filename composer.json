@@ -10,7 +10,7 @@
   ],
   "require": {
     "php": ">=7.1",
-    "packaged/dispatch": "2.0.0-beta4",
+    "packaged/dispatch": "2.0.0-beta5",
     "packaged/glimpse": "~2.4",
     "packaged/safehtml": "~2.0"
   },
