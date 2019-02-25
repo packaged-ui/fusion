@@ -3,12 +3,13 @@ namespace PackagedUi\Elegance\Demo;
 
 use Packaged\Glimpse\Tags\Div;
 use Packaged\Glimpse\Tags\Span;
+use Packaged\SafeHtml\SafeHtml;
 use PackagedUi\Elegance\Badge;
 use PackagedUi\Elegance\Elegance;
 
 class BadgeDemo extends DemoSection
 {
-  protected function _content()
+  protected function _content(): SafeHtml
   {
     $return = [];
 
@@ -18,6 +19,6 @@ class BadgeDemo extends DemoSection
       Elegance::BADGE_ADDED_MARGIN,
       Elegance::DISPLAY_INLINE_BLOCK
     );
-    return $return;
+    return SafeHtml::escape($return);
   }
 }

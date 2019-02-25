@@ -9,6 +9,7 @@ class Elegance implements DispatchableComponent, LayoutInterface, TypographyInte
                           TableInterface, ThemeInterface
 {
   const FILE_BASE_CSS = 'css/base.min.css';
+  const FILE_BASE_JS = 'js/base.min.js';
 
   public static function includeGoogleFont($family = 'Roboto')
   {

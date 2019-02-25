@@ -4,12 +4,13 @@ namespace PackagedUi\Elegance\Demo;
 use Packaged\Glimpse\Tags\Div;
 use Packaged\Glimpse\Tags\Text\HeadingOne;
 use Packaged\Glimpse\Tags\Text\HeadingSix;
+use Packaged\SafeHtml\SafeHtml;
 use PackagedUi\Elegance\Button\EleganceButton;
 use PackagedUi\Elegance\Elegance;
 
 class ThemeDemo extends DemoSection
 {
-  protected function _content()
+  protected function _content(): SafeHtml
   {
     $return = [];
 
@@ -23,10 +24,10 @@ class ThemeDemo extends DemoSection
             EleganceButton::create("+")->fab(),
           ]
         )->addClass(Elegance::PADDING_LARGE, Elegance::THEME_BG_PRIMARY),
-        Div::create("This is some standard content")
+        Div::create("This is some standard content"),
       ]
     );
 
-    return $return;
+    return SafeHtml::escape($return);
   }
 }

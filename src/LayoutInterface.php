@@ -73,4 +73,5 @@ interface LayoutInterface
   const ALIGN_BOTTOM = 'ab';
   const ALIGN_MIDDLE = 'am';
 
+  const DRAWER_TOGGLE = 'drawer__toggle';
 }

@@ -3,13 +3,14 @@ namespace PackagedUi\Elegance\Demo;
 
 use Packaged\Dispatch\ResourceManager;
 use Packaged\Glimpse\Tags\LineBreak;
+use Packaged\SafeHtml\SafeHtml;
 use PackagedUi\Elegance\Layout\Grid\GridCell;
 use PackagedUi\Elegance\Layout\Grid\GridInner;
 use PackagedUi\Elegance\Layout\Grid\GridLayout;
 
 class GridDemo extends DemoSection
 {
-  protected function _content()
+  protected function _content(): SafeHtml
   {
     ResourceManager::inline()->requireCss(
       "
@@ -145,6 +146,6 @@ class GridDemo extends DemoSection
       )->bordered()
     );
 
-    return $return;
+    return SafeHtml::escape($return);
   }
 }

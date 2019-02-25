@@ -3,12 +3,13 @@ namespace PackagedUi\Elegance\Demo;
 
 use Packaged\Glimpse\Tags\LineBreak;
 use Packaged\Glimpse\Tags\Link;
+use Packaged\SafeHtml\SafeHtml;
 use PackagedUi\Elegance\Button\EleganceButton;
 use PackagedUi\Elegance\Elegance;
 
 class ButtonDemo extends DemoSection
 {
-  protected function _content()
+  protected function _content(): SafeHtml
   {
     $return = [];
 
@@ -93,6 +94,6 @@ class ButtonDemo extends DemoSection
 
     $return[] = EleganceButton::create("+")->fab();
 
-    return $return;
+    return SafeHtml::escape($return);
   }
 }

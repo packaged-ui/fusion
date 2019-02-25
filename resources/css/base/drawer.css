@@ -1,0 +1,102 @@
+:root {
+  --drawer-desktop-width: 256px;
+  --drawer-tablet-width: 256px; /*200px;*/
+  --drawer-phone-width: 256px;
+  --drawer-narrow-width: 56px;
+
+  --drawer-transition-style: 250ms ease-in-out
+}
+
+.drawer {
+  position: fixed;
+  left: 0;
+  top: 0;
+  bottom: 0;
+  width: var(--drawer-width, 0);
+
+  z-index: 9999;
+
+  overflow: hidden;
+
+  transition: width var(--drawer-transition-style);
+}
+
+.drawer.open {
+  --drawer-width: var(--drawer-open-width);
+}
+
+.drawer__inner {
+  width: var(--drawer-desktop-width);
+}
+
+@media (min-width: 840px) {
+  :root {
+    --drawer-open-width: var(--drawer-desktop-width);
+  }
+}
+
+@media (min-width: 480px) and (max-width: 839px) {
+  :root {
+    --drawer-open-width: var(--drawer-tablet-width);
+  }
+}
+
+@media (max-width: 479px) {
+  :root {
+    --drawer-open-width: var(--drawer-phone-width);
+  }
+
+  .drawer:not([min-state="narrow"]),
+  .drawer:not([min-state="narrow"]) + .drawer-app-content {
+    --drawer-narrow-width: 0;
+  }
+}
+
+.drawer[state="narrow"] {
+  min-width: var(--drawer-narrow-width);
+}
+
+.drawer__toggle {
+  user-select: none;
+}
+
+.drawer[state="narrow"] + .drawer-app-content {
+  margin-left: var(--drawer-narrow-width);
+}
+
+.drawer[state="narrow"].open + .drawer-app-content {
+  /*margin-left: var(--drawer-open-width);*/
+}
+
+.drawer[min-state="narrow"] {
+  width: var(--drawer-narrow-width);
+}
+
+.drawer[min-state="narrow"] + .drawer-app-content {
+  margin-left: var(--drawer-narrow-width);
+}
+
+.drawer[state="narrow"][reveal="peek"]:hover,
+.drawer[min-state="permanent"],
+.drawer[state="permanent"].open {
+  width: var(--drawer-open-width);
+}
+
+.drawer[min-state="permanent"] + .drawer-app-content,
+.drawer[state="permanent"].open + .drawer-app-content {
+  margin-left: var(--drawer-open-width);
+}
+
+.drawer[reveal="modal"].open + .drawer-app-content::before {
+  content: ' ';
+  position: fixed;
+  top: 0;
+  right: 0;
+  bottom: 0;
+  left: 0;
+  background: rgba(0, 0, 0, 0.7);
+}
+
+.drawer-app-content {
+  transition: margin-left var(--drawer-transition-style);
+}

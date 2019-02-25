@@ -7,7 +7,7 @@ module.exports = function (grunt) {
             shorthandCompacting: true,
             keepSpecialComments: 0
           },
-          files:   {
+          files: {
             'resources/css/base.min.css': [
               'node_modules/normalize.css/normalize.css',
               'resources/css/base/_base.css',
@@ -15,22 +15,36 @@ module.exports = function (grunt) {
             ]
           }
         },
-        base:    {
+        base: {
           files: [
             {
               expand: true,
-              cwd:    'resources/css/',
-              src:    ['*.css', '!*.min.css'],
-              dest:   'resources/css/',
-              ext:    '.min.css'
+              cwd: 'resources/css/',
+              src: ['*.css', '!*.min.css'],
+              dest: 'resources/css/',
+              ext: '.min.css'
             }
           ]
         }
       },
-      watch:  {
+      uglify: {
+        base: {
+          files: {
+            'resources/js/base.min.js': ['resources/js/base/*.js', '!*.min.js'],
+          }
+        }
+      },
+      watch: {
+        styles: {
+          files: ['resources/css/**/*.css'],
+          tasks: ['cssmin'],
+          options: {
+            spawn: false,
+          }
+        },
         scripts: {
-          files:   ['resources/css/**/*.css'],
-          tasks:   ['cssmin'],
+          files: ['resources/js/**/*.js'],
+          tasks: ['uglify'],
           options: {
             spawn: false,
           },
@@ -40,6 +54,7 @@ module.exports = function (grunt) {
   );
 
   grunt.loadNpmTasks('grunt-contrib-cssmin');
+  grunt.loadNpmTasks('grunt-contrib-uglify');
   grunt.loadNpmTasks('grunt-contrib-watch');
-  grunt.registerTask('default', ['cssmin', 'watch']);
+  grunt.registerTask('default', ['cssmin', 'uglify', 'watch']);
 };

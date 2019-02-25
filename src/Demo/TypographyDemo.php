@@ -35,11 +35,12 @@ use Packaged\Glimpse\Tags\Text\SmallText;
 use Packaged\Glimpse\Tags\Text\StrongText;
 use Packaged\Glimpse\Tags\Text\UnderlinedText;
 use Packaged\Glimpse\Tags\Text\Variable;
+use Packaged\SafeHtml\SafeHtml;
 use PackagedUi\Elegance\Elegance;
 
 class TypographyDemo extends DemoSection
 {
-  protected function _content()
+  protected function _content(): SafeHtml
   {
     $return = [];
 
@@ -181,6 +182,6 @@ class TypographyDemo extends DemoSection
       Figure::forImage(Image::create('https://picsum.photos/400/200'), FigureCaption::create('Random image'))
     );
 
-    return $return;
+    return SafeHtml::escape($return);
   }
 }
