@@ -42,6 +42,10 @@
   padding: 16px 16px 4px 16px;
 }
 
+.drawer-app-content {
+  height: 100%;
+}
+
 .drawer.open {
   --drawer-width: var(--drawer-open-width);
 }
@@ -125,7 +129,6 @@
   background-color: rgba(0, 0, 0, 0.7);
   transition: opacity var(--drawer-transition-style);
 }
-
 
 .drawer[reveal="modal"] + .drawer-app-content {
   transition: margin-left var(--drawer-transition-style);
