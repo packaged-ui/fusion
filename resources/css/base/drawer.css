@@ -24,6 +24,11 @@
   border-color: rgba(0, 0, 0, .12);
   border-right-width: 1px;
   border-right-style: solid;
+
+  text-align: left;
+
+  display: flex;
+  flex-direction: column;
 }
 
 .drawer.open {
