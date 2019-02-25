@@ -3,8 +3,8 @@
   --drawer-tablet-width: 256px; /*200px;*/
   --drawer-phone-width: 256px;
   --drawer-narrow-width: 56px;
-
-  --drawer-transition-style: 250ms ease-in-out
+  --drawer-transition-style: 300ms ease-in-out;
+  --drawer-background-color: var(--el-content-background-color);
 }
 
 .drawer {
@@ -19,6 +19,11 @@
   overflow: hidden;
 
   transition: width var(--drawer-transition-style);
+  background-color: rgb(var(--drawer-background-color));
+
+  border-color: rgba(0, 0, 0, .12);
+  border-right-width: 1px;
+  border-right-style: solid;
 }
 
 .drawer.open {
@@ -88,15 +93,23 @@
 }
 
 .drawer[reveal="modal"].open + .drawer-app-content::before {
+  opacity: 1;
+}
+
+.drawer[reveal="modal"] + .drawer-app-content::before {
   content: ' ';
+  pointer-events: none;
   position: fixed;
   top: 0;
   right: 0;
   bottom: 0;
   left: 0;
-  background: rgba(0, 0, 0, 0.7);
+  opacity: 0;
+  background-color: rgba(0, 0, 0, 0.7);
+  transition: opacity var(--drawer-transition-style);
 }
 
-.drawer-app-content {
+
+.drawer[reveal="modal"] + .drawer-app-content {
   transition: margin-left var(--drawer-transition-style);
 }

@@ -21,9 +21,6 @@ class Demo implements ContextAware, DispatchableComponent
     $rm->requireCss(Elegance::FILE_BASE_CSS);
     $rm->requireJs(Elegance::FILE_BASE_JS);
 
-    $rmd = ResourceManager::component($this);
-    $rmd->requireCss('demo.css');
-
     $rendered = '';
 
     $elements = [];
@@ -38,7 +35,7 @@ class Demo implements ContextAware, DispatchableComponent
     $elements['progress'] = new ProgressDemo();
     $elements['drawer'] = new DrawerDemo();
 
-    $path = ltrim($this->getContext()->getRequest()->path(), '/');
+    $path = ltrim($this->getContext()->request()->path(), '/');
     switch($path)
     {
       case "":
@@ -56,7 +53,8 @@ class Demo implements ContextAware, DispatchableComponent
         break;
     }
 
-    $content = '<!doctype html> <html> <head> <meta charset="UTF-8"> <meta name="viewport" content="width=device-width, initial-scale=1"> '
+    $content = '<!doctype html> <html> <head>'
+      . '<meta charset="UTF-8"> <meta name="viewport" content="width=device-width, initial-scale=1"> '
       . Dispatch::instance()->store()->generateHtmlIncludes(ResourceStore::TYPE_CSS)
       . ' </head> <body class="demo-page"> '
       . $rendered
