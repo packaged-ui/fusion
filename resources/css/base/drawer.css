@@ -75,6 +75,7 @@
   .drawer:not([min-state="narrow"]),
   .drawer:not([min-state="narrow"]) + .drawer-app-content {
     --drawer-narrow-width: 0;
+    border-right-width: 0;
   }
 }
 
