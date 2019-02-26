@@ -35,14 +35,19 @@ class Demo implements ContextAware, DispatchableComponent
     $elements['progress'] = new ProgressDemo();
     $elements['drawer'] = new DrawerDemo();
 
+    $exclude = ['drawer'];
+
     $path = ltrim($this->getContext()->request()->path(), '/');
     switch($path)
     {
       case "":
-        foreach($elements as $class)
+        foreach($elements as $k => $class)
         {
-          $rendered .= $class->produceSafeHTML()->getContent();
-          $rendered .= '<br/>';
+          if(!in_array($k, $exclude))
+          {
+            $rendered .= $class->produceSafeHTML()->getContent();
+            $rendered .= '<br/>';
+          }
         }
         break;
       default:

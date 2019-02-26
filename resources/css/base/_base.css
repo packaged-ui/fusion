@@ -80,11 +80,10 @@ body {
 }
 
 a {
-  --el-text-color: var(--el-color-accent);
-  color: rgb(var(--el-color-accent));
   text-decoration: none;
 }
 
 a:hover, a:active {
   text-decoration: underline;
+  --text-opacity: 1;
 }
