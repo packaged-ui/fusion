@@ -2,22 +2,27 @@
 
   window.Elegance.on(
     document, 'click', '.drawer__toggle',
-    function () {
+    function (e) {
       var ele = document.querySelector('.drawer');
-      if(ele.classList.contains('open'))
+      if(ele)
       {
-        ele.classList.remove('open');
-      }
-      else
-      {
-        ele.classList.add('open');
+        if(ele.classList.contains('open'))
+        {
+          ele.classList.remove('open');
+        }
+        else
+        {
+          ele.classList.add('open');
+        }
+        e.stopPropagation();
+        e.stopImmediatePropagation();
       }
     }
   );
 
   window.Elegance.on(
-    document, 'click', '.drawer-app-content',
-    function () {
+    document, 'click', '.drawer[reveal="modal"].open + .drawer-app-content',
+    function (e) {
       document.querySelector('.drawer').classList.remove('open');
     }
   );
