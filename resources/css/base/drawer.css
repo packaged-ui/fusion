@@ -44,6 +44,7 @@ body {
 
 .drawer__content, .drawer__header {
   box-sizing: border-box;
+  position: relative;
 }
 
 .drawer-app-content {
