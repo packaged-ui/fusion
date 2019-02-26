@@ -74,7 +74,11 @@ interface LayoutInterface
   const ALIGN_MIDDLE = 'am';
 
   const DRAWER_TOGGLE = 'drawer__toggle';
+
+  //Hide on mobile
+  const DRAWER_HIDE_MOBILE = 'drawer_action--hide-mobile';
   //Shown on mobile only
-  const DRAWER_SECONDARY_TOGGLE = 'drawer__secondary_toggle';
+  const DRAWER_HIDE_NON_MOBILE = 'drawer_action--hide-non-mobile';
+
   const DRAWER_OPEN = 'drawer--open';
 }

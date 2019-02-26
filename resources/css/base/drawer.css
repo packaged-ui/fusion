@@ -97,8 +97,9 @@ body {
   }
 }
 
+/** NOT MOBILE */
 @media (min-width: 480px) {
-  .drawer__secondary_toggle {
+  .drawer_action--hide-non-mobile {
     display: none !important;
   }
 
@@ -137,9 +138,14 @@ body {
   }
 }
 
+/** MOBILE */
 @media (max-width: 479px) {
   body {
     --drawer-open-width: var(--drawer-phone-width);
+  }
+
+  .drawer_action--hide-mobile {
+    display: none !important;
   }
 
   .drawer.drawer--open + .drawer-app-content::before {
