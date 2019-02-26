@@ -21,9 +21,13 @@
   );
 
   window.Elegance.on(
-    document, 'click', '.drawer[reveal="modal"].drawer--open + .drawer-app-content',
-    function (e) {
-      document.querySelector('.drawer').classList.remove('drawer--open');
+    document, 'click', '.drawer.drawer--open + .drawer-app-content',
+    function () {
+      if(window.getComputedStyle(document.querySelector('.drawer-app-content'), "::before")
+               .getPropertyValue('opacity') === '1')
+      {
+        document.querySelector('.drawer').classList.remove('drawer--open');
+      }
     }
   );
 
