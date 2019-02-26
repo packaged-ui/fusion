@@ -42,6 +42,10 @@ body {
   padding: 16px 16px 4px 16px;
 }
 
+.drawer__content, .drawer__header {
+  box-sizing: border-box;
+}
+
 .drawer-app-content {
   height: 100%;
   transition: margin-left var(--drawer-transition-style);
