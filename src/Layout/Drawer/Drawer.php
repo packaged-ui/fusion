@@ -5,6 +5,7 @@ use Packaged\Glimpse\Core\AbstractContainerTag;
 use Packaged\Glimpse\Core\HtmlTag;
 use Packaged\Glimpse\Tags\Div;
 use Packaged\SafeHtml\SafeHtml;
+use PackagedUi\Elegance\LayoutInterface;
 
 class Drawer extends AbstractContainerTag
 {
@@ -19,7 +20,9 @@ class Drawer extends AbstractContainerTag
   protected $_tag = 'aside';
 
   protected $_state = self::STATE_CLOSED;
+  protected $_minState = self::STATE_CLOSED;
   protected $_reveal = self::REVEAL_NONE;
+  protected $_isOpen = false;
   protected $_header = [];
   protected $_appContent = [];
 
@@ -43,6 +46,25 @@ class Drawer extends AbstractContainerTag
   }
 
   /**
+   * @return string
+   */
+  public function getMinState(): string
+  {
+    return $this->_minState;
+  }
+
+  /**
+   * @param string $minState
+   *
+   * @return Drawer
+   */
+  public function setMinState(string $minState): Drawer
+  {
+    $this->_minState = $minState;
+    return $this;
+  }
+
+  /**
    * @param string $reveal
    *
    * @return Drawer
@@ -50,6 +72,17 @@ class Drawer extends AbstractContainerTag
   public function setReveal(string $reveal): Drawer
   {
     $this->_reveal = $reveal;
+    return $this;
+  }
+
+  /**
+   * @param bool $isOpen
+   *
+   * @return Drawer
+   */
+  public function setOpen($isOpen = true): Drawer
+  {
+    $this->_isOpen = $isOpen;
     return $this;
   }
 
@@ -93,9 +126,17 @@ class Drawer extends AbstractContainerTag
     {
       $drawer->setAttribute('state', $this->_state);
     }
+    if($this->_minState)
+    {
+      $drawer->setAttribute('min-state', $this->_minState);
+    }
     if($this->_reveal)
     {
       $drawer->setAttribute('reveal', $this->_reveal);
+    }
+    if($this->_isOpen)
+    {
+      $drawer->addClass(LayoutInterface::DRAWER_OPEN);
     }
 
     return $drawer;

@@ -74,4 +74,5 @@ interface LayoutInterface
   const ALIGN_MIDDLE = 'am';
 
   const DRAWER_TOGGLE = 'drawer__toggle';
+  const DRAWER_OPEN = 'drawer--open';
 }
