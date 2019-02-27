@@ -34,6 +34,7 @@ class Demo implements ContextAware, DispatchableComponent
     $elements['card'] = new CardDemo();
     $elements['progress'] = new ProgressDemo();
     $elements['drawer'] = new DrawerDemo();
+    $elements['lists'] = new MenuDemo();
 
     $exclude = ['drawer'];
 
