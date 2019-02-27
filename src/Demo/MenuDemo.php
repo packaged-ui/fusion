@@ -2,6 +2,7 @@
 namespace PackagedUi\Elegance\Demo;
 
 use Packaged\SafeHtml\SafeHtml;
+use PackagedUi\Elegance\Menu\Menu;
 use PackagedUi\Elegance\Menu\MenuItem;
 
 class MenuDemo extends DemoSection
@@ -9,14 +10,18 @@ class MenuDemo extends DemoSection
   protected function _content(): SafeHtml
   {
     $return = [];
-    $return[] = MenuItem::create()->setPrimary('primary');
-    $return[] = MenuItem::create()->setPrimary('primary')->setTrailing('T');
-    $return[] = MenuItem::create()->setPrimary('primary')->setLeading('L');
-    $return[] = MenuItem::create()->setPrimary('primary')->setLeading('L')->setTrailing('T');
-    $return[] = MenuItem::create()->setPrimary('primary')->setSecondary('secondary');
-    $return[] = MenuItem::create()->setPrimary('primary')->setSecondary('secondary')->setTrailing('T');
-    $return[] = MenuItem::create()->setPrimary('primary')->setSecondary('secondary')->setLeading('L');
-    $return[] = MenuItem::create()->setPrimary('primary')->setSecondary('secondary')->setLeading('L')->setTrailing('T');
+    $return[] = Menu::create(
+      MenuItem::create()->setLink('/menu')->setPrimary('primary'),
+      MenuItem::create()->setLink('/menu')->setPrimary('primary')->setTrailing('T'),
+      MenuItem::create()->setLink('/menu')->setPrimary('primary')->setLeading('L'),
+      MenuItem::create()->setLink('/menu')->setPrimary('primary')->setLeading('L')->setTrailing('T'),
+      MenuItem::create()->setLink('/menu')->setPrimary('primary')->setSecondary('secondary'),
+      MenuItem::create()->setLink('/menu')->setPrimary('primary')->setSecondary('secondary')->setTrailing('T'),
+      MenuItem::create()->setLink('/menu')->setPrimary('primary')->setSecondary('secondary')->setLeading('L'),
+      MenuItem::create()
+        ->setLink('/menu')
+        ->setPrimary('primary')->setSecondary('secondary')->setLeading('L')->setTrailing('T')
+    );
 
     return SafeHtml::escape($return);
   }

@@ -1,22 +1,22 @@
 (function (window, document) {
 
   window.Elegance.on(
-    document, 'click', '.menu-item',
+    document, 'click', '.list-item',
     function (e) {
       var ele = e.target;
-      while((!ele.matches('.menu-item')) && ele.parentElement)
+      while((!ele.matches('.list-item')) && ele.parentElement)
       {
         ele = ele.parentElement;
       }
-      var eles = ele.parentElement.querySelectorAll('.menu-item--active');
+      var eles = ele.parentElement.querySelectorAll('.list-item--active');
       for(var i in eles)
       {
         if(eles.hasOwnProperty(i) && eles[i] !== e.target)
         {
-          eles[i].classList.remove('menu-item--active');
+          eles[i].classList.remove('list-item--active');
         }
       }
-      ele.classList.add('menu-item--active');
+      ele.classList.add('list-item--active');
     }
   );
 
