@@ -3,7 +3,19 @@ window.Elegance.List = window.Elegance.List || {};
 
 (function (window, document, Elegance) {
   Elegance.List.SetActive = function (ele) {
-    var eles = ele.parentElement.querySelectorAll('.list-item--active');
+    // find top list
+    var list;
+    var t = ele;
+    do
+    {
+      if(t.matches('.list-box'))
+      {
+        list = t;
+      }
+    }
+    while((t = t.parentElement));
+
+    var eles = list.querySelectorAll('.list-item--active');
     for(var i in eles)
     {
       if(eles.hasOwnProperty(i) && eles[i] !== ele)
