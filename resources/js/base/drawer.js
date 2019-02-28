@@ -1,6 +1,8 @@
-(function (window, document) {
+window.Elegance = window.Elegance || {};
 
-  window.Elegance.on(
+(function (window, document, Elegance) {
+
+  Elegance.on(
     document, 'click', '.drawer__toggle',
     function (e) {
       var ele = document.querySelector('.drawer');
@@ -20,7 +22,7 @@
     }
   );
 
-  window.Elegance.on(
+  Elegance.on(
     document, 'click', '.drawer.drawer--open + .drawer-app-content',
     function () {
       if(window.getComputedStyle(document.querySelector('.drawer-app-content'), "::before")
@@ -31,4 +33,4 @@
     }
   );
 
-}(window, document));
+}(window, document, window.Elegance));

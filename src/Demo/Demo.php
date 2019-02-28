@@ -39,7 +39,7 @@ class Demo implements ContextAware, DispatchableComponent
 
     $exclude = ['drawer'];
 
-    $path = ltrim($this->getContext()->request()->path(), '/');
+    $path = ltrim($this->getContext()->request()->path(1), '/');
     switch($path)
     {
       case "":

@@ -6,7 +6,7 @@ use Packaged\Dispatch\ResourceManager;
 use PackagedUi\Elegance\Layout\TableInterface;
 
 class Elegance implements DispatchableComponent, LayoutInterface, TypographyInterface, ButtonInferface, BadgeInterface,
-                          TableInterface, ThemeInterface
+                          TableInterface, ThemeInterface, ListInterface
 {
   const FILE_BASE_CSS = 'css/base.min.css';
   const FILE_BASE_JS = 'js/base.min.js';
