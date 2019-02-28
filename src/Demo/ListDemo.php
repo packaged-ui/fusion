@@ -11,14 +11,14 @@ class ListDemo extends DemoSection
   {
     $return = [];
     $return[] = ListBox::create(
-      ListItem::create()->setPrimary('primary'),
-      ListItem::create()->setPrimary('primary')->setTrailing('T'),
-      ListItem::create()->setPrimary('primary')->setLeading('L'),
-      ListItem::create()->setPrimary('primary')->setLeading('L')->setTrailing('T'),
-      ListItem::create()->setPrimary('primary')->setSecondary('secondary'),
-      ListItem::create()->setPrimary('primary')->setSecondary('secondary')->setTrailing('T'),
-      ListItem::create()->setPrimary('primary')->setSecondary('secondary')->setLeading('L'),
-      ListItem::create()->setPrimary('primary')->setSecondary('secondary')->setLeading('L')->setTrailing('T')
+      ListItem::create('primary 1'),
+      ListItem::create('primary 2')->setTrailing('T'),
+      ListItem::create('primary 3')->setLeading('L'),
+      ListItem::create('primary 4')->setLeading('L')->setTrailing('T'),
+      ListItem::create('primary 5')->setSecondary('secondary'),
+      ListItem::create('primary 6')->setSecondary('secondary')->setTrailing('T'),
+      ListItem::create('primary 7')->setSecondary('secondary')->setLeading('L'),
+      ListItem::create('primary 8')->setSecondary('secondary')->setLeading('L')->setTrailing('T')
     );
 
     return SafeHtml::escape($return);

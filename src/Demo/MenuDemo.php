@@ -11,16 +11,14 @@ class MenuDemo extends DemoSection
   {
     $return = [];
     $return[] = Menu::create(
-      MenuItem::create()->setLink('/menu/1')->setPrimary('primary'),
-      MenuItem::create()->setLink('/menu/2')->setPrimary('primary')->setTrailing('T'),
-      MenuItem::create()->setLink('/menu/3')->setPrimary('primary')->setLeading('L'),
-      MenuItem::create()->setLink('/menu/4')->setPrimary('primary')->setLeading('L')->setTrailing('T'),
-      MenuItem::create()->setLink('/menu/5')->setPrimary('primary')->setSecondary('secondary'),
-      MenuItem::create()->setLink('/menu/6')->setPrimary('primary')->setSecondary('secondary')->setTrailing('T'),
-      MenuItem::create()->setLink('/menu/7')->setPrimary('primary')->setSecondary('secondary')->setLeading('L'),
-      MenuItem::create()
-        ->setLink('/menu/8')
-        ->setPrimary('primary')->setSecondary('secondary')->setLeading('L')->setTrailing('T')
+      MenuItem::create('primary 1')->setHref('/menu/1'),
+      MenuItem::create('primary 2')->setHref('/menu/2')->setTrailing('T'),
+      MenuItem::create('primary 3')->setHref('/menu/3')->setLeading('L'),
+      MenuItem::create('primary 4')->setHref('/menu/4')->setLeading('L')->setTrailing('T'),
+      MenuItem::create('primary 5')->setHref('/menu/5')->setSecondary('secondary'),
+      MenuItem::create('primary 6')->setHref('/menu/6')->setSecondary('secondary')->setTrailing('T'),
+      MenuItem::create('primary 7')->setHref('/menu/7')->setSecondary('secondary')->setLeading('L'),
+      MenuItem::create('primary 8')->setHref('/menu/8')->setSecondary('secondary')->setLeading('L')->setTrailing('T')
     );
 
     return SafeHtml::escape($return);

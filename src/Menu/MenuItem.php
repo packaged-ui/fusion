@@ -7,14 +7,14 @@ use PackagedUi\Elegance\Lists\ListItem;
 class MenuItem extends ListItem
 {
   protected $_tag = 'a';
-  protected $_link;
+  protected $_href;
 
   /**
    * @return mixed
    */
-  public function getLink()
+  public function getHref()
   {
-    return $this->_link;
+    return $this->_href;
   }
 
   /**
@@ -22,18 +22,18 @@ class MenuItem extends ListItem
    *
    * @return static
    */
-  public function setLink($link)
+  public function setHref($link)
   {
-    $this->_link = $link;
+    $this->_href = $link;
     return $this;
   }
 
   protected function _prepareForProduce(): HtmlTag
   {
     $ele = parent::_prepareForProduce()->addClass('menu-item');
-    if($this->_link !== null)
+    if($this->_href !== null)
     {
-      $ele->setAttribute('href', $this->_link);
+      $ele->setAttribute('href', $this->_href);
     }
     return $ele;
   }

@@ -14,6 +14,17 @@ class ListItem extends HtmlTag
   protected $_leading;
   protected $_trailing;
 
+  public function __construct($primary = null)
+  {
+    parent::__construct();
+    $this->setPrimary($primary);
+  }
+
+  public static function create($primary = '')
+  {
+    return new static($primary);
+  }
+
   /**
    * @return string
    */
