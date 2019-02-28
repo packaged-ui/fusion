@@ -1,7 +1,5 @@
 body {
-  --drawer-desktop-width: 256px;
-  --drawer-tablet-width: 256px; /*200px;*/
-  --drawer-phone-width: 256px;
+  --drawer-open-width: 256px;
   --drawer-narrow-width: 56px;
   --drawer-transition-style: 300ms ease-in-out;
   --drawer-background-color: var(--el-content-background-color);
@@ -66,7 +64,7 @@ body {
 }
 
 .drawer__header, .drawer__content {
-  width: var(--drawer-desktop-width);
+  width: var(--drawer-open-width);
 }
 
 .drawer__toggle {
@@ -92,21 +90,8 @@ body {
   transition: opacity var(--drawer-transition-style);
 }
 
-
-@media (min-width: 840px) {
-  body {
-    --drawer-open-width: var(--drawer-desktop-width);
-  }
-}
-
-@media (min-width: 480px) and (max-width: 839px) {
-  body {
-    --drawer-open-width: var(--drawer-tablet-width);
-  }
-}
-
 /** NOT MOBILE */
-@media (min-width: 480px) {
+@media (min-width: 600px) {
   .drawer_action--hide-non-mobile {
     display: none !important;
   }
@@ -147,11 +132,7 @@ body {
 }
 
 /** MOBILE */
-@media (max-width: 479px) {
-  body {
-    --drawer-open-width: var(--drawer-phone-width);
-  }
-
+@media (max-width: 599px) {
   .drawer_action--hide-mobile {
     display: none !important;
   }
