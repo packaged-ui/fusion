@@ -33,6 +33,14 @@ body {
   flex-shrink: 0;
 }
 
+.drawer[reveal="peek"]:hover {
+  transition-delay: 0s;
+}
+
+.drawer[reveal="peek"] {
+  transition-delay: 300ms;
+}
+
 .drawer__content {
   height: 100%;
   overflow-y: auto;

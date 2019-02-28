@@ -91,7 +91,7 @@ class DrawerDemo extends DemoSection
       )
         ->setHeader(HeadingThree::create("My App"), HeadingSix::create("Sub Title"))
         ->setState(Drawer::STATE_NARROW)
-        ->setReveal(Drawer::REVEAL_MODAL)
+        ->setReveal(Drawer::REVEAL_PEEK)
         ->setAppContent(new TypographyDemo());
 
     return SafeHtml::escape($return);
