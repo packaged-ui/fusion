@@ -1,5 +1,5 @@
 <?php
-namespace PackagedUi\Elegance;
+namespace PackagedUi\Fusion;
 
 use Packaged\Glimpse\Core\HtmlTag;
 

@@ -1,13 +1,13 @@
 <?php
-namespace PackagedUi\Elegance\Demo;
+namespace PackagedUi\Fusion\Demo;
 
 use Packaged\Glimpse\Tags\Lists\ListItem;
 use Packaged\Glimpse\Tags\Lists\UnorderedList;
 use Packaged\Glimpse\Tags\Text\HeadingSix;
 use Packaged\Glimpse\Tags\Text\HeadingThree;
 use Packaged\SafeHtml\SafeHtml;
-use PackagedUi\Elegance\Elegance;
-use PackagedUi\Elegance\Layout\Drawer\Drawer;
+use PackagedUi\Fusion\Fusion;
+use PackagedUi\Fusion\Layout\Drawer\Drawer;
 
 class DrawerDemo extends DemoSection
 {
@@ -17,7 +17,7 @@ class DrawerDemo extends DemoSection
     $return[] =
       Drawer::create(
         HeadingThree::create('Camera')
-          ->addClass(Elegance::DRAWER_TOGGLE),
+          ->addClass(Fusion::DRAWER_TOGGLE),
         UnorderedList::create(
           ListItem::collection(
             [

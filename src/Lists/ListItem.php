@@ -1,9 +1,9 @@
 <?php
-namespace PackagedUi\Elegance\Lists;
+namespace PackagedUi\Fusion\Lists;
 
 use Packaged\Glimpse\Core\HtmlTag;
 use Packaged\Glimpse\Tags\Div;
-use PackagedUi\Elegance\Elegance;
+use PackagedUi\Fusion\Fusion;
 
 class ListItem extends HtmlTag
 {
@@ -128,11 +128,11 @@ class ListItem extends HtmlTag
       $ele->appendContent(Div::create($this->_leading)->addClass('list-item__leading'));
     }
     $text = Div::create()->addClass('list-item__text');
-    $text->appendContent(Div::create($this->_primary)->addClass(Elegance::TEXT_HIGH_EMPHASIS));
+    $text->appendContent(Div::create($this->_primary)->addClass(Fusion::TEXT_HIGH_EMPHASIS));
     if($this->_secondary)
     {
       $text->appendContent(
-        Div::create($this->_secondary)->addClass('list-item__secondary', Elegance::TEXT_MEDIUM_EMPHASIS)
+        Div::create($this->_secondary)->addClass('list-item__secondary', Fusion::TEXT_MEDIUM_EMPHASIS)
       );
       $ele->addClass('list-item--multi');
     }

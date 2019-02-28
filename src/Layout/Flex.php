@@ -1,9 +1,9 @@
 <?php
-namespace PackagedUi\Elegance\Layout;
+namespace PackagedUi\Fusion\Layout;
 
 use Packaged\Glimpse\Core\AbstractContainerTag;
 use Packaged\Glimpse\Core\HtmlTag;
-use PackagedUi\Elegance\LayoutInterface;
+use PackagedUi\Fusion\LayoutInterface;
 
 class Flex extends AbstractContainerTag
 {

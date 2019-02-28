@@ -1,10 +1,9 @@
 <?php
-namespace PackagedUi\Elegance\Button;
+namespace PackagedUi\Fusion\Button;
 
-use Packaged\Glimpse\Tags\Button;
-use PackagedUi\Elegance\ButtonInferface;
+use PackagedUi\Fusion\ButtonInferface;
 
-class EleganceButton extends Button
+class Button extends \Packaged\Glimpse\Tags\Button
 {
   public function flat()
   {
@@ -95,7 +94,7 @@ class EleganceButton extends Button
     $this->addClass(ButtonInferface::BUTTON_INFO);
     return $this;
   }
-  
+
   public function disable()
   {
     $this->addClass(ButtonInferface::BUTTON_DISABLED);

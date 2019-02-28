@@ -1,5 +1,5 @@
 <?php
-namespace PackagedUi\Elegance\Lists;
+namespace PackagedUi\Fusion\Lists;
 
 use Packaged\Glimpse\Core\AbstractContainerTag;
 use Packaged\Glimpse\Core\HtmlTag;

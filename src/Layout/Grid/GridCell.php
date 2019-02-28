@@ -1,5 +1,5 @@
 <?php
-namespace PackagedUi\Elegance\Layout\Grid;
+namespace PackagedUi\Fusion\Layout\Grid;
 
 use Packaged\Glimpse\Core\HtmlTag;
 use Packaged\Glimpse\Tags\Div;

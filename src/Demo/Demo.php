@@ -1,5 +1,5 @@
 <?php
-namespace PackagedUi\Elegance\Demo;
+namespace PackagedUi\Fusion\Demo;
 
 use Cubex\Context\ContextAware;
 use Cubex\Context\ContextAwareTrait;
@@ -8,7 +8,7 @@ use Packaged\Dispatch\Dispatch;
 use Packaged\Dispatch\ResourceManager;
 use Packaged\Dispatch\ResourceStore;
 use Packaged\Http\Response;
-use PackagedUi\Elegance\Elegance;
+use PackagedUi\Fusion\Fusion;
 
 class Demo implements ContextAware, DispatchableComponent
 {
@@ -16,10 +16,10 @@ class Demo implements ContextAware, DispatchableComponent
 
   public function render()
   {
-    Elegance::includeGoogleFont();
-    $rm = ResourceManager::component(new Elegance());
-    $rm->requireCss(Elegance::FILE_BASE_CSS);
-    $rm->requireJs(Elegance::FILE_BASE_JS);
+    Fusion::includeGoogleFont();
+    $rm = ResourceManager::component(new Fusion());
+    $rm->requireCss(Fusion::FILE_BASE_CSS);
+    $rm->requireJs(Fusion::FILE_BASE_JS);
 
     $rendered = '';
 

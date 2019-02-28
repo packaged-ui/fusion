@@ -1,11 +1,11 @@
 <?php
-namespace PackagedUi\Elegance\Layout\Drawer;
+namespace PackagedUi\Fusion\Layout\Drawer;
 
 use Packaged\Glimpse\Core\AbstractContainerTag;
 use Packaged\Glimpse\Core\HtmlTag;
 use Packaged\Glimpse\Tags\Div;
 use Packaged\SafeHtml\SafeHtml;
-use PackagedUi\Elegance\LayoutInterface;
+use PackagedUi\Fusion\LayoutInterface;
 
 class Drawer extends AbstractContainerTag
 {

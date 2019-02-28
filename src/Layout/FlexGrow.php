@@ -1,9 +1,9 @@
 <?php
-namespace PackagedUi\Elegance\Layout;
+namespace PackagedUi\Fusion\Layout;
 
 use Packaged\Glimpse\Core\HtmlTag;
 use Packaged\Glimpse\Tags\Div;
-use PackagedUi\Elegance\LayoutInterface;
+use PackagedUi\Fusion\LayoutInterface;
 
 class FlexGrow extends Div
 {

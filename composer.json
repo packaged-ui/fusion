@@ -1,5 +1,5 @@
 {
-  "name": "packaged-ui/elegance",
+  "name": "packaged-ui/fusion",
   "description": "User Interface",
   "license": "MIT",
   "authors": [
@@ -19,7 +19,7 @@
   },
   "autoload": {
     "psr-4": {
-      "PackagedUi\\Elegance\\": "src"
+      "PackagedUi\\Fusion\\": "src"
     }
   },
   "repositories": [

@@ -1,10 +1,10 @@
 <?php
-namespace PackagedUi\Elegance\Demo;
+namespace PackagedUi\Fusion\Demo;
 
 use Packaged\Dispatch\ResourceManager;
 use Packaged\Glimpse\Tags\Div;
 use Packaged\SafeHtml\SafeHtml;
-use PackagedUi\Elegance\Elegance;
+use PackagedUi\Fusion\Fusion;
 
 class LayoutDemo extends DemoSection
 {
@@ -32,19 +32,19 @@ class LayoutDemo extends DemoSection
     );
 
     $cells = [];
-    $cells[] = Div::create()->addClass(Elegance::MARGIN_LARGE);
-    $cells[] = Div::create()->addClass(Elegance::PADDING_LARGE);
-    $cells[] = Div::create()->addClass(Elegance::MARGIN_LARGE, Elegance::PADDING_LARGE);
+    $cells[] = Div::create()->addClass(Fusion::MARGIN_LARGE);
+    $cells[] = Div::create()->addClass(Fusion::PADDING_LARGE);
+    $cells[] = Div::create()->addClass(Fusion::MARGIN_LARGE, Fusion::PADDING_LARGE);
     $cells[] = Div::create()->addClass(
-      Elegance::MARGIN_LARGE,
-      Elegance::PADDING_LARGE,
-      Elegance::MARGIN_RIGHT_SMALL
+      Fusion::MARGIN_LARGE,
+      Fusion::PADDING_LARGE,
+      Fusion::MARGIN_RIGHT_SMALL
     );
     $cells[] = Div::create()->addClass(
-      Elegance::MARGIN_LARGE,
-      Elegance::PADDING_LARGE,
-      Elegance::MARGIN_RIGHT_SMALL,
-      Elegance::PADDING_LEFT_MEDIUM
+      Fusion::MARGIN_LARGE,
+      Fusion::PADDING_LARGE,
+      Fusion::MARGIN_RIGHT_SMALL,
+      Fusion::PADDING_LEFT_MEDIUM
     );
 
     return SafeHtml::escape(

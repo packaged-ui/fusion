@@ -1,12 +1,12 @@
 <?php
-namespace PackagedUi\Elegance;
+namespace PackagedUi\Fusion;
 
 use Packaged\Dispatch\Component\DispatchableComponent;
 use Packaged\Dispatch\ResourceManager;
-use PackagedUi\Elegance\Layout\TableInterface;
+use PackagedUi\Fusion\Layout\TableInterface;
 
-class Elegance implements DispatchableComponent, LayoutInterface, TypographyInterface, ButtonInferface, BadgeInterface,
-                          TableInterface, ThemeInterface, ListInterface
+class Fusion implements DispatchableComponent, LayoutInterface, TypographyInterface, ButtonInferface, BadgeInterface,
+                        TableInterface, ThemeInterface, ListInterface
 {
   const FILE_BASE_CSS = 'css/base.min.css';
   const FILE_BASE_JS = 'js/base.min.js';

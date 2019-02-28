@@ -1,5 +1,5 @@
 <?php
-namespace PackagedUi\Elegance\Demo;
+namespace PackagedUi\Fusion\Demo;
 
 use Packaged\Glimpse\Tags\Div;
 use Packaged\Glimpse\Tags\Layout\Footer;
@@ -36,7 +36,7 @@ use Packaged\Glimpse\Tags\Text\StrongText;
 use Packaged\Glimpse\Tags\Text\UnderlinedText;
 use Packaged\Glimpse\Tags\Text\Variable;
 use Packaged\SafeHtml\SafeHtml;
-use PackagedUi\Elegance\Elegance;
+use PackagedUi\Fusion\Fusion;
 
 class TypographyDemo extends DemoSection
 {
@@ -44,7 +44,7 @@ class TypographyDemo extends DemoSection
   {
     $return = [];
 
-    $secondary = SmallText::create('Additional text')->addClass(Elegance::TEXT_MEDIUM_EMPHASIS);
+    $secondary = SmallText::create('Additional text')->addClass(Fusion::TEXT_MEDIUM_EMPHASIS);
     $return[] = HeadingOne::create(['h1. Heading ', $secondary]);
     $return[] = HeadingTwo::create(['h2. Heading ', $secondary]);
     $return[] = HeadingThree::create(['h3. Heading ', $secondary]);
@@ -52,15 +52,15 @@ class TypographyDemo extends DemoSection
     $return[] = HeadingFive::create(['h5. Heading ', $secondary]);
     $return[] = HeadingSix::create(['h6. Heading ', $secondary]);
 
-    $return[] = HeadingOne::create('Display 1')->addClass(Elegance::DISPLAY1);
-    $return[] = HeadingOne::create('Display 2')->addClass(Elegance::DISPLAY2);
-    $return[] = HeadingOne::create('Display 3')->addClass(Elegance::DISPLAY3);
-    $return[] = HeadingOne::create('Display 4')->addClass(Elegance::DISPLAY4);
+    $return[] = HeadingOne::create('Display 1')->addClass(Fusion::DISPLAY1);
+    $return[] = HeadingOne::create('Display 2')->addClass(Fusion::DISPLAY2);
+    $return[] = HeadingOne::create('Display 3')->addClass(Fusion::DISPLAY3);
+    $return[] = HeadingOne::create('Display 4')->addClass(Fusion::DISPLAY4);
     $return[] = Link::create("#", 'Link');
 
     $lorem = 'Lorem ipsum dolor sit amet, ad tibique blandit qui, error zril eleifend ut vel. Et paulo labores molestiae has, ei eos virtute dolorem.';
     $return[] = Paragraph::create($lorem);
-    $return[] = Paragraph::create($lorem)->addClass(Elegance::LEAD_TEXT);
+    $return[] = Paragraph::create($lorem)->addClass(Fusion::LEAD_TEXT);
 
     $return[] = Paragraph::create(['You can use the mark tag to ', MarkedText::create('highlight'), ' text']);
     $return[] = Paragraph::create(DeletedText::create('This line of text is meant to be treated as deleted text.'));
@@ -77,7 +77,7 @@ class TypographyDemo extends DemoSection
     );
     $return[] = Paragraph::create(
       [
-        Abbreviation::create('html', 'HyperText Markup Language')->addClass(Elegance::INITIALISM),
+        Abbreviation::create('html', 'HyperText Markup Language')->addClass(Fusion::INITIALISM),
         ' is the best thing since sliced bread.',
       ]
     );
@@ -100,40 +100,40 @@ class TypographyDemo extends DemoSection
       [$lorem, Footer::create(['- Someone famous in ', Citation::create('Source Title')])]
     );
 
-    $return[] = UnorderedList::create()->addClass(Elegance::LIST_INLINE)
-      ->addItem(Paragraph::create('Primary')->addClass(Elegance::THEME_PRIMARY))
-      ->addItem(Paragraph::create('Accent')->addClass(Elegance::THEME_ACCENT))
-      ->addItem(Paragraph::create('Success')->addClass(Elegance::TEXT_SUCCESS))
-      ->addItem(Paragraph::create('Danger')->addClass(Elegance::TEXT_DANGER))
-      ->addItem(Paragraph::create('Warning')->addClass(Elegance::TEXT_WARNING))
-      ->addItem(Paragraph::create('Info')->addClass(Elegance::TEXT_INFO))
+    $return[] = UnorderedList::create()->addClass(Fusion::LIST_INLINE)
+      ->addItem(Paragraph::create('Primary')->addClass(Fusion::THEME_PRIMARY))
+      ->addItem(Paragraph::create('Accent')->addClass(Fusion::THEME_ACCENT))
+      ->addItem(Paragraph::create('Success')->addClass(Fusion::TEXT_SUCCESS))
+      ->addItem(Paragraph::create('Danger')->addClass(Fusion::TEXT_DANGER))
+      ->addItem(Paragraph::create('Warning')->addClass(Fusion::TEXT_WARNING))
+      ->addItem(Paragraph::create('Info')->addClass(Fusion::TEXT_INFO))
       ->addItem(Paragraph::create('Default'))
-      ->addItem(Paragraph::create('Opaque')->addClass(Elegance::TEXT_OPAQUE))
-      ->addItem(Paragraph::create('High Emphasis')->addClass(Elegance::TEXT_HIGH_EMPHASIS))
-      ->addItem(Paragraph::create('Medium Emphasis')->addClass(Elegance::TEXT_MEDIUM_EMPHASIS))
-      ->addItem(Paragraph::create('Disabled')->addClass(Elegance::TEXT_DISABLED));
+      ->addItem(Paragraph::create('Opaque')->addClass(Fusion::TEXT_OPAQUE))
+      ->addItem(Paragraph::create('High Emphasis')->addClass(Fusion::TEXT_HIGH_EMPHASIS))
+      ->addItem(Paragraph::create('Medium Emphasis')->addClass(Fusion::TEXT_MEDIUM_EMPHASIS))
+      ->addItem(Paragraph::create('Disabled')->addClass(Fusion::TEXT_DISABLED));
 
-    $return[] = UnorderedList::create()->addClass(Elegance::LIST_UNSTYLED)
-      ->addItem(Paragraph::create([CodeBlock::create('.text-tiny'), ' - Text Tiny'])->addClass(Elegance::TEXT_TINY))
-      ->addItem(Paragraph::create([CodeBlock::create('.text-big'), ' - Text Big'])->addClass(Elegance::TEXT_BIG))
-      ->addItem(Paragraph::create([CodeBlock::create('.text-large'), ' - Text Large'])->addClass(Elegance::TEXT_LARGE))
+    $return[] = UnorderedList::create()->addClass(Fusion::LIST_UNSTYLED)
+      ->addItem(Paragraph::create([CodeBlock::create('.text-tiny'), ' - Text Tiny'])->addClass(Fusion::TEXT_TINY))
+      ->addItem(Paragraph::create([CodeBlock::create('.text-big'), ' - Text Big'])->addClass(Fusion::TEXT_BIG))
+      ->addItem(Paragraph::create([CodeBlock::create('.text-large'), ' - Text Large'])->addClass(Fusion::TEXT_LARGE))
       ->addItem(
-        Paragraph::create([CodeBlock::create('.text-xlarge'), ' - Text Extra Large'])->addClass(Elegance::TEXT_XLARGE)
+        Paragraph::create([CodeBlock::create('.text-xlarge'), ' - Text Extra Large'])->addClass(Fusion::TEXT_XLARGE)
       );
 
-    $return[] = UnorderedList::create()->addClass(Elegance::LIST_UNSTYLED)
+    $return[] = UnorderedList::create()->addClass(Fusion::LIST_UNSTYLED)
       ->addItem(
         Paragraph::create([CodeBlock::create('.font-weight-bolder'), ' - Bolder'])->addClass(
-          Elegance::FONT_WEIGHT_BOLDER
+          Fusion::FONT_WEIGHT_BOLDER
         )
       )
       ->addItem(
         Paragraph::create([CodeBlock::create('.font-weight-semibold'), ' - Semibold'])->addClass(
-          Elegance::FONT_WEIGHT_SEMIBOLD
+          Fusion::FONT_WEIGHT_SEMIBOLD
         )
       )
       ->addItem(
-        Paragraph::create([CodeBlock::create('.font-weight-light'), ' - Light'])->addClass(Elegance::FONT_WEIGHT_LIGHT)
+        Paragraph::create([CodeBlock::create('.font-weight-light'), ' - Light'])->addClass(Fusion::FONT_WEIGHT_LIGHT)
       );
 
     $return[] = UnorderedList::create()
@@ -150,12 +150,12 @@ class TypographyDemo extends DemoSection
       ->addItem('Consectetur adipiscing elit')
       ->addItem('Integer molestie lorem at massa');
 
-    $return[] = UnorderedList::create()->addClass(Elegance::LIST_UNSTYLED)
+    $return[] = UnorderedList::create()->addClass(Fusion::LIST_UNSTYLED)
       ->addItem('Lorem ipsum dolor sit amet')
       ->addItem('Consectetur adipiscing elit')
       ->addItem('Integer molestie lorem at massa');
 
-    $return[] = UnorderedList::create()->addClass(Elegance::LIST_INLINE)
+    $return[] = UnorderedList::create()->addClass(Fusion::LIST_INLINE)
       ->addItem('Lorem ipsum dolor sit amet')
       ->addItem('Consectetur adipiscing elit')
       ->addItem('Integer molestie lorem at massa');

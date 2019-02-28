@@ -1,8 +1,8 @@
 <?php
-namespace PackagedUi\Elegance\Demo;
+namespace PackagedUi\Fusion\Demo;
 
 use Packaged\SafeHtml\SafeHtml;
-use PackagedUi\Elegance\Progress\ProgressBar;
+use PackagedUi\Fusion\Progress\ProgressBar;
 
 class ProgressDemo extends DemoSection
 {

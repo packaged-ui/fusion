@@ -1,8 +1,8 @@
 <?php
-namespace PackagedUi\Elegance\Menu;
+namespace PackagedUi\Fusion\Menu;
 
 use Packaged\Glimpse\Core\HtmlTag;
-use PackagedUi\Elegance\Lists\ListBox;
+use PackagedUi\Fusion\Lists\ListBox;
 
 class Menu extends ListBox
 {

@@ -11,13 +11,17 @@
 }
 
 .list-item:hover {
-  background-color: rgb(var(--el-lighter-color));
+  background-color: rgb(var(--f-lighter-color));
 }
 
 .list-item--active {
-  background-color: rgba(var(--el-color-primary), 0.1);
-  --el-text-color: var(--el-color-primary);
+  background-color: rgba(var(--f-color-primary), 0.1);
+  --f-text-color: var(--f-color-primary);
   --text-opacity: 1;
+}
+
+.list-item--active:hover {
+  background-color: rgba(var(--f-color-primary), 0.2);
 }
 
 .list-item + .list-item {

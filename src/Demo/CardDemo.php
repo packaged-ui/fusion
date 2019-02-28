@@ -1,12 +1,12 @@
 <?php
-namespace PackagedUi\Elegance\Demo;
+namespace PackagedUi\Fusion\Demo;
 
 use Packaged\Glimpse\Tags\LineBreak;
 use Packaged\SafeHtml\SafeHtml;
-use PackagedUi\Elegance\Button\EleganceButton;
-use PackagedUi\Elegance\Card\Card;
-use PackagedUi\Elegance\Layout\Flex;
-use PackagedUi\Elegance\Layout\FlexGrow;
+use PackagedUi\Fusion\Button\Button;
+use PackagedUi\Fusion\Card\Card;
+use PackagedUi\Fusion\Layout\Flex;
+use PackagedUi\Fusion\Layout\FlexGrow;
 
 class CardDemo extends DemoSection
 {
@@ -19,7 +19,7 @@ class CardDemo extends DemoSection
 
     $header = Flex::create(
       FlexGrow::create("Header"),
-      EleganceButton::create("Action Button")->sizeXsmall()->flat()
+      Button::create("Action Button")->sizeXsmall()->flat()
     );
 
     $return[] = Card::create('Card Content')->setHeader($header);

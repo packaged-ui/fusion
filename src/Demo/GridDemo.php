@@ -1,12 +1,12 @@
 <?php
-namespace PackagedUi\Elegance\Demo;
+namespace PackagedUi\Fusion\Demo;
 
 use Packaged\Dispatch\ResourceManager;
 use Packaged\Glimpse\Tags\LineBreak;
 use Packaged\SafeHtml\SafeHtml;
-use PackagedUi\Elegance\Layout\Grid\GridCell;
-use PackagedUi\Elegance\Layout\Grid\GridInner;
-use PackagedUi\Elegance\Layout\Grid\GridLayout;
+use PackagedUi\Fusion\Layout\Grid\GridCell;
+use PackagedUi\Fusion\Layout\Grid\GridInner;
+use PackagedUi\Fusion\Layout\Grid\GridLayout;
 
 class GridDemo extends DemoSection
 {

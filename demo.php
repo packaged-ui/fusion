@@ -5,7 +5,7 @@ use Cubex\Context\Context;
 use Cubex\Cubex;
 use Cubex\Routing\Router;
 use Packaged\Dispatch\Dispatch;
-use PackagedUi\Elegance\Demo\Demo;
+use PackagedUi\Fusion\Demo\Demo;
 
 $loader = require_once 'vendor/autoload.php';
 $launcher = new Cubex(dirname(__DIR__), $loader);

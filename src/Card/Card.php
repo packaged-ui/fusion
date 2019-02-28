@@ -1,5 +1,5 @@
 <?php
-namespace PackagedUi\Elegance\Card;
+namespace PackagedUi\Fusion\Card;
 
 use Packaged\Glimpse\Core\HtmlTag;
 use Packaged\Glimpse\Tags\Div;

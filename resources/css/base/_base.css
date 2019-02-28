@@ -1,7 +1,7 @@
 :root {
-  --el-font: "Roboto", -apple-system, BlinkMacSystemFont, "Segoe UI", "Oxygen", "Ubuntu", "Cantarell", "Fira Sans", "Droid Sans", "Helvetica Neue", sans-serif;
-  --el-mono-font: "SFMono-Regular", Menlo, Monaco, Consolas, "Liberation Mono", "Courier New", monospace;
-  --el-font-size: .894rem;
+  --f-font: "Roboto", -apple-system, BlinkMacSystemFont, "Segoe UI", "Oxygen", "Ubuntu", "Cantarell", "Fira Sans", "Droid Sans", "Helvetica Neue", sans-serif;
+  --f-mono-font: "SFMono-Regular", Menlo, Monaco, Consolas, "Liberation Mono", "Courier New", monospace;
+  --f-font-size: .894rem;
   --text-opacity: 0.70;
 
   --rgb-text-dark: 0, 0, 0;
@@ -12,59 +12,59 @@
   --rgb-white: 255, 255, 255;
   --rgb-white-text: var(--rgb-text-dark);
 
-  --el-spacing-extra-large: 24px;
-  --el-spacing-large: 16px;
-  --el-spacing-medium: 8px;
-  --el-spacing-small: 4px;
-  --el-spacing-extra-small: 2px;
+  --f-spacing-extra-large: 24px;
+  --f-spacing-large: 16px;
+  --f-spacing-medium: 8px;
+  --f-spacing-small: 4px;
+  --f-spacing-extra-small: 2px;
 
-  --el-color-default-light: var(--rgb-grey-500);
-  --el-color-default-light-text: var(--rgb-grey-500-text);
-  --el-color-default-dark: var(--rgb-grey-900);
-  --el-color-default-dark-text: var(--rgb-grey-900-text);
-  --el-color-default: var(--rgb-grey-700);
-  --el-color-default-text: var(--rgb-grey-700-text);
+  --f-color-default-light: var(--rgb-grey-500);
+  --f-color-default-light-text: var(--rgb-grey-500-text);
+  --f-color-default-dark: var(--rgb-grey-900);
+  --f-color-default-dark-text: var(--rgb-grey-900-text);
+  --f-color-default: var(--rgb-grey-700);
+  --f-color-default-text: var(--rgb-grey-700-text);
 
-  --el-color-primary-light: var(--rgb-deep-purple-200);
-  --el-color-primary-light-text: var(--rgb-deep-purple-200-text);
-  --el-color-primary-dark: var(--rgb-deep-purple-900);
-  --el-color-primary-dark-text: var(--rgb-deep-purple-900-text);
-  --el-color-primary: var(--rgb-deep-purple-700);
-  --el-color-primary-text: var(--rgb-deep-purple-700-text);
+  --f-color-primary-light: var(--rgb-deep-purple-200);
+  --f-color-primary-light-text: var(--rgb-deep-purple-200-text);
+  --f-color-primary-dark: var(--rgb-deep-purple-900);
+  --f-color-primary-dark-text: var(--rgb-deep-purple-900-text);
+  --f-color-primary: var(--rgb-deep-purple-700);
+  --f-color-primary-text: var(--rgb-deep-purple-700-text);
 
-  --el-color-accent-light: var(--rgb-deep-orange-200);
-  --el-color-accent-light-text: var(--rgb-deep-orange-200-text);
-  --el-color-accent-dark: var(--rgb-deep-orange-900);
-  --el-color-accent-dark-text: var(--rgb-deep-orange-900-text);
-  --el-color-accent: var(--rgb-deep-orange-700);
-  --el-color-accent-text: var(--rgb-deep-orange-700-text);
+  --f-color-accent-light: var(--rgb-deep-orange-200);
+  --f-color-accent-light-text: var(--rgb-deep-orange-200-text);
+  --f-color-accent-dark: var(--rgb-deep-orange-900);
+  --f-color-accent-dark-text: var(--rgb-deep-orange-900-text);
+  --f-color-accent: var(--rgb-deep-orange-700);
+  --f-color-accent-text: var(--rgb-deep-orange-700-text);
 
-  --el-divider-color: var(--rgb-grey-200);
+  --f-divider-color: var(--rgb-grey-200);
 
-  --el-text-color: var(--rgb-text-dark);
-  --el-foreground-color: var(--rgb-grey-700);
-  --el-background-color: var(--rgb-grey-50);
-  --el-content-background-color: var(--rgb-white);
+  --f-text-color: var(--rgb-text-dark);
+  --f-foreground-color: var(--rgb-grey-700);
+  --f-background-color: var(--rgb-grey-50);
+  --f-content-background-color: var(--rgb-white);
 
-  --el-lightest-color: var(--rgb-grey-100);
-  --el-lighter-color: var(--rgb-grey-300);
+  --f-lightest-color: var(--rgb-grey-100);
+  --f-lighter-color: var(--rgb-grey-300);
 
-  --el-success-color: 2, 188, 119;
-  --el-success-color-text: var(--rgb-text-light);
-  --el-danger-color: 176, 0, 32;
-  --el-danger-color-text: var(--rgb-text-light);
-  --el-warning-color: 248, 140, 55;
-  --el-warning-color-text: var(--rgb-text-light);
-  --el-info-color: 16, 182, 224;
-  --el-info-color-text: var(--rgb-text-light);
-  --el-code-color: 232, 62, 140;
-  --el-code-color-text: var(--rgb-text-light);
+  --f-success-color: 2, 188, 119;
+  --f-success-color-text: var(--rgb-text-light);
+  --f-danger-color: 176, 0, 32;
+  --f-danger-color-text: var(--rgb-text-light);
+  --f-warning-color: 248, 140, 55;
+  --f-warning-color-text: var(--rgb-text-light);
+  --f-info-color: 16, 182, 224;
+  --f-info-color-text: var(--rgb-text-light);
+  --f-code-color: 232, 62, 140;
+  --f-code-color-text: var(--rgb-text-light);
 }
 
 body {
-  background: rgb(var(--el-background-color));
-  font-family: var(--el-font);
-  font-size: var(--el-font-size);
+  background: rgb(var(--f-background-color));
+  font-family: var(--f-font);
+  font-size: var(--f-font-size);
   font-weight: 400;
   line-height: 1.47;
 
@@ -76,7 +76,7 @@ body {
 }
 
 * {
-  color: rgba(var(--el-text-color), var(--text-opacity));
+  color: rgba(var(--f-text-color), var(--text-opacity));
 }
 
 a {

@@ -1,5 +1,5 @@
 <?php
-namespace PackagedUi\Elegance\Layout;
+namespace PackagedUi\Fusion\Layout;
 
 interface TableInterface
 {

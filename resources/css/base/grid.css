@@ -9,8 +9,8 @@
   --grid-gutter-phone: 16px;
   --grid-column-width-phone: 72px;
 
-  --grid-bordered-color: rgb(var(--el-divider-color));
-  --grid-bordered-cell-color: rgb(var(--el-content-background-color));
+  --grid-bordered-color: rgb(var(--f-divider-color));
+  --grid-bordered-cell-color: rgb(var(--f-content-background-color));
 }
 
 @media (min-width: 840px) {

@@ -1,11 +1,11 @@
 <?php
-namespace PackagedUi\Elegance\Demo;
+namespace PackagedUi\Fusion\Demo;
 
 use Packaged\Glimpse\Tags\LineBreak;
 use Packaged\Glimpse\Tags\Link;
 use Packaged\SafeHtml\SafeHtml;
-use PackagedUi\Elegance\Button\EleganceButton;
-use PackagedUi\Elegance\Elegance;
+use PackagedUi\Fusion\Button\Button;
+use PackagedUi\Fusion\Fusion;
 
 class ButtonDemo extends DemoSection
 {
@@ -13,71 +13,71 @@ class ButtonDemo extends DemoSection
   {
     $return = [];
 
-    $return[] = Link::create("#", "Default")->addClass(Elegance::BUTTON);
-    $return[] = Link::create("#", "Primary")->addClass(Elegance::BUTTON_PRIMARY, Elegance::BUTTON);
-    $return[] = Link::create("#", "Accent")->addClass(Elegance::BUTTON_ACCENT, Elegance::BUTTON);
-    $return[] = Link::create("#", "Success")->addClass(Elegance::BUTTON_SUCCESS, Elegance::BUTTON);
-    $return[] = Link::create("#", "Danger")->addClass(Elegance::BUTTON_DANGER, Elegance::BUTTON);
-    $return[] = Link::create("#", "Warning")->addClass(Elegance::BUTTON_WARNING, Elegance::BUTTON);
-    $return[] = Link::create("#", "Info")->addClass(Elegance::BUTTON_INFO, Elegance::BUTTON);
+    $return[] = Link::create("#", "Default")->addClass(Fusion::BUTTON);
+    $return[] = Link::create("#", "Primary")->addClass(Fusion::BUTTON_PRIMARY, Fusion::BUTTON);
+    $return[] = Link::create("#", "Accent")->addClass(Fusion::BUTTON_ACCENT, Fusion::BUTTON);
+    $return[] = Link::create("#", "Success")->addClass(Fusion::BUTTON_SUCCESS, Fusion::BUTTON);
+    $return[] = Link::create("#", "Danger")->addClass(Fusion::BUTTON_DANGER, Fusion::BUTTON);
+    $return[] = Link::create("#", "Warning")->addClass(Fusion::BUTTON_WARNING, Fusion::BUTTON);
+    $return[] = Link::create("#", "Info")->addClass(Fusion::BUTTON_INFO, Fusion::BUTTON);
 
     $return[] = LineBreak::create();
     $return[] = LineBreak::create();
 
-    $return[] = EleganceButton::create("Default");
-    $return[] = EleganceButton::create("Primary")->primary();
-    $return[] = EleganceButton::create("Accent")->accent();
-    $return[] = EleganceButton::create("Success")->success();
-    $return[] = EleganceButton::create("Danger")->danger();
-    $return[] = EleganceButton::create("Warning")->warning();
-    $return[] = EleganceButton::create("Info")->info();
+    $return[] = Button::create("Default");
+    $return[] = Button::create("Primary")->primary();
+    $return[] = Button::create("Accent")->accent();
+    $return[] = Button::create("Success")->success();
+    $return[] = Button::create("Danger")->danger();
+    $return[] = Button::create("Warning")->warning();
+    $return[] = Button::create("Info")->info();
 
     $return[] = LineBreak::create();
     $return[] = LineBreak::create();
 
-    $return[] = EleganceButton::create("Default")->outline();
-    $return[] = EleganceButton::create("Primary")->outline()->primary();
-    $return[] = EleganceButton::create("Accent")->outline()->accent();
-    $return[] = EleganceButton::create("Success")->outline()->success();
-    $return[] = EleganceButton::create("Danger")->outline()->danger();
-    $return[] = EleganceButton::create("Warning")->outline()->warning();
-    $return[] = EleganceButton::create("Info")->outline()->info();
+    $return[] = Button::create("Default")->outline();
+    $return[] = Button::create("Primary")->outline()->primary();
+    $return[] = Button::create("Accent")->outline()->accent();
+    $return[] = Button::create("Success")->outline()->success();
+    $return[] = Button::create("Danger")->outline()->danger();
+    $return[] = Button::create("Warning")->outline()->warning();
+    $return[] = Button::create("Info")->outline()->info();
 
     $return[] = LineBreak::create();
     $return[] = LineBreak::create();
 
-    $return[] = EleganceButton::create("Default")->flat();
-    $return[] = EleganceButton::create("Primary")->flat()->primary();
-    $return[] = EleganceButton::create("Accent")->flat()->accent();
-    $return[] = EleganceButton::create("Success")->flat()->success();
-    $return[] = EleganceButton::create("Danger")->flat()->danger();
-    $return[] = EleganceButton::create("Warning")->flat()->warning();
-    $return[] = EleganceButton::create("Info")->flat()->info();
+    $return[] = Button::create("Default")->flat();
+    $return[] = Button::create("Primary")->flat()->primary();
+    $return[] = Button::create("Accent")->flat()->accent();
+    $return[] = Button::create("Success")->flat()->success();
+    $return[] = Button::create("Danger")->flat()->danger();
+    $return[] = Button::create("Warning")->flat()->warning();
+    $return[] = Button::create("Info")->flat()->info();
 
     $primaryButtons = [];
-    $primaryButtons[] = EleganceButton::create("Primary")->primary();
-    $primaryButtons[] = EleganceButton::create("Primary")->outline()->primary();
-    $primaryButtons[] = EleganceButton::create("Primary")->flat()->primary();
+    $primaryButtons[] = Button::create("Primary")->primary();
+    $primaryButtons[] = Button::create("Primary")->outline()->primary();
+    $primaryButtons[] = Button::create("Primary")->flat()->primary();
 
     $styles = [
-      Elegance::BUTTON_ROUND,
-      Elegance::BUTTON_XLARGE,
-      Elegance::BUTTON_LARGE,
-      Elegance::BUTTON_SMALL,
-      Elegance::BUTTON_XSMALL,
-      Elegance::BUTTON_DISABLED,
-      Elegance::BUTTON_RAISED,
+      Fusion::BUTTON_ROUND,
+      Fusion::BUTTON_XLARGE,
+      Fusion::BUTTON_LARGE,
+      Fusion::BUTTON_SMALL,
+      Fusion::BUTTON_XSMALL,
+      Fusion::BUTTON_DISABLED,
+      Fusion::BUTTON_RAISED,
     ];
 
     foreach($styles as $style)
     {
       $return[] = LineBreak::create();
       $return[] = LineBreak::create();
-      /** @var EleganceButton $button */
+      /** @var Button $button */
       foreach($primaryButtons as $button)
       {
         $btn = clone $button;
-        if($style === Elegance::BUTTON_DISABLED)
+        if($style === Fusion::BUTTON_DISABLED)
         {
           $btn->disable();
         }
@@ -92,7 +92,7 @@ class ButtonDemo extends DemoSection
     $return[] = LineBreak::create();
     $return[] = LineBreak::create();
 
-    $return[] = EleganceButton::create("+")->fab();
+    $return[] = Button::create("+")->fab();
 
     return SafeHtml::escape($return);
   }

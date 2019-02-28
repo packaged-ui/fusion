@@ -1,11 +1,11 @@
 <?php
-namespace PackagedUi\Elegance\Demo;
+namespace PackagedUi\Fusion\Demo;
 
 use Packaged\Glimpse\Tags\Div;
 use Packaged\Glimpse\Tags\Span;
 use Packaged\SafeHtml\SafeHtml;
-use PackagedUi\Elegance\Badge;
-use PackagedUi\Elegance\Elegance;
+use PackagedUi\Fusion\Badge;
+use PackagedUi\Fusion\Fusion;
 
 class BadgeDemo extends DemoSection
 {
@@ -13,11 +13,11 @@ class BadgeDemo extends DemoSection
   {
     $return = [];
 
-    $return[] = Badge::create(Span::create('Inbox'), 4)->addClass(Elegance::DISPLAY_INLINE_BLOCK);
-    $return[] = Badge::overlap(Span::create('Inbox'), 5)->addClass(Elegance::DISPLAY_INLINE_BLOCK);
+    $return[] = Badge::create(Span::create('Inbox'), 4)->addClass(Fusion::DISPLAY_INLINE_BLOCK);
+    $return[] = Badge::overlap(Span::create('Inbox'), 5)->addClass(Fusion::DISPLAY_INLINE_BLOCK);
     $return[] = Badge::create(Div::create('Inbox'), 23)->addClass(
-      Elegance::BADGE_ADDED_MARGIN,
-      Elegance::DISPLAY_INLINE_BLOCK
+      Fusion::BADGE_ADDED_MARGIN,
+      Fusion::DISPLAY_INLINE_BLOCK
     );
     return SafeHtml::escape($return);
   }

@@ -1,36 +1,36 @@
 button, .btn {
-  --button-color: var(--el-color-default);
-  --button-text-color: var(--el-color-default-text);
+  --button-color: var(--f-color-default);
+  --button-text-color: var(--f-color-default-text);
 }
 
 button.btn-primary, .btn.btn-primary {
-  --button-color: var(--el-color-primary);
-  --button-text-color: var(--el-color-primary-text);
+  --button-color: var(--f-color-primary);
+  --button-text-color: var(--f-color-primary-text);
 }
 
 button.btn-accent, .btn.btn-accent {
-  --button-color: var(--el-color-accent);
-  --button-text-color: var(--el-color-accent-text);
+  --button-color: var(--f-color-accent);
+  --button-text-color: var(--f-color-accent-text);
 }
 
 button.btn-success, .btn.btn-success {
-  --button-color: var(--el-success-color);
-  --button-text-color: var(--el-success-color-text);
+  --button-color: var(--f-success-color);
+  --button-text-color: var(--f-success-color-text);
 }
 
 button.btn-warning, .btn.btn-warning {
-  --button-color: var(--el-warning-color);
-  --button-text-color: var(--el-warning-color-text);
+  --button-color: var(--f-warning-color);
+  --button-text-color: var(--f-warning-color-text);
 }
 
 button.btn-info, .btn.btn-info {
-  --button-color: var(--el-info-color);
-  --button-text-color: var(--el-info-color-text);
+  --button-color: var(--f-info-color);
+  --button-text-color: var(--f-info-color-text);
 }
 
 button.btn-danger, .btn.btn-danger {
-  --button-color: var(--el-danger-color);
-  --button-text-color: var(--el-danger-color-text);
+  --button-color: var(--f-danger-color);
+  --button-text-color: var(--f-danger-color-text);
 }
 
 button, .btn {
@@ -46,7 +46,7 @@ button, .btn {
   user-select: none;
   border: 1px solid rgba(0, 0, 0, 0.1);
   padding: .3rem 1rem;
-  font-size: var(--el-font-size);
+  font-size: var(--f-font-size);
   line-height: 1.47;
   border-radius: .2rem;
   -webkit-transition: all 0.2s ease-in-out;
@@ -55,7 +55,7 @@ button, .btn {
   margin: 2px;
   -webkit-tap-highlight-color: transparent;
   text-decoration: none;
-  font-family: var(--el-font);
+  font-family: var(--f-font);
   outline: 0;
 
   color: rgba(var(--button-text-color), 0.95);

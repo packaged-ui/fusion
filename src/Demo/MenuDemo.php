@@ -1,9 +1,9 @@
 <?php
-namespace PackagedUi\Elegance\Demo;
+namespace PackagedUi\Fusion\Demo;
 
 use Packaged\SafeHtml\SafeHtml;
-use PackagedUi\Elegance\Menu\Menu;
-use PackagedUi\Elegance\Menu\MenuItem;
+use PackagedUi\Fusion\Menu\Menu;
+use PackagedUi\Fusion\Menu\MenuItem;
 
 class MenuDemo extends DemoSection
 {

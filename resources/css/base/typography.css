@@ -149,13 +149,13 @@ dd {
 }
 
 pre, code, kbd, samp {
-  font-family: var(--el-mono-font);
+  font-family: var(--f-mono-font);
   font-size: 1em;
 }
 
 code {
   font-size: 87.5%;
-  color: rgb(var(--el-code-color));
+  color: rgb(var(--f-code-color));
   word-break: break-word;
 }
 
@@ -207,19 +207,19 @@ figcaption {
 }
 
 .text-success {
-  color: rgb(var(--el-success-color));
+  color: rgb(var(--f-success-color));
 }
 
 .text-danger {
-  color: rgb(var(--el-danger-color));
+  color: rgb(var(--f-danger-color));
 }
 
 .text-warning {
-  color: rgb(var(--el-warning-color));
+  color: rgb(var(--f-warning-color));
 }
 
 .text-info {
-  color: rgb(var(--el-info-color));
+  color: rgb(var(--f-info-color));
 }
 
 .text-tiny {

@@ -1,9 +1,9 @@
 <?php
-namespace PackagedUi\Elegance\Demo;
+namespace PackagedUi\Fusion\Demo;
 
 use Packaged\SafeHtml\SafeHtml;
-use PackagedUi\Elegance\Lists\ListBox;
-use PackagedUi\Elegance\Lists\ListItem;
+use PackagedUi\Fusion\Lists\ListBox;
+use PackagedUi\Fusion\Lists\ListItem;
 
 class ListDemo extends DemoSection
 {

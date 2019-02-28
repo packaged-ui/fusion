@@ -1,5 +1,5 @@
 <?php
-namespace PackagedUi\Elegance\Progress;
+namespace PackagedUi\Fusion\Progress;
 
 use Packaged\Glimpse\Core\HtmlTag;
 use Packaged\Glimpse\Tags\Div;

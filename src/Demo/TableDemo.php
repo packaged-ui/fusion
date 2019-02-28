@@ -1,5 +1,5 @@
 <?php
-namespace PackagedUi\Elegance\Demo;
+namespace PackagedUi\Fusion\Demo;
 
 use Packaged\Glimpse\Tags\LineBreak;
 use Packaged\Glimpse\Tags\Table\TableBody;
@@ -8,8 +8,8 @@ use Packaged\Glimpse\Tags\Table\TableHead;
 use Packaged\Glimpse\Tags\Table\TableHeading;
 use Packaged\Glimpse\Tags\Table\TableRow;
 use Packaged\SafeHtml\SafeHtml;
-use PackagedUi\Elegance\Card\Card;
-use PackagedUi\Elegance\Table\EleganceTable;
+use PackagedUi\Fusion\Card\Card;
+use PackagedUi\Fusion\Table\Table;
 
 class TableDemo extends DemoSection
 {
@@ -25,7 +25,7 @@ class TableDemo extends DemoSection
     ];
 
     $return[] = Card::create(
-      EleganceTable::create(
+      Table::create(
         [
           TableHead::create(TableHeading::collection($headings)),
           TableBody::create(
@@ -40,7 +40,7 @@ class TableDemo extends DemoSection
     $return[] = LineBreak::create();
 
     $return[] = Card::create(
-      EleganceTable::create(
+      Table::create(
         [
           TableHead::create(TableHeading::collection($headings)),
           TableBody::create(
@@ -55,7 +55,7 @@ class TableDemo extends DemoSection
     $return[] = LineBreak::create();
 
     $return[] = Card::create(
-      EleganceTable::create(
+      Table::create(
         [
           TableHead::create(TableHeading::collection($headings)),
           TableBody::create(
@@ -70,7 +70,7 @@ class TableDemo extends DemoSection
     $return[] = LineBreak::create();
 
     $return[] = Card::create(
-      EleganceTable::create(
+      Table::create(
         [
           TableHead::create(TableHeading::collection($headings)),
           TableBody::create(
