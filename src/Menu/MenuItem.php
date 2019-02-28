@@ -30,8 +30,11 @@ class MenuItem extends ListItem
 
   protected function _prepareForProduce(): HtmlTag
   {
-    return parent::_prepareForProduce()
-      ->setAttribute('href', $this->_link)
-      ->addClass('menu-item');
+    $ele = parent::_prepareForProduce()->addClass('menu-item');
+    if($this->_link !== null)
+    {
+      $ele->setAttribute('href', $this->_link);
+    }
+    return $ele;
   }
 }
