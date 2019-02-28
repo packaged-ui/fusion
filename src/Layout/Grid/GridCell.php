@@ -29,7 +29,9 @@ class GridCell extends Div
     return $ele;
   }
 
-  public static function create($content = '', $span = null, $desktopSpan = null, $tabletSpan = null, $phoneSpan = null)
+  public static function createSized(
+    $content = '', $span = null, $desktopSpan = null, $tabletSpan = null, $phoneSpan = null
+  )
   {
     /** @var static $return */
     $return = parent::create($content);
