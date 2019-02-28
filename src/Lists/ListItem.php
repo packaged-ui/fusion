@@ -25,9 +25,9 @@ class ListItem extends HtmlTag
   /**
    * @param string $tag
    *
-   * @return ListItem
+   * @return static
    */
-  public function setTag(string $tag): ListItem
+  public function setTag(string $tag)
   {
     $this->_tag = $tag;
     return $this;
@@ -44,7 +44,7 @@ class ListItem extends HtmlTag
   /**
    * @param mixed $primary
    *
-   * @return ListItem
+   * @return static
    */
   public function setPrimary($primary)
   {
@@ -63,7 +63,7 @@ class ListItem extends HtmlTag
   /**
    * @param mixed $secondary
    *
-   * @return ListItem
+   * @return static
    */
   public function setSecondary($secondary)
   {
@@ -82,7 +82,7 @@ class ListItem extends HtmlTag
   /**
    * @param mixed $leading
    *
-   * @return ListItem
+   * @return static
    */
   public function setLeading($leading)
   {
@@ -101,7 +101,7 @@ class ListItem extends HtmlTag
   /**
    * @param mixed $trailing
    *
-   * @return ListItem
+   * @return static
    */
   public function setTrailing($trailing)
   {

@@ -20,9 +20,9 @@ class MenuItem extends ListItem
   /**
    * @param mixed $link
    *
-   * @return MenuItem
+   * @return static
    */
-  public function setLink($link): MenuItem
+  public function setLink($link)
   {
     $this->_link = $link;
     return $this;
