@@ -36,5 +36,10 @@ window.Elegance = window.Elegance || {};
     {
       fn();
     }
-  }
+  };
+
+  window.Elegance.onReady(function () {
+    setTimeout(function () {document.body.classList.add('f-loaded');}, 0)
+  });
+
 }(window, document));

@@ -1,9 +1,13 @@
 body {
   --drawer-open-width: 256px;
   --drawer-narrow-width: 56px;
-  --drawer-transition-style: 300ms ease-in-out;
   --drawer-background-color: var(--f-content-background-color);
   --drawer-top-offset: 0;
+}
+
+body.f-loaded
+{
+  --drawer-transition-style: 300ms ease-in-out;
 }
 
 .drawer {
