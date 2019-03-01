@@ -7,7 +7,7 @@ window.Elegance = window.Elegance || {};
       var ele = document.querySelector('.drawer');
       if(ele)
       {
-        if(localStorage.getItem('drawer--open') === '0')
+        if(localStorage.getItem('drawer--open') !== '1')
         {
           ele.classList.remove('drawer--open');
         }
