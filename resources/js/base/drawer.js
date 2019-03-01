@@ -2,6 +2,23 @@ window.Elegance = window.Elegance || {};
 
 (function (window, document, Elegance) {
 
+  Elegance.onReady(
+    function () {
+      var ele = document.querySelector('.drawer');
+      if(ele)
+      {
+        if(localStorage.getItem('drawer--open') === '0')
+        {
+          ele.classList.remove('drawer--open');
+        }
+        else
+        {
+          ele.classList.add('drawer--open');
+        }
+      }
+    }
+  );
+
   Elegance.on(
     document, 'click', '.drawer__toggle',
     function (e) {
@@ -11,10 +28,12 @@ window.Elegance = window.Elegance || {};
         if(ele.classList.contains('drawer--open'))
         {
           ele.classList.remove('drawer--open');
+          localStorage.setItem('drawer--open', '0');
         }
         else
         {
           ele.classList.add('drawer--open');
+          localStorage.setItem('drawer--open', '1');
         }
         e.stopPropagation();
         e.stopImmediatePropagation();
