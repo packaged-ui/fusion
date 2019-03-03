@@ -150,6 +150,9 @@ class Drawer extends AbstractContainerTag
         Div::create($this->_appContent)
           ->addClass('drawer-app-content')
           ->produceSafeHTML(),
+        new SafeHtml(
+          "<script>localStorage.getItem('drawer--open')==='1'&&document.querySelector('.drawer').classList.add('drawer--open')</script>"
+        ),
       ]
     );
   }

@@ -2,19 +2,6 @@ window.Elegance = window.Elegance || {};
 
 (function (window, document, Elegance) {
 
-  var ele = document.querySelector('.drawer');
-  if(ele)
-  {
-    if(localStorage.getItem('drawer--open') !== '1')
-    {
-      ele.classList.remove('drawer--open');
-    }
-    else
-    {
-      ele.classList.add('drawer--open');
-    }
-  }
-
   Elegance.on(
     document, 'click', '.drawer__toggle',
     function (e) {
