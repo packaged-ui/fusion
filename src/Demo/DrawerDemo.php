@@ -1,13 +1,14 @@
 <?php
 namespace PackagedUi\Fusion\Demo;
 
-use Packaged\Glimpse\Tags\Lists\ListItem;
-use Packaged\Glimpse\Tags\Lists\UnorderedList;
+use Packaged\Glimpse\Tags\Link;
 use Packaged\Glimpse\Tags\Text\HeadingSix;
 use Packaged\Glimpse\Tags\Text\HeadingThree;
 use Packaged\SafeHtml\SafeHtml;
 use PackagedUi\Fusion\Fusion;
 use PackagedUi\Fusion\Layout\Drawer\Drawer;
+use PackagedUi\Fusion\Menu\Menu;
+use PackagedUi\Fusion\Menu\MenuItem;
 
 class DrawerDemo extends DemoSection
 {
@@ -16,80 +17,22 @@ class DrawerDemo extends DemoSection
     $return = [];
     $return[] =
       Drawer::create(
-        HeadingThree::create('Camera')
-          ->addClass(Fusion::DRAWER_TOGGLE),
-        UnorderedList::create(
-          ListItem::collection(
-            [
-              'All Photos',
-              'Shared with me',
-              'Starred',
-              'Recent',
-              'All Photos',
-              'Shared with me',
-              'Starred',
-              'Recent',
-              'All Photos',
-              'Shared with me',
-              'Starred',
-              'Recent',
-              'All Photos',
-              'Shared with me',
-              'Starred',
-              'Recent',
-              'All Photos',
-              'Shared with me',
-              'Starred',
-              'Recent',
-              'All Photos',
-              'Shared with me',
-              'Starred',
-              'Recent',
-              'All Photos',
-              'Shared with me',
-              'Starred',
-              'Recent',
-              'All Photos',
-              'Shared with me',
-              'Starred',
-              'Recent',
-              'All Photos',
-              'Shared with me',
-              'Starred',
-              'Recent',
-              'All Photos',
-              'Shared with me',
-              'Starred',
-              'Recent',
-              'All Photos',
-              'Shared with me',
-              'Starred',
-              'Recent',
-              'All Photos',
-              'Shared with me',
-              'Starred',
-              'Recent',
-              'All Photos',
-              'Shared with me',
-              'Starred',
-              'Recent',
-              'All Photos',
-              'Shared with me',
-              'Starred',
-              'Recent',
-              'All Photos',
-              'Shared with me',
-              'Starred',
-              'Recent',
-              'All Photos',
-              'Shared with me',
-              'Starred',
-              'Recent',
-            ]
+        HeadingThree::create('> Toggle Drawer')->addClass(Fusion::DRAWER_TOGGLE),
+        Menu::create(
+          Menu::create(
+            MenuItem::create("My Account")->setHref('#')->setLeading('ICN'),
+            MenuItem::create("Transfer")->setHref('#')->setLeading('ICN'),
+            MenuItem::create("Billing")->setHref('#')->setLeading('ICN')
+          ),
+          Menu::create(
+            MenuItem::create("Send Feedback")->setHref('#')->setLeading('ICN'),
+            MenuItem::create("Integrations")->setHref('#')->setLeading('ICN'),
+            MenuItem::create("Help")->setHref('#')->setLeading('ICN')
           )
         )
       )
         ->setHeader(HeadingThree::create("My App"), HeadingSix::create("Sub Title"))
+        ->setFooter(Link::create("#", 'Terms & Conditions'))
         ->setState(Drawer::STATE_NARROW)
         ->setReveal(Drawer::REVEAL_PEEK)
         ->setAppContent(new TypographyDemo());

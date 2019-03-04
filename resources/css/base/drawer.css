@@ -5,8 +5,7 @@ body {
   --drawer-top-offset: 0;
 }
 
-body.f-loaded
-{
+body.f-loaded {
   --drawer-transition-style: 300ms ease-in-out;
 }
 
@@ -54,7 +53,12 @@ body.f-loaded
   padding: 16px 16px 4px 16px;
 }
 
-.drawer__content, .drawer__header {
+.drawer__footer {
+  padding: 8px;
+  flex-shrink: 0;
+}
+
+.drawer__content, .drawer__header, .drawer__footer {
   box-sizing: border-box;
   position: relative;
 }

@@ -24,6 +24,7 @@ class Drawer extends AbstractContainerTag
   protected $_reveal = self::REVEAL_NONE;
   protected $_isOpen = false;
   protected $_header = [];
+  protected $_footer = [];
   protected $_appContent = [];
 
   /**
@@ -103,6 +104,10 @@ class Drawer extends AbstractContainerTag
       $content[] = Div::create($this->_header)->addClass('drawer__header');
     }
     $content[] = Div::create(parent::_getContentForRender())->addClass('drawer__content');
+    if($this->_footer)
+    {
+      $content[] = Div::create($this->_footer)->addClass('drawer__footer');
+    }
 
     return $content;
   }
@@ -110,6 +115,12 @@ class Drawer extends AbstractContainerTag
   public function setHeader(...$content)
   {
     $this->_header = $content;
+    return $this;
+  }
+
+  public function setFooter(...$content)
+  {
+    $this->_footer = $content;
     return $this;
   }
 
