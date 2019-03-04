@@ -3,6 +3,7 @@ body {
   --drawer-narrow-width: 56px;
   --drawer-background-color: var(--f-content-background-color);
   --drawer-top-offset: 0;
+  --drawer-handle-width: 20px;
 }
 
 body.f-loaded {
@@ -35,12 +36,18 @@ body.f-loaded {
   flex-shrink: 0;
 }
 
-.drawer[reveal="peek"]:hover {
-  transition-delay: 0s;
+.drawer[reveal="peek"]:hover::before {
+  display: block;
 }
 
-.drawer[reveal="peek"] {
-  transition-delay: 300ms;
+.drawer[reveal="peek"]:before {
+  display: none;
+  content: ' ';
+  position: fixed;
+  left: var(--drawer-open-width, 0);
+  top: 0;
+  bottom: 0;
+  width: var(--drawer-handle-width);
 }
 
 .drawer__content {
