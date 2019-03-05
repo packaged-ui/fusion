@@ -4,6 +4,7 @@ namespace PackagedUi\Fusion\Layout\Drawer;
 use Packaged\Glimpse\Core\AbstractContainerTag;
 use Packaged\Glimpse\Core\HtmlTag;
 use Packaged\Glimpse\Tags\Div;
+use Packaged\Helpers\Strings;
 use Packaged\SafeHtml\SafeHtml;
 use PackagedUi\Fusion\LayoutInterface;
 
@@ -155,17 +156,14 @@ class Drawer extends AbstractContainerTag
 
   public function produceSafeHTML(): SafeHtml
   {
-    return SafeHtml::escape(
-      [
-        parent::produceSafeHTML(),
-        Div::create($this->_appContent)
-          ->addClass('drawer-app-content')
-          ->produceSafeHTML(),
-        new SafeHtml(
-          "<script>localStorage.getItem('drawer--open')==='1'&&document.querySelector('.drawer').classList.add('drawer--open')</script>"
-        ),
-      ]
-    );
+    $containerId = ($this->getId() ?: 'drawer-' . Strings::randomString(5)) . '-container';
+    return Div::create(
+      new SafeHtml(
+        "<script>localStorage.getItem('drawer--open')==='1'&&document.querySelector('#$containerId').classList.add('drawer--open')</script>"
+      ),
+      parent::produceSafeHTML(),
+      Div::create($this->_appContent)->addClass('drawer-app-content')
+    )->setId($containerId)->addClass('drawer-container')->produceSafeHTML();
   }
 
 }

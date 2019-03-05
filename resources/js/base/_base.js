@@ -38,6 +38,18 @@ window.Elegance = window.Elegance || {};
     }
   };
 
+  window.Elegance.closest = function (element, selector) {
+    do
+    {
+      if(element.matches(selector))
+      {
+        return element;
+      }
+    }
+    while((element = element.parentElement));
+    return null;
+  };
+
   window.Elegance.onReady(function () {
     setTimeout(function () {document.body.classList.add('f-loaded');}, 0)
   });

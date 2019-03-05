@@ -5,17 +5,18 @@ window.Elegance = window.Elegance || {};
   Elegance.on(
     document, 'click', '.drawer__toggle',
     function (e) {
-      var ele = document.querySelector('.drawer');
-      if(ele)
+      // find parent
+      var container = Elegance.closest(e.target, '.drawer-container');
+      if(container)
       {
-        if(ele.classList.contains('drawer--open'))
+        if(container.classList.contains('drawer--open'))
         {
-          ele.classList.remove('drawer--open');
+          container.classList.remove('drawer--open');
           localStorage.setItem('drawer--open', '0');
         }
         else
         {
-          ele.classList.add('drawer--open');
+          container.classList.add('drawer--open');
           localStorage.setItem('drawer--open', '1');
         }
         e.stopPropagation();

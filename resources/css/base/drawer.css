@@ -75,7 +75,7 @@ body.f-loaded {
   transition: margin-left var(--drawer-transition-style);
 }
 
-.drawer.drawer--open {
+.drawer-container.drawer--open > .drawer {
   --drawer-width: var(--drawer-open-width);
 }
 
@@ -87,7 +87,7 @@ body.f-loaded {
   user-select: none;
 }
 
-.drawer[reveal="modal"].drawer--open + .drawer-app-content::before {
+.drawer-container.drawer--open > .drawer[reveal="modal"] + .drawer-app-content::before {
   opacity: 1;
   pointer-events: all;
 }
@@ -122,7 +122,7 @@ body.f-loaded {
     margin-left: var(--drawer-narrow-width);
   }
 
-  .drawer[state="narrow"].drawer--open + .drawer-app-content {
+  .drawer-container.drawer--open > .drawer[state="narrow"] + .drawer-app-content {
     /*margin-left: var(--drawer-open-width);*/
   }
 
@@ -136,13 +136,13 @@ body.f-loaded {
 
   .drawer[state="narrow"][reveal="peek"]:hover,
   .drawer[min-state="permanent"],
-  .drawer[state="permanent"].drawer--open {
+  .drawer-container.drawer--open > .drawer[state="permanent"] {
     width: var(--drawer-open-width);
   }
 
   .drawer[min-state="permanent"] + .drawer-app-content,
-  .drawer[state="permanent"].drawer--open + .drawer-app-content,
-  .drawer[state="narrow"].drawer--open:not([reveal="modal"]) + .drawer-app-content {
+  .drawer-container.drawer--open > .drawer[state="permanent"] + .drawer-app-content,
+  .drawer-container.drawer--open > .drawer[state="narrow"]:not([reveal="modal"]) + .drawer-app-content {
     margin-left: var(--drawer-open-width);
   }
 }
@@ -153,12 +153,12 @@ body.f-loaded {
     display: none !important;
   }
 
-  .drawer.drawer--open + .drawer-app-content::before {
+  .drawer-container.drawer--open > .drawer + .drawer-app-content::before {
     opacity: 1;
     pointer-events: all;
   }
 
-  .drawer:not(.drawer--open) {
+  .drawer-container:not(.drawer--open) > .drawer {
     border-right-width: 0;
   }
 }
