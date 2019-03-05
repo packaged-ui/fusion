@@ -38,20 +38,18 @@ class GridDemo extends DemoSection
 
     $return[] = GridLayout::create(
       GridInner::create(
-        [
-          GridCell::create("ONE"),
-          GridCell::create("TWO"),
-          GridCell::create("THREE"),
-          GridCell::create("FOUR"),
-          GridCell::create("FIVE"),
-          GridCell::create("SIX"),
-          GridCell::create("SEVEN"),
-          GridCell::create("EIGHT"),
-          GridCell::create("NINE"),
-          GridCell::create("TEN"),
-          GridCell::create("ELEVEN"),
-          GridCell::create("TWELVE"),
-        ]
+        GridCell::createSized("ONE"),
+        GridCell::createSized("TWO"),
+        GridCell::createSized("THREE"),
+        GridCell::createSized("FOUR"),
+        GridCell::createSized("FIVE"),
+        GridCell::createSized("SIX"),
+        GridCell::createSized("SEVEN"),
+        GridCell::createSized("EIGHT"),
+        GridCell::createSized("NINE"),
+        GridCell::createSized("TEN"),
+        GridCell::createSized("ELEVEN"),
+        GridCell::createSized("TWELVE")
       )
     );
 
@@ -59,20 +57,18 @@ class GridDemo extends DemoSection
 
     $return[] = GridLayout::create(
       GridInner::create(
-        [
-          GridCell::create("ONE", 1),
-          GridCell::create("TWO", 1),
-          GridCell::create("THREE", 1),
-          GridCell::create("FOUR", 1),
-          GridCell::create("FIVE", 1),
-          GridCell::create("SIX", 1),
-          GridCell::create("SEVEN", 1),
-          GridCell::create("EIGHT", 1),
-          GridCell::create("NINE", 1),
-          GridCell::create("TEN", 1),
-          GridCell::create("ELEVEN", 1),
-          GridCell::create("TWELVE", 1),
-        ]
+        GridCell::createSized("ONE", 1),
+        GridCell::createSized("TWO", 1),
+        GridCell::createSized("THREE", 1),
+        GridCell::createSized("FOUR", 1),
+        GridCell::createSized("FIVE", 1),
+        GridCell::createSized("SIX", 1),
+        GridCell::createSized("SEVEN", 1),
+        GridCell::createSized("EIGHT", 1),
+        GridCell::createSized("NINE", 1),
+        GridCell::createSized("TEN", 1),
+        GridCell::createSized("ELEVEN", 1),
+        GridCell::createSized("TWELVE", 1)
       )
     );
 
@@ -80,15 +76,13 @@ class GridDemo extends DemoSection
 
     $return[] = GridLayout::create(
       GridInner::create(
-        [
-          GridCell::create("", 6),
-          GridCell::create("", 3),
-          GridCell::create("", 2),
-          GridCell::create("", 1),
-          GridCell::create("", 3),
-          GridCell::create("", 1),
-          GridCell::create("", 8),
-        ]
+        GridCell::createSized("", 6),
+        GridCell::createSized("", 3),
+        GridCell::createSized("", 2),
+        GridCell::createSized("", 1),
+        GridCell::createSized("", 3),
+        GridCell::createSized("", 1),
+        GridCell::createSized("", 8)
       )
     );
 
@@ -96,11 +90,9 @@ class GridDemo extends DemoSection
 
     $return[] = GridLayout::create(
       GridInner::create(
-        [
-          GridCell::create("")->addClass(GridCell::CLASS_ALIGN_TOP),
-          GridCell::create("")->addClass(GridCell::CLASS_ALIGN_MIDDLE),
-          GridCell::create("")->addClass(GridCell::CLASS_ALIGN_BOTTOM),
-        ]
+        GridCell::createSized("")->addClass(GridCell::CLASS_ALIGN_TOP),
+        GridCell::createSized("")->addClass(GridCell::CLASS_ALIGN_MIDDLE),
+        GridCell::createSized("")->addClass(GridCell::CLASS_ALIGN_BOTTOM)
       )
     )->addClass('alignment-demo');
 
@@ -108,18 +100,14 @@ class GridDemo extends DemoSection
 
     $return[] = GridLayout::create(
       GridInner::create(
-        [
-          GridCell::create(
-            GridInner::create(
-              [
-                GridCell::create("Second Level"),
-                GridCell::create("Second Level"),
-              ]
-            )
-          ),
-          GridCell::create("First Level"),
-          GridCell::create("First Level"),
-        ]
+        GridCell::createSized(
+          GridInner::create(
+            GridCell::createSized("Second Level"),
+            GridCell::createSized("Second Level")
+          )
+        ),
+        GridCell::createSized("First Level"),
+        GridCell::createSized("First Level")
       )
     );
 
@@ -127,10 +115,8 @@ class GridDemo extends DemoSection
 
     $return[] = GridLayout::create(
       GridInner::create(
-        [
-          GridCell::create("")->setSizes(6, 8),
-          GridCell::create("")->setSizes(6, 8),
-        ]
+        GridCell::createSized("")->setSizes(6, 8),
+        GridCell::createSized("")->setSizes(6, 8)
       )
     );
 
@@ -138,11 +124,9 @@ class GridDemo extends DemoSection
 
     $return[] = GridLayout::create(
       GridInner::create(
-        [
-          GridCell::create("")->setSizes(6, 8),
-          GridCell::create("")->setSizes(6, 8),
-          GridCell::create("", 12),
-        ]
+        GridCell::createSized("")->setSizes(6, 8),
+        GridCell::createSized("")->setSizes(6, 8),
+        GridCell::createSized("", 12)
       )->bordered()
     );
 
