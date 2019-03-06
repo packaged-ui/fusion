@@ -18,6 +18,9 @@ class Drawer extends AbstractContainerTag
   const REVEAL_PEEK = 'peek';
   const REVEAL_MODAL = 'modal';
 
+  const POSITION_LEFT = 'left';
+  const POSITION_RIGHT = 'right';
+
   protected $_tag = 'aside';
 
   protected $_state = self::STATE_CLOSED;
@@ -27,6 +30,7 @@ class Drawer extends AbstractContainerTag
   protected $_header = [];
   protected $_footer = [];
   protected $_appContent = [];
+  protected $_position = self::POSITION_LEFT;
 
   /**
    * @param string $state
@@ -96,6 +100,25 @@ class Drawer extends AbstractContainerTag
     return $this->_reveal;
   }
 
+  /**
+   * @return string
+   */
+  public function getPosition(): string
+  {
+    return $this->_position;
+  }
+
+  /**
+   * @param string $position
+   *
+   * @return Drawer
+   */
+  public function setPosition(string $position)
+  {
+    $this->_position = $position;
+    return $this;
+  }
+
   protected function _getContentForRender()
   {
     $content = [];
@@ -134,6 +157,10 @@ class Drawer extends AbstractContainerTag
   protected function _prepareForProduce(): HtmlTag
   {
     $drawer = parent::_prepareForProduce()->addClass('drawer');
+    if($this->_position)
+    {
+      $drawer->setAttribute('position', $this->_position);
+    }
     if($this->_state)
     {
       $drawer->setAttribute('state', $this->_state);
@@ -157,9 +184,10 @@ class Drawer extends AbstractContainerTag
   public function produceSafeHTML(): SafeHtml
   {
     $containerId = ($this->getId() ?: 'drawer-' . Strings::randomString(5)) . '-container';
+    $drawerKey = 'drawer--open-' . $this->_position;
     return Div::create(
       new SafeHtml(
-        "<script>localStorage.getItem('drawer--open')==='1'&&document.querySelector('#$containerId').classList.add('drawer--open')</script>"
+        "<script>localStorage.getItem('$drawerKey')==='1'&&document.querySelector('#$containerId').classList.add('drawer--open')</script>"
       ),
       parent::produceSafeHTML(),
       Div::create($this->_appContent)->addClass('drawer-app-content')

@@ -36,6 +36,11 @@ body.f-loaded {
   flex-shrink: 0;
 }
 
+.drawer[position="right"] {
+  left: initial;
+  right: 0;
+}
+
 .drawer[reveal="peek"]:hover::before {
   display: block;
 }
@@ -72,7 +77,7 @@ body.f-loaded {
 
 .drawer-app-content {
   top: var(--drawer-top-offset);
-  transition: margin-left var(--drawer-transition-style);
+  transition: margin-left var(--drawer-transition-style), margin-right var(--drawer-transition-style);
 }
 
 .drawer-container.drawer--open > .drawer {
@@ -118,32 +123,27 @@ body.f-loaded {
   }
 
 
-  .drawer[state="narrow"] + .drawer-app-content {
+  .drawer[state="narrow"][position="left"] + .drawer-app-content {
     margin-left: var(--drawer-narrow-width);
   }
 
-  .drawer-container.drawer--open > .drawer[state="narrow"] + .drawer-app-content {
-    /*margin-left: var(--drawer-open-width);*/
-  }
-
-  .drawer[min-state="narrow"] {
-    width: var(--drawer-narrow-width);
-  }
-
-  .drawer[min-state="narrow"] + .drawer-app-content {
-    margin-left: var(--drawer-narrow-width);
+  .drawer[state="narrow"][position="right"] + .drawer-app-content {
+    margin-right: var(--drawer-narrow-width);
   }
 
   .drawer[state="narrow"][reveal="peek"]:hover,
-  .drawer[min-state="permanent"],
   .drawer-container.drawer--open > .drawer[state="permanent"] {
     width: var(--drawer-open-width);
   }
 
-  .drawer[min-state="permanent"] + .drawer-app-content,
-  .drawer-container.drawer--open > .drawer[state="permanent"] + .drawer-app-content,
-  .drawer-container.drawer--open > .drawer[state="narrow"]:not([reveal="modal"]) + .drawer-app-content {
+  .drawer-container.drawer--open > .drawer[position="left"][state="permanent"] + .drawer-app-content,
+  .drawer-container.drawer--open > .drawer[position="left"][state="narrow"]:not([reveal="modal"]) + .drawer-app-content {
     margin-left: var(--drawer-open-width);
+  }
+
+  .drawer-container.drawer--open > .drawer[position="right"][state="permanent"] + .drawer-app-content,
+  .drawer-container.drawer--open > .drawer[position="right"][state="narrow"]:not([reveal="modal"]) + .drawer-app-content {
+    margin-right: var(--drawer-open-width);
   }
 }
 

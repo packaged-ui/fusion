@@ -9,15 +9,17 @@ window.Elegance = window.Elegance || {};
       var container = Elegance.closest(e.target, '.drawer-container');
       if(container)
       {
+        var drawer = container.querySelector('.drawer');
+        var storageKey = 'drawer--open-' + drawer.getAttribute('position');
         if(container.classList.contains('drawer--open'))
         {
           container.classList.remove('drawer--open');
-          localStorage.setItem('drawer--open', '0');
+          localStorage.setItem(storageKey, '0');
         }
         else
         {
           container.classList.add('drawer--open');
-          localStorage.setItem('drawer--open', '1');
+          localStorage.setItem(storageKey, '1');
         }
         e.stopPropagation();
         e.stopImmediatePropagation();
@@ -26,12 +28,20 @@ window.Elegance = window.Elegance || {};
   );
 
   Elegance.on(
-    document, 'click', '.drawer.drawer--open + .drawer-app-content',
-    function () {
-      if(window.getComputedStyle(document.querySelector('.drawer-app-content'), "::before")
-               .getPropertyValue('opacity') === '1')
+    document, 'click', '.drawer-container.drawer--open > .drawer-app-content',
+    function (e) {
+      if(e.target.matches('.drawer-app-content'))
       {
-        document.querySelector('.drawer').classList.remove('drawer--open');
+        var style = window.getComputedStyle(e.target, "::before");
+        if(style.getPropertyValue('opacity') === '1')
+        {
+          var container = Elegance.closest(e.target, '.drawer-container');
+          var drawer = container.querySelector('.drawer');
+          var storageKey = 'drawer--open-' + drawer.getAttribute('position');
+
+          container.classList.remove('drawer--open');
+          localStorage.setItem(storageKey, '0');
+        }
       }
     }
   );

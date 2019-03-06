@@ -35,7 +35,14 @@ class DrawerDemo extends DemoSection
         ->setFooter(Link::create("#", 'Terms & Conditions'))
         ->setState(Drawer::STATE_NARROW)
         ->setReveal(Drawer::REVEAL_PEEK)
-        ->setAppContent(new TypographyDemo());
+        ->setAppContent(
+          Drawer::create('RIGHT')
+            ->setHeader(HeadingThree::create('< Toggle Drawer')->addClass(Fusion::DRAWER_TOGGLE),)
+            ->setAppContent(new TypographyDemo())
+            ->setReveal(Drawer::REVEAL_MODAL)
+            ->setState(Drawer::STATE_NARROW)
+            ->setPosition(Drawer::POSITION_RIGHT)
+        );
 
     return SafeHtml::escape($return);
   }
