@@ -7,6 +7,11 @@ window.Elegance = window.Elegance || {};
     function (e) {
       // find parent
       var container = Elegance.closest(e.target, '.drawer-container');
+      if(!container)
+      {
+        // button not inside a drawer, get first drawer
+        container = document.querySelector('.drawer-container');
+      }
       if(container)
       {
         var drawer = container.querySelector('.drawer');
