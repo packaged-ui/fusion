@@ -10,12 +10,12 @@
   ],
   "require": {
     "php": ">=7.1",
-    "packaged/dispatch": "2.0.0-beta5",
+    "packaged/dispatch": "^2.0.0",
     "packaged/glimpse": "~2.5",
     "packaged/safehtml": "~2.0"
   },
   "require-dev": {
-    "cubex/framework": "3.0.0-beta5"
+    "cubex/framework": "3.0.0"
   },
   "autoload": {
     "psr-4": {
