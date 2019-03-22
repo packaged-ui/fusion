@@ -8,10 +8,10 @@ module.exports = function (grunt) {
             keepSpecialComments: 0
           },
           files: {
-            'resources/css/base.min.css': [
+            'src/_resources/css/base.min.css': [
               'node_modules/normalize.css/normalize.css',
-              'resources/css/base/_base.css',
-              'resources/css/base/*.css'
+              'src/_resources/css/base/_base.css',
+              'src/_resources/css/base/*.css'
             ]
           }
         },
@@ -19,9 +19,9 @@ module.exports = function (grunt) {
           files: [
             {
               expand: true,
-              cwd: 'resources/css/',
+              cwd: 'src/_resources/css/',
               src: ['*.css', '!*.min.css'],
-              dest: 'resources/css/',
+              dest: 'src/_resources/css/',
               ext: '.min.css'
             }
           ]
@@ -30,23 +30,23 @@ module.exports = function (grunt) {
       uglify: {
         base: {
           files: {
-            'resources/js/base.min.js': [
-              'resources/js/base/_base.js',
-              'resources/js/base/*.js'
+            'src/_resources/js/base.min.js': [
+              'src/_resources/js/base/_base.js',
+              'src/_resources/js/base/*.js'
             ],
           }
         }
       },
       watch: {
         styles: {
-          files: ['resources/css/**/*.css'],
+          files: ['src/_resources/css/**/*.css'],
           tasks: ['cssmin'],
           options: {
             spawn: false,
           }
         },
         scripts: {
-          files: ['resources/js/**/*.js'],
+          files: ['src/_resources/js/**/*.js'],
           tasks: ['uglify'],
           options: {
             spawn: false,
