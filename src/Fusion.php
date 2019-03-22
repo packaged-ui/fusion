@@ -1,11 +1,12 @@
 <?php
 namespace PackagedUi\Fusion;
 
+use Packaged\Dispatch\Component\DispatchableComponent;
 use Packaged\Dispatch\ResourceManager;
 use PackagedUi\Fusion\Layout\TableInterface;
 
 class Fusion implements LayoutInterface, TypographyInterface, ButtonInferface, BadgeInterface,
-                        TableInterface, ThemeInterface, ListInterface
+                        TableInterface, ThemeInterface, ListInterface, DispatchableComponent
 {
   const FILE_BASE_CSS = 'css/base.min.css';
   const FILE_BASE_JS = 'js/base.min.js';
