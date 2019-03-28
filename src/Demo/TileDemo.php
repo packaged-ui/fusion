@@ -14,8 +14,6 @@ class TileDemo extends DemoSection
 {
   protected function _content(): SafeHtml
   {
-    ResourceManager::vendor('packaged-ui', 'fontawesome')->requireCss(FaIcon::CSS_PATH);
-
     $return = [];
     $return[] = Tiles::create(
       Tile::create()->setTitle('Tile 1')->addAction(

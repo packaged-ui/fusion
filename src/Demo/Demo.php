@@ -8,6 +8,7 @@ use Packaged\Dispatch\Dispatch;
 use Packaged\Dispatch\ResourceManager;
 use Packaged\Dispatch\ResourceStore;
 use Packaged\Http\Response;
+use PackagedUi\FontAwesome\FaIcon;
 use PackagedUi\Fusion\Fusion;
 
 class Demo implements ContextAware, DispatchableComponent
@@ -20,6 +21,9 @@ class Demo implements ContextAware, DispatchableComponent
     $rm = ResourceManager::component(new Fusion());
     $rm->requireCss(Fusion::FILE_BASE_CSS);
     $rm->requireJs(Fusion::FILE_BASE_JS);
+
+    ResourceManager::vendor('packaged-ui', 'fontawesome')
+      ->requireCss(FaIcon::CSS_PATH);
 
     $rendered = '';
 
