@@ -10,9 +10,11 @@
   ],
   "require": {
     "php": ">=7.1",
-    "packaged/dispatch": "^2.1.0",
-    "packaged/glimpse": "~2.5",
-    "packaged/safehtml": "~2.0"
+    "packaged/dispatch": "^2.1",
+    "packaged/glimpse": "^2.5",
+    "packaged/safehtml": "^2.0",
+    "packaged/enum": "^1.0",
+    "packaged-ui/fontawesome": "^3.5"
   },
   "require-dev": {
     "cubex/framework": "3.0.0"

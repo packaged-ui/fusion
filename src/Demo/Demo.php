@@ -36,6 +36,7 @@ class Demo implements ContextAware, DispatchableComponent
     $elements['drawer'] = new DrawerDemo();
     $elements['list'] = new ListDemo();
     $elements['menu'] = new MenuDemo();
+    $elements['tile'] = new TileDemo();
 
     $exclude = ['drawer'];
 

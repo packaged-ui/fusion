@@ -1,5 +1,5 @@
 <?php
-///    php -S localhost:7777 demo.php
+///    php -S 127.0.0.1:7777 demo.php
 
 use Cubex\Context\Context;
 use Cubex\Cubex;

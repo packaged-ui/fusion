@@ -1,0 +1,435 @@
+:root {
+  --action-width: 30px;
+  --property-width: 125px;
+  --gutter: 5px;
+  --border-color: #ccc;
+  --tile-color: #C7CCD9;
+}
+
+.ui-tiles {
+  display: flex;
+  flex-wrap: wrap;
+}
+
+.ui-tile {
+  height: 100%;
+  width: 100%;
+  margin-bottom: 0;
+  display: flex;
+  position: relative;
+}
+
+.ui-tile .label {
+  padding: 0;
+  margin: 0;
+  border-radius: 0;
+  display: block;
+  line-height: normal;
+  text-align: inherit;
+  text-transform: uppercase;
+  font-size: 10px;
+  font-weight: 700;
+  color: #5a5a5a;
+  opacity: 0.6;
+}
+
+/* global padding */
+.ui-tile .primary,
+.ui-tile .properties .property {
+  padding: 10px;
+}
+
+/* =primary */
+.ui-tile.content-tile > .primary {
+  flex-basis: 75%;
+}
+
+.ui-tile > .primary {
+  border: 1px solid var(--border-color);
+  border-right: 0;
+  margin-top: -1px;
+  min-width: 35%;
+  flex-basis: 50%;
+  flex-grow: 1;
+  position: relative;
+  background: #fff;
+  display: flex;
+  flex-direction: column;
+}
+
+.ui-tile.no-properties > .primary,
+.ui-tiles.grid .ui-tile > .primary {
+  border-right: 1px solid var(--border-color);
+}
+
+.ui-tile .ui-tile-head {
+  display: flex;
+  flex-direction: row;
+  width: 100%;
+}
+
+.ui-tile > .primary .text {
+  flex-grow: 1;
+}
+
+.ui-tile > .primary .avatar {
+  flex-shrink: 0;
+  box-sizing: content-box;
+  display: inline-flex;
+  overflow: hidden;
+  margin-right: 8px;
+}
+
+.ui-tile > .primary .avatar > * {
+  width: 100%;
+  height: 100%;
+  margin: 0;
+  color: inherit;
+}
+
+.ui-tile > .primary .avatar img {
+  height: auto !important;
+}
+
+.ui-tile > .primary .avatar > [class*="fa-"] {
+  padding: 12px;
+}
+
+.ui-tile > .primary .label {
+  margin-bottom: 3px;
+  white-space: pre-wrap;
+  text-align: left;
+  z-index: 0;
+}
+
+.ui-tile > .primary .title {
+  padding: 0;
+  margin: 0;
+  font-size: 14px;
+  /*font-weight: 200;*/
+  color: #5a5a5a;
+}
+
+.ui-tile > .primary .description {
+  margin-top: 3px;
+  overflow-wrap: break-word;
+}
+
+.ui-tile.content-tile > .primary .description {
+  padding-top: 3px;
+}
+
+/**/
+.ui-tiles .ui-tile.no-avatar.no-label.no-description .primary {
+  display: flex;
+  align-items: center;
+}
+
+/* icons */
+.ui-tile .icons {
+  padding-left: 6px;
+  float: right;
+  position: relative;
+  top: -3px;
+  z-index: 1;
+}
+
+.ui-tile .icons > [class*="fa-"] {
+  transform: scale(0.75);
+}
+
+.ui-tiles.stacked .ui-tile {
+  margin-bottom: 0;
+  margin-right: 0;
+  z-index: 1;
+}
+
+/* =secondary */
+.ui-tile .properties {
+  display: flex;
+  flex-grow: 1;
+  flex-wrap: wrap;
+  background: var(--border-color);
+  border-right: 1px solid var(--border-color);
+  border-top: 1px solid var(--border-color);
+  margin-top: -1px;
+}
+
+.ui-tile .properties .property {
+  display: flex;
+  flex-direction: column;
+  flex-basis: 33%;
+  box-sizing: border-box;
+  flex-grow: 1;
+  position: relative;
+  text-align: inherit;
+  background: #f9f9f9;
+  color: #5a5a5a;
+  width: 0;
+  border-left: 1px solid var(--border-color);
+  border-bottom: 1px solid var(--border-color);
+}
+
+.ui-tile .properties .property .label {
+  margin-bottom: 0;
+}
+
+.ui-tile .properties .property .value {
+  margin-bottom: 4px;
+  font-size: 14px;
+}
+
+.ui-tile .properties .property .label,
+.ui-tile .properties .property .value {
+  display: block;
+  max-width: 100%;
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+}
+
+/* styles for when property can be copied to clipboard */
+.ui-tile .properties .property .copy {
+  padding: 5px;
+  border-radius: 20px;
+  position: absolute;
+  right: 0;
+  bottom: 0;
+  opacity: 0;
+  transition: opacity 0.3s ease-in-out;
+  font-size: 22px;
+  background: #f9f9f9;
+}
+
+.ui-tile .properties .property:hover .copy {
+  opacity: 1;
+}
+
+.ui-tile .properties .property[data-copy] {
+  cursor: copy;
+}
+
+.ui-tile .properties .property[data-copy] .value {
+  margin-bottom: 4px;
+}
+
+/* tile border left colour */
+
+.ui-tile:before {
+  content: '';
+  width: 3px;
+  position: absolute;
+  top: 0;
+  left: 0;
+  bottom: 0;
+  z-index: 2;
+  background-color: var(--tile-color);
+}
+
+.ui-tile.stacked:before {
+  bottom: 0;
+}
+
+.ui-tile.default:before {
+  background-color: rgb(199, 204, 217);
+}
+
+.ui-tile.default.colour-bg .primary {
+  background-color: rgba(199, 204, 217, 0.06);
+}
+
+.ui-tile.red:before {
+  background-color: rgb(192, 57, 43);
+}
+
+.ui-tile.red.colour-bg .primary {
+  background-color: rgba(192, 57, 43, 0.06);
+}
+
+.ui-tile.orange:before {
+  background-color: rgb(230, 126, 34);
+}
+
+.ui-tile.orange.colour-bg .primary {
+  background-color: rgba(230, 126, 34, 0.06);
+}
+
+.ui-tile.yellow:before {
+  background-color: rgb(241, 196, 15);
+}
+
+.ui-tile.yellow.colour-bg .primary {
+  background-color: rgba(241, 196, 15, 0.06);
+}
+
+.ui-tile.green:before {
+  background-color: rgb(19, 149, 67);
+}
+
+.ui-tile.green.colour-bg .primary {
+  background-color: rgba(19, 149, 67, 0.06);
+}
+
+.ui-tile.sky:before {
+  background-color: rgb(52, 152, 219);
+}
+
+.ui-tile.sky.colour-bg .primary {
+  background-color: rgba(52, 152, 219, 0.06);
+}
+
+.ui-tile.blue:before {
+  background-color: rgb(41, 128, 185);
+}
+
+.ui-tile.blue.colour-bg .primary {
+  background-color: rgba(41, 128, 185, 0.06);
+}
+
+.ui-tile.indigo:before {
+  background-color: rgb(110, 92, 182);
+}
+
+.ui-tile.indigo.colour-bg .primary {
+  background-color: rgba(110, 92, 182, 0.06);
+}
+
+.ui-tile.violet:before {
+  background-color: rgb(142, 68, 173);
+}
+
+.ui-tile.violet.colour-bg .primary {
+  background-color: rgba(142, 68, 173, 0.06);
+}
+
+.ui-tile.pink:before {
+  background-color: rgb(218, 73, 190);
+}
+
+.ui-tile.pink.colour-bg .primary {
+  background-color: rgba(218, 73, 190, 0.06);
+}
+
+.ui-tile.grey:before {
+  background-color: rgb(189, 195, 199);
+}
+
+.ui-tile.grey.colour-bg .primary {
+  background-color: rgba(189, 195, 199, 0.06);
+}
+
+.ui-tile.black:before {
+  background-color: rgb(51, 51, 51);
+}
+
+.ui-tile.black.colour-bg .primary {
+  background-color: rgba(51, 51, 51, 0.06);
+}
+
+/* define button styles based on action type */
+
+/* =actions */
+.ui-tile .actions {
+  box-sizing: content-box;
+  display: flex;
+  justify-content: flex-end;
+  align-content: flex-end;
+  align-items: stretch;
+  background: #eeeef1;
+  border-bottom: 1px solid var(--border-color);
+}
+
+.ui-tile .actions .action {
+  display: flex;
+  width: var(--action-width);
+  align-items: center;
+  justify-content: center;
+  font-size: 14px;
+  text-decoration: none;
+  background: #fff;
+  padding: 10px 0;
+  border-top: 1px solid var(--border-color);
+  border-left: 1px solid var(--border-color);
+  border-right: 1px solid var(--border-color);
+  margin-top: -1px;
+  margin-left: -1px;
+  border-bottom: none;
+  border-radius: 0 !important;
+  color: #4B4D51;
+}
+
+.ui-tile .actions .action [class*="fa-"] {
+  color: inherit;
+}
+
+/**/
+.ui-tile .actions .action[data-type="create"] {
+  color: #3c763d;
+  background: #dff0d8;
+}
+
+.ui-tile .actions .action[data-type="delete"] {
+  color: #a94442;
+  background: #f2dede;
+}
+
+/* icon colour change only */
+.ui-tile .actions .action[data-type="is-default"] {
+  color: #f1c40f;
+}
+
+.ui-tile .actions .action[data-type="disable"],
+.ui-tile .actions .action[data-type="approve"],
+.ui-tile .actions .action[data-type="restore"],
+.ui-tile .actions .action[data-type="verify"],
+.ui-tile .actions .action[data-type="add"] {
+  color: #3c763d;
+}
+
+.ui-tile .actions .action[data-type="enable"],
+.ui-tile .actions .action[data-type="decline"],
+.ui-tile .actions .action[data-type="remove"] {
+  color: #a94442;
+}
+
+/* =.list */
+.ui-tiles.list .ui-tile {
+  margin-bottom: var(--gutter);
+}
+
+.ui-tile .properties .property {
+  min-width: var(--property-width);
+  justify-content: center;
+  text-align: center;
+}
+
+/* =.grid */
+.ui-tiles.grid .ui-tile {
+  flex-direction: column;
+  flex-basis: auto;
+  width: 33.33%;
+  min-width: 260px;
+  flex-grow: 1;
+}
+
+.ui-tiles.grid {
+  margin-right: calc(var(--gutter) * -1);
+}
+
+.ui-tiles.grid.fullwidth .ui-tile {
+  width: 100%;
+}
+
+.ui-tiles.grid .ui-tile {
+  padding-right: var(--gutter);
+  margin-bottom: var(--gutter);
+}
+
+/* =stacked */
+
+.ui-tiles.stacked .ui-tile:before,
+.ui-tiles.stacked .ui-tile {
+  bottom: 0;
+  margin-bottom: 0;
+  padding-right: 0;
+}
