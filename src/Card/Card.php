@@ -7,6 +7,7 @@ use Packaged\Glimpse\Tags\Div;
 class Card extends Div
 {
   protected $_header;
+  protected $_footer;
   protected $_withContentContainer = true;
 
   protected function _prepareForProduce(): HtmlTag
@@ -47,6 +48,25 @@ class Card extends Div
     return $this;
   }
 
+  /**
+   * @return mixed
+   */
+  public function getFooter()
+  {
+    return $this->_footer;
+  }
+
+  /**
+   * @param mixed $footer
+   *
+   * @return Card
+   */
+  public function setFooter($footer)
+  {
+    $this->_footer = $footer;
+    return $this;
+  }
+
   protected function _getContentForRender()
   {
     $return = [];
@@ -61,6 +81,10 @@ class Card extends Div
     else
     {
       $return[] = parent::_getContentForRender();
+    }
+    if($this->_footer)
+    {
+      $return[] = Div::create($this->_footer)->addClass('card-footer');
     }
     return $return;
   }
