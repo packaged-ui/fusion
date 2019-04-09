@@ -18,8 +18,8 @@ interface ButtonInferface
   const BUTTON_RAISED = 'btn-raised';
 
   const BUTTON_XLARGE = 'btn-xl';
-  const BUTTON_LARGE = 'btn-large';
-  const BUTTON_SMALL = 'btn-small';
+  const BUTTON_LARGE = 'btn-lg';
+  const BUTTON_SMALL = 'btn-sm';
   const BUTTON_XSMALL = 'btn-xs';
 
   const BUTTON_DISABLED = 'btn-disabled';
