@@ -1,8 +1,8 @@
 <?php
 namespace PackagedUi\Fusion\Card;
 
-use Packaged\Glimpse\Core\HtmlTag;
 use Packaged\Glimpse\Tags\Div;
+use Packaged\Ui\Html\HtmlElement;
 
 class Card extends Div
 {
@@ -10,7 +10,7 @@ class Card extends Div
   protected $_footer;
   protected $_withContentContainer = true;
 
-  protected function _prepareForProduce(): HtmlTag
+  protected function _prepareForProduce(): HtmlElement
   {
     $ele = parent::_prepareForProduce();
     $ele->addClass('card');

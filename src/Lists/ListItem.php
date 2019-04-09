@@ -3,6 +3,7 @@ namespace PackagedUi\Fusion\Lists;
 
 use Packaged\Glimpse\Core\HtmlTag;
 use Packaged\Glimpse\Tags\Div;
+use Packaged\Ui\Html\HtmlElement;
 use PackagedUi\Fusion\Fusion;
 
 class ListItem extends HtmlTag
@@ -120,7 +121,7 @@ class ListItem extends HtmlTag
     return $this;
   }
 
-  protected function _prepareForProduce(): HtmlTag
+  protected function _prepareForProduce(): HtmlElement
   {
     $ele = parent::_prepareForProduce()->addClass('list-item');
     if($this->_leading)

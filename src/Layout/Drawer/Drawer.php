@@ -2,10 +2,10 @@
 namespace PackagedUi\Fusion\Layout\Drawer;
 
 use Packaged\Glimpse\Core\AbstractContainerTag;
-use Packaged\Glimpse\Core\HtmlTag;
 use Packaged\Glimpse\Tags\Div;
 use Packaged\Helpers\Strings;
 use Packaged\SafeHtml\SafeHtml;
+use Packaged\Ui\Html\HtmlElement;
 use PackagedUi\Fusion\LayoutInterface;
 
 class Drawer extends AbstractContainerTag
@@ -154,7 +154,7 @@ class Drawer extends AbstractContainerTag
     return $this;
   }
 
-  protected function _prepareForProduce(): HtmlTag
+  protected function _prepareForProduce(): HtmlElement
   {
     $drawer = parent::_prepareForProduce()->addClass('drawer');
     if($this->_position)

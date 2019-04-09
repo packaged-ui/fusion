@@ -3,6 +3,7 @@ namespace PackagedUi\Fusion\Progress;
 
 use Packaged\Glimpse\Core\HtmlTag;
 use Packaged\Glimpse\Tags\Div;
+use Packaged\Ui\Html\HtmlElement;
 
 class ProgressBar extends HtmlTag
 {
@@ -36,7 +37,7 @@ class ProgressBar extends HtmlTag
     return $this;
   }
 
-  protected function _prepareForProduce(): HtmlTag
+  protected function _prepareForProduce(): HtmlElement
   {
     $this->addClass('progress');
     return parent::_prepareForProduce();

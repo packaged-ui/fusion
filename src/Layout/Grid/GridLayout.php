@@ -2,13 +2,13 @@
 namespace PackagedUi\Fusion\Layout\Grid;
 
 use Packaged\Glimpse\Core\AbstractContainerTag;
-use Packaged\Glimpse\Core\HtmlTag;
+use Packaged\Ui\Html\HtmlElement;
 
 class GridLayout extends AbstractContainerTag
 {
   protected $_tag = 'div';
 
-  protected function _prepareForProduce(): HtmlTag
+  protected function _prepareForProduce(): HtmlElement
   {
     $ele = parent::_prepareForProduce();
     $ele->addClass('grid');

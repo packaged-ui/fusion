@@ -1,7 +1,7 @@
 <?php
 namespace PackagedUi\Fusion\Menu;
 
-use Packaged\Glimpse\Core\HtmlTag;
+use Packaged\Ui\Html\HtmlElement;
 use PackagedUi\Fusion\Lists\ListItem;
 
 class MenuItem extends ListItem
@@ -28,7 +28,7 @@ class MenuItem extends ListItem
     return $this;
   }
 
-  protected function _prepareForProduce(): HtmlTag
+  protected function _prepareForProduce(): HtmlElement
   {
     $ele = parent::_prepareForProduce()->addClass('menu-item');
     if($this->_href !== null)

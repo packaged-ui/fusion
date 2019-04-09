@@ -1,8 +1,8 @@
 <?php
 namespace PackagedUi\Fusion\Layout\Grid;
 
-use Packaged\Glimpse\Core\HtmlTag;
 use Packaged\Glimpse\Tags\Div;
+use Packaged\Ui\Html\HtmlElement;
 
 class GridCell extends Div
 {
@@ -16,7 +16,7 @@ class GridCell extends Div
 
   protected $_sizes = [];
 
-  protected function _prepareForProduce(): HtmlTag
+  protected function _prepareForProduce(): HtmlElement
   {
     $ele = parent::_prepareForProduce();
     $ele->addClass('grid__cell');
