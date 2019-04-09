@@ -3,6 +3,7 @@ namespace PackagedUi\Fusion\Tiles;
 
 use Packaged\Glimpse\Core\HtmlTag;
 use Packaged\Glimpse\Tags\Div;
+use Packaged\Ui\Html\HtmlElement;
 use PackagedUi\Fusion\Tiles\Enum\TileLayout;
 
 class Tiles extends HtmlTag
@@ -102,7 +103,7 @@ class Tiles extends HtmlTag
   /**
    * @return Div
    */
-  protected function _prepareForProduce(): HtmlTag
+  protected function _prepareForProduce(): HtmlElement
   {
     $tiles = Div::create()->addClass('ui-tiles');
 

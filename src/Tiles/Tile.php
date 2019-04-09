@@ -5,6 +5,7 @@ use Packaged\Glimpse\Core\HtmlTag;
 use Packaged\Glimpse\Tags\Div;
 use Packaged\Glimpse\Tags\Text\Paragraph;
 use Packaged\Helpers\Strings;
+use Packaged\Ui\Html\HtmlElement;
 use PackagedUi\FontAwesome\FaIcon;
 use PackagedUi\Fusion\Color\Color;
 
@@ -247,7 +248,7 @@ class Tile extends HtmlTag
   /**
    * @return Div
    */
-  protected function _prepareForProduce(): HtmlTag
+  protected function _prepareForProduce(): HtmlElement
   {
     // create container
     $container = Div::create()->addClass('ui-tile');
