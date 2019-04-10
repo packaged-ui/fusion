@@ -239,91 +239,83 @@
 }
 
 .ui-tile.red:before {
-  background-color: rgb(192, 57, 43);
+  background-color: rgb(var(--color-red));
 }
 
 .ui-tile.red.colour-bg .primary {
-  background-color: rgba(192, 57, 43, 0.06);
+  background-color: rgba(var(--color-red), 0.06);
 }
 
 .ui-tile.orange:before {
-  background-color: rgb(230, 126, 34);
+  background-color: rgb(var(--color-orange));
 }
 
 .ui-tile.orange.colour-bg .primary {
-  background-color: rgba(230, 126, 34, 0.06);
+  background-color: rgba(var(--color-orange), 0.06);
 }
 
 .ui-tile.yellow:before {
-  background-color: rgb(241, 196, 15);
+  background-color: rgb(var(--color-yellow));
 }
 
 .ui-tile.yellow.colour-bg .primary {
-  background-color: rgba(241, 196, 15, 0.06);
+  background-color: rgba(var(--color-yellow), 0.06);
 }
 
 .ui-tile.green:before {
-  background-color: rgb(19, 149, 67);
+  background-color: rgb(var(--color-green));
 }
 
 .ui-tile.green.colour-bg .primary {
-  background-color: rgba(19, 149, 67, 0.06);
+  background-color: rgba(var(--color-green), 0.06);
 }
 
 .ui-tile.sky:before {
-  background-color: rgb(52, 152, 219);
+  background-color: rgb(var(--color-sky));
 }
 
 .ui-tile.sky.colour-bg .primary {
-  background-color: rgba(52, 152, 219, 0.06);
+  background-color: rgba(var(--color-sky), 0.06);
 }
 
 .ui-tile.blue:before {
-  background-color: rgb(41, 128, 185);
+  background-color: rgb(var(--color-blue));
 }
 
 .ui-tile.blue.colour-bg .primary {
-  background-color: rgba(41, 128, 185, 0.06);
+  background-color: rgba(var(--color-blue), 0.06);
 }
 
 .ui-tile.indigo:before {
-  background-color: rgb(110, 92, 182);
+  background-color: rgb(var(--color-indigo));
 }
 
 .ui-tile.indigo.colour-bg .primary {
-  background-color: rgba(110, 92, 182, 0.06);
-}
-
-.ui-tile.violet:before {
-  background-color: rgb(142, 68, 173);
-}
-
-.ui-tile.violet.colour-bg .primary {
-  background-color: rgba(142, 68, 173, 0.06);
+  background-color: rgba(var(--color-indigo), 0.06);
 }
 
 .ui-tile.pink:before {
-  background-color: rgb(218, 73, 190);
+  background-color: rgb(var(--color-pink));
 }
 
 .ui-tile.pink.colour-bg .primary {
-  background-color: rgba(218, 73, 190, 0.06);
+  background-color: rgba(var(--color-pink), 0.06);
 }
 
 .ui-tile.grey:before {
-  background-color: rgb(189, 195, 199);
+  background-color: rgb(var(--color-grey));
 }
 
 .ui-tile.grey.colour-bg .primary {
-  background-color: rgba(189, 195, 199, 0.06);
+  background-color: rgba(var(--color-grey), 0.06);
 }
 
 .ui-tile.black:before {
-  background-color: rgb(51, 51, 51);
+  background-color: rgb(var(--color-black));
 }
 
 .ui-tile.black.colour-bg .primary {
-  background-color: rgba(51, 51, 51, 0.06);
+  background-color: rgba(var(--color-black), 0.06);
 }
 
 /* define button styles based on action type */
