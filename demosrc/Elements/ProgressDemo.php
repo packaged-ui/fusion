@@ -1,15 +1,14 @@
 <?php
-namespace PackagedUi\Fusion\Demo;
+namespace PackagedUi\FusionDemo\Elements;
 
-use Packaged\SafeHtml\SafeHtml;
 use PackagedUi\Fusion\Progress\ProgressBar;
 
 class ProgressDemo extends DemoSection
 {
-  protected function _content(): SafeHtml
+  protected function _content(): array
   {
     $return = [];
     $return[] = ProgressBar::create(50);
-    return SafeHtml::escape($return);
+    return $return;
   }
 }

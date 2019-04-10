@@ -1,5 +1,5 @@
 <?php
-namespace PackagedUi\Fusion\Demo;
+namespace PackagedUi\FusionDemo\Elements;
 
 use Packaged\Glimpse\Tags\Div;
 use Packaged\Glimpse\Tags\Layout\Footer;
@@ -35,12 +35,11 @@ use Packaged\Glimpse\Tags\Text\SmallText;
 use Packaged\Glimpse\Tags\Text\StrongText;
 use Packaged\Glimpse\Tags\Text\UnderlinedText;
 use Packaged\Glimpse\Tags\Text\Variable;
-use Packaged\SafeHtml\SafeHtml;
 use PackagedUi\Fusion\Fusion;
 
 class TypographyDemo extends DemoSection
 {
-  protected function _content(): SafeHtml
+  protected function _content(): array
   {
     $return = [];
 
@@ -182,6 +181,6 @@ class TypographyDemo extends DemoSection
       Figure::forImage(Image::create('https://picsum.photos/400/200'), FigureCaption::create('Random image'))
     );
 
-    return SafeHtml::escape($return);
+    return $return;
   }
 }

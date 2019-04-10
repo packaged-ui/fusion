@@ -1,9 +1,7 @@
 <?php
-namespace PackagedUi\Fusion\Demo;
+namespace PackagedUi\FusionDemo\Elements;
 
-use Packaged\Dispatch\ResourceManager;
 use Packaged\Glimpse\Tags\Link;
-use Packaged\SafeHtml\SafeHtml;
 use PackagedUi\FontAwesome\FaIcon;
 use PackagedUi\Fusion\Tiles\Enum\TileLayout;
 use PackagedUi\Fusion\Tiles\Tile;
@@ -12,7 +10,7 @@ use PackagedUi\Fusion\Tiles\Tiles;
 
 class TileDemo extends DemoSection
 {
-  protected function _content(): SafeHtml
+  protected function _content(): array
   {
     $return = [];
     $return[] = Tiles::create(
@@ -36,6 +34,6 @@ class TileDemo extends DemoSection
       $tiles->addTile($tile);
     }
 
-    return SafeHtml::escape($return);
+    return $return;
   }
 }

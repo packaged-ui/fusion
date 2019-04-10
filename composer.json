@@ -25,6 +25,11 @@
       "PackagedUi\\Fusion\\": "src"
     }
   },
+  "autoload-dev": {
+    "psr-4": {
+      "PackagedUi\\FusionDemo\\": "demosrc"
+    }
+  },
   "repositories": [
     {
       "type": "vcs",

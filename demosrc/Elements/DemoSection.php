@@ -1,16 +1,16 @@
 <?php
-namespace PackagedUi\Fusion\Demo;
+namespace PackagedUi\FusionDemo\Elements;
 
 use Packaged\SafeHtml\ISafeHtmlProducer;
 use Packaged\SafeHtml\SafeHtml;
 
 abstract class DemoSection implements ISafeHtmlProducer
 {
-  abstract protected function _content(): SafeHtml;
+  abstract protected function _content(): array;
 
   public function produceSafeHTML(): SafeHtml
   {
-    return $this->_content();
+    return SafeHtml::escape($this->_content());
   }
 
 }

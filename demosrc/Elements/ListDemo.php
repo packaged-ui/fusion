@@ -1,5 +1,5 @@
 <?php
-namespace PackagedUi\Fusion\Demo;
+namespace PackagedUi\FusionDemo\Elements;
 
 use Packaged\SafeHtml\SafeHtml;
 use PackagedUi\Fusion\Lists\ListBox;
@@ -7,7 +7,7 @@ use PackagedUi\Fusion\Lists\ListItem;
 
 class ListDemo extends DemoSection
 {
-  protected function _content(): SafeHtml
+  protected function _content(): array
   {
     $return = [];
     $return[] = ListBox::create(
@@ -21,6 +21,6 @@ class ListDemo extends DemoSection
       ListItem::create('primary 8')->setSecondary('secondary')->setLeading('L')->setTrailing('T')
     );
 
-    return SafeHtml::escape($return);
+    return $return;
   }
 }

@@ -1,16 +1,15 @@
 <?php
-namespace PackagedUi\Fusion\Demo;
+namespace PackagedUi\FusionDemo\Elements;
 
 use Packaged\Dispatch\ResourceManager;
 use Packaged\Glimpse\Tags\LineBreak;
-use Packaged\SafeHtml\SafeHtml;
 use PackagedUi\Fusion\Layout\Grid\GridCell;
 use PackagedUi\Fusion\Layout\Grid\GridInner;
 use PackagedUi\Fusion\Layout\Grid\GridLayout;
 
 class GridDemo extends DemoSection
 {
-  protected function _content(): SafeHtml
+  protected function _content(): array
   {
     ResourceManager::inline()->requireCss(
       "
@@ -130,6 +129,6 @@ class GridDemo extends DemoSection
       )->bordered()
     );
 
-    return SafeHtml::escape($return);
+    return $return;
   }
 }

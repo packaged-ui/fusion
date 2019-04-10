@@ -1,16 +1,15 @@
 <?php
-namespace PackagedUi\Fusion\Demo;
+namespace PackagedUi\FusionDemo\Elements;
 
 use Packaged\Glimpse\Tags\Div;
 use Packaged\Glimpse\Tags\Text\HeadingOne;
 use Packaged\Glimpse\Tags\Text\HeadingSix;
-use Packaged\SafeHtml\SafeHtml;
 use PackagedUi\Fusion\Button\Button;
 use PackagedUi\Fusion\Fusion;
 
 class ThemeDemo extends DemoSection
 {
-  protected function _content(): SafeHtml
+  protected function _content(): array
   {
     $return = [];
 
@@ -28,6 +27,6 @@ class ThemeDemo extends DemoSection
       ]
     );
 
-    return SafeHtml::escape($return);
+    return $return;
   }
 }

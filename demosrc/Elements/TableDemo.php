@@ -1,5 +1,5 @@
 <?php
-namespace PackagedUi\Fusion\Demo;
+namespace PackagedUi\FusionDemo\Elements;
 
 use Packaged\Glimpse\Tags\LineBreak;
 use Packaged\Glimpse\Tags\Table\TableBody;
@@ -7,13 +7,12 @@ use Packaged\Glimpse\Tags\Table\TableCell;
 use Packaged\Glimpse\Tags\Table\TableHead;
 use Packaged\Glimpse\Tags\Table\TableHeading;
 use Packaged\Glimpse\Tags\Table\TableRow;
-use Packaged\SafeHtml\SafeHtml;
 use PackagedUi\Fusion\Card\Card;
 use PackagedUi\Fusion\Table\Table;
 
 class TableDemo extends DemoSection
 {
-  protected function _content(): SafeHtml
+  protected function _content(): array
   {
     $return = [];
 
@@ -82,6 +81,6 @@ class TableDemo extends DemoSection
       )->bordered()->striped()
     )->disableContentContainer();
 
-    return SafeHtml::escape($return);
+    return $return;
   }
 }

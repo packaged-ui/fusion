@@ -1,15 +1,14 @@
 <?php
-namespace PackagedUi\Fusion\Demo;
+namespace PackagedUi\FusionDemo\Elements;
 
 use Packaged\Glimpse\Tags\Div;
 use Packaged\Glimpse\Tags\Span;
-use Packaged\SafeHtml\SafeHtml;
 use PackagedUi\Fusion\Badge;
 use PackagedUi\Fusion\Fusion;
 
 class BadgeDemo extends DemoSection
 {
-  protected function _content(): SafeHtml
+  protected function _content(): array
   {
     $return = [];
 
@@ -19,6 +18,6 @@ class BadgeDemo extends DemoSection
       Fusion::BADGE_ADDED_MARGIN,
       Fusion::DISPLAY_INLINE_BLOCK
     );
-    return SafeHtml::escape($return);
+    return $return;
   }
 }

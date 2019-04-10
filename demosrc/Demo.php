@@ -1,32 +1,39 @@
 <?php
-namespace PackagedUi\Fusion\Demo;
+namespace PackagedUi\FusionDemo;
 
 use Cubex\Context\ContextAware;
 use Cubex\Context\ContextAwareTrait;
-use Packaged\Dispatch\Component\DispatchableComponent;
 use Packaged\Dispatch\Dispatch;
 use Packaged\Dispatch\ResourceManager;
 use Packaged\Dispatch\ResourceStore;
 use Packaged\Http\Response;
 use PackagedUi\FontAwesome\FaIcon;
 use PackagedUi\Fusion\Fusion;
+use PackagedUi\FusionDemo\Elements\BadgeDemo;
+use PackagedUi\FusionDemo\Elements\ButtonDemo;
+use PackagedUi\FusionDemo\Elements\CardDemo;
+use PackagedUi\FusionDemo\Elements\DrawerDemo;
+use PackagedUi\FusionDemo\Elements\GridDemo;
+use PackagedUi\FusionDemo\Elements\LayoutDemo;
+use PackagedUi\FusionDemo\Elements\ListDemo;
+use PackagedUi\FusionDemo\Elements\MenuDemo;
+use PackagedUi\FusionDemo\Elements\ProgressDemo;
+use PackagedUi\FusionDemo\Elements\TableDemo;
+use PackagedUi\FusionDemo\Elements\ThemeDemo;
+use PackagedUi\FusionDemo\Elements\TileDemo;
+use PackagedUi\FusionDemo\Elements\TypographyDemo;
 
-class Demo implements ContextAware, DispatchableComponent
+class Demo implements ContextAware
 {
   use ContextAwareTrait;
 
   public function render()
   {
     Fusion::includeGoogleFont();
-    $rm = ResourceManager::component(new Fusion());
-    $rm->requireCss(Fusion::FILE_BASE_CSS);
-    $rm->requireJs(Fusion::FILE_BASE_JS);
-
-    ResourceManager::vendor('packaged-ui', 'fontawesome')
-      ->requireCss(FaIcon::CSS_PATH);
+    ResourceManager::component(new Fusion())->requireCss(Fusion::FILE_BASE_CSS)->requireJs(Fusion::FILE_BASE_JS);
+    ResourceManager::vendor('packaged-ui', 'fontawesome')->requireCss(FaIcon::CSS_PATH);
 
     $rendered = '';
-
     $elements = [];
     $elements['typography'] = new TypographyDemo();
     $elements['layout'] = new LayoutDemo();
@@ -73,10 +80,5 @@ class Demo implements ContextAware, DispatchableComponent
       . Dispatch::instance()->store()->generateHtmlIncludes(ResourceStore::TYPE_JS)
       . ' </body></html>';
     return Response::create($content);
-  }
-
-  public function getResourceDirectory()
-  {
-    return __DIR__;
   }
 }

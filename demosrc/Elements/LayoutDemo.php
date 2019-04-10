@@ -1,14 +1,13 @@
 <?php
-namespace PackagedUi\Fusion\Demo;
+namespace PackagedUi\FusionDemo\Elements;
 
 use Packaged\Dispatch\ResourceManager;
 use Packaged\Glimpse\Tags\Div;
-use Packaged\SafeHtml\SafeHtml;
 use PackagedUi\Fusion\Fusion;
 
 class LayoutDemo extends DemoSection
 {
-  protected function _content(): SafeHtml
+  protected function _content(): array
   {
     ResourceManager::inline()->requireCss(
       "
@@ -47,15 +46,13 @@ class LayoutDemo extends DemoSection
       Fusion::PADDING_LEFT_MEDIUM
     );
 
-    return SafeHtml::escape(
-      array_map(
-        function (Div $cell) {
-          $cell->addClass('cell');
-          $cell->setContent(Div::create()->addClass('cell-inner'));
-          return Div::create($cell)->addClass('container');
-        },
-        $cells
-      )
+    return array_map(
+      function (Div $cell) {
+        $cell->addClass('cell');
+        $cell->setContent(Div::create()->addClass('cell-inner'));
+        return Div::create($cell)->addClass('container');
+      },
+      $cells
     );
   }
 }

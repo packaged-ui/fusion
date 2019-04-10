@@ -1,13 +1,12 @@
 <?php
-namespace PackagedUi\Fusion\Demo;
+namespace PackagedUi\FusionDemo\Elements;
 
-use Packaged\SafeHtml\SafeHtml;
 use PackagedUi\Fusion\Menu\Menu;
 use PackagedUi\Fusion\Menu\MenuItem;
 
 class MenuDemo extends DemoSection
 {
-  protected function _content(): SafeHtml
+  protected function _content(): array
   {
     $return = [];
     $return[] = Menu::create(
@@ -21,6 +20,6 @@ class MenuDemo extends DemoSection
       MenuItem::create('primary 8')->setHref('/menu/8')->setSecondary('secondary')->setLeading('L')->setTrailing('T')
     );
 
-    return SafeHtml::escape($return);
+    return $return;
   }
 }

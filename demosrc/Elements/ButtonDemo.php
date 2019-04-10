@@ -1,15 +1,14 @@
 <?php
-namespace PackagedUi\Fusion\Demo;
+namespace PackagedUi\FusionDemo\Elements;
 
 use Packaged\Glimpse\Tags\LineBreak;
 use Packaged\Glimpse\Tags\Link;
-use Packaged\SafeHtml\SafeHtml;
 use PackagedUi\Fusion\Button\Button;
 use PackagedUi\Fusion\Fusion;
 
 class ButtonDemo extends DemoSection
 {
-  protected function _content(): SafeHtml
+  protected function _content(): array
   {
     $return = [];
 
@@ -94,6 +93,6 @@ class ButtonDemo extends DemoSection
 
     $return[] = Button::create("+")->fab();
 
-    return SafeHtml::escape($return);
+    return $return;
   }
 }

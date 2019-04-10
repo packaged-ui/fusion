@@ -1,10 +1,9 @@
 <?php
-namespace PackagedUi\Fusion\Demo;
+namespace PackagedUi\FusionDemo\Elements;
 
 use Packaged\Glimpse\Tags\Link;
 use Packaged\Glimpse\Tags\Text\HeadingSix;
 use Packaged\Glimpse\Tags\Text\HeadingThree;
-use Packaged\SafeHtml\SafeHtml;
 use PackagedUi\Fusion\Fusion;
 use PackagedUi\Fusion\Layout\Drawer\Drawer;
 use PackagedUi\Fusion\Menu\Menu;
@@ -12,7 +11,7 @@ use PackagedUi\Fusion\Menu\MenuItem;
 
 class DrawerDemo extends DemoSection
 {
-  protected function _content(): SafeHtml
+  protected function _content(): array
   {
     $return = [];
     $return[] =
@@ -44,6 +43,6 @@ class DrawerDemo extends DemoSection
             ->setPosition(Drawer::POSITION_RIGHT)
         );
 
-    return SafeHtml::escape($return);
+    return $return;
   }
 }

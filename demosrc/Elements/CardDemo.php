@@ -1,8 +1,7 @@
 <?php
-namespace PackagedUi\Fusion\Demo;
+namespace PackagedUi\FusionDemo\Elements;
 
 use Packaged\Glimpse\Tags\LineBreak;
-use Packaged\SafeHtml\SafeHtml;
 use PackagedUi\Fusion\Button\Button;
 use PackagedUi\Fusion\Card\Card;
 use PackagedUi\Fusion\Layout\Flex;
@@ -10,7 +9,7 @@ use PackagedUi\Fusion\Layout\FlexGrow;
 
 class CardDemo extends DemoSection
 {
-  protected function _content(): SafeHtml
+  protected function _content(): array
   {
     $return = [];
 
@@ -25,6 +24,6 @@ class CardDemo extends DemoSection
     $return[] = Card::create('Card Content')->setHeader($header)->setFooter('Footer');
     $return[] = LineBreak::create();
     $return[] = Card::create('Card Content')->disableContentContainer();
-    return SafeHtml::escape($return);
+    return $return;
   }
 }
