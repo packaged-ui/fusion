@@ -20,17 +20,13 @@ class ColorDemo extends DemoSection
 
     foreach(Color::getKeyedValues() as $color => $display)
     {
-      $return[] = Div::create($display)
-        ->addClass(
-          Color::foregroundCss($color),
-          Color::backgroundCss($color),
-          Fusion::PADDING_MEDIUM
-        );
+      $return[] = Div::create("Background " . $display)
+        ->addClass(Color::backgroundCss($color), Fusion::PADDING_MEDIUM);
     }
 
     foreach(Color::getKeyedValues() as $color => $display)
     {
-      $return[] = Div::create($display)
+      $return[] = Div::create("Solid Background " . $display)
         ->addClass(Color::backgroundCss($color, true), Fusion::PADDING_MEDIUM);
     }
 

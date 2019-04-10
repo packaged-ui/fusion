@@ -3,6 +3,7 @@ namespace PackagedUi\Fusion\Tiles;
 
 use Packaged\Glimpse\Core\HtmlTag;
 use Packaged\Glimpse\Tags\LineBreak;
+use Packaged\Ui\Html\HtmlElement;
 
 class ContentTile extends Tile
 {
@@ -32,7 +33,10 @@ class ContentTile extends Tile
   protected function _getContentForRender()
   {
     $tile = parent::_getContentForRender();
-    $tile->addClass("content-tile");
+    if($tile instanceof HtmlElement)
+    {
+      $tile->addClass("content-tile");
+    }
     return $tile;
   }
 }

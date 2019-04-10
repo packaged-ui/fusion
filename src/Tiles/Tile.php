@@ -7,6 +7,7 @@ use Packaged\Glimpse\Tags\Text\Paragraph;
 use Packaged\Helpers\Strings;
 use Packaged\Ui\Html\HtmlElement;
 use PackagedUi\FontAwesome\FaIcon;
+use PackagedUi\FontAwesome\FaIcons;
 use PackagedUi\Fusion\Color\Color;
 
 class Tile extends HtmlTag
@@ -70,7 +71,7 @@ class Tile extends HtmlTag
   }
 
   /**
-   * @param Avatar $avatar
+   * @param $avatar
    *
    * @return $this
    */
@@ -166,7 +167,7 @@ class Tile extends HtmlTag
    */
   public function addIcon($icon)
   {
-    if(is_string($icon) && FaIcon::isValid($icon))
+    if(is_string($icon) && FaIcons::isValid($icon))
     {
       $icon = FaIcon::create($icon);
     }

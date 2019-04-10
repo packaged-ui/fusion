@@ -124,23 +124,26 @@ class ListItem extends HtmlTag
   protected function _prepareForProduce(): HtmlElement
   {
     $ele = parent::_prepareForProduce()->addClass('list-item');
-    if($this->_leading)
+    if($ele instanceof HtmlTag)
     {
-      $ele->appendContent(Div::create($this->_leading)->addClass('list-item__leading'));
-    }
-    $text = Div::create()->addClass('list-item__text');
-    $text->appendContent(Div::create($this->_primary)->addClass(Fusion::TEXT_HIGH_EMPHASIS));
-    if($this->_secondary)
-    {
-      $text->appendContent(
-        Div::create($this->_secondary)->addClass('list-item__secondary', Fusion::TEXT_MEDIUM_EMPHASIS)
-      );
-      $ele->addClass('list-item--multi');
-    }
-    $ele->appendContent($text);
-    if($this->_trailing)
-    {
-      $ele->appendContent(Div::create($this->_trailing)->addClass('list-item__trailing'));
+      if($this->_leading)
+      {
+        $ele->appendContent(Div::create($this->_leading)->addClass('list-item__leading'));
+      }
+      $text = Div::create()->addClass('list-item__text');
+      $text->appendContent(Div::create($this->_primary)->addClass(Fusion::TEXT_HIGH_EMPHASIS));
+      if($this->_secondary)
+      {
+        $text->appendContent(
+          Div::create($this->_secondary)->addClass('list-item__secondary', Fusion::TEXT_MEDIUM_EMPHASIS)
+        );
+        $ele->addClass('list-item--multi');
+      }
+      $ele->appendContent($text);
+      if($this->_trailing)
+      {
+        $ele->appendContent(Div::create($this->_trailing)->addClass('list-item__trailing'));
+      }
     }
     return $ele;
   }
