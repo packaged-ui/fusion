@@ -1,5 +1,5 @@
 <?php
-namespace PackagedUi\FusionDemo\Elements;
+namespace PackagedUi\FusionDemo;
 
 use Packaged\SafeHtml\ISafeHtmlProducer;
 use Packaged\SafeHtml\SafeHtml;
@@ -12,5 +12,4 @@ abstract class DemoSection implements ISafeHtmlProducer
   {
     return SafeHtml::escape($this->_content());
   }
-
 }

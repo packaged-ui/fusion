@@ -22,7 +22,7 @@ class Tile extends HtmlTag
   /** @var  array */
   protected $_icons = [];
   /** @var  string */
-  protected $_color = Color::COLOR_DEFAULT;
+  protected $_color;
   /** @var  null|string */
   protected $_label = null;
   /** @var  null|mixed */
@@ -179,7 +179,7 @@ class Tile extends HtmlTag
    *
    * @return $this
    */
-  public function setColor($color = Color::COLOR_DEFAULT)
+  public function setColor($color)
   {
     $this->_color = $color;
     return $this;
@@ -313,7 +313,11 @@ class Tile extends HtmlTag
     }
 
     // add border Color class
-    if(Color::isValid($this->_color))
+    if($this->_color === null)
+    {
+      $container->addClass('default');
+    }
+    else if(Color::isValid($this->_color))
     {
       $container->addClass($this->_color);
     }

@@ -16,5 +16,14 @@ class Color extends AbstractEnum
   const COLOR_PINK = 'pink';
   const COLOR_GREY = 'grey';
   const COLOR_BLACK = 'black';
-  const COLOR_DEFAULT = 'default';
+
+  public static function foregroundCss($color)
+  {
+    return 'c-' . $color;
+  }
+
+  public static function backgroundCss($color, bool $solid = false)
+  {
+    return 'bgc-' . ($solid ? 'sld-' : '') . $color;
+  }
 }

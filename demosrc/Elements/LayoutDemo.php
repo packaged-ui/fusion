@@ -4,6 +4,7 @@ namespace PackagedUi\FusionDemo\Elements;
 use Packaged\Dispatch\ResourceManager;
 use Packaged\Glimpse\Tags\Div;
 use PackagedUi\Fusion\Fusion;
+use PackagedUi\FusionDemo\DemoSection;
 
 class LayoutDemo extends DemoSection
 {

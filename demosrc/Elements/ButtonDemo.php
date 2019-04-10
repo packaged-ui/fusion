@@ -5,6 +5,7 @@ use Packaged\Glimpse\Tags\LineBreak;
 use Packaged\Glimpse\Tags\Link;
 use PackagedUi\Fusion\Button\Button;
 use PackagedUi\Fusion\Fusion;
+use PackagedUi\FusionDemo\DemoSection;
 
 class ButtonDemo extends DemoSection
 {

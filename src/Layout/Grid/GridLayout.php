@@ -14,4 +14,9 @@ class GridLayout extends AbstractContainerTag
     $ele->addClass('grid');
     return $ele;
   }
+
+  public static function createWithInner(...$content)
+  {
+    return self::create(GridInner::create(...$content));
+  }
 }

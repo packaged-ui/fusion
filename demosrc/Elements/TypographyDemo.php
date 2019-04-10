@@ -36,6 +36,7 @@ use Packaged\Glimpse\Tags\Text\StrongText;
 use Packaged\Glimpse\Tags\Text\UnderlinedText;
 use Packaged\Glimpse\Tags\Text\Variable;
 use PackagedUi\Fusion\Fusion;
+use PackagedUi\FusionDemo\DemoSection;
 
 class TypographyDemo extends DemoSection
 {

@@ -12,12 +12,14 @@ use PackagedUi\Fusion\Fusion;
 use PackagedUi\FusionDemo\Elements\BadgeDemo;
 use PackagedUi\FusionDemo\Elements\ButtonDemo;
 use PackagedUi\FusionDemo\Elements\CardDemo;
+use PackagedUi\FusionDemo\Elements\ColorDemo;
 use PackagedUi\FusionDemo\Elements\DrawerDemo;
 use PackagedUi\FusionDemo\Elements\GridDemo;
 use PackagedUi\FusionDemo\Elements\LayoutDemo;
 use PackagedUi\FusionDemo\Elements\ListDemo;
 use PackagedUi\FusionDemo\Elements\MenuDemo;
 use PackagedUi\FusionDemo\Elements\ProgressDemo;
+use PackagedUi\FusionDemo\Elements\StatisticsDemo;
 use PackagedUi\FusionDemo\Elements\TableDemo;
 use PackagedUi\FusionDemo\Elements\ThemeDemo;
 use PackagedUi\FusionDemo\Elements\TileDemo;
@@ -36,6 +38,7 @@ class Demo implements ContextAware
     $rendered = '';
     $elements = [];
     $elements['typography'] = new TypographyDemo();
+    $elements['color'] = new ColorDemo();
     $elements['layout'] = new LayoutDemo();
     $elements['theme'] = new ThemeDemo();
     $elements['button'] = new ButtonDemo();
@@ -48,8 +51,7 @@ class Demo implements ContextAware
     $elements['list'] = new ListDemo();
     $elements['menu'] = new MenuDemo();
     $elements['tile'] = new TileDemo();
-
-    $exclude = ['drawer'];
+    $elements['statistics'] = new StatisticsDemo();
 
     $path = ltrim($this->getContext()->request()->path(1), '/');
     switch($path)
@@ -57,7 +59,7 @@ class Demo implements ContextAware
       case "":
         foreach($elements as $k => $class)
         {
-          if(!in_array($k, $exclude))
+          if(!($class instanceof DemoPage))
           {
             $rendered .= $class->produceSafeHTML()->getContent();
             $rendered .= '<br/>';

@@ -8,6 +8,7 @@ use PackagedUi\Fusion\Tiles\Enum\TileLayout;
 use PackagedUi\Fusion\Tiles\Tile;
 use PackagedUi\Fusion\Tiles\TileAction;
 use PackagedUi\Fusion\Tiles\Tiles;
+use PackagedUi\FusionDemo\DemoSection;
 
 class TileDemo extends DemoSection
 {

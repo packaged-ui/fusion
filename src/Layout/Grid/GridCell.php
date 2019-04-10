@@ -29,6 +29,25 @@ class GridCell extends Div
     return $ele;
   }
 
+  public static function collectionSized(
+    array $items, $span = null, $desktopSpan = null, $tabletSpan = null, $phoneSpan = null
+  )
+  {
+    $return = [];
+    foreach($items as $item)
+    {
+      if($item instanceof static)
+      {
+        $return[] = $item;
+      }
+      else
+      {
+        $return[] = static::createSized($item, $span, $desktopSpan, $tabletSpan, $phoneSpan);
+      }
+    }
+    return $return;
+  }
+
   public static function createSized(
     $content = '', $span = null, $desktopSpan = null, $tabletSpan = null, $phoneSpan = null
   )

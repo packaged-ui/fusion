@@ -1,0 +1,143 @@
+:root {
+  --color-red: 192, 57, 43;
+  --color-orange: 230, 126, 34;
+  --color-yellow: 241, 196, 15;
+  --color-green: 19, 149, 67;
+  --color-sky: 52, 152, 219;
+  --color-blue: 41, 128, 185;
+  --color-indigo: 110, 92, 182;
+  --color-pink: 142, 68, 173;
+  --color-grey: 189, 195, 199;
+  --color-black: 51, 51, 51;
+}
+
+.c-red {
+  color: rgb(var(--color-red));
+  --f-text-color: var(--color-red)
+}
+
+.c-orange {
+  color: rgb(var(--color-orange));
+  --f-text-color: var(--color-orange)
+}
+
+.c-yellow {
+  color: rgb(var(--color-yellow));
+  --f-text-color: var(--color-yellow)
+}
+
+.c-green {
+  color: rgb(var(--color-green));
+  --f-text-color: var(--color-green)
+}
+
+.c-sky {
+  color: rgb(var(--color-sky));
+  --f-text-color: var(--color-sky)
+}
+
+.c-blue {
+  color: rgb(var(--color-blue));
+  --f-text-color: var(--color-blue)
+}
+
+.c-indigo {
+  color: rgb(var(--color-indigo));
+  --f-text-color: var(--color-indigo)
+}
+
+.c-pink {
+  color: rgb(var(--color-pink));
+  --f-text-color: var(--color-pink)
+}
+
+.c-grey {
+  color: rgb(var(--color-grey));
+  --f-text-color: var(--color-grey)
+}
+
+.c-black {
+  color: rgb(var(--color-black));
+  --f-text-color: var(--color-black)
+}
+
+
+.bgc-red {
+  background-color: rgba(var(--color-red), 0.1);
+}
+
+.bgc-orange {
+  background-color: rgba(var(--color-orange), 0.1);
+}
+
+.bgc-yellow {
+  background-color: rgba(var(--color-yellow), 0.1);
+}
+
+.bgc-green {
+  background-color: rgba(var(--color-green), 0.1);
+}
+
+.bgc-sky {
+  background-color: rgba(var(--color-sky), 0.1);
+}
+
+.bgc-blue {
+  background-color: rgba(var(--color-blue), 0.1);
+}
+
+.bgc-indigo {
+  background-color: rgba(var(--color-indigo), 0.1);
+}
+
+.bgc-pink {
+  background-color: rgba(var(--color-pink), 0.1);
+}
+
+.bgc-grey {
+  background-color: rgba(var(--color-grey), 0.1);
+}
+
+.bgc-black {
+  background-color: rgba(var(--color-black), 0.1);
+}
+
+.bgc-sld-red {
+  background-color: rgba(var(--color-red, 1));
+}
+
+.bgc-sld-orange {
+  background-color: rgba(var(--color-orange, 1));
+}
+
+.bgc-sld-yellow {
+  background-color: rgba(var(--color-yellow, 1));
+}
+
+.bgc-sld-green {
+  background-color: rgba(var(--color-green, 1));
+}
+
+.bgc-sld-sky {
+  background-color: rgba(var(--color-sky, 1));
+}
+
+.bgc-sld-blue {
+  background-color: rgba(var(--color-blue, 1));
+}
+
+.bgc-sld-indigo {
+  background-color: rgba(var(--color-indigo, 1));
+}
+
+.bgc-sld-pink {
+  background-color: rgba(var(--color-pink, 1));
+}
+
+.bgc-sld-grey {
+  background-color: rgba(var(--color-grey, 1));
+}
+
+.bgc-sld-black {
+  background-color: rgba(var(--color-black, 1));
+}

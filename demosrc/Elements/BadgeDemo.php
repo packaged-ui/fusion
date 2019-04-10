@@ -5,6 +5,7 @@ use Packaged\Glimpse\Tags\Div;
 use Packaged\Glimpse\Tags\Span;
 use PackagedUi\Fusion\Badge;
 use PackagedUi\Fusion\Fusion;
+use PackagedUi\FusionDemo\DemoSection;
 
 class BadgeDemo extends DemoSection
 {

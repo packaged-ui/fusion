@@ -3,6 +3,7 @@ namespace PackagedUi\FusionDemo\Elements;
 
 use PackagedUi\Fusion\Menu\Menu;
 use PackagedUi\Fusion\Menu\MenuItem;
+use PackagedUi\FusionDemo\DemoSection;
 
 class MenuDemo extends DemoSection
 {

@@ -2,6 +2,7 @@
 namespace PackagedUi\FusionDemo\Elements;
 
 use PackagedUi\Fusion\Progress\ProgressBar;
+use PackagedUi\FusionDemo\DemoSection;
 
 class ProgressDemo extends DemoSection
 {

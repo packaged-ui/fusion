@@ -6,6 +6,7 @@ use Packaged\Glimpse\Tags\LineBreak;
 use PackagedUi\Fusion\Layout\Grid\GridCell;
 use PackagedUi\Fusion\Layout\Grid\GridInner;
 use PackagedUi\Fusion\Layout\Grid\GridLayout;
+use PackagedUi\FusionDemo\DemoSection;
 
 class GridDemo extends DemoSection
 {

@@ -9,6 +9,7 @@ use Packaged\Glimpse\Tags\Table\TableHeading;
 use Packaged\Glimpse\Tags\Table\TableRow;
 use PackagedUi\Fusion\Card\Card;
 use PackagedUi\Fusion\Table\Table;
+use PackagedUi\FusionDemo\DemoSection;
 
 class TableDemo extends DemoSection
 {

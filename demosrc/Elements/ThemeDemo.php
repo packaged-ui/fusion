@@ -6,6 +6,7 @@ use Packaged\Glimpse\Tags\Text\HeadingOne;
 use Packaged\Glimpse\Tags\Text\HeadingSix;
 use PackagedUi\Fusion\Button\Button;
 use PackagedUi\Fusion\Fusion;
+use PackagedUi\FusionDemo\DemoSection;
 
 class ThemeDemo extends DemoSection
 {

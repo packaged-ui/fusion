@@ -6,6 +6,7 @@ use PackagedUi\Fusion\Button\Button;
 use PackagedUi\Fusion\Card\Card;
 use PackagedUi\Fusion\Layout\Flex;
 use PackagedUi\Fusion\Layout\FlexGrow;
+use PackagedUi\FusionDemo\DemoSection;
 
 class CardDemo extends DemoSection
 {

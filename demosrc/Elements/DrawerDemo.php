@@ -8,8 +8,9 @@ use PackagedUi\Fusion\Fusion;
 use PackagedUi\Fusion\Layout\Drawer\Drawer;
 use PackagedUi\Fusion\Menu\Menu;
 use PackagedUi\Fusion\Menu\MenuItem;
+use PackagedUi\FusionDemo\DemoPage;
 
-class DrawerDemo extends DemoSection
+class DrawerDemo extends DemoPage
 {
   protected function _content(): array
   {

@@ -1,9 +1,9 @@
 <?php
 namespace PackagedUi\FusionDemo\Elements;
 
-use Packaged\SafeHtml\SafeHtml;
 use PackagedUi\Fusion\Lists\ListBox;
 use PackagedUi\Fusion\Lists\ListItem;
+use PackagedUi\FusionDemo\DemoSection;
 
 class ListDemo extends DemoSection
 {
