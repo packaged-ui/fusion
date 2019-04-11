@@ -10,7 +10,7 @@
   ],
   "require": {
     "php": ">=7.1",
-    "packaged/dispatch": "^2.3.0",
+    "packaged/dispatch": "dev-master",
     "packaged/glimpse": "~2.6",
     "packaged/ui": "~0.4",
     "packaged/safehtml": "~2.0",
@@ -34,6 +34,10 @@
     {
       "type": "vcs",
       "url": "git@github.com:packaged/glimpse.git"
+    },
+    {
+      "type": "vcs",
+      "url": "git@github.com:packaged/dispatch.git"
     }
   ]
 }
