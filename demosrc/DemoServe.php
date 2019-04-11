@@ -10,7 +10,7 @@ class DemoServe extends BuiltInWebServer
 
   protected function configure()
   {
-    $this->setName('demo');
+    $this->setName('serve');
     $this->setDescription("Launch the Fusion demo server");
   }
 }
