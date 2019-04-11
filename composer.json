@@ -10,7 +10,7 @@
   ],
   "require": {
     "php": ">=7.1",
-    "packaged/dispatch": "dev-master",
+    "packaged/dispatch": "^2.3.0",
     "packaged/glimpse": "~2.6",
     "packaged/ui": "~0.4",
     "packaged/safehtml": "~2.0",

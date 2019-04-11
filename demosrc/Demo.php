@@ -29,13 +29,8 @@ class Demo implements ContextAware
 {
   use ContextAwareTrait;
 
-  public function render()
+  protected function _elements()
   {
-    Fusion::includeGoogleFont();
-    ResourceManager::component(new Fusion())->requireCss(Fusion::FILE_BASE_CSS)->requireJs(Fusion::FILE_BASE_JS);
-    ResourceManager::vendor('packaged-ui', 'fontawesome')->requireCss(FaIcon::CSS_PATH);
-
-    $rendered = '';
     $elements = [];
     $elements['typography'] = new TypographyDemo();
     $elements['color'] = new ColorDemo();
@@ -52,6 +47,18 @@ class Demo implements ContextAware
     $elements['menu'] = new MenuDemo();
     $elements['tile'] = new TileDemo();
     $elements['statistics'] = new StatisticsDemo();
+    return $elements;
+  }
+
+  public function render()
+  {
+    Fusion::includeGoogleFont();
+    Fusion::requireCss();
+    Fusion::requireJs();
+    ResourceManager::vendor('packaged-ui', 'fontawesome')->requireCss(FaIcon::CSS_PATH);
+
+    $rendered = '';
+    $elements = $this->_elements();
 
     $path = ltrim($this->getContext()->request()->path(1), '/');
     switch($path)
