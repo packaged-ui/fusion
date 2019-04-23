@@ -12,9 +12,12 @@ $dispatchPath = '/_r';
 Dispatch::bind(new Dispatch(dirname(__DIR__), $dispatchPath));
 
 $router = Router::i();
-$router->handleFunc(
+$router->onPathFunc(
   $dispatchPath,
   function (Context $c) { return Dispatch::instance()->handleRequest($c->request()); }
 );
-$router->handleFunc("/", function (Context $c) { return (new Demo())->setContext($c)->render(); });
+$router->onPathFunc(
+  '/',
+  function (Context $c) { return (new Demo())->setContext($c)->render(); }
+);
 $launcher->handle($router);
