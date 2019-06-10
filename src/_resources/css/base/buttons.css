@@ -79,10 +79,6 @@ button.btn-raised:hover, .btn.btn-raised:hover {
   box-shadow: 0 2px 4px -1px rgba(0, 0, 0, .2), 0 4px 5px 0 rgba(0, 0, 0, .14), 0 1px 10px 0 rgba(0, 0, 0, .12);
 }
 
-button:not(:disabled):not(.disabled), .btn:not(:disabled):not(.disabled) {
-  cursor: pointer;
-}
-
 button.btn-flat, .btn-flat, button.btn-outline, .btn-outline {
   background-color: transparent;
   border-color: transparent;
@@ -136,6 +132,9 @@ button.btn-xs, .btn.btn-xs {
   border-radius: .125rem;
 }
 
+button:not(:disabled,.disabled), .btn:not(:disabled,.disabled) {
+  cursor: pointer;
+}
 
 button.disabled, button:disabled, .btn-disabled, .btn:disabled {
   opacity: .65;
