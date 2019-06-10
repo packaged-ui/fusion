@@ -1,4 +1,4 @@
-button, .btn {
+:root {
   --button-color: var(--f-color-default);
   --button-text-color: var(--f-color-default-text);
 }
