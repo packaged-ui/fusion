@@ -1,8 +1,8 @@
 <?php
 namespace PackagedUi\FusionDemo;
 
-use Cubex\Context\ContextAware;
-use Cubex\Context\ContextAwareTrait;
+use Packaged\Context\ContextAware;
+use Packaged\Context\ContextAwareTrait;
 use Packaged\Dispatch\Dispatch;
 use Packaged\Dispatch\ResourceManager;
 use Packaged\Dispatch\ResourceStore;
