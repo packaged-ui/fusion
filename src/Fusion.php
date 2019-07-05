@@ -11,10 +11,14 @@ class Fusion implements LayoutInterface, TypographyInterface, ButtonInferface, B
   const FILE_BASE_CSS = 'css/base.min.css';
   const FILE_BASE_JS = 'js/base.min.js';
 
-  public static function includeGoogleFont($family = 'Roboto')
+  public static function includeGoogleFont(
+    $family = 'Roboto', $styles = '300,300i,400,400i,500,500i,700,700i,900', $fontDisplay = 'swap'
+  )
   {
     ResourceManager::external()->includeCss(
-      'https://fonts.googleapis.com/css?family=' . $family . ':300,300i,400,400i,500,500i,700,700i,900'
+      'https://fonts.googleapis.com/css?family=' . $family
+      . ($styles ? ':' . $styles : '')
+      . ($fontDisplay ? '&display=' . $fontDisplay : '')
     );
   }
 
