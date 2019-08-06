@@ -13,15 +13,20 @@ window.Elegance = window.Elegance || {};
     }
   );
   Elegance.on(
-    document, 'click', 'a', function (e)
+    document, 'click', 'a', function ()
     {
       // if drawer reveal is modal, close drawer
-      var drawers = document.querySelectorAll('.drawer[reveal="modal"]');
+      var drawers = document.querySelectorAll('.drawer');
       for(var i = 0; i < drawers.length; i++)
       {
         if(drawers.hasOwnProperty(i))
         {
-          closeDrawer(drawers[i].parentNode);
+          var drawer = drawers[i];
+          if(drawer.getAttribute('reveal') === 'modal' // if drawer is modal
+            || document.body.clientWidth < 600) // or client width less than 600px
+          {
+            closeDrawer(drawers[i].parentNode);
+          }
         }
       }
     }

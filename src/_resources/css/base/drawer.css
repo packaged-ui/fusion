@@ -118,7 +118,6 @@ body:not(.touch-enabled) .drawer[reveal="peek"]:hover::before {
     display: none !important;
   }
 
-
   .drawer[state="narrow"] {
     min-width: var(--drawer-narrow-width);
   }
