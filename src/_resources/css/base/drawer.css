@@ -41,11 +41,12 @@ body.f-loaded {
   right: 0;
 }
 
-.drawer[reveal="peek"]:hover::before {
+body:not(.touch-enabled) .drawer[reveal="peek"]:hover::before {
   display: block;
 }
 
-.drawer[reveal="peek"]:before {
+/** .drawer::before is overlap to allow you to leave slightly **/
+.drawer[reveal="peek"]::before {
   display: none;
   content: ' ';
   position: fixed;
@@ -131,7 +132,7 @@ body.f-loaded {
     margin-right: var(--drawer-narrow-width);
   }
 
-  .drawer[state="narrow"][reveal="peek"]:hover,
+  body:not(.touch-enabled) .drawer[state="narrow"][reveal="peek"]:hover,
   .drawer-container.drawer--open > .drawer[state="permanent"] {
     width: var(--drawer-open-width);
   }

@@ -1,7 +1,9 @@
 window.Elegance = window.Elegance || {};
 
-(function (window, document, undefined) {
-  window.Elegance.on = function (delegate, eventName, selector, callback) {
+(function (window, document, undefined)
+{
+  window.Elegance.on = function (delegate, eventName, selector, callback)
+  {
     if(callback === undefined)
     {
       callback = selector;
@@ -9,7 +11,8 @@ window.Elegance = window.Elegance || {};
     }
     delegate.addEventListener(
       eventName,
-      function (e) {
+      function (e)
+      {
         if(!selector)
         {
           return callback(e);
@@ -27,7 +30,8 @@ window.Elegance = window.Elegance || {};
     );
   };
 
-  window.Elegance.onReady = function (fn) {
+  window.Elegance.onReady = function (fn)
+  {
     if(document.readyState === "loading")
     {
       document.addEventListener('DOMContentLoaded', fn);
@@ -38,7 +42,8 @@ window.Elegance = window.Elegance || {};
     }
   };
 
-  window.Elegance.closest = function (element, selector) {
+  window.Elegance.closest = function (element, selector)
+  {
     do
     {
       if(element.matches(selector))
@@ -50,8 +55,21 @@ window.Elegance = window.Elegance || {};
     return null;
   };
 
-  window.Elegance.onReady(function () {
-    setTimeout(function () {document.body.classList.add('f-loaded');}, 0)
-  });
+  window.Elegance.onReady(
+    function ()
+    {
+      setTimeout(function () {document.body.classList.add('f-loaded');}, 0)
+    }
+  );
+
+  window.addEventListener(
+    'touchstart',
+    function _fn()
+    {
+      document.body.classList.add('touch-enabled');
+      window.removeEventListener('touchstart', _fn, false);
+    },
+    false
+  );
 
 }(window, document));

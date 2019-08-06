@@ -36,8 +36,8 @@ class DrawerDemo extends DemoPage
         ->setState(Drawer::STATE_NARROW)
         ->setReveal(Drawer::REVEAL_PEEK)
         ->setAppContent(
-          Drawer::create('RIGHT')
-            ->setHeader(HeadingThree::create('< Toggle Drawer')->addClass(Fusion::DRAWER_TOGGLE),)
+          Drawer::create(Menu::create(MenuItem::create('A Link')->setHref('#link')))
+            ->setHeader(HeadingThree::create('< Toggle Drawer')->addClass(Fusion::DRAWER_TOGGLE))
             ->setAppContent(new TypographyDemo())
             ->setReveal(Drawer::REVEAL_MODAL)
             ->setState(Drawer::STATE_NARROW)
