@@ -24,6 +24,20 @@
   background-color: rgba(var(--f-color-primary), 0.2);
 }
 
+@media (prefers-color-scheme: dark) {
+  .list-item:hover {
+    background-color: rgba(var(--f-lighter-color), 0.2);
+  }
+
+  .list-item--active {
+    --f-text-color: var(--f-color-primary-light);
+  }
+
+  .list-item--active:hover {
+    background-color: rgba(var(--f-color-primary-light), 0.2);
+  }
+}
+
 .list-item + .list-item {
   border-top: none;
 }
