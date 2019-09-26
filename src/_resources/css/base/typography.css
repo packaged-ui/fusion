@@ -73,6 +73,7 @@ p {
 mark, .mark {
   padding: .2em;
   background-color: #fcf8e3;
+  color: rgb(var(--rgb-text-dark));
 }
 
 b, strong {
