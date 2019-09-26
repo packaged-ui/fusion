@@ -6,8 +6,12 @@ use Packaged\Context\ContextAwareTrait;
 use Packaged\Dispatch\Dispatch;
 use Packaged\Dispatch\ResourceManager;
 use Packaged\Dispatch\ResourceStore;
+use Packaged\Glimpse\Tags\Div;
+use Packaged\Glimpse\Tags\Text\HeadingTwo;
+use Packaged\Helpers\Strings;
 use Packaged\Http\Response;
 use PackagedUi\FontAwesome\FaIcon;
+use PackagedUi\Fusion\Color\Color;
 use PackagedUi\Fusion\Fusion;
 use PackagedUi\FusionDemo\Elements\BadgeDemo;
 use PackagedUi\FusionDemo\Elements\ButtonDemo;
@@ -61,24 +65,24 @@ class Demo implements ContextAware
     $elements = $this->_elements();
 
     $path = ltrim($this->getContext()->request()->path(1), '/');
-    switch($path)
+    if($path)
     {
-      case "":
-        foreach($elements as $k => $class)
-        {
-          if(!($class instanceof DemoPage))
-          {
-            $rendered .= $class->produceSafeHTML()->getContent();
-            $rendered .= '<br/>';
-          }
-        }
-        break;
-      default:
-        if(isset($elements[$path]))
-        {
-          $rendered .= $elements[$path]->produceSafeHTML()->getContent();
-        }
-        break;
+      $elements = [$path => $elements[$path]];
+    }
+
+    foreach($elements as $k => $class)
+    {
+      if(!($class instanceof DemoPage))
+      {
+        $rendered .= HeadingTwo::create(ucwords(Strings::splitOnCamelCase($k)))
+          ->addClass(
+            Fusion::TEXT_RIGHT,
+            Fusion::PADDING_LARGE,
+            Color::backgroundCss(Color::COLOR_GREY)
+          );
+        $rendered .= Div::create($class)
+          ->addClass(Fusion::PADDING_LARGE);
+      }
     }
 
     $content = '<!doctype html> <html> <head>'
