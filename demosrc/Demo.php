@@ -19,6 +19,7 @@ use PackagedUi\FusionDemo\Elements\CardDemo;
 use PackagedUi\FusionDemo\Elements\ColorDemo;
 use PackagedUi\FusionDemo\Elements\DrawerDemo;
 use PackagedUi\FusionDemo\Elements\GridDemo;
+use PackagedUi\FusionDemo\Elements\InputDemo;
 use PackagedUi\FusionDemo\Elements\LayoutDemo;
 use PackagedUi\FusionDemo\Elements\ListDemo;
 use PackagedUi\FusionDemo\Elements\MenuDemo;
@@ -41,6 +42,7 @@ class Demo implements ContextAware
     $elements['layout'] = new LayoutDemo();
     $elements['theme'] = new ThemeDemo();
     $elements['button'] = new ButtonDemo();
+    $elements['input'] = new InputDemo();
     $elements['badge'] = new BadgeDemo();
     $elements['grid'] = new GridDemo();
     $elements['table'] = new TableDemo();
