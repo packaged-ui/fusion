@@ -1,6 +1,7 @@
 <?php
 namespace PackagedUi\FusionDemo\Elements;
 
+use Packaged\Glimpse\Tags\Form\Input;
 use Packaged\Glimpse\Tags\LineBreak;
 use Packaged\Glimpse\Tags\Link;
 use PackagedUi\Fusion\Button\Button;
@@ -12,6 +13,17 @@ class ButtonDemo extends DemoSection
   protected function _content(): array
   {
     $return = [];
+
+    $return[] = Input::create()->setType(Input::TYPE_SUBMIT)->setValue('Default');
+    $return[] = Input::create()->setType(Input::TYPE_BUTTON)->setValue('Primary')->addClass(Fusion::BUTTON_PRIMARY);
+    $return[] = Input::create()->setType(Input::TYPE_BUTTON)->setValue('Accent')->addClass(Fusion::BUTTON_ACCENT);
+    $return[] = Input::create()->setType(Input::TYPE_BUTTON)->setValue('Success')->addClass(Fusion::BUTTON_SUCCESS);
+    $return[] = Input::create()->setType(Input::TYPE_BUTTON)->setValue('Danger')->addClass(Fusion::BUTTON_DANGER);
+    $return[] = Input::create()->setType(Input::TYPE_BUTTON)->setValue('Warning')->addClass(Fusion::BUTTON_WARNING);
+    $return[] = Input::create()->setType(Input::TYPE_BUTTON)->setValue('Info')->addClass(Fusion::BUTTON_INFO);
+
+    $return[] = LineBreak::create();
+    $return[] = LineBreak::create();
 
     $return[] = Link::create("#", "Default")->addClass(Fusion::BUTTON);
     $return[] = Link::create("#", "Primary")->addClass(Fusion::BUTTON_PRIMARY, Fusion::BUTTON);
