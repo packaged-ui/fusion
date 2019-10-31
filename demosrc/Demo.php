@@ -67,7 +67,7 @@ class Demo implements ContextAware
     $elements = $this->_elements();
 
     $path = ltrim($this->getContext()->request()->path(1), '/');
-    if($path)
+    if($path && isset($elements[$path]))
     {
       $elements = [$path => $elements[$path]];
     }
