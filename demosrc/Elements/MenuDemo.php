@@ -11,6 +11,7 @@ class MenuDemo extends DemoSection
   {
     $return = [];
     $return[] = Menu::create(
+      MenuItem::create('link with bad text')->setHref('?!@£$%^&*()_]['),
       MenuItem::create('primary 1')->setHref('/menu/1'),
       MenuItem::create('primary 2')->setHref('/menu/2')->setTrailing('T'),
       MenuItem::create('primary 3')->setHref('/menu/3')->setLeading('L'),
