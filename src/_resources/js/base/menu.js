@@ -1,8 +1,9 @@
 window.Elegance = window.Elegance || {};
 
-(function (window, document, Elegance) {
-
-  function updateActiveMenu(url) {
+(function (window, document, Elegance)
+{
+  function updateActiveMenu(location)
+  {
     var menus = document.querySelectorAll('.menu');
     for(var mi in menus)
     {
@@ -20,8 +21,13 @@ window.Elegance = window.Elegance || {};
             {
               var item = items[i];
               var href = item.getAttribute('href');
-              var regex = new RegExp('^' + href);
-              if(regex.test(url))
+              if(href[0] === '?')
+              {
+                href = location.pathname + href;
+              }
+
+              var regex = new RegExp('^' + href.replace(/[\/.*+?^${}()|[\]\\]/g, '\\$&'));
+              if(regex.test(location.href.replace(location.origin, '')))
               {
                 if(href.length > mostSpecificLen)
                 {
@@ -40,7 +46,7 @@ window.Elegance = window.Elegance || {};
     }
   }
 
-  updateActiveMenu(window.location.pathname);
-  window.addEventListener('popstate', function () {updateActiveMenu(window.location.pathname);});
+  updateActiveMenu(window.location);
+  window.addEventListener('popstate', function () {updateActiveMenu(window.location);});
 
 }(window, document, window.Elegance));
