@@ -3,13 +3,24 @@ namespace PackagedUi\FusionDemo\Elements;
 
 use Packaged\Dispatch\ResourceManager;
 use Packaged\Glimpse\Tags\LineBreak;
+use PackagedUi\FontAwesome\FaIcon;
 use PackagedUi\Fusion\Layout\Grid\GridCell;
 use PackagedUi\Fusion\Layout\Grid\GridInner;
 use PackagedUi\Fusion\Layout\Grid\GridLayout;
-use PackagedUi\FusionDemo\DemoSection;
+use PackagedUi\FusionDemo\AbstractDemoPage;
 
-class GridDemo extends DemoSection
+class GridDemo extends AbstractDemoPage
 {
+  public function getName(): string
+  {
+    return 'Grid';
+  }
+
+  protected function _getFaIcon()
+  {
+    return FaIcon::GRIP_HORIZONTAL;
+  }
+
   protected function _content(): array
   {
     ResourceManager::inline()->requireCss(

@@ -35,11 +35,22 @@ use Packaged\Glimpse\Tags\Text\SmallText;
 use Packaged\Glimpse\Tags\Text\StrongText;
 use Packaged\Glimpse\Tags\Text\UnderlinedText;
 use Packaged\Glimpse\Tags\Text\Variable;
+use PackagedUi\FontAwesome\FaIcon;
 use PackagedUi\Fusion\Fusion;
-use PackagedUi\FusionDemo\DemoSection;
+use PackagedUi\FusionDemo\AbstractDemoPage;
 
-class TypographyDemo extends DemoSection
+class TypographyDemo extends AbstractDemoPage
 {
+  public function getName(): string
+  {
+    return 'Typography';
+  }
+
+  protected function _getFaIcon()
+  {
+    return FaIcon::TEXT_WIDTH;
+  }
+
   protected function _content(): array
   {
     $return = [];

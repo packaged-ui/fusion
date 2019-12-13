@@ -3,10 +3,21 @@ namespace PackagedUi\FusionDemo\Elements;
 
 use Packaged\Glimpse\Tags\Form\Input;
 use Packaged\Glimpse\Tags\LineBreak;
-use PackagedUi\FusionDemo\DemoSection;
+use PackagedUi\FontAwesome\FaIcon;
+use PackagedUi\FusionDemo\AbstractDemoPage;
 
-class InputDemo extends DemoSection
+class InputDemo extends AbstractDemoPage
 {
+  public function getName(): string
+  {
+    return 'Inputs';
+  }
+
+  protected function _getFaIcon()
+  {
+    return FaIcon::KEYBOARD;
+  }
+
   protected function _content(): array
   {
     $return = [];

@@ -3,12 +3,23 @@ namespace PackagedUi\FusionDemo\Elements;
 
 use Packaged\Glimpse\Tags\Div;
 use Packaged\Glimpse\Tags\Span;
+use PackagedUi\FontAwesome\FaIcon;
 use PackagedUi\Fusion\Badge;
 use PackagedUi\Fusion\Fusion;
-use PackagedUi\FusionDemo\DemoSection;
+use PackagedUi\FusionDemo\AbstractDemoPage;
 
-class BadgeDemo extends DemoSection
+class BadgeDemo extends AbstractDemoPage
 {
+  public function getName(): string
+  {
+    return 'Badges';
+  }
+
+  protected function _getFaIcon()
+  {
+    return FaIcon::CERTIFICATE;
+  }
+
   protected function _content(): array
   {
     $return = [];

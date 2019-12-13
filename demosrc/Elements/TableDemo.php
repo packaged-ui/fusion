@@ -7,12 +7,23 @@ use Packaged\Glimpse\Tags\Table\TableCell;
 use Packaged\Glimpse\Tags\Table\TableHead;
 use Packaged\Glimpse\Tags\Table\TableHeading;
 use Packaged\Glimpse\Tags\Table\TableRow;
+use PackagedUi\FontAwesome\FaIcon;
 use PackagedUi\Fusion\Card\Card;
 use PackagedUi\Fusion\Table\Table;
-use PackagedUi\FusionDemo\DemoSection;
+use PackagedUi\FusionDemo\AbstractDemoPage;
 
-class TableDemo extends DemoSection
+class TableDemo extends AbstractDemoPage
 {
+  public function getName(): string
+  {
+    return 'Tables';
+  }
+
+  protected function _getFaIcon()
+  {
+    return FaIcon::TABLE;
+  }
+
   protected function _content(): array
   {
     $return = [];

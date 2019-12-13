@@ -3,11 +3,22 @@ namespace PackagedUi\FusionDemo\Elements;
 
 use Packaged\Dispatch\ResourceManager;
 use Packaged\Glimpse\Tags\Div;
+use PackagedUi\FontAwesome\FaIcon;
 use PackagedUi\Fusion\Fusion;
-use PackagedUi\FusionDemo\DemoSection;
+use PackagedUi\FusionDemo\AbstractDemoPage;
 
-class LayoutDemo extends DemoSection
+class LayoutDemo extends AbstractDemoPage
 {
+  public function getName(): string
+  {
+    return 'Layout';
+  }
+
+  protected function _getFaIcon()
+  {
+    return FaIcon::LAYER_GROUP;
+  }
+
   protected function _content(): array
   {
     ResourceManager::inline()->requireCss(

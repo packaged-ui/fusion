@@ -4,12 +4,23 @@ namespace PackagedUi\FusionDemo\Elements;
 use Packaged\Glimpse\Tags\Form\Input;
 use Packaged\Glimpse\Tags\LineBreak;
 use Packaged\Glimpse\Tags\Link;
+use PackagedUi\FontAwesome\FaIcon;
 use PackagedUi\Fusion\Button\Button;
 use PackagedUi\Fusion\Fusion;
-use PackagedUi\FusionDemo\DemoSection;
+use PackagedUi\FusionDemo\AbstractDemoPage;
 
-class ButtonDemo extends DemoSection
+class ButtonDemo extends AbstractDemoPage
 {
+  public function getName(): string
+  {
+    return 'Buttons';
+  }
+
+  protected function _getFaIcon()
+  {
+    return FaIcon::MOUSE_POINTER;
+  }
+
   protected function _content(): array
   {
     $return = [];

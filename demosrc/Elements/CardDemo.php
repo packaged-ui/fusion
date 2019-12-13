@@ -2,14 +2,24 @@
 namespace PackagedUi\FusionDemo\Elements;
 
 use Packaged\Glimpse\Tags\LineBreak;
+use PackagedUi\FontAwesome\FaIcon;
 use PackagedUi\Fusion\Button\Button;
 use PackagedUi\Fusion\Card\Card;
 use PackagedUi\Fusion\Layout\Flex;
 use PackagedUi\Fusion\Layout\FlexGrow;
-use PackagedUi\FusionDemo\DemoSection;
+use PackagedUi\FusionDemo\AbstractDemoPage;
 
-class CardDemo extends DemoSection
+class CardDemo extends AbstractDemoPage
 {
+  public function getName(): string
+  {
+    return 'Cards';
+  }
+
+  protected function _getFaIcon()
+  {
+    return FaIcon::ID_CARD;
+  }
   protected function _content(): array
   {
     $return = [];

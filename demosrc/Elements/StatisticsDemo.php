@@ -10,10 +10,20 @@ use PackagedUi\Fusion\Layout\Flex;
 use PackagedUi\Fusion\Layout\FlexGrow;
 use PackagedUi\Fusion\Layout\Grid\GridCell;
 use PackagedUi\Fusion\Layout\Grid\GridLayout;
-use PackagedUi\FusionDemo\DemoPage;
+use PackagedUi\FusionDemo\AbstractDemoPage;
 
-class StatisticsDemo extends DemoPage
+class StatisticsDemo extends AbstractDemoPage
 {
+  public function getName(): string
+  {
+    return 'Statistics';
+  }
+
+  protected function _getFaIcon()
+  {
+    return FaIcon::CHART_PIE;
+  }
+
   protected function _content(): array
   {
     $stats = [];

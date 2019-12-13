@@ -3,12 +3,23 @@ namespace PackagedUi\FusionDemo\Elements;
 
 use Packaged\Glimpse\Tags\Div;
 use Packaged\Glimpse\Tags\Span;
+use PackagedUi\FontAwesome\FaIcon;
 use PackagedUi\Fusion\Color\Color;
 use PackagedUi\Fusion\Fusion;
-use PackagedUi\FusionDemo\DemoSection;
+use PackagedUi\FusionDemo\AbstractDemoPage;
 
-class ColorDemo extends DemoSection
+class ColorDemo extends AbstractDemoPage
 {
+  public function getName(): string
+  {
+    return 'Colors';
+  }
+
+  protected function _getFaIcon()
+  {
+    return FaIcon::PALETTE;
+  }
+
   protected function _content(): array
   {
     $return = [];

@@ -4,12 +4,23 @@ namespace PackagedUi\FusionDemo\Elements;
 use Packaged\Glimpse\Tags\Div;
 use Packaged\Glimpse\Tags\Text\HeadingOne;
 use Packaged\Glimpse\Tags\Text\HeadingSix;
+use PackagedUi\FontAwesome\FaIcon;
 use PackagedUi\Fusion\Button\Button;
 use PackagedUi\Fusion\Fusion;
-use PackagedUi\FusionDemo\DemoSection;
+use PackagedUi\FusionDemo\AbstractDemoPage;
 
-class ThemeDemo extends DemoSection
+class ThemeDemo extends AbstractDemoPage
 {
+  public function getName(): string
+  {
+    return 'Theme';
+  }
+
+  protected function _getFaIcon()
+  {
+    return FaIcon::SWATCHBOOK;
+  }
+
   protected function _content(): array
   {
     $return = [];

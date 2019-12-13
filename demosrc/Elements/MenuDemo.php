@@ -3,10 +3,15 @@ namespace PackagedUi\FusionDemo\Elements;
 
 use PackagedUi\Fusion\Menu\Menu;
 use PackagedUi\Fusion\Menu\MenuItem;
-use PackagedUi\FusionDemo\DemoSection;
+use PackagedUi\FusionDemo\AbstractDemoPage;
 
-class MenuDemo extends DemoSection
+class MenuDemo extends AbstractDemoPage
 {
+  public function getName(): string
+  {
+    return 'Menu';
+  }
+
   protected function _content(): array
   {
     $return = [];

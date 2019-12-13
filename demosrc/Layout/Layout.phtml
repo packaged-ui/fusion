@@ -1,0 +1,21 @@
+<?php
+/**
+ * @var $this \PackagedUi\FusionDemo\Layout\Layout
+ */
+?>
+<!doctype html>
+<html>
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <?= \Packaged\Dispatch\Dispatch::instance()->store()->generateHtmlIncludes(
+    \Packaged\Dispatch\ResourceStore::TYPE_CSS
+  ) ?>
+</head>
+<body class="demo-page">
+<?= $this->getContent(); ?>
+<?= \Packaged\Dispatch\Dispatch::instance()->store()->generateHtmlIncludes(
+  \Packaged\Dispatch\ResourceStore::TYPE_JS
+); ?>
+</body>
+</html>

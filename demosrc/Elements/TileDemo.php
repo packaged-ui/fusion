@@ -8,10 +8,20 @@ use PackagedUi\Fusion\Tiles\Enum\TileLayout;
 use PackagedUi\Fusion\Tiles\Tile;
 use PackagedUi\Fusion\Tiles\TileAction;
 use PackagedUi\Fusion\Tiles\Tiles;
-use PackagedUi\FusionDemo\DemoSection;
+use PackagedUi\FusionDemo\AbstractDemoPage;
 
-class TileDemo extends DemoSection
+class TileDemo extends AbstractDemoPage
 {
+  public function getName(): string
+  {
+    return 'Tile';
+  }
+
+  protected function _getFaIcon()
+  {
+    return FaIcon::TH_LIST;
+  }
+
   protected function _content(): array
   {
     $return = [];

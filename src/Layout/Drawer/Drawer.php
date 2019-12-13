@@ -173,10 +173,6 @@ class Drawer extends AbstractContainerTag
     {
       $drawer->setAttribute('reveal', $this->_reveal);
     }
-    if($this->_isOpen)
-    {
-      $drawer->addClass(LayoutInterface::DRAWER_OPEN);
-    }
 
     return $drawer;
   }
@@ -191,7 +187,10 @@ class Drawer extends AbstractContainerTag
       ),
       parent::produceSafeHTML(),
       Div::create($this->_appContent)->addClass('drawer-app-content')
-    )->setId($containerId)->addClass('drawer-container')->produceSafeHTML();
+    )
+      ->setId($containerId)
+      ->addClass('drawer-container', $this->_isOpen ? LayoutInterface::DRAWER_OPEN : '')
+      ->produceSafeHTML();
   }
 
 }

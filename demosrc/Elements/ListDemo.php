@@ -1,12 +1,23 @@
 <?php
 namespace PackagedUi\FusionDemo\Elements;
 
+use PackagedUi\FontAwesome\FaIcon;
 use PackagedUi\Fusion\Lists\ListBox;
 use PackagedUi\Fusion\Lists\ListItem;
-use PackagedUi\FusionDemo\DemoSection;
+use PackagedUi\FusionDemo\AbstractDemoPage;
 
-class ListDemo extends DemoSection
+class ListDemo extends AbstractDemoPage
 {
+  public function getName(): string
+  {
+    return 'Lists';
+  }
+
+  protected function _getFaIcon()
+  {
+    return FaIcon::LIST_ALT;
+  }
+
   protected function _content(): array
   {
     $return = [];
