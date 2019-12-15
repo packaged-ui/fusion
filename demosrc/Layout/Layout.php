@@ -4,6 +4,7 @@ namespace PackagedUi\FusionDemo\Layout;
 use Packaged\Context\ContextAware;
 use Packaged\Context\ContextAwareTrait;
 use Packaged\Dispatch\ResourceManager;
+use Packaged\Event\Events\CustomEvent;
 use Packaged\Glimpse\Tags\Div;
 use Packaged\Ui\Element;
 use PackagedUi\FontAwesome\FaIcon;
@@ -20,12 +21,13 @@ class Layout extends Element implements ContextAware
 
   protected $_content = [];
 
-  public function __construct()
+  public function render(): string
   {
     Fusion::includeGoogleFont();
     Fusion::requireCss();
     Fusion::requireJs();
     ResourceManager::vendor('packaged-ui', 'fontawesome')->requireCss(FaIcon::CSS_PATH);
+    $this->getContext()->events()->trigger(new CustomEvent("fusion.ui.layout.render"));
   }
 
   public function setContent($content)
