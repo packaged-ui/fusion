@@ -22,6 +22,12 @@ class Fusion implements LayoutInterface, TypographyInterface, ButtonInferface, B
     );
   }
 
+  public static function require()
+  {
+    static::requireCss();
+    static::requireJs();
+  }
+
   public static function requireCss()
   {
     ResourceManager::componentClass(self::class)->requireCss(self::FILE_BASE_CSS);
