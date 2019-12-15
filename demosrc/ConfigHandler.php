@@ -49,22 +49,22 @@ class ConfigHandler implements ContextAware
   public function getPages(): array
   {
     return [
-      new TypographyDemo(),
-      new ColorDemo(),
-      new GridDemo(),
-      new ThemeDemo(),
-      new DrawerDemo(),
-      new BadgeDemo(),
-      new ButtonDemo(),
-      new CardDemo(),
-      new InputDemo(),
-      new LayoutDemo(),
-      new ListDemo(),
-      new MenuDemo(),
-      new ProgressDemo(),
-      new StatisticsDemo(),
-      new TableDemo(),
-      new TileDemo(),
+      'Typography' => new TypographyDemo(),
+      'Color'      => new ColorDemo(),
+      'Grid'       => new GridDemo(),
+      'Theme'      => new ThemeDemo(),
+      'Drawer'     => new DrawerDemo(),
+      'Badge'      => new BadgeDemo(),
+      'Button'     => new ButtonDemo(),
+      'Card'       => new CardDemo(),
+      'Input'      => new InputDemo(),
+      'Layout'     => new LayoutDemo(),
+      'List'       => new ListDemo(),
+      'Menu'       => new MenuDemo(),
+      'Progress'   => new ProgressDemo(),
+      'Statistics' => new StatisticsDemo(),
+      'Table'      => new TableDemo(),
+      'Tile'       => new TileDemo(),
     ];
   }
 }
