@@ -14,5 +14,6 @@ try
 }
 catch(Throwable $e)
 {
+  var_dump($e);
   die('Unable to handle your request');
 }

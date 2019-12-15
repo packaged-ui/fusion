@@ -27,6 +27,7 @@ class DemoUiApplication extends Application
         $handler = Objects::create($ctx->config()->getItem("ui", "config_handler", ConfigHandler::class), []);
         if($handler instanceof ConfigHandler)
         {
+          $handler->setContext($ctx);
           $ctx->setConfigHandler($handler);
         }
         else
