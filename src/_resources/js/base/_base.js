@@ -1,9 +1,7 @@
-window.Elegance = window.Elegance || {};
+window.FusionUi = window.FusionUi || {};
 
-(function (window, document, undefined)
-{
-  window.Elegance.on = function (delegate, eventName, selector, callback)
-  {
+(function (window, document, undefined) {
+  window.FusionUi.on = function (delegate, eventName, selector, callback) {
     if(callback === undefined)
     {
       callback = selector;
@@ -11,8 +9,7 @@ window.Elegance = window.Elegance || {};
     }
     delegate.addEventListener(
       eventName,
-      function (e)
-      {
+      function (e) {
         if(!selector)
         {
           return callback(e);
@@ -30,8 +27,7 @@ window.Elegance = window.Elegance || {};
     );
   };
 
-  window.Elegance.onReady = function (fn)
-  {
+  window.FusionUi.onReady = function (fn) {
     if(document.readyState === "loading")
     {
       document.addEventListener('DOMContentLoaded', fn);
@@ -42,8 +38,7 @@ window.Elegance = window.Elegance || {};
     }
   };
 
-  window.Elegance.closest = function (element, selector)
-  {
+  window.FusionUi.closest = function (element, selector) {
     do
     {
       if(element.matches(selector))
@@ -55,17 +50,15 @@ window.Elegance = window.Elegance || {};
     return null;
   };
 
-  window.Elegance.onReady(
-    function ()
-    {
+  window.FusionUi.onReady(
+    function () {
       setTimeout(function () {document.body.classList.add('f-loaded');}, 0)
     }
   );
 
   window.addEventListener(
     'touchstart',
-    function _fn()
-    {
+    function _fn() {
       document.body.classList.add('touch-enabled');
       window.removeEventListener('touchstart', _fn, false);
     },
