@@ -62,6 +62,9 @@ class TypographyDemo extends AbstractDemoPage
     $return[] = HeadingFour::create(['h4. Heading ', $secondary]);
     $return[] = HeadingFive::create(['h5. Heading ', $secondary]);
     $return[] = HeadingSix::create(['h6. Heading ', $secondary]);
+    $return[] = Paragraph::create(['Subtitle 1 ', $secondary])->addClass(Fusion::SUBTITLE1);
+    $return[] = Paragraph::create(['Subtitle 2 ', $secondary])->addClass(Fusion::SUBTITLE2);
+    $return[] = Paragraph::create(['Subtitle 3 ', $secondary])->addClass(Fusion::SUBTITLE3);
 
     $return[] = HeadingOne::create('Display 1')->addClass(Fusion::DISPLAY1);
     $return[] = HeadingOne::create('Display 2')->addClass(Fusion::DISPLAY2);

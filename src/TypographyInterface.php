@@ -13,6 +13,10 @@ interface TypographyInterface
   const BODY1 = 'body-1';
   const BODY2 = 'body-2';
 
+  const SUBTITLE1 = 'subtitle-1';
+  const SUBTITLE2 = 'subtitle-2';
+  const SUBTITLE3 = 'subtitle-3';
+
   const DISPLAY1 = 'display-1';
   const DISPLAY2 = 'display-2';
   const DISPLAY3 = 'display-3';

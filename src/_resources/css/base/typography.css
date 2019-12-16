@@ -60,6 +60,20 @@ small, .small {
   line-height: 1.1;
 }
 
+.subtitle-1 {
+  font-size: 18px;
+}
+
+.subtitle-2 {
+  font-size: 16px;
+}
+
+.subtitle-3 {
+  font-size: 85%;
+  text-transform: uppercase;
+  font-weight: 500;
+}
+
 p, p.body-1, .body-1 {
   margin-top: 0;
   margin-bottom: 1rem;
