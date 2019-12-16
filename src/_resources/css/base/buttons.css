@@ -160,6 +160,9 @@ input[type="button"].btn-outline:disabled:active, input[type="submit"].btn-outli
   box-shadow: none !important;
 }
 
+.btn__icn {
+  --text-opacity: 1;
+}
 
 .btn__icn--left {
   margin-right: 15px;
