@@ -5,6 +5,7 @@ use Packaged\Context\ContextAware;
 use Packaged\Context\ContextAwareTrait;
 use Packaged\Event\Events\CustomEvent;
 use Packaged\Glimpse\Tags\Div;
+use Packaged\Glimpse\Tags\Link;
 use Packaged\Ui\Element;
 use PackagedUi\Fusion\Layout\Drawer\Drawer;
 use PackagedUi\Fusion\LayoutInterface;
@@ -35,9 +36,12 @@ class Layout extends Element implements ContextAware
   public function getContent()
   {
     return Drawer::create($this->buildMenu())
-      ->setAppContent(Div::create($this->_content)->addClass(LayoutInterface::PADDING_MEDIUM))
-      ->setOpen(true)
-      ->setState(Drawer::STATE_PERMANENT);
+      ->setAppContent(
+        Link::create("#", "BURGER")->addClass('drawer__toggle'),
+        Div::create($this->_content)->addClass(LayoutInterface::PADDING_MEDIUM)
+      )
+      ->setState(Drawer::STATE_NARROW)
+      ->setReveal(Drawer::REVEAL_PEEK);
   }
 
   public function buildMenu()

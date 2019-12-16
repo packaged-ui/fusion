@@ -14,10 +14,15 @@ class DemoHandler extends Controller
 {
   protected $_pages = [];
 
+  protected function _allPages()
+  {
+    return $this->getContext()->configHandler()->getPages();
+  }
+
   protected function _generateRoutes()
   {
     $firstPage = null;
-    foreach($this->getContext()->configHandler()->getPages() as $page)
+    foreach($this->_allPages() as $page)
     {
       if($firstPage == null)
       {
