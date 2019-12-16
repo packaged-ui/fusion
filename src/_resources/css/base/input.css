@@ -1,25 +1,6 @@
-input {
-  color: rgba(var(--button-text-color), .95);
-  background-color: rgba(var(--button-color), .9);
-  border: 1px solid rgba(var(--button-text-color), .2);
-}
-
-::placeholder {
-  color: rgba(var(--button-text-color), .4);
-}
-
-::-webkit-input-placeholder {
-  color: rgba(var(--button-text-color), .4);
-}
-
-::-moz-placeholder {
-  color: rgba(var(--button-text-color), .4);
-}
-
-:-ms-input-placeholder {
-  color: rgba(var(--button-text-color), .4);
-}
-
-:-moz-placeholder {
-  color: rgba(var(--button-text-color), .4);
+input, select, textarea {
+  border-radius: 5px;
+  border: 1px solid rgba(0, 0, 0, 0.2);
+  padding: 5px;
+  background: rgb(var(--f-background-color));
 }
