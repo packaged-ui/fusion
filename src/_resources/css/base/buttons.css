@@ -60,6 +60,7 @@ input[type="button"], input[type="submit"], input[type="reset"], button, .btn {
 
   color: rgba(var(--button-text-color), 0.95);
   background-color: rgba(var(--button-color), 0.9);
+  --f-text-color: var(--button-text-color);
 }
 
 input[type="button"]:hover, input[type="submit"]:hover, input[type="reset"]:hover, button:hover, .btn:hover {
@@ -157,4 +158,14 @@ input[type="button"].btn-outline:disabled:active, input[type="submit"].btn-outli
   background-color: transparent !important;
   color: rgb(var(--button-color)) !important;
   box-shadow: none !important;
+}
+
+
+.btn__icn--left {
+  margin-right: 15px;
+}
+
+
+.btn__icn--right {
+  margin-left: 15px;
 }

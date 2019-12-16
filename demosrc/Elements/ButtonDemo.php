@@ -6,6 +6,7 @@ use Packaged\Glimpse\Tags\LineBreak;
 use Packaged\Glimpse\Tags\Link;
 use PackagedUi\FontAwesome\FaIcon;
 use PackagedUi\Fusion\Button\Button;
+use PackagedUi\Fusion\Button\ButtonIconPosition;
 use PackagedUi\Fusion\Fusion;
 use PackagedUi\FusionDemo\AbstractDemoPage;
 
@@ -116,6 +117,13 @@ class ButtonDemo extends AbstractDemoPage
     $return[] = LineBreak::create();
 
     $return[] = Button::create("+")->fab();
+
+    $return[] = LineBreak::create();
+    $return[] = LineBreak::create();
+
+    $return[] = Button::create("Default")->setIcon(FaIcon::create(FaIcon::FORWARD))->primary();
+    $return[] = Button::create("Default")->setIcon(FaIcon::create(FaIcon::FORWARD), ButtonIconPosition::RIGHT())
+      ->primary();
 
     return $return;
   }

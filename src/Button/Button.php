@@ -1,6 +1,9 @@
 <?php
 namespace PackagedUi\Fusion\Button;
 
+use Packaged\Glimpse\Tags\Span;
+use Packaged\Helpers\ValueAs;
+use Packaged\SafeHtml\ISafeHtmlProducer;
 use PackagedUi\Fusion\ButtonInferface;
 
 class Button extends \Packaged\Glimpse\Tags\Button
@@ -99,6 +102,40 @@ class Button extends \Packaged\Glimpse\Tags\Button
   {
     $this->addClass(ButtonInferface::BUTTON_DISABLED);
     $this->setAttribute('disabled', null);
+    return $this;
+  }
+
+  /* ICONS */
+
+  protected $_icon;
+  protected $_iconPosition;
+
+  protected function _getContentForRender()
+  {
+    $content = parent::_getContentForRender();
+    if($this->_icon)
+    {
+      $content = ValueAs::arr($content);
+      $icon = Span::create($this->_icon)->addClass('btn__icn');
+
+      if($this->_iconPosition instanceof ButtonIconPosition && $this->_iconPosition->is(ButtonIconPosition::RIGHT))
+      {
+        $icon->addClass("btn__icn--right");
+        $content[] = $icon;
+      }
+      else
+      {
+        $icon->addClass("btn__icn--left");
+        array_unshift($content, $icon);
+      }
+    }
+    return $content;
+  }
+
+  public function setIcon(ISafeHtmlProducer $icon, ButtonIconPosition $position = null)
+  {
+    $this->_icon = $icon;
+    $this->_iconPosition = $position ?? $this->_iconPosition;
     return $this;
   }
 }
