@@ -1,6 +1,7 @@
 :root {
   --button-color: var(--f-color-default);
   --button-text-color: var(--f-color-default-text);
+  --button-border-radius: .2rem;
 }
 
 input[type="button"].btn-primary, input[type="submit"].btn-primary, input[type="reset"].btn-primary, button.btn-primary, .btn.btn-primary {
@@ -48,7 +49,7 @@ input[type="button"], input[type="submit"], input[type="reset"], button, .btn {
   padding: .3rem 1rem;
   font-size: var(--f-font-size);
   line-height: 1.47;
-  border-radius: .2rem;
+  border-radius: var(--button-border-radius);
   -webkit-transition: all 0.2s ease-in-out;
   transition: all 0.1s ease-in-out;
   overflow: visible;
@@ -122,7 +123,7 @@ input[type="button"].btn-xl, input[type="submit"].btn-xl, input[type="reset"].bt
   padding: .9375rem 2.125rem;
   font-size: 1.25rem;
   line-height: 1.5;
-  border-radius: .125rem;
+  --button-border-radius: .125rem;
 }
 
 input[type="button"].btn-lg, input[type="submit"].btn-lg, input[type="reset"].btn-lg, button.btn-lg, .btn.btn-lg {
@@ -137,7 +138,7 @@ input[type="button"].btn-xs, input[type="submit"].btn-xs, input[type="reset"].bt
   padding: .0625rem .5rem;
   font-size: .6875rem;
   line-height: 1.55;
-  border-radius: .125rem;
+  --button-border-radius: .125rem;
 }
 
 input[type="button"]:not(:disabled):not(.disabled), input[type="submit"]:not(:disabled):not(.disabled), input[type="reset"]:not(:disabled):not(.disabled), button:not(:disabled):not(.disabled), .btn:not(:disabled):not(.disabled) {
