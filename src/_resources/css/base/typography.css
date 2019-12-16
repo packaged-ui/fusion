@@ -60,9 +60,13 @@ small, .small {
   line-height: 1.1;
 }
 
-p {
+p, p.body-1, .body-1 {
   margin-top: 0;
   margin-bottom: 1rem;
+}
+
+p.body-2, .body-2 {
+  font-size: 90%;
 }
 
 .lead {

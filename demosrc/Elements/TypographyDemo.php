@@ -70,8 +70,10 @@ class TypographyDemo extends AbstractDemoPage
     $return[] = Link::create("#", 'Link');
 
     $lorem = 'Lorem ipsum dolor sit amet, ad tibique blandit qui, error zril eleifend ut vel. Et paulo labores molestiae has, ei eos virtute dolorem.';
-    $return[] = Paragraph::create($lorem);
-    $return[] = Paragraph::create($lorem)->addClass(Fusion::LEAD_TEXT);
+    $return[] = Paragraph::create(StrongText::create("Paragraph "), $lorem);
+    $return[] = Paragraph::create(StrongText::create("Body 1 "), $lorem)->addClass(Fusion::BODY1);
+    $return[] = Paragraph::create(StrongText::create("Body 2 "), $lorem)->addClass(Fusion::BODY2);
+    $return[] = Paragraph::create(StrongText::create("Lead Text "), $lorem)->addClass(Fusion::LEAD_TEXT);
 
     $return[] = Paragraph::create(['You can use the mark tag to ', MarkedText::create('highlight'), ' text']);
     $return[] = Paragraph::create(DeletedText::create('This line of text is meant to be treated as deleted text.'));

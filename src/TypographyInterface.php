@@ -10,6 +10,9 @@ interface TypographyInterface
   const LEAD_TEXT = 'lead';
   const INITIALISM = 'initialism';
 
+  const BODY1 = 'body-1';
+  const BODY2 = 'body-2';
+
   const DISPLAY1 = 'display-1';
   const DISPLAY2 = 'display-2';
   const DISPLAY3 = 'display-3';
