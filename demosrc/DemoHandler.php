@@ -42,11 +42,16 @@ class DemoHandler extends Controller
   {
     if($result instanceof Element || $result instanceof HtmlTag || is_scalar($result))
     {
-      $theme = new Layout();
+      $theme = $this->_createTheme();
       $theme->setContext($this->getContext())->setContent($result);
       return parent::_prepareResponse($c, $theme, $buffer);
     }
 
     return parent::_prepareResponse($c, $result, $buffer);
+  }
+
+  protected function _createTheme()
+  {
+    return new Layout();
   }
 }
