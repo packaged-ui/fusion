@@ -1,6 +1,6 @@
-window.Elegance = window.Elegance || {};
+window.FusionUi = window.FusionUi || {};
 
-(function (window, document, Elegance)
+(function (window, document, FusionUi)
 {
   function updateActiveMenu(location)
   {
@@ -39,7 +39,7 @@ window.Elegance = window.Elegance || {};
           }
           if(mostSpecific)
           {
-            Elegance.List.SetActive(mostSpecific);
+            FusionUi.List.SetActive(mostSpecific);
           }
         }
       }
@@ -49,4 +49,4 @@ window.Elegance = window.Elegance || {};
   updateActiveMenu(window.location);
   window.addEventListener('popstate', function () {updateActiveMenu(window.location);});
 
-}(window, document, window.Elegance));
+}(window, document, window.FusionUi));

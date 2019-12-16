@@ -19,7 +19,7 @@ class LayoutDemo extends AbstractDemoPage
     return FaIcon::LAYER_GROUP;
   }
 
-  protected function _content(): array
+  public function __construct()
   {
     ResourceManager::inline()->requireCss(
       "
@@ -41,6 +41,10 @@ class LayoutDemo extends AbstractDemoPage
     }
     "
     );
+  }
+
+  protected function _content(): array
+  {
 
     $cells = [];
     $cells[] = Div::create()->addClass(Fusion::MARGIN_LARGE);

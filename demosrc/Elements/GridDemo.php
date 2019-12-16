@@ -21,8 +21,9 @@ class GridDemo extends AbstractDemoPage
     return FaIcon::GRIP_HORIZONTAL;
   }
 
-  protected function _content(): array
+  public function __construct()
   {
+
     ResourceManager::inline()->requireCss(
       "
     .grid{
@@ -45,6 +46,10 @@ class GridDemo extends AbstractDemoPage
     }
     "
     );
+  }
+
+  protected function _content(): array
+  {
     $return = [];
 
     $return[] = GridLayout::create(

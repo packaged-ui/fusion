@@ -1,8 +1,8 @@
-window.Elegance = window.Elegance || {};
+window.FusionUi = window.FusionUi || {};
 
-(function (window, document, Elegance) {
+(function (window, document, FusionUi) {
 
-  Elegance.on(
+  FusionUi.on(
     document, 'click', '.drawer__toggle',
     function (e) {
       toggleDrawer(getDrawerContainer(e.target));
@@ -10,7 +10,7 @@ window.Elegance = window.Elegance || {};
       e.stopImmediatePropagation();
     }
   );
-  Elegance.on(
+  FusionUi.on(
     document, 'click', 'a', function () {
       // if drawer reveal is modal, close drawer
       var drawers = document.querySelectorAll('.drawer');
@@ -29,7 +29,7 @@ window.Elegance = window.Elegance || {};
     }
   );
 
-  Elegance.on(
+  FusionUi.on(
     document, 'click', '.drawer-container.drawer--open > .drawer-app-content',
     function (e) {
       if(e.target.matches('.drawer-app-content'))
@@ -37,7 +37,7 @@ window.Elegance = window.Elegance || {};
         var style = window.getComputedStyle(e.target, "::before");
         if(style.getPropertyValue('opacity') === '1')
         {
-          var container = Elegance.closest(e.target, '.drawer-container');
+          var container = FusionUi.closest(e.target, '.drawer-container');
           var drawer = container.querySelector('.drawer');
           var storageKey = 'drawer--open-' + drawer.getAttribute('position');
 
@@ -49,7 +49,7 @@ window.Elegance = window.Elegance || {};
   );
 
   function getDrawerContainer(target) {
-    var container = Elegance.closest(target, '.drawer-container');
+    var container = FusionUi.closest(target, '.drawer-container');
     if(!container)
     {
       // button not inside a drawer, get first drawer
@@ -87,4 +87,4 @@ window.Elegance = window.Elegance || {};
     localStorage.setItem(storageKey, '0');
   }
 
-}(window, document, window.Elegance));
+}(window, document, window.FusionUi));

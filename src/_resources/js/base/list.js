@@ -1,8 +1,8 @@
-window.Elegance = window.Elegance || {};
-window.Elegance.List = window.Elegance.List || {};
+window.FusionUi = window.FusionUi || {};
+window.FusionUi.List = window.FusionUi.List || {};
 
-(function (window, document, Elegance) {
-  Elegance.List.SetActive = function (ele) {
+(function (window, document, FusionUi) {
+  FusionUi.List.SetActive = function (ele) {
     // find top list
     var list;
     var t = ele;
@@ -26,7 +26,7 @@ window.Elegance.List = window.Elegance.List || {};
     ele.classList.add('list-item--active');
   };
 
-  Elegance.on(
+  FusionUi.on(
     document, 'click', '.list-item',
     function (e) {
       var ele = e.target;
@@ -34,8 +34,8 @@ window.Elegance.List = window.Elegance.List || {};
       {
         ele = ele.parentElement;
       }
-      Elegance.List.SetActive(ele);
+      FusionUi.List.SetActive(ele);
     }
   );
 
-}(window, document, window.Elegance));
+}(window, document, window.FusionUi));
