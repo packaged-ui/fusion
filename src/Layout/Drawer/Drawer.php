@@ -127,7 +127,10 @@ class Drawer extends AbstractContainerTag
     {
       $content[] = Div::create($this->_header)->addClass('drawer__header');
     }
-    $content[] = Div::create(parent::_getContentForRender())->addClass('drawer__content');
+    $content[] = Div::create(parent::_getContentForRender())->addClass(
+      'drawer__content',
+      LayoutInterface::FULL_HEIGHT_WITH_MIN
+    );
     if($this->_footer)
     {
       $content[] = Div::create($this->_footer)->addClass('drawer__footer');
@@ -186,10 +189,14 @@ class Drawer extends AbstractContainerTag
         "<script>localStorage.getItem('$drawerKey')==='1'&&document.querySelector('#$containerId').classList.add('drawer--open')</script>"
       ),
       parent::produceSafeHTML(),
-      Div::create($this->_appContent)->addClass('drawer-app-content')
+      Div::create($this->_appContent)->addClass('drawer-app-content', LayoutInterface::FULL_HEIGHT_WITH_MIN)
     )
       ->setId($containerId)
-      ->addClass('drawer-container', $this->_isOpen ? LayoutInterface::DRAWER_OPEN : '')
+      ->addClass(
+        'drawer-container',
+        LayoutInterface::FULL_HEIGHT_WITH_MIN,
+        $this->_isOpen ? LayoutInterface::DRAWER_OPEN : ''
+      )
       ->produceSafeHTML();
   }
 
