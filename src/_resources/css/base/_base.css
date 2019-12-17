@@ -61,6 +61,11 @@
   --f-code-color-text: var(--rgb-text-light);
 }
 
+html, body {
+  height: 100%;
+  min-height: 100%;
+}
+
 body {
   background: rgb(var(--f-background-color));
   font-family: var(--f-font);
