@@ -40,6 +40,10 @@
   flex-grow: 1;
 }
 
+.df--wrap {
+  flex-wrap: wrap;
+}
+
 .pxl {
   padding: var(--f-spacing-extra-large) !important;
 }

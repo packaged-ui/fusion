@@ -11,6 +11,7 @@ interface LayoutInterface
   const DISPLAY_FLEX = 'df';
   const DISPLAY_NONE = 'dn';
   const DISPLAY_FLEX_GROW = 'df--grow';
+  const DISPLAY_FLEX_WRAP = 'df--wrap';
 
   const PADDING_EXTRA_LARGE = 'pxl';
   const PADDING_LARGE = 'pl';
