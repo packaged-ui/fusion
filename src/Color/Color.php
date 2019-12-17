@@ -26,4 +26,14 @@ class Color extends AbstractEnum
   {
     return 'bgc-' . ($solid ? 'sld-' : '') . $color;
   }
+
+  public function foreground()
+  {
+    return 'c-' . $this->getValue();
+  }
+
+  public function background(bool $solid = false)
+  {
+    return 'bgc-' . ($solid ? 'sld-' : '') . $this->getValue();
+  }
 }
