@@ -3,6 +3,9 @@ namespace PackagedUi\Fusion;
 
 interface LayoutInterface
 {
+  const FULL_HEIGHT = 'fh';
+  const FULL_HEIGHT_WITH_MIN = 'fhm';
+
   const DISPLAY_INLINE_BLOCK = 'dib';
   const DISPLAY_BLOCK = 'db';
   const DISPLAY_FLEX = 'df';

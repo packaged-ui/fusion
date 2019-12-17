@@ -1,3 +1,12 @@
+.fh {
+  height: 100%;
+}
+
+.fhm {
+  height: 100%;
+  min-height: 100%;
+}
+
 .dib {
   display: inline-block !important;
 }
