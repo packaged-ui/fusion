@@ -1,10 +1,11 @@
 <?php
 namespace PackagedUi\Fusion\Button;
 
-use Packaged\Glimpse\Tags\Span;
+use Packaged\Glimpse\Tags\Div;
 use Packaged\Helpers\ValueAs;
 use Packaged\SafeHtml\ISafeHtmlProducer;
 use PackagedUi\Fusion\ButtonInferface;
+use PackagedUi\Fusion\LayoutInterface;
 
 class Button extends \Packaged\Glimpse\Tags\Button
 {
@@ -116,7 +117,7 @@ class Button extends \Packaged\Glimpse\Tags\Button
     if($this->_icon)
     {
       $content = ValueAs::arr($content);
-      $icon = Span::create($this->_icon)->addClass('btn__icn');
+      $icon = Div::create($this->_icon)->addClass('btn__icn', LayoutInterface::DISPLAY_INLINE_FLEX_VCENTRE);
 
       if($this->_iconPosition instanceof ButtonIconPosition && $this->_iconPosition->is(ButtonIconPosition::RIGHT))
       {
