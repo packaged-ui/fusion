@@ -138,4 +138,14 @@ class Button extends \Packaged\Glimpse\Tags\Button
     $this->_iconPosition = $position ?? $this->_iconPosition;
     return $this;
   }
+
+  public function setIconLeft(ISafeHtmlProducer $icon)
+  {
+    return $this->setIcon($icon, ButtonIconPosition::LEFT());
+  }
+
+  public function setIconRight(ISafeHtmlProducer $icon)
+  {
+    return $this->setIcon($icon, ButtonIconPosition::RIGHT());
+  }
 }
