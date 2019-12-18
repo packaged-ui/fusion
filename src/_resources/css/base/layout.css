@@ -44,6 +44,11 @@
   flex-wrap: wrap;
 }
 
+.dif--vc {
+  display: inline-flex;
+  align-items: center;
+}
+
 .pxl {
   padding: var(--f-spacing-extra-large) !important;
 }
