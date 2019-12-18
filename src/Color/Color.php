@@ -5,29 +5,29 @@ namespace PackagedUi\Fusion\Color;
 use Packaged\Enum\AbstractEnum;
 
 /**
- * @method static Color COLOR_RED()
- * @method static Color COLOR_ORANGE()
- * @method static Color COLOR_YELLOW()
- * @method static Color COLOR_GREEN()
- * @method static Color COLOR_SKY()
- * @method static Color COLOR_BLUE()
- * @method static Color COLOR_INDIGO()
- * @method static Color COLOR_PINK()
- * @method static Color COLOR_GREY()
- * @method static Color COLOR_BLACK()
+ * @method static Color RED()
+ * @method static Color ORANGE()
+ * @method static Color YELLOW()
+ * @method static Color GREEN()
+ * @method static Color SKY()
+ * @method static Color BLUE()
+ * @method static Color INDIGO()
+ * @method static Color PINK()
+ * @method static Color GREY()
+ * @method static Color BLACK()
  */
 class Color extends AbstractEnum
 {
-  const COLOR_RED = 'red';
-  const COLOR_ORANGE = 'orange';
-  const COLOR_YELLOW = 'yellow';
-  const COLOR_GREEN = 'green';
-  const COLOR_SKY = 'sky';
-  const COLOR_BLUE = 'blue';
-  const COLOR_INDIGO = 'indigo';
-  const COLOR_PINK = 'pink';
-  const COLOR_GREY = 'grey';
-  const COLOR_BLACK = 'black';
+  const RED = 'red';
+  const ORANGE = 'orange';
+  const YELLOW = 'yellow';
+  const GREEN = 'green';
+  const SKY = 'sky';
+  const BLUE = 'blue';
+  const INDIGO = 'indigo';
+  const PINK = 'pink';
+  const GREY = 'grey';
+  const BLACK = 'black';
 
   public static function foregroundCss($color)
   {

@@ -28,15 +28,15 @@ class TileDemo extends AbstractDemoPage
     $return[] = Tiles::create(
       Tile::create()->setTitle('Tile 1')
         ->addAction(TileAction::create()->setLink(Link::create('#', FaIcon::create(FaIcon::EDIT))))
-        ->setColor(Color::COLOR_BLUE),
-      Tile::create()->setTitle('Tile 2')->setColor(Color::COLOR_RED)
+        ->setColor(Color::BLUE),
+      Tile::create()->setTitle('Tile 2')->setColor(Color::RED)
     );
 
     $i = 0;
     $return[] = $tiles = Tiles::create()->setLayout(TileLayout::LAYOUT_GRID);
     while(count($tiles->getTiles()) < 5)
     {
-      $tile = Tile::create()->setTitle('Tile ' . ++$i)->setColor(Color::COLOR_INDIGO);
+      $tile = Tile::create()->setTitle('Tile ' . ++$i)->setColor(Color::INDIGO);
       if($i < 4)
       {
         $tile->addProperty('label', 'value');
