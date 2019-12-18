@@ -13,6 +13,10 @@
   --grid-bordered-cell-color: rgb(var(--f-content-background-color));
 }
 
+.grid__inner {
+  width: 100%;
+}
+
 @media (min-width: 840px) {
   .grid {
     -webkit-box-sizing: border-box;
