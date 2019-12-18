@@ -93,37 +93,32 @@ a:hover, a:active {
   --text-opacity: 1;
 }
 
-
-.block-desktop, .hide-desktop, .block-tablet, .hide-tablet, .block-mobile, .hide-mobile {
-  display: none;
-}
-
 @media (min-width: 840px) {
   .block-desktop {
-    display: block;
+    display: block !important;
   }
 
   .hide-desktop {
-    display: none;
+    display: none !important;
   }
 }
 
 @media (min-width: 480px) and (max-width: 839px) {
   .block-tablet {
-    display: block;
+    display: block !important;
   }
 
   .hide-tablet {
-    display: none;
+    display: none !important;
   }
 }
 
 @media (max-width: 479px) {
   .block-mobile {
-    display: block;
+    display: block !important;
   }
 
   .hide-mobile {
-    display: none;
+    display: none !important;
   }
 }
