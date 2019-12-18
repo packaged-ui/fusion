@@ -4,6 +4,18 @@ namespace PackagedUi\Fusion\Color;
 
 use Packaged\Enum\AbstractEnum;
 
+/**
+ * @method static Color COLOR_RED()
+ * @method static Color COLOR_ORANGE()
+ * @method static Color COLOR_YELLOW()
+ * @method static Color COLOR_GREEN()
+ * @method static Color COLOR_SKY()
+ * @method static Color COLOR_BLUE()
+ * @method static Color COLOR_INDIGO()
+ * @method static Color COLOR_PINK()
+ * @method static Color COLOR_GREY()
+ * @method static Color COLOR_BLACK()
+ */
 class Color extends AbstractEnum
 {
   const COLOR_RED = 'red';
