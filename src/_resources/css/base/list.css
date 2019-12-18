@@ -66,3 +66,7 @@ body.dark .list-item--active {
   --text-opacity: 0.38;
   font-size: 0.9em;
 }
+
+.list--disable-hover .list-item:hover, .list--disable-hover .list-item--active:hover {
+  background-color: transparent;
+}
