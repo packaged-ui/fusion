@@ -14,6 +14,10 @@
   background-color: rgb(var(--f-lighter-color));
 }
 
+.list--disable-hover .list-item:hover {
+  background-color: transparent;
+}
+
 .list-item--active {
   background-color: rgba(var(--f-color-primary), 0.1);
   --f-text-color: var(--f-color-primary);
@@ -65,8 +69,4 @@ body.dark .list-item--active {
 .list-item__secondary {
   --text-opacity: 0.38;
   font-size: 0.9em;
-}
-
-.list--disable-hover .list-item:hover, .list--disable-hover .list-item--active:hover {
-  background-color: transparent;
 }
