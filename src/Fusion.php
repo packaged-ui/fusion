@@ -3,6 +3,7 @@ namespace PackagedUi\Fusion;
 
 use Packaged\Dispatch\Component\DispatchableComponent;
 use Packaged\Dispatch\ResourceManager;
+use Packaged\Dispatch\ResourceStore;
 use PackagedUi\Fusion\Layout\TableInterface;
 
 class Fusion implements LayoutInterface, TypographyInterface, ButtonInferface, BadgeInterface,
@@ -12,13 +13,16 @@ class Fusion implements LayoutInterface, TypographyInterface, ButtonInferface, B
   const FILE_BASE_JS = 'js/base.min.js';
 
   public static function includeGoogleFont(
-    $family = 'Roboto', $styles = '300,300i,400,400i,500,500i,700,700i,900', $fontDisplay = 'swap'
+    $family = 'Roboto', $styles = '300,300i,400,400i,500,500i,700,700i,900', $fontDisplay = 'swap', $options = null,
+    int $priority = ResourceStore::PRIORITY_LOW
   )
   {
-    ResourceManager::external()->includeCss(
+    return ResourceManager::external()->includeCss(
       'https://fonts.googleapis.com/css?family=' . $family
       . ($styles ? ':' . $styles : '')
-      . ($fontDisplay ? '&display=' . $fontDisplay : '')
+      . ($fontDisplay ? '&display=' . $fontDisplay : ''),
+      $options,
+      $priority
     );
   }
 
