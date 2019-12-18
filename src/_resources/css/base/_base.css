@@ -92,3 +92,38 @@ a:hover, a:active {
   text-decoration: underline;
   --text-opacity: 1;
 }
+
+
+.block-desktop, .hide-desktop, .block-tablet, .hide-tablet, .block-mobile, .hide-mobile {
+  display: none;
+}
+
+@media (min-width: 840px) {
+  .block-desktop {
+    display: block;
+  }
+
+  .hide-desktop {
+    display: none;
+  }
+}
+
+@media (min-width: 480px) and (max-width: 839px) {
+  .block-tablet {
+    display: block;
+  }
+
+  .hide-tablet {
+    display: none;
+  }
+}
+
+@media (max-width: 479px) {
+  .block-mobile {
+    display: block;
+  }
+
+  .hide-mobile {
+    display: none;
+  }
+}
