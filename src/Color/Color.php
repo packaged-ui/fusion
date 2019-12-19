@@ -14,7 +14,7 @@ use Packaged\Enum\AbstractEnum;
  * @method static Color INDIGO()
  * @method static Color PINK()
  * @method static Color GREY()
- * @method static Color BLACK()
+ * @method static Color WHITE()
  */
 class Color extends AbstractEnum
 {
@@ -28,6 +28,7 @@ class Color extends AbstractEnum
   const PINK = 'pink';
   const GREY = 'grey';
   const BLACK = 'black';
+  const WHITE = 'white';
 
   public static function foregroundCss($color)
   {

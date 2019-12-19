@@ -9,6 +9,7 @@
   --color-pink: 142, 68, 173;
   --color-grey: 189, 195, 199;
   --color-black: 51, 51, 51;
+  --color-white: 255, 255, 255;
 }
 
 .c-red {
@@ -61,6 +62,11 @@
   --f-text-color: var(--color-black)
 }
 
+.c-white {
+  color: rgb(var(--color-white));
+  --f-text-color: var(--color-white)
+}
+
 
 .bgc-red {
   background-color: rgba(var(--color-red), 0.1);
@@ -102,6 +108,10 @@
   background-color: rgba(var(--color-black), 0.1);
 }
 
+.bgc-white {
+  background-color: rgba(var(--color-white), 0.1);
+}
+
 .bgc-sld-red {
   background-color: rgba(var(--color-red, 1));
 }
@@ -140,4 +150,8 @@
 
 .bgc-sld-black {
   background-color: rgba(var(--color-black, 1));
+}
+
+.bgc-sld-white {
+  background-color: rgba(var(--color-white, 1));
 }
