@@ -15,7 +15,8 @@
     "packaged/ui": "~1.0",
     "packaged/safehtml": "~2.0",
     "packaged/enum": "^1.0",
-    "packaged-ui/fontawesome": "^3.5"
+    "packaged-ui/fontawesome": "^3.5",
+    "packaged-ui/bem-component": "^1.0"
   },
   "require-dev": {
     "cubex/framework": "~4.0"

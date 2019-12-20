@@ -7,6 +7,8 @@ use Packaged\Event\Events\CustomEvent;
 use Packaged\Glimpse\Tags\Div;
 use Packaged\Glimpse\Tags\Link;
 use Packaged\Ui\Element;
+use PackagedUi\FontAwesome\FaIcon;
+use PackagedUi\Fusion\Fusion;
 use PackagedUi\Fusion\Layout\Drawer\Drawer;
 use PackagedUi\Fusion\LayoutInterface;
 use PackagedUi\Fusion\Menu\Menu;
@@ -37,7 +39,7 @@ class Layout extends Element implements ContextAware
   {
     return Drawer::create($this->buildMenu())
       ->setAppContent(
-        Link::create("#", "BURGER")->addClass('drawer__toggle'),
+        Link::create("#", FaIcon::create(FaIcon::BARS))->addClass('drawer__toggle', Fusion::MARGIN_MEDIUM),
         Div::create($this->_content)->addClass(LayoutInterface::PADDING_MEDIUM)
       )
       ->setState(Drawer::STATE_NARROW)
