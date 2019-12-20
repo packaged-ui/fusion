@@ -5,6 +5,7 @@ use Packaged\Glimpse\Tags\Div;
 use PackagedUi\FontAwesome\FaIcon;
 use PackagedUi\Fusion\Color\Color;
 use PackagedUi\Fusion\Fusion;
+use PackagedUi\Fusion\Ribbons\BannerRibbon;
 use PackagedUi\Fusion\Ribbons\Ribbon;
 use PackagedUi\FusionDemo\AbstractDemoPage;
 
@@ -39,6 +40,9 @@ class RibbonDemo extends AbstractDemoPage
       Div::create("Left Ribbon", Ribbon::create("POPULAR")->top())
         ->addClass(Fusion::PADDING_EXTRA_LARGE, Fusion::DISPLAY_INLINE_BLOCK, Fusion::MARGIN_LARGE, $bg)
     );
+
+    $return[] = BannerRibbon::create("This is a banner ribbon");
+    $return[] = BannerRibbon::create("50% OFF")->vertical();
 
     return $return;
   }

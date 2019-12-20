@@ -6,6 +6,8 @@
 
   --f-ribbon-highlight-color: 230, 55, 72;
   --f-ribbon-color: 230, 59, 78;
+  --f-text-color: 255, 255, 255;
+  --text-opacity: 1;
 
   position: absolute;
   top: -5px;
@@ -19,7 +21,6 @@
 .ribbon span {
   font-size: 13px;
   font-weight: bold;
-  color: #FFF;
   text-align: center;
   line-height: 27px;
   height: 26px;
@@ -103,4 +104,60 @@
 
 .ribbon.ribbon--top span::after {
   display: none;
+}
+
+
+/** banner-ribbon **/
+
+
+.banner-ribbon {
+  --f-banner-ribbon-background: 255, 255, 255;
+  --f-banner-ribbon-color: 230, 59, 78;
+  --f-text-color: 255, 255, 255;
+  --text-opacity: 1;
+
+  position: relative;
+  height: 28px;
+  line-height: 28px;
+  display: inline-block;
+  font-weight: 600;
+  box-sizing: border-box;
+  background: rgb(var(--f-banner-ribbon-color));
+}
+
+.banner-ribbon::before {
+  position: absolute;
+  content: '';
+  display: block;
+  width: 0;
+  height: 0;
+}
+
+
+.banner-ribbon.banner-ribbon--horizontal {
+  padding: 0 12px 0 20px;
+}
+
+.banner-ribbon.banner-ribbon--horizontal::before {
+  border-top: 14px solid transparent;
+  border-bottom: 14px solid transparent;
+  border-left: 10px solid rgb(var(--f-banner-ribbon-background));
+  left: 0;
+  top: 0;
+}
+
+.banner-ribbon.banner-ribbon--vertical {
+  max-width: 100px;
+  width: 100px;
+  padding: 10px 10px 50px 10px;
+  text-align: center;
+}
+
+.banner-ribbon.banner-ribbon--vertical::before {
+  border-right: 50px solid transparent;
+  border-left: 50px solid transparent;
+  border-bottom: 15px solid rgb(var(--f-banner-ribbon-background));
+  left: 0;
+  right: 0;
+  bottom: 0;
 }
