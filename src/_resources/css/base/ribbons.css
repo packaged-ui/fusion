@@ -4,32 +4,32 @@
 
 .ribbon {
 
-  --f-ribbon-highlight-color: 247, 5, 5;
-  --f-ribbon-color: 173, 8, 8;
+  --f-ribbon-highlight-color: 230, 55, 72;
+  --f-ribbon-color: 230, 59, 78;
 
   position: absolute;
   top: -5px;
   z-index: 1;
   overflow: hidden;
-  width: 75px;
-  height: 75px;
+  width: 100px;
+  height: 100px;
   text-align: right;
 }
 
 .ribbon span {
-  font-size: 10px;
+  font-size: 13px;
   font-weight: bold;
   color: #FFF;
-  text-transform: uppercase;
   text-align: center;
-  line-height: 20px;
+  line-height: 27px;
+  height: 26px;
   width: 100px;
   display: block;
   background: rgb(var(--f-ribbon-color));
   background: linear-gradient(rgb(var(--f-ribbon-highlight-color)) 0%, rgb(var(--f-ribbon-color)) 100%);
   box-shadow: 0 3px 10px -5px rgba(0, 0, 0, 1);
   position: absolute;
-  top: 19px;
+  top: 14px;
   right: -21px;
 }
 
@@ -81,6 +81,7 @@
 .ribbon.ribbon--top {
   right: 0;
   left: 0;
+  top: -10px;
   width: 100%;
   margin-right: -2px;
   margin-left: -2px;
