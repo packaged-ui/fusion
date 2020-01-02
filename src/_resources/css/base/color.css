@@ -22,11 +22,15 @@
 }
 
 .bgc-sld-red {
-  background-color: rgba(var(--color-red, 1));
+  background-color: rgba(var(--color-red), 1);
 }
 
 .brdrc-red {
-  border-color: rgba(var(--color-red, 1));
+  border-color: rgba(var(--color-red), 0.5);
+}
+
+.brdrc-sld-red {
+  border-color: rgba(var(--color-red), 1);
 }
 
 .c-orange {
@@ -39,11 +43,15 @@
 }
 
 .bgc-sld-orange {
-  background-color: rgba(var(--color-orange, 1));
+  background-color: rgba(var(--color-orange), 1);
 }
 
 .brdrc-orange {
-  border-color: rgba(var(--color-orange, 1));
+  border-color: rgba(var(--color-orange), 0.5);
+}
+
+.brdrc-sld-orange {
+  border-color: rgba(var(--color-orange), 1);
 }
 
 .c-yellow {
@@ -56,11 +64,15 @@
 }
 
 .bgc-sld-yellow {
-  background-color: rgba(var(--color-yellow, 1));
+  background-color: rgba(var(--color-yellow), 1);
 }
 
 .brdrc-yellow {
-  border-color: rgba(var(--color-yellow, 1));
+  border-color: rgba(var(--color-yellow), 0.5);
+}
+
+.brdrc-sld-yellow {
+  border-color: rgba(var(--color-yellow), 1);
 }
 
 .c-green {
@@ -73,11 +85,15 @@
 }
 
 .bgc-sld-green {
-  background-color: rgba(var(--color-green, 1));
+  background-color: rgba(var(--color-green), 1);
 }
 
 .brdrc-green {
-  border-color: rgba(var(--color-green, 1));
+  border-color: rgba(var(--color-green), 0.5);
+}
+
+.brdrc-sld-green {
+  border-color: rgba(var(--color-green), 1);
 }
 
 .c-sky {
@@ -90,11 +106,15 @@
 }
 
 .bgc-sld-sky {
-  background-color: rgba(var(--color-sky, 1));
+  background-color: rgba(var(--color-sky), 1);
 }
 
 .brdrc-sky {
-  border-color: rgba(var(--color-sky, 1));
+  border-color: rgba(var(--color-sky), 0.5);
+}
+
+.brdrc-sld-sky {
+  border-color: rgba(var(--color-sky), 1);
 }
 
 .c-blue {
@@ -107,11 +127,15 @@
 }
 
 .bgc-sld-blue {
-  background-color: rgba(var(--color-blue, 1));
+  background-color: rgba(var(--color-blue), 1);
 }
 
 .brdrc-blue {
-  border-color: rgba(var(--color-blue, 1));
+  border-color: rgba(var(--color-blue), 0.5);
+}
+
+.brdrc-sld-blue {
+  border-color: rgba(var(--color-blue), 1);
 }
 
 .c-indigo {
@@ -124,11 +148,15 @@
 }
 
 .bgc-sld-indigo {
-  background-color: rgba(var(--color-indigo, 1));
+  background-color: rgba(var(--color-indigo), 1);
 }
 
 .brdrc-indigo {
-  border-color: rgba(var(--color-indigo, 1));
+  border-color: rgba(var(--color-indigo), 0.5);
+}
+
+.brdrc-sld-indigo {
+  border-color: rgba(var(--color-indigo), 1);
 }
 
 .c-pink {
@@ -141,11 +169,15 @@
 }
 
 .bgc-sld-pink {
-  background-color: rgba(var(--color-pink, 1));
+  background-color: rgba(var(--color-pink), 1);
 }
 
 .brdrc-pink {
-  border-color: rgba(var(--color-pink, 1));
+  border-color: rgba(var(--color-pink), 0.5);
+}
+
+.brdrc-sld-pink {
+  border-color: rgba(var(--color-pink), 1);
 }
 
 .c-grey {
@@ -158,11 +190,15 @@
 }
 
 .bgc-sld-grey {
-  background-color: rgba(var(--color-grey, 1));
+  background-color: rgba(var(--color-grey), 1);
 }
 
 .brdrc-grey {
-  border-color: rgba(var(--color-grey, 1));
+  border-color: rgba(var(--color-grey), 0.5);
+}
+
+.brdrc-sld-grey {
+  border-color: rgba(var(--color-grey), 1);
 }
 
 .c-black {
@@ -175,11 +211,15 @@
 }
 
 .bgc-sld-black {
-  background-color: rgba(var(--color-black, 1));
+  background-color: rgba(var(--color-black), 1);
 }
 
 .brdrc-black {
-  border-color: rgba(var(--color-black, 1));
+  border-color: rgba(var(--color-black), 0.5);
+}
+
+.brdrc-sld-black {
+  border-color: rgba(var(--color-black), 1);
 }
 
 .c-white {
@@ -192,11 +232,15 @@
 }
 
 .bgc-sld-white {
-  background-color: rgba(var(--color-white, 1));
+  background-color: rgba(var(--color-white), 1);
 }
 
 .brdrc-white {
-  border-color: rgba(var(--color-white, 1));
+  border-color: rgba(var(--color-white), 0.5);
+}
+
+.brdrc-sld-white {
+  border-color: rgba(var(--color-white), 1);
 }
 
 /*# sourceMappingURL=color.css.map */

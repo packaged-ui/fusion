@@ -26,11 +26,14 @@ $colors: "red" "orange" "yellow" "green" "sky" "blue" "indigo" "pink" "grey" "bl
   }
 
   .bgc-sld-#{$color} {
-    background-color: rgba(var(--color-#{$color}, 1));
+    background-color: rgba(var(--color-#{$color}), 1);
   }
 
   .brdrc-#{$color} {
-    border-color: rgba(var(--color-#{$color}, 1));
+    border-color: rgba(var(--color-#{$color}), 0.5);
+  }
+  .brdrc-sld-#{$color} {
+    border-color: rgba(var(--color-#{$color}), 1);
   }
 }
 

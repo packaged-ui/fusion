@@ -50,8 +50,8 @@ class Color extends AbstractEnum
     return 'bgc-' . ($solid ? 'sld-' : '') . $this->getValue();
   }
 
-  public function border()
+  public function border(bool $solid = false)
   {
-    return 'brdrc-' . $this->getValue();
+    return 'brdrc-' . ($solid ? 'sld-' : '') . $this->getValue();
   }
 }
