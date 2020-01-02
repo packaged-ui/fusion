@@ -149,8 +149,9 @@
 .banner-ribbon.banner-ribbon--vertical {
   max-width: 100px;
   width: 100px;
-  padding: 10px 10px 50px 10px;
+  padding: 10px 10px 20px 10px;
   text-align: center;
+  height: auto;
 }
 
 .banner-ribbon.banner-ribbon--vertical::before {
