@@ -3,12 +3,17 @@ namespace PackagedUi\Fusion\Card;
 
 use Packaged\Glimpse\Tags\Div;
 use Packaged\Ui\Html\HtmlElement;
+use PackagedUi\Fusion\Color\Color;
 
 class Card extends Div
 {
   protected $_header;
   protected $_footer;
   protected $_withContentContainer = true;
+  /**
+   * @var Color
+   */
+  protected $_color;
 
   protected function _prepareForProduce(): HtmlElement
   {
@@ -87,6 +92,26 @@ class Card extends Div
       $return[] = Div::create($this->_footer)->addClass('card-footer');
     }
     return $return;
+  }
+
+  public function setColor(Color $color = null)
+  {
+    if($color === null && $this->_color instanceof Color)
+    {
+      $this->removeClass('card--with-color', $this->_color->background(), $this->_color->border());
+    }
+    else
+    {
+      $this->addClass('card--with-color', $color->background(), $color->border());
+    }
+    $this->_color = $color;
+    return $this;
+  }
+
+  public function withoutShadow()
+  {
+    $this->addClass('card--without-shadow');
+    return $this;
   }
 
 }

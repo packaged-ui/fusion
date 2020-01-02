@@ -12,11 +12,11 @@
   --rgb-white: 255, 255, 255;
   --rgb-white-text: var(--rgb-text-dark);
 
-  --f-spacing-extra-large: 24px;
-  --f-spacing-large: 16px;
-  --f-spacing-medium: 8px;
-  --f-spacing-small: 4px;
   --f-spacing-extra-small: 2px;
+  --f-spacing-small: 4px;
+  --f-spacing-medium: 8px;
+  --f-spacing-large: 16px;
+  --f-spacing-extra-large: 24px;
 
   --f-color-default-light: var(--rgb-grey-500);
   --f-color-default-light-text: var(--rgb-grey-500-text);

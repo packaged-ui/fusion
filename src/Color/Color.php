@@ -49,4 +49,9 @@ class Color extends AbstractEnum
   {
     return 'bgc-' . ($solid ? 'sld-' : '') . $this->getValue();
   }
+
+  public function border()
+  {
+    return 'brdrc-' . $this->getValue();
+  }
 }
