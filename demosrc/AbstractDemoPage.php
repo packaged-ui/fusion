@@ -1,13 +1,17 @@
 <?php
 namespace PackagedUi\FusionDemo;
 
+use Packaged\Context\ContextAware;
+use Packaged\Context\ContextAwareTrait;
 use Packaged\Helpers\Strings;
 use Packaged\SafeHtml\SafeHtml;
 use Packaged\Ui\Element;
 use PackagedUi\FontAwesome\FaIcon;
 
-abstract class AbstractDemoPage extends Element implements UiPage
+abstract class AbstractDemoPage extends Element implements UiPage, ContextAware
 {
+  use ContextAwareTrait;
+
   abstract protected function _content(): array;
 
   public function getID(): string

@@ -21,6 +21,7 @@ use PackagedUi\FusionDemo\Elements\ProgressDemo;
 use PackagedUi\FusionDemo\Elements\RibbonDemo;
 use PackagedUi\FusionDemo\Elements\StatisticsDemo;
 use PackagedUi\FusionDemo\Elements\TableDemo;
+use PackagedUi\FusionDemo\Elements\TabsDemo;
 use PackagedUi\FusionDemo\Elements\ThemeDemo;
 use PackagedUi\FusionDemo\Elements\TileDemo;
 use PackagedUi\FusionDemo\Elements\TypographyDemo;
@@ -64,6 +65,7 @@ class ConfigHandler implements ContextAware
       'Menu'       => new MenuDemo(),
       'Progress'   => new ProgressDemo(),
       'Statistics' => new StatisticsDemo(),
+      'Tabs'       => new TabsDemo(),
       'Table'      => new TableDemo(),
       'Tile'       => new TileDemo(),
       'Ribbon'     => new RibbonDemo(),

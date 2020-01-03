@@ -1,0 +1,37 @@
+.tab_label {
+  border: 1px solid transparent;
+  border-bottom-width: 2px;
+  margin-bottom: -1px;
+  padding: 4px;
+  flex-grow: 1;
+  text-align: center;
+  font-weight: 500;
+  text-decoration: none;
+}
+
+a.tab_label {
+  text-decoration: none;
+}
+
+.tab_label.tab_label--active {
+  border-bottom-color: rgba(var(--f-color-primary-light), 1);
+  --f-text-color: var(--f-color-primary);
+  --text-opacity: 1;
+}
+
+.tabs_menu {
+  display: flex;
+}
+
+.tabs_container {
+  border: 1px solid rgba(0, 0, 0, 0.2);
+}
+
+.tab {
+  display: none;
+}
+
+.tab.tab--active {
+  display: block;
+}
+
