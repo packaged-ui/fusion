@@ -127,10 +127,7 @@ class Drawer extends AbstractContainerTag
     {
       $content[] = Div::create($this->_header)->addClass('drawer__header');
     }
-    $content[] = Div::create(parent::_getContentForRender())->addClass(
-      'drawer__content',
-      LayoutInterface::FULL_HEIGHT_WITH_MIN
-    );
+    $content[] = Div::create(parent::_getContentForRender())->addClass('drawer__content');
     if($this->_footer)
     {
       $content[] = Div::create($this->_footer)->addClass('drawer__footer');
