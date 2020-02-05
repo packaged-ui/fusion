@@ -12,6 +12,7 @@ class ToggleButton extends Button
 {
   protected $_checkedContent;
   protected $_uncheckedContent;
+  protected $_name;
 
   public function __construct(...$content)
   {
@@ -28,7 +29,7 @@ class ToggleButton extends Button
   /**
    * @param mixed $checkedContent
    *
-   * @return ToggleButton
+   * @return static
    */
   public function setCheckedContent($checkedContent)
   {
@@ -39,11 +40,22 @@ class ToggleButton extends Button
   /**
    * @param mixed $uncheckedContent
    *
-   * @return ToggleButton
+   * @return static
    */
   public function setUncheckedContent($uncheckedContent)
   {
     $this->_uncheckedContent = $uncheckedContent;
+    return $this;
+  }
+
+  /**
+   * @param string $name
+   *
+   * @return static
+   */
+  public function setName(string $name)
+  {
+    $this->_name = $name;
     return $this;
   }
 
@@ -56,7 +68,7 @@ class ToggleButton extends Button
   protected function _getContentForRender()
   {
     return [
-      Input::create()->setType(Input::TYPE_CHECKBOX)->addClass('toggle-button-checkbox'),
+      Input::create()->setType(Input::TYPE_CHECKBOX)->setName($this->_name)->addClass('toggle-button-checkbox'),
       $this->_checkedContent ? Span::create($this->_checkedContent)->addClass('checked-content') : null,
       $this->_uncheckedContent ? Span::create($this->_uncheckedContent)->addClass('unchecked-content') : null,
       parent::_getContentForRender(),
