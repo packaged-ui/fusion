@@ -7,6 +7,8 @@ window.FusionUi.Inputs = window.FusionUi.Inputs || {};
     document, 'click', '.toggle-button',
     function (e)
     {
+      e.preventDefault();
+
       var button = e.delegateTarget;
       var checkEle = e.delegateTarget.querySelector('.toggle-button-checkbox');
       checkEle.checked = !checkEle.checked;
