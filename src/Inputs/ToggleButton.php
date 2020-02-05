@@ -13,6 +13,7 @@ class ToggleButton extends Button
   protected $_checkedContent;
   protected $_uncheckedContent;
   protected $_name;
+  protected $_value;
 
   public function __construct(...$content)
   {
@@ -59,6 +60,17 @@ class ToggleButton extends Button
     return $this;
   }
 
+  /**
+   * @param string $value
+   *
+   * @return static
+   */
+  public function setValue(string $value)
+  {
+    $this->_value = $value;
+    return $this;
+  }
+
   protected function _prepareForProduce(): HtmlElement
   {
     $this->addClass('toggle-button');
@@ -68,7 +80,8 @@ class ToggleButton extends Button
   protected function _getContentForRender()
   {
     return [
-      Input::create()->setType(Input::TYPE_CHECKBOX)->setName($this->_name)->addClass('toggle-button-checkbox'),
+      Input::create()->setType(Input::TYPE_CHECKBOX)->addClass('toggle-button-checkbox')
+        ->setName($this->_name)->setValue($this->_value),
       $this->_checkedContent ? Span::create($this->_checkedContent)->addClass('checked-content') : null,
       $this->_uncheckedContent ? Span::create($this->_uncheckedContent)->addClass('unchecked-content') : null,
       parent::_getContentForRender(),

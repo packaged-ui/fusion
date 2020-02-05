@@ -65,6 +65,8 @@ class InputDemo extends AbstractDemoPage
     $return[] = LineBreak::create();
 
     $return[] = ToggleButton::create('Text Here')
+      ->setName('my_button')
+      ->setValue('my_value')
       ->setCheckedClass(ButtonInferface::BUTTON_XLARGE, ButtonInferface::BUTTON_ACCENT);
 
     return $return;
