@@ -60,9 +60,9 @@ input[type="button"], input[type="submit"], input[type="reset"], button, .btn {
   font-family: var(--f-font);
   outline: 0;
 
-  color: rgba(var(--button-text-color), 0.95);
   background-color: rgba(var(--button-color), 0.9);
   --f-text-color: var(--button-text-color);
+  --text-opacity: 0.95;
 }
 
 input[type="button"]:hover, input[type="submit"]:hover, input[type="reset"]:hover, button:hover, .btn:hover {
