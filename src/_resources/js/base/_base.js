@@ -19,6 +19,7 @@ window.FusionUi = window.FusionUi || {};
         {
           if(t.matches(selector))
           {
+            e.delegateTarget = t;
             return callback(e);
           }
         }

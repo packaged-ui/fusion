@@ -7,6 +7,8 @@ use Packaged\Glimpse\Tags\Form\Select;
 use Packaged\Glimpse\Tags\Form\Textarea;
 use Packaged\Glimpse\Tags\LineBreak;
 use PackagedUi\FontAwesome\FaIcon;
+use PackagedUi\Fusion\ButtonInferface;
+use PackagedUi\Fusion\Inputs\ToggleButton;
 use PackagedUi\FusionDemo\AbstractDemoPage;
 
 class InputDemo extends AbstractDemoPage
@@ -45,6 +47,15 @@ class InputDemo extends AbstractDemoPage
     $return[] = Input::create()
       ->setValue('Text Here')
       ->setType(Input::TYPE_TEXT);
+
+    $return[] = LineBreak::create();
+    $return[] = LineBreak::create();
+
+    $return[] = ToggleButton::create('Text Here')
+      ->setUncheckedContent('Unchecked ')
+      ->setCheckedContent('Checked ');
+    $return[] = ToggleButton::create('Text Here')
+      ->setCheckedClass(ButtonInferface::BUTTON_XLARGE, ButtonInferface::BUTTON_ACCENT);
 
     return $return;
   }

@@ -1,0 +1,13 @@
+.toggle-button .toggle-button-checkbox {
+  pointer-events: none;
+  position: absolute;
+  opacity: 0;
+}
+
+.toggle-button[checked] .unchecked-content {
+  display: none;
+}
+
+.toggle-button:not([checked]) .checked-content {
+  display: none;
+}
