@@ -4,6 +4,18 @@
   opacity: 0;
 }
 
+.toggle-button .unchecked-content,
+.toggle-button .checked-content {
+  display: inherit;
+}
+
+@supports (display: contents) {
+  .toggle-button .unchecked-content,
+  .toggle-button .checked-content {
+    display: contents;
+  }
+}
+
 .toggle-button[checked] .unchecked-content {
   display: none;
 }
