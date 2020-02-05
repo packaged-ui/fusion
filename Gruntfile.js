@@ -3,15 +3,18 @@ module.exports = function (grunt) {
     {
       sass:   {
         dist: {
+          options: {
+            '_': ['--no-source-map'],
+          },
           files: [
             {
               expand: true,
-              cwd:    'src/_resources/css/base',
-              src:    ['*.scss'],
-              dest:   'src/_resources/css/base',
-              ext:    '.css'
-            }
-          ]
+              cwd: 'src/_resources/css/base',
+              src: ['*.scss'],
+              dest: 'src/_resources/css/base',
+              ext: '.css',
+            },
+          ],
         }
       },
       cssmin: {
@@ -45,27 +48,27 @@ module.exports = function (grunt) {
           files: {
             'src/_resources/js/base.min.js': [
               'src/_resources/js/base/_base.js',
-              'src/_resources/js/base/*.js'
+              'src/_resources/js/base/*.js',
             ],
-          }
-        }
-      },
-      watch:  {
-        styles:  {
-          files:   ['src/_resources/css/**/*.css'],
-          tasks:   ['cssmin'],
-          options: {
-            spawn: false,
-          }
+          },
         },
-        scripts: {
-          files:   ['src/_resources/js/**/*.js'],
-          tasks:   ['uglify'],
+      },
+      watch: {
+        styles: {
+          files: ['src/_resources/css/**/*.css'],
+          tasks: ['cssmin'],
           options: {
             spawn: false,
           },
         },
-      },
+        scripts: {
+          files: ['src/_resources/js/**/*.js'],
+          tasks: ['uglify'],
+          options: {
+            spawn: false,
+          },
+        },
+      }
     }
   );
 
