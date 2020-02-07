@@ -1,8 +1,7 @@
 import {on} from '../../Foundation/res';
 import './list.css';
 
-export function SetActive(ele)
-{
+export function SetActive(ele) {
   // find top list
   let list;
   let t = ele;
@@ -15,23 +14,22 @@ export function SetActive(ele)
   }
   while((t = t.parentElement));
 
-  let eles = list.querySelectorAll('.list-item--active');
+  let eles = list.querySelectorAll('.list__item--active');
   for(let i in eles)
   {
     if(eles.hasOwnProperty(i) && eles[i] !== ele)
     {
-      eles[i].classList.remove('list-item--active');
+      eles[i].classList.remove('list__item--active');
     }
   }
-  ele.classList.add('list-item--active');
+  ele.classList.add('list__item--active');
 }
 
 on(
-  document, 'click', '.list-item',
-  function (e)
-  {
+  document, 'click', '.list__item',
+  function (e) {
     let ele = e.target;
-    while((!ele.matches('.list-item')) && ele.parentElement)
+    while((!ele.matches('.list__item')) && ele.parentElement)
     {
       ele = ele.parentElement;
     }

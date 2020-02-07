@@ -2,14 +2,19 @@
 namespace PackagedUi\Fusion\Lists;
 
 use Packaged\Glimpse\Core\AbstractContainerTag;
-use Packaged\Ui\Html\HtmlElement;
+use PackagedUi\BemComponent\BemComponentTrait;
+use PackagedUi\Fusion\Component;
+use PackagedUi\Fusion\ComponentTrait;
 
-class ListBox extends AbstractContainerTag
+class ListBox extends AbstractContainerTag implements Component
 {
-  protected $_tag = 'ul';
+  use BemComponentTrait;
+  use ComponentTrait;
 
-  protected function _prepareForProduce(): HtmlElement
+  public function getBlockName(): string
   {
-    return parent::_prepareForProduce()->addClass('list-box');
+    return 'list-box';
   }
+
+  protected $_tag = 'ul';
 }

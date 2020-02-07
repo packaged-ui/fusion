@@ -2,19 +2,14 @@
 namespace PackagedUi\Fusion\Menu;
 
 use Packaged\Ui\Html\HtmlElement;
-use PackagedUi\BemComponent\BemComponentTrait;
-use PackagedUi\Fusion\Component;
-use PackagedUi\Fusion\ComponentTrait;
 use PackagedUi\Fusion\Lists\ListItem;
 
-class MenuItem extends ListItem implements Component
+class MenuItem extends ListItem
 {
-  use BemComponentTrait;
-  use ComponentTrait;
-
-  public function getBlockName(): string
+  protected function _constructComponent()
   {
-    return 'menu__item';
+    parent::_constructComponent();
+    $this->addClass('menu__item');
   }
 
   protected $_tag = 'a';
