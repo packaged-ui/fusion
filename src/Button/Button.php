@@ -5,7 +5,6 @@ use Packaged\Glimpse\Tags\Div;
 use Packaged\Helpers\ValueAs;
 use Packaged\SafeHtml\ISafeHtmlProducer;
 use PackagedUi\BemComponent\BemComponentTrait;
-use PackagedUi\Fusion\ButtonInferface;
 use PackagedUi\Fusion\Component;
 use PackagedUi\Fusion\ComponentTrait;
 use PackagedUi\Fusion\LayoutInterface;

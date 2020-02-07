@@ -9,7 +9,7 @@ use Packaged\Glimpse\Tags\Form\Textarea;
 use Packaged\Glimpse\Tags\LineBreak;
 use Packaged\SafeHtml\SafeHtml;
 use PackagedUi\FontAwesome\FaIcon;
-use PackagedUi\Fusion\ButtonInferface;
+use PackagedUi\Fusion\Button\ButtonInferface;
 use PackagedUi\Fusion\Inputs\ToggleButton;
 use PackagedUi\FusionDemo\AbstractDemoPage;
 

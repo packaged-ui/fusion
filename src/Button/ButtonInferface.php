@@ -1,5 +1,5 @@
 <?php
-namespace PackagedUi\Fusion;
+namespace PackagedUi\Fusion\Button;
 
 interface ButtonInferface
 {

@@ -6,7 +6,7 @@ use Packaged\Glimpse\Tags\Form\Input;
 use Packaged\Glimpse\Tags\Span;
 use Packaged\Ui\Html\HtmlElement;
 use PackagedUi\Fusion\Button\Button;
-use PackagedUi\Fusion\ButtonInferface;
+use PackagedUi\Fusion\Button\ButtonInferface;
 
 class ToggleButton extends Button
 {

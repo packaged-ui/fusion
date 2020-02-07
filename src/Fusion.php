@@ -4,6 +4,7 @@ namespace PackagedUi\Fusion;
 use Packaged\Dispatch\Component\DispatchableComponent;
 use Packaged\Dispatch\ResourceManager;
 use Packaged\Dispatch\ResourceStore;
+use PackagedUi\Fusion\Button\ButtonInferface;
 use PackagedUi\Fusion\Layout\TableInterface;
 
 class Fusion implements LayoutInterface, TypographyInterface, ButtonInferface, BadgeInterface,
