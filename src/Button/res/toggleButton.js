@@ -8,7 +8,7 @@ on(
     e.preventDefault();
 
     let button = e.delegateTarget;
-    let checkedClasses = button.getAttribute('checked-class').split(' ').split(' ').filter(name => !!name);
+    let checkedClasses = button.getAttribute('checked-class').split(' ').filter(name => !!name);
     let checkEle = e.delegateTarget.querySelector('.btn__toggle-button-checkbox');
     checkEle.checked = !checkEle.checked;
     if(checkEle.checked)
