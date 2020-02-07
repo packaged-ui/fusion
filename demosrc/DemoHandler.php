@@ -4,6 +4,7 @@ namespace PackagedUi\FusionDemo;
 use Cubex\Controller\Controller;
 use Packaged\Context\Context;
 use Packaged\Glimpse\Core\HtmlTag;
+use Packaged\Glimpse\Tags\Div;
 use Packaged\Ui\Element;
 use PackagedUi\FusionDemo\Layout\Layout;
 
@@ -21,6 +22,7 @@ class DemoHandler extends Controller
 
   protected function _generateRoutes()
   {
+    yield self::_route('/_all', 'allPages');
     $firstPage = null;
     foreach($this->_allPages() as $page)
     {
@@ -32,6 +34,11 @@ class DemoHandler extends Controller
       yield self::_route($page->getID(), $page->getID());
     }
     return $firstPage ? $firstPage->getID() : null;
+  }
+
+  public function processAllPages()
+  {
+    return Div::create($this->_allPages());
   }
 
   protected function _prepareHandler(Context $c, $handler)
