@@ -6,10 +6,21 @@ use Packaged\Glimpse\Tags\Div;
 use Packaged\Helpers\Strings;
 use Packaged\SafeHtml\SafeHtml;
 use Packaged\Ui\Html\HtmlElement;
+use PackagedUi\BemComponent\BemComponentTrait;
+use PackagedUi\Fusion\Component;
+use PackagedUi\Fusion\ComponentTrait;
 use PackagedUi\Fusion\Layout\LayoutInterface;
 
-class Drawer extends AbstractContainerTag
+class Drawer extends AbstractContainerTag implements Component
 {
+  use BemComponentTrait;
+  use ComponentTrait;
+
+  public function getBlockName(): string
+  {
+    return 'drawer';
+  }
+
   const STATE_CLOSED = '';
   const STATE_PERMANENT = 'permanent';
   const STATE_NARROW = 'narrow';
@@ -125,12 +136,12 @@ class Drawer extends AbstractContainerTag
 
     if($this->_header)
     {
-      $content[] = Div::create($this->_header)->addClass('drawer__header');
+      $content[] = Div::create($this->_header)->addClass($this->getElementName('header'));
     }
-    $content[] = Div::create(parent::_getContentForRender())->addClass('drawer__content');
+    $content[] = Div::create(parent::_getContentForRender())->addClass($this->getElementName('content'));
     if($this->_footer)
     {
-      $content[] = Div::create($this->_footer)->addClass('drawer__footer');
+      $content[] = Div::create($this->_footer)->addClass($this->getElementName('footer'));
     }
 
     return $content;
@@ -156,7 +167,7 @@ class Drawer extends AbstractContainerTag
 
   protected function _prepareForProduce(): HtmlElement
   {
-    $drawer = parent::_prepareForProduce()->addClass('drawer');
+    $drawer = parent::_prepareForProduce();
     if($this->_position)
     {
       $drawer->setAttribute('position', $this->_position);
@@ -183,7 +194,8 @@ class Drawer extends AbstractContainerTag
     $drawerKey = 'drawer--open-' . $this->_position;
     return Div::create(
       new SafeHtml(
-        "<script>localStorage.getItem('$drawerKey')==='1'&&document.querySelector('#$containerId').classList.add('drawer--open')</script>"
+        "<script>localStorage.getItem('$drawerKey')==='1'&&document.querySelector('#$containerId').classList.add('" .
+        $this->getModifier('open') . "')</script>"
       ),
       parent::produceSafeHTML(),
       Div::create($this->_appContent)->addClass('drawer-app-content', LayoutInterface::FULL_HEIGHT_WITH_MIN)
