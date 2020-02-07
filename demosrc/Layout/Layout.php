@@ -14,6 +14,7 @@ use PackagedUi\Fusion\Layout\LayoutInterface;
 use PackagedUi\Fusion\Menu\Menu;
 use PackagedUi\Fusion\Menu\MenuItem;
 use PackagedUi\FusionDemo\UiContext;
+use PackagedUi\FusionDemo\UiPage;
 
 class Layout extends Element implements ContextAware
 {
@@ -57,7 +58,7 @@ class Layout extends Element implements ContextAware
   }
 
   /**
-   * @return array|\PackagedUi\FusionDemo\UiPage[]
+   * @return array|UiPage[]
    */
   public function getPages()
   {

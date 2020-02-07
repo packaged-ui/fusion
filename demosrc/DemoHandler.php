@@ -31,7 +31,7 @@ class DemoHandler extends Controller
       $this->_pages[$page->getID()] = $page;
       yield self::_route($page->getID(), $page->getID());
     }
-    return $firstPage ? $firstPage->getID() : parent::_generateRoutes();
+    return $firstPage ? $firstPage->getID() : null;
   }
 
   protected function _prepareHandler(Context $c, $handler)

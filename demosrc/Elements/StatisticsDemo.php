@@ -41,7 +41,7 @@ class StatisticsDemo extends AbstractDemoPage
       ->setHeader(
         Flex::create(
           FlexGrow::create("Revenue"),
-          SmallText::create(FaIcon::create(FaIcon::ARROW_UP, "12%"))->addClass()
+          SmallText::create(FaIcon::create(FaIcon::ARROW_UP), "12%")
         )
       )
       ->setFooter(Span::create(34)->addClass(Fusion::TEXT_LARGE));
