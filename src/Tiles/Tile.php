@@ -6,12 +6,23 @@ use Packaged\Glimpse\Tags\Div;
 use Packaged\Glimpse\Tags\Text\Paragraph;
 use Packaged\Helpers\Strings;
 use Packaged\Ui\Html\HtmlElement;
+use PackagedUi\BemComponent\BemComponentTrait;
 use PackagedUi\FontAwesome\FaIcon;
 use PackagedUi\FontAwesome\FaIcons;
 use PackagedUi\Fusion\Color\Color;
+use PackagedUi\Fusion\Component;
+use PackagedUi\Fusion\ComponentTrait;
 
-class Tile extends HtmlTag
+class Tile extends HtmlTag implements Component
 {
+  use BemComponentTrait;
+  use ComponentTrait;
+
+  public function getBlockName(): string
+  {
+    return 'tile';
+  }
+
   protected $_tag = 'div';
 
   /** @var  mixed */
@@ -30,8 +41,6 @@ class Tile extends HtmlTag
   protected $_description = null;
   /** @var  null|mixed */
   protected $_avatar = null;
-  /** @var  bool */
-  protected $_isGridLayout = false;
   /** @var  bool */
   protected $_colorBackground = false;
   /** @var int */
@@ -98,7 +107,7 @@ class Tile extends HtmlTag
   {
     if($value !== null && $value !== '')
     {
-      $property = Div::create()->addClass('property');
+      $property = Div::create()->addClass($this->getElementName('property'));
 
       // stuff for copy-to-clipboard
       if(($copyValue !== false) && ($copyValue !== null) && !$options)
@@ -119,16 +128,18 @@ class Tile extends HtmlTag
 
       if(is_string($value))
       {
-        $value = Paragraph::create($value)->addClass('value')->setAttribute('title', $value);
+        $value = Paragraph::create($value)->addClass($this->getElementName('value'))
+          ->setAttribute('title', $value);
       }
       else
       {
-        $value = Div::create($value)->addClass('value');
+        $value = Div::create($value)->addClass($this->getElementName('value'));
       }
 
       if(is_string($label))
       {
-        $label = Paragraph::create($label)->addClass('label')->setAttribute('title', ucwords($label));
+        $label = Paragraph::create($label)->addClass($this->getElementName('label'))
+          ->setAttribute('title', ucwords($label));
       }
 
       $property->prependContent([$value, $label]);
@@ -140,7 +151,7 @@ class Tile extends HtmlTag
 
   public function addCustomProperty($property)
   {
-    $this->_properties[] = Div::create($property)->addClass('property');
+    $this->_properties[] = Div::create($property)->addClass($this->getElementName('property'));
     return $this;
   }
 
@@ -239,8 +250,8 @@ class Tile extends HtmlTag
   {
     if($this->_icons)
     {
-      $container->appendContent(Div::create($this->_icons)->addClass('icons'));
-      $tile->addClass('has-icons');
+      $container->appendContent(Div::create($this->_icons)->addClass($this->getElementName('icons')));
+      $tile->addClass($this->getModifier('has-icons'));
     }
 
     return $tile;
@@ -252,26 +263,26 @@ class Tile extends HtmlTag
   protected function _prepareForProduce(): HtmlElement
   {
     // create container
-    $container = Div::create()->addClass('ui-tile');
+    $container = Div::create()->addClass($this->getBlockName());
 
     // Avatar, Label, Title and Description
-    $primary = Div::create()->addClass('primary');
+    $primary = Div::create()->addClass($this->getElementName('primary'));
     $container->appendContent($primary);
 
-    $heading = Div::create()->addClass('ui-tile-head');
+    $heading = Div::create()->addClass($this->getElementName('head'));
     $primary->appendContent($heading);
 
     //Avatar
     if($this->_avatar)
     {
-      $avatar = Div::create($this->_avatar)->addClass('avatar');
+      $avatar = Div::create($this->_avatar)->addClass($this->getElementName('avatar'));
       $heading->appendContent($avatar);
 
-      $container->addClass('has-avatar');
+      $container->addClass($this->getModifier('has-avatar'));
     }
     else
     {
-      $container->addClass('no-avatar');
+      $container->addClass($this->getModifier('no-avatar'));
     }
 
     // Title, Label, Description content
@@ -283,40 +294,40 @@ class Tile extends HtmlTag
 
     if($this->_label)
     {
-      $label = Paragraph::create($this->getLabel())->addClass('label');
+      $label = Paragraph::create($this->getLabel())->addClass($this->getElementName('label'));
       $text->appendContent($label);
 
-      $container->addClass('has-label');
+      $container->addClass($this->getModifier('has-label'));
     }
     else
     {
-      $container->addClass('no-label');
+      $container->addClass($this->getModifier('no-label'));
     }
 
     if($this->_title)
     {
-      $title = Div::create($this->getTitle())->addClass('title');
+      $title = Div::create($this->getTitle())->addClass($this->getElementName('title'));
       $text->appendContent($title);
 
-      $container->addClass('has-title');
+      $container->addClass($this->getModifier('has-title'));
     }
 
     if($this->_description)
     {
-      $description = Div::create($this->_produceDescription())->addClass('description');
+      $description = Div::create($this->_produceDescription())->addClass($this->getElementName('description'));
       $this->_setDescription($description, $primary, $heading, $text);
 
-      $container->addClass('has-description');
+      $container->addClass($this->getModifier('has-description'));
     }
     else
     {
-      $container->addClass('no-description');
+      $container->addClass($this->getModifier('no-description'));
     }
 
     // add border Color class
     if($this->_color === null)
     {
-      $container->addClass('default');
+      $container->addClass($this->getModifier('default'));
     }
     else if(Color::isValid($this->_color))
     {
@@ -331,28 +342,28 @@ class Tile extends HtmlTag
     if($this->_properties)
     {
       // Properties
-      $container->appendContent(Div::create($this->_properties)->addClass('properties'));
-      $container->addClass('has-properties');
+      $container->appendContent(Div::create($this->_properties)->addClass($this->getElementName('properties')));
+      $container->addClass($this->getModifier('has-properties'));
     }
     else
     {
-      $container->addClass('no-properties');
+      $container->addClass($this->getModifier('no-properties'));
     }
 
     // append actions
     if($this->_actions)
     {
-      $container->appendContent(Div::create($this->_actions)->addClass('actions'));
-      $container->addClass('has-actions');
+      $container->appendContent(Div::create($this->_actions)->addClass($this->getElementName('actions')));
+      $container->addClass($this->getModifier('has-actions'));
     }
     else
     {
-      $container->addClass('no-actions');
+      $container->addClass($this->getModifier('no-actions'));
     }
 
     if($this->_colorBackground)
     {
-      $container->addClass("Color-bg");
+      $container->addClass($this->getModifier("color-bg"));
     }
 
     return $container;

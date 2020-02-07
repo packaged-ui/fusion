@@ -4,10 +4,21 @@ namespace PackagedUi\Fusion\Tiles;
 use Packaged\Glimpse\Tags\Link;
 use Packaged\Glimpse\Tags\Span;
 use Packaged\Ui\Element;
+use PackagedUi\BemComponent\BemComponentTrait;
 use PackagedUi\FontAwesome\FaIcon;
+use PackagedUi\Fusion\Component;
+use PackagedUi\Fusion\ComponentTrait;
 
-class TileAction extends Element
+class TileAction extends Element implements Component
 {
+  use ComponentTrait;
+  use BemComponentTrait;
+
+  public function getBlockName(): string
+  {
+    return 'tile__action';
+  }
+
   /** @var Link|Span */
   protected $_link;
   /** @var FaIcon */
@@ -53,7 +64,7 @@ class TileAction extends Element
       }
     }
 
-    $return->addClass('action');
+    $return->addClass($this->getBlockName());
 
     return $this->_link;
   }

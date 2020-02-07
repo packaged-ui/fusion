@@ -4,10 +4,21 @@ namespace PackagedUi\Fusion\Tiles;
 use Packaged\Glimpse\Core\HtmlTag;
 use Packaged\Glimpse\Tags\Div;
 use Packaged\Ui\Html\HtmlElement;
+use PackagedUi\BemComponent\BemComponentTrait;
+use PackagedUi\Fusion\Component;
+use PackagedUi\Fusion\ComponentTrait;
 use PackagedUi\Fusion\Tiles\Enum\TileLayout;
 
-class Tiles extends HtmlTag
+class Tiles extends HtmlTag implements Component
 {
+  use ComponentTrait;
+  use BemComponentTrait;
+
+  public function getBlockName(): string
+  {
+    return 'tiles';
+  }
+
   protected $_tag = 'div';
 
   /** @var Tile[] */
@@ -105,7 +116,7 @@ class Tiles extends HtmlTag
    */
   protected function _prepareForProduce(): HtmlElement
   {
-    $tiles = Div::create()->addClass('ui-tiles');
+    $tiles = Div::create()->addClass($this->getBlockName());
 
     if($this->_tiles)
     {
@@ -135,7 +146,7 @@ class Tiles extends HtmlTag
       }
 
       // set layout style
-      $tiles->addClass($this->_layout);
+      $tiles->addClass($this->getModifier($this->_layout));
 
       // additional attributes for potential styling
       $tiles->setAttribute('data-action-count', $minActionsCount);
@@ -143,7 +154,7 @@ class Tiles extends HtmlTag
 
       if($this->_stacked)
       {
-        $tiles->addClass('stacked');
+        $tiles->addClass($this->getModifier('stacked'));
       }
     }
 
