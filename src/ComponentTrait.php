@@ -12,6 +12,11 @@ trait ComponentTrait
     $this->_constructComponent();;
   }
 
+  public static function blockName(): string
+  {
+    return (new static())->getBlockName();
+  }
+
   protected function _constructComponent()
   {
     if($this instanceof HtmlElement && $this instanceof BemComponent)

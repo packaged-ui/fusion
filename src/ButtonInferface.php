@@ -4,6 +4,8 @@ namespace PackagedUi\Fusion;
 interface ButtonInferface
 {
   const BUTTON = 'btn';
+  const BUTTON_ELE_ICON = 'icn';
+
   const BUTTON_PRIMARY = 'btn-primary';
   const BUTTON_ACCENT = 'btn-accent';
   const BUTTON_SUCCESS = 'btn-success';

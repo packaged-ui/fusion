@@ -4,11 +4,22 @@ namespace PackagedUi\Fusion\Button;
 use Packaged\Glimpse\Tags\Div;
 use Packaged\Helpers\ValueAs;
 use Packaged\SafeHtml\ISafeHtmlProducer;
+use PackagedUi\BemComponent\BemComponentTrait;
 use PackagedUi\Fusion\ButtonInferface;
+use PackagedUi\Fusion\Component;
+use PackagedUi\Fusion\ComponentTrait;
 use PackagedUi\Fusion\LayoutInterface;
 
-class Button extends \Packaged\Glimpse\Tags\Button
+class Button extends \Packaged\Glimpse\Tags\Button implements Component
 {
+  use ComponentTrait;
+  use BemComponentTrait;
+
+  public function getBlockName(): string
+  {
+    return ButtonInferface::BUTTON;
+  }
+
   public function flat()
   {
     $this->addClass(ButtonInferface::BUTTON_FLAT);
@@ -109,24 +120,27 @@ class Button extends \Packaged\Glimpse\Tags\Button
   /* ICONS */
 
   protected $_icon;
+  /** @var ButtonIconPosition */
   protected $_iconPosition;
 
   protected function _getContentForRender()
   {
     $content = parent::_getContentForRender();
-    if($this->_icon)
+    if($this->_icon && $this->_iconPosition)
     {
       $content = ValueAs::arr($content);
-      $icon = Div::create($this->_icon)->addClass('btn__icn', LayoutInterface::DISPLAY_INLINE_FLEX_VCENTRE);
+      $icon = Div::create($this->_icon)->addClass(
+        $this->getElementName(ButtonInferface::BUTTON_ELE_ICON),
+        LayoutInterface::DISPLAY_INLINE_FLEX_VCENTRE
+      );
 
-      if($this->_iconPosition instanceof ButtonIconPosition && $this->_iconPosition->is(ButtonIconPosition::RIGHT))
+      $icon->addClass($this->getModifier($this->_iconPosition, ButtonInferface::BUTTON_ELE_ICON));
+      if($this->_iconPosition->is(ButtonIconPosition::RIGHT))
       {
-        $icon->addClass("btn__icn--right");
         $content[] = $icon;
       }
       else
       {
-        $icon->addClass("btn__icn--left");
         array_unshift($content, $icon);
       }
     }
@@ -136,7 +150,7 @@ class Button extends \Packaged\Glimpse\Tags\Button
   public function setIcon(ISafeHtmlProducer $icon, ButtonIconPosition $position = null)
   {
     $this->_icon = $icon;
-    $this->_iconPosition = $position ?? $this->_iconPosition;
+    $this->_iconPosition = $position ?? ($this->_iconPosition ?? ButtonIconPosition::LEFT());
     return $this;
   }
 
