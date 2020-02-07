@@ -10,17 +10,24 @@ window.FusionUi.Inputs = window.FusionUi.Inputs || {};
       e.preventDefault();
 
       var button = e.delegateTarget;
+      var checkedClasses = button.getAttribute('checked-class').split(' ');
       var checkEle = e.delegateTarget.querySelector('.toggle-button-checkbox');
       checkEle.checked = !checkEle.checked;
       if(checkEle.checked)
       {
         button.setAttribute('checked', '');
-        button.classList.add.apply(button.classList, button.getAttribute('checked-class').split(' '));
+        if(checkedClasses.length)
+        {
+          button.classList.add.apply(button.classList, checkedClasses);
+        }
       }
       else
       {
         button.removeAttribute('checked');
-        button.classList.remove.apply(button.classList, button.getAttribute('checked-class').split(' '));
+        if(checkedClasses.length)
+        {
+          button.classList.remove.apply(button.classList, checkedClasses);
+        }
       }
 
       if('createEvent' in document)
