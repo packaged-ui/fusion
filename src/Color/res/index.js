@@ -1,2 +1,2 @@
 import './color.scss';
-import './colors.css';
+//import './colors.css';
