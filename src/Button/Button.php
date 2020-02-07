@@ -21,97 +21,97 @@ class Button extends \Packaged\Glimpse\Tags\Button implements Component
 
   public function flat()
   {
-    $this->addClass(ButtonInferface::BUTTON_FLAT);
+    $this->addModifier(ButtonInferface::_BUTTON_MOD_FLAT);
     return $this;
   }
 
   public function outline()
   {
-    $this->addClass(ButtonInferface::BUTTON_OUTLINE);
+    $this->addModifier(ButtonInferface::_BUTTON_MOD_OUTLINE);
     return $this;
   }
 
   public function round()
   {
-    $this->addClass(ButtonInferface::BUTTON_ROUND);
+    $this->addModifier(ButtonInferface::_BUTTON_MOD_ROUND);
     return $this;
   }
 
   public function fab()
   {
-    $this->addClass(ButtonInferface::BUTTON_FAB);
+    $this->addModifier(ButtonInferface::_BUTTON_MOD_FAB);
     return $this;
   }
 
   public function raised()
   {
-    $this->addClass(ButtonInferface::BUTTON_RAISED);
+    $this->addModifier(ButtonInferface::_BUTTON_MOD_RAISED);
     return $this;
   }
 
   public function sizeExtraLarge()
   {
-    $this->addClass(ButtonInferface::BUTTON_XLARGE);
+    $this->addModifier(ButtonInferface::_BUTTON_MOD_XLARGE);
     return $this;
   }
 
   public function sizeLarge()
   {
-    $this->addClass(ButtonInferface::BUTTON_LARGE);
+    $this->addModifier(ButtonInferface::_BUTTON_MOD_LARGE);
     return $this;
   }
 
   public function sizeSmall()
   {
-    $this->addClass(ButtonInferface::BUTTON_SMALL);
+    $this->addModifier(ButtonInferface::_BUTTON_MOD_SMALL);
     return $this;
   }
 
   public function sizeXsmall()
   {
-    $this->addClass(ButtonInferface::BUTTON_XSMALL);
+    $this->addModifier(ButtonInferface::_BUTTON_MOD_XSMALL);
     return $this;
   }
 
   public function primary()
   {
-    $this->addClass(ButtonInferface::BUTTON_PRIMARY);
+    $this->addModifier(ButtonInferface::_BUTTON_MOD_PRIMARY);
     return $this;
   }
 
   public function accent()
   {
-    $this->addClass(ButtonInferface::BUTTON_ACCENT);
+    $this->addModifier(ButtonInferface::_BUTTON_MOD_ACCENT);
     return $this;
   }
 
   public function success()
   {
-    $this->addClass(ButtonInferface::BUTTON_SUCCESS);
+    $this->addModifier(ButtonInferface::_BUTTON_MOD_SUCCESS);
     return $this;
   }
 
   public function danger()
   {
-    $this->addClass(ButtonInferface::BUTTON_DANGER);
+    $this->addModifier(ButtonInferface::_BUTTON_MOD_DANGER);
     return $this;
   }
 
   public function warning()
   {
-    $this->addClass(ButtonInferface::BUTTON_WARNING);
+    $this->addModifier(ButtonInferface::_BUTTON_MOD_WARNING);
     return $this;
   }
 
   public function info()
   {
-    $this->addClass(ButtonInferface::BUTTON_INFO);
+    $this->addModifier(ButtonInferface::_BUTTON_MOD_INFO);
     return $this;
   }
 
   public function disable()
   {
-    $this->addClass(ButtonInferface::BUTTON_DISABLED);
+    $this->addModifier(ButtonInferface::_BUTTON_MOD_DISABLED);
     $this->setAttribute('disabled', null);
     return $this;
   }
@@ -129,11 +129,11 @@ class Button extends \Packaged\Glimpse\Tags\Button implements Component
     {
       $content = ValueAs::arr($content);
       $icon = Div::create($this->_icon)->addClass(
-        $this->getElementName(ButtonInferface::BUTTON_ELE_ICON),
+        $this->getElementName(ButtonInferface::_BUTTON_ELE_ICON),
         LayoutInterface::DISPLAY_INLINE_FLEX_VCENTRE
       );
 
-      $icon->addClass($this->getModifier($this->_iconPosition, ButtonInferface::BUTTON_ELE_ICON));
+      $icon->addClass($this->getModifier($this->_iconPosition, ButtonInferface::_BUTTON_ELE_ICON));
       if($this->_iconPosition->is(ButtonIconPosition::RIGHT))
       {
         $content[] = $icon;

@@ -1,4 +1,4 @@
-button.btn-fab, .btn.btn-fab {
+button.btn--fab, .btn.btn--fab {
   -webkit-border-radius: 25px !important;
   -moz-border-radius: 25px !important;
   border-radius: 25px !important;
@@ -9,6 +9,6 @@ button.btn-fab, .btn.btn-fab {
   height: 40px;
 }
 
-button.btn-fab:hover, .btn.btn-fab:hover {
+button.btn--fab:hover, .btn.btn--fab:hover {
   transform: scale(1.1);
 }

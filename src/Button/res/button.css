@@ -4,32 +4,32 @@
   --button-border-radius: .2rem;
 }
 
-input[type="button"].btn-primary, input[type="submit"].btn-primary, input[type="reset"].btn-primary, button.btn-primary, .btn.btn-primary {
+input[type="button"].btn--primary, input[type="submit"].btn--primary, input[type="reset"].btn--primary, button.btn--primary, .btn.btn--primary {
   --button-color: var(--f-color-primary);
   --button-text-color: var(--f-color-primary-text);
 }
 
-input[type="button"].btn-accent, input[type="submit"].btn-accent, input[type="reset"].btn-accent, button.btn-accent, .btn.btn-accent {
+input[type="button"].btn--accent, input[type="submit"].btn--accent, input[type="reset"].btn--accent, button.btn--accent, .btn.btn--accent {
   --button-color: var(--f-color-accent);
   --button-text-color: var(--f-color-accent-text);
 }
 
-input[type="button"].btn-success, input[type="submit"].btn-success, input[type="reset"].btn-success, button.btn-success, .btn.btn-success {
+input[type="button"].btn--success, input[type="submit"].btn--success, input[type="reset"].btn--success, button.btn--success, .btn.btn--success {
   --button-color: var(--f-success-color);
   --button-text-color: var(--f-success-color-text);
 }
 
-input[type="button"].btn-warning, input[type="submit"].btn-warning, input[type="reset"].btn-warning, button.btn-warning, .btn.btn-warning {
+input[type="button"].btn--warning, input[type="submit"].btn--warning, input[type="reset"].btn--warning, button.btn--warning, .btn.btn--warning {
   --button-color: var(--f-warning-color);
   --button-text-color: var(--f-warning-color-text);
 }
 
-input[type="button"].btn-info, input[type="submit"].btn-info, input[type="reset"].btn-info, button.btn-info, .btn.btn-info {
+input[type="button"].btn--info, input[type="submit"].btn--info, input[type="reset"].btn--info, button.btn--info, .btn.btn--info {
   --button-color: var(--f-info-color);
   --button-text-color: var(--f-info-color-text);
 }
 
-input[type="button"].btn-danger, input[type="submit"].btn-danger, input[type="reset"].btn-danger, button.btn-danger, .btn.btn-danger {
+input[type="button"].btn--danger, input[type="submit"].btn--danger, input[type="reset"].btn--danger, button.btn--danger, .btn.btn--danger {
   --button-color: var(--f-danger-color);
   --button-text-color: var(--f-danger-color-text);
 }
@@ -72,70 +72,70 @@ input[type="button"]:hover, input[type="submit"]:hover, input[type="reset"]:hove
 
 input[type="button"]:hover, input[type="submit"]:hover, input[type="reset"]:hover, button:hover, .btn:hover,
 input[type="button"]:focus, input[type="submit"]:focus, input[type="reset"]:focus, button:focus, .btn:focus,
-input[type="button"].btn--active, input[type="submit"].btn--active, input[type="reset"].btn--active, button.btn--active, .btn--active {
+input[type="button"].btn---active, input[type="submit"].btn---active, input[type="reset"].btn---active, button.btn---active, .btn---active {
   background-color: rgba(var(--button-color), 1);
 }
 
-.btn-raised {
+.btn--raised {
   box-shadow: 0 3px 1px -2px rgba(0, 0, 0, .2), 0 2px 2px 0 rgba(0, 0, 0, .14), 0 1px 5px 0 rgba(0, 0, 0, .12);
 }
 
-input[type="button"].btn-raised:hover, input[type="submit"].btn-raised:hover, input[type="reset"].btn-raised:hover, button.btn-raised:hover, .btn-raised:hover {
+input[type="button"].btn--raised:hover, input[type="submit"].btn--raised:hover, input[type="reset"].btn--raised:hover, button.btn--raised:hover, .btn--raised:hover {
   box-shadow: 0 2px 4px -1px rgba(0, 0, 0, .2), 0 4px 5px 0 rgba(0, 0, 0, .14), 0 1px 10px 0 rgba(0, 0, 0, .12);
 }
 
-input[type="button"].btn-flat, input[type="submit"].btn-flat, input[type="reset"].btn-flat, button.btn-flat, .btn-flat,
-input[type="button"].btn-outline, input[type="submit"].btn-outline, input[type="reset"].btn-outline, button.btn-outline, .btn-outline {
+input[type="button"].btn--flat, input[type="submit"].btn--flat, input[type="reset"].btn--flat, button.btn--flat, .btn--flat,
+input[type="button"].btn--outline, input[type="submit"].btn--outline, input[type="reset"].btn--outline, button.btn--outline, .btn--outline {
   background-color: transparent;
   border-color: transparent;
   color: rgb(var(--button-color));
 }
 
-input[type="button"].btn-flat:active, input[type="submit"].btn-flat:active, input[type="reset"].btn-flat:active, button.btn-flat:active, .btn-flat:active,
-input[type="button"].btn-outline:active, input[type="submit"].btn-outline:active, input[type="reset"].btn-outline:active, button.btn-outline:active, .btn-outline:active {
+input[type="button"].btn--flat:active, input[type="submit"].btn--flat:active, input[type="reset"].btn--flat:active, button.btn--flat:active, .btn--flat:active,
+input[type="button"].btn--outline:active, input[type="submit"].btn--outline:active, input[type="reset"].btn--outline:active, button.btn--outline:active, .btn--outline:active {
   background-color: rgba(var(--button-color), 0.2) !important;
 }
 
-input[type="button"].btn-flat:focus, input[type="submit"].btn-flat:focus, input[type="reset"].btn-flat:focus, button.btn-flat:focus, .btn-flat:focus,
-input[type="button"].btn-flat.btn--active, input[type="submit"].btn-flat.btn--active, input[type="reset"].btn-flat.btn--active, button.btn-flat.btn--active, .btn-flat.btn--active,
-input[type="button"].btn-outline:focus, input[type="submit"].btn-outline:focus, input[type="reset"].btn-outline:focus, button.btn-outline:focus, .btn-outline:focus,
-input[type="button"].btn-outline.btn--active, input[type="submit"].btn-outline.btn--active, input[type="reset"].btn-outline.btn--active, button.btn-outline.btn--active, .btn-outline.btn--active {
+input[type="button"].btn--flat:focus, input[type="submit"].btn--flat:focus, input[type="reset"].btn--flat:focus, button.btn--flat:focus, .btn--flat:focus,
+input[type="button"].btn--flat.btn---active, input[type="submit"].btn--flat.btn---active, input[type="reset"].btn--flat.btn---active, button.btn--flat.btn---active, .btn--flat.btn---active,
+input[type="button"].btn--outline:focus, input[type="submit"].btn--outline:focus, input[type="reset"].btn--outline:focus, button.btn--outline:focus, .btn--outline:focus,
+input[type="button"].btn--outline.btn---active, input[type="submit"].btn--outline.btn---active, input[type="reset"].btn--outline.btn---active, button.btn--outline.btn---active, .btn--outline.btn---active {
   background-color: rgba(var(--button-color), 0.12);
 }
 
-input[type="button"].btn-outline, input[type="submit"].btn-outline, input[type="reset"].btn-outline, button.btn-outline, .btn-outline {
+input[type="button"].btn--outline, input[type="submit"].btn--outline, input[type="reset"].btn--outline, button.btn--outline, .btn--outline {
   border: 1px solid rgb(var(--button-color));
   color: rgb(var(--button-color));
 }
 
-input[type="button"].btn-outline:hover, input[type="submit"].btn-outline:hover, input[type="reset"].btn-outline:hover, button.btn-outline:hover, .btn-outline:hover,
-input[type="button"].btn-outline:active, input[type="submit"].btn-outline:active, input[type="reset"].btn-outline:active, button.btn-outline:active, .btn-outline:active {
+input[type="button"].btn--outline:hover, input[type="submit"].btn--outline:hover, input[type="reset"].btn--outline:hover, button.btn--outline:hover, .btn--outline:hover,
+input[type="button"].btn--outline:active, input[type="submit"].btn--outline:active, input[type="reset"].btn--outline:active, button.btn--outline:active, .btn--outline:active {
   background-color: rgb(var(--button-color)) !important;
   border-color: rgb(var(--button-color));
   color: rgb(var(--button-text-color));
   box-shadow: 0 2px 4px -1px rgba(0, 0, 0, 0.15), 0 4px 5px 0 rgba(0, 0, 0, 0.1), 0 1px 10px 0 rgba(0, 0, 0, 0.06);
 }
 
-input[type="button"].btn-round, input[type="submit"].btn-round, input[type="reset"].btn-round, button.btn-round, .btn.btn-round {
+input[type="button"].btn--round, input[type="submit"].btn--round, input[type="reset"].btn--round, button.btn--round, .btn.btn--round {
   border-radius: 60rem !important;
 }
 
-input[type="button"].btn-xl, input[type="submit"].btn-xl, input[type="reset"].btn-xl, button.btn-xl, .btn.btn-xl {
+input[type="button"].btn--xl, input[type="submit"].btn--xl, input[type="reset"].btn--xl, button.btn--xl, .btn.btn--xl {
   padding: .9375rem 2.125rem;
   font-size: 1.25rem;
   line-height: 1.5;
   --button-border-radius: .125rem;
 }
 
-input[type="button"].btn-lg, input[type="submit"].btn-lg, input[type="reset"].btn-lg, button.btn-lg, .btn.btn-lg {
+input[type="button"].btn--lg, input[type="submit"].btn--lg, input[type="reset"].btn--lg, button.btn--lg, .btn.btn--lg {
   font-size: 1rem;
 }
 
-input[type="button"].btn-sm, input[type="submit"].btn-sm, input[type="reset"].btn-sm, button.btn-sm, .btn.btn-sm {
+input[type="button"].btn--sm, input[type="submit"].btn--sm, input[type="reset"].btn--sm, button.btn--sm, .btn.btn--sm {
   font-size: .6875rem;
 }
 
-input[type="button"].btn-xs, input[type="submit"].btn-xs, input[type="reset"].btn-xs, button.btn-xs, .btn.btn-xs {
+input[type="button"].btn--xs, input[type="submit"].btn--xs, input[type="reset"].btn--xs, button.btn--xs, .btn.btn--xs {
   padding: .0625rem .5rem;
   font-size: .6875rem;
   line-height: 1.55;
@@ -148,15 +148,15 @@ input[type="button"]:not(:disabled):not(.disabled), input[type="submit"]:not(:di
 
 input[type="button"].disabled, input[type="submit"].disabled, input[type="reset"].disabled, button.disabled,
 input[type="button"]:disabled, input[type="submit"]:disabled, input[type="reset"]:disabled, button:disabled,
-.btn-disabled, .btn:disabled {
+.btn--disabled, .btn:disabled {
   opacity: .65;
   box-shadow: none;
 }
 
-input[type="button"].btn-outline.disabled:hover, input[type="submit"].btn-outline.disabled:hover, input[type="reset"].btn-outline.disabled:hover, button.btn-outline.disabled:hover, .btn-outline.disabled:hover,
-input[type="button"].btn-outline.disabled:active, input[type="submit"].btn-outline.disabled:active, input[type="reset"].btn-outline.disabled:active, button.btn-outline.disabled:active, .btn-outline.disabled:active,
-input[type="button"].btn-outline:disabled:hover, input[type="submit"].btn-outline:disabled:hover, input[type="reset"].btn-outline:disabled:hover, button.btn-outline:disabled:hover, .btn-outline:disabled:hover,
-input[type="button"].btn-outline:disabled:active, input[type="submit"].btn-outline:disabled:active, input[type="reset"].btn-outline:disabled:active, button.btn-outline:disabled:active, .btn-outline:disabled:active {
+input[type="button"].btn--outline.disabled:hover, input[type="submit"].btn--outline.disabled:hover, input[type="reset"].btn--outline.disabled:hover, button.btn--outline.disabled:hover, .btn--outline.disabled:hover,
+input[type="button"].btn--outline.disabled:active, input[type="submit"].btn--outline.disabled:active, input[type="reset"].btn--outline.disabled:active, button.btn--outline.disabled:active, .btn--outline.disabled:active,
+input[type="button"].btn--outline:disabled:hover, input[type="submit"].btn--outline:disabled:hover, input[type="reset"].btn--outline:disabled:hover, button.btn--outline:disabled:hover, .btn--outline:disabled:hover,
+input[type="button"].btn--outline:disabled:active, input[type="submit"].btn--outline:disabled:active, input[type="reset"].btn--outline:disabled:active, button.btn--outline:disabled:active, .btn--outline:disabled:active {
   background-color: transparent !important;
   color: rgb(var(--button-color)) !important;
   box-shadow: none !important;

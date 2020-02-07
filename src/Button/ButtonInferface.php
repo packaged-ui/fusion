@@ -4,25 +4,25 @@ namespace PackagedUi\Fusion\Button;
 interface ButtonInferface
 {
   const BUTTON = 'btn';
-  const BUTTON_ELE_ICON = 'icn';
+  const _BUTTON_ELE_ICON = 'icn';
 
-  const BUTTON_PRIMARY = 'btn-primary';
-  const BUTTON_ACCENT = 'btn-accent';
-  const BUTTON_SUCCESS = 'btn-success';
-  const BUTTON_DANGER = 'btn-danger';
-  const BUTTON_WARNING = 'btn-warning';
-  const BUTTON_INFO = 'btn-info';
+  const _BUTTON_MOD_PRIMARY = 'primary';
+  const _BUTTON_MOD_ACCENT = 'accent';
+  const _BUTTON_MOD_SUCCESS = 'success';
+  const _BUTTON_MOD_DANGER = 'danger';
+  const _BUTTON_MOD_WARNING = 'warning';
+  const _BUTTON_MOD_INFO = 'info';
 
-  const BUTTON_FLAT = 'btn-flat';
-  const BUTTON_OUTLINE = 'btn-outline';
-  const BUTTON_ROUND = 'btn-round';
-  const BUTTON_FAB = 'btn-fab';
-  const BUTTON_RAISED = 'btn-raised';
+  const _BUTTON_MOD_FLAT = 'flat';
+  const _BUTTON_MOD_OUTLINE = 'outline';
+  const _BUTTON_MOD_ROUND = 'round';
+  const _BUTTON_MOD_FAB = 'fab';
+  const _BUTTON_MOD_RAISED = 'raised';
 
-  const BUTTON_XLARGE = 'btn-xl';
-  const BUTTON_LARGE = 'btn-lg';
-  const BUTTON_SMALL = 'btn-sm';
-  const BUTTON_XSMALL = 'btn-xs';
+  const _BUTTON_MOD_XLARGE = 'xl';
+  const _BUTTON_MOD_LARGE = 'lg';
+  const _BUTTON_MOD_SMALL = 'sm';
+  const _BUTTON_MOD_XSMALL = 'xs';
 
-  const BUTTON_DISABLED = 'btn-disabled';
+  const _BUTTON_MOD_DISABLED = 'disabled';
 }

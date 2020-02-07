@@ -3,13 +3,12 @@ import './toggleButton.css';
 
 on(
   document, 'click', '.toggle-button',
-  function (e)
-  {
+  function (e) {
     e.preventDefault();
 
     let button = e.delegateTarget;
     let checkedClasses = button.getAttribute('checked-class').split(' ');
-    let checkEle = e.delegateTarget.querySelector('.toggle-button-checkbox');
+    let checkEle = e.delegateTarget.querySelector('.btn__toggle-button-checkbox');
     checkEle.checked = !checkEle.checked;
     if(checkEle.checked)
     {

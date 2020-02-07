@@ -9,6 +9,7 @@ use Packaged\Glimpse\Tags\Form\Textarea;
 use Packaged\Glimpse\Tags\LineBreak;
 use Packaged\SafeHtml\SafeHtml;
 use PackagedUi\FontAwesome\FaIcon;
+use PackagedUi\Fusion\Button\Button;
 use PackagedUi\Fusion\Button\ButtonInferface;
 use PackagedUi\Fusion\Button\ToggleButton;
 use PackagedUi\FusionDemo\AbstractDemoPage;
@@ -67,7 +68,10 @@ class InputDemo extends AbstractDemoPage
     $return[] = ToggleButton::create('Text Here')
       ->setName('my_button')
       ->setValue('my_value')
-      ->setCheckedClass(ButtonInferface::BUTTON_XLARGE, ButtonInferface::BUTTON_ACCENT);
+      ->setCheckedClass(
+        Button::bem()->modifier(ButtonInferface::_BUTTON_MOD_XLARGE),
+        Button::bem()->modifier(ButtonInferface::_BUTTON_MOD_ACCENT)
+      );
 
     return $return;
   }

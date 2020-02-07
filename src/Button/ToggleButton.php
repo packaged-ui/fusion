@@ -16,7 +16,8 @@ class ToggleButton extends Button
   public function __construct(...$content)
   {
     parent::__construct($content);
-    $this->setCheckedClass(ButtonInferface::BUTTON_SUCCESS);
+    $this->addClass('toggle-button');
+    $this->setCheckedClass($this->getModifier(ButtonInferface::_BUTTON_MOD_SUCCESS));
   }
 
   public function setCheckedClass(...$class)
@@ -78,10 +79,12 @@ class ToggleButton extends Button
   protected function _getContentForRender()
   {
     return [
-      Input::create()->setType(Input::TYPE_CHECKBOX)->addClass('toggle-button-checkbox')
+      Input::create()->setType(Input::TYPE_CHECKBOX)->addClass($this->getElementName('toggle-button-checkbox'))
         ->setName($this->_name)->setValue($this->_value),
-      $this->_checkedContent ? Span::create($this->_checkedContent)->addClass('checked-content') : null,
-      $this->_uncheckedContent ? Span::create($this->_uncheckedContent)->addClass('unchecked-content') : null,
+      $this->_checkedContent
+        ? Span::create($this->_checkedContent)->addClass($this->getElementName('checked-content')) : null,
+      $this->_uncheckedContent
+        ? Span::create($this->_uncheckedContent)->addClass($this->getElementName('unchecked-content')) : null,
       parent::_getContentForRender(),
     ];
   }

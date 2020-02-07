@@ -2,6 +2,7 @@
 namespace PackagedUi\Fusion;
 
 use Packaged\Ui\Html\HtmlElement;
+use PackagedUi\BemComponent\Bem;
 use PackagedUi\BemComponent\BemComponent;
 
 trait ComponentTrait
@@ -12,9 +13,9 @@ trait ComponentTrait
     $this->_constructComponent();
   }
 
-  public static function blockName(): string
+  public static function bem(): Bem
   {
-    return (new static())->getBlockName();
+    return Bem::block((new static())->getBlockName());
   }
 
   protected function _constructComponent()
@@ -23,5 +24,11 @@ trait ComponentTrait
     {
       $this->addClass($this->getBlockName());
     }
+  }
+
+  protected function addModifier(string $modifier, string ...$elements)
+  {
+    $this->addClass($this->getModifier($modifier, ...$elements));
+    return $this;
   }
 }

@@ -4,6 +4,7 @@ namespace PackagedUi\FusionDemo\Elements;
 use Packaged\Glimpse\Tags\Form\Input;
 use Packaged\Glimpse\Tags\LineBreak;
 use Packaged\Glimpse\Tags\Link;
+use PackagedUi\BemComponent\Bem;
 use PackagedUi\FontAwesome\FaIcon;
 use PackagedUi\Fusion\Button\Button;
 use PackagedUi\Fusion\Button\ButtonIconPosition;
@@ -25,25 +26,37 @@ class ButtonDemo extends AbstractDemoPage
   protected function _content(): array
   {
     $return = [];
+    $btnBem = Bem::block(Fusion::BUTTON);
 
     $return[] = Input::create()->setType(Input::TYPE_SUBMIT)->setValue('Default');
-    $return[] = Input::create()->setType(Input::TYPE_BUTTON)->setValue('Primary')->addClass(Fusion::BUTTON_PRIMARY);
-    $return[] = Input::create()->setType(Input::TYPE_BUTTON)->setValue('Accent')->addClass(Fusion::BUTTON_ACCENT);
-    $return[] = Input::create()->setType(Input::TYPE_BUTTON)->setValue('Success')->addClass(Fusion::BUTTON_SUCCESS);
-    $return[] = Input::create()->setType(Input::TYPE_BUTTON)->setValue('Danger')->addClass(Fusion::BUTTON_DANGER);
-    $return[] = Input::create()->setType(Input::TYPE_BUTTON)->setValue('Warning')->addClass(Fusion::BUTTON_WARNING);
-    $return[] = Input::create()->setType(Input::TYPE_BUTTON)->setValue('Info')->addClass(Fusion::BUTTON_INFO);
+    $return[] = Input::create()->setType(Input::TYPE_BUTTON)->setValue('Primary')
+      ->addClass($btnBem->modifier(Fusion::_BUTTON_MOD_PRIMARY));
+    $return[] = Input::create()->setType(Input::TYPE_BUTTON)->setValue('Accent')
+      ->addClass($btnBem->modifier(Fusion::_BUTTON_MOD_ACCENT));
+    $return[] = Input::create()->setType(Input::TYPE_BUTTON)->setValue('Success')
+      ->addClass($btnBem->modifier(Fusion::_BUTTON_MOD_SUCCESS));
+    $return[] = Input::create()->setType(Input::TYPE_BUTTON)->setValue('Danger')
+      ->addClass($btnBem->modifier(Fusion::_BUTTON_MOD_DANGER));
+    $return[] = Input::create()->setType(Input::TYPE_BUTTON)->setValue('Warning')
+      ->addClass($btnBem->modifier(Fusion::_BUTTON_MOD_WARNING));
+    $return[] = Input::create()->setType(Input::TYPE_BUTTON)->setValue('Info')->addClass(Fusion::_BUTTON_MOD_INFO);
 
     $return[] = LineBreak::create();
     $return[] = LineBreak::create();
 
-    $return[] = Link::create("#", "Default")->addClass(Fusion::BUTTON);
-    $return[] = Link::create("#", "Primary")->addClass(Fusion::BUTTON_PRIMARY, Fusion::BUTTON);
-    $return[] = Link::create("#", "Accent")->addClass(Fusion::BUTTON_ACCENT, Fusion::BUTTON);
-    $return[] = Link::create("#", "Success")->addClass(Fusion::BUTTON_SUCCESS, Fusion::BUTTON);
-    $return[] = Link::create("#", "Danger")->addClass(Fusion::BUTTON_DANGER, Fusion::BUTTON);
-    $return[] = Link::create("#", "Warning")->addClass(Fusion::BUTTON_WARNING, Fusion::BUTTON);
-    $return[] = Link::create("#", "Info")->addClass(Fusion::BUTTON_INFO, Fusion::BUTTON);
+    $return[] = Link::create("#", "Default")->addClass($btnBem->getBlockName());
+    $return[] = Link::create("#", "Primary")
+      ->addClass($btnBem->modifier(Fusion::_BUTTON_MOD_PRIMARY), $btnBem->getBlockName());
+    $return[] = Link::create("#", "Accent")
+      ->addClass($btnBem->modifier(Fusion::_BUTTON_MOD_ACCENT), $btnBem->getBlockName());
+    $return[] = Link::create("#", "Success")
+      ->addClass($btnBem->modifier(Fusion::_BUTTON_MOD_SUCCESS), $btnBem->getBlockName());
+    $return[] = Link::create("#", "Danger")
+      ->addClass($btnBem->modifier(Fusion::_BUTTON_MOD_DANGER), $btnBem->getBlockName());
+    $return[] = Link::create("#", "Warning")
+      ->addClass($btnBem->modifier(Fusion::_BUTTON_MOD_WARNING), $btnBem->getBlockName());
+    $return[] = Link::create("#", "Info")
+      ->addClass($btnBem->modifier(Fusion::_BUTTON_MOD_INFO), $btnBem->getBlockName());
 
     $return[] = LineBreak::create();
     $return[] = LineBreak::create();
@@ -84,13 +97,13 @@ class ButtonDemo extends AbstractDemoPage
     $primaryButtons[] = Button::create("Primary")->flat()->primary();
 
     $styles = [
-      Fusion::BUTTON_ROUND,
-      Fusion::BUTTON_XLARGE,
-      Fusion::BUTTON_LARGE,
-      Fusion::BUTTON_SMALL,
-      Fusion::BUTTON_XSMALL,
-      Fusion::BUTTON_DISABLED,
-      Fusion::BUTTON_RAISED,
+      Fusion::_BUTTON_MOD_ROUND,
+      Fusion::_BUTTON_MOD_XLARGE,
+      Fusion::_BUTTON_MOD_LARGE,
+      Fusion::_BUTTON_MOD_SMALL,
+      Fusion::_BUTTON_MOD_XSMALL,
+      Fusion::_BUTTON_MOD_DISABLED,
+      Fusion::_BUTTON_MOD_RAISED,
     ];
 
     foreach($styles as $style)
@@ -101,13 +114,13 @@ class ButtonDemo extends AbstractDemoPage
       foreach($primaryButtons as $button)
       {
         $btn = clone $button;
-        if($style === Fusion::BUTTON_DISABLED)
+        if($style === Fusion::_BUTTON_MOD_DISABLED)
         {
           $btn->disable();
         }
         else
         {
-          $btn->addClass($style);
+          $btn->addClass($btnBem->modifier($style));
         }
         $return[] = $btn->setContent($style);
       }
