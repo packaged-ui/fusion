@@ -1,6 +1,7 @@
 <?php
 namespace PackagedUi\FusionDemo\Elements;
 
+use Packaged\Glimpse\Tags\LineBreak;
 use Packaged\Glimpse\Tags\Link;
 use PackagedUi\FontAwesome\FaIcon;
 use PackagedUi\Fusion\Color\Color;
@@ -33,6 +34,8 @@ class TileDemo extends AbstractDemoPage
     );
 
     $i = 0;
+    $return[] = LineBreak::create();
+
     $return[] = $tiles = Tiles::create()->setLayout(TileLayout::LAYOUT_GRID);
     while(count($tiles->getTiles()) < 5)
     {

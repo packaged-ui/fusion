@@ -396,7 +396,7 @@
 }
 
 /* =.grid */
-.tiles.tile--grid .tile {
+.tiles.tiles--grid .tile {
   flex-direction: column;
   flex-basis: auto;
   width: 33.33%;
