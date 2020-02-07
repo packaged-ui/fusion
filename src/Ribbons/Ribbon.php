@@ -3,12 +3,14 @@ namespace PackagedUi\Fusion\Ribbons;
 
 use Packaged\Glimpse\Tags\Span;
 use Packaged\Ui\Html\HtmlElement;
-use PackagedUi\BemComponent\BemComponent;
 use PackagedUi\BemComponent\BemComponentTrait;
+use PackagedUi\Fusion\Component;
+use PackagedUi\Fusion\ComponentTrait;
 
-class Ribbon extends HtmlElement implements BemComponent
+class Ribbon extends HtmlElement implements Component
 {
   use BemComponentTrait;
+  use ComponentTrait;
 
   public function getBlockName(): string
   {
@@ -50,26 +52,17 @@ class Ribbon extends HtmlElement implements BemComponent
 
   public function left()
   {
-    $this->removeClass($this->getModifier('top'));
-    $this->removeClass($this->getModifier('right'));
-    $this->addClass($this->getModifier('left'));
-    return $this;
+    return $this->removeModifier('top')->removeModifier('right')->addModifier('left');
   }
 
   public function right()
   {
-    $this->removeClass($this->getModifier('top'));
-    $this->removeClass($this->getModifier('left'));
-    $this->addClass($this->getModifier('right'));
-    return $this;
+    return $this->removeModifier('top')->removeModifier('left')->addModifier('right');
   }
 
   public function top()
   {
-    $this->removeClass($this->getModifier('left'));
-    $this->removeClass($this->getModifier('right'));
-    $this->addClass($this->getModifier('top'));
-    return $this;
+    return $this->removeModifier('left')->removeModifier('right')->addModifier('top');
   }
 
 }

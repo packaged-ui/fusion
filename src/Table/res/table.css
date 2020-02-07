@@ -18,18 +18,18 @@ table thead th {
   text-align: inherit;
 }
 
-table.table-bordered {
+table.table--bordered {
   border: 1px solid var(--f-table-border-color);
 }
 
-table.table-bordered thead th {
+table.table--bordered thead th {
   border-bottom-width: 2px;
 }
 
-table.table-bordered th, table.table-bordered td {
+table.table--bordered th, table.table--bordered td {
   border: 1px solid var(--f-table-border-color);
 }
 
-table.table-striped tbody tr:nth-of-type(odd) {
+table.table--striped tbody tr:nth-of-type(odd) {
   background-color: var(--f-table-stripe-color);
 }

@@ -2,12 +2,14 @@
 namespace PackagedUi\Fusion\Ribbons;
 
 use Packaged\Ui\Html\HtmlElement;
-use PackagedUi\BemComponent\BemComponent;
 use PackagedUi\BemComponent\BemComponentTrait;
+use PackagedUi\Fusion\Component;
+use PackagedUi\Fusion\ComponentTrait;
 
-class BannerRibbon extends HtmlElement implements BemComponent
+class BannerRibbon extends HtmlElement implements Component
 {
   use BemComponentTrait;
+  use ComponentTrait;
 
   public function getBlockName(): string
   {
@@ -16,10 +18,9 @@ class BannerRibbon extends HtmlElement implements BemComponent
 
   protected $_tag = 'div';
 
-  public function __construct($content)
+  protected function _construct($content)
   {
     $this->setContent($content);
-    $this->addClass($this->getBlockName());
     $this->horizontal();
   }
 
@@ -43,16 +44,12 @@ class BannerRibbon extends HtmlElement implements BemComponent
 
   public function vertical()
   {
-    $this->removeClass($this->getModifier('horizontal'));
-    $this->addClass($this->getModifier('vertical'));
-    return $this;
+    return $this->removeModifier('horizontal')->addModifier('vertical');
   }
 
   public function horizontal()
   {
-    $this->removeClass($this->getModifier('vertical'));
-    $this->addClass($this->getModifier('horizontal'));
-    return $this;
+    return $this->removeModifier('vertical')->addModifier('horizontal');
   }
 
 }
