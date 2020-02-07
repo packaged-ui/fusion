@@ -3,10 +3,21 @@ namespace PackagedUi\Fusion\Card;
 
 use Packaged\Glimpse\Tags\Div;
 use Packaged\Ui\Html\HtmlElement;
+use PackagedUi\BemComponent\BemComponentTrait;
 use PackagedUi\Fusion\Color\Color;
+use PackagedUi\Fusion\Component;
+use PackagedUi\Fusion\ComponentTrait;
 
-class Card extends Div
+class Card extends Div implements Component
 {
+  use ComponentTrait;
+  use BemComponentTrait;
+
+  public function getBlockName(): string
+  {
+    return 'card';
+  }
+
   protected $_header;
   protected $_footer;
   protected $_withContentContainer = true;
@@ -18,7 +29,7 @@ class Card extends Div
   protected function _prepareForProduce(): HtmlElement
   {
     $ele = parent::_prepareForProduce();
-    $ele->addClass('card');
+    $ele->addClass($this->getBlockName());
     return $ele;
   }
 
@@ -77,11 +88,11 @@ class Card extends Div
     $return = [];
     if($this->_header)
     {
-      $return[] = Div::create($this->_header)->addClass('card-header');
+      $return[] = Div::create($this->_header)->addClass($this->getElementName('header'));
     }
     if($this->_withContentContainer)
     {
-      $return[] = Div::create(parent::_getContentForRender())->addClass('card-content');
+      $return[] = Div::create(parent::_getContentForRender())->addClass($this->getElementName('content'));
     }
     else
     {
@@ -89,7 +100,7 @@ class Card extends Div
     }
     if($this->_footer)
     {
-      $return[] = Div::create($this->_footer)->addClass('card-footer');
+      $return[] = Div::create($this->_footer)->addClass($this->getElementName('footer'));
     }
     return $return;
   }
@@ -98,11 +109,11 @@ class Card extends Div
   {
     if($color === null && $this->_color instanceof Color)
     {
-      $this->removeClass('card--with-color', $this->_color->background(), $this->_color->border());
+      $this->removeClass($this->getModifier('with-color'), $this->_color->background(), $this->_color->border());
     }
     else
     {
-      $this->addClass('card--with-color', $color->background(), $color->border());
+      $this->addClass($this->getModifier('with-color'), $color->background(), $color->border());
     }
     $this->_color = $color;
     return $this;
@@ -110,7 +121,7 @@ class Card extends Div
 
   public function withoutShadow()
   {
-    $this->addClass('card--without-shadow');
+    $this->addClass($this->getModifier('without-shadow'));
     return $this;
   }
 
