@@ -2,14 +2,14 @@ import {on} from '../../Foundation/res';
 import './toggleButton.css';
 
 on(
-  document, 'click', '.ToggleButton',
+  document, 'click', '.toggle-button',
   function (e)
   {
     e.preventDefault();
 
     let button = e.delegateTarget;
     let checkedClasses = button.getAttribute('checked-class').split(' ');
-    let checkEle = e.delegateTarget.querySelector('.ToggleButton-checkbox');
+    let checkEle = e.delegateTarget.querySelector('.toggle-button-checkbox');
     checkEle.checked = !checkEle.checked;
     if(checkEle.checked)
     {

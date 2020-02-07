@@ -1,12 +1,10 @@
 <?php
 
-namespace PackagedUi\Fusion\Inputs;
+namespace PackagedUi\Fusion\Button;
 
 use Packaged\Glimpse\Tags\Form\Input;
 use Packaged\Glimpse\Tags\Span;
 use Packaged\Ui\Html\HtmlElement;
-use PackagedUi\Fusion\Button\Button;
-use PackagedUi\Fusion\Button\ButtonInferface;
 
 class ToggleButton extends Button
 {
@@ -73,14 +71,14 @@ class ToggleButton extends Button
 
   protected function _prepareForProduce(): HtmlElement
   {
-    $this->addClass('ToggleButton');
+    $this->addClass('toggle-button');
     return parent::_prepareForProduce();
   }
 
   protected function _getContentForRender()
   {
     return [
-      Input::create()->setType(Input::TYPE_CHECKBOX)->addClass('ToggleButton-checkbox')
+      Input::create()->setType(Input::TYPE_CHECKBOX)->addClass('toggle-button-checkbox')
         ->setName($this->_name)->setValue($this->_value),
       $this->_checkedContent ? Span::create($this->_checkedContent)->addClass('checked-content') : null,
       $this->_uncheckedContent ? Span::create($this->_uncheckedContent)->addClass('unchecked-content') : null,

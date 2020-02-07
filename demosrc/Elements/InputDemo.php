@@ -10,7 +10,7 @@ use Packaged\Glimpse\Tags\LineBreak;
 use Packaged\SafeHtml\SafeHtml;
 use PackagedUi\FontAwesome\FaIcon;
 use PackagedUi\Fusion\Button\ButtonInferface;
-use PackagedUi\Fusion\Inputs\ToggleButton;
+use PackagedUi\Fusion\Button\ToggleButton;
 use PackagedUi\FusionDemo\AbstractDemoPage;
 
 class InputDemo extends AbstractDemoPage
