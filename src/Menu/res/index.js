@@ -2,8 +2,7 @@ import '../../Foundation/res';
 import {SetActive} from '../../Lists/res';
 import './menu.css';
 
-function updateActiveMenu(location)
-{
+function updateActiveMenu(location) {
   let menus = document.querySelectorAll('.menu');
   for(let mi in menus)
   {
@@ -14,7 +13,7 @@ function updateActiveMenu(location)
       {
         let mostSpecific;
         let mostSpecificLen = 0;
-        let items = menu.querySelectorAll('.menu-item[href]');
+        let items = menu.querySelectorAll('.menu__item[href]');
         for(let i in items)
         {
           if(items.hasOwnProperty(i))
