@@ -3,19 +3,29 @@ namespace PackagedUi\Fusion\Layout\Grid;
 
 use Packaged\Glimpse\Core\AbstractContainerTag;
 use Packaged\Ui\Html\HtmlElement;
+use PackagedUi\BemComponent\BemComponentTrait;
+use PackagedUi\Fusion\Component;
+use PackagedUi\Fusion\ComponentTrait;
 
-class GridInner extends AbstractContainerTag
+class GridInner extends AbstractContainerTag implements Component
 {
+  use ComponentTrait;
+  use BemComponentTrait;
+
+  public function getBlockName(): string
+  {
+    return 'grid__inner';
+  }
+
   protected $_tag = 'div';
   protected $_bordered = false;
 
   protected function _prepareForProduce(): HtmlElement
   {
     $ele = parent::_prepareForProduce();
-    $ele->addClass('grid__inner');
     if($this->_bordered)
     {
-      $ele->addClass('grid__inner--bordered');
+      $ele->addClass($this->getModifier('bordered'));
     }
     return $ele;
   }

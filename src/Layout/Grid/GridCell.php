@@ -3,12 +3,23 @@ namespace PackagedUi\Fusion\Layout\Grid;
 
 use Packaged\Glimpse\Tags\Div;
 use Packaged\Ui\Html\HtmlElement;
+use PackagedUi\BemComponent\BemComponentTrait;
+use PackagedUi\Fusion\Component;
+use PackagedUi\Fusion\ComponentTrait;
 
-class GridCell extends Div
+class GridCell extends Div implements Component
 {
-  const CLASS_ALIGN_TOP = 'grid__cell--align-top';
-  const CLASS_ALIGN_MIDDLE = 'grid__cell--align-middle';
-  const CLASS_ALIGN_BOTTOM = 'grid__cell--align-bottom';
+  use BemComponentTrait;
+  use ComponentTrait;
+
+  public function getBlockName(): string
+  {
+    return 'grid__cell';
+  }
+
+  const ALIGN_TOP = 'align-top';
+  const ALIGN_MIDDLE = 'align-middle';
+  const ALIGN_BOTTOM = 'align-bottom';
 
   const DEVICE_DESKTOP = 'desktop';
   const DEVICE_TABLET = 'tablet';
@@ -19,11 +30,10 @@ class GridCell extends Div
   protected function _prepareForProduce(): HtmlElement
   {
     $ele = parent::_prepareForProduce();
-    $ele->addClass('grid__cell');
 
     foreach($this->_sizes as $device => $span)
     {
-      $ele->addClass('grid__cell--span-' . $span . (empty($device) ? '' : '-' . $device));
+      $ele->addClass($this->getModifier('span-' . $span . (empty($device) ? '' : '-' . $device)));
     }
 
     return $ele;
@@ -89,5 +99,20 @@ class GridCell extends Div
   public function setPhoneSize($size)
   {
     return $this->setSize($size, self::DEVICE_PHONE);
+  }
+
+  public function alignTop()
+  {
+    return $this->addModifier(self::ALIGN_TOP);
+  }
+
+  public function alignMiddle()
+  {
+    return $this->addModifier(self::ALIGN_MIDDLE);
+  }
+
+  public function alignBottom()
+  {
+    return $this->addModifier(self::ALIGN_BOTTOM);
   }
 }

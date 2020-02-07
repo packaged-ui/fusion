@@ -2,18 +2,21 @@
 namespace PackagedUi\Fusion\Layout\Grid;
 
 use Packaged\Glimpse\Core\AbstractContainerTag;
-use Packaged\Ui\Html\HtmlElement;
+use PackagedUi\BemComponent\BemComponentTrait;
+use PackagedUi\Fusion\Component;
+use PackagedUi\Fusion\ComponentTrait;
 
-class GridLayout extends AbstractContainerTag
+class GridLayout extends AbstractContainerTag implements Component
 {
-  protected $_tag = 'div';
+  use BemComponentTrait;
+  use ComponentTrait;
 
-  protected function _prepareForProduce(): HtmlElement
+  public function getBlockName(): string
   {
-    $ele = parent::_prepareForProduce();
-    $ele->addClass('grid');
-    return $ele;
+    return 'grid';
   }
+
+  protected $_tag = 'div';
 
   public static function createWithInner(...$content)
   {

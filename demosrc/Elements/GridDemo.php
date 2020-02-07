@@ -106,9 +106,9 @@ class GridDemo extends AbstractDemoPage
 
     $return[] = GridLayout::create(
       GridInner::create(
-        GridCell::createSized("")->addClass(GridCell::CLASS_ALIGN_TOP),
-        GridCell::createSized("")->addClass(GridCell::CLASS_ALIGN_MIDDLE),
-        GridCell::createSized("")->addClass(GridCell::CLASS_ALIGN_BOTTOM)
+        GridCell::createSized("")->alignTop(),
+        GridCell::createSized("")->alignMiddle(),
+        GridCell::createSized("")->alignBottom()
       )
     )->addClass('alignment-demo');
 
