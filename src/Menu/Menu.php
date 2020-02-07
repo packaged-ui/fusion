@@ -1,15 +1,20 @@
 <?php
 namespace PackagedUi\Fusion\Menu;
 
-use Packaged\Ui\Html\HtmlElement;
+use PackagedUi\BemComponent\BemComponentTrait;
+use PackagedUi\Fusion\Component;
+use PackagedUi\Fusion\ComponentTrait;
 use PackagedUi\Fusion\Lists\ListBox;
 
-class Menu extends ListBox
+class Menu extends ListBox implements Component
 {
-  protected $_tag = 'nav';
+  use ComponentTrait;
+  use BemComponentTrait;
 
-  protected function _prepareForProduce(): HtmlElement
+  public function getBlockName(): string
   {
-    return parent::_prepareForProduce()->addClass('menu');
+    return 'menu';
   }
+
+  protected $_tag = 'nav';
 }

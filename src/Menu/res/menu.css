@@ -1,7 +1,7 @@
-.menu-item {
+.menu__item {
   user-select: none;
 }
 
-.menu-item:hover {
+.menu__item:hover {
   text-decoration: none;
 }

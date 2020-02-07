@@ -2,10 +2,21 @@
 namespace PackagedUi\Fusion\Menu;
 
 use Packaged\Ui\Html\HtmlElement;
+use PackagedUi\BemComponent\BemComponentTrait;
+use PackagedUi\Fusion\Component;
+use PackagedUi\Fusion\ComponentTrait;
 use PackagedUi\Fusion\Lists\ListItem;
 
-class MenuItem extends ListItem
+class MenuItem extends ListItem implements Component
 {
+  use BemComponentTrait;
+  use ComponentTrait;
+
+  public function getBlockName(): string
+  {
+    return 'menu__item';
+  }
+
   protected $_tag = 'a';
   protected $_href;
 
@@ -30,7 +41,7 @@ class MenuItem extends ListItem
 
   protected function _prepareForProduce(): HtmlElement
   {
-    $ele = parent::_prepareForProduce()->addClass('menu-item');
+    $ele = parent::_prepareForProduce();
     if($this->_href !== null)
     {
       $ele->setAttribute('href', $this->_href);
