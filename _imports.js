@@ -1,19 +1,22 @@
-export * as Color from './src/Color/res';
-
 export * as Badge from './src/Badge/res';
-export * as Card from './src/Card/res';
-export * as ProgressBar from './src/Progress/res';
-export * as Ribbon from './src/Ribbons/res';
-export * as Table from './src/Table/res';
-export * as Tiles from './src/Tiles/res';
 
 export * as Buttons from './src/Button/res/button';
 export * as Fab from './src/Button/res/fab';
 export * as ToggleButton from './src/Button/res/toggleButton';
 
+export * as Card from './src/Card/res';
+export * as Color from './src/Color/res';
+
+export * as Layout from './src/Layout/res';
 export * as Drawer from './src/Layout/Drawer/res';
 export * as Tabs from './src/Layout/Tabs/res';
 export * as Grid from './src/Layout/Grid/res';
 
 export * as List from './src/Lists/res';
 export * as Menu from './src/Menu/res';
+export * as Progress from './src/Progress/res';
+export * as Ribbons from './src/Ribbons/res';
+export * as Table from './src/Table/res';
+export * as Theme from './src/Theme/res';
+export * as Tiles from './src/Tiles/res';
+export * as Typography from './src/Typography/res';
