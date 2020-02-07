@@ -3,7 +3,6 @@ namespace PackagedUi\Fusion\Layout;
 
 use Packaged\Glimpse\Tags\Div;
 use Packaged\Ui\Html\HtmlElement;
-use PackagedUi\Fusion\LayoutInterface;
 
 class FlexGrow extends Div
 {

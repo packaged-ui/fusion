@@ -1,6 +1,0 @@
-input, select, textarea {
-  border-radius: 5px;
-  border: 1px solid rgba(0, 0, 0, 0.2);
-  padding: 5px;
-  background: rgb(var(--f-background-color));
-}

@@ -9,7 +9,7 @@ trait ComponentTrait
   public function __construct()
   {
     parent::__construct(...func_get_args());
-    $this->_constructComponent();;
+    $this->_constructComponent();
   }
 
   public static function blockName(): string

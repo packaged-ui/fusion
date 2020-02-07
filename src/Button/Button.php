@@ -7,7 +7,7 @@ use Packaged\SafeHtml\ISafeHtmlProducer;
 use PackagedUi\BemComponent\BemComponentTrait;
 use PackagedUi\Fusion\Component;
 use PackagedUi\Fusion\ComponentTrait;
-use PackagedUi\Fusion\LayoutInterface;
+use PackagedUi\Fusion\Layout\LayoutInterface;
 
 class Button extends \Packaged\Glimpse\Tags\Button implements Component
 {

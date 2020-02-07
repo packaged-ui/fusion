@@ -4,7 +4,7 @@ namespace PackagedUi\FusionDemo\Elements;
 use Packaged\Glimpse\Tags\Div;
 use Packaged\Glimpse\Tags\Span;
 use PackagedUi\FontAwesome\FaIcon;
-use PackagedUi\Fusion\Badge;
+use PackagedUi\Fusion\Badge\Badge;
 use PackagedUi\Fusion\Fusion;
 use PackagedUi\FusionDemo\AbstractDemoPage;
 

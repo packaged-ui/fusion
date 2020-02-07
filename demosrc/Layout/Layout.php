@@ -10,7 +10,7 @@ use Packaged\Ui\Element;
 use PackagedUi\FontAwesome\FaIcon;
 use PackagedUi\Fusion\Fusion;
 use PackagedUi\Fusion\Layout\Drawer\Drawer;
-use PackagedUi\Fusion\LayoutInterface;
+use PackagedUi\Fusion\Layout\LayoutInterface;
 use PackagedUi\Fusion\Menu\Menu;
 use PackagedUi\Fusion\Menu\MenuItem;
 use PackagedUi\FusionDemo\UiContext;

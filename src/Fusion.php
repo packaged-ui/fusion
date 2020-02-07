@@ -4,14 +4,19 @@ namespace PackagedUi\Fusion;
 use Packaged\Dispatch\Component\DispatchableComponent;
 use Packaged\Dispatch\ResourceManager;
 use Packaged\Dispatch\ResourceStore;
+use PackagedUi\Fusion\Badge\BadgeInterface;
 use PackagedUi\Fusion\Button\ButtonInferface;
-use PackagedUi\Fusion\Layout\TableInterface;
+use PackagedUi\Fusion\Layout\LayoutInterface;
+use PackagedUi\Fusion\Lists\ListInterface;
+use PackagedUi\Fusion\Table\TableInterface;
+use PackagedUi\Fusion\Theme\ThemeInterface;
+use PackagedUi\Fusion\Typography\TypographyInterface;
 
 class Fusion implements LayoutInterface, TypographyInterface, ButtonInferface, BadgeInterface,
                         TableInterface, ThemeInterface, ListInterface, DispatchableComponent
 {
-  const FILE_BASE_CSS = 'css/base.min.css';
-  const FILE_BASE_JS = 'js/base.min.js';
+  const FILE_BASE_CSS = 'fusion.min.css';
+  const FILE_BASE_JS = 'fusion.min.js';
 
   public static function includeGoogleFont(
     $family = 'Roboto', $styles = '300,300i,400,400i,500,500i,700,700i,900', $fontDisplay = 'swap', $options = null,

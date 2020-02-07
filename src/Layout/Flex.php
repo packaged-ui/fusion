@@ -3,7 +3,6 @@ namespace PackagedUi\Fusion\Layout;
 
 use Packaged\Glimpse\Core\AbstractContainerTag;
 use Packaged\Ui\Html\HtmlElement;
-use PackagedUi\Fusion\LayoutInterface;
 
 class Flex extends AbstractContainerTag
 {

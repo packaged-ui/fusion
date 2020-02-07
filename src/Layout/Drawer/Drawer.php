@@ -6,7 +6,7 @@ use Packaged\Glimpse\Tags\Div;
 use Packaged\Helpers\Strings;
 use Packaged\SafeHtml\SafeHtml;
 use Packaged\Ui\Html\HtmlElement;
-use PackagedUi\Fusion\LayoutInterface;
+use PackagedUi\Fusion\Layout\LayoutInterface;
 
 class Drawer extends AbstractContainerTag
 {
