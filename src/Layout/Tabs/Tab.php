@@ -2,17 +2,22 @@
 namespace PackagedUi\Fusion\Layout\Tabs;
 
 use Packaged\Glimpse\Core\AbstractContainerTag;
+use PackagedUi\BemComponent\BemComponentTrait;
+use PackagedUi\Fusion\Component;
+use PackagedUi\Fusion\ComponentTrait;
 
-class Tab extends AbstractContainerTag
+class Tab extends AbstractContainerTag implements Component
 {
+  use BemComponentTrait;
+  use ComponentTrait;
+
+  public function getBlockName(): string
+  {
+    return 'tab';
+  }
+
   protected $_label;
   protected $_tag = 'div';
-
-  public function __construct(...$content)
-  {
-    parent::__construct(...$content);
-    $this->addClass('tab');
-  }
 
   public static function build($label, ...$content)
   {

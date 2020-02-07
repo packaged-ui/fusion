@@ -1,4 +1,4 @@
-.tab_label {
+.tab__label {
   border: 1px solid transparent;
   border-bottom-width: 2px;
   margin-bottom: -1px;
@@ -9,21 +9,21 @@
   text-decoration: none;
 }
 
-a.tab_label {
+a.tab__label {
   text-decoration: none;
 }
 
-.tab_label.tab_label--active {
+.tab__label--active {
   border-bottom-color: rgba(var(--f-color-primary-light), 1);
   --f-text-color: var(--f-color-primary);
   --text-opacity: 1;
 }
 
-.tabs_menu {
+.tabs__menu {
   display: flex;
 }
 
-.tabs_container {
+.tabs__container {
   border: 1px solid rgba(0, 0, 0, 0.2);
 }
 

@@ -1,8 +1,7 @@
 import {on} from '../../../Foundation/res';
 import './tabs.css';
 
-export function SetActive(ele, tabID)
-{
+export function SetActive(ele, tabID) {
   // find top tabContainer
   let tabContainer;
   let t = ele;
@@ -16,8 +15,7 @@ export function SetActive(ele, tabID)
   while((t = t.parentElement));
   let tab = tabContainer.querySelectorAll('#' + tabID)[0];
 
-  function removeClass(removeClass)
-  {
+  function removeClass(removeClass) {
     let eles = tabContainer.querySelectorAll('.' + removeClass);
     for(let i in eles)
     {
@@ -28,22 +26,21 @@ export function SetActive(ele, tabID)
     }
   }
 
-  removeClass('tab_label--active');
+  removeClass('tab__label--active');
   removeClass('tab--active');
 
-  ele.classList.add('tab_label--active');
+  ele.classList.add('tab__label--active');
   tab.classList.add('tab--active');
 
-  let activeEvent = new Event('tab.active');
+  let activeEvent = new Event('tab.tab--active');
   tab.dispatchEvent(activeEvent);
 }
 
 on(
-  document, 'click', '.tab_label',
-  function (e)
-  {
+  document, 'click', '.tab__label',
+  function (e) {
     let ele = e.target;
-    while((!ele.matches('.tab_label')) && ele.parentElement)
+    while((!ele.matches('.tab__label')) && ele.parentElement)
     {
       ele = ele.parentElement;
     }

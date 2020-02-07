@@ -1,13 +1,25 @@
 <?php
 namespace PackagedUi\Fusion\Layout\Tabs;
 
+use Exception;
 use Packaged\Glimpse\Core\HtmlTag;
 use Packaged\Glimpse\Tags\Div;
 use Packaged\Glimpse\Tags\Link;
+use PackagedUi\BemComponent\BemComponentTrait;
+use PackagedUi\Fusion\Component;
+use PackagedUi\Fusion\ComponentTrait;
 use Symfony\Component\HttpFoundation\Request;
 
-class TabContainer extends HtmlTag
+class TabContainer extends HtmlTag implements Component
 {
+  use BemComponentTrait;
+  use ComponentTrait;
+
+  public function getBlockName(): string
+  {
+    return 'tabs';
+  }
+
   /**
    * @var Tab[]
    */
@@ -18,8 +30,8 @@ class TabContainer extends HtmlTag
   public function __construct($containerID)
   {
     parent::__construct();
+    $this->_constructComponent();
     $this->setId('f-tc-' . $containerID);
-    $this->addClass('tabs');
   }
 
   public static function create($containerID = 'dflt')
@@ -41,7 +53,7 @@ class TabContainer extends HtmlTag
   {
     if(!isset($this->_tabs[$tabID]))
     {
-      throw new \Exception("No tab exists with the ID " . $tabID);
+      throw new Exception("No tab exists with the ID " . $tabID);
     }
 
     $this->_activeTab = $tabID;
@@ -57,7 +69,7 @@ class TabContainer extends HtmlTag
       {
         $this->setActiveTabByID($requestTab);
       }
-      catch(\Exception $e)
+      catch(Exception $e)
       {
         error_log($e->getMessage());
       }
@@ -76,13 +88,16 @@ class TabContainer extends HtmlTag
       $isActive = $tid == $activeTab;
       $tid = 'f-tb-' . $tid;
 
-      $tab->setId($tid)->toggleClass('tab--active', $isActive);
-      $menuItem = Link::create('#' . $tid, $tab->getLabel())->addClass('tab_label')->setAttribute('data-tab-id', $tid);
-      $menuItem->toggleClass('tab_label--active', $isActive);
+      $tab->setId($tid)->toggleClass($tab->getModifier('active'), $isActive);
+      $menuItem = Link::create('#' . $tid, $tab->getLabel())->addClass($tab->getElementName('label'))->setAttribute(
+        'data-tab-id',
+        $tid
+      );
+      $menuItem->toggleClass($tab->getModifier('active', 'label'), $isActive);
       $tabMenu[] = $menuItem;
     }
-    $return[] = Div::create($tabMenu)->addClass('tabs_menu');
-    $return[] = Div::create($this->_tabs)->addClass('tabs_container');
+    $return[] = Div::create($tabMenu)->addClass($this->getElementName('menu'));
+    $return[] = Div::create($this->_tabs)->addClass($this->getElementName('container'));
 
     return $return;
   }
