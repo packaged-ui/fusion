@@ -10,7 +10,7 @@
   border-radius: 0;
 }
 
-.progress-bar {
+.progress__bar {
   background-color: rgb(var(--f-progress-bar-color));
   color: #fff;
 }

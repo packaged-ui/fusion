@@ -3,10 +3,20 @@ namespace PackagedUi\Fusion\Progress;
 
 use Packaged\Glimpse\Core\HtmlTag;
 use Packaged\Glimpse\Tags\Div;
-use Packaged\Ui\Html\HtmlElement;
+use PackagedUi\BemComponent\BemComponentTrait;
+use PackagedUi\Fusion\Component;
+use PackagedUi\Fusion\ComponentTrait;
 
-class ProgressBar extends HtmlTag
+class ProgressBar extends HtmlTag implements Component
 {
+  use ComponentTrait;
+  use BemComponentTrait;
+
+  public function getBlockName(): string
+  {
+    return 'progress';
+  }
+
   protected $_tag = 'div';
   protected $_percent = 0;
 
@@ -37,15 +47,9 @@ class ProgressBar extends HtmlTag
     return $this;
   }
 
-  protected function _prepareForProduce(): HtmlElement
-  {
-    $this->addClass('progress');
-    return parent::_prepareForProduce();
-  }
-
   protected function _getContentForRender()
   {
-    return Div::create()->addClass('progress-bar')->setAttribute('style', "width: $this->_percent%");
+    return Div::create()->addClass($this->getElementName('bar'))->setAttribute('style', "width: $this->_percent%");
   }
 
 }
