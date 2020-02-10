@@ -16,102 +16,102 @@ class Button extends \Packaged\Glimpse\Tags\Button implements Component
 
   public function getBlockName(): string
   {
-    return ButtonInferface::BUTTON;
+    return ButtonInterface::BUTTON;
   }
 
   public function flat()
   {
-    $this->addModifier(ButtonInferface::_BUTTON_MOD_FLAT);
+    $this->addModifier(ButtonInterface::_BUTTON_MOD_FLAT);
     return $this;
   }
 
   public function outline()
   {
-    $this->addModifier(ButtonInferface::_BUTTON_MOD_OUTLINE);
+    $this->addModifier(ButtonInterface::_BUTTON_MOD_OUTLINE);
     return $this;
   }
 
   public function round()
   {
-    $this->addModifier(ButtonInferface::_BUTTON_MOD_ROUND);
+    $this->addModifier(ButtonInterface::_BUTTON_MOD_ROUND);
     return $this;
   }
 
   public function fab()
   {
-    $this->addModifier(ButtonInferface::_BUTTON_MOD_FAB);
+    $this->addModifier(ButtonInterface::_BUTTON_MOD_FAB);
     return $this;
   }
 
   public function raised()
   {
-    $this->addModifier(ButtonInferface::_BUTTON_MOD_RAISED);
+    $this->addModifier(ButtonInterface::_BUTTON_MOD_RAISED);
     return $this;
   }
 
   public function sizeExtraLarge()
   {
-    $this->addModifier(ButtonInferface::_BUTTON_MOD_XLARGE);
+    $this->addModifier(ButtonInterface::_BUTTON_MOD_XLARGE);
     return $this;
   }
 
   public function sizeLarge()
   {
-    $this->addModifier(ButtonInferface::_BUTTON_MOD_LARGE);
+    $this->addModifier(ButtonInterface::_BUTTON_MOD_LARGE);
     return $this;
   }
 
   public function sizeSmall()
   {
-    $this->addModifier(ButtonInferface::_BUTTON_MOD_SMALL);
+    $this->addModifier(ButtonInterface::_BUTTON_MOD_SMALL);
     return $this;
   }
 
   public function sizeXsmall()
   {
-    $this->addModifier(ButtonInferface::_BUTTON_MOD_XSMALL);
+    $this->addModifier(ButtonInterface::_BUTTON_MOD_XSMALL);
     return $this;
   }
 
   public function primary()
   {
-    $this->addModifier(ButtonInferface::_BUTTON_MOD_PRIMARY);
+    $this->addModifier(ButtonInterface::_BUTTON_MOD_PRIMARY);
     return $this;
   }
 
   public function accent()
   {
-    $this->addModifier(ButtonInferface::_BUTTON_MOD_ACCENT);
+    $this->addModifier(ButtonInterface::_BUTTON_MOD_ACCENT);
     return $this;
   }
 
   public function success()
   {
-    $this->addModifier(ButtonInferface::_BUTTON_MOD_SUCCESS);
+    $this->addModifier(ButtonInterface::_BUTTON_MOD_SUCCESS);
     return $this;
   }
 
   public function danger()
   {
-    $this->addModifier(ButtonInferface::_BUTTON_MOD_DANGER);
+    $this->addModifier(ButtonInterface::_BUTTON_MOD_DANGER);
     return $this;
   }
 
   public function warning()
   {
-    $this->addModifier(ButtonInferface::_BUTTON_MOD_WARNING);
+    $this->addModifier(ButtonInterface::_BUTTON_MOD_WARNING);
     return $this;
   }
 
   public function info()
   {
-    $this->addModifier(ButtonInferface::_BUTTON_MOD_INFO);
+    $this->addModifier(ButtonInterface::_BUTTON_MOD_INFO);
     return $this;
   }
 
   public function disable()
   {
-    $this->addModifier(ButtonInferface::_BUTTON_MOD_DISABLED);
+    $this->addModifier(ButtonInterface::_BUTTON_MOD_DISABLED);
     $this->setAttribute('disabled', null);
     return $this;
   }
@@ -129,11 +129,11 @@ class Button extends \Packaged\Glimpse\Tags\Button implements Component
     {
       $content = ValueAs::arr($content);
       $icon = Div::create($this->_icon)->addClass(
-        $this->getElementName(ButtonInferface::_BUTTON_ELE_ICON),
+        $this->getElementName(ButtonInterface::_BUTTON_ELE_ICON),
         LayoutInterface::DISPLAY_INLINE_FLEX_VCENTRE
       );
 
-      $icon->addClass($this->getModifier($this->_iconPosition, ButtonInferface::_BUTTON_ELE_ICON));
+      $icon->addClass($this->getModifier($this->_iconPosition, ButtonInterface::_BUTTON_ELE_ICON));
       if($this->_iconPosition->is(ButtonIconPosition::RIGHT))
       {
         $content[] = $icon;

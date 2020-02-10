@@ -17,7 +17,7 @@ class ToggleButton extends Button
   {
     parent::__construct($content);
     $this->addClass('toggle-button');
-    $this->setCheckedClass($this->getModifier(ButtonInferface::_BUTTON_MOD_SUCCESS));
+    $this->setCheckedClass($this->getModifier(ButtonInterface::_BUTTON_MOD_SUCCESS));
   }
 
   public function setCheckedClass(...$class)

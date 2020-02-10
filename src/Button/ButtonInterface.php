@@ -1,7 +1,7 @@
 <?php
 namespace PackagedUi\Fusion\Button;
 
-interface ButtonInferface
+interface ButtonInterface
 {
   const BUTTON = 'btn';
   const _BUTTON_ELE_ICON = 'icn';

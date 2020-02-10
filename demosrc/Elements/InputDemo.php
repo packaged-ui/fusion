@@ -10,7 +10,7 @@ use Packaged\Glimpse\Tags\LineBreak;
 use Packaged\SafeHtml\SafeHtml;
 use PackagedUi\FontAwesome\FaIcon;
 use PackagedUi\Fusion\Button\Button;
-use PackagedUi\Fusion\Button\ButtonInferface;
+use PackagedUi\Fusion\Button\ButtonInterface;
 use PackagedUi\Fusion\Button\ToggleButton;
 use PackagedUi\FusionDemo\AbstractDemoPage;
 
@@ -69,8 +69,8 @@ class InputDemo extends AbstractDemoPage
       ->setName('my_button')
       ->setValue('my_value')
       ->setCheckedClass(
-        Button::bem()->modifier(ButtonInferface::_BUTTON_MOD_XLARGE),
-        Button::bem()->modifier(ButtonInferface::_BUTTON_MOD_ACCENT)
+        Button::bem()->modifier(ButtonInterface::_BUTTON_MOD_XLARGE),
+        Button::bem()->modifier(ButtonInterface::_BUTTON_MOD_ACCENT)
       );
 
     return $return;
