@@ -8,6 +8,7 @@ use Packaged\Dispatch\ResourceManager;
 use PackagedUi\FontAwesome\FaIcon;
 use PackagedUi\Fusion\Fusion;
 use PackagedUi\FusionDemo\Elements\BadgeDemo;
+use PackagedUi\FusionDemo\Elements\BannerDemo;
 use PackagedUi\FusionDemo\Elements\ButtonDemo;
 use PackagedUi\FusionDemo\Elements\CardDemo;
 use PackagedUi\FusionDemo\Elements\ColorDemo;
@@ -57,6 +58,7 @@ class ConfigHandler implements ContextAware
       'Theme'      => new ThemeDemo(),
       'Drawer'     => new DrawerDemo(),
       'Badge'      => new BadgeDemo(),
+      'Banner'     => new BannerDemo(),
       'Button'     => new ButtonDemo(),
       'Card'       => new CardDemo(),
       'Input'      => new InputDemo(),

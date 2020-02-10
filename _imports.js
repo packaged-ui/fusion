@@ -20,3 +20,5 @@ export * as Table from './src/Table/res';
 export * as Theme from './src/Theme/res';
 export * as Tiles from './src/Tiles/res';
 export * as Typography from './src/Typography/res';
+
+export * as Banners from './src/Banner/res';
