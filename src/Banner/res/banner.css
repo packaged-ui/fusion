@@ -61,6 +61,13 @@
 }
 
 
+@media (min-width: 1200px) {
+  .banner {
+    max-width: 1024px;
+  }
+}
+
+
 @media (min-width: 600px) {
   .banner {
     max-width: 720px;
