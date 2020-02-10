@@ -108,6 +108,11 @@ input[type="button"].btn--outline, input[type="submit"].btn--outline, input[type
   color: rgb(var(--button-color));
 }
 
+input[type="button"].btn--flat:hover, input[type="submit"].btn--flat:hover, input[type="reset"].btn--flat:hover, button.btn--flat:hover, .btn--flat:hover,
+input[type="button"].btn--flat:active, input[type="submit"].btn--flat:active, input[type="reset"].btn--flat:active, button.btn--flat:active, .btn--flat:active {
+  color: rgb(var(--button-text-color));
+}
+
 input[type="button"].btn--outline:hover, input[type="submit"].btn--outline:hover, input[type="reset"].btn--outline:hover, button.btn--outline:hover, .btn--outline:hover,
 input[type="button"].btn--outline:active, input[type="submit"].btn--outline:active, input[type="reset"].btn--outline:active, button.btn--outline:active, .btn--outline:active {
   background-color: rgb(var(--button-color)) !important;
