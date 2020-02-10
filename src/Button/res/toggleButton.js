@@ -31,7 +31,7 @@ on(
     if('createEvent' in document)
     {
       let evt = document.createEvent('HTMLEvents');
-      evt.initEvent('change', false, true);
+      evt.initEvent('change', true, true);
       button.dispatchEvent(evt);
     }
   },
