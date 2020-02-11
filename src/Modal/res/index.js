@@ -59,7 +59,7 @@ export default class Modal
     if(!document.body.contains(this.modal))
     {
       // add to document
-      document.body.appendChild(this.modal);
+      document.body.append(this.modal);
 
       // calculate position
       this._postUpdateContent();
@@ -120,5 +120,20 @@ on(
       }
     }
     while((p = p.parentNode));
+  },
+);
+
+document.addEventListener(
+  'keyup', e =>
+  {
+    if(e.key === 'Escape' || e.key === 'Esc' || e.keyCode === 27)
+    {
+      // find the last modal's closer
+      const closer = document.querySelector('.modal:last-of-type .modal__content [modal-closer]');
+      if(closer)
+      {
+        closer.closest('.modal__content')._modal.hide();
+      }
+    }
   },
 );
