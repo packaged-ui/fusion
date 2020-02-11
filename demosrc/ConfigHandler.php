@@ -12,10 +12,12 @@ use PackagedUi\FusionDemo\Elements\BannerDemo;
 use PackagedUi\FusionDemo\Elements\ButtonDemo;
 use PackagedUi\FusionDemo\Elements\CardDemo;
 use PackagedUi\FusionDemo\Elements\ColorDemo;
+use PackagedUi\FusionDemo\Elements\DialogDemo;
 use PackagedUi\FusionDemo\Elements\DrawerDemo;
 use PackagedUi\FusionDemo\Elements\GridDemo;
 use PackagedUi\FusionDemo\Elements\InputDemo;
 use PackagedUi\FusionDemo\Elements\LayoutDemo;
+use PackagedUi\FusionDemo\Elements\LightboxDemo;
 use PackagedUi\FusionDemo\Elements\ListDemo;
 use PackagedUi\FusionDemo\Elements\MenuDemo;
 use PackagedUi\FusionDemo\Elements\ProgressDemo;
@@ -59,6 +61,8 @@ class ConfigHandler implements ContextAware
       'Drawer'     => new DrawerDemo(),
       'Badge'      => new BadgeDemo(),
       'Banner'     => new BannerDemo(),
+      'Dialog'     => new DialogDemo(),
+      'Lightbox'   => new LightboxDemo(),
       'Button'     => new ButtonDemo(),
       'Card'       => new CardDemo(),
       'Input'      => new InputDemo(),

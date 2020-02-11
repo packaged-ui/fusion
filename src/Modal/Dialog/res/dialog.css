@@ -1,0 +1,31 @@
+:root {
+  --dialog-background: rgb(var(--f-content-background-color));
+}
+
+.dialog {
+  background: var(--dialog-background);
+  padding: 24px;
+  margin: 10px;
+}
+
+.dialog__buttons {
+  margin-bottom: -16px;
+  margin-right: -16px;
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: flex-end;
+  align-items: flex-end;
+}
+
+
+@media (min-width: 600px) {
+  .dialog {
+    max-width: 560px;
+  }
+}
+
+@media (max-width: 599px) {
+  .dialog {
+    max-width: 280px;
+  }
+}
