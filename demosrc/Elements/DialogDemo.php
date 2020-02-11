@@ -1,6 +1,8 @@
 <?php
 namespace PackagedUi\FusionDemo\Elements;
 
+use Packaged\Glimpse\Tags\LineBreak;
+use Packaged\Glimpse\Tags\Link;
 use PackagedUi\FontAwesome\FaIcon;
 use PackagedUi\Fusion\Button\Button;
 use PackagedUi\Fusion\Modal\Dialog\Dialog;
@@ -22,19 +24,30 @@ class DialogDemo extends AbstractDemoPage
   {
     $return = [];
 
-    $return[] = Dialog::create("This will reset your device to its default factory settings");
+    $dialog = Dialog::create("This will reset your device to its default factory settings");
+    $return[] = $dialog;
+    $return[] = $dialog->applyLauncher(Link::create("#", "Default Dialog"));
+    $return[] = LineBreak::create();
 
-    $return[] = Dialog::create("This will reset your device to its default factory settings")
+    $dialog = Dialog::create("This will reset your device to its default factory settings")
       ->setTitle("Reset settings?");
+    $return[] = $dialog;
+    $return[] = $dialog->applyLauncher(Link::create("#", "Dialog Title"));
+    $return[] = LineBreak::create();
 
-    $return[] = Dialog::create("This will reset your device to its default factory settings")
+    $dialog = Dialog::create("This will reset your device to its default factory settings")
       ->setTitle("Reset settings?")
-      ->addButton(Button::create("Cancel")->flat()->primary());
+      ->addButton(Dialog::makeCloser(Button::create("Cancel")->flat()->primary()));
+    $return[] = $dialog;
+    $return[] = $dialog->applyLauncher(Link::create("#", "Dialog with Action"));
+    $return[] = LineBreak::create();
 
-    $return[] = Dialog::create("This will reset your device to its default factory settings")
+    $dialog = Dialog::create("This will reset your device to its default factory settings")
       ->setTitle("Reset settings?")
-      ->addButton(Button::create("Cancel")->flat()->primary())
+      ->addButton(Dialog::makeCloser(Button::create("Cancel")->flat()->primary()))
       ->addButton(Button::create("Accept")->flat()->primary());
+    $return[] = $dialog;
+    $return[] = $dialog->applyLauncher(Link::create("#", "Dialog With Two Actions"));
     return $return;
   }
 }
