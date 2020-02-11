@@ -18,7 +18,10 @@ abstract class Modal extends Div implements Component
 
   protected function _constructComponent()
   {
-    $this->setId('modal-' . Strings::randomString(5));
+    if(empty($this->getId()))
+    {
+      $this->setId('modal-' . Strings::randomString(5));
+    }
     $this->_traitConstruct();
     $this->addClass('modal');
   }
