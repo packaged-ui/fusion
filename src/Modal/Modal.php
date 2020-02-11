@@ -23,7 +23,7 @@ abstract class Modal extends Div implements Component
       $this->setId('modal-' . Strings::randomString(5));
     }
     $this->_traitConstruct();
-    $this->addClass('modal');
+    $this->addClass('modal__content');
   }
 
   public function applyLauncher(HtmlElement $ele)

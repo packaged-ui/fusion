@@ -1,7 +1,52 @@
 .modal {
+  position: fixed;
+  top: 0;
+  right: 0;
+  bottom: 0;
+  left: 0;
+  background: rgba(0, 0, 0, 0.8);
+  z-index: 9999;
+}
+
+.modal__wrapper {
+  position: relative;
+  box-sizing: border-box;
+  background: white;
+  width: 600px;
+  margin: 0 auto;
+  border-radius: 4px;
+  box-shadow: 2px 2px 5px 1px rgba(0, 0, 0, 0.5);
+  padding: 5px;
+
+  min-height: 40px;
+  max-height: 95%;
+  overflow: auto;
+}
+
+.modal .modal__content {
+  display: block;
+}
+
+.modal__content {
+  z-index: 1;
   display: none;
 }
 
-.modal--show {
-  display: block;
+.modal__content:empty {
+  visibility: hidden;
+  transform: scaleY(0);
+}
+
+@media only screen and (max-width: 600px) {
+  .modal__wrapper {
+    position: fixed !important;
+    top: 0 !important;
+    right: 0 !important;
+    bottom: 0 !important;
+    left: 0 !important;
+    border-radius: 0;
+    max-height: 100% !important;
+    height: 100% !important;
+    width: 100% !important;
+  }
 }
