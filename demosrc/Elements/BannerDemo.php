@@ -27,7 +27,7 @@ class BannerDemo extends AbstractDemoPage
       "
     .banner-placement{
       min-height: 200px;
-      background: #dedede;
+      background: #f7f7f7;
       border:1px solid black;
       position:relative;
       margin:10px;
@@ -70,6 +70,10 @@ class BannerDemo extends AbstractDemoPage
     $return[] = $this->_placementWrapper(Banner::create("Default Placement"));
     $return[] = $this->_placementWrapper(Banner::create("Top Placement")->top());
     $return[] = $this->_placementWrapper(Banner::create("Bottom Placement")->bottom());
+
+    $return[] = $this->_placementWrapper(Banner::create("Default Placement")->shadow());
+    $return[] = $this->_placementWrapper(Banner::create("Top Placement")->top()->shadow());
+    $return[] = $this->_placementWrapper(Banner::create("Bottom Placement")->bottom()->shadow());
 
     return $return;
   }

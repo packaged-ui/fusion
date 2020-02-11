@@ -8,13 +8,20 @@
   background: var(--banner-background);
   border: 1px solid var(--banner-border-color);
   --text-opacity: 1;
-  display: flex;
-  padding: 16px;
   width: 100%;
   box-sizing: border-box;
-  min-width: 260px;
   margin: auto;
   z-index: var(--banner-z-index);
+}
+
+.banner, .banner__outer {
+  min-width: 260px;
+}
+
+.banner__outer {
+  display: flex;
+  padding: 16px;
+  margin: 0 auto;
 }
 
 .banner__icon {
@@ -48,23 +55,39 @@
   max-width: initial;
 }
 
-.banner.banner--top {
+.banner.banner--fixed {
   position: fixed;
+}
+
+.banner.banner--top {
+  position: absolute;
   top: 0;
   left: 0;
   right: 0;
 }
 
 .banner.banner--bottom {
-  position: fixed;
+  position: absolute;
   bottom: 0;
   left: 0;
   right: 0;
 }
 
 
+.banner.banner--top.banner--shadow {
+  -webkit-box-shadow: 0 2px 3px 0 rgba(0, 0, 0, 0.03), 0 1px 4px 0 rgba(0, 0, 0, 0.04), 0 3px 1px -2px rgba(0, 0, 0, 0.04);
+  box-shadow: 0 2px 3px 0 rgba(0, 0, 0, 0.03), 0 1px 4px 0 rgba(0, 0, 0, 0.04), 0 3px 1px -2px rgba(0, 0, 0, 0.04);
+}
+
+.banner.banner--shadow,
+.banner.banner--bottom.banner--shadow {
+  -webkit-box-shadow: 0 -2px 3px 0 rgba(0, 0, 0, 0.03), 0 -1px 4px 0 rgba(0, 0, 0, 0.04), 0 -3px 1px -2px rgba(0, 0, 0, 0.04);
+  box-shadow: 0 -2px 3px 0 rgba(0, 0, 0, 0.03), 0 -1px 4px 0 rgba(0, 0, 0, 0.04), 0 -3px 1px -2px rgba(0, 0, 0, 0.04);
+}
+
+
 @media (min-width: 600px) {
-  .banner {
+  .banner, .banner__outer {
     max-width: 720px;
   }
 
@@ -74,13 +97,13 @@
 }
 
 @media (min-width: 1200px) {
-  .banner {
+  .banner, .banner__outer {
     max-width: 1024px;
   }
 }
 
 @media (max-width: 599px) {
-  .banner {
+  .banner, .banner__outer {
     max-width: 360px;
   }
 

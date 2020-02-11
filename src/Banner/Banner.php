@@ -14,6 +14,7 @@ class Banner extends Div implements Component
   use ComponentTrait;
 
   const _MOD_FULL_WIDTH = 'full-width';
+  const _MOD_SHADOW = 'shadow';
   const _MOD_TOP = 'top';
   const _MOD_BOTTOM = 'bottom';
 
@@ -42,13 +43,13 @@ class Banner extends Div implements Component
 
   protected function _getContentForRender()
   {
-    return [
+    return Div::create(
       $this->_icon ? Div::create($this->_icon)->addClass($this->getElementName("icon")) : '',
       Div::create(
         Div::create($this->_content)->addClass($this->getElementName("content")),
         Div::create($this->_buttons)->addClass($this->getElementName("buttons"))
-      )->addClass($this->getElementName("wrap")),
-    ];
+      )->addClass($this->getElementName("wrap"))
+    )->addClass($this->getElementName("outer"));
   }
 
   public function fullWidth()
@@ -66,6 +67,12 @@ class Banner extends Div implements Component
   public function bottom()
   {
     $this->addModifier(self::_MOD_BOTTOM);
+    return $this;
+  }
+
+  public function shadow()
+  {
+    $this->addModifier(self::_MOD_SHADOW);
     return $this;
   }
 }
