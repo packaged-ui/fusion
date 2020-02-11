@@ -14,6 +14,7 @@ class Banner extends Div implements Component
   use ComponentTrait;
 
   const _MOD_FULL_WIDTH = 'full-width';
+  const _MOD_FIXED = 'fixed';
   const _MOD_SHADOW = 'shadow';
   const _MOD_TOP = 'top';
   const _MOD_BOTTOM = 'bottom';
@@ -73,6 +74,12 @@ class Banner extends Div implements Component
   public function shadow()
   {
     $this->addModifier(self::_MOD_SHADOW);
+    return $this;
+  }
+
+  public function fixed()
+  {
+    $this->addModifier(self::_MOD_FIXED);
     return $this;
   }
 }
