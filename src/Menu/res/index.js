@@ -1,6 +1,7 @@
 import '../../Foundation/res';
 import {SetActive} from '../../Lists/res';
 import './menu.css';
+import {on} from "../../Foundation/res";
 
 function updateActiveMenu(location) {
   let menus = document.querySelectorAll('.menu');
@@ -44,6 +45,18 @@ function updateActiveMenu(location) {
     }
   }
 }
+
+on(
+  document, 'click', '.menu__item',
+  function (e) {
+    let ele = e.target;
+    while((!ele.matches('.menu__item')) && ele.parentElement)
+    {
+      ele = ele.parentElement;
+    }
+    SetActive(ele);
+  },
+);
 
 updateActiveMenu(window.location);
 window.addEventListener('popstate', function () {updateActiveMenu(window.location);});
