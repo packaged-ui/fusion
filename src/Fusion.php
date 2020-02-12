@@ -19,7 +19,8 @@ class Fusion implements LayoutInterface, TypographyInterface, ButtonInterface, B
   const FILE_BASE_JS = 'fusion.min.js';
 
   public static function includeGoogleFont(
-    $family = 'Roboto', $styles = '300,300i,400,400i,500,500i,700,700i,900', $fontDisplay = 'swap', $options = null,
+    $family = 'Roboto', $styles = '300,300i,400,400i,500,500i,600,600i,700,700i,900', $fontDisplay = 'swap',
+    $options = null,
     int $priority = ResourceStore::PRIORITY_LOW
   )
   {
