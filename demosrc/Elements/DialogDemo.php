@@ -3,6 +3,7 @@ namespace PackagedUi\FusionDemo\Elements;
 
 use Packaged\Glimpse\Tags\LineBreak;
 use Packaged\Glimpse\Tags\Link;
+use Packaged\Glimpse\Tags\Text\Paragraph;
 use PackagedUi\FontAwesome\FaIcon;
 use PackagedUi\Fusion\Button\Button;
 use PackagedUi\Fusion\Modal\Dialog\Dialog;
@@ -24,13 +25,15 @@ class DialogDemo extends AbstractDemoPage
   {
     $return = [];
 
-    $warningDialog = Dialog::create("You can't do this!")->addButton(
-      Dialog::makeCloser(Button::create('sorry!')->danger())
-    );
+    $warningDialog = Dialog::create("You can't do this!")
+      ->addButton(Dialog::makeCloser(Button::create('sorry!')->danger()));
     $return[] = $warningDialog;
-    $warningLauncher = $warningDialog->applyLauncher(Link::create("#", "NO!"));
+    $warningLauncher = $warningDialog->applyLauncher(Link::create("#", "Warning"));
 
-    $dialog = Dialog::create("This will reset your device to its default factory settings", $warningLauncher);
+    $dialog = Dialog::create(
+      "This will reset your device to its default factory settings",
+      Paragraph::create($warningLauncher)
+    );
     $return[] = $dialog;
     $return[] = $dialog->applyLauncher(Link::create("#", "Default Dialog"));
     $return[] = LineBreak::create();

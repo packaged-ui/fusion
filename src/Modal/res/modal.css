@@ -6,6 +6,11 @@
   left: 0;
   background: rgba(0, 0, 0, 0.8);
   z-index: 9999;
+  display: none;
+}
+
+.modal:last-of-type {
+  display: block;
 }
 
 .modal__wrapper {
