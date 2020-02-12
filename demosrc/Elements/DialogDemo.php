@@ -28,10 +28,10 @@ class DialogDemo extends AbstractDemoPage
     $warningDialog = Dialog::create("You can't do this!")
       ->addButton(Dialog::makeCloser(Button::create('sorry!')->danger()));
     $return[] = $warningDialog;
-    $warningLauncher = $warningDialog->applyLauncher(Link::create("#", "Warning"));
+    $warningLauncher = $warningDialog->applyLauncher(Link::create("#", "Show Warning"));
 
     $dialog = Dialog::create(
-      "This will reset your device to its default factory settings",
+      Paragraph::create("This will reset your device to its default factory settings"),
       Paragraph::create($warningLauncher)
     );
     $return[] = $dialog;

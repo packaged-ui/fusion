@@ -25,6 +25,12 @@ export default class Modal
       this.content.classList.add('modal__content');
       this.appendChild(element);
     }
+
+    if(element.hasAttribute('id'))
+    {
+      this.modal.setAttribute('id', element.getAttribute('id') + '--outer');
+    }
+
     this.wrapper.appendChild(this.content);
 
     this.updatePosition();
