@@ -73,6 +73,19 @@ class InputDemo extends AbstractDemoPage
         Button::bem()->modifier(ButtonInterface::_BUTTON_MOD_ACCENT)
       );
 
+    $return[] = LineBreak::create();
+    $return[] = LineBreak::create();
+
+    $return[] = [
+      ToggleButton::create(new SafeHtml('&nbsp;Text Here'))
+        ->setName('button_test')
+        ->setType(Input::TYPE_RADIO),
+      ToggleButton::create(new SafeHtml('&nbsp;Text Here'))
+        ->setName('button_test')
+        ->setType(Input::TYPE_RADIO)
+        ->setChecked(true),
+    ];
+
     return $return;
   }
 }

@@ -12,6 +12,8 @@ class ToggleButton extends Button
   protected $_uncheckedContent;
   protected $_name;
   protected $_value;
+  protected $_type = Input::TYPE_CHECKBOX;
+  protected $_checked = false;
 
   public function __construct(...$content)
   {
@@ -70,17 +72,53 @@ class ToggleButton extends Button
     return $this;
   }
 
+  /**
+   * @param string $type
+   *
+   * @return ToggleButton
+   */
+  public function setType($type)
+  {
+    $this->_type = $type;
+    return $this;
+  }
+
+  /**
+   * @param bool $checked
+   *
+   * @return ToggleButton
+   */
+  public function setChecked(bool $checked): ToggleButton
+  {
+    $this->_checked = $checked;
+    return $this;
+  }
+
   protected function _prepareForProduce(): HtmlElement
   {
     $this->addClass('toggle-button');
+    if($this->_checked)
+    {
+      $this->setAttribute('checked', true);
+      if($this->hasAttribute('checked-class'))
+      {
+        $this->addClass($this->getAttribute('checked-class'));
+      }
+    }
     return parent::_prepareForProduce();
   }
 
   protected function _getContentForRender()
   {
+    $input = Input::create();
+    $input->addClass($this->getElementName('toggle-button-checkbox'))
+      ->setType($this->_type)->setValue($this->_value)->setName($this->_name);
+    if($this->_checked)
+    {
+      $input->setAttribute('checked', true);
+    }
     return [
-      Input::create()->setType(Input::TYPE_CHECKBOX)->addClass($this->getElementName('toggle-button-checkbox'))
-        ->setName($this->_name)->setValue($this->_value),
+      $input,
       $this->_checkedContent
         ? Span::create($this->_checkedContent)->addClass($this->getElementName('checked-content')) : null,
       $this->_uncheckedContent
