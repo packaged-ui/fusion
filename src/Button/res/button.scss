@@ -1,0 +1,180 @@
+:root {
+  --button-color: var(--f-color-default);
+  --button-text-color: var(--f-color-default-text);
+  --button-border-radius: .2rem;
+}
+
+input[type="button"], input[type="submit"], input[type="reset"], button, .btn {
+  text-transform: uppercase;
+  display: inline-flex;
+  align-items: center;
+  font-weight: 500;
+  text-align: center;
+  white-space: nowrap;
+  vertical-align: middle;
+  -webkit-user-select: none;
+  -moz-user-select: none;
+  -ms-user-select: none;
+  user-select: none;
+  border: 1px solid rgba(0, 0, 0, 0.1);
+  padding: .3rem 1rem;
+  font-size: var(--f-font-size);
+  line-height: 1.47;
+  border-radius: var(--button-border-radius);
+  -webkit-transition: all 0.2s ease-in-out;
+  transition: all 0.1s ease-in-out;
+  overflow: visible;
+  margin: 2px;
+  -webkit-tap-highlight-color: transparent;
+  text-decoration: none;
+  font-family: var(--f-font);
+  outline: 0;
+
+  background-color: #{'rgba(var(--button-color), 0.9)'};
+  --f-text-color: var(--button-text-color);
+  --text-opacity: 0.95;
+
+  &:hover {
+    text-decoration: none;
+    box-shadow: 0 2px 1px -2px rgba(0, 0, 0, .1), 0 2px 2px 0 rgba(0, 0, 0, .1), 0 1px 5px 0 rgba(0, 0, 0, .08);
+  }
+
+  &:hover, .btn---active {
+    background-color: rgba(var(--button-color), 1);
+  }
+
+  &.btn--raised:hover {
+    box-shadow: 0 2px 4px -1px rgba(0, 0, 0, .2), 0 4px 5px 0 rgba(0, 0, 0, .14), 0 1px 10px 0 rgba(0, 0, 0, .12);
+  }
+
+  &.btn--flat, &.btn--outline {
+    background-color: transparent;
+    border-color: transparent;
+    color: #{'rgb(var(--button-color))'};
+  }
+
+  &.btn--flat:active, &.btn--outline:active {
+    background-color: #{'rgba(var(--button-color), 0.2) !important'};
+  }
+
+  &.btn--flat.btn---active, &.btn--outline.btn---active {
+    background-color: #{'rgba(var(--button-color), 0.12)'};
+  }
+
+  &.btn--outline, &.btn--flat.btn--outline:hover {
+    border: 1px solid #{'rgb(var(--button-color))'};
+    color: #{'rgb(var(--button-color))'};
+  }
+
+  &.btn--flat.btn--outline {
+    border-color: transparent;
+  }
+
+  &.btn--flat:hover, &.btn--flat:active {
+    background-color: #{'rgb(var(--button-color)) !important'};
+    color: #{'rgb(var(--button-text-color))'};
+    box-shadow: none;
+  }
+
+  &.btn--outline:hover, &.btn--outline:active {
+    background-color: #{'rgb(var(--button-color)) !important'};
+    border-color: #{'rgb(var(--button-color))'};
+    color: #{'rgb(var(--button-text-color))'};
+    box-shadow: 0 2px 4px -1px rgba(0, 0, 0, 0.15), 0 4px 5px 0 rgba(0, 0, 0, 0.1), 0 1px 10px 0 rgba(0, 0, 0, 0.06);
+  }
+
+  &.btn--flat.btn--outline:hover {
+    background-color: transparent !important;
+    box-shadow: none;
+  }
+
+
+  &:not(:disabled):not(.disabled) {
+    cursor: pointer;
+  }
+
+  &.disabled, &:disabled, .btn--disabled, .btn:disabled {
+    opacity: .65;
+    box-shadow: none;
+  }
+
+  &.btn--outline:disabled:hover, &.btn--outline:disabled:active {
+    background-color: transparent !important;
+    color: #{'rgb(var(--button-color)) !important'};
+    box-shadow: none !important;
+  }
+}
+
+.btn--round {
+  border-radius: 60rem !important;
+}
+
+.btn--primary {
+  --button-color: var(--f-color-primary);
+  --button-text-color: var(--f-color-primary-text);
+}
+
+.btn--accent {
+  --button-color: var(--f-color-accent);
+  --button-text-color: var(--f-color-accent-text);
+}
+
+.btn--success {
+  --button-color: var(--f-success-color);
+  --button-text-color: var(--f-success-color-text);
+}
+
+.btn--warning {
+  --button-color: var(--f-warning-color);
+  --button-text-color: var(--f-warning-color-text);
+}
+
+.btn--info {
+  --button-color: var(--f-info-color);
+  --button-text-color: var(--f-info-color-text);
+}
+
+.btn--danger {
+  --button-color: var(--f-danger-color);
+  --button-text-color: var(--f-danger-color-text);
+}
+
+
+.btn--xl {
+  padding: .9375rem 2.125rem;
+  font-size: 1.25rem;
+  line-height: 1.5;
+  --button-border-radius: .125rem;
+}
+
+.btn--lg {
+  font-size: 1rem;
+}
+
+.btn--sm {
+  font-size: .6875rem;
+}
+
+.btn--xs {
+  padding: .0625rem .5rem;
+  font-size: .6875rem;
+  line-height: 1.55;
+  --button-border-radius: .125rem;
+}
+
+.btn--raised {
+  box-shadow: 0 3px 1px -2px rgba(0, 0, 0, .2), 0 2px 2px 0 rgba(0, 0, 0, .14), 0 1px 5px 0 rgba(0, 0, 0, .12);
+}
+
+.btn__icn {
+  --text-opacity: 1;
+}
+
+.btn__icn--left {
+  margin-right: 15px;
+}
+
+
+.btn__icn--right {
+  margin-left: 15px;
+}

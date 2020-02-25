@@ -39,7 +39,8 @@ class ButtonDemo extends AbstractDemoPage
       ->addClass($btnBem->modifier(Fusion::_BUTTON_MOD_DANGER));
     $return[] = Input::create()->setType(Input::TYPE_BUTTON)->setValue('Warning')
       ->addClass($btnBem->modifier(Fusion::_BUTTON_MOD_WARNING));
-    $return[] = Input::create()->setType(Input::TYPE_BUTTON)->setValue('Info')->addClass(Fusion::_BUTTON_MOD_INFO);
+    $return[] = Input::create()->setType(Input::TYPE_BUTTON)->setValue('Info')
+      ->addClass($btnBem->modifier(Fusion::_BUTTON_MOD_INFO));
 
     $return[] = LineBreak::create();
     $return[] = LineBreak::create();
