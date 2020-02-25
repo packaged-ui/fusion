@@ -91,6 +91,17 @@ class ButtonDemo extends AbstractDemoPage
     $return[] = Button::create("Warning")->flat()->warning();
     $return[] = Button::create("Info")->flat()->info();
 
+    $return[] = LineBreak::create();
+    $return[] = LineBreak::create();
+
+    $return[] = Button::create("Default")->flat()->outline();
+    $return[] = Button::create("Primary")->flat()->outline()->primary();
+    $return[] = Button::create("Accent")->flat()->outline()->accent();
+    $return[] = Button::create("Success")->flat()->outline()->success();
+    $return[] = Button::create("Danger")->flat()->outline()->danger();
+    $return[] = Button::create("Warning")->flat()->outline()->warning();
+    $return[] = Button::create("Info")->flat()->outline()->info();
+
     $primaryButtons = [];
     $primaryButtons[] = Button::create("Primary")->primary();
     $primaryButtons[] = Button::create("Primary")->outline()->primary();

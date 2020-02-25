@@ -103,9 +103,14 @@ input[type="button"].btn--outline.btn---active, input[type="submit"].btn--outlin
   background-color: rgba(var(--button-color), 0.12);
 }
 
-input[type="button"].btn--outline, input[type="submit"].btn--outline, input[type="reset"].btn--outline, button.btn--outline, .btn--outline {
+input[type="button"].btn--outline, input[type="submit"].btn--outline, input[type="reset"].btn--outline, button.btn--outline, .btn--outline,
+input[type="button"].btn--flat.btn--outline:hover, input[type="submit"].btn--flat.btn--outline:hover, input[type="reset"].btn--flat.btn--outline:hover, button.btn--flat.btn--outline:hover, .btn--flat.btn--outline:hover {
   border: 1px solid rgb(var(--button-color));
   color: rgb(var(--button-color));
+}
+
+input[type="button"].btn--flat.btn--outline, input[type="submit"].btn--flat.btn--outline, input[type="reset"].btn--flat.btn--outline, button.btn--flat.btn--outline, .btn--flat.btn--outline {
+  border-color: transparent;
 }
 
 input[type="button"].btn--flat:hover, input[type="submit"].btn--flat:hover, input[type="reset"].btn--flat:hover, button.btn--flat:hover, .btn--flat:hover,
@@ -119,6 +124,11 @@ input[type="button"].btn--outline:active, input[type="submit"].btn--outline:acti
   border-color: rgb(var(--button-color));
   color: rgb(var(--button-text-color));
   box-shadow: 0 2px 4px -1px rgba(0, 0, 0, 0.15), 0 4px 5px 0 rgba(0, 0, 0, 0.1), 0 1px 10px 0 rgba(0, 0, 0, 0.06);
+}
+
+input[type="button"].btn--flat.btn--outline:hover, input[type="submit"].btn--flat.btn--outline:hover, input[type="reset"].btn--flat.btn--outline:hover, button.btn--flat.btn--outline:hover, .btn--flat.btn--outline:hover {
+  background-color: transparent !important;
+  box-shadow: none;
 }
 
 input[type="button"].btn--round, input[type="submit"].btn--round, input[type="reset"].btn--round, button.btn--round, .btn.btn--round {
