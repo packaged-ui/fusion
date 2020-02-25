@@ -38,6 +38,7 @@ class Drawer extends AbstractContainerTag implements Component
   protected $_minState = self::STATE_CLOSED;
   protected $_reveal = self::REVEAL_NONE;
   protected $_isOpen = false;
+  protected $_isDefaultOpen;
   protected $_header = [];
   protected $_footer = [];
   protected $_appContent = [];
@@ -192,10 +193,19 @@ class Drawer extends AbstractContainerTag implements Component
   {
     $containerId = ($this->getId() ?: 'drawer-' . Strings::randomString(5)) . '-container';
     $drawerKey = 'drawer--open-' . $this->_position;
+    //JS To Open
+    $setOpen = "document.querySelector('#$containerId').classList.add('" . $this->getModifier('open') . "')";
+    $defaultOpen = "";
+    if($this->_isDefaultOpen === true)
+    {
+      $defaultOpen = "(localStorage.getItem('$drawerKey')===null&&$setOpen)||";
+    }
     return Div::create(
       new SafeHtml(
-        "<script>localStorage.getItem('$drawerKey')==='1'&&document.querySelector('#$containerId').classList.add('" .
-        $this->getModifier('open') . "')</script>"
+        "<script>" .
+        $defaultOpen
+        . "(localStorage.getItem('$drawerKey')==='1'&&$setOpen)"
+        . "</script>"
       ),
       parent::produceSafeHTML(),
       Div::create($this->_appContent)->addClass('drawer-app-content', LayoutInterface::FULL_HEIGHT_WITH_MIN)
@@ -209,4 +219,9 @@ class Drawer extends AbstractContainerTag implements Component
       ->produceSafeHTML();
   }
 
+  public function openByDefault()
+  {
+    $this->_isDefaultOpen = true;
+    return $this;
+  }
 }

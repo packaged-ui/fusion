@@ -43,6 +43,7 @@ class Layout extends Element implements ContextAware
         Link::create("#", FaIcon::create(FaIcon::BARS))->addClass('drawer__toggle', Fusion::MARGIN_MEDIUM),
         Div::create($this->_content)->addClass(LayoutInterface::PADDING_MEDIUM)
       )
+      ->openByDefault()
       ->setState(Drawer::STATE_NARROW)
       ->setReveal(Drawer::REVEAL_PEEK);
   }
