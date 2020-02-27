@@ -16,7 +16,8 @@ on(
     checkEle.checked = !checkEle.checked;
 
     _updateStyle(button);
-    _dispatchChangeEvent(button);
+    let evt = new CustomEvent('change', {bubbles: true, cancelable: true});
+    button.dispatchEvent(evt);
 
     if(checkEle.hasAttribute('name') && checkEle.getAttribute('type') === 'radio')
     {
@@ -56,15 +57,5 @@ function _updateStyle(button)
     {
       button.classList.remove.apply(button.classList, checkedClasses);
     }
-  }
-}
-
-function _dispatchChangeEvent(button)
-{
-  if('createEvent' in document)
-  {
-    let evt = document.createEvent('HTMLEvents');
-    evt.initEvent('change', true, true);
-    button.dispatchEvent(evt);
   }
 }

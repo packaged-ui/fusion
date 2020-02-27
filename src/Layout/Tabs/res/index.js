@@ -32,8 +32,8 @@ export function SetActive(ele, tabID) {
   ele.classList.add('tab__label--active');
   tab.classList.add('tab--active');
 
-  let activeEvent = new Event('tab.tab--active');
-  tab.dispatchEvent(activeEvent);
+  let evt = new CustomEvent('change', {bubbles: true, cancelable: true});
+  tab.dispatchEvent(evt);
 }
 
 on(
