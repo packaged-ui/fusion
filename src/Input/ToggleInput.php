@@ -1,13 +1,20 @@
 <?php
 
-namespace PackagedUi\Fusion\Button;
+namespace PackagedUi\Fusion\Input;
 
+use Packaged\Glimpse\Tags\Div;
 use Packaged\Glimpse\Tags\Form\Input;
 use Packaged\Glimpse\Tags\Span;
 use Packaged\Ui\Html\HtmlElement;
+use PackagedUi\BemComponent\BemComponentTrait;
+use PackagedUi\Fusion\Component;
+use PackagedUi\Fusion\ComponentTrait;
 
-class ToggleButton extends Button
+class ToggleInput extends Div implements Component
 {
+  use BemComponentTrait;
+  use ComponentTrait;
+
   protected $_checkedContent;
   protected $_uncheckedContent;
   protected $_name;
@@ -15,11 +22,9 @@ class ToggleButton extends Button
   protected $_type = Input::TYPE_CHECKBOX;
   protected $_checked = false;
 
-  public function __construct(...$content)
+  public function getBlockName(): string
   {
-    parent::__construct($content);
-    $this->addClass('toggle-button');
-    $this->setCheckedClass($this->getModifier(ButtonInterface::_BUTTON_MOD_SUCCESS));
+    return 'toggle-button';
   }
 
   public function setCheckedClass(...$class)
@@ -33,7 +38,7 @@ class ToggleButton extends Button
    *
    * @return static
    */
-  public function setCheckedContent($checkedContent)
+  public function setCheckedContent(...$checkedContent)
   {
     $this->_checkedContent = $checkedContent;
     return $this;
@@ -75,7 +80,7 @@ class ToggleButton extends Button
   /**
    * @param string $type
    *
-   * @return ToggleButton
+   * @return ToggleInput
    */
   public function setType($type)
   {
@@ -86,9 +91,9 @@ class ToggleButton extends Button
   /**
    * @param bool $checked
    *
-   * @return ToggleButton
+   * @return ToggleInput
    */
-  public function setChecked(bool $checked): ToggleButton
+  public function setChecked(bool $checked): ToggleInput
   {
     $this->_checked = $checked;
     return $this;
@@ -96,34 +101,40 @@ class ToggleButton extends Button
 
   protected function _prepareForProduce(): HtmlElement
   {
-    $this->addClass('toggle-button');
+    $ele = parent::_prepareForProduce();
     if($this->_checked)
     {
-      $this->setAttribute('checked', true);
+      $ele->setAttribute('checked', true);
       if($this->hasAttribute('checked-class'))
       {
-        $this->addClass($this->getAttribute('checked-class'));
+        $ele->addClass(...$this->getAttribute('checked-class'));
       }
     }
-    return parent::_prepareForProduce();
+    return $ele;
   }
 
   protected function _getContentForRender()
   {
     $input = Input::create();
-    $input->addClass($this->getElementName('toggle-button-checkbox'))
+    $input->addClass($this->getElementName('checkbox'))
       ->setType($this->_type)->setValue($this->_value)->setName($this->_name);
     if($this->_checked)
     {
       $input->setAttribute('checked', true);
     }
+
+    $content = parent::_getContentForRender();
+    if($this->_checkedContent)
+    {
+      $content = [
+        Span::create($this->_checkedContent)->addClass($this->getElementName('checked-content')),
+        Span::create($content)->addClass($this->getElementName('unchecked-content')),
+      ];
+    }
+
     return [
       $input,
-      $this->_checkedContent
-        ? Span::create($this->_checkedContent)->addClass($this->getElementName('checked-content')) : null,
-      $this->_uncheckedContent
-        ? Span::create($this->_uncheckedContent)->addClass($this->getElementName('unchecked-content')) : null,
-      parent::_getContentForRender(),
+      $content,
     ];
   }
 }

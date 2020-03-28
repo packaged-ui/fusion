@@ -2,7 +2,7 @@ export * as Badge from './src/Badge/res';
 
 export * as Buttons from './src/Button/res/button';
 export * as Fab from './src/Button/res/fab';
-export * as ToggleButton from './src/Button/res/toggleButton';
+export * as ToggleInput from './src/Input/res/toggleInput';
 
 export * as Card from './src/Card/res';
 export * as Color from './src/Color/res';

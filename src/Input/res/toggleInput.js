@@ -1,5 +1,5 @@
 import {on} from '../../Foundation/res';
-import './toggleButton.css';
+import './toggleInput.css';
 
 on(
   document, 'click', '.toggle-button',
@@ -8,7 +8,7 @@ on(
     e.preventDefault();
 
     let button = e.delegateTarget;
-    let checkEle = button.querySelector('.btn__toggle-button-checkbox');
+    let checkEle = button.querySelector('.toggle-button__checkbox');
     if(checkEle.getAttribute('type') === 'radio' && checkEle.checked)
     {
       return;
@@ -22,7 +22,7 @@ on(
     if(checkEle.hasAttribute('name') && checkEle.getAttribute('type') === 'radio')
     {
       const radioElements = document.querySelectorAll(
-        '.btn__toggle-button-checkbox[type="radio"][name="' + checkEle.getAttribute('name') + '"]',
+        '.toggle-button__checkbox[type="radio"][name="' + checkEle.getAttribute('name') + '"]',
       );
       radioElements.forEach(
         radio =>
@@ -40,8 +40,8 @@ on(
 
 function _updateStyle(button)
 {
-  let checkedClasses = button.getAttribute('checked-class').split(' ').filter(name => !!name);
-  let checkEle = button.querySelector('.btn__toggle-button-checkbox');
+  const checkedClasses = (button.getAttribute('checked-class') || '').split(' ').filter(name => !!name);
+  const checkEle = button.querySelector('.toggle-button__checkbox');
   if(checkEle.checked)
   {
     button.setAttribute('checked', '');
