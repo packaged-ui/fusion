@@ -1,6 +1,6 @@
 {
   "name": "packaged-ui",
-  "version": "0.1.0",
+  "version": "0.2.0",
   "devDependencies": {
     "rollup": "^1.31.0",
     "rollup-plugin-commonjs": "^10.1.0",
