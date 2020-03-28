@@ -54,8 +54,7 @@ class InputDemo extends AbstractDemoPage
     $return[] = LineBreak::create();
 
     $return[] = [
-      ToggleInput::create(new SafeHtml('&nbsp;Text Here'))
-        ->setUncheckedContent('Unchecked')
+      ToggleInput::create(new SafeHtml('Unchecked'))
         ->setCheckedContent('Checked'),
     ];
 

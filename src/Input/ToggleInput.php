@@ -16,7 +16,6 @@ class ToggleInput extends Div implements Component
   use ComponentTrait;
 
   protected $_checkedContent;
-  protected $_uncheckedContent;
   protected $_name;
   protected $_value;
   protected $_type = Input::TYPE_CHECKBOX;
@@ -41,17 +40,6 @@ class ToggleInput extends Div implements Component
   public function setCheckedContent(...$checkedContent)
   {
     $this->_checkedContent = $checkedContent;
-    return $this;
-  }
-
-  /**
-   * @param mixed $uncheckedContent
-   *
-   * @return static
-   */
-  public function setUncheckedContent($uncheckedContent)
-  {
-    $this->_uncheckedContent = $uncheckedContent;
     return $this;
   }
 
