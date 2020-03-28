@@ -95,7 +95,7 @@ class ToggleInput extends Div implements Component
       $ele->setAttribute('checked', true);
       if($this->hasAttribute('checked-class'))
       {
-        $ele->addClass(...$this->getAttribute('checked-class'));
+        $ele->addClass(...explode(' ', $this->getAttribute('checked-class')));
       }
     }
     return $ele;
