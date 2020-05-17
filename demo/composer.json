@@ -1,5 +1,5 @@
 {
-  "name": "packaged-ui/fusion",
+  "name": "packaged-ui/fusion-demo",
   "description": "User Interface",
   "license": "MIT",
   "authors": [
@@ -10,6 +10,7 @@
   ],
   "require": {
     "php": ">=7.1",
+    "packaged-ui/fusion": "*",
     "packaged/dispatch": "^2.3.0",
     "packaged/glimpse": "~2.6",
     "packaged/ui": "~1.0",
@@ -23,12 +24,7 @@
   },
   "autoload": {
     "psr-4": {
-      "PackagedUi\\Fusion\\": "src"
-    }
-  },
-  "autoload-dev": {
-    "psr-4": {
-      "PackagedUi\\FusionDemo\\": "demo/src"
+      "PackagedUi\\FusionDemo\\": "src"
     }
   },
   "repositories": [
