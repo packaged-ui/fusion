@@ -23,11 +23,7 @@
   },
   "autoload": {
     "psr-4": {
-      "PackagedUi\\Fusion\\": "src"
-    }
-  },
-  "autoload-dev": {
-    "psr-4": {
+      "PackagedUi\\Fusion\\": "src",
       "PackagedUi\\FusionDemo\\": "demosrc"
     }
   },
