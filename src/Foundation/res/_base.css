@@ -100,12 +100,13 @@ input, select, textarea {
   background: rgb(var(--f-background-color));
 }
 
-@media (min-width: 840px) {
-  .block-desktop {
+
+@media (max-width: 479px) {
+  .block-mobile {
     display: block !important;
   }
 
-  .hide-desktop {
+  .hide-mobile {
     display: none !important;
   }
 }
@@ -120,12 +121,12 @@ input, select, textarea {
   }
 }
 
-@media (max-width: 479px) {
-  .block-mobile {
+@media (min-width: 840px) {
+  .block-desktop {
     display: block !important;
   }
 
-  .hide-mobile {
+  .hide-desktop {
     display: none !important;
   }
 }

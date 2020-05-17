@@ -25,6 +25,7 @@
 }
 
 .banner__icon {
+  display: none;
   width: 48px;
   min-width: 48px;
   margin-right: 16px;
@@ -85,23 +86,14 @@
 }
 
 
-@media (min-width: 600px) {
-  .banner, .banner__outer {
-    max-width: 720px;
-  }
-
-  .banner .banner__buttons {
-    padding-left: 90px;
+@media (min-width: 320px) {
+  .banner__icon {
+    display: block;
   }
 }
 
-@media (min-width: 1200px) {
-  .banner, .banner__outer {
-    max-width: 1024px;
-  }
-}
 
-@media (max-width: 599px) {
+@media (min-width: 480px) {
   .banner, .banner__outer {
     max-width: 360px;
   }
@@ -111,8 +103,20 @@
   }
 }
 
-@media (max-width: 320px) {
-  .banner__icon {
-    display: none;
+@media (min-width: 840px) {
+  .banner, .banner__outer {
+    max-width: 720px;
+  }
+
+  .banner .banner__buttons {
+    padding-left: 90px;
   }
 }
+
+
+@media (min-width: 1200px) {
+  .banner, .banner__outer {
+    max-width: 1024px;
+  }
+}
+

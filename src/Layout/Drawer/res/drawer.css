@@ -112,8 +112,26 @@ body:not(.touch-enabled) .drawer[reveal="peek"]:hover::before {
   transition: opacity var(--drawer-transition-style);
 }
 
+
+/** MOBILE */
+@media (max-width: 479px) {
+  .drawer_action--hide-mobile {
+    display: none !important;
+  }
+
+  .drawer-container.drawer--open > .drawer + .drawer-app-content::before {
+    opacity: 1;
+    pointer-events: all;
+  }
+
+  .drawer-container:not(.drawer--open) > .drawer {
+    border-right-width: 0;
+  }
+}
+
+
 /** NOT MOBILE */
-@media (min-width: 600px) {
+@media (min-width: 480px) {
   .drawer_action--hide-non-mobile {
     display: none !important;
   }
@@ -144,21 +162,5 @@ body:not(.touch-enabled) .drawer[reveal="peek"]:hover::before {
   .drawer-container.drawer--open > .drawer[position="right"][state="permanent"] + .drawer-app-content,
   .drawer-container.drawer--open > .drawer[position="right"][state="narrow"]:not([reveal="modal"]) + .drawer-app-content {
     margin-right: var(--drawer-open-width);
-  }
-}
-
-/** MOBILE */
-@media (max-width: 599px) {
-  .drawer_action--hide-mobile {
-    display: none !important;
-  }
-
-  .drawer-container.drawer--open > .drawer + .drawer-app-content::before {
-    opacity: 1;
-    pointer-events: all;
-  }
-
-  .drawer-container:not(.drawer--open) > .drawer {
-    border-right-width: 0;
   }
 }

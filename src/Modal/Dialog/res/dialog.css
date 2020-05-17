@@ -6,6 +6,7 @@
   background: var(--dialog-background);
   padding: 24px;
   margin: 10px;
+  max-width: 100%;
 }
 
 .dialog__buttons {
@@ -17,15 +18,8 @@
   align-items: flex-end;
 }
 
-
-@media (min-width: 600px) {
+@media (min-width: 768px) {
   .dialog {
     max-width: 560px;
-  }
-}
-
-@media (max-width: 599px) {
-  .dialog {
-    max-width: 280px;
   }
 }
