@@ -3,7 +3,7 @@
   --grid-gap: 2px;
 
   --grid-cell-padding: 2px;
-  --grid-cell-width: 256px;
+  --grid-cell-width: 220px;
 
   --grid-bordered-color: rgb(var(--f-divider-color));
   --grid-bordered-cell-color: rgb(var(--f-content-background-color));
@@ -49,6 +49,7 @@
 }
 
 .grid {
+  min-width: var(--grid-cell-width);
   margin: 0 auto;
 }
 
