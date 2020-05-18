@@ -66,6 +66,7 @@
 }
 
 .grid__cell {
+  display: flex;
   padding: var(--grid-cell-padding);
   overflow: hidden;
 }
