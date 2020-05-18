@@ -23,6 +23,11 @@ class GridLayout extends AbstractContainerTag implements Component
     return self::create(GridInner::create(...$content));
   }
 
+  public static function createwithCells(...$content)
+  {
+    return self::createWithInner(GridCell::collection($content));
+  }
+
   public function autoFit($enable = true)
   {
     $enable ? $this->addModifier('auto-fit') : $this->removeModifier('auto-fit');
