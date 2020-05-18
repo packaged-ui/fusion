@@ -92,8 +92,7 @@
   }
 }
 
-
-@media (min-width: 480px) {
+@media (min-width: 512px) {
   .banner, .banner__outer {
     max-width: 360px;
   }
@@ -103,7 +102,7 @@
   }
 }
 
-@media (min-width: 840px) {
+@media (min-width: 768px) {
   .banner, .banner__outer {
     max-width: 720px;
   }
@@ -113,8 +112,7 @@
   }
 }
 
-
-@media (min-width: 1200px) {
+@media (min-width: 1024px) {
   .banner, .banner__outer {
     max-width: 1024px;
   }
