@@ -23,7 +23,7 @@ class GridLayout extends AbstractContainerTag implements Component
     return self::create(GridInner::create(...$content));
   }
 
-  public static function createwithCells(...$content)
+  public static function createWithCells(...$content)
   {
     return self::createWithInner(GridCell::collection($content));
   }

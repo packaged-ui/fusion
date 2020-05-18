@@ -76,7 +76,7 @@ class GridDemo extends AbstractDemoPage
 
     $return[] = LineBreak::create();
 
-    $return[] = GridLayout::createwithCells(
+    $return[] = GridLayout::createWithCells(
       "ONE",
       "TWO"
     )->autoFit();
