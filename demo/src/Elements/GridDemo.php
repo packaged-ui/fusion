@@ -70,6 +70,20 @@ class GridDemo extends AbstractDemoPage
     $return[] = LineBreak::create();
 
     $return[] = GridLayout::createWithInner(
+      GridCell::create("ONE"),
+      GridCell::create("TWO")
+    );
+
+    $return[] = LineBreak::create();
+
+    $return[] = GridLayout::createWithInner(
+      GridCell::create("ONE"),
+      GridCell::create("TWO")
+    )->autoFit();
+
+    $return[] = LineBreak::create();
+
+    $return[] = GridLayout::createWithInner(
       GridCell::create(""),
       GridCell::create(""),
       GridCell::create(""),
@@ -85,7 +99,7 @@ class GridDemo extends AbstractDemoPage
       GridCell::create("")->alignTop(),
       GridCell::create("")->alignMiddle(),
       GridCell::create("")->alignBottom()
-    )->addClass('alignment-demo');
+    )->autoFit()->addClass('alignment-demo');
 
     $return[] = LineBreak::create();
 

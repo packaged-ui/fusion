@@ -1,6 +1,7 @@
 :root {
   --grid-gutter: 2px;
   --grid-gap: 2px;
+  --grid-columns: auto-fill;
 
   --grid-cell-padding: 2px;
   --grid-cell-width: 220px;
@@ -53,11 +54,15 @@
   margin: 0 auto;
 }
 
+.grid--auto-fit {
+  --grid-columns: auto-fit;
+}
+
 .grid__inner {
   padding: var(--grid-gutter);
   width: 100%;
   display: grid;
-  grid-template-columns: repeat(auto-fill, minmax(var(--grid-cell-width), 1fr));
+  grid-template-columns: repeat(var(--grid-columns), minmax(var(--grid-cell-width), 1fr));
 }
 
 .grid__cell {
