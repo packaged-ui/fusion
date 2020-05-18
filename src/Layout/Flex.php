@@ -13,4 +13,10 @@ class Flex extends AbstractContainerTag
     $this->addClass(LayoutInterface::DISPLAY_FLEX);
     return parent::_prepareForProduce();
   }
+
+  public function wrap()
+  {
+    $this->addClass(LayoutInterface::DISPLAY_FLEX_WRAP);
+    return $this;
+  }
 }
