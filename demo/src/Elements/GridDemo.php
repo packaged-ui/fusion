@@ -52,97 +52,70 @@ class GridDemo extends AbstractDemoPage
   {
     $return = [];
 
-    $return[] = GridLayout::create(
-      GridInner::create(
-        GridCell::createSized("ONE"),
-        GridCell::createSized("TWO"),
-        GridCell::createSized("THREE"),
-        GridCell::createSized("FOUR"),
-        GridCell::createSized("FIVE"),
-        GridCell::createSized("SIX"),
-        GridCell::createSized("SEVEN"),
-        GridCell::createSized("EIGHT"),
-        GridCell::createSized("NINE"),
-        GridCell::createSized("TEN"),
-        GridCell::createSized("ELEVEN"),
-        GridCell::createSized("TWELVE")
-      )
+    $return[] = GridLayout::createWithInner(
+      GridCell::create("ONE"),
+      GridCell::create("TWO"),
+      GridCell::create("THREE"),
+      GridCell::create("FOUR"),
+      GridCell::create("FIVE"),
+      GridCell::create("SIX"),
+      GridCell::create("SEVEN"),
+      GridCell::create("EIGHT"),
+      GridCell::create("NINE"),
+      GridCell::create("TEN"),
+      GridCell::create("ELEVEN"),
+      GridCell::create("TWELVE")
     );
 
     $return[] = LineBreak::create();
 
-    $return[] = GridLayout::create(
-      GridInner::create(
-        GridCell::createSized("ONE", 1),
-        GridCell::createSized("TWO", 1),
-        GridCell::createSized("THREE", 1),
-        GridCell::createSized("FOUR", 1),
-        GridCell::createSized("FIVE", 1),
-        GridCell::createSized("SIX", 1),
-        GridCell::createSized("SEVEN", 1),
-        GridCell::createSized("EIGHT", 1),
-        GridCell::createSized("NINE", 1),
-        GridCell::createSized("TEN", 1),
-        GridCell::createSized("ELEVEN", 1),
-        GridCell::createSized("TWELVE", 1)
-      )
+    $return[] = GridLayout::createWithInner(
+      GridCell::create(""),
+      GridCell::create(""),
+      GridCell::create(""),
+      GridCell::create(""),
+      GridCell::create(""),
+      GridCell::create(""),
+      GridCell::create("")
     );
 
     $return[] = LineBreak::create();
 
-    $return[] = GridLayout::create(
-      GridInner::create(
-        GridCell::createSized("", 6),
-        GridCell::createSized("", 3),
-        GridCell::createSized("", 2),
-        GridCell::createSized("", 1),
-        GridCell::createSized("", 3),
-        GridCell::createSized("", 1),
-        GridCell::createSized("", 8)
-      )
-    );
-
-    $return[] = LineBreak::create();
-
-    $return[] = GridLayout::create(
-      GridInner::create(
-        GridCell::createSized("")->alignTop(),
-        GridCell::createSized("")->alignMiddle(),
-        GridCell::createSized("")->alignBottom()
-      )
+    $return[] = GridLayout::createWithInner(
+      GridCell::create("")->alignTop(),
+      GridCell::create("")->alignMiddle(),
+      GridCell::create("")->alignBottom()
     )->addClass('alignment-demo');
 
     $return[] = LineBreak::create();
 
     $return[] = GridLayout::create(
       GridInner::create(
-        GridCell::createSized(
+        GridCell::create(
           GridInner::create(
-            GridCell::createSized("Second Level"),
-            GridCell::createSized("Second Level")
+            GridCell::create("Second Level"),
+            GridCell::create("Second Level")
           )
         ),
-        GridCell::createSized("First Level"),
-        GridCell::createSized("First Level")
+        GridCell::create("First Level"),
+        GridCell::create("First Level")
       )
+    );
+
+    $return[] = LineBreak::create();
+
+    $return[] = GridLayout::createWithInner(
+      GridCell::create(""),
+      GridCell::create("")
     );
 
     $return[] = LineBreak::create();
 
     $return[] = GridLayout::create(
       GridInner::create(
-        GridCell::createSized("")->setSizes(6, 8),
-        GridCell::createSized("")->setSizes(6, 8)
-      )
-    );
-
-    $return[] = LineBreak::create();
-
-    $return[] = GridLayout::create(
-      GridInner::create(
-        GridCell::createSized("")->setSizes(6, 8),
-        GridCell::createSized("")->setSizes(6, 8),
-        GridCell::createSized("", 12)
+        GridCell::create(""),
+        GridCell::create(""),
+        GridCell::create("")
       )->bordered()
     );
 
