@@ -88,10 +88,14 @@ interface LayoutInterface
   const ALIGN_BOTTOM = 'ab';
   const ALIGN_MIDDLE = 'am';
 
+  const DISP_BLOCK_HD = 'block-hd';
+  const DISP_HIDE_HD = 'hide-hd';
   const DISP_BLOCK_DESKTOP = 'block-desktop';
   const DISP_HIDE_DESKTOP = 'hide-desktop';
   const DISP_BLOCK_TABLET = 'block-tablet';
   const DISP_HIDE_TABLET = 'hide-tablet';
+  const DISP_BLOCK_PHABLET = 'block-phablet';
+  const DISP_HIDE_PHABLET = 'hide-phablet';
   const DISP_BLOCK_MOBILE = 'block-mobile';
   const DISP_HIDE_MOBILE = 'hide-mobile';
 
