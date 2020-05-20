@@ -9,4 +9,10 @@ class Lightbox extends Modal
   {
     return 'lightbox';
   }
+
+  public function autoLaunch()
+  {
+    $this->addModifier('auto-launch');
+    return $this;
+  }
 }
