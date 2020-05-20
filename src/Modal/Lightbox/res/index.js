@@ -15,9 +15,7 @@ on(
 );
 
 onReady(() => {
-  let lbs = document.body.getElementsByClassName('lightbox--auto-launch');
-  [...lbs].forEach(lb => {
-    let m = new Modal(lb);
-    m.show();
+  [...document.body.getElementsByClassName('lightbox--auto-launch')].forEach(lb => {
+    (new Modal(lb)).show();
   })
 });
