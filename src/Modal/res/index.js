@@ -4,6 +4,15 @@ import {on} from '../../Foundation/res';
 
 export default class Modal
 {
+  static create(element)
+  {
+    if(!element['_fusion_modal'])
+    {
+      element['_fusion_modal'] = new this.prototype.constructor(...arguments);
+    }
+    return element['_fusion_modal'];
+  }
+
   constructor(element)
   {
     element._modal = this;
@@ -105,7 +114,7 @@ on(
         console.error('No modal could be found with the id ' + e.delegateTarget.getAttribute('modal-launcher'));
         return;
       }
-      launcher._modal = new Modal(modalEle);
+      launcher._modal = Modal.create(modalEle);
     }
     launcher._modal.show();
   },
