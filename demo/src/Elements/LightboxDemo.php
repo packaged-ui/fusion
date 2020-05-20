@@ -41,6 +41,15 @@ class LightboxDemo extends AbstractDemoPage
       $lightbox->applyLauncher(Link::create("#", Span::create("clicking here")))
     );
 
+
+    $lightbox = Lightbox::create(
+      Div::create(
+        Paragraph::create("This will auto launch"),
+      )->addClass(Fusion::TEXT_CENTER, Fusion::PADDING_EXTRA_LARGE)
+    )->autoLaunch();
+
+    $return[] = $lightbox;
+
     return $return;
   }
 }
