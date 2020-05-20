@@ -15,7 +15,5 @@ on(
 );
 
 onReady(() => {
-  [...document.querySelectorAll('.lightbox--auto-launch')].forEach(lb => {
-    (new Modal(lb)).show();
-  })
+  document.querySelectorAll('.lightbox--auto-launch').forEach(lb => (new Modal(lb)).show())
 });
