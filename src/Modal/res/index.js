@@ -49,6 +49,7 @@ export default class Modal
   {
     this.content.appendChild(newChild);
     this._postUpdateContent();
+    return this;
   }
 
   clear()
@@ -58,6 +59,7 @@ export default class Modal
       this.content.removeChild(this.content.firstChild);
     }
     this._postUpdateContent();
+    return this;
   }
 
   hide()
@@ -67,6 +69,7 @@ export default class Modal
       document.body.removeChild(this.modal);
       this._postUpdateContent();
     }
+    return this;
   }
 
   show()
@@ -81,6 +84,7 @@ export default class Modal
       window.addEventListener('resize', _getDebounceFn(this));
       window.addEventListener('orientationchange', _getDebounceFn(this));
     }
+    return this;
   }
 
   _postUpdateContent()
@@ -92,6 +96,7 @@ export default class Modal
   {
     let maxHeight = Math.max(this.modal.clientHeight, window.innerHeight);
     this.wrapper.style.top = Math.max(0, (maxHeight / 3) - (this.wrapper.clientHeight / 2)) + 'px';
+    return this;
   }
 }
 
