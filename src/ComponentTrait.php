@@ -7,16 +7,6 @@ use PackagedUi\BemComponent\BemComponent;
 
 trait ComponentTrait
 {
-  public function __construct()
-  {
-    if(method_exists(get_parent_class($this), '__construct'))
-    {
-      parent::__construct(...func_get_args());
-    }
-    $this->_constructComponent();
-    $this->_construct(...func_get_args());
-  }
-
   public static function bem(): Bem
   {
     return Bem::block((new static())->getBlockName());

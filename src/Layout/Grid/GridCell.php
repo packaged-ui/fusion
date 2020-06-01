@@ -12,6 +12,13 @@ class GridCell extends Div implements Component
   use BemComponentTrait;
   use ComponentTrait;
 
+  public function __construct(...$content)
+  {
+    parent::__construct(...$content);
+    $this->_constructComponent();
+    $this->_construct(...$content);
+  }
+
   public function getBlockName(): string
   {
     return 'grid__cell';

@@ -21,6 +21,8 @@ class Ribbon extends HtmlElement implements Component
 
   public function __construct($content)
   {
+    $this->_constructComponent();
+    $this->_construct();
     $this->setContent($content);
     $this->addClass($this->getBlockName());
     $this->right();

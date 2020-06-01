@@ -18,6 +18,13 @@ class Tile extends HtmlTag implements Component
   use BemComponentTrait;
   use ComponentTrait;
 
+  public function __construct()
+  {
+    parent::__construct();
+    $this->_constructComponent();
+    $this->_construct();
+  }
+
   public function getBlockName(): string
   {
     return 'tile';

@@ -30,6 +30,7 @@ class ListItem extends HtmlTag implements Component
   {
     parent::__construct();
     $this->_constructComponent();
+    $this->_construct($primary);
     $this->setPrimary($primary);
   }
 

@@ -15,6 +15,13 @@ class ToggleInput extends Div implements Component
   use BemComponentTrait;
   use ComponentTrait;
 
+  public function __construct(...$content)
+  {
+    parent::__construct(...$content);
+    $this->_constructComponent();
+    $this->_construct(...$content);
+  }
+
   protected $_checkedContent;
   protected $_name;
   protected $_value;

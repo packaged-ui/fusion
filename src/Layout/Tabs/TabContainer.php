@@ -31,6 +31,7 @@ class TabContainer extends HtmlTag implements Component
   {
     parent::__construct();
     $this->_constructComponent();
+    $this->_construct();
     $this->setId('f-tc-' . $containerID);
   }
 

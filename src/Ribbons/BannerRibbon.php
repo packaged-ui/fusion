@@ -18,6 +18,12 @@ class BannerRibbon extends HtmlElement implements Component
 
   protected $_tag = 'div';
 
+  public function __construct($content)
+  {
+    $this->_constructComponent();
+    $this->_construct($content);
+  }
+
   protected function _construct($content)
   {
     $this->setContent($content);

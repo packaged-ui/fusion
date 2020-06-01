@@ -22,6 +22,13 @@ class Banner extends Div implements Component
   protected $_icon;
   protected $_buttons = [];
 
+  public function __construct(...$content)
+  {
+    parent::__construct(...$content);
+    $this->_constructComponent();
+    $this->_construct(...$content);
+  }
+
   public function getBlockName(): string
   {
     return 'banner';

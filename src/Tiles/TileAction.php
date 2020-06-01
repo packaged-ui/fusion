@@ -11,8 +11,14 @@ use PackagedUi\Fusion\ComponentTrait;
 
 class TileAction extends Element implements Component
 {
-  use ComponentTrait;
   use BemComponentTrait;
+  use ComponentTrait;
+
+  public function __construct()
+  {
+    $this->_constructComponent();
+    $this->_construct();
+  }
 
   public function getBlockName(): string
   {

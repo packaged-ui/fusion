@@ -9,8 +9,15 @@ use PackagedUi\Fusion\ComponentTrait;
 
 class ProgressBar extends HtmlTag implements Component
 {
-  use ComponentTrait;
   use BemComponentTrait;
+  use ComponentTrait;
+
+  public function __construct()
+  {
+    parent::__construct();
+    $this->_constructComponent();
+    $this->_construct();
+  }
 
   public function getBlockName(): string
   {

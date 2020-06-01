@@ -16,6 +16,13 @@ abstract class Modal extends Div implements Component
     _constructComponent as _traitConstruct;
   }
 
+  public function __construct(...$content)
+  {
+    parent::__construct(...$content);
+    $this->_constructComponent();
+    $this->_construct(...$content);
+  }
+
   protected function _constructComponent()
   {
     if(empty($this->getId()))
