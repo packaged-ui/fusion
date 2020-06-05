@@ -44,7 +44,8 @@ class Layout extends Element implements ContextAware
         Div::create($this->_content)->addClass(LayoutInterface::PADDING_MEDIUM)
       )
       ->openByDefault()
-      ->setState(Drawer::STATE_NARROW)
+      ->setMinState(Drawer::STATE_NARROW)
+      ->setState(Drawer::STATE_PERMANENT)
       ->setReveal(Drawer::REVEAL_PEEK);
   }
 

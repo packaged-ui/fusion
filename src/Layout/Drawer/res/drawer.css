@@ -164,3 +164,19 @@ body:not(.touch-enabled) .drawer[reveal="peek"]:hover::before {
     margin-right: var(--drawer-open-width);
   }
 }
+
+.drawer[min-state="narrow"] {
+  --drawer-width: var(--drawer-narrow-width);
+}
+
+.drawer-container:not(.drawer--open) > .drawer[min-state="narrow"] {
+  border-right-width: 1px;
+}
+
+.drawer[min-state="narrow"][position="left"] + .drawer-app-content {
+  margin-left: var(--drawer-narrow-width);
+}
+
+.drawer[min-state="narrow"][position="right"] + .drawer-app-content {
+  margin-right: var(--drawer-narrow-width);
+}
