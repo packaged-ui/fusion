@@ -79,6 +79,7 @@ body:not(.touch-enabled) .drawer[reveal="peek"]:hover::before {
 .drawer-app-content {
   top: var(--drawer-top-offset);
   transition: margin-left var(--drawer-transition-style), margin-right var(--drawer-transition-style);
+  box-sizing: border-box;
 }
 
 .drawer-container.drawer--open > .drawer {
