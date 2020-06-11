@@ -106,7 +106,22 @@ abbr[title], abbr[data-original-title] {
   text-decoration: none;
   cursor: help;
   display: inline-block;
-  border-bottom: 1px dashed rgba(var(--f-text-color), 0.8);
+  position: relative;
+}
+
+abbr[title]::after, abbr[data-original-title]::after {
+  content: ' ';
+  position: absolute;
+  bottom: 1px;
+  left: 0;
+  right: 0;
+  height: 1px;
+  border-bottom: 1px dashed rgba(var(--f-text-color), 0.4);
+  display: block;
+}
+
+abbr[title]:hover::after, abbr[data-original-title]:hover::after {
+  border-bottom-color: rgba(var(--f-text-color), 0.8);
 }
 
 .initialism {
