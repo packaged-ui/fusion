@@ -15,6 +15,14 @@ class TabContainer extends HtmlTag implements Component
   use BemComponentTrait;
   use ComponentTrait;
 
+  const PLACEMENT_TOP = 't';
+  const PLACEMENT_BOTTOM = 'b';
+  /**
+   * @var string
+   */
+  protected $_placement = self::PLACEMENT_TOP;
+  protected $_menuPrefix;
+
   public function getBlockName(): string
   {
     return 'tabs';
@@ -38,6 +46,18 @@ class TabContainer extends HtmlTag implements Component
   public static function create($containerID = 'dflt')
   {
     return new static($containerID);
+  }
+
+  public function menuTop()
+  {
+    $this->_placement = self::PLACEMENT_TOP;
+    return $this;
+  }
+
+  public function menuBottom()
+  {
+    $this->_placement = self::PLACEMENT_BOTTOM;
+    return $this;
   }
 
   public function addTab(string $id, Tab $tab, bool $active = false)
@@ -78,6 +98,12 @@ class TabContainer extends HtmlTag implements Component
     return $this;
   }
 
+  public function setMenuPrefix($content)
+  {
+    $this->_menuPrefix = $content;
+    return $this;
+  }
+
   protected function _getContentForRender()
   {
     $return = [];
@@ -97,8 +123,22 @@ class TabContainer extends HtmlTag implements Component
       $menuItem->toggleClass($tab->getModifier('active', 'label'), $isActive);
       $tabMenu[] = $menuItem;
     }
-    $return[] = Div::create($tabMenu)->addClass($this->getElementName('menu'));
-    $return[] = Div::create($this->_tabs)->addClass($this->getElementName('container'));
+    $menu = Div::create(
+      $this->_menuPrefix,
+      Div::create($tabMenu)->addClass($this->getElementName('menu-items'))
+    )->addClass($this->getElementName('menu'), $this->getModifier('placement-' . $this->_placement, 'menu'));
+    $container = Div::create($this->_tabs)->addClass($this->getElementName('container'));
+
+    if($this->_placement === self::PLACEMENT_BOTTOM)
+    {
+      $return[] = $container;
+      $return[] = $menu;
+    }
+    else
+    {
+      $return[] = $menu;
+      $return[] = $container;
+    }
 
     return $return;
   }
