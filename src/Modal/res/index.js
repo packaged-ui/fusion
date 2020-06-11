@@ -106,6 +106,8 @@ function _getDebounceFn(modal)
   return debounce(modal.updatePosition.bind(modal), 100, {'maxWait': 250});
 }
 
+const _modals = {};
+
 on(
   document, 'click', '[modal-launcher]',
   (e) =>
@@ -114,13 +116,23 @@ on(
     const launcher = e.delegateTarget;
     if(!launcher._modal)
     {
-      const modalEle = document.getElementById(launcher.getAttribute('modal-launcher'));
-      if(!modalEle)
+      const modalId = launcher.getAttribute('modal-launcher');
+      if(_modals.hasOwnProperty(modalId))
       {
-        console.error('No modal could be found with the id ' + e.delegateTarget.getAttribute('modal-launcher'));
-        return;
+        // lookup in launched modals
+        launcher._modal = _modals[modalId];
       }
-      launcher._modal = Modal.create(modalEle);
+      else
+      {
+        // lookup by element id
+        const modalEle = document.getElementById(modalId);
+        if(!modalEle)
+        {
+          console.error('No modal could be found with the id ' + e.delegateTarget.getAttribute('modal-launcher'));
+          return;
+        }
+        _modals[modalId] = launcher._modal = Modal.create(modalEle);
+      }
     }
     launcher._modal.show();
   },

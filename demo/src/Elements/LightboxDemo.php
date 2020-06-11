@@ -40,7 +40,10 @@ class LightboxDemo extends AbstractDemoPage
       "You can launch a lightbox by ",
       $lightbox->applyLauncher(Link::create("#", Span::create("clicking here")))
     );
-
+    $return[] = Paragraph::create(
+      "You can launch a lightbox by ",
+      $lightbox->applyLauncher(Link::create("#", Span::create("or here")))
+    );
 
     $lightbox = Lightbox::create(
       Div::create(
