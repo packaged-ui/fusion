@@ -103,10 +103,10 @@ em {
 }
 
 abbr[title], abbr[data-original-title] {
-  text-decoration: underline;
-  text-decoration: underline dotted;
+  text-decoration: none;
   cursor: help;
-  border-bottom: 0;
+  display: inline-block;
+  border-bottom: 1px dashed rgba(var(--f-text-color), 0.8);
 }
 
 .initialism {
