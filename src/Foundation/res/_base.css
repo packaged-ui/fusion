@@ -72,6 +72,7 @@ body {
   font-size: var(--f-font-size);
   font-weight: 400;
   line-height: 1.47;
+  font-display: swap;
 
   -moz-font-feature-settings: "liga" on;
   -webkit-font-smoothing: antialiased;
