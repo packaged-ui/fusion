@@ -115,7 +115,7 @@ body:not(.touch-enabled) .drawer[reveal="peek"]:hover::before {
 
 
 /** MOBILE */
-@media (max-width: 512px) {
+@media (max-width: 511px) {
   .drawer_action--hide-mobile {
     display: none !important;
   }
