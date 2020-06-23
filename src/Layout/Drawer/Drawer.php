@@ -205,7 +205,7 @@ class Drawer extends AbstractContainerTag implements Component
     $defaultOpen = "";
     if($this->_isDefaultOpen === true)
     {
-      $defaultOpen = "(localStorage.getItem('$drawerKey')===null&&document.body.clientWidth>=512&&$setOpen)||";
+      $defaultOpen = "(localStorage.getItem('$drawerKey')===null&&document.body.clientWidth>=768&&$setOpen)||";
     }
     return Div::create(
       new SafeHtml(
