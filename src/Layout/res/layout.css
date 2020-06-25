@@ -34,10 +34,16 @@
 
 .df {
   display: flex !important;
+  flex-grow: 0;
+  flex-shrink: 0;
 }
 
 .df--grow {
   flex-grow: 1;
+}
+
+.df--shrink {
+  flex-shrink: 1;
 }
 
 .df--wrap {
