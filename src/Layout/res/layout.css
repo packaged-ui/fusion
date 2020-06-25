@@ -52,6 +52,7 @@
 
 .dif--vc {
   display: inline-flex;
+  flex: 0 0;
   align-items: center;
 }
 

@@ -220,6 +220,7 @@ pre {
 
 figure {
   display: inline-flex;
+  flex: 0 0;
   flex-flow: column;
   margin: .5rem;
 }

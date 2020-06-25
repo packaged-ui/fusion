@@ -76,6 +76,7 @@
   flex-shrink: 0;
   box-sizing: content-box;
   display: inline-flex;
+  flex: 0 0;
   overflow: hidden;
   margin-right: 8px;
 }
