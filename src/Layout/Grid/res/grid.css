@@ -71,9 +71,19 @@
   overflow: hidden;
 }
 
+.grid__cell .grid__inner .grid__cell {
+  margin: 0;
+
+}
+
+.grid__cell .grid {
+  grid-gap: 0;
+}
+
 .grid__cell .grid__inner {
   padding: 0;
   --grid-cell-width: calc(var(--grid-cell-width) - var(--grid-cell-padding));
+  grid-template-columns: repeat(var(--grid-columns), minmax(var(--grid-cell-width), --grid-cell-width));
 }
 
 .grid__cell--align-top {

@@ -8,7 +8,6 @@ use PackagedUi\Fusion\Card\Card;
 use PackagedUi\Fusion\Fusion;
 use PackagedUi\Fusion\Layout\Flex;
 use PackagedUi\Fusion\Layout\FlexGrow;
-use PackagedUi\Fusion\Layout\Grid\GridCell;
 use PackagedUi\Fusion\Layout\Grid\GridLayout;
 use PackagedUi\FusionDemo\AbstractDemoPage;
 
@@ -30,11 +29,7 @@ class StatisticsDemo extends AbstractDemoPage
 
     $stats[] = Card::create("GRAPH")
       ->setHeader("Revenue")
-      ->setFooter(
-        GridLayout::createWithInner(
-          GridCell::collectionSized(["Target", "Current"], null, 4)
-        )
-      )
+      ->setFooter(GridLayout::createWithCells("Target", "Current"))
       ->disableContentContainer();
 
     $stats[] = Card::create("GRAPH")
@@ -46,6 +41,6 @@ class StatisticsDemo extends AbstractDemoPage
       )
       ->setFooter(Span::create(34)->addClass(Fusion::TEXT_LARGE));
 
-    return [GridLayout::createWithInner(GridCell::collectionSized($stats, 3, 3, 4, 12))];
+    return [GridLayout::createWithCells(...$stats)];
   }
 }
