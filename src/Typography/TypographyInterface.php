@@ -44,4 +44,5 @@ interface TypographyInterface
   const TEXT_MEDIUM_EMPHASIS = 'text-mem';
   const TEXT_DISABLED = 'text-disabled';
   const TEXT_OPAQUE = 'text-opaque';
+  const TEXT_NOWRAP = 'text-nowrap';
 }

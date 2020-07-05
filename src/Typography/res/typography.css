@@ -304,3 +304,7 @@ figcaption {
 .text-opaque {
   --text-opacity: 1;
 }
+
+.text-nowrap {
+  white-space: nowrap;
+}
