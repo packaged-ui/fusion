@@ -78,6 +78,7 @@
 
 .grid__cell .grid {
   grid-gap: 0;
+  min-width: min(100%, var(--grid-cell-width));
 }
 
 .grid__cell .grid__inner {
