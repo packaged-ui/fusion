@@ -18,19 +18,22 @@ class Fusion implements LayoutInterface, TypographyInterface, ButtonInterface, B
   const FILE_BASE_CSS = 'fusion.min.css';
   const FILE_BASE_JS = 'fusion.min.js';
 
+  const GOOGLE_FONT_STYLES = '300,300i,400,400i,500,500i,600,600i,700,700i,900';
+
   public static function includeGoogleFont(
-    $family = 'Roboto', $styles = '300,300i,400,400i,500,500i,600,600i,700,700i,900', $fontDisplay = 'swap',
-    $options = null,
+    $family = 'Roboto', $styles = self::GOOGLE_FONT_STYLES, $display = 'swap', $options = null,
     int $priority = ResourceStore::PRIORITY_LOW
   )
   {
-    return ResourceManager::external()->includeCss(
-      'https://fonts.googleapis.com/css?family=' . $family
-      . ($styles ? ':' . $styles : '')
-      . ($fontDisplay ? '&display=' . $fontDisplay : ''),
-      $options,
-      $priority
-    );
+    return ResourceManager::external()
+      ->includeCss(static::googleFontUrl($family, $styles, $display), $options, $priority);
+  }
+
+  public static function googleFontUrl($family = 'Roboto', $styles = self::GOOGLE_FONT_STYLES, $display = 'swap')
+  {
+    return 'https://fonts.googleapis.com/css'
+      . '?family=' . $family . ($styles ? ':' . $styles : '')
+      . ($display ? '&display=' . $display : '');
   }
 
   public static function require()
