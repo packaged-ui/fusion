@@ -10,7 +10,7 @@
     "sass": "^1.26.5"
   },
   "dependencies": {
-    "@packaged-ui/modal": "^0.0.9",
+    "@packaged-ui/modal": "^1.0.1",
     "lodash.debounce": "^4.0.8",
     "normalize.css": "^8.0",
     "rollup-plugin-svg": "^2.0.0"

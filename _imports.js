@@ -22,6 +22,6 @@ export * as Tiles from './src/Tiles/res';
 export * as Typography from './src/Typography/res';
 
 export * as Banners from './src/Banner/res';
-export * as Modal from './src/Modal/res';
+export * as Modal from '@packaged-ui/modal';
 export * as Lightbox from './src/Modal/Lightbox/res';
 export * as Dialog from './src/Modal/Dialog/res';
