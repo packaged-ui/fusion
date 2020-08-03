@@ -25,3 +25,4 @@ export * as Banners from './src/Banner/res';
 export * as Modal from '@packaged-ui/modal';
 export * as Lightbox from './src/Modal/Lightbox/res';
 export * as Dialog from './src/Modal/Dialog/res';
+export * as Reveal from './src/Layout/Reveal/res';

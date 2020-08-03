@@ -21,6 +21,7 @@ use PackagedUi\FusionDemo\Elements\LightboxDemo;
 use PackagedUi\FusionDemo\Elements\ListDemo;
 use PackagedUi\FusionDemo\Elements\MenuDemo;
 use PackagedUi\FusionDemo\Elements\ProgressDemo;
+use PackagedUi\FusionDemo\Elements\RevealDemo;
 use PackagedUi\FusionDemo\Elements\RibbonDemo;
 use PackagedUi\FusionDemo\Elements\StatisticsDemo;
 use PackagedUi\FusionDemo\Elements\TableDemo;
@@ -75,6 +76,7 @@ class ConfigHandler implements ContextAware
       'Table'      => new TableDemo(),
       'Tile'       => new TileDemo(),
       'Ribbon'     => new RibbonDemo(),
+      'Reveal'     => new RevealDemo(),
     ];
   }
 }
