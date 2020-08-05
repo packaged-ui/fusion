@@ -45,4 +45,7 @@ interface TypographyInterface
   const TEXT_DISABLED = 'text-disabled';
   const TEXT_OPAQUE = 'text-opaque';
   const TEXT_NOWRAP = 'text-nowrap';
+
+  const USER_SELECT_ALL = 'usel-all';
+  const USER_SELECT_NONE = 'usel-none';
 }
