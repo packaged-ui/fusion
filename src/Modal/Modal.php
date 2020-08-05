@@ -31,6 +31,7 @@ abstract class Modal extends Div implements Component
     }
     $this->_traitConstruct();
     $this->addClass('modal__content');
+    $this->setAttribute('modal-class', $this->getBlockName());
   }
 
   public function applyLauncher(HtmlElement $ele)

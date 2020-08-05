@@ -2,7 +2,7 @@
   --dialog-background: rgb(var(--f-content-background-color));
 }
 
-.dialog {
+.dialog .modal__content {
   background: var(--dialog-background);
   padding: 24px;
   margin: 10px;
@@ -19,7 +19,16 @@
 }
 
 @media (min-width: 768px) {
-  .dialog {
+  .dialog .modal__content {
     max-width: 560px;
+  }
+}
+
+@media only screen and (max-width: 511px) {
+  .dialog .modal__wrapper {
+    min-width: 100% !important;
+    width: 100% !important;
+    min-height: 100% !important;
+    height: 100% !important;
   }
 }

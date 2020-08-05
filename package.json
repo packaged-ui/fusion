@@ -1,6 +1,13 @@
 {
   "name": "packaged-ui",
   "version": "0.2.2",
+  "main": "/fusion.js",
+  "files": [
+    "/src/_resources",
+    "/fusion.js",
+    "/_imports.js",
+    "/src/**/res"
+  ],
   "devDependencies": {
     "rollup": "^1.31.0",
     "rollup-plugin-commonjs": "^10.1.0",
@@ -10,7 +17,7 @@
     "sass": "^1.26.5"
   },
   "dependencies": {
-    "@packaged-ui/modal": "^1.0.1",
+    "@packaged-ui/modal": "^1.1.0",
     "lodash.debounce": "^4.0.8",
     "normalize.css": "^8.0",
     "rollup-plugin-svg": "^2.0.0"
