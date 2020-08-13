@@ -105,7 +105,7 @@ em {
 abbr[title], abbr[data-original-title] {
   text-decoration: none;
   cursor: help;
-  display: inline-block;
+  display: inline;
   position: relative;
 }
 
