@@ -16,4 +16,10 @@ class Table extends \Packaged\Glimpse\Tags\Table\Table
     $this->addClass(Fusion::TABLE_BORDERED);
     return $this;
   }
+
+  public function fixed()
+  {
+    $this->addClass(Fusion::TABLE_FIXED);
+    return $this;
+  }
 }
