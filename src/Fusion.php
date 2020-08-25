@@ -18,6 +18,7 @@ class Fusion implements LayoutInterface, TypographyInterface, ButtonInterface, B
   const FILE_BASE_CSS = 'fusion.min.css';
   const FILE_BASE_JS = 'fusion.min.js';
 
+  const FILE_BASE_IE_CSS = 'fusion.ie.min.css';
   const FILE_BASE_IE_JS = 'fusion.ie.min.js';
 
   const GOOGLE_FONT_STYLES = '300,300i,400,400i,500,500i,600,600i,700,700i,900';
@@ -44,13 +45,22 @@ class Fusion implements LayoutInterface, TypographyInterface, ButtonInterface, B
     static::requireJs();
   }
 
+  protected static function _userAgent()
+  {
+    return $_SERVER['HTTP_USER_AGENT'] ?? 'Unknown';
+  }
+
   public static function requireCss()
   {
-    ResourceManager::componentClass(self::class)->requireCss(self::FILE_BASE_CSS);
+    $ua = static::_userAgent();
+    $ie = strpos($ua, 'Trident/') > -1 || strpos($ua, 'Edge/') > -1;
+    ResourceManager::componentClass(self::class)->requireCss($ie ? self::FILE_BASE_IE_CSS : self::FILE_BASE_CSS);
   }
 
   public static function requireJs()
   {
-    ResourceManager::componentClass(self::class)->requireJs(self::FILE_BASE_JS);
+    $ua = static::_userAgent();
+    $ie = strpos($ua, 'Trident/') > -1 || strpos($ua, 'Edge/') > -1;
+    ResourceManager::componentClass(self::class)->requireJs($ie ? self::FILE_BASE_IE_JS : self::FILE_BASE_JS);
   }
 }
