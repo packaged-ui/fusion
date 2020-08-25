@@ -49,8 +49,8 @@ input[type="button"], input[type="submit"], input[type="reset"], button, .btn {
   }
 
   &.btn--flat, &.btn--outline {
-    background-color: transparent!important;
-    border-color: transparent!important;
+    background-color: transparent !important;
+    border-color: transparent;
     color: #{'rgb(var(--button-color))'};
   }
 
@@ -68,7 +68,7 @@ input[type="button"], input[type="submit"], input[type="reset"], button, .btn {
   }
 
   &.btn--flat.btn--outline {
-    border-color: transparent;
+    border-color: transparent !important;
   }
 
   &.btn--flat:hover, &.btn--flat:active {
@@ -79,7 +79,7 @@ input[type="button"], input[type="submit"], input[type="reset"], button, .btn {
 
   &.btn--outline:hover, &.btn--outline:active {
     background-color: #{'rgb(var(--button-color)) !important'};
-    border-color: #{'rgb(var(--button-color))'}!important;
+    border-color: #{'rgb(var(--button-color))'} !important;
     color: #{'rgb(var(--button-text-color))'};
     box-shadow: 0 2px 4px -1px rgba(0, 0, 0, 0.15), 0 4px 5px 0 rgba(0, 0, 0, 0.1), 0 1px 10px 0 rgba(0, 0, 0, 0.06);
   }
