@@ -1,9 +1,10 @@
 .grid__inner {
   display: flex;
+  flex-wrap: wrap;
   padding: calc(var(--grid-gutter) / 2);
 }
 
 .grid__cell {
   flex-grow: 1;
-  margin: calc(var(--grid-gutter)/2);
+  margin: calc(var(--grid-gutter) / 2);
 }
