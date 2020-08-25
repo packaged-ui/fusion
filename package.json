@@ -9,17 +9,36 @@
     "/src/**/res"
   ],
   "devDependencies": {
+    "@babel/core": "^7.8.4",
+    "@babel/preset-env": "^7.8.4",
+    "@rollup/plugin-babel": "^5.2.0",
+    "@rollup/plugin-commonjs": "^11.1.0",
+    "@rollup/plugin-node-resolve": "^9.0.0",
+    "autoprefixer": "^9.8.6",
+    "core-js": "^3.6.4",
+    "postcss-flexbugs-fixes": "^4.2.1",
+    "postcss-preset-env": "^6.7.0",
     "rollup": "^1.31.0",
+    "rollup-plugin-babel": "^4.3.3",
     "rollup-plugin-commonjs": "^10.1.0",
     "rollup-plugin-node-resolve": "^5.2.0",
-    "rollup-plugin-postcss": "^2.0.6",
+    "rollup-plugin-postcss": "^2.9.0",
+    "rollup-plugin-scss": "^2.5.0",
     "rollup-plugin-terser": "^5.2.0",
     "sass": "^1.26.5"
   },
   "dependencies": {
+    "@mattkrick/event-target-polyfill": "^0.1.0",
     "@packaged-ui/modal": "^1.1.1",
+    "classlist.js": "https://github.com/eligrey/classList.js",
+    "custom-event-polyfill": "^1.0.7",
+    "domtokenlist-shim": "^1.2.0",
+    "element-closest": "^3.0.2",
+    "formdata-polyfill": "^3.0.20",
     "lodash.debounce": "^4.0.8",
+    "mutationobserver-shim": "^0.3.7",
     "normalize.css": "^8.0",
+    "raf": "^3.4.1",
     "rollup-plugin-svg": "^2.0.0"
   },
   "scripts": {

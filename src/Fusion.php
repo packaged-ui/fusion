@@ -18,6 +18,8 @@ class Fusion implements LayoutInterface, TypographyInterface, ButtonInterface, B
   const FILE_BASE_CSS = 'fusion.min.css';
   const FILE_BASE_JS = 'fusion.min.js';
 
+  const FILE_BASE_IE_JS = 'fusion.ie.min.js';
+
   const GOOGLE_FONT_STYLES = '300,300i,400,400i,500,500i,600,600i,700,700i,900';
 
   public static function includeGoogleFont(
