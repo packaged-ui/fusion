@@ -7,4 +7,5 @@
 .grid__cell {
   flex-grow: 1;
   margin: calc(var(--grid-gutter) / 2);
+  flex-basis: var(--grid-cell-width);
 }

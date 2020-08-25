@@ -48,7 +48,6 @@ const defaultCfg = {
           ],
         ],
       }),
-    svgloader(),
   ],
 };
 
@@ -91,6 +90,7 @@ const ieConfig = {
         ],
       }),
     terser(),
+    svgloader(),
   ],
 };
 
