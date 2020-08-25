@@ -62,6 +62,8 @@
   padding: var(--grid-gutter);
   width: 100%;
   display: grid;
+
+  grid-template-rows: auto;
   grid-template-columns: repeat(var(--grid-columns), minmax(var(--grid-cell-width), 1fr));
 }
 

@@ -67,7 +67,7 @@ const ieConfig = {
         minimize: true,
         plugins:  [
           flexbugs(),
-          postcssPresetEnv({browsers: ieBrowsers, autoprefixer: {grid: 'no-autoplace'}}), //todo: figure out why grid: 'no-autoplace' doesn't work
+          postcssPresetEnv({browsers: ieBrowsers, autoprefixer: {grid: 'autoplace'}}),
         ],
       }),
     //js
