@@ -59,13 +59,13 @@ class Fusion implements LayoutInterface, TypographyInterface, ButtonInterface, B
   {
     $ua = static::_userAgent();
     $ie = strpos($ua, 'Trident/') > -1 || strpos($ua, 'Edge/') > -1;
-    static::resourceManager()->requireCss($ie ? self::FILE_BASE_IE_CSS : self::FILE_BASE_CSS);
+    static::resourceManager()->requireCss($ie ? static::FILE_BASE_IE_CSS : static::FILE_BASE_CSS);
   }
 
   public static function requireJs()
   {
     $ua = static::_userAgent();
     $ie = strpos($ua, 'Trident/') > -1 || strpos($ua, 'Edge/') > -1;
-    static::resourceManager()->requireJs($ie ? self::FILE_BASE_IE_JS : self::FILE_BASE_JS);
+    static::resourceManager()->requireJs($ie ? static::FILE_BASE_IE_JS : static::FILE_BASE_JS);
   }
 }
