@@ -50,7 +50,7 @@ class Fusion implements LayoutInterface, TypographyInterface, ButtonInterface, B
     return $_SERVER['HTTP_USER_AGENT'] ?? 'Unknown';
   }
 
-  protected static function resourceManager(): ResourceManager
+  public static function resourceManager(): ResourceManager
   {
     return ResourceManager::componentClass(self::class);
   }
