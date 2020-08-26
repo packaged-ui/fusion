@@ -90,7 +90,7 @@ const ieConfig = {
         ],
       }),
     terser(),
-    svgloader(),
+    svgloader()
   ],
 };
 

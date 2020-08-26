@@ -1,9 +1,10 @@
-body {
+:root {
   --drawer-open-width: 256px;
   --drawer-narrow-width: 56px;
   --drawer-background-color: var(--f-content-background-color);
   --drawer-top-offset: 0;
   --drawer-handle-width: 20px;
+  --drawer-transition-style: none;
 }
 
 body.f-loaded {

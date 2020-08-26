@@ -1,0 +1,8 @@
+:root {
+  --f-color-primary-light: 179, 157, 219;
+  --f-color-primary-light-text: var(--rgb-text-dark);
+  --f-color-primary-dark: 49, 27, 146;
+  --f-color-primary-dark-text: var(--rgb-text-light);
+  --f-color-primary: 81, 45, 168;
+  --f-color-primary-text: var(--rgb-text-light);
+}

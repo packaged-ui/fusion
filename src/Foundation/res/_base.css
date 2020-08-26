@@ -4,14 +4,6 @@
   --f-font-size: .894rem;
   --text-opacity: 0.70;
 
-  --rgb-text-dark: 0, 0, 0;
-  --rgb-text-light: 255, 255, 255;
-
-  --rgb-black: 0, 0, 0;
-  --rgb-black-text: var(--rgb-text-light);
-  --rgb-white: 255, 255, 255;
-  --rgb-white-text: var(--rgb-text-dark);
-
   --f-spacing-extra-small: 2px;
   --f-spacing-small: 4px;
   --f-spacing-medium: 8px;
@@ -24,20 +16,6 @@
   --f-color-default-dark-text: var(--rgb-grey-900-text);
   --f-color-default: var(--rgb-grey-700);
   --f-color-default-text: var(--rgb-grey-700-text);
-
-  --f-color-primary-light: var(--rgb-deep-purple-200);
-  --f-color-primary-light-text: var(--rgb-deep-purple-200-text);
-  --f-color-primary-dark: var(--rgb-deep-purple-900);
-  --f-color-primary-dark-text: var(--rgb-deep-purple-900-text);
-  --f-color-primary: var(--rgb-deep-purple-700);
-  --f-color-primary-text: var(--rgb-deep-purple-700-text);
-
-  --f-color-accent-light: var(--rgb-deep-orange-200);
-  --f-color-accent-light-text: var(--rgb-deep-orange-200-text);
-  --f-color-accent-dark: var(--rgb-deep-orange-900);
-  --f-color-accent-dark-text: var(--rgb-deep-orange-900-text);
-  --f-color-accent: var(--rgb-deep-orange-700);
-  --f-color-accent-text: var(--rgb-deep-orange-700-text);
 
   --f-divider-color: var(--rgb-grey-200);
 
@@ -60,6 +38,7 @@
   --f-code-color: 232, 62, 140;
   --f-code-color-text: var(--rgb-text-light);
 }
+
 
 html, body {
   height: 100%;

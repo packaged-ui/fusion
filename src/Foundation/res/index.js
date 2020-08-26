@@ -1,10 +1,11 @@
 import 'normalize.css';
-import './_base.css';
 import './_colors.css';
+import './_primary.css';
+import './_accent.css';
+import './_base.css';
 import './_dark.css';
 
-export function on(delegate, eventName, selector, callback)
-{
+export function on(delegate, eventName, selector, callback) {
   if(callback === undefined)
   {
     callback = selector;
@@ -12,8 +13,7 @@ export function on(delegate, eventName, selector, callback)
   }
   delegate.addEventListener(
     eventName,
-    function (e)
-    {
+    function (e) {
       if(!selector)
       {
         return callback(e);
@@ -32,8 +32,7 @@ export function on(delegate, eventName, selector, callback)
   );
 }
 
-export function onReady(fn)
-{
+export function onReady(fn) {
   if(document.readyState === 'loading')
   {
     document.addEventListener('DOMContentLoaded', fn);
@@ -44,8 +43,7 @@ export function onReady(fn)
   }
 }
 
-export function closest(element, selector)
-{
+export function closest(element, selector) {
   do
   {
     if(element.matches(selector))
@@ -58,16 +56,14 @@ export function closest(element, selector)
 }
 
 onReady(
-  function ()
-  {
+  function () {
     setTimeout(function () {document.body.classList.add('f-loaded');}, 0);
   },
 );
 
 window.addEventListener(
   'touchstart',
-  function _fn()
-  {
+  function _fn() {
     document.body.classList.add('touch-enabled');
     window.removeEventListener('touchstart', _fn, false);
   },
