@@ -120,3 +120,18 @@
 .grid__inner--bordered .grid__cell {
   background: var(--grid-bordered-cell-color);
 }
+
+
+@media all and (-ms-high-contrast: none) {
+  .grid__inner {
+    display: flex;
+    flex-wrap: wrap;
+    padding: calc(var(--grid-gutter) / 2);
+  }
+
+  .grid__cell {
+    flex-grow: 1;
+    margin: calc(var(--grid-gutter) / 2);
+    flex-basis: var(--grid-cell-width);
+  }
+}
