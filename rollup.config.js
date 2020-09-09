@@ -6,7 +6,7 @@ import postcss from 'rollup-plugin-postcss';
 process.chdir(__dirname);
 
 const defaultCfg = {
-  input:   './fusion.js',
+  input:   './build.js',
   output:  {
     file:   './src/_resources/fusion.min.js',
     format: 'iife',
