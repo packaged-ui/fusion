@@ -1,0 +1,27 @@
+@import "colors";
+
+$primary: (
+  divider-color: $black,
+  text-color: $text-light,
+  foreground-color: $grey-100,
+  background-color: $grey-900,
+  content-background-color: $grey-800,
+  lightest-color: $grey-700,
+  lighter-color: $grey-600
+);
+
+@media (prefers-color-scheme: dark) {
+  :root {
+    @each $name, $value in $primary {
+      --f-#{$name}: #{$value};
+    }
+  }
+}
+
+body.dark {
+  :root {
+    @each $name, $value in $primary {
+      --f-#{$name}: #{$value};
+    }
+  }
+}

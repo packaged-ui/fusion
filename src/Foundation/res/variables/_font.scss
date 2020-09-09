@@ -1,0 +1,81 @@
+@import "colors";
+
+$font: "Roboto", -apple-system, BlinkMacSystemFont, "Segoe UI", "Oxygen", "Ubuntu", "Cantarell", "Fira Sans", "Droid Sans", "Helvetica Neue", sans-serif !default;
+$mono-font: "SFMono-Regular", Menlo, Monaco, Consolas, "Liberation Mono", "Courier New", monospace !default;
+$font-size: .894rem !default;
+$text-opacity: 0.70 !default;
+
+$spacing-extra-small: 2px !default;
+$spacing-small: 4px !default;
+$spacing-medium: 8px !default;
+$spacing-large: 16px !default;
+$spacing-extra-large: 24px !default;
+
+$color-default-light: $grey-500 !default;
+$color-default-light-text: $grey-500-text !default;
+$color-default-dark: $grey-900 !default;
+$color-default-dark-text: $grey-900-text !default;
+$color-default: $grey-700 !default;
+$color-default-text: $grey-700-text !default;
+
+$divider-color: $grey-200 !default;
+
+$text-color: $text-dark !default;
+$foreground-color: $grey-700 !default;
+$background-color: $grey-50 !default;
+$content-background-color: $white !default;
+
+$lightest-color: $grey-100 !default;
+$lighter-color: $grey-300 !default;
+
+$success-color: '2, 188, 119' !default;
+$success-color-text: $text-light !default;
+$danger-color: '176, 0, 32' !default;
+$danger-color-text: $text-light !default;
+$warning-color: '248, 140, 55' !default;
+$warning-color-text: $text-light !default;
+$info-color: '16, 182, 224' !default;
+$info-color-text: $text-light !default;
+$code-color: '232, 62, 140';
+$code-color-text: $text-light !default;
+
+$text: (
+  font: $font,
+  mono-font: $mono-font,
+  font-size: $font-size,
+  spacing-extra-small: $spacing-extra-small,
+  spacing-small: $spacing-small,
+  spacing-medium: $spacing-medium,
+  spacing-large: $spacing-large,
+  spacing-extra-large: $spacing-extra-large,
+  color-default-light: $color-default-light,
+  color-default-light-text: $color-default-light-text,
+  color-default-dark: $color-default-dark,
+  color-default-dark-text: $color-default-dark-text,
+  color-default: $color-default,
+  color-default-text: $color-default-text,
+  divider-color: $divider-color,
+  text-color: $text-color,
+  foreground-color: $foreground-color,
+  background-color: $background-color,
+  content-background-color: $content-background-color,
+  lightest-color: $lightest-color,
+  lighter-color: $lighter-color,
+  success-color: $success-color,
+  success-color-text: $success-color-text,
+  danger-color: $danger-color,
+  danger-color-text: $danger-color-text,
+  warning-color: $warning-color,
+  warning-color-text: $warning-color-text,
+  info-color: $info-color,
+  info-color-text: $info-color-text,
+  code-color: $code-color,
+  code-color-text: $code-color-text
+);
+
+:root {
+  @each $name, $value in $text {
+    --f-#{$name}: #{$value};
+  }
+  --text-opacity: $text-opacity;
+}

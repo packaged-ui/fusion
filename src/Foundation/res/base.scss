@@ -1,0 +1,50 @@
+@import '_helpers';
+
+@each $breakpoint, $value in $breakpoints {
+  @include breakpoint($breakpoint) {
+    .block-#{$breakpoint} {
+      display: block;
+    }
+
+    .hide-#{$breakpoint} {
+      display: none;
+    }
+  }
+}
+
+html, body {
+  height: 100%;
+  min-height: 100%;
+}
+
+body {
+  background: rgb(var(--f-background-color));
+  font-family: var(--f-font);
+  font-size: var(--f-font-size);
+  font-weight: 400;
+  line-height: 1.47;
+
+  -moz-font-feature-settings: "liga" on;
+  -moz-osx-font-smoothing: grayscale;
+  text-rendering: optimizeLegibility;
+}
+
+* {
+  color: RGBA(var(--f-text-color), var(--text-opacity));
+}
+
+a {
+  text-decoration: none;
+}
+
+a:hover, a:active {
+  text-decoration: underline;
+  --text-opacity: 1;
+}
+
+input, select, textarea {
+  border-radius: 5px;
+  border: 1px solid rgba(0, 0, 0, 0.2);
+  padding: 5px;
+  background: rgb(var(--f-background-color));
+}

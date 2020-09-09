@@ -1,0 +1,67 @@
+// Using !default if we import this file upstream we can overwrite these styles
+$black: 0, 0, 0 !default;
+$white: 255, 255, 255 !default;
+
+$text-dark: $black !default;
+$text-light: $white !default;
+$black-text: $text-light !default;
+$white-text: $text-dark !default;
+
+// Different Greys
+$grey-50: '250, 250, 250' !default;
+$grey-100: '245, 245, 245' !default;
+$grey-200: '238, 238, 238' !default;
+$grey-300: '224, 224, 224' !default;
+$grey-400: '189, 189, 189' !default;
+$grey-500: '158, 158, 158' !default;
+$grey-600: '117, 117, 117' !default;
+$grey-700: '97, 97, 97' !default;
+$grey-800: '66, 66, 66' !default;
+$grey-900: '33, 33, 33' !default;
+
+// Text on Greys
+$grey-50-text: $text-dark !default;
+$grey-100-text: $text-dark !default;
+$grey-200-text: $text-dark !default;
+$grey-300-text: $text-dark !default;
+$grey-400-text: $text-dark !default;
+$grey-500-text: $text-dark !default;
+$grey-600-text: $text-light !default;
+$grey-700-text: $text-light !default;
+$grey-800-text: $text-light !default;
+$grey-900-text: $text-light !default;
+
+$colors: (
+  text-dark: $text-dark,
+  text-light: $text-light,
+  black: $black,
+  black-text: $black-text,
+  white: $white,
+  white-text: $white-text,
+  grey-50: $grey-50,
+  grey-100: $grey-100,
+  grey-200: $grey-200,
+  grey-300: $grey-300,
+  grey-400: $grey-400,
+  grey-500: $grey-500,
+  grey-600: $grey-600,
+  grey-700: $grey-700,
+  grey-800: $grey-800,
+  grey-900: $grey-900,
+  grey-50-text: $grey-50-text,
+  grey-100-text: $grey-100-text,
+  grey-200-text: $grey-200-text,
+  grey-300-text: $grey-300-text,
+  grey-400-text: $grey-400-text,
+  grey-500-text: $grey-500-text,
+  grey-600-text: $grey-600-text,
+  grey-700-text: $grey-700-text,
+  grey-800-text: $grey-800-text,
+  grey-900-text: $grey-900-text,
+);
+
+:root {
+  @each $color, $rgb in $colors {
+    --rgb-#{$color}: #{$rgb};
+  }
+}

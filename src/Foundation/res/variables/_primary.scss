@@ -1,0 +1,23 @@
+@import "colors";
+
+$color-primary-light: '179, 157, 219' !default;
+$color-primary-light-text: $text-dark !default;
+$color-primary-dark: '49, 27, 146' !default;
+$color-primary-dark-text: $text-light !default;
+$color-primary: '81, 45, 168' !default;
+$color-primary-text: $text-light !default;
+
+$primary: (
+  color-primary-light: $color-primary-light,
+  color-primary-light-text: $color-primary-light-text,
+  color-primary-dark: $color-primary-dark,
+  color-primary-dark-text: $color-primary-dark-text,
+  color-primary: $color-primary,
+  color-primary-text: $color-primary-text,
+);
+
+:root {
+  @each $name, $value in $primary {
+    --f-#{$name}: #{$value};
+  }
+}
