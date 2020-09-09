@@ -1,4 +1,4 @@
-import {closest, on} from '../../../Foundation/res';
+import {on} from '../../../Foundation/res';
 import './drawer.css';
 
 on(
@@ -37,7 +37,7 @@ on(
       let style = window.getComputedStyle(e.target, '::before');
       if(style.getPropertyValue('opacity') === '1')
       {
-        let container = closest(e.target, '.drawer-container');
+        let container = e.target.closest('.drawer-container');
         let drawer = container.querySelector('.drawer');
         let storageKey = 'drawer--open-' + drawer.getAttribute('position');
 
@@ -49,7 +49,7 @@ on(
 );
 
 function getDrawerContainer(target) {
-  let container = closest(target, '.drawer-container');
+  let container = target.closest('.drawer-container');
   if(!container)
   {
     // button not inside a drawer, get first drawer
