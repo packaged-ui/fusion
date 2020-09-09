@@ -22,7 +22,7 @@ export function on(delegate, eventName, selector, callback)
           return callback(e);
         }
       }
-      while(t.parentElement && (t = t.parentElement));
+      while(t.parentElement && (t = t.parentElement) && delegate.contains(t));
     },
   );
 }
