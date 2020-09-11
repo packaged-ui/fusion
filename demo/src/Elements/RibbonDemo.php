@@ -44,6 +44,6 @@ class RibbonDemo extends AbstractDemoPage
     $return[] = BannerRibbon::create("This is a banner ribbon");
     $return[] = BannerRibbon::create("50% OFF")->vertical();
 
-    return $return;
+    return [Div::create($return)->addClass(Fusion::PADDING_LARGE, Color::GREEN()->background(true))];
   }
 }
