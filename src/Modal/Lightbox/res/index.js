@@ -21,7 +21,7 @@ on(
       const content = e.delegateTarget.querySelector('.modal__content.lightbox');
       if(content)
       {
-        Modal.create(content).hide();
+        Modal.hide(content);
       }
     }
   }
