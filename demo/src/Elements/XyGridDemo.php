@@ -4,7 +4,7 @@ namespace PackagedUi\FusionDemo\Elements;
 use Packaged\Dispatch\ResourceManager;
 use Packaged\SafeHtml\SafeHtml;
 use PackagedUi\FontAwesome\FaIcon;
-use PackagedUi\Fusion\Layout\XyGrid\Cell;
+use PackagedUi\Fusion\Layout\XyGrid\GridCell;
 use PackagedUi\Fusion\Layout\XyGrid\GridContainer;
 use PackagedUi\Fusion\Layout\XyGrid\GridX;
 use PackagedUi\FusionDemo\AbstractDemoPage;
@@ -46,19 +46,19 @@ class XyGridDemo extends AbstractDemoPage
 
     $return[] = GridContainer::create(
       GridX::create(
-        new SafeHtml(str_repeat(Cell::create('Amazing Cell')->medium(4), 6 ))
+        new SafeHtml(str_repeat(GridCell::create('Amazing Cell')->setSizes(6, 4), 2))
       )
     );
 
     $return[] = GridContainer::create(
       GridX::create(
-        new SafeHtml(str_repeat(Cell::create('Amazing Cell')->medium(6), 4))
+        new SafeHtml(str_repeat(GridCell::create('Amazing Cell')->setSizes(6, 4), 4))
       )->marginY()->marginX()
     );
 
     $return[] = GridContainer::create(
       GridX::create(
-        new SafeHtml(str_repeat(Cell::create('Amazing Cell')->small(1), 12))
+        new SafeHtml(str_repeat(GridCell::create('Amazing Cell')->setSizes(1, 1, 1), 12))
       )->marginY()->marginX()
     );
 
