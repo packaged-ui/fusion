@@ -8,7 +8,7 @@ use PackagedUi\BemComponent\BemComponentTrait;
 use PackagedUi\Fusion\Component;
 use PackagedUi\Fusion\ComponentTrait;
 
-class Container extends Div implements Component
+class GridContainer extends Div implements Component
 {
   use BemComponentTrait;
   use ComponentTrait;

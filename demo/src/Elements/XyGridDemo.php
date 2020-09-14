@@ -5,7 +5,7 @@ use Packaged\Dispatch\ResourceManager;
 use Packaged\SafeHtml\SafeHtml;
 use PackagedUi\FontAwesome\FaIcon;
 use PackagedUi\Fusion\Layout\XyGrid\Cell;
-use PackagedUi\Fusion\Layout\XyGrid\Container;
+use PackagedUi\Fusion\Layout\XyGrid\GridContainer;
 use PackagedUi\Fusion\Layout\XyGrid\GridX;
 use PackagedUi\FusionDemo\AbstractDemoPage;
 use function str_repeat;
@@ -44,19 +44,19 @@ class XyGridDemo extends AbstractDemoPage
   {
     $return = [];
 
-    $return[] = Container::create(
+    $return[] = GridContainer::create(
       GridX::create(
         new SafeHtml(str_repeat(Cell::create('Amazing Cell')->medium(4), 6 ))
       )
     );
 
-    $return[] = Container::create(
+    $return[] = GridContainer::create(
       GridX::create(
         new SafeHtml(str_repeat(Cell::create('Amazing Cell')->medium(6), 4))
       )->marginY()->marginX()
     );
 
-    $return[] = Container::create(
+    $return[] = GridContainer::create(
       GridX::create(
         new SafeHtml(str_repeat(Cell::create('Amazing Cell')->small(1), 12))
       )->marginY()->marginX()
