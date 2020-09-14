@@ -46,19 +46,19 @@ class XyGridDemo extends AbstractDemoPage
 
     $return[] = GridContainer::create(
       GridX::create(
-        new SafeHtml(str_repeat(GridCell::create('Amazing Cell')->setSizes(6, 4), 2))
+        new SafeHtml(str_repeat(GridCell::create('Amazing Cell')->setSizes(4, 4), 3))
       )
     );
 
     $return[] = GridContainer::create(
       GridX::create(
-        new SafeHtml(str_repeat(GridCell::create('Amazing Cell')->setSizes(6, 4), 4))
+        new SafeHtml(str_repeat(GridCell::create('Amazing Cell')->setSizes(3, 6), 4))
       )->marginY()->marginX()
     );
 
     $return[] = GridContainer::create(
       GridX::create(
-        new SafeHtml(str_repeat(GridCell::create('Amazing Cell')->setSizes(1, 1, 1), 12))
+        new SafeHtml(str_repeat(GridCell::create('Amazing Cell')->setSizes(1, 4, 6), 12))
       )->marginY()->marginX()
     );
 
