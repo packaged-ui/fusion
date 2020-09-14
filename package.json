@@ -1,5 +1,5 @@
 {
-  "name": "packaged-ui",
+  "name": "@packaged-ui/fusion",
   "version": "0.2.2",
   "main": "/fusion.js",
   "files": [
