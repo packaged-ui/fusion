@@ -11,6 +11,7 @@ export * as Layout from './src/Layout/res';
 export * as Drawer from './src/Layout/Drawer/res';
 export * as Tabs from './src/Layout/Tabs/res';
 export * as Grid from './src/Layout/Grid/res';
+export * as XyGrid from './src/Layout/XyGrid/res';
 
 export * as List from './src/Lists/res';
 export * as Menu from './src/Menu/res';
@@ -20,6 +21,7 @@ export * as Table from './src/Table/res';
 export * as Theme from './src/Theme/res';
 export * as Tiles from './src/Tiles/res';
 export * as Typography from './src/Typography/res';
+
 
 export * as Banners from './src/Banner/res';
 export * as Modal from '@packaged-ui/modal';

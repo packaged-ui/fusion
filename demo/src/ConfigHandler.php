@@ -29,6 +29,7 @@ use PackagedUi\FusionDemo\Elements\TabsDemo;
 use PackagedUi\FusionDemo\Elements\ThemeDemo;
 use PackagedUi\FusionDemo\Elements\TileDemo;
 use PackagedUi\FusionDemo\Elements\TypographyDemo;
+use PackagedUi\FusionDemo\Elements\XyGridDemo;
 use PackagedUi\FusionDemo\Layout\Layout;
 
 class ConfigHandler implements ContextAware
@@ -58,6 +59,7 @@ class ConfigHandler implements ContextAware
       'Typography' => new TypographyDemo(),
       'Color'      => new ColorDemo(),
       'Grid'       => new GridDemo(),
+      'XyGrid'       => new XyGridDemo(),
       'Theme'      => new ThemeDemo(),
       'Drawer'     => new DrawerDemo(),
       'Badge'      => new BadgeDemo(),
