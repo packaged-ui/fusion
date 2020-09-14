@@ -12,10 +12,10 @@ const defaultCfg = {
     format: 'iife',
   },
   plugins: [
+    postcss({extract: true, minimize: true}),
     resolve({browser: true, preferBuiltins: false}),
     commonjs(),
     terser(),
-    postcss({extract: true, minimize: true}),
   ],
 };
 

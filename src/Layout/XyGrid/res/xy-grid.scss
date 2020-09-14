@@ -4,7 +4,3 @@
 @include xy-padding-grid-classes();
 @include xy-margin-grid-classes($vertical: true, $wrapping-selector: '.grid-margin-y');
 @include xy-margin-grid-classes();
-
-@include foundation-visibility-classes();
-
-@include xy-offset-cell-classes();
