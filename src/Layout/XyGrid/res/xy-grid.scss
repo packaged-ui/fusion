@@ -1,6 +1,7 @@
 @import "~foundation-sites/scss/foundation";
 
+$grid-container: 1140px;
+
 @include xy-base-grid-classes();
-@include xy-padding-grid-classes();
 @include xy-margin-grid-classes($vertical: true, $wrapping-selector: '.grid-margin-y');
 @include xy-margin-grid-classes();

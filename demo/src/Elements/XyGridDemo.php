@@ -2,11 +2,13 @@
 namespace PackagedUi\FusionDemo\Elements;
 
 use Packaged\Dispatch\ResourceManager;
+use Packaged\SafeHtml\SafeHtml;
 use PackagedUi\FontAwesome\FaIcon;
 use PackagedUi\Fusion\Layout\XyGrid\Cell;
 use PackagedUi\Fusion\Layout\XyGrid\Container;
 use PackagedUi\Fusion\Layout\XyGrid\GridX;
 use PackagedUi\FusionDemo\AbstractDemoPage;
+use function str_repeat;
 
 class XyGridDemo extends AbstractDemoPage
 {
@@ -16,7 +18,7 @@ class XyGridDemo extends AbstractDemoPage
     ResourceManager::inline()->requireCss(
       "
     .grid-x {
-      background: rgba(0,0,0,.2);
+      background: rgba(0,0,0,.1);
     }
     
     .cell{
@@ -44,17 +46,19 @@ class XyGridDemo extends AbstractDemoPage
 
     $return[] = Container::create(
       GridX::create(
-        Cell::create('Amazing Cell')->medium(6),
-        Cell::create('Awesome Cell')->medium(6)
+        new SafeHtml(str_repeat(Cell::create('Amazing Cell')->medium(4), 6 ))
       )
     );
 
     $return[] = Container::create(
       GridX::create(
-        Cell::create('Amazing Cell')->medium(6),
-        Cell::create('Awesome Cell')->medium(6),
-        Cell::create('Amazing Cell')->medium(6),
-        Cell::create('Awesome Cell')->medium(6)
+        new SafeHtml(str_repeat(Cell::create('Amazing Cell')->medium(6), 4))
+      )->marginY()->marginX()
+    );
+
+    $return[] = Container::create(
+      GridX::create(
+        new SafeHtml(str_repeat(Cell::create('Amazing Cell')->small(1), 12))
       )->marginY()->marginX()
     );
 
