@@ -17,6 +17,7 @@ class GridCell extends Div implements Component
   const DEVICE_PHONE = 'small';
 
   protected $_sizes = [];
+  protected $_offsets = [];
 
   public function __construct(...$content)
   {
@@ -63,12 +64,50 @@ class GridCell extends Div implements Component
     return $this->setSize($size, self::DEVICE_PHONE);
   }
 
+  public function setOffsets(int $desktop, int $tablet = 0, int $phone = 0)
+  {
+    $this->setDesktopOffset($desktop);
+    $this->setTabletOffset($tablet);
+    $this->setPhoneOffset($phone);
+    return $this;
+  }
+
+  public function setDesktopOffset(int $offset = 0)
+  {
+    return $this->setOffset($offset, self::DEVICE_DESKTOP);
+  }
+
+  public function setOffset(int $offset, string $deviceType)
+  {
+    if($offset !== null && $offset >= 1 && $offset <= 12)
+    {
+      $this->_offsets[$deviceType ?? ''] = $offset;
+    }
+
+    return $this;
+  }
+
+  public function setTabletOffset(int $offset = 0)
+  {
+    return $this->setOffset($offset, self::DEVICE_DESKTOP);
+  }
+
+  public function setPhoneOffset(int $offset = 0)
+  {
+    return $this->setOffset($offset, self::DEVICE_DESKTOP);
+  }
+
   protected function _prepareForProduce(): HtmlElement
   {
     $ele = parent::_prepareForProduce();
-    foreach($this->_sizes as $device => $size)
+    foreach($this->_sizes as $device => $offset)
     {
-      $ele->addClass($device . '-' . $size);
+      $ele->addClass($device . '-' . $offset);
+    }
+
+    foreach($this->_offsets as $device => $offset)
+    {
+      $ele->addClass($device . '-offset-' . $offset);
     }
     return $ele;
   }

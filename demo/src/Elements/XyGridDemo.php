@@ -61,6 +61,11 @@ class XyGridDemo extends AbstractDemoPage
         new SafeHtml(str_repeat(GridCell::create('Amazing Cell')->setSizes(1, 4, 6), 12))
       )->marginY()->marginX()
     );
+    $return[] = GridContainer::create(
+      GridX::create(
+        GridCell::create('Amazing Cell')->setSizes(11, 11, 6)->setOffsets(1, 1)
+      )->marginY()->marginX()
+    );
 
     return $return;
   }
