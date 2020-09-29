@@ -1,0 +1,14 @@
+@import "~foundation-sites/scss/foundation";
+
+$container-size: 1140px !default;
+$grid-gutter: 16px !default;
+
+$grid-container: $container-size;
+$grid-padding-gutters: $grid-gutter;
+$grid-margin-gutters: $grid-gutter;
+
+@include xy-base-grid-classes();
+@include xy-margin-grid-classes($vertical: true, $wrapping-selector: '.grid-margin-y');
+@include xy-margin-grid-classes();
+@include xy-offset-cell-classes();
+
