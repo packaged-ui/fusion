@@ -48,28 +48,17 @@ class XyCell extends Div implements Component
   }
 
   /**
-   * @param int $desktop
-   * @param int $tablet
-   * @param int $phone
+   * @param XySize[] $sizes
    *
    * @return $this
    */
-  public function setSizes(int $desktop, int $tablet = 0, int $phone = 0): self
+  public function setSizes(XySize ...$sizes)
   {
-    $this->setDesktopSize($desktop);
-    $this->setTabletSize($tablet);
-    $this->setPhoneSize($phone);
+    foreach($sizes as $size)
+    {
+      $this->setSize($size->getSize(), $size->getValue());
+    }
     return $this;
-  }
-
-  /**
-   * @param int $size
-   *
-   * @return $this
-   */
-  public function setDesktopSize(int $size = 0): self
-  {
-    return $this->setSize($size, self::DEVICE_DESKTOP);
   }
 
   /**
@@ -78,59 +67,28 @@ class XyCell extends Div implements Component
    *
    * @return $this
    */
-  public function setSize(int $size, string $deviceType): self
+  public function setSize(int $size, string $deviceType)
   {
     if($size !== null && $size >= 1 && $size <= 12)
     {
-      $this->_sizes[$deviceType ?? ''] = $size;
+      $this->_sizes[$deviceType] = $size;
     }
 
     return $this;
   }
 
   /**
-   * @param int $size
+   * @param XySize[] $offsets
    *
    * @return $this
    */
-  public function setTabletSize(int $size = 0): self
+  public function setOffsets(XySize ...$offsets)
   {
-    return $this->setSize($size, self::DEVICE_TABLET);
-  }
-
-  /**
-   * @param int $size
-   *
-   * @return $this
-   */
-  public function setPhoneSize(int $size = 0): self
-  {
-    return $this->setSize($size, self::DEVICE_PHONE);
-  }
-
-  /**
-   * @param int $desktop
-   * @param int $tablet
-   * @param int $phone
-   *
-   * @return $this
-   */
-  public function setOffsets(int $desktop, int $tablet = 0, int $phone = 0): self
-  {
-    $this->setDesktopOffset($desktop);
-    $this->setTabletOffset($tablet);
-    $this->setPhoneOffset($phone);
+    foreach($offsets as $offset)
+    {
+      $this->setOffset($offset->getSize(), $offset->getValue());
+    }
     return $this;
-  }
-
-  /**
-   * @param int $offset
-   *
-   * @return $this
-   */
-  public function setDesktopOffset(int $offset = 0): self
-  {
-    return $this->setOffset($offset, self::DEVICE_DESKTOP);
   }
 
   /**
@@ -139,34 +97,14 @@ class XyCell extends Div implements Component
    *
    * @return $this
    */
-  public function setOffset(int $offset, string $deviceType): self
+  public function setOffset(int $offset, string $deviceType)
   {
     if($offset !== null && $offset >= 1 && $offset <= 12)
     {
-      $this->_offsets[$deviceType ?? ''] = $offset;
+      $this->_offsets[$deviceType] = $offset;
     }
 
     return $this;
-  }
-
-  /**
-   * @param int $offset
-   *
-   * @return $this
-   */
-  public function setTabletOffset(int $offset = 0): self
-  {
-    return $this->setOffset($offset, self::DEVICE_TABLET);
-  }
-
-  /**
-   * @param int $offset
-   *
-   * @return $this
-   */
-  public function setPhoneOffset(int $offset = 0): self
-  {
-    return $this->setOffset($offset, self::DEVICE_PHONE);
   }
 
   /**

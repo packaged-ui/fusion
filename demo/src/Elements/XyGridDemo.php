@@ -8,6 +8,7 @@ use PackagedUi\FontAwesome\FaIcon;
 use PackagedUi\Fusion\Layout\XyGrid\XyCell;
 use PackagedUi\Fusion\Layout\XyGrid\XyContainer;
 use PackagedUi\Fusion\Layout\XyGrid\XyGrid;
+use PackagedUi\Fusion\Layout\XyGrid\XySize;
 use PackagedUi\FusionDemo\AbstractDemoPage;
 
 /**
@@ -67,14 +68,17 @@ class XyGridDemo extends AbstractDemoPage
       XyGrid::create(
         XyCell::create(
           XyGrid::create(
-            XyCell::create('Content')->setSizes(6, 6),
-            XyCell::create('Content')->setSizes(6, 6)
+            XyCell::create('Content')->setSizes(XySize::DESKTOP(6), XySize::TABLET(6)),
+            XyCell::create('Content')->setSizes(XySize::DESKTOP(6), XySize::TABLET(6))
           )->marginY()->marginX(),
           XyGrid::create(
-            XyCell::create('Content')->setSizes(6, 8)->setOffsets(6, 4)
+            XyCell::create('Content')->setSizes(XySize::DESKTOP(6), XySize::TABLET(8))->setOffsets(
+              XySize::DESKTOP(6),
+              XySize::TABLET(4)
+            )
           )->marginY()->marginX()
-        )->setSizes(8),
-        XyCell::create('SideBar')->setSizes(4)
+        )->setSizes(XySize::DESKTOP(8)),
+        XyCell::create('SideBar')->setSizes(XySize::DESKTOP(4))
       )->marginX()->marginY()
     );
 

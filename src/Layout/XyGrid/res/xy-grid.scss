@@ -1,15 +1,16 @@
 @import "~foundation-sites/scss/foundation";
 @import "../../../Foundation/res/foundation";
 
-$container-size: 1140px !default;
-$grid-gutter: 16px !default;
+$container-size: 1140px !default; // The size of the container
+$grid-gutter: 16px !default; // The grid gutter, marginX() and marginY()
+$breakpoint-names: (mobile, phablet, tablet, desktop, hd) !default // This is all of the accepted breakpoints
+$breakpoint-zero: mobile !default; // Set the lowest breakpoint for the foundation grid, must be = 0px;
 
-$breakpoints: (
-  small: $mobile,
-  medium: $phablet,
-  large: $desktop,
-);
 
+
+// Foundation specific variables. We can't use default here as it would break
+$breakpoint-classes: $breakpoint-names;
+$-zf-zero-breakpoint: $breakpoint-zero;
 $grid-container: $container-size;
 $grid-padding-gutters: $grid-gutter;
 $grid-margin-gutters: $grid-gutter;

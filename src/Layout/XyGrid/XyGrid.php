@@ -38,7 +38,7 @@ class XyGrid extends Div implements Component
   /**
    * @return $this
    */
-  public function marginX(): self
+  public function marginX()
   {
     $this->addClass('grid-margin-x');
     return $this;
@@ -47,7 +47,7 @@ class XyGrid extends Div implements Component
   /**
    * @return $this
    */
-  public function marginY(): self
+  public function marginY()
   {
     $this->addClass('grid-margin-y');
     return $this;
