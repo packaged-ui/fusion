@@ -1,7 +1,14 @@
 @import "~foundation-sites/scss/foundation";
+@import "../../../Foundation/res/foundation";
 
 $container-size: 1140px !default;
 $grid-gutter: 16px !default;
+
+$breakpoints: (
+  small: $mobile,
+  medium: $phablet,
+  large: $desktop,
+);
 
 $grid-container: $container-size;
 $grid-padding-gutters: $grid-gutter;
