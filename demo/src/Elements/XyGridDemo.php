@@ -72,10 +72,7 @@ class XyGridDemo extends AbstractDemoPage
             XyCell::create('Content')->setSizes(XySize::DESKTOP(6), XySize::PHABLET(6))
           )->marginXY(),
           XyGrid::create(
-            XyCell::create('Content')->setSizes(XySize::DESKTOP(6), XySize::PHABLET(8))->setOffsets(
-              XySize::DESKTOP(6),
-              XySize::PHABLET(4)
-            )
+            XyCell::create('Content')->setSizes(XySize::DESKTOP(6, 6), XySize::PHABLET(8, 4))
           )->marginXY()
         )->setSizes(XySize::DESKTOP(8)),
         XyCell::create('SideBar')->setSizes(XySize::DESKTOP(4))
@@ -90,10 +87,7 @@ class XyGridDemo extends AbstractDemoPage
             XyCell::create('Content')->setSizes(XySize::DESKTOP(6), XySize::PHABLET(6))
           )->marginXY(),
           XyGrid::create(
-            XyCell::create('Content')->setSizes(XySize::DESKTOP(6), XySize::PHABLET(8))->setOffsets(
-              XySize::DESKTOP(6),
-              XySize::PHABLET(4)
-            )
+            XyCell::create('Content')->setSizes(XySize::DESKTOP(6, 6), XySize::PHABLET(8, 4))
           )->marginXY()
         )->setSizes(XySize::DESKTOP(8)),
         XyCell::create('SideBar')->setSizes(XySize::DESKTOP(4))

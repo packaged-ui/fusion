@@ -1,6 +1,7 @@
 <?php
 namespace PackagedUi\Fusion\Layout\XyGrid;
 
+use Exception;
 use Packaged\Glimpse\Tags\Div;
 use Packaged\Ui\Html\HtmlElement;
 use PackagedUi\BemComponent\BemComponentTrait;
@@ -44,34 +45,28 @@ class XyCell extends Div implements Component
    * @param XySize[] $sizes
    *
    * @return $this
+   * @throws Exception
    */
   public function setSizes(XySize ...$sizes)
   {
     foreach($sizes as $size)
     {
       $getSize = $size->getSize();
+      $offsetSize = $size->getOffset();
+
+      if(($getSize && $offsetSize) && $getSize + $offsetSize > 12)
+      {
+        throw new Exception('XYCell size and offset cannot be greater than 12');
+      }
+
       if($getSize !== null && $getSize >= 1 && $getSize <= 12)
       {
         $this->_sizes[$size->getValue()] = $getSize;
       }
-    }
-    return $this;
-  }
-
-  /**
-   * @param XySize[] $offsets
-   *
-   * @return $this
-   */
-  public function setOffsets(XySize ...$offsets)
-  {
-    foreach($offsets as $offset)
-    {
-      $offsetSize = $offset->getSize();
 
       if($offsetSize !== null && $offsetSize >= 1 && $offsetSize <= 12)
       {
-        $this->_offsets[$offset->getValue()] = $offsetSize;
+        $this->_offsets[$size->getValue()] = $offsetSize;
       }
     }
     return $this;
