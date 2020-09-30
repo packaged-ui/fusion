@@ -53,4 +53,15 @@ class XyGrid extends Div implements Component
     return $this;
   }
 
+  /**
+   * @return $this
+   */
+  public function marginXY()
+  {
+    $this->addClass('grid-margin-y');
+    $this->addClass('grid-margin-x');
+    return $this;
+  }
+
+
 }

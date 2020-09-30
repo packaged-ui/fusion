@@ -16,13 +16,6 @@ class XyCell extends Div implements Component
   use BemComponentTrait;
   use ComponentTrait;
 
-  /** @var string */
-  public const DEVICE_DESKTOP = 'large';
-  /** @var string */
-  public const DEVICE_TABLET = 'medium';
-  /** @var string */
-  public const DEVICE_PHONE = 'small';
-
   /** @var array */
   protected $_sizes = [];
   /** @var array */
@@ -56,24 +49,12 @@ class XyCell extends Div implements Component
   {
     foreach($sizes as $size)
     {
-      $this->setSize($size->getSize(), $size->getValue());
+      $getSize = $size->getSize();
+      if($getSize !== null && $getSize >= 1 && $getSize <= 12)
+      {
+        $this->_sizes[$size->getValue()] = $getSize;
+      }
     }
-    return $this;
-  }
-
-  /**
-   * @param int    $size
-   * @param string $deviceType
-   *
-   * @return $this
-   */
-  public function setSize(int $size, string $deviceType)
-  {
-    if($size !== null && $size >= 1 && $size <= 12)
-    {
-      $this->_sizes[$deviceType] = $size;
-    }
-
     return $this;
   }
 
@@ -86,24 +67,13 @@ class XyCell extends Div implements Component
   {
     foreach($offsets as $offset)
     {
-      $this->setOffset($offset->getSize(), $offset->getValue());
-    }
-    return $this;
-  }
+      $offsetSize = $offset->getSize();
 
-  /**
-   * @param int    $offset
-   * @param string $deviceType
-   *
-   * @return $this
-   */
-  public function setOffset(int $offset, string $deviceType)
-  {
-    if($offset !== null && $offset >= 1 && $offset <= 12)
-    {
-      $this->_offsets[$deviceType] = $offset;
+      if($offsetSize !== null && $offsetSize >= 1 && $offsetSize <= 12)
+      {
+        $this->_offsets[$offset->getValue()] = $offsetSize;
+      }
     }
-
     return $this;
   }
 

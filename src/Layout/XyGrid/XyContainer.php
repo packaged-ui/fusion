@@ -35,4 +35,13 @@ class XyContainer extends Div implements Component
     return 'grid-container';
   }
 
+  /**
+   * @return $this
+   */
+  public function fluid()
+  {
+    $this->addClass('fluid');
+    return $this;
+  }
+
 }

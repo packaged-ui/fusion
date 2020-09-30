@@ -68,18 +68,36 @@ class XyGridDemo extends AbstractDemoPage
       XyGrid::create(
         XyCell::create(
           XyGrid::create(
-            XyCell::create('Content')->setSizes(XySize::DESKTOP(6), XySize::TABLET(6)),
-            XyCell::create('Content')->setSizes(XySize::DESKTOP(6), XySize::TABLET(6))
-          )->marginY()->marginX(),
+            XyCell::create('Content')->setSizes(XySize::DESKTOP(6), XySize::PHABLET(6)),
+            XyCell::create('Content')->setSizes(XySize::DESKTOP(6), XySize::PHABLET(6))
+          )->marginXY(),
           XyGrid::create(
-            XyCell::create('Content')->setSizes(XySize::DESKTOP(6), XySize::TABLET(8))->setOffsets(
+            XyCell::create('Content')->setSizes(XySize::DESKTOP(6), XySize::PHABLET(8))->setOffsets(
               XySize::DESKTOP(6),
-              XySize::TABLET(4)
+              XySize::PHABLET(4)
             )
-          )->marginY()->marginX()
+          )->marginXY()
         )->setSizes(XySize::DESKTOP(8)),
         XyCell::create('SideBar')->setSizes(XySize::DESKTOP(4))
-      )->marginX()->marginY()
+      )->marginXY()
+    )->fluid();
+
+    $return[] = XyContainer::create(
+      XyGrid::create(
+        XyCell::create(
+          XyGrid::create(
+            XyCell::create('Content')->setSizes(XySize::DESKTOP(6), XySize::PHABLET(6)),
+            XyCell::create('Content')->setSizes(XySize::DESKTOP(6), XySize::PHABLET(6))
+          )->marginXY(),
+          XyGrid::create(
+            XyCell::create('Content')->setSizes(XySize::DESKTOP(6), XySize::PHABLET(8))->setOffsets(
+              XySize::DESKTOP(6),
+              XySize::PHABLET(4)
+            )
+          )->marginXY()
+        )->setSizes(XySize::DESKTOP(8)),
+        XyCell::create('SideBar')->setSizes(XySize::DESKTOP(4))
+      )->marginXY()
     );
 
     return $return;
