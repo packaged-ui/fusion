@@ -11,7 +11,7 @@ use PackagedUi\Fusion\ComponentTrait;
  * Class GridCell
  * @package PackagedUi\Fusion\Layout\XyGrid
  */
-class GridCell extends Div implements Component
+class XyCell extends Div implements Component
 {
   use BemComponentTrait;
   use ComponentTrait;

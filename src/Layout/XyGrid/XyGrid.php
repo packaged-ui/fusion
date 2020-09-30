@@ -8,16 +8,16 @@ use PackagedUi\Fusion\Component;
 use PackagedUi\Fusion\ComponentTrait;
 
 /**
- * Class GridContainer
+ * Class GridX
  * @package PackagedUi\Fusion\Layout\XyGrid
  */
-class GridContainer extends Div implements Component
+class XyGrid extends Div implements Component
 {
   use BemComponentTrait;
   use ComponentTrait;
 
   /**
-   * GridContainer constructor.
+   * GridX constructor.
    *
    * @param mixed ...$content
    */
@@ -32,7 +32,25 @@ class GridContainer extends Div implements Component
    */
   public function getBlockName(): string
   {
-    return 'grid-container';
+    return 'grid-x';
+  }
+
+  /**
+   * @return $this
+   */
+  public function marginX(): self
+  {
+    $this->addClass('grid-margin-x');
+    return $this;
+  }
+
+  /**
+   * @return $this
+   */
+  public function marginY(): self
+  {
+    $this->addClass('grid-margin-y');
+    return $this;
   }
 
 }

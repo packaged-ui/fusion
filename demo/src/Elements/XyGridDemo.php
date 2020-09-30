@@ -5,9 +5,9 @@ use Exception;
 use Packaged\Dispatch\ResourceManager;
 use Packaged\Glimpse\Tags\Text\HeadingThree;
 use PackagedUi\FontAwesome\FaIcon;
-use PackagedUi\Fusion\Layout\XyGrid\GridCell;
-use PackagedUi\Fusion\Layout\XyGrid\GridContainer;
-use PackagedUi\Fusion\Layout\XyGrid\GridX;
+use PackagedUi\Fusion\Layout\XyGrid\XyCell;
+use PackagedUi\Fusion\Layout\XyGrid\XyContainer;
+use PackagedUi\Fusion\Layout\XyGrid\XyGrid;
 use PackagedUi\FusionDemo\AbstractDemoPage;
 
 /**
@@ -63,18 +63,18 @@ class XyGridDemo extends AbstractDemoPage
 
     $return[] = HeadingThree::create('Example Layout using Grid X with MarginX and Y');
 
-    $return[] = GridContainer::create(
-      GridX::create(
-        GridCell::create(
-          GridX::create(
-            GridCell::create('Content')->setSizes(6, 6),
-            GridCell::create('Content')->setSizes(6, 6)
+    $return[] = XyContainer::create(
+      XyGrid::create(
+        XyCell::create(
+          XyGrid::create(
+            XyCell::create('Content')->setSizes(6, 6),
+            XyCell::create('Content')->setSizes(6, 6)
           )->marginY()->marginX(),
-          GridX::create(
-            GridCell::create('Content')->setSizes(6, 8)->setOffsets(6, 4)
+          XyGrid::create(
+            XyCell::create('Content')->setSizes(6, 8)->setOffsets(6, 4)
           )->marginY()->marginX()
         )->setSizes(8),
-        GridCell::create('SideBar')->setSizes(4)
+        XyCell::create('SideBar')->setSizes(4)
       )->marginX()->marginY()
     );
 
