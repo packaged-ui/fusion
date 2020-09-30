@@ -2,6 +2,7 @@
 
 namespace PackagedUi\Fusion\Layout\XyGrid;
 
+use Exception;
 use PackagedUi\Fusion\Foundation\Breakpoints;
 
 /**
@@ -27,10 +28,18 @@ class XySize extends Breakpoints
    * @param string $value
    * @param int    $size
    * @param int    $offset
+   *
+   * @throws Exception
    */
   public function __construct(string $value, int $size, int $offset = null)
   {
     parent::__construct($value);
+
+    if($size + $offset > 12)
+    {
+      throw new Exception('XYCell size and offset cannot be greater than 12');
+    }
+
     $this->_size = $size;
     $this->_offset = $offset;
   }

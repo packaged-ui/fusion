@@ -54,11 +54,6 @@ class XyCell extends Div implements Component
       $getSize = $size->getSize();
       $offsetSize = $size->getOffset();
 
-      if(($getSize && $offsetSize) && $getSize + $offsetSize > 12)
-      {
-        throw new Exception('XYCell size and offset cannot be greater than 12');
-      }
-
       if($getSize !== null && $getSize >= 1 && $getSize <= 12)
       {
         $this->_sizes[$size->getValue()] = $getSize;
