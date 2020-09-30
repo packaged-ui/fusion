@@ -1,5 +1,5 @@
 <?php
-namespace PackagedUi\Fusion\Layout;
+namespace PackagedUi\Fusion\Foundation;
 
 use Packaged\Enum\AbstractEnum;
 
