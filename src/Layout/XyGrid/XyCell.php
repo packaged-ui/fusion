@@ -85,4 +85,23 @@ class XyCell extends Div implements Component
     return $ele;
   }
 
+  /**
+   * @param array  $items
+   * @param XySize ...$sizes
+   *
+   * @return array
+   * @throws Exception
+   */
+  public static function sizedCollection(array $items = [], XySize ...$sizes)
+  {
+    $collection = self::collection(...$items);
+
+    /** @var XyCell $item */
+    foreach($collection as $item) {
+      $item->setSizes(... $sizes);
+    }
+
+    return $collection;
+  }
+
 }
