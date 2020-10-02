@@ -23,15 +23,14 @@
     "rollup-plugin-commonjs": "^10.1.0",
     "rollup-plugin-node-resolve": "^5.2.0",
     "rollup-plugin-postcss": "^2.9.0",
-    "rollup-plugin-scss": "^2.5.0",
-    "rollup-plugin-terser": "^5.2.0",
-    "sass": "^1.26.5"
+    "rollup-plugin-terser": "^5.2.0"
   },
   "dependencies": {
     "@packaged-ui/modal": "^1.1.1",
+    "foundation-sites": "^6.6.3",
     "lodash.debounce": "^4.0.8",
-    "normalize.css": "^8.0",
-    "foundation-sites": "^6.6.3"
+    "node-sass": "^4.14.1",
+    "normalize.css": "^8.0"
   },
   "scripts": {
     "build": "rollup -c rollup.config.js -w"
