@@ -2,13 +2,3 @@
 .reveal.reveal__content:not(.show) {
   display: none;
 }
-
-
-p[reveal-icon-open].hide,
-p[reveal-icon-close].hide {
-  display: none;
-}
-
-[reveal-launcher] {
-  cursor: pointer;
-}

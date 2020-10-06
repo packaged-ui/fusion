@@ -1,23 +1,22 @@
 import './reveal.css';
 import {on} from '../../../Foundation/res';
 
-on(document, 'click', '[reveal-launcher]', (e) =>
-{
+on(document, 'click', '[reveal-launcher]', (e) => {
   const targetId = e.delegateTarget.getAttribute('reveal-launcher');
   const reveal = document.querySelector(`#${targetId}`);
-  const revealIconOpen = document.querySelector('[reveal-icon-open]');
-  const revealIconClose = document.querySelector('[reveal-icon-close]');
+
+  const launchers = document.querySelectorAll('[reveal-launcher=' + targetId + ']');
 
   if(reveal)
   {
-    reveal.classList.toggle('show');
-    revealIconOpen.classList.toggle('hide');
-    revealIconClose.classList.toggle('hide')
+    const show = reveal.classList.toggle('show');
+    launchers.forEach(ele => ele.toggleAttribute('reveal-open', show));
   }
   else
   {
     console.warn('Cannot reveal. The target does not exist');
   }
+
   if(reveal.hasAttribute('reveal-destructive'))
   {
     document.querySelectorAll(`[reveal-launcher="${targetId}"]`)
