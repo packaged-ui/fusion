@@ -67,4 +67,11 @@ class Reveal extends Div implements Component
     $ele->setAttribute('reveal-closer', true);
     return $ele;
   }
+
+  public static function toggleIcon(HtmlElement $openIcon, HtmlElement $closeIcon)
+  {
+    $openIcon->addAttributes(['reveal-icon-open' => true]);
+    $closeIcon->addAttributes(['reveal-icon-close' => true])->addClass('hide');
+    return [$openIcon, $closeIcon];
+  }
 }

@@ -3,8 +3,10 @@
 namespace PackagedUi\FusionDemo\Elements;
 
 use Packaged\Glimpse\Tags\HorizontalRule;
+use Packaged\Glimpse\Tags\Text\Paragraph;
 use PackagedUi\FontAwesome\FaIcon;
 use PackagedUi\Fusion\Button\Button;
+use PackagedUi\Fusion\Layout\Flex;
 use PackagedUi\Fusion\Layout\Reveal\Reveal;
 use PackagedUi\FusionDemo\AbstractDemoPage;
 
@@ -25,7 +27,15 @@ class RevealDemo extends AbstractDemoPage
     $toggleReveal = Reveal::create('some content');
     $destructiveReveal = Reveal::create('some content')->destructive();
     return [
-      $toggleReveal->applyLauncher(Button::create('toggle it')),
+      $toggleReveal->applyLauncher(
+        Flex::create(
+          Button::create('toggle it'),
+          $toggleReveal::toggleIcon(
+            Paragraph::create('OPEN'),
+            Paragraph::create('CLOSE')
+          )
+        )
+      ),
       $toggleReveal,
       HorizontalRule::create(),
       $destructiveReveal->applyLauncher(Button::create('show it')),
