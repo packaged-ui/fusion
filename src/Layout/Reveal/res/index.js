@@ -23,5 +23,4 @@ on(document, 'click', '[reveal-launcher]', (e) => {
   {
     console.warn('Cannot reveal. The target does not exist');
   }
-
 });
