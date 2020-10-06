@@ -3,7 +3,7 @@ import {on} from '../../../Foundation/res';
 
 on(document, 'click', '[reveal-launcher]', (e) => {
   const targetId = e.delegateTarget.getAttribute('reveal-launcher');
-  const reveal = document.querySelector(`#${targetId}`);
+  const reveal = document.getElementById(targetId);
 
   if(reveal)
   {
