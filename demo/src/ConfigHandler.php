@@ -29,6 +29,7 @@ use PackagedUi\FusionDemo\Elements\TabsDemo;
 use PackagedUi\FusionDemo\Elements\ThemeDemo;
 use PackagedUi\FusionDemo\Elements\TileDemo;
 use PackagedUi\FusionDemo\Elements\TypographyDemo;
+use PackagedUi\FusionDemo\Elements\VerticalStepperDemo;
 use PackagedUi\FusionDemo\Elements\XyGridDemo;
 use PackagedUi\FusionDemo\Layout\Layout;
 
@@ -56,29 +57,30 @@ class ConfigHandler implements ContextAware
   public function getPages(): array
   {
     return [
-      'Typography' => new TypographyDemo(),
-      'Color'      => new ColorDemo(),
-      'Grid'       => new GridDemo(),
-      'XYGrid'     => new XyGridDemo(),
-      'Theme'      => new ThemeDemo(),
-      'Drawer'     => new DrawerDemo(),
-      'Badge'      => new BadgeDemo(),
-      'Banner'     => new BannerDemo(),
-      'Dialog'     => new DialogDemo(),
-      'Lightbox'   => new LightboxDemo(),
-      'Button'     => new ButtonDemo(),
-      'Card'       => new CardDemo(),
-      'Input'      => new InputDemo(),
-      'Layout'     => new LayoutDemo(),
-      'List'       => new ListDemo(),
-      'Menu'       => new MenuDemo(),
-      'Progress'   => new ProgressDemo(),
-      'Statistics' => new StatisticsDemo(),
-      'Tabs'       => new TabsDemo(),
-      'Table'      => new TableDemo(),
-      'Tile'       => new TileDemo(),
-      'Ribbon'     => new RibbonDemo(),
-      'Reveal'     => new RevealDemo(),
+      'Typography'       => new TypographyDemo(),
+      'Color'            => new ColorDemo(),
+      'Grid'             => new GridDemo(),
+      'XYGrid'           => new XyGridDemo(),
+      'Theme'            => new ThemeDemo(),
+      'Drawer'           => new DrawerDemo(),
+      'Vertical Stepper' => new VerticalStepperDemo(),
+      'Badge'            => new BadgeDemo(),
+      'Banner'           => new BannerDemo(),
+      'Dialog'           => new DialogDemo(),
+      'Lightbox'         => new LightboxDemo(),
+      'Button'           => new ButtonDemo(),
+      'Card'             => new CardDemo(),
+      'Input'            => new InputDemo(),
+      'Layout'           => new LayoutDemo(),
+      'List'             => new ListDemo(),
+      'Menu'             => new MenuDemo(),
+      'Progress'         => new ProgressDemo(),
+      'Statistics'       => new StatisticsDemo(),
+      'Tabs'             => new TabsDemo(),
+      'Table'            => new TableDemo(),
+      'Tile'             => new TileDemo(),
+      'Ribbon'           => new RibbonDemo(),
+      'Reveal'           => new RevealDemo(),
     ];
   }
 }
