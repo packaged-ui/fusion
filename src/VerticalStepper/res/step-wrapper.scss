@@ -1,0 +1,144 @@
+@import "../../Foundation/res/foundation";
+
+$this: '.step-wrapper';
+$step: '.step';
+
+@mixin left-border($first: false, $last: false) {
+
+  @if $first {
+    height: calc(100% - 35px);
+    top: 35px;
+  } @else if $last {
+    height: 50%;
+    top: 0;
+  } @else {
+    height: 100%;
+    top: 0;
+  }
+  content: '';
+  position: absolute;
+  width: 1px;
+  background-color: rgba(0, 0, 0, 0.2);
+  left: 25px;
+  z-index: 1;
+}
+
+#{$this} {
+  position: relative;
+  padding: 24px 0;
+
+  &--border {
+    #{$step} {
+      &__header {
+        border: 1px solid rgba(0, 0, 0, 0.3);
+        border-radius: 5px 5px 0 0;
+      }
+
+      &__content {
+        border: 1px solid rgba(0, 0, 0, 0.3);
+        border-radius: 0 0 5px 5px;
+        border-top: none;
+      }
+    }
+  }
+
+  &--icon-middle {
+    #{$step} {
+      &:first-of-type {
+        &::after {
+          height: 50% !important;
+          top: 50% !important;
+        }
+      }
+
+      &:last-of-type {
+        &::after {
+
+        }
+      }
+
+      &::before {
+        top: 45% !important;
+      }
+    }
+  }
+
+  #{$step} {
+    padding: 20px 20px 20px 60px;
+    position: relative;
+
+
+    &__header {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      padding: 10px 15px;
+      flex-wrap: wrap;
+
+      @include breakpoint(phablet down) {
+        flex-direction: column;
+        justify-content: space-between;
+        padding: 5px 10px;
+        > * {
+          margin: 5px 0;
+        }
+      }
+
+      * {
+        margin-bottom: 0;
+      }
+    }
+
+    &__content {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      padding: 10px 15px;
+      flex-wrap: wrap;
+
+      @include breakpoint(phablet down) {
+        flex-direction: column;
+        justify-content: space-between;
+        padding: 15px 10px 30px;
+        > * {
+          margin: 10px 0;
+        }
+      }
+
+      * {
+        margin-bottom: 0;
+      }
+    }
+
+    &:first-of-type {
+      &:after {
+        @include left-border(true)
+      }
+    }
+
+    &:last-of-type {
+      &:after {
+        @include left-border(false, true)
+      }
+    }
+
+    &:before {
+      content: '';
+      position: absolute;
+      height: 20px;
+      width: 20px;
+      background-color: rgba(198, 198, 198, 1);
+      border-radius: 15px;
+      left: 25px;
+      top: 35px;
+      transform: translateX(-45%);
+      z-index: 2;
+    }
+
+    &:after {
+      @include left-border();
+    }
+
+  }
+
+}
