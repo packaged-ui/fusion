@@ -21,7 +21,7 @@ class Fusion implements LayoutInterface, TypographyInterface, ButtonInterface, B
   const FILE_BASE_IE_CSS = 'fusion.ie.min.css';
   const FILE_BASE_IE_JS = 'fusion.ie.min.js';
 
-  const GOOGLE_FONT_STYLES = '300,300i,400,400i,500,500i,600,600i,700,700i,900';
+  const GOOGLE_FONT_STYLES = 'ital,wght@0,300;0,400;0,500;0,600;0,700;0,900;1,300;1,400;1,500;1,600;1,700';
 
   public static function includeGoogleFont(
     $family = 'Roboto', $styles = self::GOOGLE_FONT_STYLES, $display = 'swap', $options = null,
@@ -34,7 +34,7 @@ class Fusion implements LayoutInterface, TypographyInterface, ButtonInterface, B
 
   public static function googleFontUrl($family = 'Roboto', $styles = self::GOOGLE_FONT_STYLES, $display = 'swap')
   {
-    return 'https://fonts.googleapis.com/css'
+    return 'https://fonts.googleapis.com/css2'
       . '?family=' . $family . ($styles ? ':' . $styles : '')
       . ($display ? '&display=' . $display : '');
   }
