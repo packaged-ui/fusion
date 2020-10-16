@@ -28,6 +28,7 @@ use PackagedUi\FusionDemo\Elements\TableDemo;
 use PackagedUi\FusionDemo\Elements\TabsDemo;
 use PackagedUi\FusionDemo\Elements\ThemeDemo;
 use PackagedUi\FusionDemo\Elements\TileDemo;
+use PackagedUi\FusionDemo\Elements\TooltipDemo;
 use PackagedUi\FusionDemo\Elements\TypographyDemo;
 use PackagedUi\FusionDemo\Elements\VerticalStepperDemo;
 use PackagedUi\FusionDemo\Elements\XyGridDemo;
@@ -81,6 +82,7 @@ class ConfigHandler implements ContextAware
       'Tile'             => new TileDemo(),
       'Ribbon'           => new RibbonDemo(),
       'Reveal'           => new RevealDemo(),
+      'Tooltip'          => new TooltipDemo(),
     ];
   }
 }
