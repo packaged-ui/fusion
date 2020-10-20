@@ -8,6 +8,7 @@ $this: '.toast-notification';
   margin-bottom: 10px;
   width: 250px;
   border-radius: 5px 0 0 5px;
+  pointer-events: all;
 
   @for $i from 1 through 10 {
     &:nth-child(#{$i}) {

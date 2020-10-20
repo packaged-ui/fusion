@@ -10,6 +10,7 @@ $toast-message: '.toast-notification';
   right: 0;
   width: auto;
   z-index: 2561230;
+  pointer-events: none;
 
   @include breakpoint(tablet down) {
     display: none !important;
