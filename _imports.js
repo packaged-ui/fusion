@@ -8,6 +8,7 @@ export * as Card from './src/Card/res';
 export * as Color from './src/Color/res';
 export * as VerticalStepper from './src/VerticalStepper/res';
 export * as Tooltip from './src/Tooltip/res';
+export * as ToastNotification from './src/ToastNotification/res';
 
 export * as Layout from './src/Layout/res';
 export * as Drawer from './src/Layout/Drawer/res';

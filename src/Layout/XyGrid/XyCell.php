@@ -59,7 +59,7 @@ class XyCell extends Div implements Component
         $this->_sizes[$size->getValue()] = $getSize;
       }
 
-      if($offsetSize !== null && $offsetSize <= 12)
+      if($offsetSize !== null && $offsetSize >= 1 && $offsetSize <= 12)
       {
         $this->_offsets[$size->getValue()] = $offsetSize;
       }
