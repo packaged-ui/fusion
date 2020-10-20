@@ -20,6 +20,7 @@ use PackagedUi\FusionDemo\Elements\LayoutDemo;
 use PackagedUi\FusionDemo\Elements\LightboxDemo;
 use PackagedUi\FusionDemo\Elements\ListDemo;
 use PackagedUi\FusionDemo\Elements\MenuDemo;
+use PackagedUi\FusionDemo\Elements\NotificationDemo;
 use PackagedUi\FusionDemo\Elements\ProgressDemo;
 use PackagedUi\FusionDemo\Elements\RevealDemo;
 use PackagedUi\FusionDemo\Elements\RibbonDemo;
@@ -83,6 +84,7 @@ class ConfigHandler implements ContextAware
       'Ribbon'           => new RibbonDemo(),
       'Reveal'           => new RevealDemo(),
       'Tooltip'          => new TooltipDemo(),
+      'Notification'     => new NotificationDemo(),
     ];
   }
 }

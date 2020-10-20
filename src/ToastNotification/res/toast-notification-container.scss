@@ -1,0 +1,46 @@
+@import "../../Foundation/res/foundation";
+
+$this: '.toast-notification-container';
+$toast-message: '.toast-notification';
+
+
+#{$this} {
+  position: fixed;
+  top: 25%;
+  right: 0;
+  width: auto;
+  z-index: 2561230;
+  pointer-events: none;
+
+  @include breakpoint(tablet down) {
+    display: none !important;
+  }
+
+  #{$toast-message} {
+    transform: translateX(100%);
+    transition: .5s ease;
+    position: relative;
+  }
+
+  &--bottom-left {
+    bottom: 20px;
+    top: unset;
+    left: calc(var(--drawer-width) + 20px);
+    right: unset;
+
+    #{$toast-message} {
+      transform: translateY(400%);
+    }
+  }
+
+  &--bottom-right {
+    bottom: 20px;
+    top: unset;
+    right: 20px;
+    left: unset;
+
+    #{$toast-message} {
+      transform: translateY(400%);
+    }
+  }
+}
