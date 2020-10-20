@@ -7,9 +7,6 @@ let container = document.querySelectorAll('.toast-notification-container');
 if(container)
 {
   container.forEach((e) => {
-    let delay = parseInt(e.getAttribute('data-toast-notification-delay'));
-
-    setTimeout(() => openToastNotificationContainer(e), delay);
 
     // Manage each individual toast
     let toasts = e.getElementsByClassName('toast-notification');
@@ -17,6 +14,9 @@ if(container)
     for(let i = 0; i < toasts.length; i++)
     {
       let timeToShow = parseInt(toasts[i].getAttribute('data-toast-notification-time-to-show'));
+      let delay = parseInt(toasts[i].getAttribute('data-toast-notification-delay'));
+
+      setTimeout(() => openToastNotificationContainer(toasts[i]), delay);
 
       if(timeToShow !== 0)
       {
@@ -39,7 +39,7 @@ if(container)
   });
 
   function openToastNotificationContainer(element) {
-    element.classList.add('toast-notification-container--open');
+    element.classList.add('toast-notification--show');
   }
 
   function closeToastNotification(element) {

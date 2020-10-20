@@ -21,18 +21,6 @@ $toast-message: '.toast-notification';
     position: relative;
   }
 
-  &--open {
-    #{$toast-message} {
-      transform: none !important;
-
-      @for $i from 1 through 10 {
-        &:nth-child(#{$i}) {
-          transition-delay: #{$i}s;
-        }
-      }
-    }
-  }
-
   &--bottom-left {
     bottom: 20px;
     top: unset;

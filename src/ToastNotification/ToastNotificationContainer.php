@@ -16,9 +16,6 @@ class ToastNotificationContainer extends Div implements Component
   /** @var ToastNotification[] */
   protected $_toastNotifications = [];
 
-  /** @var int */
-  protected $_delay = 5000;
-
   /** @var ToastNotificationPosition */
   protected $_position;
 
@@ -42,17 +39,6 @@ class ToastNotificationContainer extends Div implements Component
   }
 
   /**
-   * @param int $delay
-   *
-   * @return ToastNotificationContainer
-   */
-  public function setDelay(int $delay): ToastNotificationContainer
-  {
-    $this->_delay = $delay;
-    return $this;
-  }
-
-  /**
    * @param ToastNotificationPosition $position
    *
    * @return ToastNotificationContainer
@@ -63,18 +49,6 @@ class ToastNotificationContainer extends Div implements Component
     return $this;
   }
 
-  /**
-   * @return ToastNotificationContainer
-   */
-  public function removable(): ToastNotificationContainer
-  {
-    foreach($this->_toastNotifications as $toastNotification)
-    {
-      $toastNotification->removable();
-    }
-    return $this;
-  }
-
   protected function _prepareForProduce(): HtmlElement
   {
     $this->addClass($this->getElementName());
@@ -82,7 +56,6 @@ class ToastNotificationContainer extends Div implements Component
     {
       $this->addModifier($this->_position);
     }
-    $this->setAttribute('data-toast-notification-delay', $this->_delay);
     return parent::_prepareForProduce();
   }
 

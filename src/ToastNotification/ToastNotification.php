@@ -26,7 +26,11 @@ class ToastNotification extends Div implements Component
 
   protected $_title;
 
-  protected $_timeToShow = 0;
+  /** @var int */
+  protected $_displayDuration = 0;
+
+  /** @var int */
+  protected $_delay = 0;
 
   /**
    * @inheritDoc
@@ -48,13 +52,24 @@ class ToastNotification extends Div implements Component
   }
 
   /**
-   * @param mixed $_description
+   * @param mixed $description
    *
    * @return ToastNotification
    */
-  public function setDescription($_description)
+  public function setDescription($description)
   {
-    $this->_description = $_description;
+    $this->_description = $description;
+    return $this;
+  }
+
+  /**
+   * @param int $delay
+   *
+   * @return ToastNotification
+   */
+  public function setDelay(int $delay): ToastNotification
+  {
+    $this->_delay = $delay;
     return $this;
   }
 
@@ -70,20 +85,21 @@ class ToastNotification extends Div implements Component
   }
 
   /**
-   * @param int $timeToShow
+   * @param int $displayDuration
    *
    * @return ToastNotification
    */
-  public function setTimeToShow(int $timeToShow): ToastNotification
+  public function setDisplayDuration(int $displayDuration): ToastNotification
   {
-    $this->_timeToShow = $timeToShow;
+    $this->_displayDuration = $displayDuration;
     return $this;
   }
 
   protected function _prepareForProduce(): HtmlElement
   {
     $this->addClass($this->getElementName());
-    $this->setAttribute('data-toast-notification-time-to-show', $this->_timeToShow);
+    $this->setAttribute('data-toast-notification-time-to-show', $this->_displayDuration);
+    $this->setAttribute('data-toast-notification-delay', $this->_delay);
     return parent::_prepareForProduce();
   }
 
@@ -114,15 +130,18 @@ class ToastNotification extends Div implements Component
 
   public function setColor(Color $color = null)
   {
-    if($color === null && $this->_color instanceof Color)
+    if($this->_color instanceof Color)
     {
       $this->removeClass($this->getModifier('with-color'), $this->_color->background(), $this->_color->border());
     }
-    else
+
+    if($color)
     {
       $this->addClass($this->getModifier('with-color'), $color->background(), $color->border());
     }
+
     $this->_color = $color;
+
     return $this;
   }
 

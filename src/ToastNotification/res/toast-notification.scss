@@ -9,6 +9,12 @@ $this: '.toast-notification';
   width: 250px;
   border-radius: 5px 0 0 5px;
 
+  @for $i from 1 through 10 {
+    &:nth-child(#{$i}) {
+      transition-delay: #{$i}s;
+    }
+  }
+
   &:last-of-type {
     margin-bottom: 0;
   }
@@ -53,6 +59,10 @@ $this: '.toast-notification';
 
   &--hide {
     display: none !important;
+  }
+
+  &--show {
+    transform: none !important;
   }
 
   .cell {

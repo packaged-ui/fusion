@@ -30,7 +30,7 @@ class NotificationDemo extends AbstractDemoPage
           ->setTitle('Random Thing')
           ->setDescription(
             'A good sermon should be like a woman’s skirt: short enough to rouse the interest, but long enough to cover the essentials.'
-          )->setTimeToShow(3000)->setColor(Color::YELLOW())
+          )->setDisplayDuration(3000)->setColor(Color::YELLOW())
       )->addToastNotification(
         ToastNotification::create()
           ->setColor(Color::GREEN())
@@ -46,7 +46,9 @@ class NotificationDemo extends AbstractDemoPage
           ->setTitle('Random Thing')
           ->setDescription(
             'A good sermon should be like a woman’s skirt: short enough to rouse the interest, but long enough to cover the essentials.'
-          )->setColor(Color::BLUE())
+          )
+          ->setColor(Color::BLUE())
+          ->setDelay(4000)
       )->addToastNotification(
         ToastNotification::create()
           ->setColor(Color::GREEN())
@@ -68,8 +70,8 @@ class NotificationDemo extends AbstractDemoPage
           ->setTitle('Homer Quotes')
           ->setDescription('Marge, it takes two to lie. One to lie and one to listen.')
           ->setIcon(FaIcon::create(FaIcon::BOLD))
-          ->setTimeToShow(5000)
-      )->setPosition(ToastNotificationPosition::BOTTOM_RIGHT())->removable();
+          ->setDisplayDuration(5000)
+      )->setPosition(ToastNotificationPosition::BOTTOM_RIGHT());
 
     return $return;
   }
