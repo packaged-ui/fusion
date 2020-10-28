@@ -6,8 +6,8 @@ $step: '.step';
 @mixin left-border($first: false, $last: false) {
 
   @if $first {
-    height: calc(100% - 35px);
-    top: 35px;
+    height: calc(100% - 30px);
+    top: 30px;
   } @else if $last {
     height: 50%;
     top: 0;
@@ -29,36 +29,22 @@ $step: '.step';
 
   &--border {
     #{$step} {
-      &__header {
+
+      > div {
         border: 1px solid rgba(0, 0, 0, 0.3);
-        border-radius: 5px 5px 0 0;
+        border-radius: 5px;
       }
 
       &__content {
-        border: 1px solid rgba(0, 0, 0, 0.3);
-        border-radius: 0 0 5px 5px;
-        border-top: none;
+        border-top: 1px solid rgba(0, 0, 0, 0.3);
       }
     }
   }
 
   &--icon-middle {
     #{$step} {
-      &:first-of-type {
-        &::after {
-          height: 50% !important;
-          top: 50% !important;
-        }
-      }
-
-      &:last-of-type {
-        &::after {
-
-        }
-      }
-
       &::before {
-        top: 45% !important;
+        top: calc(50% - 11px) !important;
       }
     }
   }
@@ -96,6 +82,11 @@ $step: '.step';
       padding: 10px 15px;
       flex-wrap: wrap;
 
+      &:empty {
+        padding: 0;
+        border: none;
+      }
+
       @include breakpoint(phablet down) {
         flex-direction: column;
         justify-content: space-between;
@@ -110,18 +101,6 @@ $step: '.step';
       }
     }
 
-    &:first-of-type {
-      &:after {
-        @include left-border(true)
-      }
-    }
-
-    &:last-of-type {
-      &:after {
-        @include left-border(false, true)
-      }
-    }
-
     &:before {
       content: '';
       position: absolute;
@@ -130,8 +109,8 @@ $step: '.step';
       background-color: rgba(198, 198, 198, 1);
       border-radius: 15px;
       left: 25px;
-      top: 35px;
-      transform: translateX(-45%);
+      top: 30px;
+      transform: translateX(-50%);
       z-index: 2;
     }
 
@@ -141,4 +120,26 @@ $step: '.step';
 
   }
 
+}
+
+.step-wrapper--icon-middle > .step:first-child,
+.step-wrapper--icon-middle *:first-child > .step:first-child {
+  &::after {
+    height: 50% !important;
+    top: 50% !important;
+  }
+}
+
+.step-wrapper > .step:first-child,
+.step-wrapper *:first-child > .step:first-child {
+  &:after {
+    @include left-border(true)
+  }
+}
+
+.step-wrapper > .step:last-child,
+.step-wrapper *:last-child > .step:last-child {
+  &:after {
+    @include left-border(false, true)
+  }
 }
