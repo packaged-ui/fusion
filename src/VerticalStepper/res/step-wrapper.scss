@@ -29,15 +29,14 @@ $step: '.step';
 
   &--border {
     #{$step} {
-      &__header {
+
+      > div {
         border: 1px solid rgba(0, 0, 0, 0.3);
-        border-radius: 5px 5px 0 0;
+        border-radius: 5px;
       }
 
       &__content {
-        border: 1px solid rgba(0, 0, 0, 0.3);
-        border-radius: 0 0 5px 5px;
-        border-top: none;
+        border-top: 1px solid rgba(0, 0, 0, 0.3);
       }
     }
   }
@@ -45,7 +44,7 @@ $step: '.step';
   &--icon-middle {
     #{$step} {
       &::before {
-        top: 45% !important;
+        top: calc(50% - 11px) !important;
       }
     }
   }
@@ -83,6 +82,11 @@ $step: '.step';
       padding: 10px 15px;
       flex-wrap: wrap;
 
+      &:empty {
+        padding: 0;
+        border: none;
+      }
+
       @include breakpoint(phablet down) {
         flex-direction: column;
         justify-content: space-between;
@@ -106,7 +110,7 @@ $step: '.step';
       border-radius: 15px;
       left: 25px;
       top: 30px;
-      transform: translateX(-45%);
+      transform: translateX(-50%);
       z-index: 2;
     }
 
