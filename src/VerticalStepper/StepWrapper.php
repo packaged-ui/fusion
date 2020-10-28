@@ -6,6 +6,7 @@ use Packaged\Glimpse\Tags\Div;
 use PackagedUi\BemComponent\BemComponentTrait;
 use PackagedUi\Fusion\Component;
 use PackagedUi\Fusion\ComponentTrait;
+use function count;
 
 class StepWrapper extends Div implements Component
 {
@@ -25,6 +26,8 @@ class StepWrapper extends Div implements Component
 
   protected function _getContentForRender()
   {
+    $this->getContent()[count($this->getContent()) - 1]->addClass('step--last');
+    $this->getContent()[0]->addClass('step--first');
     return $this->getContent();
   }
 

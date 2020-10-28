@@ -6,11 +6,10 @@ $step: '.step';
 @mixin left-border($first: false, $last: false) {
 
   @if $first {
-    height: calc(100% - 35px);
-    top: 35px;
+    height: calc(100% - 35px) !important;
+    top: 35px !important;
   } @else if $last {
-    height: 50%;
-    top: 0;
+    height: 50% !important;
   } @else {
     height: 100%;
     top: 0;
@@ -26,42 +25,6 @@ $step: '.step';
 #{$this} {
   position: relative;
   padding: 24px 0;
-
-  &--border {
-    #{$step} {
-      &__header {
-        border: 1px solid rgba(0, 0, 0, 0.3);
-        border-radius: 5px 5px 0 0;
-      }
-
-      &__content {
-        border: 1px solid rgba(0, 0, 0, 0.3);
-        border-radius: 0 0 5px 5px;
-        border-top: none;
-      }
-    }
-  }
-
-  &--icon-middle {
-    #{$step} {
-      &:first-of-type {
-        &::after {
-          height: 50% !important;
-          top: 50% !important;
-        }
-      }
-
-      &:last-of-type {
-        &::after {
-
-        }
-      }
-
-      &::before {
-        top: 45% !important;
-      }
-    }
-  }
 
   #{$step} {
     padding: 20px 20px 20px 60px;
@@ -110,15 +73,15 @@ $step: '.step';
       }
     }
 
-    &:first-of-type {
+    &--first {
       &:after {
         @include left-border(true)
       }
     }
 
-    &:last-of-type {
+    &--last {
       &:after {
-        @include left-border(false, true)
+        @include left-border(false, true);
       }
     }
 
@@ -139,6 +102,36 @@ $step: '.step';
       @include left-border();
     }
 
+  }
+
+  &--border {
+    #{$step} {
+      &__header {
+        border: 1px solid rgba(0, 0, 0, 0.3);
+        border-radius: 5px 5px 0 0;
+      }
+
+      &__content {
+        border: 1px solid rgba(0, 0, 0, 0.3);
+        border-radius: 0 0 5px 5px;
+        border-top: none;
+      }
+    }
+  }
+
+  &--icon-middle {
+    #{$step} {
+      &--first {
+        &::after {
+          height: 50% !important;
+          top: 50% !important;
+        }
+      }
+
+      &::before {
+        top: 45% !important;
+      }
+    }
   }
 
 }
