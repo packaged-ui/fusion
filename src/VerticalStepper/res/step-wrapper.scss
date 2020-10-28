@@ -6,8 +6,8 @@ $step: '.step';
 @mixin left-border($first: false, $last: false) {
 
   @if $first {
-    height: calc(100% - 35px);
-    top: 35px;
+    height: calc(100% - 30px);
+    top: 30px;
   } @else if $last {
     height: 50%;
     top: 0;
@@ -44,19 +44,6 @@ $step: '.step';
 
   &--icon-middle {
     #{$step} {
-      &:first-of-type {
-        &::after {
-          height: 50% !important;
-          top: 50% !important;
-        }
-      }
-
-      &:last-of-type {
-        &::after {
-
-        }
-      }
-
       &::before {
         top: 45% !important;
       }
@@ -110,18 +97,6 @@ $step: '.step';
       }
     }
 
-    &:first-of-type {
-      &:after {
-        @include left-border(true)
-      }
-    }
-
-    &:last-of-type {
-      &:after {
-        @include left-border(false, true)
-      }
-    }
-
     &:before {
       content: '';
       position: absolute;
@@ -130,7 +105,7 @@ $step: '.step';
       background-color: rgba(198, 198, 198, 1);
       border-radius: 15px;
       left: 25px;
-      top: 35px;
+      top: 30px;
       transform: translateX(-45%);
       z-index: 2;
     }
@@ -141,4 +116,26 @@ $step: '.step';
 
   }
 
+}
+
+.step-wrapper--icon-middle > .step:first-child,
+.step-wrapper--icon-middle *:first-child > .step:first-child {
+  &::after {
+    height: 50% !important;
+    top: 50% !important;
+  }
+}
+
+.step-wrapper > .step:first-child,
+.step-wrapper *:first-child > .step:first-child {
+  &:after {
+    @include left-border(true)
+  }
+}
+
+.step-wrapper > .step:last-child,
+.step-wrapper *:last-child > .step:last-child {
+  &:after {
+    @include left-border(false, true)
+  }
 }

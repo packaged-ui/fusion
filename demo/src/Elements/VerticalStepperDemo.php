@@ -1,6 +1,7 @@
 <?php
 namespace PackagedUi\FusionDemo\Elements;
 
+use Packaged\Glimpse\Tags\Div;
 use Packaged\Glimpse\Tags\Text\HeadingFive;
 use Packaged\Glimpse\Tags\Text\Paragraph;
 use PackagedUi\FontAwesome\FaIcon;
@@ -74,6 +75,10 @@ class VerticalStepperDemo extends AbstractDemoPage
           Paragraph::create('Step 1'),
           Paragraph::create('Status')
         ),
+        Div::create(
+          Step::create()->setHeader('Step 2'),
+          Step::create()->setHeader('Step 2')
+        ),
         Step::create(
           Paragraph::create('Order for mattcurd.co.uk'),
           Button::create('Something here')->primary()
@@ -81,7 +86,11 @@ class VerticalStepperDemo extends AbstractDemoPage
           Paragraph::create('Step 1'),
           Paragraph::create('Status')
         ),
-        Step::create()->setHeader('Step 2')
+        Step::create()->setHeader('Step 2'),
+        Div::create(
+          Step::create()->setHeader('Step 2'),
+          Step::create()->setHeader('Step 2')
+        )
       )->iconMiddle();
 
     return $return;
