@@ -24,7 +24,7 @@ $step: '.step';
 
   &--icon-middle {
     #{$step} {
-      &::before {
+      &:before {
         top: calc(50% - 11px);
       }
     }
@@ -40,7 +40,22 @@ $step: '.step';
   }
 }
 
-#{$this} #{$step} ~ *:not(#{$step}) #{$step}, #{$this} #{$step} ~ #{$step} {
+#{$this} > #{$step}:only-child,
+#{$this} *:first-of-type:only-child > #{$step}:only-child {
+  &:after {
+    content: none !important;
+  }
+}
+
+
+#{$this} #{$step} ~ *:not(#{$step}) #{$step},
+#{$this} #{$step} ~ #{$step} {
+  &:after {
+    @include left-border($middle: true);
+  }
+}
+
+#{$this} > #{$step}:not(:first-of-type) {
   &:after {
     @include left-border($middle: true);
   }

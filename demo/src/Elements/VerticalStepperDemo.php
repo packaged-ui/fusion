@@ -52,6 +52,11 @@ class VerticalStepperDemo extends AbstractDemoPage
         Step::create()->setHeader('Step 2')
       )->border();
 
+    $return[] =
+      StepWrapper::create(
+        Step::create()->setHeader('Step 2')
+      )->border();
+
     $return[] = HeadingFive::create('Stepper with border + icon middle');
     $return[] =
       StepWrapper::create(
@@ -68,7 +73,7 @@ class VerticalStepperDemo extends AbstractDemoPage
     $return[] = HeadingFive::create('Default stepper icon position middle');
     $return[] =
       StepWrapper::create(
-        Div::create(),
+        Step::create()->setHeader('hello'),
         Div::create(
           Step::create()->setHeader('hello')
         ),
@@ -97,7 +102,7 @@ class VerticalStepperDemo extends AbstractDemoPage
           Step::create()->setHeader('Step 2'),
           Step::create()->setHeader('Step 2')
         )
-      );
+      )->border()->iconMiddle();
 
     return $return;
   }
