@@ -34,9 +34,9 @@ class StepWrapper extends Div implements Component
     return $this;
   }
 
-  public function iconMiddle()
-  {
-    $this->addClass($this->getModifier('icon-middle'));
-    return $this;
-  }
+//  public function iconMiddle()
+//  {
+//    $this->addClass($this->getModifier('icon-middle'));
+//    return $this;
+//  }
 }

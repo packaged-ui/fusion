@@ -32,6 +32,8 @@ $step: '.step';
 
 }
 
+
+// icon middle first child
 #{$this}--icon-middle > #{$step}:first-child,
 #{$this}--icon-middle *:first-child > #{$step}:first-child {
   &::after {
@@ -40,36 +42,30 @@ $step: '.step';
   }
 }
 
+
+// only child, on it's todd
 #{$this} > #{$step}:only-child,
 #{$this} *:first-of-type:only-child > #{$step}:only-child {
   &:after {
     content: none !important;
   }
 }
+//
+//// First override for some instances
+//#{$this} #{$step}:first-of-type {
+//  @include left-border();
+//}
+//
+//// default not first child
+//#{$this} #{$step} ~ *:not(#{$step}) #{$step},
+//#{$this} #{$step} ~ #{$step},
+//#{$this} *:not(:first-child) ~ #{$step}:not(:first-of-type),
+//#{$this} > #{$step}:not(:first-of-type) {
+//  @include left-border($middle: true);
+//}
 
-
-#{$this} #{$step} ~ *:not(#{$step}) #{$step},
-#{$this} #{$step} ~ #{$step} {
-  &:after {
-    @include left-border($middle: true);
-  }
-}
-
-#{$this} > #{$step}:not(:first-of-type) {
-  &:after {
-    @include left-border($middle: true);
-  }
-}
-
-#{$this} *:not(:first-child) ~ #{$step}:not(:first-of-type) {
-  &:after {
-    @include left-border($middle: true);
-  }
-}
-
+// last child
 #{$this} > #{$step}:last-child, #{$this} *:last-child > #{$step}:last-child {
-  &:after {
-    @include left-border($last: true);
-  }
+  @include left-border($last: true);
 }
 
