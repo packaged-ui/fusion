@@ -3,7 +3,7 @@
     @if ($middle) {
       height: 100%;
     } @else if ($last) {
-      height: 50% !important;
+      height: 0 !important;
       top: 0 !important;
     } @else {
       height: 100%;
