@@ -68,7 +68,6 @@ $this: '.step';
     z-index: 2;
   }
 
-  &:after {
-    @include left-border()
-  }
+  @include left-border()
+
 }

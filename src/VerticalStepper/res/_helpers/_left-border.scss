@@ -1,19 +1,19 @@
 @mixin left-border($middle: false, $last: false) {
-
-  @if ($middle) {
-    height: 100%;
-    top: 0;
-  } @else if ($last) {
-    height: 50% !important;
-    top: 0 !important;
-  } @else {
-    height: calc(100% - 30px);
-    top: 30px;
+  &:after {
+    @if ($middle) {
+      height: 100%;
+    } @else if ($last) {
+      height: 50% !important;
+      top: 0 !important;
+    } @else {
+      height: 100%;
+      top: 35px;
+    }
+    content: '';
+    position: absolute;
+    width: 1px;
+    background-color: rgba(200, 200, 200, 1);
+    left: 25px;
+    z-index: 1;
   }
-  content: '';
-  position: absolute;
-  width: 1px;
-  background-color: rgba(0, 0, 0, 0.2);
-  left: 25px;
-  z-index: 1;
 }
