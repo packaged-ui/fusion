@@ -1,27 +1,8 @@
 @import "../../Foundation/res/foundation";
+@import "_helpers/left-border";
 
 $this: '.step-wrapper';
 $step: '.step';
-
-@mixin left-border($first: false, $last: false) {
-
-  @if $first {
-    height: calc(100% - 30px);
-    top: 30px;
-  } @else if $last {
-    height: 50% !important;
-    top: 0 !important;
-  } @else {
-    height: 100%;
-    top: 0;
-  }
-  content: '';
-  position: absolute;
-  width: 1px;
-  background-color: rgba(0, 0, 0, 0.2);
-  left: 25px;
-  z-index: 1;
-}
 
 #{$this} {
   position: relative;
@@ -44,85 +25,9 @@ $step: '.step';
   &--icon-middle {
     #{$step} {
       &::before {
-        top: calc(50% - 11px) !important;
-      }
-
-      &:after {
-        height: 100% !important;
-        top: 0 !important;
+        top: calc(50% - 11px);
       }
     }
-  }
-
-  #{$step} {
-    padding: 20px 20px 20px 60px;
-    position: relative;
-
-
-    &__header {
-      display: flex;
-      align-items: center;
-      justify-content: space-between;
-      padding: 10px 15px;
-      flex-wrap: wrap;
-
-      @include breakpoint(phablet down) {
-        flex-direction: column;
-        justify-content: space-between;
-        padding: 5px 10px;
-        > * {
-          margin: 5px 0;
-        }
-      }
-
-      * {
-        margin-bottom: 0;
-      }
-    }
-
-    &__content {
-      display: flex;
-      align-items: center;
-      justify-content: space-between;
-      padding: 10px 15px;
-      flex-wrap: wrap;
-
-      &:empty {
-        padding: 0;
-        border: none;
-      }
-
-      @include breakpoint(phablet down) {
-        flex-direction: column;
-        justify-content: space-between;
-        padding: 15px 10px 30px;
-        > * {
-          margin: 10px 0;
-        }
-      }
-
-      * {
-        margin-bottom: 0;
-      }
-    }
-
-    &:before {
-      content: '';
-      position: absolute;
-      height: 20px;
-      width: 20px;
-      background-color: rgba(198, 198, 198, 1);
-      border-radius: 15px;
-      left: 25px;
-      top: 30px;
-      transform: translateX(-50%);
-      z-index: 2;
-    }
-
-    &:after {
-      @include left-border(true)
-    }
-
   }
 
 }
@@ -135,21 +40,21 @@ $step: '.step';
   }
 }
 
-.step-wrapper .step ~ *:not(.step) .step, .step-wrapper .step ~ .step {
+#{$this} #{$step} ~ *:not(#{$step}) #{$step}, #{$this} #{$step} ~ #{$step} {
   &:after {
-    @include left-border();
+    @include left-border($middle: true);
   }
 }
 
-.step-wrapper *:not(:first-child) ~ .step:not(:first-of-type) {
+#{$this} *:not(:first-child) ~ #{$step}:not(:first-of-type) {
   &:after {
-    @include left-border();
+    @include left-border($middle: true);
   }
 }
 
-.step-wrapper > .step:last-child, .step-wrapper *:last-child > .step:last-child {
+#{$this} > #{$step}:last-child, #{$this} *:last-child > #{$step}:last-child {
   &:after {
-    @include left-border(false, true)
+    @include left-border($last: true);
   }
 }
 
