@@ -115,31 +115,36 @@ $step: '.step';
     }
 
     &:after {
-      @include left-border();
+      @include left-border(true)
     }
 
   }
 
 }
 
-.step-wrapper--icon-middle > .step:first-child,
-.step-wrapper--icon-middle *:first-child > .step:first-child {
+#{$this}--icon-middle > #{$step}:first-child,
+#{$this}--icon-middle *:first-child > #{$step}:first-child {
   &::after {
     height: 50% !important;
     top: 50% !important;
   }
 }
 
-.step-wrapper > .step:first-child,
-.step-wrapper *:first-child > .step:first-child {
+#{$this} #{$step} ~ *:not(#{$step}) #{$step}, #{$this} #{$step} ~ #{$step} {
   &:after {
-    @include left-border(true)
+    @include left-border();
   }
 }
 
-.step-wrapper > .step:last-child,
-.step-wrapper *:last-child > .step:last-child {
+#{$this} *:not(:first-child) ~ #{$step}:not(:first-of-type) {
+  &:after {
+    @include left-border();
+  }
+}
+
+#{$this} > #{$step}:last-child, #{$this} *:last-child > #{$step}:last-child {
   &:after {
     @include left-border(false, true)
   }
 }
+
