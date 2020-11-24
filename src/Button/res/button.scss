@@ -115,8 +115,8 @@ input[type="button"], input[type="submit"], input[type="reset"], button, .btn {
   --button-text-color: var(--f-color-primary-text);
 }
 
-.btn--greyed {
-  --button-color: var(--rgb-grey-700);
+.btn--muted {
+  --button-color: var(--rgb-grey-500);
   --button-text-color: var(--f-color-primary-text);
 }
 

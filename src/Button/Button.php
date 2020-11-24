@@ -104,9 +104,9 @@ class Button extends \Packaged\Glimpse\Tags\Button implements Component
     return $this;
   }
 
-  public function greyed()
+  public function muted()
   {
-    $this->addModifier(ButtonInterface::_BUTTON_MOD_GREYED);
+    $this->addModifier(ButtonInterface::_BUTTON_MOD_MUTED);
     return $this;
   }
 
