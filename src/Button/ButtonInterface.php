@@ -9,6 +9,7 @@ interface ButtonInterface
   const _BUTTON_MOD_PRIMARY = 'primary';
   const _BUTTON_MOD_ACCENT = 'accent';
   const _BUTTON_MOD_SUCCESS = 'success';
+  const _BUTTON_MOD_GREYED = 'greyed';
   const _BUTTON_MOD_DANGER = 'danger';
   const _BUTTON_MOD_WARNING = 'warning';
   const _BUTTON_MOD_INFO = 'info';

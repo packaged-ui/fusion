@@ -41,6 +41,8 @@ class ButtonDemo extends AbstractDemoPage
       ->addClass($btnBem->modifier(Fusion::_BUTTON_MOD_WARNING));
     $return[] = Input::create()->setType(Input::TYPE_BUTTON)->setValue('Info')
       ->addClass($btnBem->modifier(Fusion::_BUTTON_MOD_INFO));
+    $return[] = Input::create()->setType(Input::TYPE_BUTTON)->setValue('Greyed')
+      ->addClass($btnBem->modifier(Fusion::_BUTTON_MOD_GREYED));
 
     $return[] = LineBreak::create();
     $return[] = LineBreak::create();
@@ -58,6 +60,8 @@ class ButtonDemo extends AbstractDemoPage
       ->addClass($btnBem->modifier(Fusion::_BUTTON_MOD_WARNING), $btnBem->getBlockName());
     $return[] = Link::create("#", "Info")
       ->addClass($btnBem->modifier(Fusion::_BUTTON_MOD_INFO), $btnBem->getBlockName());
+    $return[] = Link::create("#", "Greyed")
+      ->addClass($btnBem->modifier(Fusion::_BUTTON_MOD_GREYED), $btnBem->getBlockName());
 
     $return[] = LineBreak::create();
     $return[] = LineBreak::create();
@@ -69,6 +73,7 @@ class ButtonDemo extends AbstractDemoPage
     $return[] = Button::create("Danger")->danger();
     $return[] = Button::create("Warning")->warning();
     $return[] = Button::create("Info")->info();
+    $return[] = Button::create("Greyed")->greyed();
 
     $return[] = LineBreak::create();
     $return[] = LineBreak::create();
@@ -79,7 +84,7 @@ class ButtonDemo extends AbstractDemoPage
     $return[] = Button::create("Success")->outline()->success();
     $return[] = Button::create("Danger")->outline()->danger();
     $return[] = Button::create("Warning")->outline()->warning();
-    $return[] = Button::create("Info")->outline()->info();
+    $return[] = Button::create("Greyed")->outline()->greyed();
 
     $return[] = LineBreak::create();
     $return[] = LineBreak::create();
@@ -91,6 +96,7 @@ class ButtonDemo extends AbstractDemoPage
     $return[] = Button::create("Danger")->flat()->danger();
     $return[] = Button::create("Warning")->flat()->warning();
     $return[] = Button::create("Info")->flat()->info();
+    $return[] = Button::create("Greyed")->flat()->greyed();
 
     $return[] = LineBreak::create();
     $return[] = LineBreak::create();
@@ -102,6 +108,7 @@ class ButtonDemo extends AbstractDemoPage
     $return[] = Button::create("Danger")->flat()->outline()->danger();
     $return[] = Button::create("Warning")->flat()->outline()->warning();
     $return[] = Button::create("Info")->flat()->outline()->info();
+    $return[] = Button::create("Greyed")->flat()->outline()->greyed();
 
     $primaryButtons = [];
     $primaryButtons[] = Button::create("Primary")->primary();
