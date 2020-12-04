@@ -30,7 +30,7 @@ class XyGridDemo extends AbstractDemoPage
       background: rgba(0,0,0,.06);
     }
     
-    .cell{
+    .cell {
       background: rgba(152,127,255, 0.4)!important;
       min-height: 50px !important;
       color: white !important;

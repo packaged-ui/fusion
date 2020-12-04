@@ -16,6 +16,7 @@
     "@rollup/plugin-node-resolve": "^9.0.0",
     "autoprefixer": "^9.8.6",
     "core-js": "^3.6.4",
+    "postcss-clean": "^1.1.0",
     "postcss-flexbugs-fixes": "^4.2.1",
     "postcss-preset-env": "^6.7.0",
     "rollup": "^1.31.0",
@@ -28,7 +29,6 @@
   },
   "dependencies": {
     "@packaged-ui/modal": "^1.1.1",
-    "foundation-sites": "^6.6.3",
     "lodash.debounce": "^4.0.8",
     "normalize.css": "^8.0"
   },
