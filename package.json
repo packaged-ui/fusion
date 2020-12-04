@@ -28,7 +28,6 @@
   },
   "dependencies": {
     "@packaged-ui/modal": "^1.1.1",
-    "foundation-sites": "^6.6.3",
     "lodash.debounce": "^4.0.8",
     "normalize.css": "^8.0"
   },

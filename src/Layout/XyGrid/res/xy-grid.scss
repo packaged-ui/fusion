@@ -1,19 +1,150 @@
-@import "~foundation-sites/scss/foundation";
 @import "../../../Foundation/res/foundation";
 
-$max-container-size: 1140px !default; // The maximum size of the Grid-Container on large screens
-$grid-gutter: 16px !default; // The grid spacing between cells, both vertical and horizontal, marginX() and marginY()
-$breakpoint-names: (mobile, phablet, tablet, desktop, hd) !default; // This is all of the accepted breakpoints needed for Foundation
-$breakpoint-zero: mobile !default; // Set the lowest breakpoint for the foundation grid, must be = 0px;
+$grid-col-size: 12 !default;
+$grid-gutter: 1rem !default;
+$grid-max-width: 1140px !default;
+$grid: '.grid' !default;
+$col: '.cell' !default;
+$mx: '.margin-x' !default;
+$my: '.margin-y' !default;
+$offset: 'offset' !default;
 
-// Foundation specific variables. We can't use default here as it would break
-$breakpoint-classes: $breakpoint-names;
-$-zf-zero-breakpoint: $breakpoint-zero;
-$grid-container: $max-container-size;
-$grid-padding-gutters: $grid-gutter;
-$grid-margin-gutters: $grid-gutter;
+$c: #{str-replace(#{$col}, '.', '')};
 
-@include xy-base-grid-classes();
-@include xy-margin-grid-classes($vertical: true, $wrapping-selector: '.grid-margin-y');
-@include xy-margin-grid-classes();
-@include xy-offset-cell-classes();
+@function nextKey($currentValue, $mapped-list) {
+  @return nth(
+      map_keys($mapped-list),
+      (index(map_keys($mapped-list), $currentValue)) + 1
+  );
+}
+
+@function str-replace($string, $search, $replace: '') {
+  $index: str-index($string, $search);
+
+  @if $index {
+    @return str-slice($string, 1, $index - 1) + $replace +
+      str-replace(
+        str-slice($string, $index + str-length($search)),
+        $search,
+        $replace
+      );
+  }
+
+  @return $string;
+}
+
+@mixin generateColClasses($className: null) {
+  @each $breakpointName, $breakpointSize in $breakpoints {
+    @include breakpoint($breakpointName) {
+      @for $i from 1 through $grid-col-size {
+        @if ($className) {
+          .#{$breakpointName}-#{$className}-#{$i} {
+            @content ($i);
+          }
+        } @else {
+          .#{$breakpointName}-#{$i} {
+            @content ($i);
+          }
+        }
+      }
+    }
+  }
+}
+
+@mixin generateScopedColClasses($className: null) {
+  @each $breakpointName, $breakpointSize in $breakpoints {
+    @include breakpoint($breakpointName) {
+      @for $i from 1 through $grid-col-size {
+        @if ($className) {
+          & > .#{$breakpointName}-#{$className}-#{$i} {
+            @content ($i);
+          }
+        } @else {
+          & > .#{$breakpointName}-#{$i} {
+            @content ($i);
+          }
+        }
+      }
+    }
+  }
+}
+
+#{$grid} {
+  &-container {
+    max-width: $grid-max-width;
+    margin: 0 auto;
+    padding-right: $grid-gutter / 2;
+    padding-left: $grid-gutter / 2;
+
+    &.fluid {
+      margin: 0;
+      padding: 0;
+      max-width: 100%;
+      overflow-x: hidden;
+    }
+  }
+
+  &-row {
+    display: flex;
+    flex-flow: row wrap;
+
+    > .auto,
+    > .shrink {
+      width: auto;
+    }
+
+    > .auto {
+      flex: 1 1 auto;
+    }
+
+    > .shrink {
+      flex: 0 0 auto;
+    }
+  }
+}
+
+#{$col} {
+  width: 100%;
+  flex: 0 0 auto;
+}
+
+#{$mx} {
+  margin-left: -$grid-gutter / 2;
+  margin-right: -$grid-gutter / 2;
+
+  > #{$col} {
+    width: calc(100% - #{$grid-gutter});
+    margin-left: $grid-gutter / 2;
+    margin-right: $grid-gutter / 2;
+
+    &.auto,
+    &.shrink {
+      width: auto !important;
+    }
+  }
+
+  @include generateScopedColClasses() using($i) {
+    $w: (100 / ($grid-col-size / $i) * 1%);
+    width: calc(#{$w} - #{$grid-gutter});
+  }
+
+  @include generateScopedColClasses($offset) using($i) {
+    $w: (100 / ($grid-col-size / $i) * 1%);
+    margin-left: calc(#{$w} + (#{$grid-gutter} / 2));
+  }
+}
+
+#{$my} {
+  > #{$col} {
+    margin-top: $grid-gutter / 2;
+    margin-bottom: $grid-gutter / 2;
+  }
+}
+
+@include generateColClasses() using($i) {
+  width: (100 / ($grid-col-size / $i) * 1%);
+}
+
+@include generateColClasses($offset) using($i) {
+  margin-left: (100 / ($grid-col-size / $i) * 1%);
+}

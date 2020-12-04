@@ -26,7 +26,7 @@ class XyGridDemo extends AbstractDemoPage
 
     ResourceManager::inline()->requireCss(
       "
-    .grid-x {
+    .grid-row {
       background: rgba(0,0,0,.06);
     }
     

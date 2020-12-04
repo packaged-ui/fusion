@@ -25,9 +25,9 @@ class XySize extends Breakpoints
   /**
    * XySize constructor.
    *
-   * @param string $value
-   * @param int    $size
-   * @param int    $offset
+   * @param string   $value
+   * @param int      $size
+   * @param int|null $offset
    *
    * @throws Exception
    */
