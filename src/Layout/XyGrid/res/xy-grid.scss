@@ -5,18 +5,11 @@ $grid-gutter: 1rem !default;
 $grid-max-width: 1140px !default;
 $grid: '.grid' !default;
 $col: '.cell' !default;
-$mx: '.margin-x' !default;
-$my: '.margin-y' !default;
+$mx: '.grid-margin-x' !default;
+$my: '.grid-margin-y' !default;
 $offset: 'offset' !default;
 
 $c: #{str-replace(#{$col}, '.', '')};
-
-@function nextKey($currentValue, $mapped-list) {
-  @return nth(
-      map_keys($mapped-list),
-      (index(map_keys($mapped-list), $currentValue)) + 1
-  );
-}
 
 @function str-replace($string, $search, $replace: '') {
   $index: str-index($string, $search);
@@ -84,7 +77,7 @@ $c: #{str-replace(#{$col}, '.', '')};
     }
   }
 
-  &-row {
+  &-x {
     display: flex;
     flex-flow: row wrap;
 

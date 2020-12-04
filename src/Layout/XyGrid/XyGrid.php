@@ -32,7 +32,7 @@ class XyGrid extends Div implements Component
    */
   public function getBlockName(): string
   {
-    return 'grid-row';
+    return 'grid-x';
   }
 
   /**
@@ -40,7 +40,7 @@ class XyGrid extends Div implements Component
    */
   public function marginX()
   {
-    $this->addClass('margin-x');
+    $this->addClass('grid-margin-x');
     return $this;
   }
 
@@ -49,7 +49,7 @@ class XyGrid extends Div implements Component
    */
   public function marginY()
   {
-    $this->addClass('margin-y');
+    $this->addClass('grid-margin-y');
     return $this;
   }
 
@@ -58,8 +58,8 @@ class XyGrid extends Div implements Component
    */
   public function marginXY()
   {
-    $this->addClass('margin-y');
-    $this->addClass('margin-x');
+    $this->marginX();
+    $this->marginY();
     return $this;
   }
 
