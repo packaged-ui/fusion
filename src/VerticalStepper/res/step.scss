@@ -68,6 +68,10 @@ $this: '.step';
     z-index: 2;
   }
 
-  @include left-border()
+  @include left-border();
+
+  &--last {
+    @include left-border($last: true);
+  }
 
 }

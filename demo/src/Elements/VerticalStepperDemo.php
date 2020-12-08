@@ -36,9 +36,9 @@ class VerticalStepperDemo extends AbstractDemoPage
           Paragraph::create('Step 1'),
           Paragraph::create('Status')
         ),
-        Step::create()->setHeader('Step 2')
+        Step::create()->setHeader('Step 2'),
+        Div::create()
       );
-
     $return[] = HeadingFive::create('Stepper with border');
     $return[] =
       StepWrapper::create(
