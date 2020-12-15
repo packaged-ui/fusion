@@ -50,22 +50,12 @@ $step: '.step';
     content: none !important;
   }
 }
-//
-//// First override for some instances
-//#{$this} #{$step}:first-of-type {
-//  @include left-border();
-//}
-//
-//// default not first child
-//#{$this} #{$step} ~ *:not(#{$step}) #{$step},
-//#{$this} #{$step} ~ #{$step},
-//#{$this} *:not(:first-child) ~ #{$step}:not(:first-of-type),
-//#{$this} > #{$step}:not(:first-of-type) {
-//  @include left-border($middle: true);
-//}
 
 // last child
-#{$this} > #{$step}:last-child, #{$this} *:last-child > #{$step}:last-child {
+// :last-child will only work if the element is the last in the dom tree
+#{$this} > #{$step}:last-child,
+#{$this} *:last-child > #{$step}:last-child {
   @include left-border($last: true);
 }
+
 
