@@ -3,36 +3,27 @@ import './step.scss';
 import {Pagelets} from '@packaged-ui/pagelets';
 import {onReady} from '../../Foundation/res';
 
-onReady((e) =>
-{
+onReady((e) => {
   setLastStep();
 });
 
-document.addEventListener(Pagelets.events.COMPLETE, (e) =>
-{
+document.addEventListener(Pagelets.events.COMPLETE, (e) => {
   setLastStep();
 });
 
-function setLastStep()
-{
-  const stepWrapper = document.querySelectorAll('.step-wrapper');
+function setLastStep() {
+  const stepWrappers = document.querySelectorAll('.step-wrapper');
 
-  stepWrapper.forEach((elem, i) =>
-  {
-    let steps = elem.childNodes;
+  stepWrappers.forEach((stepWrapper, i) => {
 
-    if (!steps)
+    let steps = stepWrapper.querySelectorAll('.step');
+
+    if(!steps)
     {
       return;
     }
 
-    const length = steps.length - 1;
-    // If the last element doesnt contain anything and doesn't have a .step
+    steps[steps.length - 1].classList.add('step--last');
 
-    if (!steps[length].hasChildNodes()
-        && !steps[length].classList.contains('step'))
-    {
-      steps[length - 1].classList.add('step--last');
-    }
   });
 }
