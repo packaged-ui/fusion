@@ -104,7 +104,10 @@ class VerticalStepperDemo extends AbstractDemoPage
         Div::create(
           Step::create()->setHeader('Step 2'),
           Step::create()->setHeader('Step 2')
-        )
+        ),
+        Div::create(),
+        Div::create(Step::create()),
+        Div::create()
       )->border();
 
     return $return;

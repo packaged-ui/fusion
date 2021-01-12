@@ -28,6 +28,7 @@ function setLastStep()
 
     const length = steps.length - 1;
     // If the last element doesnt contain anything and doesn't have a .step
+
     if (!steps[length].hasChildNodes()
         && !steps[length].classList.contains('step'))
     {

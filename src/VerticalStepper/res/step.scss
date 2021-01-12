@@ -71,7 +71,9 @@ $this: '.step';
   @include left-border();
 
   &--last {
-    @include left-border($last: true);
+    &, *.step {
+      @include left-border($last: true);
+    }
   }
 
 }
