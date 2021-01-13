@@ -39,7 +39,7 @@ class Step extends Div implements Component
   protected function _getContentForRender()
   {
     return Div::create(
-      Div::create(...$this->_header)->addClass($this->getElementName('header')),
+      Div::create($this->_header)->addClass($this->getElementName('header')),
       Div::create($this->getContent())->addClass($this->getElementName('content'))
     );
   }
