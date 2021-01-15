@@ -1,6 +1,6 @@
 {
   "name": "@packaged-ui/fusion",
-  "version": "0.2.2",
+  "version": "0.2.3",
   "main": "/fusion.js",
   "files": [
     "/src/_resources",
@@ -29,7 +29,7 @@
   },
   "dependencies": {
     "@packaged-ui/modal": "^1.1.1",
-    "@packaged-ui/pagelets": "^1.6.0",
+    "@packaged-ui/pagelets": "^1.6.1",
     "lodash.debounce": "^4.0.8",
     "normalize.css": "^8.0"
   },
