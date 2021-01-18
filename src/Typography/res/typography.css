@@ -163,7 +163,6 @@ ol, ul, dl {
 
 ol ol, ul ul, ol ul, ul ol {
   margin-bottom: 0;
-  color: rgba(var(--f-text-color), var(--text-opacity));
 }
 
 .list-unstyled {
