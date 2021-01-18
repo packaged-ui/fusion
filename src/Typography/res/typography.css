@@ -198,6 +198,7 @@ dd {
 pre, code, kbd, samp {
   font-family: var(--f-mono-font);
   font-size: 1em;
+  color: rgba(var(--f-text-color), var(--text-opacity));
 }
 
 code {
