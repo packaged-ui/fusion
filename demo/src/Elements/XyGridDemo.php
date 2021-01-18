@@ -33,7 +33,7 @@ class XyGridDemo extends AbstractDemoPage
     .cell {
       background: rgba(152,127,255, 0.4)!important;
       min-height: 50px !important;
-      color: white !important;
+      color: white;
     }
     "
     );

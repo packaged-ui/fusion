@@ -25,6 +25,7 @@ $this: '.toast-notification';
     width: 35px;
     height: 35px;
     justify-content: center;
+    color: rgba(var(--f-text-color), var(--text-opacity));
   }
 
   &__content {
@@ -36,12 +37,14 @@ $this: '.toast-notification';
     font-weight: 500;
     width: 100%;
     margin-bottom: 5px;
+    color: rgba(var(--f-text-color), var(--text-opacity));
   }
 
   &__description {
     font-size: 14px;
     font-weight: 400;
     width: 100%;
+    color: rgba(var(--f-text-color), var(--text-opacity));
   }
 
   &--with-color {

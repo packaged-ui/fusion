@@ -10,6 +10,7 @@
     --f-text-color: 255, 255, 255;
     --text-opacity: 1;
 
+    color: rgba(var(--f-text-color), var(--text-opacity));
     position: absolute;
     top: -5px;
     z-index: 1;
@@ -116,6 +117,7 @@
     --f-text-color: 255, 255, 255;
     --text-opacity: 1;
 
+    color: rgba(var(--f-text-color), var(--text-opacity));
     position: relative;
     height: 28px;
     line-height: 28px;
