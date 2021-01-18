@@ -3,6 +3,7 @@
   position: relative;
   white-space: nowrap;
   margin-right: 24px;
+  color: rgba(var(--f-text-color), var(--text-opacity));
 }
 
 .badge--added-margin {

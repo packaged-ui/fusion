@@ -5,6 +5,7 @@ h1, h2, h3, h4, h5, h6, .h1, .h2, .h3, .h4, .h5, .h6 {
   font-family: inherit;
   font-weight: 500;
   line-height: 1.1;
+  color: rgba(var(--f-text-color), var(--text-opacity));
 }
 
 h1, .h1 {
@@ -34,6 +35,7 @@ h6, .h6 {
 small, .small {
   font-size: 85%;
   font-weight: 400;
+  color: rgba(var(--f-text-color), var(--text-opacity));
 }
 
 .display-1 {
@@ -77,6 +79,7 @@ small, .small {
 p, p.body-1, .body-1 {
   margin-top: 0;
   margin-bottom: 1rem;
+  color: rgba(var(--f-text-color), var(--text-opacity));
 }
 
 p.body-2, .body-2 {
@@ -96,10 +99,12 @@ mark, .mark {
 
 b, strong {
   font-weight: bolder;
+  color: rgba(var(--f-text-color), var(--text-opacity));
 }
 
 em {
   --text-opacity: 0.87;
+  color: rgba(var(--f-text-color), var(--text-opacity));
 }
 
 abbr[title], abbr[data-original-title] {
@@ -107,6 +112,7 @@ abbr[title], abbr[data-original-title] {
   cursor: help;
   display: inline;
   position: relative;
+  color: rgba(var(--f-text-color), var(--text-opacity));
 }
 
 abbr[title]::after, abbr[data-original-title]::after {
@@ -133,11 +139,13 @@ address {
   margin-bottom: 1rem;
   font-style: normal;
   line-height: inherit;
+  color: rgba(var(--f-text-color), var(--text-opacity));
 }
 
 blockquote {
   font-size: 1.1175rem;
   margin: 0 0 1rem 0;
+  color: rgba(var(--f-text-color), var(--text-opacity));
 }
 
 blockquote footer, .blockquote-footer {
@@ -149,10 +157,12 @@ blockquote footer, .blockquote-footer {
 ol, ul, dl {
   margin-top: 0;
   margin-bottom: 1rem;
+  color: rgba(var(--f-text-color), var(--text-opacity));
 }
 
 ol ol, ul ul, ol ul, ul ol {
   margin-bottom: 0;
+  color: rgba(var(--f-text-color), var(--text-opacity));
 }
 
 .list-unstyled {
@@ -167,6 +177,7 @@ ol ol, ul ul, ol ul, ul ol {
 
 .list-inline li {
   display: inline-block;
+  color: rgba(var(--f-text-color), var(--text-opacity));
 }
 
 .list-inline li:not(:last-child) {
@@ -175,11 +186,13 @@ ol ol, ul ul, ol ul, ul ol {
 
 dt {
   font-weight: 700;
+  color: rgba(var(--f-text-color), var(--text-opacity));
 }
 
 dd {
   margin-bottom: .5rem;
   margin-left: 0;
+  color: rgba(var(--f-text-color), var(--text-opacity));
 }
 
 pre, code, kbd, samp {
@@ -205,6 +218,7 @@ kbd {
   line-height: 1;
   padding: 2px 4px;
   white-space: nowrap;
+  color: rgba(var(--f-text-color), var(--text-opacity));
 }
 
 pre {
@@ -223,10 +237,12 @@ figure {
   flex: 0 0;
   flex-flow: column;
   margin: .5rem;
+  color: rgba(var(--f-text-color), var(--text-opacity));
 }
 
 figcaption {
   padding: 3px;
+  color: rgba(var(--f-text-color), var(--text-opacity));
 }
 
 .text-right {

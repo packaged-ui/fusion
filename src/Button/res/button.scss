@@ -30,7 +30,7 @@ input[type="button"], input[type="submit"], input[type="reset"], button, .btn {
   text-decoration: none;
   font-family: var(--f-font);
   outline: 0;
-
+  color: rgba(var(--f-text-color), var(--text-opacity));
   background-color: #{'rgba(var(--button-color), 0.9)'};
   --f-text-color: var(--button-text-color);
   --text-opacity: 0.95;

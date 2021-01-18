@@ -54,7 +54,7 @@ body {
   font-weight: 400;
   line-height: 1.47;
   font-display: swap;
-
+  color: rgba(var(--f-text-color), var(--text-opacity));
   -moz-font-feature-settings: "liga" on;
   -webkit-font-smoothing: antialiased;
   font-smoothing: antialiased;
@@ -62,11 +62,8 @@ body {
   text-rendering: optimizeLegibility;
 }
 
-* {
-  color: rgba(var(--f-text-color), var(--text-opacity));
-}
-
 a {
+  color: rgba(var(--f-text-color), var(--text-opacity));
   text-decoration: none;
 }
 
@@ -80,6 +77,7 @@ input, select, textarea {
   border: 1px solid rgba(0, 0, 0, 0.2);
   padding: 5px;
   background: rgb(var(--f-background-color));
+  color: rgba(var(--f-text-color), var(--text-opacity));
 }
 
 @each $breakpointName, $breakpointSize in $breakpoints {
