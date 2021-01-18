@@ -84,6 +84,7 @@ p, p.body-1, .body-1 {
 
 p.body-2, .body-2 {
   font-size: 90%;
+  color: rgba(var(--f-text-color), var(--text-opacity));
 }
 
 .lead {
@@ -308,10 +309,12 @@ figcaption {
 
 .text-disabled {
   --text-opacity: 0.38;
+  color: rgba(var(--f-text-color), var(--text-opacity));
 }
 
 .text-hem {
   --text-opacity: 0.87;
+  color: rgba(var(--f-text-color), var(--text-opacity));
 }
 
 .text-mem {
