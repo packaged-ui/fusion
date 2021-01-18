@@ -158,7 +158,6 @@ blockquote footer, .blockquote-footer {
 ol, ul, dl {
   margin-top: 0;
   margin-bottom: 1rem;
-  color: rgba(var(--f-text-color), var(--text-opacity));
 }
 
 ol ol, ul ul, ol ul, ul ol {
