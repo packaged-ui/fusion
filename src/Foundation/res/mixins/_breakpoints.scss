@@ -27,11 +27,11 @@ $breakpoints: (
 
   @if $direction == 'only' {
     @if $index == 1 {
-      @media screen and (max-width: map-get($breakpoints, nextKey($breakpoint, $breakpoints)) - 1) {
+      @media screen and (max-width: map-get($breakpoints, nextKey($breakpoint, $breakpoints))) {
         @content;
       }
     } @else if $index < length($breakpoints) {
-      @media screen and (min-width: map-get($breakpoints, $breakpoint)) and (max-width: map-get($breakpoints, nextKey($breakpoint, $breakpoints)) - 1) {
+      @media screen and (min-width: map-get($breakpoints, $breakpoint)) and (max-width: map-get($breakpoints, nextKey($breakpoint, $breakpoints))) {
         @content;
       }
     } @else if ($index == length($breakpoints)) {
