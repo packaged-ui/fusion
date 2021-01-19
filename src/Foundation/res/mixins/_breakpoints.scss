@@ -2,7 +2,7 @@ $mobile: 0px !default;
 $phablet: 512px !default;
 $tablet: 768px !default;
 $desktop: 1024px !default;
-$hd: 1280px !default;
+$hd: 1285px !default;
 
 // Hard code this here just to prevent breaking of the mixins
 $breakpoints: (
@@ -27,11 +27,11 @@ $breakpoints: (
 
   @if $direction == 'only' {
     @if $index == 1 {
-      @media screen and (max-width: map-get($breakpoints, nextKey($breakpoint, $breakpoints))) {
+      @media screen and (max-width: map-get($breakpoints, nextKey($breakpoint, $breakpoints)) - 1) {
         @content;
       }
     } @else if $index < length($breakpoints) {
-      @media screen and (min-width: map-get($breakpoints, $breakpoint)) and (max-width: map-get($breakpoints, nextKey($breakpoint, $breakpoints))) {
+      @media screen and (min-width: map-get($breakpoints, $breakpoint)) and (max-width: map-get($breakpoints, nextKey($breakpoint, $breakpoints)) - 1) {
         @content;
       }
     } @else if ($index == length($breakpoints)) {
