@@ -6,7 +6,7 @@ import cleanCss from 'postcss-clean';
 
 process.chdir(__dirname);
 
-const defaultCfg = {
+module.exports = {
   input:   './build.js',
   output:  {
     file:   './src/_resources/fusion.min.js',
@@ -31,5 +31,3 @@ const defaultCfg = {
     }),
   ],
 };
-
-export default [defaultCfg];
