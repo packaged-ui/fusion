@@ -26,11 +26,11 @@ class XyGridDemo extends AbstractDemoPage
 
     ResourceManager::inline()->requireCss(
       "
-    .grid-x {
+    .gr-x {
       background: rgba(0,0,0,.06);
     }
     
-    .cell {
+    .ce {
       background: rgba(152,127,255, 0.4)!important;
       min-height: 50px !important;
       color: white;

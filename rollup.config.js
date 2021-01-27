@@ -23,7 +23,7 @@ module.exports = {
         cleanCss({
           level: {
             1: {
-              roundingPrecision: 3,
+              roundingPrecision: 2,
             },
           },
         }),

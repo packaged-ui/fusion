@@ -39,6 +39,50 @@
   --f-info-color-text: var(--rgb-text-light);
   --f-code-color: 232, 62, 140;
   --f-code-color-text: var(--rgb-text-light);
+
+  --f-color-primary-light: 179, 157, 219;
+  --f-color-primary-light-text: var(--rgb-text-dark);
+  --f-color-primary-dark: 49, 27, 146;
+  --f-color-primary-dark-text: var(--rgb-text-light);
+  --f-color-primary: 81, 45, 168;
+  --f-color-primary-text: var(--rgb-text-light);
+
+  --f-color-accent-light: 255, 171, 145;
+  --f-color-accent-light-text: var(--rgb-text-dark);
+  --f-color-accent-dark: 191, 54, 12;
+  --f-color-accent-dark-text: var(--rgb-text-light);
+  --f-color-accent: 230, 74, 25;
+  --f-color-accent-text: var(--rgb-text-light);
+
+  --rgb-text-dark: 0, 0, 0;
+  --rgb-text-light: 255, 255, 255;
+
+  --rgb-black: 0, 0, 0;
+  --rgb-black-text: var(--rgb-text-light);
+  --rgb-white: 255, 255, 255;
+  --rgb-white-text: var(--rgb-text-dark);
+
+  --rgb-grey-50: 250, 250, 250;
+  --rgb-grey-100: 245, 245, 245;
+  --rgb-grey-200: 238, 238, 238;
+  --rgb-grey-300: 224, 224, 224;
+  --rgb-grey-400: 189, 189, 189;
+  --rgb-grey-500: 158, 158, 158;
+  --rgb-grey-600: 117, 117, 117;
+  --rgb-grey-700: 97, 97, 97;
+  --rgb-grey-800: 66, 66, 66;
+  --rgb-grey-900: 33, 33, 33;
+
+  --rgb-grey-50-text: var(--rgb-text-dark);
+  --rgb-grey-100-text: var(--rgb-text-dark);
+  --rgb-grey-200-text: var(--rgb-text-dark);
+  --rgb-grey-300-text: var(--rgb-text-dark);
+  --rgb-grey-400-text: var(--rgb-text-dark);
+  --rgb-grey-500-text: var(--rgb-text-dark);
+  --rgb-grey-600-text: var(--rgb-text-light);
+  --rgb-grey-700-text: var(--rgb-text-light);
+  --rgb-grey-800-text: var(--rgb-text-light);
+  --rgb-grey-900-text: var(--rgb-text-light);
 }
 
 
@@ -53,11 +97,9 @@ body {
   font-size: var(--f-font-size);
   font-weight: 400;
   line-height: 1.47;
-  font-display: swap;
   color: rgba(var(--f-text-color), var(--text-opacity));
   -moz-font-feature-settings: "liga" on;
   -webkit-font-smoothing: antialiased;
-  font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
   text-rendering: optimizeLegibility;
 }

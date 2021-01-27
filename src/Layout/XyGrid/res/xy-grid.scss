@@ -1,13 +1,13 @@
-@import "../../../Foundation/res/foundation";
+@use "../../../Foundation/res/foundation";
 
 $grid-col-size: 12 !default;
 $grid-gutter: 1rem !default;
 $grid-max-width: 1140px !default;
-$grid: '.grid' !default;
-$col: '.cell' !default;
-$mx: '.grid-margin-x' !default;
-$my: '.grid-margin-y' !default;
-$offset: 'offset' !default;
+$grid: '.gr' !default;
+$col: '.ce' !default;
+$mx: '.gr-mr-x' !default;
+$my: '.gr-mr-y' !default;
+$offset: 'os' !default;
 
 $c: #{str-replace(#{$col}, '.', '')};
 
@@ -27,8 +27,8 @@ $c: #{str-replace(#{$col}, '.', '')};
 }
 
 @mixin generateColClasses($className: null) {
-  @each $breakpointName, $breakpointSize in $breakpoints {
-    @include breakpoint($breakpointName) {
+  @each $breakpointName, $breakpointSize in foundation.$breakpoints {
+    @include foundation.breakpoint($breakpointName) {
       @for $i from 1 through $grid-col-size {
         @if ($className) {
           .#{$breakpointName}-#{$className}-#{$i} {
@@ -45,8 +45,8 @@ $c: #{str-replace(#{$col}, '.', '')};
 }
 
 @mixin generateScopedColClasses($className: null) {
-  @each $breakpointName, $breakpointSize in $breakpoints {
-    @include breakpoint($breakpointName) {
+  @each $breakpointName, $breakpointSize in foundation.$breakpoints {
+    @include foundation.breakpoint($breakpointName) {
       @for $i from 1 through $grid-col-size {
         @if ($className) {
           & > .#{$breakpointName}-#{$className}-#{$i} {
@@ -63,7 +63,7 @@ $c: #{str-replace(#{$col}, '.', '')};
 }
 
 #{$grid} {
-  &-container {
+  &-co {
     max-width: $grid-max-width;
     margin: 0 auto;
     padding-right: $grid-gutter / 2;
