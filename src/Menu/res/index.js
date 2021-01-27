@@ -1,7 +1,7 @@
-import '../../Foundation/res';
 import {SetActive} from '../../Lists/res';
-import './menu.css';
 import {on} from "../../Foundation/res";
+
+import './menu.css';
 
 function updateActiveMenu(location) {
   let menus = document.querySelectorAll('.menu');
