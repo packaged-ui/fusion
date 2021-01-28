@@ -8,3 +8,5 @@ export * as List from '../Lists/res';
 export * as Menu from '../Menu/res';
 export * as Lightbox from '../Modal/Lightbox/res';
 export * as Reveal from '../Layout/Reveal/res';
+
+import './fusion.scss';

@@ -7,7 +7,7 @@ import cleanCss from 'postcss-clean';
 process.chdir(__dirname);
 
 module.exports = {
-  input:   './src/_resources/fusion.js',
+  input:   './src/_resources/build.js',
   output:  {
     file:   './resources/fusion.min.js',
     format: 'iife',
