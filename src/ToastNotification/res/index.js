@@ -1,3 +1,6 @@
+import './toast-notification-container.scss';
+import './toast-notification.scss';
+
 // only run this code if the document contains a toast notification container
 let container = document.querySelectorAll('.toast-notification-container');
 

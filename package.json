@@ -1,19 +1,13 @@
 {
   "name": "@packaged-ui/fusion",
   "version": "2.0.2",
-  "main": "/resources/fusion.min.js",
-  "module": "/src/_resources/fusion.js",
-  "style": "/resources/fusion.min.css",
-  "sass": "/src/_resources/fusion.scss",
+  "main": "/fusion.js",
   "files": [
     "/src/_resources",
-    "/resources/*",
+    "/fusion.js",
+    "/_imports.js",
     "/src/**/res"
   ],
-  "scripts": {
-    "build": "rollup -c rollup.config.js",
-    "watch": "rollup -c rollup.config.js -w"
-  },
   "devDependencies": {
     "@babel/core": "^7.8.4",
     "@babel/preset-env": "^7.8.4",
@@ -38,5 +32,8 @@
     "@packaged-ui/pagelets": "^1.6.1",
     "lodash.debounce": "^4.0.8",
     "normalize.css": "^8.0"
+  },
+  "scripts": {
+    "build": "rollup -c rollup.config.js -w"
   }
 }

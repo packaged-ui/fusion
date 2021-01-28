@@ -1,4 +1,5 @@
 import {on} from '../../../Foundation/res';
+import './tabs.css';
 
 export function SetActive(ele, tabID) {
   // find top tabContainer

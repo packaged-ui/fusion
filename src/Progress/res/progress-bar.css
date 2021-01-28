@@ -1,0 +1,16 @@
+.progress {
+  --f-progress-bar-color: var(--f-color-accent);
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  height: .25rem;
+  overflow: hidden;
+  font-size: 0;
+  background-color: rgba(var(--f-progress-bar-color), 0.28);
+  border-radius: 0;
+}
+
+.progress__bar {
+  background-color: rgb(var(--f-progress-bar-color));
+  color: #fff;
+}

@@ -1,0 +1,8 @@
+:root {
+  --f-color-accent-light: 255, 171, 145;
+  --f-color-accent-light-text: var(--rgb-text-dark);
+  --f-color-accent-dark: 191, 54, 12;
+  --f-color-accent-dark-text: var(--rgb-text-light);
+  --f-color-accent: 230, 74, 25;
+  --f-color-accent-text: var(--rgb-text-light);
+}
