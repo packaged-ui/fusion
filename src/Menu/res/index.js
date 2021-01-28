@@ -1,8 +1,6 @@
 import {SetActive} from '../../Lists/res';
 import {on} from "../../Foundation/res";
 
-import './menu.css';
-
 function updateActiveMenu(location) {
   let menus = document.querySelectorAll('.menu');
   for(let mi in menus)

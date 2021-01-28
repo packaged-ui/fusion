@@ -1,5 +1,4 @@
 import {on} from '../../Foundation/res';
-import './toggleInput.css';
 
 on(
   document, 'click', '.toggle-button',

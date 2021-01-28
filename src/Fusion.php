@@ -52,7 +52,7 @@ class Fusion implements LayoutInterface, TypographyInterface, ButtonInterface, B
 
   public static function resourceManager(): ResourceManager
   {
-    return ResourceManager::componentClass(self::class);
+    return ResourceManager::resources();
   }
 
   protected static function _isIe(): bool

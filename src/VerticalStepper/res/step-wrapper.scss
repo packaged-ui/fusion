@@ -1,61 +1,65 @@
+@import "step";
 @import "../../Foundation/res/foundation";
 @import "_helpers/left-border";
 
 $this: '.step-wrapper';
 $step: '.step';
 
-#{$this} {
-  position: relative;
-  padding: 24px 0;
+@mixin step-wrapper {
+  @include step;
+  #{$this} {
+    position: relative;
+    padding: 24px 0;
 
-  &--border {
-    #{$step} {
+    &--border {
+      #{$step} {
 
-      > div {
-        border: 1px solid rgba(0, 0, 0, 0.3);
-        border-radius: 5px;
+        > div {
+          border: 1px solid rgba(0, 0, 0, 0.3);
+          border-radius: 5px;
+        }
+
+        &__content {
+          border-top: 1px solid rgba(0, 0, 0, 0.3);
+        }
       }
+    }
 
-      &__content {
-        border-top: 1px solid rgba(0, 0, 0, 0.3);
+    &--icon-middle {
+      #{$step} {
+        &:before {
+          top: calc(50% - 11px);
+        }
       }
+    }
+
+  }
+
+
+  // icon middle first child
+  #{$this}--icon-middle > #{$step}:first-child,
+  #{$this}--icon-middle *:first-child > #{$step}:first-child {
+    &::after {
+      height: 50% !important;
+      top: 50% !important;
     }
   }
 
-  &--icon-middle {
-    #{$step} {
-      &:before {
-        top: calc(50% - 11px);
-      }
+
+  // only child, on it's todd
+  #{$this} > #{$step}:only-child,
+  #{$this} *:first-of-type:only-child > #{$step}:only-child {
+    &:after {
+      content: none !important;
     }
   }
 
-}
-
-
-// icon middle first child
-#{$this}--icon-middle > #{$step}:first-child,
-#{$this}--icon-middle *:first-child > #{$step}:first-child {
-  &::after {
-    height: 50% !important;
-    top: 50% !important;
+  // last child
+  // :last-child will only work if the element is the last in the dom tree
+  #{$this} > #{$step}:last-child,
+  #{$this} *:last-child > #{$step}:last-child {
+    @include left-border($last: true);
   }
+
 }
-
-
-// only child, on it's todd
-#{$this} > #{$step}:only-child,
-#{$this} *:first-of-type:only-child > #{$step}:only-child {
-  &:after {
-    content: none !important;
-  }
-}
-
-// last child
-// :last-child will only work if the element is the last in the dom tree
-#{$this} > #{$step}:last-child,
-#{$this} *:last-child > #{$step}:last-child {
-  @include left-border($last: true);
-}
-
 

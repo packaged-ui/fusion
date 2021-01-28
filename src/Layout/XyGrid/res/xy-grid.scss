@@ -1,4 +1,4 @@
-@use "../../../Foundation/res/foundation";
+@import "../../../Foundation/res/foundation";
 
 $grid-col-size: 12 !default;
 $grid-gutter: 1rem !default;
@@ -27,8 +27,8 @@ $c: #{str-replace(#{$col}, '.', '')};
 }
 
 @mixin generateColClasses($className: null) {
-  @each $breakpointName, $breakpointSize in foundation.$breakpoints {
-    @include foundation.breakpoint($breakpointName) {
+  @each $breakpointName, $breakpointSize in $breakpoints {
+    @include breakpoint($breakpointName) {
       @for $i from 1 through $grid-col-size {
         @if ($className) {
           .#{$breakpointName}-#{$className}-#{$i} {
@@ -45,8 +45,8 @@ $c: #{str-replace(#{$col}, '.', '')};
 }
 
 @mixin generateScopedColClasses($className: null) {
-  @each $breakpointName, $breakpointSize in foundation.$breakpoints {
-    @include foundation.breakpoint($breakpointName) {
+  @each $breakpointName, $breakpointSize in $breakpoints {
+    @include breakpoint($breakpointName) {
       @for $i from 1 through $grid-col-size {
         @if ($className) {
           & > .#{$breakpointName}-#{$className}-#{$i} {
@@ -62,82 +62,85 @@ $c: #{str-replace(#{$col}, '.', '')};
   }
 }
 
-#{$grid} {
-  &-co {
-    max-width: $grid-max-width;
-    margin: 0 auto;
-    padding-right: $grid-gutter / 2;
-    padding-left: $grid-gutter / 2;
+@mixin xygrid {
 
-    &.fluid {
-      margin: 0;
-      padding: 0;
-      max-width: 100%;
-      overflow-x: hidden;
+  #{$grid} {
+    &-co {
+      max-width: $grid-max-width;
+      margin: 0 auto;
+      padding-right: $grid-gutter / 2;
+      padding-left: $grid-gutter / 2;
+
+      &.fluid {
+        margin: 0;
+        padding: 0;
+        max-width: 100%;
+        overflow-x: hidden;
+      }
+    }
+
+    &-x {
+      display: flex;
+      flex-flow: row wrap;
+
+      > .auto,
+      > .shrink {
+        width: auto;
+      }
+
+      > .auto {
+        flex: 1 1 auto;
+      }
+
+      > .shrink {
+        flex: 0 0 auto;
+      }
     }
   }
 
-  &-x {
-    display: flex;
-    flex-flow: row wrap;
-
-    > .auto,
-    > .shrink {
-      width: auto;
-    }
-
-    > .auto {
-      flex: 1 1 auto;
-    }
-
-    > .shrink {
-      flex: 0 0 auto;
-    }
+  #{$col} {
+    width: 100%;
+    flex: 0 0 auto;
   }
-}
 
-#{$col} {
-  width: 100%;
-  flex: 0 0 auto;
-}
+  #{$mx} {
+    margin-left: -$grid-gutter / 2;
+    margin-right: -$grid-gutter / 2;
 
-#{$mx} {
-  margin-left: -$grid-gutter / 2;
-  margin-right: -$grid-gutter / 2;
+    > #{$col} {
+      width: calc(100% - #{$grid-gutter});
+      margin-left: $grid-gutter / 2;
+      margin-right: $grid-gutter / 2;
 
-  > #{$col} {
-    width: calc(100% - #{$grid-gutter});
-    margin-left: $grid-gutter / 2;
-    margin-right: $grid-gutter / 2;
+      &.auto,
+      &.shrink {
+        width: auto !important;
+      }
+    }
 
-    &.auto,
-    &.shrink {
-      width: auto !important;
+    @include generateScopedColClasses() using($i) {
+      $w: (100 / ($grid-col-size / $i) * 1%);
+      width: calc(#{$w} - #{$grid-gutter});
+    }
+
+    @include generateScopedColClasses($offset) using($i) {
+      $w: (100 / ($grid-col-size / $i) * 1%);
+      margin-left: calc(#{$w} + (#{$grid-gutter} / 2));
     }
   }
 
-  @include generateScopedColClasses() using($i) {
-    $w: (100 / ($grid-col-size / $i) * 1%);
-    width: calc(#{$w} - #{$grid-gutter});
+  #{$my} {
+    > #{$col} {
+      margin-top: $grid-gutter / 2;
+      margin-bottom: $grid-gutter / 2;
+    }
   }
 
-  @include generateScopedColClasses($offset) using($i) {
-    $w: (100 / ($grid-col-size / $i) * 1%);
-    margin-left: calc(#{$w} + (#{$grid-gutter} / 2));
+  @include generateColClasses() using($i) {
+    width: (100 / ($grid-col-size / $i) * 1%);
   }
-}
 
-#{$my} {
-  > #{$col} {
-    margin-top: $grid-gutter / 2;
-    margin-bottom: $grid-gutter / 2;
+  @include generateColClasses($offset) using($i) {
+    margin-left: (100 / ($grid-col-size / $i) * 1%);
   }
-}
-
-@include generateColClasses() using($i) {
-  width: (100 / ($grid-col-size / $i) * 1%);
-}
-
-@include generateColClasses($offset) using($i) {
-  margin-left: (100 / ($grid-col-size / $i) * 1%);
 }

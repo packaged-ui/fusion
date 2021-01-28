@@ -1,0 +1,139 @@
+@mixin grid {
+  :root {
+    --grid-gutter: 2px;
+    --grid-gap: 2px;
+    --grid-columns: auto-fill;
+
+    --grid-cell-padding: 2px;
+    --grid-cell-width: 220px;
+
+    --grid-bordered-color: rgb(var(--f-divider-color));
+    --grid-bordered-cell-color: rgb(var(--f-content-background-color));
+  }
+
+  @media (min-width: 512px) {
+    :root {
+      --grid-gutter: 4px;
+      --grid-gap: 4px;
+      --grid-cell-padding: 4px;
+    }
+  }
+
+  @media (min-width: 768px) {
+    :root {
+      --grid-gutter: 8px;
+      --grid-gap: 8px;
+      --grid-cell-padding: 8px;
+    }
+  }
+
+
+  @media (min-width: 1024px) {
+    :root {
+      --grid-gutter: 12px;
+      --grid-gap: 12px;
+      --grid-cell-padding: 12px;
+    }
+  }
+
+  @media (min-width: 1280px) {
+    :root {
+      --grid-gutter: 16px;
+      --grid-gap: 16px;
+      --grid-cell-padding: 16px;
+    }
+  }
+
+  .grid, .grid__inner, .grid__cell {
+    -webkit-box-sizing: border-box;
+    box-sizing: border-box;
+    grid-gap: var(--grid-gap);
+  }
+
+  .grid {
+    min-width: var(--grid-cell-width);
+    margin: 0 auto;
+  }
+
+  .grid--auto-fit {
+    --grid-columns: auto-fit;
+  }
+
+  .grid__inner {
+    padding: var(--grid-gutter);
+    width: 100%;
+    display: grid;
+
+    grid-template-rows: auto;
+    grid-template-columns: repeat(var(--grid-columns), minmax(var(--grid-cell-width), 1fr));
+  }
+
+  .grid__cell {
+    display: flex;
+    padding: var(--grid-cell-padding);
+    overflow: hidden;
+  }
+
+  .grid__cell .grid__inner .grid__cell {
+    margin: 0;
+
+  }
+
+  .grid__cell .grid {
+    grid-gap: 0;
+    min-width: min(100%, var(--grid-cell-width));
+  }
+
+  .grid__cell .grid__inner {
+    padding: 0;
+    --grid-cell-width: calc(var(--grid-cell-width) - var(--grid-cell-padding));
+    grid-template-columns: repeat(var(--grid-columns), minmax(var(--grid-cell-width), --grid-cell-width));
+  }
+
+  .grid__cell--align-top {
+    align-self: start;
+  }
+
+  .grid__cell--align-middle {
+    align-self: center;
+  }
+
+  .grid__cell--align-bottom {
+    align-self: end;
+  }
+
+  .grid--align-left {
+    margin-right: auto;
+    margin-left: 0;
+  }
+
+  .grid--align-right {
+    margin-right: 0;
+    margin-left: auto;
+  }
+
+  .grid__inner--bordered {
+    --grid-gutter: 1px;
+    --grid-gap: 1px;
+    background-color: var(--grid-bordered-color);
+  }
+
+  .grid__inner--bordered .grid__cell {
+    background: var(--grid-bordered-cell-color);
+  }
+
+
+  @media all and (-ms-high-contrast: none) {
+    .grid__inner {
+      display: flex;
+      flex-wrap: wrap;
+      padding: calc(var(--grid-gutter) / 2);
+    }
+
+    .grid__cell {
+      flex-grow: 1;
+      margin: calc(var(--grid-gutter) / 2);
+      flex-basis: var(--grid-cell-width);
+    }
+  }
+}

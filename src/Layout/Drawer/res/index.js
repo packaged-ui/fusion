@@ -1,5 +1,4 @@
 import {on} from '../../../Foundation/res';
-import './drawer.css';
 
 on(
   document, 'click', '.drawer__toggle',

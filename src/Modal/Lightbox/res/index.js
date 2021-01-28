@@ -5,8 +5,7 @@ import Modal from '@packaged-ui/modal';
 
 let downTarget = null;
 on(
-  document, 'mousedown', '.modal', (e) =>
-  {
+  document, 'mousedown', '.modal', (e) => {
     if(e.target.matches('.modal'))
     {
       downTarget = e.target;
@@ -14,8 +13,7 @@ on(
   }
 );
 on(
-  document, 'mouseup', '.modal', (e) =>
-  {
+  document, 'mouseup', '.modal', (e) => {
     if(downTarget === e.target)
     {
       const content = e.delegateTarget.querySelector('.modal__content.lightbox');
@@ -27,8 +25,7 @@ on(
   }
 );
 on(
-  document, 'keyup', (e) =>
-  {
+  document, 'keyup', (e) => {
     if(e.key === 'Escape' || e.key === 'Esc' || e.keyCode === 27)
     {
       // find the last modal's closer

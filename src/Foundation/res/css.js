@@ -1,2 +1,0 @@
-import 'normalize.css';
-import './_base.scss';

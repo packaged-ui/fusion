@@ -1,0 +1,9 @@
+@mixin menu {
+  .menu__item {
+    user-select: none;
+  }
+
+  .menu__item:hover {
+    text-decoration: none;
+  }
+}

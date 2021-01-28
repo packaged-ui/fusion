@@ -7,10 +7,11 @@ import cleanCss from 'postcss-clean';
 process.chdir(__dirname);
 
 module.exports = {
-  input:   './build.js',
+  input:   './src/_resources/fusion.js',
   output:  {
-    file:   './src/_resources/fusion.min.js',
+    file:   './resources/fusion.min.js',
     format: 'iife',
+    name:   'fusion'
   },
   plugins: [
     resolve({browser: true, preferBuiltins: false}),
