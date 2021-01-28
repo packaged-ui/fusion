@@ -1,6 +1,6 @@
 {
   "name": "@packaged-ui/fusion",
-  "version": "2.0.1",
+  "version": "2.0.2",
   "main": "/resources/fusion.min.js",
   "module": "/src/_resources/fusion.js",
   "style": "/resources/fusion.min.css",
