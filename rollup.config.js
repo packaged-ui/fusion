@@ -7,11 +7,10 @@ import cleanCss from 'postcss-clean';
 process.chdir(__dirname);
 
 module.exports = {
-  input:   './src/_resources/build.js',
+  input:   './build.js',
   output:  {
-    file:   './resources/fusion.min.js',
+    file:   './src/_resources/fusion.min.js',
     format: 'iife',
-    name:   'fusion'
   },
   plugins: [
     resolve({browser: true, preferBuiltins: false}),
@@ -24,7 +23,7 @@ module.exports = {
         cleanCss({
           level: {
             1: {
-              roundingPrecision: 2,
+              roundingPrecision: 3,
             },
           },
         }),

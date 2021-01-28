@@ -1,3 +1,5 @@
+import './list.css';
+
 export function SetActive(ele) {
   // find top list
   let list;

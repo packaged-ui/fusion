@@ -1,0 +1,32 @@
+:root {
+  --dialog-background: rgb(var(--f-content-background-color));
+}
+
+.dialog .modal__content {
+  background: var(--dialog-background);
+  padding: 24px;
+  margin: 10px;
+  max-width: 100%;
+}
+
+.dialog__buttons {
+  margin-bottom: -16px;
+  margin-right: -16px;
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: flex-end;
+  align-items: flex-end;
+}
+
+@media (min-width: 768px) {
+  .dialog .modal__content {
+    max-width: 560px;
+  }
+}
+
+@media only screen and (max-width: 511px) {
+  .dialog .modal__wrapper {
+    min-width: 100% !important;
+    width: 100% !important;
+  }
+}

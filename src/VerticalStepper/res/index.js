@@ -1,3 +1,5 @@
+import './step-wrapper.scss';
+import './step.scss';
 import {Pagelets} from '@packaged-ui/pagelets';
 import {onReady} from '../../Foundation/res';
 

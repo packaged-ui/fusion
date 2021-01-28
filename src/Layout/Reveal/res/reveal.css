@@ -1,0 +1,4 @@
+
+.reveal.reveal__content:not(.show) {
+  display: none;
+}

@@ -1,0 +1,72 @@
+.list-box {
+  margin: 0;
+  padding: 0;
+}
+
+.list__item {
+  display: flex;
+  align-items: center;
+  height: 48px;
+  box-sizing: border-box;
+}
+
+.list__item:hover {
+  background-color: rgb(var(--f-lighter-color));
+}
+
+.list--disable-hover .list__item:hover {
+  background-color: transparent;
+}
+
+.list__item--active {
+  background-color: rgba(var(--f-color-primary), 0.1);
+  --f-text-color: var(--f-color-primary);
+  --text-opacity: 1;
+}
+
+body.dark .list__item--active {
+  background-color: rgba(var(--f-color-primary), 0.5);
+  --f-text-color: var(--f-color-primary-light);
+}
+
+.list__item--active:hover {
+  background-color: rgba(var(--f-color-primary), 0.2);
+}
+
+
+.list__item + .list__item {
+  border-top: none;
+}
+
+.list__item--multi {
+  height: 72px;
+}
+
+.list__item__leading,
+.list__item__trailing {
+  display: flex;
+  flex-direction: row;
+  min-width: 56px;
+}
+
+.list__item__trailing {
+  justify-content: flex-end;
+}
+
+.list__item > :first-child {
+  padding-left: 16px;
+}
+
+.list__item > * {
+  padding: 0 16px 0 0;
+  box-sizing: border-box;
+}
+
+.list__item__text {
+  flex-grow: 1;
+}
+
+.list__item__secondary {
+  --text-opacity: 0.38;
+  font-size: 0.9em;
+}
