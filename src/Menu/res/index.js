@@ -1,6 +1,4 @@
-import '../../Foundation/res';
 import {SetActive} from '../../Lists/res';
-import './menu.css';
 import {on} from "../../Foundation/res";
 
 function updateActiveMenu(location) {

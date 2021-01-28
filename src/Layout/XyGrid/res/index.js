@@ -1,1 +1,0 @@
-import './xy-grid.scss';

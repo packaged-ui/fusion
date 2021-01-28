@@ -38,7 +38,7 @@ class XyCell extends Div implements Component
    */
   public function getBlockName(): string
   {
-    return 'cell';
+    return 'ce';
   }
 
   /**
@@ -80,7 +80,7 @@ class XyCell extends Div implements Component
 
     foreach($this->_offsets as $device => $offset)
     {
-      $ele->addClass($device . '-offset-' . $offset);
+      $ele->addClass($device . '-os-' . $offset);
     }
     return $ele;
   }

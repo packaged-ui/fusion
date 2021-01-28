@@ -1,0 +1,55 @@
+@mixin theme {
+  .thm-bgp {
+    background-color: rgb(var(--f-color-primary));
+    --f-text-color: var(--f-color-primary-text);
+  }
+
+  .thm-p {
+    color: rgb(var(--f-color-primary));
+  }
+
+  .thm-bgpd {
+    background-color: rgb(var(--f-color-primary-dark));
+    --f-text-color: var(--f-color-primary-dark-text);
+  }
+
+  .thm-pd {
+    color: rgb(var(--f-color-primary-dark));
+  }
+
+  .thm-bgpl {
+    background-color: rgb(var(--f-color-primary-light));
+    --f-text-color: var(--f-color-primary-light-text);
+  }
+
+  .thm-pl {
+    color: rgb(var(--f-color-primary-light));
+  }
+
+  .thm-bga {
+    background-color: rgb(var(--f-color-accent));
+    --f-text-color: var(--f-color-accent-text);
+  }
+
+  .thm-a {
+    color: rgb(var(--f-color-accent));
+  }
+
+  .thm-bgad {
+    background-color: rgb(var(--f-color-accent-dark));
+    --f-text-color: var(--f-color-accent-dark-text);
+  }
+
+  .thm-ad {
+    color: rgb(var(--f-color-accent-dark));
+  }
+
+  .thm-bgal {
+    background-color: rgb(var(--f-color-accent-light));
+    --f-text-color: var(--f-color-accent-light-text);
+  }
+
+  .thm-al {
+    color: rgb(var(--f-color-accent-light));
+  }
+}

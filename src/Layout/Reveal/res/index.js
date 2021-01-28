@@ -1,4 +1,3 @@
-import './reveal.css';
 import {on} from '../../../Foundation/res';
 
 on(document, 'click', '[reveal-launcher]', (e) => {

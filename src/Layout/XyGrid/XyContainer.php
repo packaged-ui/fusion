@@ -32,7 +32,7 @@ class XyContainer extends Div implements Component
    */
   public function getBlockName(): string
   {
-    return 'grid-container';
+    return 'gr-co';
   }
 
   /**

@@ -20,7 +20,7 @@ class Drawer extends AbstractContainerTag implements Component
   {
     parent::__construct(...$content);
     $this->_constructComponent();
-    $this->_construct(...$content);
+    $this->_construct();
   }
 
   public function getBlockName(): string
