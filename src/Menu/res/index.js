@@ -1,32 +1,35 @@
 import '../../Foundation/res';
 import {SetActive} from '../../Lists/res';
 import './menu.css';
-import {on} from "../../Foundation/res";
+import {on} from '../../Foundation/res';
 
-function updateActiveMenu(location) {
-  let menus = document.querySelectorAll('.menu');
-  for(let mi in menus)
-  {
-    if(menus.hasOwnProperty(mi))
+function updateActiveMenu(location)
+{
+  document.querySelectorAll('.menu').forEach(
+    (menu) =>
     {
-      let menu = menus[mi];
       if(!menu.matches('.menu .menu'))
       {
         let mostSpecific;
         let mostSpecificLen = 0;
-        let items = menu.querySelectorAll('.menu__item[href]');
-        for(let i in items)
-        {
-          if(items.hasOwnProperty(i))
+        menu.querySelectorAll('.menu__item[href]').forEach(
+          (item) =>
           {
-            let item = items[i];
             let href = item.getAttribute('href');
-            if(href[0] === '?')
+            let regex;
+            if(href[0] === '#')
             {
-              href = location.pathname + href;
+              regex = new RegExp(href.replace(/[\/.*+?^${}()|[\]\\]/g, '\\$&') + '$');
             }
-
-            let regex = new RegExp('^' + href.replace(/[\/.*+?^${}()|[\]\\]/g, '\\$&'));
+            else
+            {
+              if(href[0] === '?')
+              {
+                href = location.pathname + href;
+              }
+              regex = new RegExp('^' + href.replace(/[\/.*+?^${}()|[\]\\]/g, '\\$&'));
+            }
+            console.log(regex);
             if(regex.test(location.href.replace(location.origin, '')))
             {
               if(href.length > mostSpecificLen)
@@ -36,19 +39,20 @@ function updateActiveMenu(location) {
               }
             }
           }
-        }
+        );
         if(mostSpecific)
         {
           SetActive(mostSpecific);
         }
       }
     }
-  }
+  );
 }
 
 on(
   document, 'click', '.menu__item',
-  function (e) {
+  (e) =>
+  {
     let ele = e.target;
     while((!ele.matches('.menu__item')) && ele.parentElement)
     {

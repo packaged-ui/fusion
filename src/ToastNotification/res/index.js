@@ -1,53 +1,44 @@
 import './toast-notification-container.scss';
 import './toast-notification.scss';
+import {on} from '../../Foundation/res';
 
-// only run this code if the document contains a toast notification container
-let container = document.querySelectorAll('.toast-notification-container');
+// Manage each individual toast
+document.querySelectorAll('.toast-notification').forEach(
+  (toast) =>
+  {
+    let timeToShow = parseInt(toast.getAttribute('data-toast-notification-time-to-show'));
+    let delay = parseInt(toast.getAttribute('data-toast-notification-delay'));
 
-if(container)
-{
-  container.forEach((e) => {
+    setTimeout(() => _openToastNotificationContainer(toast), delay);
 
-    // Manage each individual toast
-    let toasts = e.getElementsByClassName('toast-notification');
-
-    for(let i = 0; i < toasts.length; i++)
+    if(timeToShow !== 0)
     {
-      let timeToShow = parseInt(toasts[i].getAttribute('data-toast-notification-time-to-show'));
-      let delay = parseInt(toasts[i].getAttribute('data-toast-notification-delay'));
-
-      setTimeout(() => openToastNotificationContainer(toasts[i]), delay);
-
-      if(timeToShow !== 0)
-      {
-        setTimeout(() => closeToastNotification(toasts[i]), (timeToShow + delay));
-      }
-
-      if(toasts[i].classList.contains('toast-notification--removable'))
-      {
-
-        toasts[i].addEventListener('click', (e) => {
-          e.preventDefault();
-          const elem = e.target.closest('.toast-notification');
-          closeToastNotification(elem);
-        });
-
-      }
-
+      setTimeout(() => _closeToastNotification(toast), (timeToShow + delay));
     }
-
-  });
-
-  function openToastNotificationContainer(element) {
-    element.classList.add('toast-notification--show');
   }
+);
 
-  function closeToastNotification(element) {
-    element.classList.add('toast-notification--fade');
-    setTimeout(() => {
-      element.classList.add('toast-notification--hide');
-    }, 500);
-  }
+function _openToastNotificationContainer(element)
+{
+  element.classList.add('toast-notification--show');
 }
 
+function _closeToastNotification(element)
+{
+  element.classList.add('toast-notification--fade');
+  setTimeout(
+    () =>
+    {
+      element.classList.add('toast-notification--hide');
+    },
+    500
+  );
+}
 
+on(
+  document, 'click', '.toast-notification--removable', (e) =>
+  {
+    e.preventDefault();
+    _closeToastNotification(e.delegateTarget);
+  }
+);

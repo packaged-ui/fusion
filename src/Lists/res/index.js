@@ -1,6 +1,7 @@
 import './list.css';
 
-export function SetActive(ele) {
+export function SetActive(ele)
+{
   // find top list
   let list;
   let t = ele;
@@ -14,14 +15,15 @@ export function SetActive(ele) {
   while((t = t.parentElement));
   if(list)
   {
-    let eles = list.querySelectorAll('.list__item--active');
-    for(let i in eles)
-    {
-      if(eles.hasOwnProperty(i) && eles[i] !== ele)
+    list.querySelectorAll('.list__item--active').forEach(
+      (cEle) =>
       {
-        eles[i].classList.remove('list__item--active');
+        if(cEle !== ele)
+        {
+          cEle.classList.remove('list__item--active');
+        }
       }
-    }
+    );
     ele.classList.add('list__item--active');
   }
 }

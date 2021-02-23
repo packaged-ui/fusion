@@ -3,7 +3,8 @@ import './drawer.css';
 
 on(
   document, 'click', '.drawer__toggle',
-  function (e) {
+  function (e)
+  {
     toggleDrawer(getDrawerContainer(e.target));
     e.stopPropagation();
     e.stopImmediatePropagation();
@@ -11,27 +12,26 @@ on(
 );
 
 on(
-  document, 'click', 'a', function () {
+  document, 'click', 'a', function ()
+  {
     // if drawer reveal is modal, close drawer
-    let drawers = document.querySelectorAll('.drawer');
-    for(let i = 0; i < drawers.length; i++)
-    {
-      if(drawers.hasOwnProperty(i))
+    document.querySelectorAll('.drawer').forEach(
+      (drawer) =>
       {
-        let drawer = drawers[i];
         if(drawer.getAttribute('reveal') === 'modal' // if drawer is modal
           || document.body.clientWidth < 512) // or client width less than 512px
         {
-          closeDrawer(drawers[i].parentNode);
+          closeDrawer(drawer.parentNode);
         }
       }
-    }
-  },
+    );
+  }
 );
 
 on(
   document, 'click', '.drawer-container.drawer--open > .drawer-app-content',
-  function (e) {
+  function (e)
+  {
     if(e.target.matches('.drawer-app-content'))
     {
       let style = window.getComputedStyle(e.target, '::before');
@@ -48,7 +48,8 @@ on(
   },
 );
 
-function getDrawerContainer(target) {
+function getDrawerContainer(target)
+{
   let container = target.closest('.drawer-container');
   if(!container)
   {
@@ -58,7 +59,8 @@ function getDrawerContainer(target) {
   return container;
 }
 
-function toggleDrawer(container) {
+function toggleDrawer(container)
+{
   // find parent
   if(container)
   {
@@ -73,14 +75,16 @@ function toggleDrawer(container) {
   }
 }
 
-function openDrawer(container) {
+function openDrawer(container)
+{
   let drawer = container.querySelector('.drawer');
   let storageKey = 'drawer--open-' + drawer.getAttribute('position');
   container.classList.add('drawer--open');
   localStorage.setItem(storageKey, '1');
 }
 
-function closeDrawer(container) {
+function closeDrawer(container)
+{
   let drawer = container.querySelector('.drawer');
   let storageKey = 'drawer--open-' + drawer.getAttribute('position');
   container.classList.remove('drawer--open');

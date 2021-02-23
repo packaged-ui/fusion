@@ -1,7 +1,8 @@
 import {on} from '../../../Foundation/res';
 import './tabs.css';
 
-export function SetActive(ele, tabID) {
+export function SetActive(ele, tabID)
+{
   // find top tabContainer
   let tabContainer;
   let t = ele;
@@ -15,15 +16,17 @@ export function SetActive(ele, tabID) {
   while((t = t.parentElement));
   let tab = tabContainer.querySelectorAll('#' + tabID)[0];
 
-  function removeClass(removeClass) {
-    let eles = tabContainer.querySelectorAll('.' + removeClass);
-    for(let i in eles)
-    {
-      if(eles.hasOwnProperty(i) && eles[i] !== ele)
+  function removeClass(removeClass)
+  {
+    tabContainer.querySelectorAll('.' + removeClass).forEach(
+      (cEle) =>
       {
-        eles[i].classList.remove(removeClass);
+        if(cEle !== ele)
+        {
+          cEle.classList.remove(removeClass);
+        }
       }
-    }
+    );
   }
 
   removeClass('tab__label--active');
@@ -38,7 +41,8 @@ export function SetActive(ele, tabID) {
 
 on(
   document, 'click', '.tab__label',
-  function (e) {
+  function (e)
+  {
     let ele = e.target;
     while((!ele.matches('.tab__label')) && ele.parentElement)
     {
@@ -52,12 +56,10 @@ on(
 if(window.location.hash.startsWith('#f-tb-'))
 {
   let tabID = window.location.hash.substring(1);
-  let label = document.querySelectorAll('[data-tab-id=\'' + tabID + '\']');
-  for(let i in label)
-  {
-    if(label.hasOwnProperty(i))
+  document.querySelectorAll('[data-tab-id=\'' + tabID + '\']').forEach(
+    (label) =>
     {
-      SetActive(label[i], tabID);
+      SetActive(label, tabID);
     }
-  }
+  );
 }
