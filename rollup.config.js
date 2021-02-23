@@ -6,28 +6,55 @@ import cleanCss from 'postcss-clean';
 
 process.chdir(__dirname);
 
-module.exports = {
-  input:   './build.js',
-  output:  {
-    file:   './src/_resources/fusion.min.js',
-    format: 'iife',
+module.exports = [
+  {
+    input:   './build.js',
+    output:  {
+      file:   './src/_resources/fusion.min.js',
+      format: 'iife'
+    },
+    plugins: [
+      resolve({browser: true, preferBuiltins: false}),
+      commonjs(),
+      terser(),
+      postcss({
+        extract:  true,
+        minimize: true,
+        plugins:  [
+          cleanCss({
+            level: {
+              1: {
+                roundingPrecision: 3
+              }
+            }
+          })
+        ]
+      })
+    ]
   },
-  plugins: [
-    resolve({browser: true, preferBuiltins: false}),
-    commonjs(),
-    terser(),
-    postcss({
-      extract:  true,
-      minimize: true,
-      plugins:  [
-        cleanCss({
-          level: {
-            1: {
-              roundingPrecision: 3,
-            },
-          },
-        }),
-      ],
-    }),
-  ],
-};
+  {
+    input:   './demo/src/main.js',
+    output:  {
+      file:   './demo/src/_resources/demo.min.js',
+      format: 'iife'
+    },
+    plugins: [
+      resolve({browser: true, preferBuiltins: false}),
+      commonjs(),
+      terser(),
+      postcss({
+        extract:  true,
+        minimize: true,
+        plugins:  [
+          cleanCss({
+            level: {
+              1: {
+                roundingPrecision: 3
+              }
+            }
+          })
+        ]
+      })
+    ]
+  }
+];

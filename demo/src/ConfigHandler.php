@@ -50,6 +50,8 @@ class ConfigHandler implements ContextAware
   {
     Fusion::includeGoogleFont();
     Fusion::require();
+    ResourceManager::componentClass(self::class)->requireJs('demo.min.js');
+    ResourceManager::componentClass(self::class)->requireCss('demo.min.css');
     ResourceManager::vendor('packaged-ui', 'fontawesome')->requireCss(FaIcon::CSS_PATH);
   }
 
