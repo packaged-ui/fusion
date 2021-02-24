@@ -3,11 +3,10 @@ namespace PackagedUi\FusionDemo;
 
 use Cubex\Application\Application;
 use Cubex\Cubex;
+use Exception;
 use Packaged\Context\Context;
-use Packaged\DiContainer\DependencyInjector;
 use Packaged\Dispatch\Dispatch;
 use Packaged\Helpers\Objects;
-use Packaged\Http\Request;
 use Packaged\Routing\Handler\FuncHandler;
 use Packaged\Routing\Handler\Handler;
 use Symfony\Component\HttpFoundation\Response;
@@ -16,28 +15,29 @@ class DemoUiApplication extends Application
 {
   const DISPATCH_PATH = '/_r';
 
+  /**
+   * DemoUiApplication constructor.
+   *
+   * @param Cubex $cubex
+   *
+   * @throws Exception
+   */
   public function __construct(Cubex $cubex)
   {
     parent::__construct($cubex);
-    $cubex->factory(
-      Context::class,
-      function () use ($cubex) {
-        $ctx = new UiContext(Request::createFromGlobals());
-        $ctx = $cubex->prepareContext($ctx);
-        $handler = Objects::create($ctx->config()->getItem("ui", "config_handler", ConfigHandler::class), []);
-        if($handler instanceof ConfigHandler)
-        {
-          $handler->setContext($ctx);
-          $ctx->setConfigHandler($handler);
-        }
-        else
-        {
-          throw new \Exception("Invalid config handler provided");
-        }
-        return $ctx;
-      },
-      DependencyInjector::MODE_IMMUTABLE
-    );
+    $ctx = $cubex->getContext();
+
+    $handler = Objects::create($ctx->config()->getItem("ui", "config_handler", ConfigHandler::class), []);
+
+    if($handler instanceof ConfigHandler)
+    {
+      $handler->setContext($ctx);
+      $cubex->share(ConfigHandler::class, $handler);
+    }
+    else
+    {
+      throw new Exception("Invalid config handler provided");
+    }
   }
 
   protected function _generateRoutes()

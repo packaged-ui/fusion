@@ -8,16 +8,13 @@ use Packaged\Glimpse\Tags\Div;
 use Packaged\Ui\Element;
 use PackagedUi\FusionDemo\Layout\Layout;
 
-/**
- * @method  UiContext getContext()
- */
 class DemoHandler extends Controller
 {
   protected $_pages = [];
 
   protected function _allPages()
   {
-    return $this->getContext()->configHandler()->getPages();
+    return $this->getContext()->getCubex()->retrieve(ConfigHandler::class)->getPages();
   }
 
   protected function _generateRoutes()
