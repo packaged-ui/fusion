@@ -1,6 +1,7 @@
 import 'prismjs';
 
-import 'prism-themes/themes/prism-dracula.css';
+import 'prismjs/themes/prism.css';
+import './main.scss';
 
 import 'prismjs/plugins/toolbar/prism-toolbar.css';
 import 'prismjs/plugins/line-numbers/prism-line-numbers.css';

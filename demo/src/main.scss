@@ -1,0 +1,19 @@
+$toolbar: '.code-toolbar';
+
+
+#{$toolbar} {
+  .toolbar {
+    opacity: 1 !important;
+
+    button {
+      padding: 0.25em 1em !important;
+      background-color: rgb(var(--f-color-primary)) !important;
+      color: white !important;
+      box-shadow: none !important;
+    }
+  }
+
+  .token.operator {
+    background-color: transparent !important;
+  }
+}
