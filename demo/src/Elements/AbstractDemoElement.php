@@ -100,14 +100,6 @@ abstract class AbstractDemoElement extends AbstractDemoPage
   }
 
   /**
-   * @return string
-   */
-  public function getDisplayName(): string
-  {
-    return Strings::titleize(substr(basename(str_replace('\\', '/', static::class)), 0, -4));
-  }
-
-  /**
    * @param ReflectionMethod $method
    *
    * @return string|string[]|null
