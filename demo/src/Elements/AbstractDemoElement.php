@@ -3,13 +3,13 @@
 namespace PackagedUi\FusionDemo\Elements;
 
 use Packaged\DocBlock\DocBlockParser;
-use Packaged\Glimpse\Core\CustomHtmlTag;
 use Packaged\Glimpse\Tags\Div;
 use Packaged\Glimpse\Tags\Link;
 use Packaged\Glimpse\Tags\Text\CodeBlock;
 use Packaged\Glimpse\Tags\Text\HeadingFour;
 use Packaged\Glimpse\Tags\Text\HeadingSix;
 use Packaged\Glimpse\Tags\Text\Paragraph;
+use Packaged\Glimpse\Tags\Text\PreFormattedText;
 use Packaged\Helpers\Strings;
 use Packaged\SafeHtml\SafeHtml;
 use PackagedUi\FusionDemo\AbstractDemoPage;
@@ -86,7 +86,7 @@ abstract class AbstractDemoElement extends AbstractDemoPage
 
       $methRow->appendContent(
         Div::create()
-          ->appendContent(CustomHtmlTag::build('pre', [], $code))
+          ->appendContent(PreFormattedText::create($code))
           ->addClass('hidden')
           ->setId('code-' . $id)
       );
