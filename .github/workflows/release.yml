@@ -22,7 +22,7 @@ jobs:
         uses: justincy/github-action-npm-release@2.0.2
 
       - if: steps.release.outputs.released != 'true'
-        run: exit 1
+        run: exit 0
 
       - uses: actions/setup-node@v2
         with:
