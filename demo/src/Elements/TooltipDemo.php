@@ -2,6 +2,7 @@
 namespace PackagedUi\FusionDemo\Elements;
 
 use Packaged\Glimpse\Tags\LineBreak;
+use Packaged\Glimpse\Tags\Text\BoldText;
 use PackagedUi\FontAwesome\FaIcon;
 use PackagedUi\Fusion\Tooltip\Tooltip;
 use PackagedUi\Fusion\Tooltip\TooltipPosition;
@@ -28,6 +29,11 @@ class TooltipDemo extends AbstractDemoPage
     $return[] = Tooltip::create(FaIcon::create(FaIcon::TABLET)->sizeX3())
       ->setTooltip(
         'This is a rather large tooltip which doesnt mean anything, nor insinuate anything nor make any sense at all. Who wrote this?'
+      )
+      ->setPosition(TooltipPosition::RIGHT());
+    $return[] = Tooltip::create(FaIcon::create(FaIcon::TABLET)->sizeX3())
+      ->setTooltip(
+        BoldText::create('Testing HTML within')
       )
       ->setPosition(TooltipPosition::RIGHT());
     return $return;

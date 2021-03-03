@@ -5,7 +5,8 @@ import './tooltip.scss';
 tippy.setDefaultProps({
   popperOptions: {
     placement: 'auto'
-  }
+  },
+  allowHTML:     true
 });
 
 tippy('[data-tooltip]', {
