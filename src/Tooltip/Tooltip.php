@@ -17,7 +17,10 @@ class Tooltip extends AbstractContainerTag implements Component
   protected $_tooltip;
 
   /** @var string */
-  protected $_position = 'auto';
+  protected $_position = 'bottom';
+
+  /** @var string|null */
+  protected $_size;
 
   /**
    * @inheritDoc
@@ -38,17 +41,30 @@ class Tooltip extends AbstractContainerTag implements Component
     return $this;
   }
 
+  /**
+   * @param TooltipSize|null $size
+   *
+   * @return Tooltip
+   */
+  public function setSize(TooltipSize $size = null): Tooltip
+  {
+    $this->_size = $size;
+    return $this;
+  }
+
   protected function _getContentForRender()
   {
     return Div::create($this->_content)
       ->addClass($this->getElementName())
-      ->setAttribute('data-tooltip', $this->_tooltip)
-      ->setAttribute('data-tooltip-position', $this->_position);
+      ->setAttribute('aria-label', $this->_tooltip)
+      ->setAttribute('role', 'tooltip')
+      ->setAttribute('data-microtip-position', $this->_position)
+      ->setAttribute('data-microtip-size', $this->_size);
   }
 
   public function setPosition(TooltipPosition $position)
   {
-    $this->_position = $position->getValue();
+    $this->_position = $position;
     return $this;
   }
 }

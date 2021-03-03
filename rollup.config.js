@@ -3,7 +3,6 @@ import resolve from 'rollup-plugin-node-resolve';
 import commonjs from 'rollup-plugin-commonjs';
 import postcss from 'rollup-plugin-postcss';
 import cleanCss from 'postcss-clean';
-import replace from '@rollup/plugin-replace';
 import postcssDiscardComments from 'postcss-discard-comments';
 
 process.chdir(__dirname);
@@ -15,10 +14,6 @@ module.exports = {
     format: 'iife'
   },
   plugins: [
-    replace({
-      preventAssignment:      true,
-      'process.env.NODE_ENV': JSON.stringify('development')
-    }),
     resolve({browser: true, preferBuiltins: false}),
     commonjs(),
     terser({

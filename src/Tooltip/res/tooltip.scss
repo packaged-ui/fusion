@@ -1,4 +1,5 @@
 @import "../../Foundation/res/foundation";
+@import '~microtip/microtip';
 
 $this: '.tooltip';
 
@@ -6,4 +7,9 @@ $this: '.tooltip';
   position: relative;
   display: inline-block;
   cursor: pointer;
+}
+
+[aria-label][role~="tooltip"]::before,
+[aria-label][role~="tooltip"]::after {
+  z-index: 100;
 }
