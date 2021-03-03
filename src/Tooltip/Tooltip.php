@@ -4,7 +4,6 @@ namespace PackagedUi\Fusion\Tooltip;
 
 use Packaged\Glimpse\Core\AbstractContainerTag;
 use Packaged\Glimpse\Tags\Div;
-use Packaged\Glimpse\Tags\Span;
 use PackagedUi\BemComponent\BemComponentTrait;
 use PackagedUi\Fusion\Component;
 use PackagedUi\Fusion\ComponentTrait;
@@ -16,6 +15,9 @@ class Tooltip extends AbstractContainerTag implements Component
 
   /** @var string */
   protected $_tooltip;
+
+  /** @var string */
+  protected $_position = 'auto';
 
   /**
    * @inheritDoc
@@ -38,9 +40,15 @@ class Tooltip extends AbstractContainerTag implements Component
 
   protected function _getContentForRender()
   {
-    return Div::create(
-      $this->_content,
-      Span::create($this->_tooltip)->addClass($this->getElementName('text'))
-    )->addClass($this->getElementName());
+    return Div::create($this->_content)
+      ->addClass($this->getElementName())
+      ->setAttribute('data-tooltip', $this->_tooltip)
+      ->setAttribute('data-tooltip-position', $this->_position);
+  }
+
+  public function setPosition(TooltipPosition $position)
+  {
+    $this->_position = $position->getValue();
+    return $this;
   }
 }
