@@ -6,4 +6,39 @@ $this: '.tooltip';
   position: relative;
   display: inline-block;
   cursor: pointer;
+
+  &__text {
+    display: none;
+    position: absolute;
+    width: 200px;
+    background-color: rgba(0, 0, 0, .8);
+    color: #fff;
+    border-radius: 6px;
+    padding: 10px;
+    top: -10px;
+    text-align: center;
+    z-index: 1;
+    margin-left: 10px;
+
+    &:before {
+      content: '';
+      position: absolute;
+      left: -8px;
+      top: 10px;
+      border: 8px solid transparent;
+      border-left-width: 0;
+      border-right-color: rgba(0, 0, 0, .8);
+    }
+
+  }
+
+
+  &:hover, &:active {
+
+    #{$this}__text {
+      display: inline-block;
+    }
+
+  }
+
 }
