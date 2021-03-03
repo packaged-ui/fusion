@@ -5,9 +5,14 @@ $this: '.tooltip';
 
 #{$this} {
   cursor: pointer;
+  display: inline-block;
 }
 
 [aria-label][role~="tooltip"]::before,
 [aria-label][role~="tooltip"]::after {
   z-index: 100;
+}
+
+[aria-label][role~="tooltip"]::after {
+  text-align: center;
 }
