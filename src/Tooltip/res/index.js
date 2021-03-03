@@ -1,4 +1,4 @@
-import tippy from 'tippy.js';
+import tippy from 'tippy.js/dist/tippy.esm';
 import 'tippy.js/dist/tippy.css';
 import './tooltip.scss';
 
