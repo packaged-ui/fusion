@@ -21,8 +21,7 @@ module.exports = [
         format: {
           comments: false
         }
-      })
-      ,
+      }),
       postcss({
         extract:  true,
         minimize: true,
@@ -52,8 +51,7 @@ module.exports = [
         format: {
           comments: false
         }
-      })
-      ,
+      }),
       postcss({
         extract:  true,
         minimize: true,
