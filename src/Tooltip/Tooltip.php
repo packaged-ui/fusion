@@ -4,7 +4,6 @@ namespace PackagedUi\Fusion\Tooltip;
 
 use Packaged\Glimpse\Core\AbstractContainerTag;
 use Packaged\Glimpse\Tags\Div;
-use Packaged\Glimpse\Tags\Span;
 use PackagedUi\BemComponent\BemComponentTrait;
 use PackagedUi\Fusion\Component;
 use PackagedUi\Fusion\ComponentTrait;
@@ -17,8 +16,14 @@ class Tooltip extends AbstractContainerTag implements Component
   /** @var string */
   protected $_tooltip;
 
+  /** @var string */
+  protected $_position = 'bottom';
+
+  /** @var string|null */
+  protected $_size;
+
   /**
-   * @inheritDoc
+   * @return string
    */
   public function getBlockName(): string
   {
@@ -30,17 +35,41 @@ class Tooltip extends AbstractContainerTag implements Component
    *
    * @return Tooltip
    */
-  public function setTooltip(string $tooltip)
+  public function setTooltip(string $tooltip): Tooltip
   {
     $this->_tooltip = $tooltip;
     return $this;
   }
 
+  /**
+   * @param TooltipSize|null $size
+   *
+   * @return Tooltip
+   */
+  public function setSize(TooltipSize $size = null): Tooltip
+  {
+    $this->_size = $size;
+    return $this;
+  }
+
+  /**
+   * @param TooltipPosition $position
+   *
+   * @return $this
+   */
+  public function setPosition(TooltipPosition $position): Tooltip
+  {
+    $this->_position = $position;
+    return $this;
+  }
+
   protected function _getContentForRender()
   {
-    return Div::create(
-      $this->_content,
-      Span::create($this->_tooltip)->addClass($this->getElementName('text'))
-    )->addClass($this->getElementName());
+    return Div::create($this->_content)
+      ->addClass($this->getElementName())
+      ->setAttribute('aria-label', $this->_tooltip)
+      ->setAttribute('role', 'tooltip')
+      ->setAttribute('data-microtip-position', $this->_position)
+      ->setAttribute('data-microtip-size', $this->_size);
   }
 }
