@@ -3,6 +3,7 @@ import resolve from 'rollup-plugin-node-resolve';
 import commonjs from 'rollup-plugin-commonjs';
 import postcss from 'rollup-plugin-postcss';
 import cleanCss from 'postcss-clean';
+import postcssDiscardComments from 'postcss-discard-comments';
 
 process.chdir(__dirname);
 
@@ -16,11 +17,17 @@ module.exports = [
     plugins: [
       resolve({browser: true, preferBuiltins: false}),
       commonjs(),
-      terser(),
+      terser({
+        format: {
+          comments: false
+        }
+      })
+      ,
       postcss({
         extract:  true,
         minimize: true,
         plugins:  [
+          postcssDiscardComments({removeAll: true}),
           cleanCss({
             level: {
               1: {
@@ -41,11 +48,17 @@ module.exports = [
     plugins: [
       resolve({browser: true, preferBuiltins: false}),
       commonjs(),
-      terser(),
+      terser({
+        format: {
+          comments: false
+        }
+      })
+      ,
       postcss({
         extract:  true,
         minimize: true,
         plugins:  [
+          postcssDiscardComments({removeAll: true}),
           cleanCss({
             level: {
               1: {

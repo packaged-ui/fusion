@@ -1,8 +1,13 @@
 <?php
 namespace PackagedUi\FusionDemo\Elements;
 
+use Packaged\Glimpse\Tags\LineBreak;
+use Packaged\Glimpse\Tags\Text\BoldText;
 use PackagedUi\FontAwesome\FaIcon;
+use PackagedUi\Fusion\Button\Button;
 use PackagedUi\Fusion\Tooltip\Tooltip;
+use PackagedUi\Fusion\Tooltip\TooltipPosition;
+use PackagedUi\Fusion\Tooltip\TooltipSize;
 use PackagedUi\FusionDemo\AbstractDemoPage;
 
 class TooltipDemo extends AbstractDemoPage
@@ -21,7 +26,25 @@ class TooltipDemo extends AbstractDemoPage
   {
     $return = [];
 
-    $return[] = Tooltip::create(FaIcon::create(FaIcon::TABLET)->sizeX3())->setTooltip('This is your hosting domain, and bears no relation to your chosen domain at purchase. Your chosen domain still directs to your website as you expect, this hosting domain is simply the true, under-the-hood, address to your hosting.');
+    $return[] = Tooltip::create(FaIcon::create(FaIcon::TABLET)->sizeX3())->setTooltip('This is a Tooltip');
+
+    $return[] = LineBreak::create();
+
+    $return[] = Tooltip::create(FaIcon::create(FaIcon::TABLET)->sizeX3())
+      ->setTooltip(
+        'This is a rather large tooltip which doesnt mean anything, nor insinuate anything nor make any sense at all. Who wrote this?'
+      )
+      ->setPosition(TooltipPosition::RIGHT())
+      ->setSize(TooltipSize::MEDIUM());
+
+    $return[] = Tooltip::create(FaIcon::create(FaIcon::TABLET)->sizeX3())
+      ->setTooltip(
+        BoldText::create('Testing HTML within')
+      )
+      ->setPosition(TooltipPosition::RIGHT());
+
+    $return[] = Tooltip::create(Button::create('Hover Me')->primary()->sizeLarge())
+      ->setTooltip('Awesome Sauce');
 
     return $return;
   }
