@@ -1,0 +1,77 @@
+$toolbar: '.code-toolbar';
+
+
+#{$toolbar} {
+
+  pre[class*=language-] {
+    margin-top: 0 !important;
+    margin-bottom: 0 !important;
+  }
+
+  .toolbar {
+    opacity: 1 !important;
+    top: .5em !important;
+    right: .5em !important;
+
+    button {
+      padding: 0.25em 1em !important;
+      background-color: transparent !important;
+      color: rgba(0, 0, 0, 0.4) !important;
+      box-shadow: none !important;
+      transition: all .4s ease-in-out;
+
+      &:hover {
+        background-color: rgb(var(--f-color-primary)) !important;
+        color: white !important;
+      }
+    }
+  }
+
+  .token.operator {
+    background-color: transparent !important;
+  }
+}
+
+.hidden {
+  display: none;
+}
+
+.content-container {
+  margin: 0 auto 3em;
+  max-width: 1100px;
+
+  &:first-of-type {
+    margin-top: 2em;
+  }
+
+  .content-header {
+    border-bottom: 2px solid #f5f2f0;
+    padding-bottom: 1em;
+
+    p {
+      margin-top: 1em;
+    }
+
+    * {
+      margin-bottom: 0;
+    }
+
+    &__head {
+      display: flex;
+      align-items: flex-end;
+
+      h4 {
+        margin-right: 20px;
+      }
+
+      h6 > a {
+        color: rgba(0, 0, 0, 0.3);
+      }
+    }
+  }
+
+  .content-main {
+    padding: 1em;
+    border: 2px solid #f5f2f0;
+  }
+}

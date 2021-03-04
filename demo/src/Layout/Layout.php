@@ -1,6 +1,7 @@
 <?php
 namespace PackagedUi\FusionDemo\Layout;
 
+use Cubex\Context\Context;
 use Packaged\Context\ContextAware;
 use Packaged\Context\ContextAwareTrait;
 use Packaged\Event\Events\CustomEvent;
@@ -13,7 +14,7 @@ use PackagedUi\Fusion\Layout\Drawer\Drawer;
 use PackagedUi\Fusion\Layout\LayoutInterface;
 use PackagedUi\Fusion\Menu\Menu;
 use PackagedUi\Fusion\Menu\MenuItem;
-use PackagedUi\FusionDemo\UiContext;
+use PackagedUi\FusionDemo\ConfigHandler;
 use PackagedUi\FusionDemo\UiPage;
 
 class Layout extends Element implements ContextAware
@@ -65,9 +66,9 @@ class Layout extends Element implements ContextAware
   public function getPages()
   {
     $ctx = $this->getContext();
-    if($ctx instanceof UiContext)
+    if($ctx instanceof Context)
     {
-      return $ctx->configHandler()->getPages();
+      return $ctx->getCubex()->retrieve(ConfigHandler::class)->getPages();
     }
     return [];
   }

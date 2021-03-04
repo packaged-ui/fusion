@@ -43,6 +43,7 @@ class ConfigHandler implements ContextAware
   {
     $this->_context = $context;
     $context->events()->listen(Layout::RENDER_EVENT, [$this, 'includeUi']);
+    $context->events()->listen(Layout::RENDER_EVENT, [$this, 'includeDefaultUi']);
     return $this;
   }
 
@@ -50,6 +51,11 @@ class ConfigHandler implements ContextAware
   {
     Fusion::includeGoogleFont();
     Fusion::require();
+  }
+
+  public function includeDefaultUi()
+  {
+    ResourceManager::componentClass(self::class)->requireJs('demo.min.js')->requireCss('demo.min.css');
     ResourceManager::vendor('packaged-ui', 'fontawesome')->requireCss(FaIcon::CSS_PATH);
   }
 

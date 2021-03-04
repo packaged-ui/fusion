@@ -1,14 +1,12 @@
 <?php
 namespace PackagedUi\FusionDemo\Elements;
 
-use Packaged\Glimpse\Tags\Div;
+use Packaged\Glimpse\Core\HtmlTag;
 use Packaged\Glimpse\Tags\Span;
 use PackagedUi\FontAwesome\FaIcon;
 use PackagedUi\Fusion\Badge\Badge;
-use PackagedUi\Fusion\Fusion;
-use PackagedUi\FusionDemo\AbstractDemoPage;
 
-class BadgeDemo extends AbstractDemoPage
+class BadgeDemo extends AbstractDemoElement
 {
   public function getName(): string
   {
@@ -20,16 +18,22 @@ class BadgeDemo extends AbstractDemoPage
     return FaIcon::CERTIFICATE;
   }
 
-  protected function _content(): array
+  /**
+   * Example of the Default Badge.
+   *
+   * @return HtmlTag
+   */
+  final public function DefaultBadge(): HtmlTag
   {
-    $return = [];
-
-    $return[] = Badge::create(Span::create('Inbox'), 4)->addClass(Fusion::DISPLAY_INLINE_BLOCK);
-    $return[] = Badge::overlap(Span::create('Inbox'), 5)->addClass(Fusion::DISPLAY_INLINE_BLOCK);
-    $return[] = Badge::create(Div::create('Inbox'), 23)->addClass(
-      Fusion::BADGE_ADDED_MARGIN,
-      Fusion::DISPLAY_INLINE_BLOCK
-    );
-    return $return;
+    return Badge::create(Span::create('Inbox'), 4);
   }
+
+  /**
+   * @return HtmlTag
+   */
+  final public function OutboxBadge(): HtmlTag
+  {
+    return Badge::create(Span::create('Outbox'), 5);
+  }
+
 }
