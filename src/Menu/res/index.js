@@ -29,7 +29,6 @@ function updateActiveMenu(location)
               }
               regex = new RegExp('^' + href.replace(/[\/.*+?^${}()|[\]\\]/g, '\\$&'));
             }
-            console.log(regex);
             if(regex.test(location.href.replace(location.origin, '')))
             {
               if(href.length > mostSpecificLen)
