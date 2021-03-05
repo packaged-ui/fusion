@@ -54,7 +54,7 @@ class NotificationDemo extends AbstractDemoPage
           ->setColor(Color::GREEN())
           ->setTitle('Homer Quotes')
           ->setDescription('Marge, it takes two to lie. One to lie and one to listen.')
-          ->setIcon(FaIcon::create(FaIcon::BOLD))
+          ->setIcon(FaIcon::create(FaIcon::BOLD), true)
       )->setPosition(ToastNotificationPosition::BOTTOM_LEFT());
 
     $return[] = ToastNotificationContainer::create()

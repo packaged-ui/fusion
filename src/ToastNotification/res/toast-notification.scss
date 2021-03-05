@@ -9,6 +9,7 @@ $this: '.toast-notification';
   width: 250px;
   border-radius: 5px 0 0 5px;
   pointer-events: all;
+  display: flex;
 
   @for $i from 1 through 10 {
     &:nth-child(#{$i}) {
@@ -22,9 +23,10 @@ $this: '.toast-notification';
 
   &__icon {
     font-size: 35px;
-    width: 35px;
-    height: 35px;
+    line-height: 0;
+    padding: 0 15px;
     justify-content: center;
+    align-self: center;
     color: rgba(var(--f-text-color), var(--text-opacity));
   }
 
@@ -67,14 +69,5 @@ $this: '.toast-notification';
 
   &--show {
     transform: none !important;
-  }
-
-  .cell {
-    align-items: center;
-    display: flex;
-  }
-
-  > .grid-x.grid-margin-x {
-    align-items: center;
   }
 }

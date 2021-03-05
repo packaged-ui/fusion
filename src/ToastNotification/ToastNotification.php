@@ -8,9 +8,6 @@ use PackagedUi\BemComponent\BemComponentTrait;
 use PackagedUi\Fusion\Color\Color;
 use PackagedUi\Fusion\Component;
 use PackagedUi\Fusion\ComponentTrait;
-use PackagedUi\Fusion\Layout\XyGrid\XyCell;
-use PackagedUi\Fusion\Layout\XyGrid\XyGrid;
-use PackagedUi\Fusion\Layout\XyGrid\XySize;
 
 class ToastNotification extends Div implements Component
 {
@@ -31,6 +28,8 @@ class ToastNotification extends Div implements Component
 
   /** @var int */
   protected $_delay = 0;
+  /** @var bool */
+  protected $_iconRight = false;
 
   /**
    * @inheritDoc
@@ -42,12 +41,14 @@ class ToastNotification extends Div implements Component
 
   /**
    * @param mixed $icon
+   * @param bool  $right
    *
    * @return ToastNotification
    */
-  public function setIcon($icon)
+  public function setIcon($icon, bool $right = false)
   {
     $this->_icon = $icon;
+    $this->_iconRight = $right;
     return $this;
   }
 
@@ -105,27 +106,16 @@ class ToastNotification extends Div implements Component
 
   protected function _getContentForRender()
   {
-    $icon = null;
-    $size = XySize::MOBILE(12);
-    if($this->_icon)
-    {
-      $icon = XyCell::create(
-        $this->_icon
-      )->addClass($this->getElementName('icon'))->setSizes(XySize::MOBILE(3));
-      $size = XySize::MOBILE(9);
-    }
+    $icon = $this->_icon ? Div::create($this->_icon)->addClass($this->getElementName('icon')) : null;
 
-    return XyGrid::create(
-      XyCell::create(
-        Div::create(
-          $this->_title
-        )->addClass($this->getElementName('title')),
-        Div::create(
-          $this->_description
-        )->addClass($this->getElementName('description'))
-      )->addClass($this->getElementName('content'))->setSizes($size),
-      $icon
-    )->marginX();
+    return [
+      $this->_iconRight ? null : $icon,
+      Div::create(
+        Div::create($this->_title)->addClass($this->getElementName('title')),
+        Div::create($this->_description)->addClass($this->getElementName('description'))
+      )->addClass($this->getElementName('content')),
+      $this->_iconRight ? $icon : null,
+    ];
   }
 
   public function setColor(Color $color = null)

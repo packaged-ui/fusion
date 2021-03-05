@@ -12,10 +12,6 @@ $toast-message: '.toast-notification';
   z-index: 2561230;
   pointer-events: none;
 
-  @include breakpoint(tablet down) {
-    display: none !important;
-  }
-
   #{$toast-message} {
     transform: translateX(100%);
     transition: .5s ease;
