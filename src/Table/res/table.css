@@ -4,6 +4,7 @@ table {
   border-collapse: collapse !important;
   background-color: transparent;
   width: 100%;
+  text-align: left;
 }
 
 table th, table td {
