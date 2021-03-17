@@ -1,2 +1,2 @@
 import '../../../Foundation/res';
-import './grid.css';
+import './grid.scss';

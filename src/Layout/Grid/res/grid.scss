@@ -156,54 +156,11 @@
   background: var(--grid-bordered-cell-color);
 }
 
-.grid__cell--1 {
-  grid-column: auto / span 1;
+@for $i from 1 through 12 {
+  .grid__cell--#{i} {
+    grid-column: auto / span $i;
+  }
 }
-
-.grid__cell--2 {
-  grid-column: auto / span 2;
-}
-
-.grid__cell--3 {
-  grid-column: auto / span 3;
-}
-
-.grid__cell--4 {
-  grid-column: auto / span 4;
-}
-
-.grid__cell--5 {
-  grid-column: auto / span 5;
-}
-
-.grid__cell--6 {
-  grid-column: auto / span 6;
-}
-
-.grid__cell--7 {
-  grid-column: auto / span 7;
-}
-
-.grid__cell--8 {
-  grid-column: auto / span 8;
-}
-
-.grid__cell--9 {
-  grid-column: auto / span 9;
-}
-
-.grid__cell--10 {
-  grid-column: auto / span 10;
-}
-
-.grid__cell--11 {
-  grid-column: auto / span 11;
-}
-
-.grid__cell--12 {
-  grid-column: auto / span 12;
-}
-
 
 @media all and (-ms-high-contrast: none) {
   .grid__inner {
