@@ -46,6 +46,8 @@ abstract class AbstractDemoElement extends AbstractDemoPage
     $output = new Div();
     $methods = $this->getMethods();
 
+    $output->appendContent(Div::create($this->_content())->addClass('content-container'));
+
     foreach($methods as $method)
     {
       $reflect = new \ReflectionMethod($this, $method);
