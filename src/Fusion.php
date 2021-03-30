@@ -58,7 +58,7 @@ class Fusion implements LayoutInterface, TypographyInterface, ButtonInterface, B
   protected static function _isIe(): bool
   {
     $ua = static::_userAgent();
-    return strpos($ua, 'Trident/') > -1 || strpos($ua, 'Edge/') > -1;
+    return strpos($ua, 'Trident/') > -1;
   }
 
   protected static function _ieOverrides(): bool
