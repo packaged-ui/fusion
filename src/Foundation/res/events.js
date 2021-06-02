@@ -9,11 +9,12 @@ export function on(delegate, eventName, selector, callback)
     eventName,
     function (e)
     {
-      if(!selector)
+      let t = e.target;
+      if(t === delegate || !selector)
       {
         return callback(e);
       }
-      let t = e.target;
+
       do
       {
         if(t.matches(selector))
