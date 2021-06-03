@@ -1,3 +1,5 @@
+import {onReadyState} from '@packaged-ui/ready-promise';
+
 export function on(delegate, eventName, selector, callback)
 {
   if(callback === undefined)
@@ -30,29 +32,5 @@ export function on(delegate, eventName, selector, callback)
 
 export function onReady(fn)
 {
-  if(document.readyState === 'loading')
-  {
-    document.addEventListener('DOMContentLoaded', fn);
-  }
-  else
-  {
-    fn();
-  }
+  onReadyState().then(fn);
 }
-
-onReady(
-  function ()
-  {
-    setTimeout(function () {document.body.classList.add('f-loaded');}, 0);
-  },
-);
-
-window.addEventListener(
-  'touchstart',
-  function _fn()
-  {
-    document.body.classList.add('touch-enabled');
-    window.removeEventListener('touchstart', _fn, false);
-  },
-  false,
-);

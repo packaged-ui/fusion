@@ -32,6 +32,7 @@
   "dependencies": {
     "@packaged-ui/modal": "^1.2.0",
     "@packaged-ui/pagelets": "^1.7.0",
+    "@packaged-ui/ready-promise": "^1.0.0",
     "lodash.debounce": "^4.0.8",
     "microtip": "^0.2.2",
     "normalize.css": "^8.0.1"
