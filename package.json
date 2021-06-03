@@ -1,6 +1,6 @@
 {
   "name": "@packaged-ui/fusion",
-  "version": "2.2.3",
+  "version": "2.2.4",
   "main": "/fusion.js",
   "files": [
     "/src/_resources",
@@ -39,5 +39,8 @@
   },
   "scripts": {
     "build": "rollup -c rollup.config.js -w"
+  },
+  "publishConfig": {
+    "access": "public"
   }
 }
