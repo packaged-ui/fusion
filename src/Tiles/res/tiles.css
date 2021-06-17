@@ -409,7 +409,7 @@
   margin-right: calc(var(--gutter) * -1);
 }
 
-.tiles.tiles--grid.tiles--fullwidth .tile {
+.tiles.tiles--fullwidth-grid .tile {
   width: 100%;
 }
 
