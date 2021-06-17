@@ -1,4 +1,4 @@
-:root {
+:root,:host {
   --banner-z-index: 10;
   --banner-background: rgba(255, 255, 255, 1);
   --banner-border-color: rgba(0, 0, 0, 0.12);

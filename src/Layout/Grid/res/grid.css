@@ -1,4 +1,4 @@
-:root {
+:root, :host {
   --grid-gutter: 2px;
   --grid-gap: 2px;
   --grid-columns: auto-fill;
@@ -11,7 +11,7 @@
 }
 
 @media (min-width: 512px) {
-  :root {
+  :root, :host {
     --grid-gutter: 4px;
     --grid-gap: 4px;
     --grid-cell-padding: 4px;
@@ -19,7 +19,7 @@
 }
 
 @media (min-width: 768px) {
-  :root {
+  :root, :host {
     --grid-gutter: 8px;
     --grid-gap: 8px;
     --grid-cell-padding: 8px;
@@ -28,7 +28,7 @@
 
 
 @media (min-width: 1024px) {
-  :root {
+  :root, :host {
     --grid-gutter: 12px;
     --grid-gap: 12px;
     --grid-cell-padding: 12px;
@@ -36,7 +36,7 @@
 }
 
 @media (min-width: 1280px) {
-  :root {
+  :root, :host {
     --grid-gutter: 16px;
     --grid-gap: 16px;
     --grid-cell-padding: 16px;

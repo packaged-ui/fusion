@@ -1,4 +1,4 @@
-:root {
+:root, :host {
   --action-width: 30px;
   --property-width: 125px;
   --gutter: 5px;

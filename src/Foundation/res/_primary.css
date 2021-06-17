@@ -1,4 +1,4 @@
-:root {
+:root, :host {
   --f-color-primary-light: 179, 157, 219;
   --f-color-primary-light-text: var(--rgb-text-dark);
   --f-color-primary-dark: 49, 27, 146;

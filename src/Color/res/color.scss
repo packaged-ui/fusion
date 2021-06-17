@@ -13,7 +13,7 @@ $colors: (
 );
 
 
-:root {
+:root, :host {
   @each $color, $rgb in $colors {
     --color-#{''+$color}: #{$rgb};
   }

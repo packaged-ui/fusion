@@ -1,4 +1,4 @@
-:root {
+:root, :host {
   --dialog-background: rgb(var(--f-content-background-color));
 }
 

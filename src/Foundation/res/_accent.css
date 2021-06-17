@@ -1,4 +1,4 @@
-:root {
+:root, :host {
   --f-color-accent-light: 255, 171, 145;
   --f-color-accent-light-text: var(--rgb-text-dark);
   --f-color-accent-dark: 191, 54, 12;

@@ -1,4 +1,4 @@
-:root {
+:root, :host {
   --drawer-open-width: 256px;
   --drawer-narrow-width: 56px;
   --drawer-background-color: var(--f-content-background-color);
