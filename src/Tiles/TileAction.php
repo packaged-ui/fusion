@@ -72,7 +72,7 @@ class TileAction extends Element implements Component
 
     $return->addClass($this->getBlockName());
 
-    return $this->_link;
+    return $return;
   }
 
   /**
