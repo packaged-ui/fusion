@@ -119,12 +119,12 @@ $c: #{str-replace(#{$col}, '.', '')};
   }
 
   @include generateScopedColClasses() using($i) {
-    $w: (math.div(100, math.div($grid-col-size, $i)) * 1%);
+    $w: math.div(100, math.div($grid-col-size, $i)) * 1%;
     width: calc(#{$w} - #{$grid-gutter});
   }
 
   @include generateScopedColClasses($offset) using($i) {
-    $w: (math.div(100, math.div($grid-col-size,$i)) * 1%);
+    $w: math.div(100, math.div($grid-col-size,$i)) * 1%;
     $x: math.div($grid-gutter, 2);
     margin-left: calc(#{$w} + #{$x});
   }
