@@ -1,3 +1,5 @@
+@use "sass:math";
+
 @import "../../../Foundation/res/foundation";
 
 $grid-col-size: 12 !default;
@@ -66,8 +68,8 @@ $c: #{str-replace(#{$col}, '.', '')};
   &-container {
     max-width: $grid-max-width;
     margin: 0 auto;
-    padding-right: $grid-gutter / 2;
-    padding-left: $grid-gutter / 2;
+    padding-right: $grid-gutter * 0.5;
+    padding-left: $grid-gutter * 0.5;
 
     &.fluid {
       margin: 0;
@@ -102,13 +104,13 @@ $c: #{str-replace(#{$col}, '.', '')};
 }
 
 #{$mx} {
-  margin-left: -$grid-gutter / 2;
-  margin-right: -$grid-gutter / 2;
+  margin-left: -$grid-gutter * 0.5;
+  margin-right: -$grid-gutter * 0.5;
 
   > #{$col} {
     width: calc(100% - #{$grid-gutter});
-    margin-left: $grid-gutter / 2;
-    margin-right: $grid-gutter / 2;
+    margin-left: $grid-gutter * 0.5;
+    margin-right: $grid-gutter * 0.5;
 
     &.auto,
     &.shrink {
@@ -117,27 +119,28 @@ $c: #{str-replace(#{$col}, '.', '')};
   }
 
   @include generateScopedColClasses() using($i) {
-    $w: (100 / ($grid-col-size / $i) * 1%);
+    $w: math.div(100, math.div($grid-col-size, $i)) * 1%;
     width: calc(#{$w} - #{$grid-gutter});
   }
 
   @include generateScopedColClasses($offset) using($i) {
-    $w: (100 / ($grid-col-size / $i) * 1%);
-    margin-left: calc(#{$w} + (#{$grid-gutter} / 2));
+    $w: math.div(100, math.div($grid-col-size,$i)) * 1%;
+    $x: math.div($grid-gutter, 2);
+    margin-left: calc(#{$w} + #{$x});
   }
 }
 
 #{$my} {
   > #{$col} {
-    margin-top: $grid-gutter / 2;
-    margin-bottom: $grid-gutter / 2;
+    margin-top: $grid-gutter * 0.5;
+    margin-bottom: $grid-gutter * 0.5;
   }
 }
 
 @include generateColClasses() using($i) {
-  width: (100 / ($grid-col-size / $i) * 1%);
+  width: (math.div(100, math.div($grid-col-size, $i)) * 1%);
 }
 
 @include generateColClasses($offset) using($i) {
-  margin-left: (100 / ($grid-col-size / $i) * 1%);
+  margin-left: (math.div(100, math.div($grid-col-size, $i)) * 1%);
 }
