@@ -1,3 +1,5 @@
+@import "../../../Foundation/res/foundation";
+
 :root, :host {
   --drawer-open-width: 256px;
   --drawer-narrow-width: 56px;
@@ -114,9 +116,22 @@ body:not(.touch-enabled) .drawer[reveal="peek"]:hover::before {
   transition: opacity var(--drawer-transition-style);
 }
 
+.drawer-container:not(.drawer--open) > .drawer[min-state="narrow"] {
+  border-right-width: 1px;
+  --drawer-width: var(--drawer-narrow-width);
+}
 
-/** MOBILE */
-@media (max-width: 511px) {
+.drawer[min-state="narrow"][position="left"] + .drawer-app-content {
+  margin-left: var(--drawer-narrow-width);
+}
+
+.drawer[min-state="narrow"][position="right"] + .drawer-app-content {
+  margin-right: var(--drawer-narrow-width);
+}
+
+
+/** TABLET */
+@include breakpoint(tablet down) {
   .drawer_action--hide-mobile {
     display: none !important;
   }
@@ -132,8 +147,8 @@ body:not(.touch-enabled) .drawer[reveal="peek"]:hover::before {
 }
 
 
-/** NOT MOBILE */
-@media (min-width: 512px) {
+/** NOT TABLET */
+@include breakpoint(desktop up) {
   .drawer_action--hide-non-mobile {
     display: none !important;
   }
@@ -141,7 +156,6 @@ body:not(.touch-enabled) .drawer[reveal="peek"]:hover::before {
   .drawer[state="narrow"] {
     min-width: var(--drawer-narrow-width);
   }
-
 
   .drawer[state="narrow"][position="left"] + .drawer-app-content {
     margin-left: var(--drawer-narrow-width);
@@ -165,17 +179,4 @@ body:not(.touch-enabled) .drawer[reveal="peek"]:hover::before {
   .drawer-container.drawer--open > .drawer[position="right"][state="narrow"]:not([reveal="modal"]) + .drawer-app-content {
     margin-right: var(--drawer-open-width);
   }
-}
-
-.drawer-container:not(.drawer--open) > .drawer[min-state="narrow"] {
-  border-right-width: 1px;
-  --drawer-width: var(--drawer-narrow-width);
-}
-
-.drawer[min-state="narrow"][position="left"] + .drawer-app-content {
-  margin-left: var(--drawer-narrow-width);
-}
-
-.drawer[min-state="narrow"][position="right"] + .drawer-app-content {
-  margin-right: var(--drawer-narrow-width);
 }
