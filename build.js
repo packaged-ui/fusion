@@ -1,4 +1,3 @@
-import * as base from './src/Foundation/res';
-import * as imports from './_imports';
+import {FusionUi} from './fusion';
 
-window.FusionUi = Object.assign({}, base, imports);
+window.FusionUi = FusionUi;
