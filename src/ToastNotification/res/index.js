@@ -72,7 +72,7 @@ export function addNotification(container, title, content, removable, color)
   {
     const toastTitle = document.createElement('div');
     toastTitle.classList.add('toast-notification__title');
-    toastTitle.innerHTML += title;
+    toastTitle.innerText += title;
 
     toastContent.appendChild(toastTitle);
   }
@@ -81,7 +81,7 @@ export function addNotification(container, title, content, removable, color)
   {
     const toastDescription = document.createElement('div');
     toastDescription.classList.add('toast-notification__description');
-    toastDescription.innerHTML += content;
+    toastDescription.innerText += content;
 
     toastContent.appendChild(toastDescription);
   }
@@ -91,5 +91,5 @@ export function addNotification(container, title, content, removable, color)
   setTimeout(() =>
   {
     toastContainer.classList.add('toast-notification--show');
-  }, 1);
+  }, 0);
 }
