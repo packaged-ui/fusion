@@ -23,6 +23,8 @@ class ToastNotification extends Div implements Component
 
   protected $_title;
 
+  protected $_persistent;
+
   /** @var int */
   protected $_displayDuration = 0;
 
@@ -96,11 +98,24 @@ class ToastNotification extends Div implements Component
     return $this;
   }
 
+  /**
+   * @return ToastNotification
+   */
+  public function persistent()
+  {
+    $this->_persistent = true;
+    return $this;
+  }
+
   protected function _prepareForProduce(): HtmlElement
   {
     $this->addClass($this->getElementName());
     $this->setAttribute('data-toast-notification-time-to-show', $this->_displayDuration);
     $this->setAttribute('data-toast-notification-delay', $this->_delay);
+    if($this->_persistent)
+    {
+      $this->setAttribute('data-persistent', $this->_persistent);
+    }
     return parent::_prepareForProduce();
   }
 

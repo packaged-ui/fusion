@@ -13,9 +13,10 @@ $toast-message: '.toast-notification';
   pointer-events: none;
 
   #{$toast-message} {
+    opacity: 0;
+    box-sizing: border-box;
     transform: translateX(100%);
-    transition: .5s ease;
-    position: relative;
+    transition: opacity .5s ease-in-out, transform 0s ease-in-out .5s;
   }
 
   &--bottom-left {
@@ -37,6 +38,14 @@ $toast-message: '.toast-notification';
 
     #{$toast-message} {
       transform: translateY(400%);
+    }
+  }
+
+  #{$toast-message} {
+    &--show {
+      transition: transform .5s ease-in-out 0s;
+      transform: unset;
+      opacity: 1;
     }
   }
 }

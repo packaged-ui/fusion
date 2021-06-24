@@ -27,48 +27,50 @@ class NotificationDemo extends AbstractDemoPage
     $return[] = ToastNotificationContainer::create()
       ->addToastNotification(
         ToastNotification::create()
-          ->setTitle('Random Thing')
+          ->setTitle('Lorem Ipsum')
           ->setDescription(
-            'A good sermon should be like a woman’s skirt: short enough to rouse the interest, but long enough to cover the essentials.'
+            'Lorem ipsum dolor sit amet, consectetur adipiscing elit. Maecenas suscipit enim molestie mauris varius, et tincidunt metus mattis. Fusce at turpis nisi. Duis imperdiet libero.'
           )->setDisplayDuration(3000)->setColor(Color::YELLOW())
       )->addToastNotification(
         ToastNotification::create()
           ->setColor(Color::GREEN())
-          ->setTitle('Homer Quotes')
-          ->setDescription('Marge, it takes two to lie. One to lie and one to listen.')
+          ->setTitle('Lorem Ipsum')
+          ->setDescription('Lorem ipsum dolor sit amet, consectetur adipiscing elit. Phasellus cursus.')
           ->setIcon(FaIcon::create(FaIcon::BOLD))
           ->removable()
-      );
+          ->persistent()
+      )->setId('toasts');
 
     $return[] = ToastNotificationContainer::create()
       ->addToastNotification(
         ToastNotification::create()
-          ->setTitle('Random Thing')
+          ->setTitle('Lorem Ipsum')
           ->setDescription(
-            'A good sermon should be like a woman’s skirt: short enough to rouse the interest, but long enough to cover the essentials.'
+            'Lorem ipsum dolor sit amet, consectetur adipiscing elit. Maecenas suscipit enim molestie mauris varius, et tincidunt metus mattis. Fusce at turpis nisi. Duis imperdiet libero.'
           )
           ->setColor(Color::BLUE())
           ->setDelay(4000)
       )->addToastNotification(
         ToastNotification::create()
           ->setColor(Color::GREEN())
-          ->setTitle('Homer Quotes')
-          ->setDescription('Marge, it takes two to lie. One to lie and one to listen.')
+          ->setTitle('Lorem Ipsum')
+          ->setDescription('Lorem ipsum dolor sit amet, consectetur adipiscing elit. Phasellus cursus.')
           ->setIcon(FaIcon::create(FaIcon::BOLD), true)
+          ->removable()
       )->setPosition(ToastNotificationPosition::BOTTOM_LEFT());
 
     $return[] = ToastNotificationContainer::create()
       ->addToastNotification(
         ToastNotification::create()
-          ->setTitle('Random Thing')
+          ->setTitle('Lorem Ipsum')
           ->setDescription(
-            'A good sermon should be like a woman’s skirt: short enough to rouse the interest, but long enough to cover the essentials.'
+            'Lorem ipsum dolor sit amet, consectetur adipiscing elit. Maecenas suscipit enim molestie mauris varius, et tincidunt metus mattis. Fusce at turpis nisi. Duis imperdiet libero.'
           )
       )->addToastNotification(
         ToastNotification::create()
           ->setColor(Color::GREEN())
-          ->setTitle('Homer Quotes')
-          ->setDescription('Marge, it takes two to lie. One to lie and one to listen.')
+          ->setTitle('Lorem Ipsum')
+          ->setDescription('Lorem ipsum dolor sit amet, consectetur adipiscing elit. Phasellus cursus.')
           ->setIcon(FaIcon::create(FaIcon::BOLD))
           ->setDisplayDuration(5000)
       )->setPosition(ToastNotificationPosition::BOTTOM_RIGHT());
