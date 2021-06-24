@@ -38,6 +38,7 @@ class NotificationDemo extends AbstractDemoPage
           ->setDescription('Lorem ipsum dolor sit amet, consectetur adipiscing elit. Phasellus cursus.')
           ->setIcon(FaIcon::create(FaIcon::BOLD))
           ->removable()
+          ->persistent()
       )->setId('toasts');
 
     $return[] = ToastNotificationContainer::create()

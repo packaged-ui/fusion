@@ -28,7 +28,12 @@ function _closeToastNotification(element)
   element.classList.remove('toast-notification--show');
   setTimeout(() =>
   {
-    element.parentElement.removeChild(element);
+    const parent = element.parentElement;
+    parent.removeChild(element);
+    if(element.hasAttribute('data-persistent'))
+    {
+      parent.appendChild(element);
+    }
   }, 500);
 }
 
