@@ -57,9 +57,7 @@ export function addNotification(container, title, content, removable, color)
 
   if(color)
   {
-    toastContainer.classList.add('toast-notification--with-color');
-    toastContainer.classList.add(`bgc-${color}`);
-    toastContainer.classList.add(`brdrc-${color}`);
+    toastContainer.classList.add('toast-notification--with-color', `bgc-${color}`, `brdrc-${color}`);
   }
 
   const toastContent = document.createElement('div');
