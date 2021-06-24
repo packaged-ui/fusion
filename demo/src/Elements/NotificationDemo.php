@@ -26,16 +26,15 @@ class NotificationDemo extends AbstractDemoPage
 
     $return[] = ToastNotificationContainer::create()
       ->addToastNotification(
-        ToastNotification::create()
+        ToastNotification::create(
+          'Lorem ipsum dolor sit amet, consectetur adipiscing elit. Maecenas suscipit enim molestie mauris varius, et tincidunt metus mattis. Fusce at turpis nisi. Duis imperdiet libero.'
+        )
           ->setTitle('Lorem Ipsum')
-          ->setDescription(
-            'Lorem ipsum dolor sit amet, consectetur adipiscing elit. Maecenas suscipit enim molestie mauris varius, et tincidunt metus mattis. Fusce at turpis nisi. Duis imperdiet libero.'
-          )->setDisplayDuration(3000)->setColor(Color::YELLOW())
+          ->setDisplayDuration(3000)->setColor(Color::YELLOW())
       )->addToastNotification(
-        ToastNotification::create()
+        ToastNotification::create('Lorem ipsum dolor sit amet, consectetur adipiscing elit. Phasellus cursus.')
           ->setColor(Color::GREEN())
           ->setTitle('Lorem Ipsum')
-          ->setDescription('Lorem ipsum dolor sit amet, consectetur adipiscing elit. Phasellus cursus.')
           ->setIcon(FaIcon::create(FaIcon::BOLD))
           ->removable()
           ->persistent()
@@ -43,34 +42,30 @@ class NotificationDemo extends AbstractDemoPage
 
     $return[] = ToastNotificationContainer::create()
       ->addToastNotification(
-        ToastNotification::create()
+        ToastNotification::create(
+          'Lorem ipsum dolor sit amet, consectetur adipiscing elit. Maecenas suscipit enim molestie mauris varius, et tincidunt metus mattis. Fusce at turpis nisi. Duis imperdiet libero.'
+        )
           ->setTitle('Lorem Ipsum')
-          ->setDescription(
-            'Lorem ipsum dolor sit amet, consectetur adipiscing elit. Maecenas suscipit enim molestie mauris varius, et tincidunt metus mattis. Fusce at turpis nisi. Duis imperdiet libero.'
-          )
           ->setColor(Color::BLUE())
           ->setDelay(4000)
       )->addToastNotification(
-        ToastNotification::create()
+        ToastNotification::create('Lorem ipsum dolor sit amet, consectetur adipiscing elit. Phasellus cursus.')
           ->setColor(Color::GREEN())
           ->setTitle('Lorem Ipsum')
-          ->setDescription('Lorem ipsum dolor sit amet, consectetur adipiscing elit. Phasellus cursus.')
           ->setIcon(FaIcon::create(FaIcon::BOLD), true)
           ->removable()
       )->setPosition(ToastNotificationPosition::BOTTOM_LEFT());
 
     $return[] = ToastNotificationContainer::create()
       ->addToastNotification(
-        ToastNotification::create()
+        ToastNotification::create(
+          'Lorem ipsum dolor sit amet, consectetur adipiscing elit. Maecenas suscipit enim molestie mauris varius, et tincidunt metus mattis. Fusce at turpis nisi. Duis imperdiet libero.'
+        )
           ->setTitle('Lorem Ipsum')
-          ->setDescription(
-            'Lorem ipsum dolor sit amet, consectetur adipiscing elit. Maecenas suscipit enim molestie mauris varius, et tincidunt metus mattis. Fusce at turpis nisi. Duis imperdiet libero.'
-          )
       )->addToastNotification(
-        ToastNotification::create()
+        ToastNotification::create('Lorem ipsum dolor sit amet, consectetur adipiscing elit. Phasellus cursus.')
           ->setColor(Color::GREEN())
           ->setTitle('Lorem Ipsum')
-          ->setDescription('Lorem ipsum dolor sit amet, consectetur adipiscing elit. Phasellus cursus.')
           ->setIcon(FaIcon::create(FaIcon::BOLD))
           ->setDisplayDuration(5000)
       )->setPosition(ToastNotificationPosition::BOTTOM_RIGHT());

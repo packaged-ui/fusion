@@ -19,8 +19,6 @@ class ToastNotification extends Div implements Component
 
   protected $_icon;
 
-  protected $_description;
-
   protected $_title;
 
   protected $_persistent;
@@ -51,17 +49,6 @@ class ToastNotification extends Div implements Component
   {
     $this->_icon = $icon;
     $this->_iconRight = $right;
-    return $this;
-  }
-
-  /**
-   * @param mixed $description
-   *
-   * @return ToastNotification
-   */
-  public function setDescription($description)
-  {
-    $this->_description = $description;
     return $this;
   }
 
@@ -122,12 +109,13 @@ class ToastNotification extends Div implements Component
   protected function _getContentForRender()
   {
     $icon = $this->_icon ? Div::create($this->_icon)->addClass($this->getElementName('icon')) : null;
+    $title = $this->_title ? Div::create($this->_title)->addClass($this->getElementName('title')) : null;
 
     return [
       $this->_iconRight ? null : $icon,
       Div::create(
-        Div::create($this->_title)->addClass($this->getElementName('title')),
-        Div::create($this->_description)->addClass($this->getElementName('description'))
+        $title,
+        Div::create($this->_content)->addClass($this->getElementName('description'))
       )->addClass($this->getElementName('content')),
       $this->_iconRight ? $icon : null,
     ];
