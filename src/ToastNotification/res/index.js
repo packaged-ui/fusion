@@ -6,15 +6,11 @@ import {on} from '../../Foundation/res';
 document.querySelectorAll('.toast-notification').forEach(
   (toast) =>
   {
+    let delay = toast.hasAttribute('data-toast-notification-delay')
+      ? parseInt(toast.getAttribute('data-toast-notification-delay')) : -1;
     let timeToShow = parseInt(toast.getAttribute('data-toast-notification-time-to-show'));
-    let delay = parseInt(toast.getAttribute('data-toast-notification-delay'));
 
-    setTimeout(() => _openToastNotificationContainer(toast), delay);
-
-    if(timeToShow !== 0)
-    {
-      setTimeout(() => _closeToastNotification(toast), (timeToShow + delay));
-    }
+    show(toast, delay, timeToShow);
   }
 );
 
@@ -26,15 +22,17 @@ function _openToastNotificationContainer(element)
 function _closeToastNotification(element)
 {
   element.classList.remove('toast-notification--show');
-  setTimeout(() =>
-  {
-    const parent = element.parentElement;
-    parent.removeChild(element);
-    if(element.hasAttribute('data-persistent'))
+  setTimeout(
+    () =>
     {
-      parent.appendChild(element);
-    }
-  }, 500);
+      const parent = element.parentElement;
+      parent.removeChild(element);
+      if(element.hasAttribute('data-persistent'))
+      {
+        parent.appendChild(element);
+      }
+    }, 500
+  );
 }
 
 on(
@@ -44,6 +42,28 @@ on(
     _closeToastNotification(e.delegateTarget);
   }
 );
+
+export function show(element, delay, timeToShow)
+{
+  if(delay >= 0)
+  {
+    setTimeout(
+      () =>
+      {
+        _openToastNotificationContainer(element);
+        if(timeToShow > 0)
+        {
+          setTimeout(() => _closeToastNotification(element), (timeToShow));
+        }
+      }, delay
+    );
+  }
+}
+
+export function hide(element)
+{
+  _closeToastNotification(element);
+}
 
 export function addNotification(container, title, content, removable, color)
 {
@@ -84,8 +104,5 @@ export function addNotification(container, title, content, removable, color)
 
   container.append(toastContainer);
 
-  setTimeout(() =>
-  {
-    toastContainer.classList.add('toast-notification--show');
-  }, 0);
+  show(container, 0);
 }
