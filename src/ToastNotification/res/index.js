@@ -14,75 +14,65 @@ document.querySelectorAll('.toast-notification').forEach(
   }
 );
 
-function _openToastNotificationContainer(element)
-{
-  element.classList.add('toast-notification--show');
-}
-
-function _closeToastNotification(element)
-{
-  element.classList.remove('toast-notification--show');
-  setTimeout(
-    () =>
-    {
-      const parent = element.parentElement;
-      parent.removeChild(element);
-      if(element.hasAttribute('data-persistent'))
-      {
-        parent.appendChild(element);
-      }
-    }, 500
-  );
-}
-
 on(
   document, 'click', '.toast-notification--removable', (e) =>
   {
     e.preventDefault();
-    _closeToastNotification(e.delegateTarget);
+    hide(e.delegateTarget);
   }
 );
 
-export function show(element, delay, timeToShow)
+export function show(toastElement, delay = 0, timeToShow = 0)
 {
   if(delay >= 0)
   {
     setTimeout(
       () =>
       {
-        _openToastNotificationContainer(element);
+        toastElement.classList.add('toast-notification--show');
         if(timeToShow > 0)
         {
-          setTimeout(() => _closeToastNotification(element), (timeToShow));
+          setTimeout(() => hide(toastElement), (timeToShow));
         }
       }, delay
     );
   }
 }
 
-export function hide(element)
+export function hide(toastElement)
 {
-  _closeToastNotification(element);
+  toastElement.classList.remove('toast-notification--show');
+  setTimeout(
+    () =>
+    {
+      const parent = toastElement.parentElement;
+      parent.removeChild(toastElement);
+      if(toastElement.hasAttribute('data-persistent'))
+      {
+        parent.appendChild(toastElement);
+      }
+    }, 500
+  );
 }
 
-export function addNotification(container, title, content, removable, color)
+export function addNotification(toastContainer, title, content, removable, color)
 {
-  const toastContainer = document.createElement('div');
-  toastContainer.classList.add('toast-notification');
+  const toastNotification = document.createElement('div');
+  toastNotification.classList.add('toast-notification');
 
   if(removable)
   {
-    toastContainer.classList.add('toast-notification--removable');
+    toastNotification.classList.add('toast-notification--removable');
   }
 
   if(color)
   {
-    toastContainer.classList.add('toast-notification--with-color', `bgc-${color}`, `brdrc-${color}`);
+    toastNotification.classList.add('toast-notification--with-color', `bgc-${color}`, `brdrc-${color}`);
   }
 
   const toastContent = document.createElement('div');
   toastContent.classList.add('toast-notification__content');
-  toastContainer.appendChild(toastContent);
+  toastNotification.appendChild(toastContent);
 
   if(title)
   {
@@ -102,7 +92,7 @@ export function addNotification(container, title, content, removable, color)
     toastContent.appendChild(toastDescription);
   }
 
-  container.append(toastContainer);
+  toastContainer.append(toastNotification);
 
-  show(container, 0);
+  return toastNotification;
 }
