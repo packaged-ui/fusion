@@ -22,23 +22,27 @@ $colors: (
 @each $color, $rgb in $colors {
 
   .c-#{''+$color} {
-    color: #{'rgb(var(--color-#{''+$color}))'};
     --f-text-color: var(--color-#{''+$color});
+    color: #{'rgb(var(--f-text-color))'};
   }
 
   .bgc-#{''+$color} {
-    background-color: #{'rgba(var(--color-#{''+$color}), 0.1)'};
+    --f-background-color: var(--color-#{''+$color});
+    background-color: #{'rgba(var(--f-background-color), 0.1)'};
   }
 
   .bgc-sld-#{''+$color} {
-    background-color: #{'rgba(var(--color-#{''+$color}), 1)'};
+    --f-background-color: var(--color-#{''+$color});
+    background-color: #{'rgba(var(--f-background-color), 1)'};
   }
 
   .brdrc-#{''+$color} {
-    border-color: #{'rgba(var(--color-#{''+$color}), 0.5)'};
+    --f-border-color: var(--color-#{''+$color});
+    border-color: #{'rgba(var(--f-border-color), 0.5)'};
   }
   .brdrc-sld-#{''+$color} {
-    border-color: #{'rgba(var(--color-#{''+$color}), 1)'};
+    --f-border-color: var(--color-#{''+$color});
+    border-color: #{'rgba(var(--f-border-color), 1)'};
   }
 }
 
