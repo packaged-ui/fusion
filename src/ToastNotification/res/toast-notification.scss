@@ -10,6 +10,9 @@ $this: '.toast-notification';
   border-radius: 5px;
   pointer-events: all;
   display: flex;
+  position: relative;
+  overflow: hidden;
+  background: linear-gradient(hsla(0, 0%, 100%, 0.8), hsla(0, 0%, 100%, 0.8)), rgba(var(--f-background-color), 0.7);
 
   &:last-of-type {
     margin-bottom: 0;

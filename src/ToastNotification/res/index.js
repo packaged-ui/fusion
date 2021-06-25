@@ -30,6 +30,9 @@ export function show(toastElement, delay = 0, timeToShow = 0)
       () =>
       {
         toastElement.classList.add('toast-notification--show');
+        // prevent flickering when fading out
+        toastElement.style.animationPlayState = null;
+        toastElement.style.opacity = '1';
         if(timeToShow > 0)
         {
           setTimeout(() => hide(toastElement), (timeToShow));
@@ -39,20 +42,29 @@ export function show(toastElement, delay = 0, timeToShow = 0)
   }
 }
 
-export function hide(toastElement)
-{
-  toastElement.classList.remove('toast-notification--show');
-  setTimeout(
-    () =>
+on(
+  document, 'animationend', '.toast-notification',
+  (e) =>
+  {
+    const toastElement = e.delegateTarget;
+    if(e.animationName === 'fade-out')
     {
+      toastElement.style.animationPlayState = null;
+      toastElement.style.opacity = null;
       const parent = toastElement.parentElement;
       parent.removeChild(toastElement);
       if(toastElement.hasAttribute('data-persistent'))
       {
         parent.appendChild(toastElement);
       }
-    }, 500
-  );
+    }
+  }
+);
+
+export function hide(toastElement)
+{
+  toastElement.classList.remove('toast-notification--show');
+  toastElement.style.animationPlayState = 'running';
 }
 
 export function addNotification(toastContainer, title, content, removable, color)

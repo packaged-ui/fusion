@@ -15,8 +15,14 @@ $toast-message: '.toast-notification';
   #{$toast-message} {
     opacity: 0;
     box-sizing: border-box;
-    transform: translateX(100%);
-    transition: opacity .5s ease-in-out, transform 0s ease-in-out .5s;
+    animation: paused fade-out 0.5s both;
+
+    --position-hide: translateX(100%);
+    --position-show: translateX(0%);
+
+    &--show {
+      animation: running slide-in 0.5s both;
+    }
   }
 
   &--bottom-left {
@@ -26,7 +32,8 @@ $toast-message: '.toast-notification';
     right: unset;
 
     #{$toast-message} {
-      transform: translateY(400%);
+      --position-hide: translateY(400%);
+      --position-show: translateY(0%);
     }
   }
 
@@ -37,15 +44,29 @@ $toast-message: '.toast-notification';
     left: unset;
 
     #{$toast-message} {
-      transform: translateY(400%);
+      --position-hide: translateY(400%);
+      --position-show: translateY(0%);
     }
   }
+}
 
-  #{$toast-message} {
-    &--show {
-      transition: transform .5s ease-in-out 0s;
-      transform: unset;
-      opacity: 1;
-    }
+@keyframes slide-in {
+  0% {
+    transform: var(--position-hide);
+    opacity: 1;
+  }
+  100% {
+    transform: var(--position-show);
+    opacity: 1;
+  }
+}
+
+@keyframes fade-out {
+  1% {
+    transform: var(--position-show);
+    opacity: 1;
+  }
+  100% {
+    opacity: 0;
   }
 }
