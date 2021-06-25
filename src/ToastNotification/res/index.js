@@ -33,6 +33,7 @@ export function show(toastElement, delay = 0, timeToShow = 0)
         // prevent flickering when fading out
         toastElement.style.animationPlayState = null;
         toastElement.style.opacity = '1';
+        toastElement.style.display = null;
         if(timeToShow > 0)
         {
           setTimeout(() => hide(toastElement), (timeToShow));
@@ -51,11 +52,13 @@ on(
     {
       toastElement.style.animationPlayState = null;
       toastElement.style.opacity = null;
-      const parent = toastElement.parentElement;
-      parent.removeChild(toastElement);
       if(toastElement.hasAttribute('data-persistent'))
       {
-        parent.appendChild(toastElement);
+        toastElement.style.display = 'none';
+      }
+      else
+      {
+        toastElement.parentElement.removeChild(toastElement);
       }
     }
   }
