@@ -1,27 +1,21 @@
 $this: '.statistics';
 
 #{$this} {
-  background-color: white;
+  background-color: rgba(var(--f-background-color), 1);
   border: 1px solid #ddd;
   overflow: hidden;
   border-radius: 5px;
   width: 100%;
+  display: flex;
+  flex-wrap: wrap;
+  padding: 15px;
+
+  &.white {
+    --f-text-color: 255, 255, 255;
+  }
 
   &, * {
     box-sizing: border-box;
-  }
-
-  &__wrapper {
-    background-color: rgba(var(--f-background-color), 1);
-    display: flex;
-    flex-wrap: wrap;
-    padding: 15px;
-    border-radius: 5px;
-    width: 100%;
-
-    &.white {
-      --f-text-color: 255, 255, 255;
-    }
   }
 
   &__icon {

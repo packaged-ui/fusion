@@ -17,8 +17,8 @@ class Statistics extends Div implements Component
   /** @var null|Color */
   protected $_iconColor;
 
-  protected $_stat;
-  protected $_sub;
+  protected $_value;
+  protected $_title;
 
   protected $_secondary;
   /** @var null|Color */
@@ -27,6 +27,8 @@ class Statistics extends Div implements Component
   protected $_isWhite;
   /** @var null|Color */
   protected $_backgroundColor;
+  /** @var null|Color */
+  protected $_foregroundColor;
 
   public function __construct(...$content)
   {
@@ -57,24 +59,24 @@ class Statistics extends Div implements Component
   }
 
   /**
-   * @param mixed $stat
+   * @param mixed $value
    *
    * @return Statistics
    */
-  public function setStat($stat)
+  public function setValue($value)
   {
-    $this->_stat = $stat;
+    $this->_value = $value;
     return $this;
   }
 
   /**
-   * @param mixed $sub
+   * @param mixed $title
    *
    * @return Statistics
    */
-  public function setSub($sub)
+  public function setTitle($title)
   {
-    $this->_sub = $sub;
+    $this->_title = $title;
     return $this;
   }
 
@@ -112,15 +114,6 @@ class Statistics extends Div implements Component
   }
 
   /**
-   * @return Statistics
-   */
-  public function isWhite()
-  {
-    $this->_isWhite = true;
-    return $this;
-  }
-
-  /**
    * @param \PackagedUi\Fusion\Color\Color $backgroundColor
    *
    * @return Statistics
@@ -131,11 +124,35 @@ class Statistics extends Div implements Component
     return $this;
   }
 
+  /**
+   * @param \PackagedUi\Fusion\Color\Color $foregroundColor
+   *
+   * @return Statistics
+   */
+  public function setForegroundColor(Color $foregroundColor): Statistics
+  {
+    $this->_foregroundColor = $foregroundColor->foreground();
+    return $this;
+  }
+
   protected function _prepareForProduce(): HtmlElement
   {
     if($this->_backgroundColor)
     {
       $this->addClass($this->_backgroundColor);
+    }
+    else
+    {
+      $this->addClass(Color::WHITE()->background());
+    }
+
+    if($this->_foregroundColor)
+    {
+      $this->addClass($this->_foregroundColor);
+    }
+    else
+    {
+      $this->addClass(Color::BLACK()->background());
     }
     return parent::_prepareForProduce();
   }
@@ -151,8 +168,8 @@ class Statistics extends Div implements Component
     }
 
     $wrapper = Div::create(
-      $this->_stat ? Div::create($this->_stat)->addClass($this->getElementName('stat')) : null,
-      $this->_sub ? Div::create($this->_sub)->addClass($this->getElementName('sub')) : null
+      $this->_value ? Div::create($this->_value)->addClass($this->getElementName('stat')) : null,
+      $this->_title ? Div::create($this->_title)->addClass($this->getElementName('sub')) : null
     );
 
     $secondary = null;
@@ -163,7 +180,6 @@ class Statistics extends Div implements Component
         ->addClass($this->getElementName('secondary'), $this->_secondaryColor ?: null);
     }
 
-    return Div::create($icon, $wrapper, $secondary)
-      ->addClass($this->getElementName('wrapper'), $this->_isWhite ? 'white' : null);
+    return [$icon, $wrapper, $secondary];
   }
 }

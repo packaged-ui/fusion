@@ -29,8 +29,8 @@ class StatisticsDemo extends AbstractDemoElement
   {
     return Statistics::create()
       ->setIcon(FaIcon::create(FaIcon::SHOPPING_CART))
-      ->setStat('20,000')
-      ->setSub('Total Sales');
+      ->setValue('20,000')
+      ->setTitle('Total Sales');
   }
 
   /**
@@ -42,8 +42,8 @@ class StatisticsDemo extends AbstractDemoElement
   {
     return Statistics::create()
       ->setIcon(FaIcon::create(FaIcon::SHOPPING_CART))
-      ->setStat('20,000')
-      ->setSub('Total Sales')
+      ->setValue('20,000')
+      ->setTitle('Total Sales')
       ->setSecondary(FaIcon::create(FaIcon::ARROW_UP), '12%');
   }
 
@@ -56,8 +56,8 @@ class StatisticsDemo extends AbstractDemoElement
   {
     return Statistics::create()
       ->setIcon(FaIcon::create(FaIcon::SHOPPING_CART))
-      ->setStat('20,000')
-      ->setSub('Total Sales')
+      ->setValue('20,000')
+      ->setTitle('Total Sales')
       ->setSecondary(FaIcon::create(FaIcon::ARROW_UP), '12%')
       ->setIconColor(Color::GREEN());
   }
@@ -71,8 +71,8 @@ class StatisticsDemo extends AbstractDemoElement
   {
     return Statistics::create()
       ->setIcon(FaIcon::create(FaIcon::SHOPPING_CART))
-      ->setStat('20,000')
-      ->setSub('Total Sales')
+      ->setValue('20,000')
+      ->setTitle('Total Sales')
       ->setSecondary(FaIcon::create(FaIcon::ARROW_UP), '12%')
       ->setSecondaryColor(Color::GREEN());
   }
@@ -86,8 +86,8 @@ class StatisticsDemo extends AbstractDemoElement
   {
     return Statistics::create()
       ->setIcon(FaIcon::create(FaIcon::SHOPPING_CART))
-      ->setStat('20,000')
-      ->setSub('Total Sales')
+      ->setValue('20,000')
+      ->setTitle('Total Sales')
       ->setSecondary(FaIcon::create(FaIcon::ARROW_UP), '12%')
       ->setSecondaryColor(Color::RED());
   }
@@ -101,11 +101,12 @@ class StatisticsDemo extends AbstractDemoElement
   {
     return Statistics::create()
       ->setIcon(FaIcon::create(FaIcon::SHOPPING_CART))
-      ->setStat('20,000')
-      ->setSub('Total Sales')
+      ->setValue('20,000')
+      ->setTitle('Total Sales')
       ->setSecondary(FaIcon::create(FaIcon::ARROW_UP), '12%')
       ->setBackgroundColor(Color::RED())
-      ->isWhite();
+      ->setForegroundColor(Color::WHITE())
+      ->setIconColor(Color::BLACK());
   }
 
   /**
@@ -115,8 +116,8 @@ class StatisticsDemo extends AbstractDemoElement
   {
     $statistics = Statistics::create()
       ->setIcon(FaIcon::create(FaIcon::SHOPPING_CART))
-      ->setStat('20,000')
-      ->setSub('Total Sales');
+      ->setValue('20,000')
+      ->setTitle('Total Sales');
 
     return GridLayout::createWithInner(
       GridCell::create($statistics),
