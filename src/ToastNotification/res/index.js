@@ -48,7 +48,7 @@ on(
   (e) =>
   {
     const toastElement = e.delegateTarget;
-    if(e.animationName === 'fade-out')
+    if(toastElement && e.animationName === 'fade-out')
     {
       toastElement.style.animationPlayState = null;
       toastElement.style.opacity = null;
@@ -56,7 +56,7 @@ on(
       {
         toastElement.style.display = 'none';
       }
-      else
+      else if(toastElement.parentElement)
       {
         toastElement.parentElement.removeChild(toastElement);
       }
