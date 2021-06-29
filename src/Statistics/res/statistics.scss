@@ -1,0 +1,69 @@
+$this: '.statistics';
+
+#{$this} {
+  background-color: white;
+  border: 1px solid #ddd;
+  overflow: hidden;
+  border-radius: 5px;
+  width: 100%;
+
+  &, * {
+    box-sizing: border-box;
+  }
+
+  &__wrapper {
+    background-color: rgba(var(--f-background-color), 1);
+    display: flex;
+    flex-wrap: wrap;
+    padding: 15px;
+    border-radius: 5px;
+    width: 100%;
+
+    &.white {
+      --f-text-color: 255, 255, 255;
+    }
+  }
+
+  &__icon {
+    background-color: white;
+    border: 2px solid rgba(221, 221, 221, .4);
+    border-radius: 25px;
+    width: 48px;
+    height: 48px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin-right: 10px;
+  }
+
+  &__stat {
+    font-size: 22px;
+    color: rgb(var(--f-text-color));
+  }
+
+  &__sub {
+    font-size: 12px;
+    opacity: .8;
+    color: rgb(var(--f-text-color));
+  }
+
+  &__secondary {
+    flex-grow: 1;
+    display: flex;
+    justify-content: flex-end;
+    align-items: center;
+    color: rgb(var(--f-text-color));
+
+    i {
+      margin: 5px;
+    }
+
+    &.positive {
+      color: rgb(var(--color-green));
+    }
+
+    &.negative {
+      color: rgb(var(--color-red));
+    }
+  }
+}

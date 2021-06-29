@@ -64,10 +64,22 @@ $toolbar: '.code-toolbar';
         margin-right: 20px;
       }
 
-      h6 > a {
-        color: rgba(0, 0, 0, 0.3);
+      h6 {
+        margin-left: 15px;
+
+        &:first-of-type {
+          margin-left: 0;
+        }
+
+        > a {
+          color: rgba(0, 0, 0, 0.3);
+        }
       }
     }
+  }
+
+  .html-code-block {
+    margin-bottom: 2px;
   }
 
   .content-main {

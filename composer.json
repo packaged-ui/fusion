@@ -19,7 +19,9 @@
     "packaged-ui/bem-component": "^1.1"
   },
   "require-dev": {
-    "cubex/framework": "~4.0"
+    "cubex/framework": "~4.0",
+    "ext-dom": "*",
+    "ext-libxml": "*"
   },
   "autoload": {
     "psr-4": {

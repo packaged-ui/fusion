@@ -1,17 +1,14 @@
 <?php
 namespace PackagedUi\FusionDemo\Elements;
 
-use Packaged\Glimpse\Tags\Span;
-use Packaged\Glimpse\Tags\Text\SmallText;
+use Packaged\Glimpse\Core\HtmlTag;
 use PackagedUi\FontAwesome\FaIcon;
-use PackagedUi\Fusion\Card\Card;
-use PackagedUi\Fusion\Fusion;
-use PackagedUi\Fusion\Layout\Flex;
-use PackagedUi\Fusion\Layout\FlexGrow;
+use PackagedUi\Fusion\Color\Color;
+use PackagedUi\Fusion\Layout\Grid\GridCell;
 use PackagedUi\Fusion\Layout\Grid\GridLayout;
-use PackagedUi\FusionDemo\AbstractDemoPage;
+use PackagedUi\Fusion\Statistics\Statistics;
 
-class StatisticsDemo extends AbstractDemoPage
+class StatisticsDemo extends AbstractDemoElement
 {
   public function getName(): string
   {
@@ -23,24 +20,109 @@ class StatisticsDemo extends AbstractDemoPage
     return FaIcon::CHART_PIE;
   }
 
-  protected function _content(): array
+  /**
+   * Example of the Default Statistic Tile.
+   *
+   * @return HtmlTag
+   */
+  final public function DefaultStatistics(): HtmlTag
   {
-    $stats = [];
+    return Statistics::create()
+      ->setIcon(FaIcon::create(FaIcon::SHOPPING_CART))
+      ->setStat('20,000')
+      ->setSub('Total Sales');
+  }
 
-    $stats[] = Card::create("GRAPH")
-      ->setHeader("Revenue")
-      ->setFooter(GridLayout::createWithCells("Target", "Current"))
-      ->disableContentContainer();
+  /**
+   * Statistics Tile with Secondary.
+   *
+   * @return HtmlTag
+   */
+  final public function SecondaryStatistics(): HtmlTag
+  {
+    return Statistics::create()
+      ->setIcon(FaIcon::create(FaIcon::SHOPPING_CART))
+      ->setStat('20,000')
+      ->setSub('Total Sales')
+      ->setSecondary(FaIcon::create(FaIcon::ARROW_UP), '12%');
+  }
 
-    $stats[] = Card::create("GRAPH")
-      ->setHeader(
-        Flex::create(
-          FlexGrow::create("Revenue"),
-          SmallText::create(FaIcon::create(FaIcon::ARROW_UP), "12%")
-        )
-      )
-      ->setFooter(Span::create(34)->addClass(Fusion::TEXT_LARGE));
+  /**
+   * Statistics Tile with Secondary.
+   *
+   * @return HtmlTag
+   */
+  final public function SecondaryCustomColorStatistics(): HtmlTag
+  {
+    return Statistics::create()
+      ->setIcon(FaIcon::create(FaIcon::SHOPPING_CART))
+      ->setStat('20,000')
+      ->setSub('Total Sales')
+      ->setSecondary(FaIcon::create(FaIcon::ARROW_UP), '12%')
+      ->setIconColor(Color::GREEN());
+  }
 
-    return [GridLayout::createWithCells(...$stats)];
+  /**
+   * Statistics Tile with Secondary Positive.
+   *
+   * @return HtmlTag
+   */
+  final public function SecondaryPositiveStatistics(): HtmlTag
+  {
+    return Statistics::create()
+      ->setIcon(FaIcon::create(FaIcon::SHOPPING_CART))
+      ->setStat('20,000')
+      ->setSub('Total Sales')
+      ->setSecondary(FaIcon::create(FaIcon::ARROW_UP), '12%')
+      ->setSecondaryColor(Color::GREEN());
+  }
+
+  /**
+   * Statistics Tile with Secondary Negative.
+   *
+   * @return HtmlTag
+   */
+  final public function SecondaryNegativeStatistics(): HtmlTag
+  {
+    return Statistics::create()
+      ->setIcon(FaIcon::create(FaIcon::SHOPPING_CART))
+      ->setStat('20,000')
+      ->setSub('Total Sales')
+      ->setSecondary(FaIcon::create(FaIcon::ARROW_UP), '12%')
+      ->setSecondaryColor(Color::RED());
+  }
+
+  /**
+   * Statistics Tile with Secondary Negative.
+   *
+   * @return HtmlTag
+   */
+  final public function BackgroundColorStatistics(): HtmlTag
+  {
+    return Statistics::create()
+      ->setIcon(FaIcon::create(FaIcon::SHOPPING_CART))
+      ->setStat('20,000')
+      ->setSub('Total Sales')
+      ->setSecondary(FaIcon::create(FaIcon::ARROW_UP), '12%')
+      ->setBackgroundColor(Color::RED())
+      ->isWhite();
+  }
+
+  /**
+   * Statistics Tile with Secondary Negative.
+   */
+  final public function StatisticsGridExample()
+  {
+    $statistics = Statistics::create()
+      ->setIcon(FaIcon::create(FaIcon::SHOPPING_CART))
+      ->setStat('20,000')
+      ->setSub('Total Sales');
+
+    return GridLayout::createWithInner(
+      GridCell::create($statistics),
+      GridCell::create($statistics),
+      GridCell::create($statistics),
+      GridCell::create($statistics)
+    );
   }
 }
