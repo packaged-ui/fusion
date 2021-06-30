@@ -30,6 +30,16 @@ class ProgressDemo extends AbstractDemoElement
   /**
    * All of the Circular Progress Bar
    *
+   * @return HtmlTag
+   */
+  final public function CircularProgressBar()
+  {
+    return ProgressBar::create(68)->circle();
+  }
+
+  /**
+   * All of the Circular Progress Bar
+   *
    * @return array
    */
   final public function AllCircularProgressBar()
@@ -41,5 +51,4 @@ class ProgressDemo extends AbstractDemoElement
     }
     return $return;
   }
-
 }
