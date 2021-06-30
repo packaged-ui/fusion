@@ -7,6 +7,7 @@ use Packaged\Context\ContextAwareTrait;
 use Packaged\Dispatch\ResourceManager;
 use PackagedUi\FontAwesome\FaIcon;
 use PackagedUi\Fusion\Fusion;
+use PackagedUi\FusionDemo\Elements\AvatarDemo;
 use PackagedUi\FusionDemo\Elements\BadgeDemo;
 use PackagedUi\FusionDemo\Elements\BannerDemo;
 use PackagedUi\FusionDemo\Elements\ButtonDemo;
@@ -66,6 +67,7 @@ class ConfigHandler implements ContextAware
   {
     return [
       'Typography'       => new TypographyDemo(),
+      'Avatar'           => new AvatarDemo(),
       'Color'            => new ColorDemo(),
       'Grid'             => new GridDemo(),
       'XYGrid'           => new XyGridDemo(),
