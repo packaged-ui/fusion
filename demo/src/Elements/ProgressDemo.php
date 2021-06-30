@@ -1,11 +1,11 @@
 <?php
 namespace PackagedUi\FusionDemo\Elements;
 
+use Packaged\Glimpse\Core\HtmlTag;
 use PackagedUi\FontAwesome\FaIcon;
 use PackagedUi\Fusion\Progress\ProgressBar;
-use PackagedUi\FusionDemo\AbstractDemoPage;
 
-class ProgressDemo extends AbstractDemoPage
+class ProgressDemo extends AbstractDemoElement
 {
   public function getName(): string
   {
@@ -17,10 +17,29 @@ class ProgressDemo extends AbstractDemoPage
     return FaIcon::SPINNER;
   }
 
-  protected function _content(): array
+  /**
+   * Example of the default Progress Bar
+   *
+   * @return HtmlTag
+   */
+  final public function DefaultProgressBar()
+  {
+    return ProgressBar::create(50);
+  }
+
+  /**
+   * All of the Circular Progress Bar
+   *
+   * @return array
+   */
+  final public function AllCircularProgressBar()
   {
     $return = [];
-    $return[] = ProgressBar::create(50);
+    for($x = 1; $x <= 100; $x++)
+    {
+      $return[] = ProgressBar::create($x)->circle();
+    }
     return $return;
   }
+
 }
