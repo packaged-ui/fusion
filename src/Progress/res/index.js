@@ -1,2 +1,2 @@
 import '../../Foundation/res';
-import './progress-bar.css';
+import './progress-bar.scss';

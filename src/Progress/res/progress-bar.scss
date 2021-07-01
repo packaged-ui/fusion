@@ -1,0 +1,95 @@
+@use "sass:math";
+
+$this: '.progress';
+
+#{$this} {
+  --f-progress-bar-color: var(--f-color-accent);
+  --f-progress-size: 60px;
+  --f-progres-stroke: 5px;
+
+  &__bar {
+    background-color: rgb(var(--f-progress-bar-color));
+    color: #fff;
+  }
+
+  &--default {
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+    height: .25rem;
+    overflow: hidden;
+    font-size: 0;
+    background-color: rgba(var(--f-progress-bar-color), 0.28);
+    border-radius: 0;
+  }
+
+  &--circle {
+    height: var(--f-progress-size);
+    width: var(--f-progress-size);
+    position: relative;
+    background-color: rgb(var(--f-background-color));
+    display: inline-block;
+    border-radius: 50%;
+
+    &:before {
+
+      align-items: center;
+      background-color: rgb(var(--f-background-color));
+      border-radius: 50%;
+      content: attr(data-progress) '%';
+      display: flex;
+      font-size: 0.75rem;
+      justify-content: center;
+      position: absolute;
+      left: var(--f-progres-stroke);
+      right: var(--f-progres-stroke);
+      top: var(--f-progres-stroke);
+      bottom: var(--f-progres-stroke);
+      transition: all .2s ease;
+    }
+
+    &:after {
+      background-color: rgb(var(--f-progress-bar-color));
+      border-radius: 50%;
+      content: '';
+      display: inline-block;
+      height: 100%;
+      width: 100%;
+    }
+
+    &:hover, &:focus {
+      &:before {
+        top: 14px;
+        left: 14px;
+        bottom: 14px;
+        right: 14px;
+      }
+    }
+
+    $step: 1;
+    $loops: math.round(math.div(100, $step));
+    $increment: math.div(360, $loops);
+    $half: math.round(math.div($loops, 2));
+
+    @for $i from 0 through $loops {
+      &[data-progress=#{'"' + $i * $step + '"'}]:after {
+        @if ($i < $half) {
+          $next-deg: 90deg + $increment * $i;
+          --f-progress-color: var(--f-background-color);
+          --next-deg: 90deg;
+          --prev-deg: #{$next-deg};
+        } @else {
+          $next-deg: -90deg + $increment * ($i - $half);
+          --f-progress-color: var(--f-progress-bar-color);
+          --next-deg: #{$next-deg};
+          --prev-deg: 270deg;
+        }
+      }
+    }
+
+    &[data-progress]:after {
+      background-image: linear-gradient(var(--next-deg), rgb(var(--f-progress-color)) 50%, transparent 50%, transparent),
+      linear-gradient(var(--prev-deg), rgb(var(--f-progress-bar-color)) 50%, rgb(var(--f-background-color)) 50%, rgb(var(--f-background-color)));
+    }
+  }
+}
