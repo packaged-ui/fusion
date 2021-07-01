@@ -55,7 +55,7 @@ class AvatarDemo extends AbstractDemoElement
    */
   final public function ColoredTextAvatar(): HtmlTag
   {
-    return Avatar::text('Jane Doe')->setColor(Color::GREEN());
+    return Avatar::text('    Jane    Doe   ')->setColor(Color::GREEN());
   }
 
   /**
