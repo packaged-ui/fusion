@@ -1,4 +1,11 @@
 $this: '.chip';
+$chips: '.chips';
+
+#{$chips} {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 5px;
+}
 
 #{$this} {
 
@@ -11,8 +18,6 @@ $this: '.chip';
   border-width: 1px;
   border-style: solid;
   border-radius: 4px;
-  margin-right: 5px;
-  margin-top: 5px;
 
   &__icon {
     margin-right: 5px;

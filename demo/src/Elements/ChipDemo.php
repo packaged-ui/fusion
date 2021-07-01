@@ -5,6 +5,7 @@ use Packaged\Glimpse\Core\HtmlTag;
 use Packaged\Glimpse\Tags\Link;
 use PackagedUi\FontAwesome\FaIcon;
 use PackagedUi\Fusion\Chip\Chip;
+use PackagedUi\Fusion\Chip\Chips;
 use PackagedUi\Fusion\Color\Color;
 
 class ChipDemo extends AbstractDemoElement
@@ -86,9 +87,9 @@ class ChipDemo extends AbstractDemoElement
   }
 
   /**
-   * @return array
+   * @return Chips
    */
-  final public function ExampleChips(): array
+  final public function ExampleChips(): Chips
   {
     $chips = [];
 
@@ -115,7 +116,7 @@ class ChipDemo extends AbstractDemoElement
       ->round()
       ->setAction(FaIcon::create(FaIcon::TIMES));
 
-    return $chips;
+    return Chips::create()->addChips(...$chips);
   }
 
 }
