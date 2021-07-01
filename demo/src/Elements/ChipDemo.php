@@ -1,0 +1,121 @@
+<?php
+namespace PackagedUi\FusionDemo\Elements;
+
+use Packaged\Glimpse\Core\HtmlTag;
+use Packaged\Glimpse\Tags\Link;
+use PackagedUi\FontAwesome\FaIcon;
+use PackagedUi\Fusion\Chip\Chip;
+use PackagedUi\Fusion\Color\Color;
+
+class ChipDemo extends AbstractDemoElement
+{
+  public function getName(): string
+  {
+    return 'Chips';
+  }
+
+  protected function _getFaIcon()
+  {
+    return FaIcon::PILLS;
+  }
+
+  /**
+   * @return HtmlTag
+   */
+  final public function DefaultChip(): HtmlTag
+  {
+    return Chip::create()->setName('Lorem Ipsum');
+  }
+
+  /**
+   * @return HtmlTag
+   */
+  final public function CustomChipColor(): HtmlTag
+  {
+    return Chip::create()->setName('Lorem Ipsum')->setColor(Color::RED());
+  }
+
+  /**
+   * @return HtmlTag
+   */
+  final public function ChipIcon(): HtmlTag
+  {
+    return Chip::create()
+      ->setName('Hello World')
+      ->setIcon(FaIcon::create(FaIcon::MAP));
+  }
+
+  /**
+   * @return HtmlTag
+   */
+  final public function ChipAction(): HtmlTag
+  {
+    return Chip::create()
+      ->setName('Hello World')
+      ->setAction(Link::create('#', FaIcon::create(FaIcon::TIMES)));
+  }
+
+  /**
+   * @return HtmlTag
+   */
+  final public function ChipNoBackgorund(): HtmlTag
+  {
+    return Chip::create()
+      ->setName('Hello World')
+      ->removeBackground();
+  }
+
+  /**
+   * @return HtmlTag
+   */
+  final public function ChipWithValue(): HtmlTag
+  {
+    return Chip::create()
+      ->setName('Hello World')
+      ->setValue('1.15.2');
+  }
+
+  /**
+   * @return HtmlTag
+   */
+  final public function ChipRounded(): HtmlTag
+  {
+    return Chip::create()
+      ->setName('Hello World')
+      ->round();
+  }
+
+  /**
+   * @return array
+   */
+  final public function ExampleChips(): array
+  {
+    $chips = [];
+
+    $chips[] = Chip::create()
+      ->setName('Needs Improvement')
+      ->setColor(Color::YELLOW())
+      ->setAction(FaIcon::create(FaIcon::TIMES));
+
+    $chips[] = Chip::create()
+      ->setName('Danger')
+      ->setIcon(FaIcon::create(FaIcon::TRASH))
+      ->setColor(Color::RED())
+      ->setAction(FaIcon::create(FaIcon::TIMES));
+
+    $chips[] = Chip::create()
+      ->setName('Article')
+      ->setColor(Color::SKY())
+      ->removeBackground()
+      ->setAction(FaIcon::create(FaIcon::TIMES));
+
+    $chips[] = Chip::create()
+      ->setName('Lorem Ipsum')
+      ->setColor(Color::BLUE())
+      ->round()
+      ->setAction(FaIcon::create(FaIcon::TIMES));
+
+    return $chips;
+  }
+
+}
