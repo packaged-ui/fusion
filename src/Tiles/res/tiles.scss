@@ -74,8 +74,11 @@
 }
 
 .tile > .tile__primary .tile__avatar {
-  display: flex;
   margin-right: 8px;
+}
+
+.tile > .tile__primary .tile__avatar > img {
+  display: block;
 }
 
 .tile > .tile__primary .tile__avatar > * {

@@ -5,6 +5,7 @@ use Packaged\Glimpse\Core\HtmlTag;
 use Packaged\Glimpse\Tags\Link;
 use Packaged\Glimpse\Tags\Media\Image;
 use PackagedUi\FontAwesome\FaIcon;
+use PackagedUi\Fusion\Avatar\Avatar;
 use PackagedUi\Fusion\Color\Color;
 use PackagedUi\Fusion\Tiles\Enum\TileLayout;
 use PackagedUi\Fusion\Tiles\Tile;
@@ -50,7 +51,7 @@ class TileDemo extends AbstractDemoElement
   final public function DefaultTileAvatar(): HtmlTag
   {
     return Tile::create()
-      ->setAvatar(Image::create('https://i.pravatar.cc/0'))
+      ->setAvatar(Image::create('https://i.pravatar.cc/30'))
       ->setTitle('This is a tile')
       ->setLabel('Hello World');
   }
@@ -61,7 +62,7 @@ class TileDemo extends AbstractDemoElement
   final public function DefaultTileAvatarContent(): HtmlTag
   {
     return Tile::create()
-      ->setAvatar()
+      ->setAvatar(Avatar::image('https://i.pravatar.cc/60'))
       ->setTitle('This is a tile')
       ->setLabel('Hello World')
       ->setDescription("Lorem ipsum dolor sit amet.");
