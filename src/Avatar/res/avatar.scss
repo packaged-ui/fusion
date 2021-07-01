@@ -1,0 +1,38 @@
+$this: '.avatar';
+
+#{$this} {
+  --f-avatar-size: 48px;
+
+  width: var(--f-avatar-size);
+  height: var(--f-avatar-size);
+  background-size: cover;
+  background-repeat: no-repeat;
+  background-position: center;
+  border-radius: 50%;
+  display: inline-block;
+  position: relative;
+
+  &:after {
+    content: attr(data-text);
+    position: absolute;
+    top: 50%;
+    font-size: var(--f-font-size);
+    left: 50%;
+    transform: translate(-50%, -50%);
+  }
+
+  &--small {
+    --f-font-size: 12px;
+    --f-avatar-size: 22px;
+  }
+
+  &--medium {
+    --f-font-size: 14px;
+    --f-avatar-size: 32px;
+  }
+
+  &--large {
+    --f-font-size: 18px;
+    --f-avatar-size: 58px;
+  }
+}
