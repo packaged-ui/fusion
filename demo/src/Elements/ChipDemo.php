@@ -109,5 +109,4 @@ class ChipDemo extends AbstractDemoElement
 
     return Chips::create()->addChips(...$chips);
   }
-
 }
