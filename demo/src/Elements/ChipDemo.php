@@ -57,10 +57,9 @@ class ChipDemo extends AbstractDemoElement
   /**
    * @return HtmlTag
    */
-  final public function ChipNoBackgorund(): HtmlTag
+  final public function ChipNoBackground(): HtmlTag
   {
-    return Chip::create('Hello World')
-      ->removeBgColor();
+    return Chip::create('Hello World');
   }
 
   /**
@@ -98,8 +97,7 @@ class ChipDemo extends AbstractDemoElement
       ->setAction(FaIcon::create(FaIcon::TIMES));
 
     $chips[] = Chip::create('Article')
-      ->setColor(Color::SKY())
-      ->removeBgColor()
+      ->setColor(Color::SKY(), false)
       ->setAction(FaIcon::create(FaIcon::TIMES));
 
     $chips[] = Chip::create('Lorem Ipsum')
