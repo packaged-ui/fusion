@@ -12,6 +12,7 @@ use PackagedUi\FusionDemo\Elements\BadgeDemo;
 use PackagedUi\FusionDemo\Elements\BannerDemo;
 use PackagedUi\FusionDemo\Elements\ButtonDemo;
 use PackagedUi\FusionDemo\Elements\CardDemo;
+use PackagedUi\FusionDemo\Elements\ChipDemo;
 use PackagedUi\FusionDemo\Elements\ColorDemo;
 use PackagedUi\FusionDemo\Elements\DialogDemo;
 use PackagedUi\FusionDemo\Elements\DrawerDemo;
@@ -69,6 +70,7 @@ class ConfigHandler implements ContextAware
       'Typography'       => new TypographyDemo(),
       'Avatar'           => new AvatarDemo(),
       'Color'            => new ColorDemo(),
+      'Chips'            => new ChipDemo(),
       'Grid'             => new GridDemo(),
       'XYGrid'           => new XyGridDemo(),
       'Theme'            => new ThemeDemo(),

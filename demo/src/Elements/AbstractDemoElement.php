@@ -3,6 +3,7 @@
 namespace PackagedUi\FusionDemo\Elements;
 
 use Packaged\DocBlock\DocBlockParser;
+use Packaged\Glimpse\Core\AbstractContainerTag;
 use Packaged\Glimpse\Tags\Div;
 use Packaged\Glimpse\Tags\Link;
 use Packaged\Glimpse\Tags\Text\CodeBlock;
@@ -97,7 +98,7 @@ abstract class AbstractDemoElement extends AbstractDemoPage
       $dom->preserveWhiteSpace = false;
       $dom->formatOutput = true;
 
-      $dom->loadHTML($this->$method(), LIBXML_HTML_NOIMPLIED);
+      $dom->loadHTML(AbstractContainerTag::create($this->$method())->render(), LIBXML_HTML_NOIMPLIED);
 
       $html = CodeBlock::create($dom->saveHTML($dom->documentElement))->addClass('language-html');
 
