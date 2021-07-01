@@ -52,7 +52,7 @@ abstract class AbstractDemoElement extends AbstractDemoPage
     {
       $reflect = new \ReflectionMethod($this, $method);
       $parsed = new DocBlockParser($reflect->getDocComment());
-      $code = $this->_getCode($reflect);
+      $codeMethod = $this->_getCode($reflect);
 
       $id = Strings::randomString(4);
 
@@ -64,10 +64,20 @@ abstract class AbstractDemoElement extends AbstractDemoPage
 
       $header->appendContent(
         HeadingSix::create(
-          Link::create('#', 'Show Code')
+          Link::create('#', 'Show PHP')
             ->setAttribute(
               'onclick',
               'document.getElementById(\'code-' . $id . '\').classList.toggle(\'hidden\'); return false'
+            )
+        )
+      );
+
+      $header->appendContent(
+        HeadingSix::create(
+          Link::create('#', 'Show HTML')
+            ->setAttribute(
+              'onclick',
+              'document.getElementById(\'html-' . $id . '\').classList.toggle(\'hidden\'); return false'
             )
         )
       );
@@ -81,10 +91,25 @@ abstract class AbstractDemoElement extends AbstractDemoPage
 
       $header = Div::create($header, $summary)->addClass('content-header');
 
-      $code = CodeBlock::create('<?php ' . $code)->addClass('language-php');
+      $code = CodeBlock::create('<?php ' . $codeMethod)->addClass('language-php');
+
+      $dom = new \DOMDocument('1.0', 'UTF-8');
+      $dom->preserveWhiteSpace = false;
+      $dom->formatOutput = true;
+
+      $dom->loadHTML($this->$method(), LIBXML_HTML_NOIMPLIED);
+
+      $html = CodeBlock::create($dom->saveHTML($dom->documentElement))->addClass('language-html');
 
       $methRow = Div::create()->addClass('content-container');
       $methRow->appendContent($header);
+
+      $methRow->appendContent(
+        Div::create()
+          ->appendContent(PreFormattedText::create($html))
+          ->addClass('hidden', 'html-code-block')
+          ->setId('html-' . $id)
+      );
 
       $methRow->appendContent(
         Div::create()
