@@ -112,6 +112,7 @@ class ToastNotification extends Div implements Component
     $title = $this->_title ? Div::create($this->_title)->addClass($this->getElementName('title')) : null;
 
     return [
+      Div::create()->addClass('bg'),
       $this->_iconRight ? null : $icon,
       Div::create(
         $title,
