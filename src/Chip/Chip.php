@@ -107,7 +107,7 @@ class Chip extends HtmlTag implements Component
    *
    * @return Chip
    */
-  public function setValue(string $value): Chip
+  public function setValue(string $value)
   {
     $this->_value = $value;
     return $this;
