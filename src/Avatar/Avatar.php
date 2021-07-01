@@ -38,7 +38,7 @@ class Avatar extends HtmlTag implements Component
   public static function text(string $text)
   {
     $words = array_values(array_filter(explode(' ', $text)));
-    $prefix = $words[1] ? $words[0][0] . $words[1][0] : $words[0][0];
+    $prefix = isset($words[1]) ? $words[0][0] . $words[1][0] : $words[0][0];
 
     $ele = parent::create();
     $ele->setAttribute('data-text', $prefix);
