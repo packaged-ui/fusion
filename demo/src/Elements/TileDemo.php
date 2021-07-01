@@ -286,7 +286,7 @@ class TileDemo extends AbstractDemoElement
       ->setColor(Color::ORANGE())
       ->addIcon(FaIcon::create(FaIcon::THUMBS_UP))
       ->addIcon(FaIcon::create(FaIcon::STAR))
-      ->hoverActions(rand(0,1))
+      ->hoverActions()
       ->addAction(
         TileAction::create()
           ->setIcon(FaIcon::create(FaIcon::CHECK))

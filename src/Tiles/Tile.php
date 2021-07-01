@@ -120,9 +120,9 @@ class Tile extends HtmlTag implements Component
     return $this;
   }
 
-  public function hoverActions($enable = true)
+  public function hoverActions()
   {
-    $this->_hoverAction = $enable;
+    $this->_hoverAction = true;
     return $this;
   }
 
