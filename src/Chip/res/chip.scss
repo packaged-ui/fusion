@@ -1,3 +1,5 @@
+@import "../../Foundation/res/foundation";
+
 $this: '.chip';
 $chips: '.chips';
 
@@ -19,32 +21,8 @@ $chips: '.chips';
   border-style: solid;
   border-radius: 4px;
   position: relative;
-  z-index: 1;
-  background-color: unset !important;
 
-  &:before {
-    content: '';
-    z-index: -1;
-    background-color: white;
-    top: 0;
-    left: 0;
-    width: 100%;
-    height: 100%;
-    position: absolute;
-    border-radius: 4px;
-  }
-
-  &:after {
-    content: '';
-    z-index: -1;
-    background-color: rgba(var(--f-background-color), .1);
-    top: 0;
-    left: 0;
-    width: 100%;
-    height: 100%;
-    position: absolute;
-    border-radius: 4px;
-  }
+  @include white-bg-underlay(4px);
 
   &__icon {
     margin-right: 5px;
