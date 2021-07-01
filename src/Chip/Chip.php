@@ -47,11 +47,11 @@ class Chip extends HtmlTag implements Component
   }
 
   /**
-   * @param string $name
+   * @param string|null $name
    *
    * @return Chip
    */
-  public function setName(string $name): Chip
+  public function setName(?string $name): Chip
   {
     $this->_name = $name;
     return $this;
@@ -128,6 +128,14 @@ class Chip extends HtmlTag implements Component
     $this->addClass($this->_color->foreground());
 
     return parent::_prepareForProduce();
+  }
+
+  /**
+   * @return static
+   */
+  public static function create(string $name = null)
+  {
+    return parent::create()->setName($name);
   }
 
   protected function _getContentForRender()

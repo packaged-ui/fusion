@@ -25,7 +25,7 @@ class ChipDemo extends AbstractDemoElement
    */
   final public function DefaultChip(): HtmlTag
   {
-    return Chip::create()->setName('Lorem Ipsum');
+    return Chip::create('Lorem Ipsum');
   }
 
   /**
@@ -33,7 +33,7 @@ class ChipDemo extends AbstractDemoElement
    */
   final public function CustomChipColor(): HtmlTag
   {
-    return Chip::create()->setName('Lorem Ipsum')->setColor(Color::RED());
+    return Chip::create('Lorem Ipsum')->setColor(Color::RED());
   }
 
   /**
@@ -41,8 +41,7 @@ class ChipDemo extends AbstractDemoElement
    */
   final public function ChipIcon(): HtmlTag
   {
-    return Chip::create()
-      ->setName('Hello World')
+    return Chip::create('Hello World')
       ->setIcon(FaIcon::create(FaIcon::MAP));
   }
 
@@ -51,8 +50,7 @@ class ChipDemo extends AbstractDemoElement
    */
   final public function ChipAction(): HtmlTag
   {
-    return Chip::create()
-      ->setName('Hello World')
+    return Chip::create('Hello World')
       ->setAction(Link::create('#', FaIcon::create(FaIcon::TIMES)));
   }
 
@@ -61,8 +59,7 @@ class ChipDemo extends AbstractDemoElement
    */
   final public function ChipNoBackgorund(): HtmlTag
   {
-    return Chip::create()
-      ->setName('Hello World')
+    return Chip::create('Hello World')
       ->removeBackground();
   }
 
@@ -71,8 +68,7 @@ class ChipDemo extends AbstractDemoElement
    */
   final public function ChipWithValue(): HtmlTag
   {
-    return Chip::create()
-      ->setName('Hello World')
+    return Chip::create('Hello World')
       ->setValue('1.15.2');
   }
 
@@ -81,8 +77,7 @@ class ChipDemo extends AbstractDemoElement
    */
   final public function ChipRounded(): HtmlTag
   {
-    return Chip::create()
-      ->setName('Hello World')
+    return Chip::create('Hello World')
       ->round();
   }
 
@@ -93,25 +88,21 @@ class ChipDemo extends AbstractDemoElement
   {
     $chips = [];
 
-    $chips[] = Chip::create()
-      ->setName('Needs Improvement')
+    $chips[] = Chip::create('Needs Improvement')
       ->setColor(Color::YELLOW())
       ->setAction(FaIcon::create(FaIcon::TIMES));
 
-    $chips[] = Chip::create()
-      ->setName('Danger')
+    $chips[] = Chip::create('Danger')
       ->setIcon(FaIcon::create(FaIcon::TRASH))
       ->setColor(Color::RED())
       ->setAction(FaIcon::create(FaIcon::TIMES));
 
-    $chips[] = Chip::create()
-      ->setName('Article')
+    $chips[] = Chip::create('Article')
       ->setColor(Color::SKY())
       ->removeBackground()
       ->setAction(FaIcon::create(FaIcon::TIMES));
 
-    $chips[] = Chip::create()
-      ->setName('Lorem Ipsum')
+    $chips[] = Chip::create('Lorem Ipsum')
       ->setColor(Color::BLUE())
       ->round()
       ->setAction(FaIcon::create(FaIcon::TIMES));
