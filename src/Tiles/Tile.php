@@ -18,18 +18,6 @@ class Tile extends HtmlTag implements Component
   use BemComponentTrait;
   use ComponentTrait;
 
-  public function __construct()
-  {
-    parent::__construct();
-    $this->_constructComponent();
-    $this->_construct();
-  }
-
-  public function getBlockName(): string
-  {
-    return 'tile';
-  }
-
   protected $_tag = 'div';
 
   /** @var  mixed */
@@ -52,6 +40,18 @@ class Tile extends HtmlTag implements Component
   protected $_colorBackground = false;
   /** @var int */
   protected $_maxDescription = 512;
+
+  public function __construct()
+  {
+    parent::__construct();
+    $this->_constructComponent();
+    $this->_construct();
+  }
+
+  public function getBlockName(): string
+  {
+    return 'tile';
+  }
 
   /**
    * @param $content
