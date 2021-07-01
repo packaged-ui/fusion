@@ -50,9 +50,21 @@ class TileDemo extends AbstractDemoElement
   final public function DefaultTileAvatar(): HtmlTag
   {
     return Tile::create()
-      ->setAvatar(Image::create('https://i.pravatar.cc/300'))
+      ->setAvatar(Image::create('https://i.pravatar.cc/0'))
       ->setTitle('This is a tile')
       ->setLabel('Hello World');
+  }
+
+  /**
+   * @return HtmlTag
+   */
+  final public function DefaultTileAvatarContent(): HtmlTag
+  {
+    return Tile::create()
+      ->setAvatar()
+      ->setTitle('This is a tile')
+      ->setLabel('Hello World')
+      ->setDescription("Lorem ipsum dolor sit amet.");
   }
 
   /**

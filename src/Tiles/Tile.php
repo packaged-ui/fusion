@@ -16,6 +16,7 @@ use PackagedUi\Fusion\ComponentTrait;
 class Tile extends HtmlTag implements Component
 {
   use BemComponentTrait;
+
   use ComponentTrait;
 
   protected $_tag = 'div';

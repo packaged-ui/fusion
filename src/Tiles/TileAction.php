@@ -4,6 +4,7 @@ namespace PackagedUi\Fusion\Tiles;
 use Packaged\Glimpse\Tags\Link;
 use Packaged\Glimpse\Tags\Span;
 use Packaged\Ui\Element;
+use PackagedUi\BemComponent\BemComponent;
 use PackagedUi\BemComponent\BemComponentTrait;
 use PackagedUi\FontAwesome\FaIcon;
 use PackagedUi\Fusion\Component;
@@ -24,6 +25,8 @@ class TileAction extends Element implements Component
   {
     return 'tile__action';
   }
+
+
 
   /** @var Link|Span */
   protected $_link;
