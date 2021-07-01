@@ -23,7 +23,7 @@ class Chip extends HtmlTag implements Component
   /** @var mixed */
   protected $_action;
   /** @var bool */
-  protected $_noBackground = false;
+  protected $_whiteBackground = false;
   /** @var mixed */
   protected $_icon;
   /** @var string */
@@ -88,9 +88,9 @@ class Chip extends HtmlTag implements Component
   /**
    * @return Chip
    */
-  public function removeBackground()
+  public function removeBgColor(): Chip
   {
-    $this->_noBackground = true;
+    $this->_whiteBackground = true;
     return $this;
   }
 
@@ -121,11 +121,12 @@ class Chip extends HtmlTag implements Component
     }
 
     $this->addClass($this->_color->border());
-    if(!$this->_noBackground)
+    $this->addClass($this->_color->foreground());
+
+    if(!$this->_whiteBackground)
     {
       $this->addClass($this->_color->background());
     }
-    $this->addClass($this->_color->foreground());
 
     return parent::_prepareForProduce();
   }
