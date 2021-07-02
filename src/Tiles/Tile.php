@@ -438,12 +438,14 @@ class Tile extends HtmlTag implements Component
     {
       if($this->_hoverAction)
       {
-        $primary->appendContent(Div::create($this->_actions)->addClass($this->getElementName('actions')));
         $container->addClass($this->getModifier('hover-actions'));
       }
-
-      $container->appendContent(Div::create($this->_actions)->addClass($this->getElementName('actions')));
       $container->addClass($this->getModifier('has-actions'));
+
+      $container->appendContent(
+        Div::create(Div::create($this->_actions)->addClass($this->getElementName('actions')))
+          ->addClass($this->getElementName('actions-wrap'))
+      );
     }
     else
     {
