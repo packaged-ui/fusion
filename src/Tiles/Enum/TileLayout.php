@@ -11,7 +11,7 @@ use Packaged\Enum\AbstractEnum;
  */
 class TileLayout extends AbstractEnum
 {
-  const LAYOUT_LIST = 'list';
-  const LAYOUT_GRID = 'grid';
+  public const LAYOUT_LIST = 'list';
+  public const LAYOUT_GRID = 'grid';
   const LAYOUT_GRID_FULLWIDTH = 'fullwidth-grid';
 }

@@ -6,6 +6,7 @@ use Packaged\Glimpse\Tags\Span;
 use Packaged\Ui\Element;
 use PackagedUi\BemComponent\BemComponentTrait;
 use PackagedUi\FontAwesome\FaIcon;
+use PackagedUi\Fusion\Color\Color;
 use PackagedUi\Fusion\Component;
 use PackagedUi\Fusion\ComponentTrait;
 
@@ -32,6 +33,8 @@ class TileAction extends Element implements Component
   /** @var string|null */
   protected $_tooltip = null;
   protected $_isDisabled = false;
+  /** @var Color */
+  protected $_color;
 
   /**
    * @return static
@@ -53,6 +56,11 @@ class TileAction extends Element implements Component
     else
     {
       $return = $this->_link;
+    }
+
+    if($this->_color !== null)
+    {
+      $return->addClass($this->_color->foreground());
     }
 
     if($this->_tooltip !== null)
@@ -143,5 +151,16 @@ class TileAction extends Element implements Component
   public function isDisabled()
   {
     return $this->_isDisabled;
+  }
+
+  /**
+   * @param Color $color
+   *
+   * @return TileAction
+   */
+  public function setColor(Color $color)
+  {
+    $this->_color = $color;
+    return $this;
   }
 }

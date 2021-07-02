@@ -9,6 +9,8 @@ use Packaged\Ui\Html\HtmlElement;
 use PackagedUi\BemComponent\BemComponentTrait;
 use PackagedUi\FontAwesome\FaIcon;
 use PackagedUi\FontAwesome\FaIcons;
+use PackagedUi\Fusion\Chip\Chip;
+use PackagedUi\Fusion\Chip\Chips;
 use PackagedUi\Fusion\Color\Color;
 use PackagedUi\Fusion\Component;
 use PackagedUi\Fusion\ComponentTrait;
@@ -16,19 +18,8 @@ use PackagedUi\Fusion\ComponentTrait;
 class Tile extends HtmlTag implements Component
 {
   use BemComponentTrait;
+
   use ComponentTrait;
-
-  public function __construct()
-  {
-    parent::__construct();
-    $this->_constructComponent();
-    $this->_construct();
-  }
-
-  public function getBlockName(): string
-  {
-    return 'tile';
-  }
 
   protected $_tag = 'div';
 
@@ -52,6 +43,71 @@ class Tile extends HtmlTag implements Component
   protected $_colorBackground = false;
   /** @var int */
   protected $_maxDescription = 512;
+  /** @var \PackagedUi\Fusion\Chip\Chip[] */
+  protected $_chips = [];
+  /** @var array */
+  protected $_footer = [];
+  /** @var bool */
+  protected $_hoverAction = false;
+
+  public function __construct()
+  {
+    parent::__construct();
+    $this->_constructComponent();
+    $this->_construct();
+  }
+
+  /**
+   * @param Chip $chip
+   *
+   * @return Tile
+   */
+  public function addChip(Chip $chip): Tile
+  {
+    $this->_chips[] = $chip;
+    return $this;
+  }
+
+  /**
+   * @param Chip[] $chips
+   *
+   * @return Tile
+   */
+  public function addChips(...$chips): Tile
+  {
+    foreach($chips as $chip)
+    {
+      $this->_chips[] = $chip;
+    }
+    return $this;
+  }
+
+  /**
+   * @param ...$footer
+   *
+   * @return Tile
+   */
+  public function setFooter(...$footer)
+  {
+    $this->_footer = $footer;
+    return $this;
+  }
+
+  /**
+   * @param $footer
+   *
+   * @return Tile
+   */
+  public function appendFooter($footer)
+  {
+    $this->_footer[] = $footer;
+    return $this;
+  }
+
+  public function getBlockName(): string
+  {
+    return 'tile';
+  }
 
   /**
    * @param $content
@@ -61,6 +117,12 @@ class Tile extends HtmlTag implements Component
   public function setTitle($content)
   {
     $this->_title = $content;
+    return $this;
+  }
+
+  public function hoverActions()
+  {
+    $this->_hoverAction = true;
     return $this;
   }
 
@@ -293,11 +355,11 @@ class Tile extends HtmlTag implements Component
     }
 
     // Title, Label, Description content
-    $text = Div::create()->addClass('text');
+    $text = Div::create()->addClass($this->getElementName('text'));
     $heading->appendContent($text);
 
     // add icons to container
-    $this->_applyIcons($text, $container);
+    $this->_applyIcons($heading, $container);
 
     if($this->_label)
     {
@@ -331,6 +393,20 @@ class Tile extends HtmlTag implements Component
       $container->addClass($this->getModifier('no-description'));
     }
 
+    $footer = $this->_footer;
+
+    if(!empty($this->_chips))
+    {
+      array_unshift($footer, Chips::create()->addChips(...$this->_chips)->addClass($this->getElementName('chips')));
+    }
+
+    if(!empty($footer))
+    {
+      $primary->appendContent(Div::create($footer)->addClass($this->getElementName('footer')));
+    }
+
+    $container->addClass($this->getModifier((!empty($footer) ? 'no' : 'has') . '-footer'));
+
     // add border Color class
     if($this->_color === null)
     {
@@ -360,8 +436,16 @@ class Tile extends HtmlTag implements Component
     // append actions
     if($this->_actions)
     {
-      $container->appendContent(Div::create($this->_actions)->addClass($this->getElementName('actions')));
+      if($this->_hoverAction)
+      {
+        $container->addClass($this->getModifier('hover-actions'));
+      }
       $container->addClass($this->getModifier('has-actions'));
+
+      $container->appendContent(
+        Div::create(Div::create($this->_actions)->addClass($this->getElementName('actions')))
+          ->addClass($this->getElementName('actions-wrap'))
+      );
     }
     else
     {

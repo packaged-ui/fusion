@@ -1,2 +1,2 @@
 import '../../Foundation/res';
-import './tiles.css';
+import './tiles.scss';
