@@ -6,7 +6,7 @@ use PackagedUi\FontAwesome\FaIcon;
 use PackagedUi\Fusion\Color\Color;
 use PackagedUi\Fusion\Layout\Grid\GridCell;
 use PackagedUi\Fusion\Layout\Grid\GridLayout;
-use PackagedUi\Fusion\Statistics\Statistics;
+use PackagedUi\Fusion\Statistics\Statistic;
 
 class StatisticsDemo extends AbstractDemoElement
 {
@@ -27,7 +27,7 @@ class StatisticsDemo extends AbstractDemoElement
    */
   final public function DefaultStatistics(): HtmlTag
   {
-    return Statistics::create()
+    return Statistic::create()
       ->setIcon(FaIcon::create(FaIcon::SHOPPING_CART))
       ->setValue('20,000')
       ->setTitle('Total Sales');
@@ -40,7 +40,7 @@ class StatisticsDemo extends AbstractDemoElement
    */
   final public function SecondaryStatistics(): HtmlTag
   {
-    return Statistics::create()
+    return Statistic::create()
       ->setIcon(FaIcon::create(FaIcon::SHOPPING_CART))
       ->setValue('20,000')
       ->setTitle('Total Sales')
@@ -54,7 +54,7 @@ class StatisticsDemo extends AbstractDemoElement
    */
   final public function SecondaryCustomColorStatistics(): HtmlTag
   {
-    return Statistics::create()
+    return Statistic::create()
       ->setIcon(FaIcon::create(FaIcon::SHOPPING_CART))
       ->setValue('20,000')
       ->setTitle('Total Sales')
@@ -69,7 +69,7 @@ class StatisticsDemo extends AbstractDemoElement
    */
   final public function SecondaryPositiveStatistics(): HtmlTag
   {
-    return Statistics::create()
+    return Statistic::create()
       ->setIcon(FaIcon::create(FaIcon::SHOPPING_CART))
       ->setValue('20,000')
       ->setTitle('Total Sales')
@@ -84,7 +84,7 @@ class StatisticsDemo extends AbstractDemoElement
    */
   final public function SecondaryNegativeStatistics(): HtmlTag
   {
-    return Statistics::create()
+    return Statistic::create()
       ->setIcon(FaIcon::create(FaIcon::SHOPPING_CART))
       ->setValue('20,000')
       ->setTitle('Total Sales')
@@ -99,7 +99,7 @@ class StatisticsDemo extends AbstractDemoElement
    */
   final public function BackgroundColorStatistics(): HtmlTag
   {
-    return Statistics::create()
+    return Statistic::create()
       ->setIcon(FaIcon::create(FaIcon::SHOPPING_CART))
       ->setValue('20,000')
       ->setTitle('Total Sales')
@@ -114,7 +114,7 @@ class StatisticsDemo extends AbstractDemoElement
    */
   final public function StatisticsGridExample()
   {
-    $statistics = Statistics::create()
+    $statistics = Statistic::create()
       ->setIcon(FaIcon::create(FaIcon::SHOPPING_CART))
       ->setValue('20,000')
       ->setTitle('Total Sales');

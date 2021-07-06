@@ -8,7 +8,7 @@ use PackagedUi\Fusion\Color\Color;
 use PackagedUi\Fusion\Component;
 use PackagedUi\Fusion\ComponentTrait;
 
-class Statistics extends Div implements Component
+class Statistic extends Div implements Component
 {
   use BemComponentTrait;
   use ComponentTrait;
@@ -44,13 +44,13 @@ class Statistics extends Div implements Component
    */
   public function getBlockName(): string
   {
-    return 'statistics';
+    return 'statistic';
   }
 
   /**
    * @param mixed $icon
    *
-   * @return Statistics
+   * @return Statistic
    */
   public function setIcon($icon)
   {
@@ -61,7 +61,7 @@ class Statistics extends Div implements Component
   /**
    * @param mixed $value
    *
-   * @return Statistics
+   * @return Statistic
    */
   public function setValue($value)
   {
@@ -72,7 +72,7 @@ class Statistics extends Div implements Component
   /**
    * @param mixed $title
    *
-   * @return Statistics
+   * @return Statistic
    */
   public function setTitle($title)
   {
@@ -83,7 +83,7 @@ class Statistics extends Div implements Component
   /**
    * @param mixed $secondary
    *
-   * @return Statistics
+   * @return Statistic
    */
   public function setSecondary(...$secondary)
   {
@@ -94,7 +94,7 @@ class Statistics extends Div implements Component
   /**
    * @param mixed $iconColor
    *
-   * @return Statistics
+   * @return Statistic
    */
   public function setIconColor(Color $iconColor)
   {
@@ -105,7 +105,7 @@ class Statistics extends Div implements Component
   /**
    * @param mixed $secondaryColor
    *
-   * @return Statistics
+   * @return Statistic
    */
   public function setSecondaryColor(Color $secondaryColor)
   {
@@ -116,9 +116,9 @@ class Statistics extends Div implements Component
   /**
    * @param \PackagedUi\Fusion\Color\Color $backgroundColor
    *
-   * @return Statistics
+   * @return Statistic
    */
-  public function setBackgroundColor(Color $backgroundColor): Statistics
+  public function setBackgroundColor(Color $backgroundColor): Statistic
   {
     $this->_backgroundColor = $backgroundColor->background();
     return $this;
@@ -127,9 +127,9 @@ class Statistics extends Div implements Component
   /**
    * @param \PackagedUi\Fusion\Color\Color $foregroundColor
    *
-   * @return Statistics
+   * @return Statistic
    */
-  public function setForegroundColor(Color $foregroundColor): Statistics
+  public function setForegroundColor(Color $foregroundColor): Statistic
   {
     $this->_foregroundColor = $foregroundColor->foreground();
     return $this;
@@ -168,8 +168,8 @@ class Statistics extends Div implements Component
     }
 
     $wrapper = Div::create(
-      $this->_value ? Div::create($this->_value)->addClass($this->getElementName('stat')) : null,
-      $this->_title ? Div::create($this->_title)->addClass($this->getElementName('sub')) : null
+      $this->_value !== null ? Div::create($this->_value)->addClass($this->getElementName('stat')) : null,
+      $this->_title !== null ? Div::create($this->_title)->addClass($this->getElementName('sub')) : null
     );
 
     $secondary = null;

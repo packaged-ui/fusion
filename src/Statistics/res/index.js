@@ -1,1 +1,1 @@
-import './statistics.scss';
+import './statistic.scss';
