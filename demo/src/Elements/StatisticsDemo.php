@@ -12,7 +12,7 @@ class StatisticsDemo extends AbstractDemoElement
 {
   public function getName(): string
   {
-    return 'Statistics';
+    return 'Statistic';
   }
 
   protected function _getFaIcon()
@@ -25,7 +25,7 @@ class StatisticsDemo extends AbstractDemoElement
    *
    * @return HtmlTag
    */
-  final public function DefaultStatistics(): HtmlTag
+  final public function DefaultStatistic(): HtmlTag
   {
     return Statistic::create()
       ->setIcon(FaIcon::create(FaIcon::SHOPPING_CART))
@@ -34,11 +34,11 @@ class StatisticsDemo extends AbstractDemoElement
   }
 
   /**
-   * Statistics Tile with Secondary.
+   * Statistic Tile with Secondary.
    *
    * @return HtmlTag
    */
-  final public function SecondaryStatistics(): HtmlTag
+  final public function SecondaryStatistic(): HtmlTag
   {
     return Statistic::create()
       ->setIcon(FaIcon::create(FaIcon::SHOPPING_CART))
@@ -48,11 +48,11 @@ class StatisticsDemo extends AbstractDemoElement
   }
 
   /**
-   * Statistics Tile with Secondary.
+   * Statistic Tile with Secondary.
    *
    * @return HtmlTag
    */
-  final public function SecondaryCustomColorStatistics(): HtmlTag
+  final public function SecondaryCustomColorStatistic(): HtmlTag
   {
     return Statistic::create()
       ->setIcon(FaIcon::create(FaIcon::SHOPPING_CART))
@@ -63,11 +63,11 @@ class StatisticsDemo extends AbstractDemoElement
   }
 
   /**
-   * Statistics Tile with Secondary Positive.
+   * Statistic Tile with Secondary Positive.
    *
    * @return HtmlTag
    */
-  final public function SecondaryPositiveStatistics(): HtmlTag
+  final public function SecondaryPositiveStatistic(): HtmlTag
   {
     return Statistic::create()
       ->setIcon(FaIcon::create(FaIcon::SHOPPING_CART))
@@ -78,11 +78,11 @@ class StatisticsDemo extends AbstractDemoElement
   }
 
   /**
-   * Statistics Tile with Secondary Negative.
+   * Statistic Tile with Secondary Negative.
    *
    * @return HtmlTag
    */
-  final public function SecondaryNegativeStatistics(): HtmlTag
+  final public function SecondaryNegativeStatistic(): HtmlTag
   {
     return Statistic::create()
       ->setIcon(FaIcon::create(FaIcon::SHOPPING_CART))
@@ -93,11 +93,11 @@ class StatisticsDemo extends AbstractDemoElement
   }
 
   /**
-   * Statistics Tile with Secondary Negative.
+   * Statistic Tile with Secondary Negative.
    *
    * @return HtmlTag
    */
-  final public function BackgroundColorStatistics(): HtmlTag
+  final public function BackgroundColorStatistic(): HtmlTag
   {
     return Statistic::create()
       ->setIcon(FaIcon::create(FaIcon::SHOPPING_CART))
@@ -110,20 +110,20 @@ class StatisticsDemo extends AbstractDemoElement
   }
 
   /**
-   * Statistics Tile with Secondary Negative.
+   * Statistic Tile with Secondary Negative.
    */
-  final public function StatisticsGridExample()
+  final public function StatisticGridExample()
   {
-    $statistics = Statistic::create()
+    $statistic = Statistic::create()
       ->setIcon(FaIcon::create(FaIcon::SHOPPING_CART))
       ->setValue('20,000')
       ->setTitle('Total Sales');
 
     return GridLayout::createWithInner(
-      GridCell::create($statistics),
-      GridCell::create($statistics),
-      GridCell::create($statistics),
-      GridCell::create($statistics)
+      GridCell::create($statistic),
+      GridCell::create($statistic),
+      GridCell::create($statistic),
+      GridCell::create($statistic)
     );
   }
 }
