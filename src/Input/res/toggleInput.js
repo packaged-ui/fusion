@@ -1,4 +1,4 @@
-import {on} from '../../Foundation/res';
+import {on} from '../../Foundation/res/events.js';
 import './toggleInput.css';
 
 on(

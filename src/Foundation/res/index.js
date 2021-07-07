@@ -1,9 +1,9 @@
 import './css';
-import {onReady} from './events';
+import {onReadyState} from '@packaged-ui/ready-promise';
 
 export * from './events';
 
-onReady(() => document.body.classList.add('f-loaded'));
+onReadyState().then(() => document.body.classList.add('f-loaded'));
 
 window.addEventListener(
   'touchstart',

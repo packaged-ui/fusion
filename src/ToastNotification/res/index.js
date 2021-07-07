@@ -1,6 +1,6 @@
 import './toast-notification-container.scss';
 import './toast-notification.scss';
-import {on} from '../../Foundation/res';
+import {on} from '../../Foundation/res/events.js';
 
 // Manage each individual toast
 document.querySelectorAll('.toast-notification').forEach(

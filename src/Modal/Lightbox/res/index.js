@@ -1,5 +1,6 @@
-import {on, onReady} from '../../../Foundation/res';
+import {on} from '../../../Foundation/res/events.js';
 import Modal from '@packaged-ui/modal';
+import {onReadyState} from '@packaged-ui/ready-promise';
 
 // auto close
 
@@ -43,4 +44,4 @@ on(
 );
 
 //Auto Launch
-onReady(() => document.querySelectorAll('.lightbox--auto-launch').forEach(lb => Modal.create(lb).show()));
+onReadyState().then(() => document.querySelectorAll('.lightbox--auto-launch').forEach(lb => Modal.create(lb).show()));

@@ -1,7 +1,8 @@
 import './reveal.css';
-import {on} from '../../../Foundation/res';
+import {on} from '../../../Foundation/res/events.js';
 
-on(document, 'click', '[reveal-launcher]', (e) => {
+on(document, 'click', '[reveal-launcher]', (e) =>
+{
   const targetId = e.delegateTarget.getAttribute('reveal-launcher');
   const reveal = document.getElementById(targetId);
 
