@@ -1,2 +1,5 @@
-import '../../../Foundation/res';
-import './grid.css';
+import {init} from './init';
+
+export * from './init';
+
+init();

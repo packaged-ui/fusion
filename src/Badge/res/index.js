@@ -1,1 +1,5 @@
-import './badge.css';
+import {init} from './init';
+
+export * from './init';
+
+init();

@@ -1,1 +1,5 @@
-import './chip.scss';
+import {init} from './init';
+
+export * from './init';
+
+init();

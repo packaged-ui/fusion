@@ -1,2 +1,6 @@
-import '../../Foundation/res';
-import './layout.css';
+import {init} from './init';
+
+export * from './init';
+
+init();
+

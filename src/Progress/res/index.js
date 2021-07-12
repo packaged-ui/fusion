@@ -1,2 +1,5 @@
-import '../../Foundation/res';
-import './progress-bar.scss';
+import {init} from './init';
+
+export * from './init';
+
+init();

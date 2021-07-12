@@ -1,2 +1,5 @@
-import '../../Foundation/res';
-import './ribbons.css';
+import {init} from './init';
+
+export * from './init';
+
+init();

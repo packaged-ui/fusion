@@ -1,1 +1,5 @@
-import './card.css';
+import {init} from './init';
+
+export * from './init';
+
+init();

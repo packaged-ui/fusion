@@ -1,2 +1,6 @@
-import '../../Foundation/res';
-import './tiles.scss';
+import {init} from './init';
+
+export * from './init';
+
+init();
+
