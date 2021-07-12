@@ -3,7 +3,8 @@
   --property-width: 125px;
   --gutter: 5px;
   --border-color: #ccc;
-  --tile-color: #C7CCD9;
+  --tile-color: transparent;
+  --tile-min-height: initial;
 }
 
 .tiles {
@@ -17,6 +18,7 @@
   margin-bottom: 10px;
   display: flex;
   position: relative;
+  min-height: var(--tile-min-height);
 }
 
 .tile .tile__label {
@@ -343,6 +345,13 @@
 .tile.grey.colour-bg .tile__primary {
   background-color: rgba(var(--color-grey), 0.06);
 }
+.tile.dark-grey:before {
+  background-color: rgb(var(--color-dark-grey));
+}
+
+.tile.dark-grey.colour-bg .tile__primary {
+  background-color: rgba(var(--color-dark-grey), 0.06);
+}
 
 .tile.black:before {
   background-color: rgb(var(--color-black));
@@ -350,6 +359,14 @@
 
 .tile.black.tile--colour-bg .tile__primary {
   background-color: rgba(var(--color-black), 0.06);
+}
+
+.tile.white:before {
+  background-color: rgb(var(--color-white));
+}
+
+.tile.white.tile--colour-bg .tile__primary {
+  background-color: rgba(var(--color-white), 0.06);
 }
 
 /* define button styles based on action type */

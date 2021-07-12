@@ -233,14 +233,17 @@ class TileDemo extends AbstractDemoElement
   {
     $tiles = [];
 
-    $tiles[] = Tile::create()->setTitle('This is a tile')
-      ->setColor(Color::GREEN);
+    $tiles[] = Tile::create()->setTitle('This is a tile');
 
-    $tiles[] = Tile::create()->setTitle('This is a tile')
-      ->setColor(Color::RED);
+    foreach(Color::getKeyedValues() as $color => $name)
+    {
+      $tiles[] = Tile::create()->setTitle('This is a ' . $name . ' tile (' . $color . ')')->setColor($color);
+    }
 
-    $tiles[] = Tile::create()->setTitle('This is a tile')
-      ->setColor(Color::BLUE);
+    foreach(['#81044d', '#8791cf', '#10eff1', 'rgba(123,239,91,0.5)'] as $color)
+    {
+      $tiles[] = Tile::create()->setTitle('This is a custom color tile (' . $color . ')')->setColor($color);
+    }
 
     return $tiles;
   }

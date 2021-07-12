@@ -408,11 +408,7 @@ class Tile extends HtmlTag implements Component
     $container->addClass($this->getModifier((!empty($footer) ? 'no' : 'has') . '-footer'));
 
     // add border Color class
-    if($this->_color === null)
-    {
-      $container->addClass($this->getModifier('default'));
-    }
-    else if(Color::isValid($this->_color))
+    if(Color::isValid($this->_color))
     {
       $container->addClass($this->_color);
     }
