@@ -1,3 +1,4 @@
+import './typography.css';
 import {init as initFoundation} from '../../Foundation/res/init';
 
 let _init = false;
