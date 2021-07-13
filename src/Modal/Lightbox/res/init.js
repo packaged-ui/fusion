@@ -1,5 +1,5 @@
 import {init as initFoundation} from '../../../Foundation/res/init';
-import Modal from '@packaged-ui/modal';
+import {Modal} from '@packaged-ui/modal/src/index';
 import {onReadyState} from '@packaged-ui/ready-promise';
 import {on} from '../../../Foundation/res/events';
 
@@ -7,6 +7,7 @@ let _init = false;
 
 export function init()
 {
+  Modal.init();
   initFoundation();
   if(_init)
   {
