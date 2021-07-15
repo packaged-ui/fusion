@@ -4,9 +4,9 @@ import {on} from '../../Foundation/res/events';
 
 let _init = false;
 
-export function init()
+export function init(rootElement = document)
 {
-  initFoundation();
+  initFoundation(rootElement);
   if(_init)
   {
     return;
@@ -14,7 +14,7 @@ export function init()
   _init = true;
 
   on(
-    document, 'click', '.toggle-button',
+    rootElement, 'click', '.toggle-button',
     (e) =>
     {
       e.preventDefault();
@@ -33,7 +33,7 @@ export function init()
 
       if(checkEle.hasAttribute('name') && checkEle.getAttribute('type') === 'radio')
       {
-        const radioElements = document.querySelectorAll(
+        const radioElements = rootElement.querySelectorAll(
           '.toggle-button__checkbox[type="radio"][name="' + checkEle.getAttribute('name') + '"]',
         );
         radioElements.forEach(

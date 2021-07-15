@@ -4,9 +4,9 @@ import {on} from '../../../Foundation/res/events';
 
 let _init = false;
 
-export function init()
+export function init(rootElement = document)
 {
-  initFoundation();
+  initFoundation(rootElement);
   if(_init)
   {
     return;
@@ -14,20 +14,20 @@ export function init()
   _init = true;
 
   on(
-    document, 'click', '.drawer__toggle',
+    rootElement, 'click', '.drawer__toggle',
     function (e)
     {
-      toggleDrawer(getDrawerContainer(e.target));
+      toggleDrawer(getDrawerContainer(e.target || rootElement));
       e.stopPropagation();
       e.stopImmediatePropagation();
     },
   );
 
   on(
-    document, 'click', 'a', function ()
+    rootElement, 'click', 'a', function ()
     {
       // if drawer reveal is modal, close drawer
-      document.querySelectorAll('.drawer').forEach(
+      rootElement.querySelectorAll('.drawer').forEach(
         (drawer) =>
         {
           if(drawer.getAttribute('reveal') === 'modal' // if drawer is modal
@@ -41,7 +41,7 @@ export function init()
   );
 
   on(
-    document, 'click', '.drawer-container.drawer--open > .drawer-app-content',
+    rootElement, 'click', '.drawer-container.drawer--open > .drawer-app-content',
     function (e)
     {
       if(e.target.matches('.drawer-app-content'))

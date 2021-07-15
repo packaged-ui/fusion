@@ -3,9 +3,9 @@ import {init as initFoundation} from '../../Foundation/res/init';
 
 let _init = false;
 
-export function init()
+export function init(rootElement = document)
 {
-  initFoundation();
+  initFoundation(rootElement);
   if(_init)
   {
     return;

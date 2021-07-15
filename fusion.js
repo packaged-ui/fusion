@@ -4,14 +4,14 @@ import * as imports from './_imports';
 
 export const FusionUi = Object.assign({}, {Foundation, Events}, imports);
 
-FusionUi.init = function ()
+FusionUi.init = function (rootElement = document)
 {
   Object.keys(FusionUi).forEach(
     (k) =>
     {
       if(FusionUi[k].init)
       {
-        FusionUi[k].init();
+        FusionUi[k].init(rootElement);
       }
     }
   );

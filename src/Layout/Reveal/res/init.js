@@ -4,24 +4,24 @@ import {on} from '../../../Foundation/res/events';
 
 let _init = false;
 
-export function init()
+export function init(rootElement = document)
 {
-  initFoundation();
+  initFoundation(rootElement);
   if(_init)
   {
     return;
   }
   _init = true;
 
-  on(document, 'click', '[reveal-launcher]', (e) =>
+  on(rootElement, 'click', '[reveal-launcher]', (e) =>
   {
     const targetId = e.delegateTarget.getAttribute('reveal-launcher');
-    const reveal = document.getElementById(targetId);
+    const reveal = rootElement.querySelector('#' + targetId);
 
     if(reveal)
     {
       const show = reveal.classList.toggle('show');
-      const launchers = document.querySelectorAll(`[reveal-launcher="${targetId}"]`);
+      const launchers = rootElement.querySelectorAll(`[reveal-launcher="${targetId}"]`);
 
       if(reveal.hasAttribute('reveal-destructive'))
       {

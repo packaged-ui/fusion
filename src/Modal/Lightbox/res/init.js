@@ -5,10 +5,10 @@ import {on} from '../../../Foundation/res/events';
 
 let _init = false;
 
-export function init()
+export function init(rootElement = document)
 {
-  Modal.init();
-  initFoundation();
+  Modal.init(rootElement);
+  initFoundation(rootElement);
   if(_init)
   {
     return;
@@ -18,7 +18,7 @@ export function init()
   // auto close
   let downTarget = null;
   on(
-    document, 'mousedown', '.modal', (e) =>
+    rootElement, 'mousedown', '.modal', (e) =>
     {
       if(e.target.matches('.modal'))
       {
@@ -27,7 +27,7 @@ export function init()
     }
   );
   on(
-    document, 'mouseup', '.modal', (e) =>
+    rootElement, 'mouseup', '.modal', (e) =>
     {
       if(downTarget === e.target)
       {
@@ -40,12 +40,12 @@ export function init()
     }
   );
   on(
-    document, 'keyup', (e) =>
+    rootElement, 'keyup', (e) =>
     {
       if(e.key === 'Escape' || e.key === 'Esc' || e.keyCode === 27)
       {
         // find the last modal's closer
-        const closer = document.querySelector('.modal:last-of-type .modal__content.lightbox');
+        const closer = rootElement.querySelector('.modal:last-of-type .modal__content.lightbox');
         if(closer)
         {
           e.preventDefault();
@@ -56,5 +56,6 @@ export function init()
   );
 
   //Auto Launch
-  onReadyState().then(() => document.querySelectorAll('.lightbox--auto-launch').forEach(lb => Modal.create(lb).show()));
+  onReadyState()
+    .then(() => rootElement.querySelectorAll('.lightbox--auto-launch').forEach(lb => Modal.create(lb).show()));
 }

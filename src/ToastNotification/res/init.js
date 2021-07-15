@@ -5,9 +5,9 @@ import {on} from '../../Foundation/res/events';
 
 let _init = false;
 
-export function init()
+export function init(rootElement = document)
 {
-  initFoundation();
+  initFoundation(rootElement);
   if(_init)
   {
     return;
@@ -15,7 +15,7 @@ export function init()
   _init = true;
 
   // Manage each individual toast
-  document.querySelectorAll('.toast-notification').forEach(
+  rootElement.querySelectorAll('.toast-notification').forEach(
     (toast) =>
     {
       let delay = toast.hasAttribute('data-toast-notification-delay')
@@ -27,7 +27,7 @@ export function init()
   );
 
   on(
-    document, 'click', '.toast-notification--removable', (e) =>
+    rootElement, 'click', '.toast-notification--removable', (e) =>
     {
       e.preventDefault();
       hide(e.delegateTarget);
@@ -35,7 +35,7 @@ export function init()
   );
 
   on(
-    document, 'animationend', '.toast-notification',
+    rootElement, 'animationend', '.toast-notification',
     (e) =>
     {
       const toastElement = e.delegateTarget;
@@ -58,7 +58,6 @@ export function init()
 
 export function show(toastElement, delay = 0, timeToShow = 0)
 {
-  init();
   if(delay >= 0)
   {
     setTimeout(
@@ -80,14 +79,12 @@ export function show(toastElement, delay = 0, timeToShow = 0)
 
 export function hide(toastElement)
 {
-  init();
   toastElement.classList.remove('toast-notification--show');
   toastElement.style.animationPlayState = 'running';
 }
 
 export function addNotification(toastContainer, title, content, removable, color)
 {
-  init();
   const toastNotification = document.createElement('div');
   toastNotification.classList.add('toast-notification');
 

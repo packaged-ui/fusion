@@ -4,9 +4,9 @@ import {on} from '../../../Foundation/res/events';
 
 let _init = false;
 
-export function init()
+export function init(rootElement = document)
 {
-  initFoundation();
+  initFoundation(rootElement);
   if(_init)
   {
     return;
@@ -14,7 +14,7 @@ export function init()
   _init = true;
 
   on(
-    document, 'click', '.tab__label',
+    rootElement, 'click', '.tab__label',
     function (e)
     {
       let ele = e.target;
@@ -30,7 +30,7 @@ export function init()
   if(window.location.hash.startsWith('#f-tb-'))
   {
     let tabID = window.location.hash.substring(1);
-    document.querySelectorAll('[data-tab-id=\'' + tabID + '\']').forEach(
+    rootElement.querySelectorAll('[data-tab-id=\'' + tabID + '\']').forEach(
       (label) =>
       {
         SetActive(label, tabID);

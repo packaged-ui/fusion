@@ -6,9 +6,9 @@ import {init as initFoundation} from '../../Foundation/res/init';
 
 let _init = false;
 
-export function init()
+export function init(rootElement = document)
 {
-  initFoundation();
+  initFoundation(rootElement);
   if(_init)
   {
     return;
@@ -16,11 +16,11 @@ export function init()
   _init = true;
 
   onReadyState().then(setLastStep);
-  document.addEventListener(Pagelets.events.COMPLETE, setLastStep);
+  rootElement.addEventListener(Pagelets.events.COMPLETE, setLastStep);
 
   function setLastStep()
   {
-    document.querySelectorAll('.step-wrapper').forEach(
+    rootElement.querySelectorAll('.step-wrapper').forEach(
       (stepWrapper) =>
       {
         const steps = stepWrapper.querySelectorAll('.step');

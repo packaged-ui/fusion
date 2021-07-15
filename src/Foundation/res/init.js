@@ -3,7 +3,7 @@ import {onReadyState} from '@packaged-ui/ready-promise';
 
 let _init = false;
 
-export function init()
+export function init(rootElement = document)
 {
   if(_init)
   {
