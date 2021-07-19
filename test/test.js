@@ -10,7 +10,7 @@ describe(
     const eventName = 'test-event';
 
     it(
-      'on - fail', function (done)
+      'on - no matching selector', function (done)
       {
         const {target} = _getElements();
         const check = Math.random();
@@ -24,6 +24,28 @@ describe(
         );
         _dispatch(target, eventName, check);
         setTimeout(() => fired || done(), 500);
+      }
+    );
+
+    it(
+      'on - no selector', function (done)
+      {
+        const {target} = _getElements();
+        const check = Math.random();
+        on(
+          target, eventName, function (e)
+          {
+            if(e.detail === check)
+            {
+              done();
+            }
+            else
+            {
+              done('event fired, but failed check');
+            }
+          }
+        );
+        _dispatch(target, eventName, check);
       }
     );
 
