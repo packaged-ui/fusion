@@ -47,7 +47,7 @@ html, body {
   min-height: 100%;
 }
 
-body {
+body, :host {
   background: rgb(var(--f-background-color));
   font-family: var(--f-font);
   font-size: var(--f-font-size);

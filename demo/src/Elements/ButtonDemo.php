@@ -84,6 +84,7 @@ class ButtonDemo extends AbstractDemoPage
     $return[] = Button::create("Success")->outline()->success();
     $return[] = Button::create("Danger")->outline()->danger();
     $return[] = Button::create("Warning")->outline()->warning();
+    $return[] = Button::create("Info")->outline()->info();
     $return[] = Button::create("Muted")->outline()->muted();
 
     $return[] = LineBreak::create();
