@@ -1,6 +1,6 @@
-import {init} from './init';
+import {init} from './init.js';
 
-export * from './init';
-export * from './events';
+export * from './init.js';
+export * from './events.js';
 
 init();

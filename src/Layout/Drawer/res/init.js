@@ -1,6 +1,6 @@
 import './drawer.scss';
-import {init as initFoundation} from '../../../Foundation/res/init';
-import {on} from '../../../Foundation/res/events';
+import {init as initFoundation} from '../../../Foundation/res/init.js';
+import {on} from '../../../Foundation/res/events.js';
 
 let _init = false;
 

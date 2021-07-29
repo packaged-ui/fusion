@@ -1,5 +1,5 @@
-import {init} from './initFab';
+import {init} from './initFab.js';
 
-export * from './initFab';
+export * from './initFab.js';
 
 init();

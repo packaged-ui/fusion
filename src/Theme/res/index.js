@@ -1,4 +1,6 @@
-import './theme.css';
-import {init as initFoundation} from '../../Foundation/res/init';
+import {init} from './init.js';
 
-initFoundation();
+export * from './init.js';
+
+init();
+

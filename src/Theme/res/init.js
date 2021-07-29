@@ -1,4 +1,4 @@
-import './tiles.scss';
+import './theme.css';
 
 let _init = false;
 

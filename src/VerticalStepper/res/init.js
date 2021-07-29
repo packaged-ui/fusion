@@ -2,13 +2,11 @@ import './step-wrapper.scss';
 import './step.scss';
 import {onReadyState} from '@packaged-ui/ready-promise';
 import {Pagelets} from '@packaged-ui/pagelets';
-import {init as initFoundation} from '../../Foundation/res/init';
 
 let _init = false;
 
 export function init(rootElement = document)
 {
-  initFoundation(rootElement);
   if(_init)
   {
     return;

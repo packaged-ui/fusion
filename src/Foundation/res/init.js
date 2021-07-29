@@ -1,4 +1,4 @@
-import './css';
+import './css.js';
 import {onReadyState} from '@packaged-ui/ready-promise';
 
 let _init = false;

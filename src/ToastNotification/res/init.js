@@ -1,13 +1,11 @@
 import './toast-notification-container.scss';
 import './toast-notification.scss';
-import {init as initFoundation} from '../../Foundation/res/init';
-import {on} from '../../Foundation/res/events';
+import {on} from '../../Foundation/res/events.js';
 
 let _init = false;
 
 export function init(rootElement = document)
 {
-  initFoundation(rootElement);
   if(_init)
   {
     return;

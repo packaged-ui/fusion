@@ -1,5 +1,5 @@
-import {init} from './initButton';
+import {init} from './initButton.js';
 
-export * from './initButton';
+export * from './initButton.js';
 
 init();

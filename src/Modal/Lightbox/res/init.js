@@ -1,14 +1,12 @@
-import {init as initFoundation} from '../../../Foundation/res/init';
-import {Modal} from '@packaged-ui/modal/src/index';
+import {Modal} from '@packaged-ui/modal/src/index.js';
 import {onReadyState} from '@packaged-ui/ready-promise';
-import {on} from '../../../Foundation/res/events';
+import {on} from '../../../Foundation/res/events.js';
 
 let _init = false;
 
 export function init(rootElement = document)
 {
   Modal.init(rootElement);
-  initFoundation(rootElement);
   if(_init)
   {
     return;

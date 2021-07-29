@@ -1,11 +1,9 @@
 import './avatar.scss';
-import {init as initFoundation} from '../../Foundation/res';
 
 let _init = false;
 
 export function init(rootElement = document)
 {
-  initFoundation(rootElement);
   if(_init)
   {
     return;

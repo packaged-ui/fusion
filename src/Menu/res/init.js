@@ -1,13 +1,11 @@
 import './menu.css';
-import {init as initFoundation} from '../../Foundation/res/init';
-import {on, onReady} from '../../Foundation/res/events';
-import {SetActive} from '../../Lists/res/init';
+import {on, onReady} from '../../Foundation/res/events.js';
+import {SetActive} from '../../Lists/res/init.js';
 
 let _init = false;
 
 export function init(rootElement = document)
 {
-  initFoundation(rootElement);
   if(_init)
   {
     return;
