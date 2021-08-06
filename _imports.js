@@ -27,6 +27,7 @@ export * as Typography from './src/Typography/res/init';
 export * as Statistics from './src/Statistics/res/init';
 export * as Avatar from './src/Avatar/res/init';
 export * as Chip from './src/Chip/res/init';
+export * as HoverCard from './src/HoverCard/res/init';
 
 export * as Banners from './src/Banner/res/init';
 

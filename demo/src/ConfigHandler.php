@@ -17,6 +17,7 @@ use PackagedUi\FusionDemo\Elements\ColorDemo;
 use PackagedUi\FusionDemo\Elements\DialogDemo;
 use PackagedUi\FusionDemo\Elements\DrawerDemo;
 use PackagedUi\FusionDemo\Elements\GridDemo;
+use PackagedUi\FusionDemo\Elements\HoverCardDemo;
 use PackagedUi\FusionDemo\Elements\InputDemo;
 use PackagedUi\FusionDemo\Elements\LayoutDemo;
 use PackagedUi\FusionDemo\Elements\LightboxDemo;
@@ -97,6 +98,7 @@ class ConfigHandler implements ContextAware
       'Reveal'           => new RevealDemo(),
       'Tooltip'          => new TooltipDemo(),
       'Notification'     => new NotificationDemo(),
+      'HoverCard'        => new HoverCardDemo(),
     ];
   }
 }
