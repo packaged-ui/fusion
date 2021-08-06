@@ -41,7 +41,7 @@ class HoverCard extends HtmlTag implements Component
   {
     $i = parent::create();
     $i->_content = $content;
-        $i->addClass('hidden');
+    $i->addClass('hidden');
     $i->setAttribute('data-hover-card-id', $i->getId());
     return $i;
   }
