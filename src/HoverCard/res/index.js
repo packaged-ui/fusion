@@ -32,23 +32,23 @@ export class HoverCard
     let clientWidth = this.rootElement.body.clientWidth;
 
     let top = triggerRect.y > hoverReact.height;
-    let left = triggerRect.x > hoverReact.width;
-    let right = !left && clientWidth - (triggerRect.x + triggerRect.width + hoverReact.width) > 0;
+    let right = clientWidth - (triggerRect.x + triggerRect.width + hoverReact.width) > 0;
+    let left = !right && triggerRect.x > hoverReact.width;
 
     if(top)
     {
       this.hoverCard.style.top = (triggerRect.y - hoverReact.height) + 'px';
       this.hoverCard.style.left = triggerRect.x + 'px';
     }
-    else if(left)
-    {
-      this.hoverCard.style.top = triggerRect.y + 'px';
-      this.hoverCard.style.left = (triggerRect.x - hoverReact.width) + 'px';
-    }
     else if(right)
     {
       this.hoverCard.style.top = triggerRect.y + 'px';
       this.hoverCard.style.left = (triggerRect.x + triggerRect.width) + 'px';
+    }
+    else if(left)
+    {
+      this.hoverCard.style.top = triggerRect.y + 'px';
+      this.hoverCard.style.left = (triggerRect.x - hoverReact.width) + 'px';
     }
     else
     {
