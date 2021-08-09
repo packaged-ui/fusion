@@ -2,9 +2,31 @@ export class HoverCard
 {
   constructor(element, triggerElement, rootElement = document)
   {
+    if(element instanceof Node && element.matches('.hover-card'))
+    {
+      this.content = element;
+    }
+    else
+    {
+      const container = rootElement.createElement('div');
+      let id = 'hover-' + Math.random().toString(36).replace(/[^a-z]+/g, '').substr(0, 5);
+
+      container.classList.add('hover-card');
+      container.classList.add('hidden');
+      container.innerHTML = element;
+      container.id = id;
+      container.setAttribute('data-hover-card-id', id);
+
+      triggerElement.setAttribute('data-hover-card', true);
+      triggerElement.setAttribute('data-hover-id', id);
+
+      rootElement.body.appendChild(container);
+      this.content = container;
+    }
+
     this.rootElement = rootElement;
     this.triggerElement = triggerElement;
-    this.hoverCard = element;
+    this.hoverCard = this.content;
   }
 
   static create(element, triggerElement, rootElement = document)
@@ -15,7 +37,7 @@ export class HoverCard
     }
 
     element = new this.prototype.constructor(element, triggerElement, rootElement);
-
+    this.eventListeners(rootElement);
     return element;
   }
 
@@ -62,21 +84,26 @@ export class HoverCard
     this.hoverCard.classList.add('hidden');
   }
 
-  static init(rootElement = document)
+  static eventListeners(rootElement)
   {
-    rootElement.addEventListener('DOMContentLoaded', (e) =>
-    {
-      const hoverTargets = rootElement.querySelectorAll('[data-hover-card]');
+    const hoverTargets = rootElement.querySelectorAll('[data-hover-card]');
 
-      hoverTargets.forEach((element) =>
+    hoverTargets.forEach((element) =>
+    {
+      if(element.getAttribute('data-hover-card') !== 'loaded')
       {
+        element.setAttribute('data-hover-card', 'loaded');
         element.addEventListener('mouseover', (e) =>
         {
           const hoverTarget = e.target;
           if(hoverTarget)
           {
             e.preventDefault();
-            HoverCard.getHoverCard(hoverTarget, rootElement).show();
+            let h = HoverCard.getHoverCard(hoverTarget, rootElement);
+            if(h)
+            {
+              h.show();
+            }
           }
         });
         element.addEventListener('mouseleave', (e) =>
@@ -85,10 +112,22 @@ export class HoverCard
           if(hoverTarget)
           {
             e.preventDefault();
-            HoverCard.getHoverCard(hoverTarget, rootElement).hide();
+            let h = HoverCard.getHoverCard(hoverTarget, rootElement);
+            if(h)
+            {
+              h.hide();
+            }
           }
         });
-      });
+      }
+    });
+  }
+
+  static init(rootElement = document)
+  {
+    rootElement.addEventListener('DOMContentLoaded', (e) =>
+    {
+      this.eventListeners(rootElement);
     });
   }
 
@@ -98,7 +137,6 @@ export class HoverCard
     const hoverCard = rootElement.querySelector('[data-hover-card-id=' + hoverCardId + ']');
     if(!hoverCard)
     {
-      console.error('Couldn\'t find hover card target with id: ' + hoverCardId);
       return;
     }
 

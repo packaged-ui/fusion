@@ -3,5 +3,3 @@ import {HoverCard} from './index';
 
 HoverCard.init();
 
-
-
