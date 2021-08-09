@@ -11,22 +11,11 @@ $this: '.hover-card';
   position: absolute;
   z-index: 450;
   padding: 10px;
+  box-shadow: 0 10px 15px rgba(black, .2),
+  0 4px 5px rgba(black, .1),
+  0 0 0 1px rgba(black, .07);
 
   &:hover {
     display: block;
-  }
-
-  &:before {
-    content: ' ';
-    display: block;
-    left: 0;
-    right: 0;
-    top: 0;
-    bottom: 0;
-    position: absolute;
-    box-shadow: 0 10px 15px rgba(black, .2),
-    0 4px 5px rgba(black, .1),
-    0 0 0 1px rgba(black, .07);
-    border-radius: 0;
   }
 }
