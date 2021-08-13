@@ -12,18 +12,7 @@ export function init(rootElement = document)
   }
   _init = true;
 
-  on(
-    rootElement, 'click', '.menu__item',
-    (e) =>
-    {
-      let ele = e.target;
-      while((!ele.matches('.menu__item')) && ele.parentElement)
-      {
-        ele = ele.parentElement;
-      }
-      SetActive(ele);
-    },
-  );
+  on(rootElement, 'click', '.menu__item', (e) => SetActive(e.delegateTarget));
 
   function _updateFn() {updateActiveMenu(window.location, rootElement);}
 

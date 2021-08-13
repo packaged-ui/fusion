@@ -13,15 +13,7 @@ export function init(rootElement = document)
 
   on(
     rootElement, 'click', '.tab__label',
-    function (e)
-    {
-      let ele = e.target;
-      while((!ele.matches('.tab__label')) && ele.parentElement)
-      {
-        ele = ele.parentElement;
-      }
-      SetActive(ele, ele.getAttribute('data-tab-id'));
-    },
+    (e) => SetActive(e.delegateTarget, e.delegateTarget.getAttribute('data-tab-id'))
   );
 
   //Set the correct active tab from the url fragment
