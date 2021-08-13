@@ -31,34 +31,22 @@ export function init(rootElement = document)
 
 export function SetActive(ele, tabID)
 {
-  // find top tabContainer
-  let tabContainer;
-  let t = ele;
-  do
-  {
-    if(t.matches('.tabs'))
-    {
-      tabContainer = t;
-    }
-  }
-  while((t = t.parentElement));
-  let tab = tabContainer.querySelectorAll('#' + tabID)[0];
+  const groupEle = ele.closest('.tabs');
+  let tab = groupEle.querySelectorAll('#' + tabID)[0];
 
-  function removeClass(removeClass)
+  function _removeClasses(...removeClasses)
   {
-    tabContainer.querySelectorAll('.' + removeClass).forEach(
-      (cEle) =>
-      {
-        if(cEle !== ele)
+    [...groupEle.querySelectorAll(removeClasses.map((c) => '.' + c))]
+      .filter((e) => e !== ele && e !== tab)
+      .forEach(
+        (cEle) =>
         {
-          cEle.classList.remove(removeClass);
+          cEle.classList.remove(...removeClasses);
         }
-      }
-    );
+      );
   }
 
-  removeClass('tab__label--active');
-  removeClass('tab--active');
+  _removeClasses('tab__label--active', 'tab--active');
 
   ele.classList.add('tab__label--active');
   tab.classList.add('tab--active');
