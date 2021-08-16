@@ -27,9 +27,11 @@ class HoverCardDemo extends AbstractDemoElement
   {
     $hoverCard = HoverCard::create('Hello, I\'m a hover card');
     $trigger = $hoverCard->createTrigger(Chip::create('Hello World, Im a chip'));
+    $trigger2 = $hoverCard->createTrigger(Chip::create('Hello World, Im a chip and another trigger!'));
     return [
       $trigger,
       $hoverCard,
+      $trigger2,
     ];
   }
 

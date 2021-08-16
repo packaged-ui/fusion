@@ -1,23 +1,29 @@
+const _elements = new Map();
+const _triggers = new Map();
+
 export class HoverCard
 {
-  constructor(element, triggerElement, rootElement = document)
+  constructor(content, triggerElement, id = null, rootElement = document)
   {
-    if(element instanceof Node && element.matches('.hover-card'))
+    if(content instanceof Node && content.matches('.hover-card'))
     {
-      this.content = element;
+      this.content = content;
     }
     else
     {
-      const container = rootElement.createElement('div');
-      let id = 'hover-' + Math.random().toString(36).replace(/[^a-z]+/g, '').substr(0, 5);
+      const container = document.createElement('div');
+
+      if(!id)
+      {
+        id = 'hover-' + Math.random().toString(36).replace(/[^a-z]+/g, '').substr(0, 5);
+      }
 
       container.classList.add('hover-card');
       container.classList.add('hidden');
-      container.innerHTML = element;
+      container.append(content);
       container.id = id;
       container.setAttribute('data-hover-card-id', id);
 
-      triggerElement.setAttribute('data-hover-card', true);
       triggerElement.setAttribute('data-hover-id', id);
 
       rootElement.body.appendChild(container);
@@ -25,113 +31,82 @@ export class HoverCard
     }
 
     this.rootElement = rootElement;
-    this.triggerElement = triggerElement;
     this.hoverCard = this.content;
   }
 
-  static create(element, triggerElement, rootElement = document)
+  static create(content, triggerElement, id = null, rootElement = document)
   {
-    if(element instanceof HoverCard)
+    if(content instanceof HoverCard)
     {
-      return element;
+      return content;
     }
 
-    element = new this.prototype.constructor(element, triggerElement, rootElement);
-    this.eventListeners(rootElement);
-    return element;
-  }
-
-  show()
-  {
-    this.hoverCard.classList.remove('hidden');
-    this.calculatePosition();
-  }
-
-  calculatePosition()
-  {
-    let triggerRect = this.triggerElement.getBoundingClientRect();
-    let hoverReact = this.hoverCard.getBoundingClientRect();
-    let clientWidth = this.rootElement.body.clientWidth;
-
-    let top = triggerRect.y > hoverReact.height;
-    let right = clientWidth - (triggerRect.x + triggerRect.width + hoverReact.width) > 0;
-    let left = !right && triggerRect.x > hoverReact.width;
-
-    if(top)
+    if(!_elements.has(content))
     {
-      this.hoverCard.style.top = (triggerRect.y - hoverReact.height) + 'px';
-      this.hoverCard.style.left = triggerRect.x + 'px';
+      const hoverCard = new this.prototype.constructor(content, triggerElement, id, rootElement);
+      _elements.set(content, hoverCard);
     }
-    else if(right)
+
+    if(!_triggers.has(triggerElement))
     {
-      this.hoverCard.style.top = triggerRect.y + 'px';
-      this.hoverCard.style.left = (triggerRect.x + triggerRect.width) + 'px';
+      this.addEventListeners(triggerElement, rootElement);
     }
-    else if(left)
-    {
-      this.hoverCard.style.top = triggerRect.y + 'px';
-      this.hoverCard.style.left = (triggerRect.x - hoverReact.width) + 'px';
-    }
-    else
-    {
-      this.hoverCard.style.top = triggerRect.y + triggerRect.height + 'px';
-      this.hoverCard.style.left = triggerRect.x + 'px';
-    }
+
+    return _elements.get(content);
   }
 
-  hide()
-  {
-    this.hoverCard.classList.add('hidden');
-  }
-
-  static eventListeners(rootElement)
-  {
-    const hoverTargets = rootElement.querySelectorAll('[data-hover-card]');
-
-    hoverTargets.forEach((element) =>
-    {
-      if(element.getAttribute('data-hover-card') !== 'loaded')
-      {
-        element.setAttribute('data-hover-card', 'loaded');
-        element.addEventListener('mouseover', (e) =>
-        {
-          const hoverTarget = e.target;
-          if(hoverTarget)
-          {
-            e.preventDefault();
-            let h = HoverCard.getHoverCard(hoverTarget, rootElement);
-            if(h)
-            {
-              h.show();
-            }
-          }
-        });
-        element.addEventListener('mouseleave', (e) =>
-        {
-          const hoverTarget = e.target;
-          if(hoverTarget)
-          {
-            e.preventDefault();
-            let h = HoverCard.getHoverCard(hoverTarget, rootElement);
-            if(h)
-            {
-              h.hide();
-            }
-          }
-        });
-      }
-    });
-  }
-
+  // on init get the triggers, and create models based of the page content, if they exist.
   static init(rootElement = document)
   {
-    rootElement.addEventListener('DOMContentLoaded', (e) =>
+    const hoverTriggers = rootElement.querySelectorAll('[data-hover-id]');
+
+    hoverTriggers.forEach((hoverTrigger) =>
     {
-      this.eventListeners(rootElement);
+      this.addEventListeners(hoverTrigger, rootElement);
     });
   }
 
-  static getHoverCard(hoverTarget, rootElement)
+  static addEventListeners(triggerElement, rootElement = document)
+  {
+    // triggerElement has already been initialised
+    if(!_triggers.has(triggerElement))
+    {
+      triggerElement.addEventListener('mouseover', (e) =>
+      {
+        e.preventDefault();
+        this.mouseOverEvent(e.target, triggerElement, rootElement);
+      });
+
+      triggerElement.addEventListener('mouseleave', (e) =>
+      {
+        e.preventDefault();
+        this.mouseLeaveEvent(e.target, rootElement);
+      });
+
+      _triggers.set(triggerElement, true);
+    }
+  }
+
+  static mouseOverEvent(hoverTarget, triggerElement, rootElement = document)
+  {
+    let hoverCard = HoverCard.getHoverCard(hoverTarget, rootElement);
+    if(hoverCard)
+    {
+      hoverCard.show(triggerElement);
+    }
+
+  }
+
+  static mouseLeaveEvent(hoverTarget, rootElement = document)
+  {
+    let hoverCard = HoverCard.getHoverCard(hoverTarget, rootElement);
+    if(hoverCard)
+    {
+      hoverCard.hide();
+    }
+  }
+
+  static getHoverCard(hoverTarget, rootElement = document)
   {
     const hoverCardId = hoverTarget.getAttribute('data-hover-id');
     const hoverCard = rootElement.querySelector('[data-hover-card-id=' + hoverCardId + ']');
@@ -141,5 +116,52 @@ export class HoverCard
     }
 
     return HoverCard.create(hoverCard, hoverTarget, rootElement);
+  }
+
+  show(triggerElement)
+  {
+    this.hoverCard.classList.remove('hidden');
+    this.calculatePosition(triggerElement);
+  }
+
+  hide()
+  {
+    this.hoverCard.classList.add('hidden');
+  }
+
+  calculatePosition(triggerElement)
+  {
+    console.log(triggerElement);
+    if(triggerElement)
+    {
+      let triggerRect = triggerElement.getBoundingClientRect();
+      let hoverReact = this.hoverCard.getBoundingClientRect();
+      let clientWidth = this.rootElement.body.clientWidth;
+
+      let top = triggerRect.y > hoverReact.height;
+      let right = clientWidth - (triggerRect.x + triggerRect.width + hoverReact.width) > 0;
+      let left = !right && triggerRect.x > hoverReact.width;
+
+      if(top)
+      {
+        this.hoverCard.style.top = (triggerRect.y - hoverReact.height) - 10 + 'px';
+        this.hoverCard.style.left = triggerRect.x + 'px';
+      }
+      else if(right)
+      {
+        this.hoverCard.style.top = triggerRect.y + 'px';
+        this.hoverCard.style.left = (triggerRect.x + triggerRect.width) + 10 + 'px';
+      }
+      else if(left)
+      {
+        this.hoverCard.style.top = triggerRect.y + 'px';
+        this.hoverCard.style.left = (triggerRect.x - hoverReact.width) - 10 + 'px';
+      }
+      else
+      {
+        this.hoverCard.style.top = triggerRect.y + triggerRect.height + 10 + 'px';
+        this.hoverCard.style.left = triggerRect.x + 'px';
+      }
+    }
   }
 }

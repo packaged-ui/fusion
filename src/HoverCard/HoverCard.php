@@ -32,7 +32,6 @@ class HoverCard extends HtmlTag implements Component
   public function createTrigger(HtmlElement $trigger)
   {
     $trigger->setAttribute('data-hover-id', $this->getId());
-    $trigger->setAttribute('data-hover-card', true);
     $this->_trigger = $trigger; // Store a reference to the trigger in case we need it in future
     return $trigger;
   }
