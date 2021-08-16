@@ -131,7 +131,6 @@ export class HoverCard
 
   calculatePosition(triggerElement)
   {
-    console.log(triggerElement);
     if(triggerElement)
     {
       let triggerRect = triggerElement.getBoundingClientRect();
