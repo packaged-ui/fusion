@@ -4,9 +4,10 @@ $colors: (
   yellow: "241, 196, 15",
   green: "19, 149, 67",
   sky: "52, 152, 219",
-  blue: "41, 128, 185",
-  indigo: "110, 92, 182",
-  pink: "142, 68, 173",
+  blue: "10, 10, 220",
+  indigo: "60, 10, 180",
+  purple: "142, 68, 173",
+  pink: "255, 192, 203",
   grey: "189, 195, 199",
   dark-grey: "102, 102, 102",
   black: "30, 30, 30",
@@ -47,3 +48,23 @@ $colors: (
   }
 }
 
+.c-checkered {
+}
+
+.brdrc-checkered {
+  border-style: dashed;
+  border-color: rgba(0, 0, 0, 0.5);
+}
+
+.brdrc-sld-checkered {
+  border-style: dashed;
+  border-color: rgba(0, 0, 0, 1);
+}
+
+.bgc-checkered {
+  background: repeating-conic-gradient(rgba(0, 0, 0, 0.07) 0% 25%, transparent 0% 50%) 50% / 20px 20px
+}
+
+.bgc-sld-checkered {
+  background: repeating-conic-gradient(rgba(0, 0, 0, 0.7) 0% 25%, transparent 0% 50%) 50% / 20px 20px
+}

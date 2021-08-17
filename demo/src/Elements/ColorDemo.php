@@ -44,7 +44,8 @@ class ColorDemo extends AbstractDemoPage
     $colours = [];
     foreach($this->_getColors() as $color => $display)
     {
-      $colours[] = Span::create($display)->addClass(Color::foregroundCss($color), Fusion::PADDING_MEDIUM);
+      $colours[] = Span::create($display)
+        ->addClass(Color::foregroundCss($color), Color::borderCss($color, false), Fusion::PADDING_MEDIUM);
     }
     $return[] = Div::create($colours)->addClass('color-demo');
 
@@ -53,7 +54,7 @@ class ColorDemo extends AbstractDemoPage
     foreach($this->_getColors() as $color => $display)
     {
       $colours[] = Div::create("Background " . $display)
-        ->addClass(Color::backgroundCss($color), Fusion::PADDING_MEDIUM);
+        ->addClass(Color::backgroundCss($color), Color::borderCss($color, true), Fusion::PADDING_MEDIUM);
     }
     $return[] = Div::create($colours)->addClass('color-demo');
 
@@ -63,7 +64,7 @@ class ColorDemo extends AbstractDemoPage
     foreach($this->_getColors() as $color => $display)
     {
       $colours[] = Div::create("Solid Background " . $display)
-        ->addClass(Color::backgroundCss($color, true), Fusion::PADDING_MEDIUM);
+        ->addClass(Color::backgroundCss($color, true), Fusion::PADDING_MEDIUM, Color::foregroundCss(Color::WHITE));
     }
     $return[] = Div::create($colours)->addClass('color-demo');
 

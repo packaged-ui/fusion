@@ -12,11 +12,13 @@ use Packaged\Enum\AbstractEnum;
  * @method static Color SKY()
  * @method static Color BLUE()
  * @method static Color INDIGO()
+ * @method static Color PURPLE()
  * @method static Color PINK()
  * @method static Color GREY()
  * @method static Color DARK_GREY()
  * @method static Color BLACK()
  * @method static Color WHITE()
+ * @method static Color CHECKERED()
  */
 class Color extends AbstractEnum
 {
@@ -27,11 +29,13 @@ class Color extends AbstractEnum
   const SKY = 'sky';
   const BLUE = 'blue';
   const INDIGO = 'indigo';
+  const PURPLE = 'purple';
   const PINK = 'pink';
   const GREY = 'grey';
   const DARK_GREY = 'dark-grey';
   const BLACK = 'black';
   const WHITE = 'white';
+  const CHECKERED = 'checkered';
 
   public static function foregroundCss($color)
   {
@@ -41,6 +45,11 @@ class Color extends AbstractEnum
   public static function backgroundCss($color, bool $solid = false)
   {
     return 'bgc-' . ($solid ? 'sld-' : '') . $color;
+  }
+
+  public static function borderCss($color, bool $solid = false)
+  {
+    return 'brdrc-' . ($solid ? 'sld-' : '') . $color;
   }
 
   public function foreground()
