@@ -1,4 +1,4 @@
-import './tabs.css';
+import './tabs.scss';
 import {on} from '../../../Foundation/res/events.js';
 
 let _init = false;
@@ -15,6 +15,11 @@ export function init(rootElement = document)
     rootElement, 'click', '.tab__label',
     (e) => SetActive(e.delegateTarget, e.delegateTarget.getAttribute('data-tab-id'))
   );
+
+  on(rootElement, 'click', '.tabs__close', (e) =>
+  {
+    setInactive(e.delegateTarget, e.delegateTarget.getAttribute('data-tab-close'));
+  });
 
   //Set the correct active tab from the url fragment
   if(window.location.hash.startsWith('#f-tb-'))
@@ -33,6 +38,7 @@ export function SetActive(ele, tabID)
 {
   const groupEle = ele.closest('.tabs');
   let tab = groupEle.querySelectorAll('#' + tabID)[0];
+  let container = groupEle.querySelector('.tabs__container');
 
   function _removeClasses(...removeClasses)
   {
@@ -50,6 +56,19 @@ export function SetActive(ele, tabID)
 
   ele.classList.add('tab__label--active');
   tab.classList.add('tab--active');
+  container.classList.add('tabs__container--active');
+
+  let evt = new CustomEvent('change', {bubbles: true, cancelable: true});
+  tab.dispatchEvent(evt);
+}
+
+export function setInactive(ele, tabID)
+{
+  const groupEle = ele.closest('.tabs');
+  let tab = groupEle.querySelectorAll('#' + tabID)[0];
+  let container = groupEle.querySelector('.tabs__container');
+
+  container.classList.remove('tabs__container--active');
 
   let evt = new CustomEvent('change', {bubbles: true, cancelable: true});
   tab.dispatchEvent(evt);

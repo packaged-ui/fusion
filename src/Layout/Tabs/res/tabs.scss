@@ -1,0 +1,143 @@
+@use '../../../Foundation/res/foundation';
+
+.tab__label {
+  border: 1px solid transparent;
+  border-bottom-width: 2px;
+  margin-bottom: -1px;
+  padding: 4px;
+  flex-grow: 1;
+  text-align: center;
+  font-weight: 500;
+  text-decoration: none;
+}
+
+a.tab__label {
+  text-decoration: none;
+}
+
+.tab__label--active {
+  --f-text-color: var(--f-color-primary);
+  --text-opacity: 1;
+}
+
+.tabs__menu--placement-t .tab__label--active {
+  border-bottom-color: rgba(var(--f-color-primary-light), 1);
+}
+
+.tabs__menu--placement-b .tab__label--active {
+  border-top-color: rgba(var(--f-color-primary-light), 1);
+}
+
+.tabs--menu-left, .tabs--menu-right {
+  display: grid;
+  grid-template-columns: 200px 1fr;
+
+  .tabs__menu-items {
+    display: flex;
+    flex-direction: column;
+    padding-right: 15px;
+
+    .tab__label {
+      margin-bottom: 5px;
+      border: 1px solid rgba(0, 0, 0, 0.2);
+
+      &:last-of-type {
+        margin-bottom: 0;
+      }
+    }
+  }
+
+  .tabs__container {
+    display: flex;
+    height: calc(100% - 1px); // Fix border Aligning
+    position: relative;
+
+    .tabs__close {
+      display: none;
+      cursor: pointer;
+      padding: 5px;
+
+      .tabs__header {
+        margin-left: 20px;
+      }
+    }
+  }
+
+  @include foundation.breakpoint(phablet down) {
+    position: relative;
+    display: flex;
+    width: 100%;
+    height: calc(100% + 30px);
+    box-sizing: border-box;
+
+    * {
+      box-sizing: border-box;
+    }
+
+    .tabs__menu {
+      width: 100%;
+    }
+
+    .tabs__menu-items {
+      width: 100%;
+      padding-left: 0 !important;
+      padding-right: 0 !important;
+    }
+
+    .tabs__container {
+      position: absolute;
+      width: 100%;
+      background-color: white;
+      padding-top: 40px;
+      display: none;
+      transition: transform .5s ease-in-out;
+
+      &--active {
+        display: block;
+        min-height: 200px;
+      }
+
+      .tab {
+        width: 100%;
+      }
+
+      .tabs__close {
+        top: 5px;
+        left: 5px;
+        display: block;
+        position: absolute;
+      }
+    }
+  }
+}
+
+.tabs--menu-right {
+  grid-template-columns: 1fr 200px;
+
+  .tabs__menu-items {
+    padding-right: 0;
+    padding-left: 15px;
+  }
+}
+
+.tabs__menu {
+  display: flex;
+  flex-direction: column;
+}
+
+.tabs__menu-items {
+  display: flex;
+}
+
+.tabs__container {
+  border: 1px solid rgba(0, 0, 0, 0.2);
+}
+
+.tab {
+  display: none;
+}
+
+.tab.tab--active {
+  display: block;
+}
+
