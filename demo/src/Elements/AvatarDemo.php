@@ -41,11 +41,17 @@ class AvatarDemo extends AbstractDemoElement
   /**
    * Example of the Text Avatar.
    *
-   * @return HtmlTag
+   * @return array
    */
-  final public function TextAvatar(): HtmlTag
+  final public function TextAvatar(): array
   {
-    return Avatar::text('Hello World');
+    $return = [];
+    for($i = 65; $i <= 90; $i++)
+    {
+      $return[] = Avatar::text(chr($i) . ' 4');
+    }
+
+    return $return;
   }
 
   /**
