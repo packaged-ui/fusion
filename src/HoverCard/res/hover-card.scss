@@ -1,0 +1,31 @@
+$this: '.hover-card';
+
+[data-hover-id] {
+  cursor: pointer;
+}
+
+#{$this} {
+  $margin: -15px;
+
+  &:before {
+    content: '';
+    position: absolute;
+    left: $margin;
+    right: $margin;
+    bottom: $margin;
+    top: $margin;
+  }
+
+  min-width: 150px;
+  background: white;
+  position: absolute;
+  z-index: 450;
+  user-select: none;
+  box-shadow: 0 10px 15px rgba(black, .2),
+  0 4px 5px rgba(black, .1),
+  0 0 0 1px rgba(black, .07);
+
+  &:hover {
+    display: block;
+  }
+}
