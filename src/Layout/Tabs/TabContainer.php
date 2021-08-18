@@ -5,7 +5,10 @@ use Exception;
 use Packaged\Glimpse\Core\HtmlTag;
 use Packaged\Glimpse\Tags\Div;
 use Packaged\Glimpse\Tags\Link;
+use Packaged\Glimpse\Tags\Span;
 use PackagedUi\BemComponent\BemComponentTrait;
+use PackagedUi\FontAwesome\FaIcon;
+use PackagedUi\FontAwesome\Generated\ArrowsIcons;
 use PackagedUi\Fusion\Component;
 use PackagedUi\Fusion\ComponentTrait;
 use Symfony\Component\HttpFoundation\Request;
@@ -15,25 +18,24 @@ class TabContainer extends HtmlTag implements Component
   use BemComponentTrait;
   use ComponentTrait;
 
-  const PLACEMENT_TOP = 't';
-  const PLACEMENT_BOTTOM = 'b';
-  /**
-   * @var string
-   */
+  public const PLACEMENT_TOP = 't';
+  public const PLACEMENT_BOTTOM = 'b';
+  public const PLACEMENT_LEFT = 'l';
+  public const PLACEMENT_RIGHT = 'r';
+
+  /** @var string */
   protected $_placement = self::PLACEMENT_TOP;
   protected $_menuPrefix;
+
+  /** @var Tab[] */
+  protected $_tabs;
+  protected $_tag = 'div';
+  protected $_activeTab;
 
   public function getBlockName(): string
   {
     return 'tabs';
   }
-
-  /**
-   * @var Tab[]
-   */
-  protected $_tabs;
-  protected $_tag = 'div';
-  protected $_activeTab;
 
   public function __construct($containerID)
   {
@@ -54,6 +56,20 @@ class TabContainer extends HtmlTag implements Component
     return $this;
   }
 
+  public function menuLeft()
+  {
+    $this->addClass($this->getModifier('menu-left'));
+    $this->_placement = self::PLACEMENT_LEFT;
+    return $this;
+  }
+
+  public function menuRight()
+  {
+    $this->addClass($this->getModifier('menu-right'));
+    $this->_placement = self::PLACEMENT_RIGHT;
+    return $this;
+  }
+
   public function menuBottom()
   {
     $this->_placement = self::PLACEMENT_BOTTOM;
@@ -68,6 +84,17 @@ class TabContainer extends HtmlTag implements Component
       $this->_activeTab = $id;
     }
     return $this;
+  }
+
+  protected function _getTabCloseIconBar($id, $title)
+  {
+    return Span::create(
+      [
+        FaIcon::create(ArrowsIcons::ARROW_LEFT),
+        Span::create($title)->addClass($this->getElementName('header')),
+      ]
+    )->addClass($this->getElementName('close'))
+      ->setAttribute('data-tab-close', $id);
   }
 
   public function setActiveTabByID($tabID)
@@ -107,12 +134,14 @@ class TabContainer extends HtmlTag implements Component
   protected function _getContentForRender()
   {
     $return = [];
+
     $activeTab = $this->_activeTab ?: array_key_first($this->_tabs);
 
-    $tabMenu = $tabs = [];
+    $tabMenu = [];
+
     foreach($this->_tabs as $tid => $tab)
     {
-      $isActive = $tid == $activeTab;
+      $isActive = $tid === $activeTab;
       $tid = 'f-tb-' . $tid;
 
       $tab->setId($tid)->toggleClass($tab->getModifier('active'), $isActive);
@@ -122,14 +151,21 @@ class TabContainer extends HtmlTag implements Component
       );
       $menuItem->toggleClass($tab->getModifier('active', 'label'), $isActive);
       $tabMenu[] = $menuItem;
+
+      if(in_array($this->_placement, [self::PLACEMENT_LEFT, self::PLACEMENT_RIGHT]))
+      {
+        $tab->prependContent($this->_getTabCloseIconBar($tid, $tab->getLabel()));
+      }
     }
+
     $menu = Div::create(
       $this->_menuPrefix,
       Div::create($tabMenu)->addClass($this->getElementName('menu-items'))
     )->addClass($this->getElementName('menu'), $this->getModifier('placement-' . $this->_placement, 'menu'));
+
     $container = Div::create($this->_tabs)->addClass($this->getElementName('container'));
 
-    if($this->_placement === self::PLACEMENT_BOTTOM)
+    if(in_array($this->_placement, [self::PLACEMENT_BOTTOM, self::PLACEMENT_RIGHT]))
     {
       $return[] = $container;
       $return[] = $menu;
