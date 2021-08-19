@@ -11,7 +11,7 @@ export function on(delegate, eventName, selector, callback)
     eventName,
     function (e)
     {
-      let t = e.target;
+      let t = e.path && e.path[0] || e.target;
       do
       {
         if((!selector) || t.matches(selector))
@@ -20,7 +20,7 @@ export function on(delegate, eventName, selector, callback)
           return callback(e);
         }
       }
-      while(t.parentElement && (t = t.parentElement) && delegate.contains(t));
+      while((t = t.parentElement || (t.getRootNode() && t.getRootNode().host)) && delegate.contains(t));
     },
   );
 }
