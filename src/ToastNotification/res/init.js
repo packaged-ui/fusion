@@ -2,15 +2,15 @@ import './toast-notification-container.scss';
 import './toast-notification.scss';
 import {on} from '../../Foundation/res/events.js';
 
-let _init = false;
+let _init = new WeakSet();
 
 export function init(rootElement = document)
 {
-  if(_init)
+  if(_init.has(rootElement))
   {
     return;
   }
-  _init = true;
+  _init.add(rootElement);
 
   // Manage each individual toast
   rootElement.querySelectorAll('.toast-notification').forEach(

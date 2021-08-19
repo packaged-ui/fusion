@@ -1,15 +1,15 @@
 import './css.js';
 import {onReadyState} from '@packaged-ui/ready-promise';
 
-let _init = false;
+let _init = new WeakSet();
 
 export function init(rootElement = document)
 {
-  if(_init)
+  if(_init.has(rootElement))
   {
     return;
   }
-  _init = true;
+  _init.add(rootElement);
 
   onReadyState().then(() => document.body.classList.add('f-loaded'));
 

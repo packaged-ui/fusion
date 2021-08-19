@@ -2,16 +2,16 @@ import {Modal} from '@packaged-ui/modal/src/index.js';
 import {onReadyState} from '@packaged-ui/ready-promise';
 import {on} from '../../../Foundation/res/events.js';
 
-let _init = false;
+let _init = new WeakSet();
 
 export function init(rootElement = document)
 {
   Modal.init(rootElement);
-  if(_init)
+  if(_init.has(rootElement))
   {
     return;
   }
-  _init = true;
+  _init.add(rootElement);
 
   // auto close
   let downTarget = null;

@@ -2,15 +2,15 @@ import './menu.css';
 import {on, onReady} from '../../Foundation/res/events.js';
 import {SetActive} from '../../Lists/res/init.js';
 
-let _init = false;
+let _init = new WeakSet();
 
 export function init(rootElement = document)
 {
-  if(_init)
+  if(_init.has(rootElement))
   {
     return;
   }
-  _init = true;
+  _init.add(rootElement);
 
   on(rootElement, 'click', '.menu__item', (e) => SetActive(e.delegateTarget));
 
