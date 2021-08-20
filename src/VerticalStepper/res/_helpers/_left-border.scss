@@ -1,13 +1,13 @@
 @mixin left-border($middle: false, $last: false) {
   &:after {
     @if ($middle) {
-      height: 100% !important;
+      height: 100%;
     } @else if ($last) {
-      height: 0;
-      top: 0;
+      height: 0 !important;
+      top: 0 !important;
     } @else {
-      height: 100% !important;
-      top: 35px !important;
+      height: 100%;
+      top: 35px;
     }
     content: '';
     position: absolute;
