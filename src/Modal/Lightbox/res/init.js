@@ -16,25 +16,19 @@ export function init(rootElement = document)
   // auto close
   let downTarget = null;
   on(
-    rootElement, 'mousedown', '.modal', (e) =>
+    rootElement, 'mousedown', '.modal.lightbox', (e) =>
     {
-      if(e.target.matches('.modal'))
-      {
-        downTarget = e.target;
-      }
+      downTarget = e.target;
     }
   );
   on(
-    rootElement, 'mouseup', '.modal', (e) =>
+    rootElement, 'mouseup', '.modal.lightbox', (e) =>
     {
       if(downTarget === e.target)
       {
-        const content = e.delegateTarget.querySelector('.modal__content.lightbox');
-        if(content)
-        {
-          Modal.hide(content);
-        }
+        Modal.hide(e.target);
       }
+      downTarget = null;
     }
   );
   on(
