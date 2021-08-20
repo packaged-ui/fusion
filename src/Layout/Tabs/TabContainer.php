@@ -28,7 +28,7 @@ class TabContainer extends HtmlTag implements Component
   protected $_menuPrefix;
 
   /** @var Tab[] */
-  protected $_tabs;
+  protected $_tabs = [];
   protected $_tag = 'div';
   protected $_activeTab;
 
