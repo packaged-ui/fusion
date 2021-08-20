@@ -1,6 +1,6 @@
 {
   "name": "@packaged-ui/fusion",
-  "version": "2.8.6",
+  "version": "2.8.7",
   "main": "fusion.js",
   "type": "module",
   "files": [
