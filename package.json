@@ -39,8 +39,7 @@
     "sass": "^1.29.0"
   },
   "dependencies": {
-    "@packaged-ui/modal": "^1.6.0",
-    "@packaged-ui/pagelets": "^1.7.0",
+    "@packaged-ui/modal": "^1.6.2",
     "@packaged-ui/ready-promise": "^1.0.0",
     "lodash.debounce": "^4.0.8",
     "microtip": "^0.2.2",
