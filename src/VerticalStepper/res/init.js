@@ -12,10 +12,10 @@ export function init(rootElement = document)
   }
   _init.add(rootElement);
 
-  onReadyState().then(() => {setLastStep(rootElement);});
+  onReadyState().then(() => {updateLastStep(rootElement);});
 }
 
-export function setLastStep(rootElement)
+export function updateLastStep(rootElement)
 {
   rootElement.querySelectorAll('.step-wrapper').forEach(
     (stepWrapper) =>

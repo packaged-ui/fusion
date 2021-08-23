@@ -4,6 +4,7 @@
 $this: '.step';
 
 #{$this} {
+  display: block;
   padding: 20px 20px 20px 60px;
   position: relative;
 
@@ -71,9 +72,6 @@ $this: '.step';
   @include left-border();
 
   &--last {
-    &, *.step {
-      @include left-border($last: true);
-    }
+    @include left-border($last: true);
   }
-
 }

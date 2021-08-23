@@ -29,7 +29,6 @@ $step: '.step';
       }
     }
   }
-
 }
 
 
@@ -50,12 +49,3 @@ $step: '.step';
     content: none !important;
   }
 }
-
-// last child
-// :last-child will only work if the element is the last in the dom tree
-#{$this} > #{$step}:last-child,
-#{$this} *:last-child > #{$step}:last-child {
-  @include left-border($last: true);
-}
-
-
