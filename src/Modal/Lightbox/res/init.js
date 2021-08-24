@@ -18,8 +18,11 @@ export function init(rootElement = document)
   on(
     rootElement, 'mousedown', '.modal.lightbox', (e) =>
     {
-      downTarget = e.target;
-    }
+      if(e.target === e.delegateTarget)
+      {
+        downTarget = e.target;
+      }
+    },
   );
   on(
     rootElement, 'mouseup', '.modal.lightbox', (e) =>
