@@ -5,6 +5,7 @@ use Packaged\Glimpse\Core\HtmlTag;
 use Packaged\Glimpse\Tags\Link;
 use Packaged\Glimpse\Tags\Media\Image;
 use Packaged\Glimpse\Tags\Text\StrongText;
+use Packaged\SafeHtml\SafeHtml;
 use PackagedUi\FontAwesome\FaIcon;
 use PackagedUi\Fusion\Avatar\Avatar;
 use PackagedUi\Fusion\Chip\Chip;
@@ -124,6 +125,22 @@ class TileDemo extends AbstractDemoElement
 
     $tiles->addTile(Tile::create()->setTitle('This is a tile'));
     $tiles->addTile(Tile::create()->setTitle('This is a tile'));
+
+    return $tiles;
+  }
+
+  /**
+   * @return HtmlTag
+   */
+  final public function TilesProperties(): HtmlTag
+  {
+    $tiles = Tiles::create();
+
+    $tiles->addTile(
+      Tile::create()->setTitle('This is with copyable properties')
+        ->addProperty('plain', 'just plain text', true)
+        ->addProperty('plain', new SafeHtml('some <b>bold</b> text'), true)
+    );
 
     return $tiles;
   }
