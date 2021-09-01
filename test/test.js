@@ -12,122 +12,43 @@ describe(
     const eventName = 'test-event';
 
     it(
-      'on - no matching selector', function (done)
+      'on - no matching selector', function ()
       {
         const {target} = _getElements();
-        const check = Math.random();
-        let fired = false;
-        on(
-          target, eventName, '.wrong-class', function ()
-          {
-            fired = true;
-            done('event fired, but should not have');
-          }
-        );
-        _dispatch(target, eventName, check);
-        setTimeout(() => fired || done(), 500);
+        const _fn = _getSpy();
+        on(target, eventName, '.wrong-class', _fn);
+        _dispatch(target, eventName);
+        chai.expect(_fn).to.not.have.been.called();
       }
     );
 
     it(
-      'on - no selector', function (done)
+      'on - no selector (target)', function ()
       {
         const {target} = _getElements();
-        const check = Math.random();
-        on(
-          target, eventName, function (e)
-          {
-            if(e.detail === check)
-            {
-              done();
-            }
-            else
-            {
-              done('event fired, but failed check');
-            }
-          }
-        );
-        _dispatch(target, eventName, check);
+        const _fn = _getSpy();
+        on(target, eventName, _fn);
+        _dispatch(target, eventName);
+        chai.expect(_fn).to.have.been.called();
       }
     );
 
     it(
-      'on - target', function (done)
-      {
-        const {target} = _getElements();
-        const successClass = 'do-it';
-        const check = Math.random();
-        target.classList.add(successClass);
-        on(
-          target, eventName, '.' + successClass, function (e)
-          {
-            if(e.detail === check)
-            {
-              done();
-            }
-            else
-            {
-              done('event fired, but failed check');
-            }
-          }
-        );
-        _dispatch(target, eventName, check);
-      }
-    );
-
-    it(
-      'on - intermediate', function (done)
+      'on - no selector (intermediate)', function ()
       {
         const {intermediate, target} = _getElements();
-        const successClass = 'do-it';
-        const check = Math.random();
-        target.classList.add(successClass);
-        on(
-          intermediate, eventName, '.' + successClass, function (e)
-          {
-            if(e.detail === check)
-            {
-              done();
-            }
-            else
-            {
-              done('event fired, but failed check');
-            }
-          }
-        );
-        _dispatch(target, eventName, check);
+        const _fn = _getSpy();
+        on(intermediate, eventName, _fn);
+        _dispatch(target, eventName);
+        chai.expect(_fn).to.have.been.called();
       }
     );
 
     it(
-      'on - delegate', function (done)
+      'on - no selector (delegate)', function ()
       {
         const {delegate, target} = _getElements();
-        const successClass = 'do-it';
-        const check = Math.random();
-        target.classList.add(successClass);
-        on(
-          delegate, eventName, '.' + successClass, function (e)
-          {
-            if(e.detail === check)
-            {
-              done();
-            }
-            else
-            {
-              done('event fired, but failed check');
-            }
-          }
-        );
-        _dispatch(target, eventName, check);
-      }
-    );
-
-    it(
-      'on - nocancel', function ()
-      {
-        const {delegate, target} = _getElements();
-        const _fn = chai.spy(function (e) {/* should not be called*/});
+        const _fn = _getSpy();
         on(delegate, eventName, _fn);
         _dispatch(target, eventName);
         chai.expect(_fn).to.have.been.called();
@@ -135,10 +56,58 @@ describe(
     );
 
     it(
+      'on - selector (target)', function ()
+      {
+        const {target} = _getElements();
+        const successClass = 'do-it';
+        target.classList.add(successClass);
+        const _fn1 = _getSpy();
+        const _fn2 = _getSpy();
+        on(target, eventName, '.' + successClass, _fn1);
+        on(target, eventName, '.nope' + successClass, _fn2);
+        _dispatch(target, eventName);
+        chai.expect(_fn1).to.have.been.called();
+        chai.expect(_fn2).to.not.have.been.called();
+      }
+    );
+
+    it(
+      'on - selector (intermediate)', function ()
+      {
+        const {intermediate, target} = _getElements();
+        const successClass = 'do-it';
+        const _fn1 = _getSpy();
+        const _fn2 = _getSpy();
+        target.classList.add(successClass);
+        on(intermediate, eventName, '.' + successClass, _fn1);
+        on(intermediate, eventName, '.nope' + successClass, _fn2);
+        _dispatch(target, eventName);
+        chai.expect(_fn1).to.have.been.called();
+        chai.expect(_fn2).to.not.have.been.called();
+      }
+    );
+
+    it(
+      'on - selector (delegate)', function ()
+      {
+        const {delegate, target} = _getElements();
+        const successClass = 'do-it';
+        const _fn1 = _getSpy();
+        const _fn2 = _getSpy();
+        target.classList.add(successClass);
+        on(delegate, eventName, '.' + successClass, _fn1);
+        on(delegate, eventName, '.nope' + successClass, _fn2);
+        _dispatch(target, eventName);
+        chai.expect(_fn1).to.have.been.called();
+        chai.expect(_fn2).to.not.have.been.called();
+      }
+    );
+
+    it(
       'on - cancel', function ()
       {
         const {delegate, target} = _getElements();
-        const _fn = chai.spy(function (e) {/* should not be called*/});
+        const _fn = _getSpy();
         const cancel = on(delegate, eventName, _fn);
         cancel();
         _dispatch(target, eventName);
@@ -147,6 +116,11 @@ describe(
     );
   }
 );
+
+function _getSpy()
+{
+  return chai.spy(function (e) {});
+}
 
 function _getElements()
 {
