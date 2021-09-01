@@ -1286,6 +1286,7 @@ __metadata:
     autoprefixer: ^10.2.4
     chai: ^4.3.4
     chai-as-promised: ^7.1.1
+    chai-spies: ^1.0.0
     clipboard-polyfill: ^3.0.3
     core-js: ^3.15.2
     esm: ^3.2.25
@@ -1863,6 +1864,15 @@ __metadata:
   peerDependencies:
     chai: ">= 2.1.2 < 5"
   checksum: 7262868a5b51a12af4e432838ddf97a893109266a505808e1868ba63a12de7ee1166e9d43b5c501a190c377c1b11ecb9ff8e093c89f097ad96c397e8ec0f8d6a
+  languageName: node
+  linkType: hard
+
+"chai-spies@npm:^1.0.0":
+  version: 1.0.0
+  resolution: "chai-spies@npm:1.0.0"
+  peerDependencies:
+    chai: "*"
+  checksum: c3a319d5671cf381029f2745e6330f897de4486e574b0d4fb92e6835268b0139f107295c8abf083949659a6a35dc6c8aa4ac0dc78db0aa16602a4987282b646a
   languageName: node
   linkType: hard
 

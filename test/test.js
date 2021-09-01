@@ -1,8 +1,10 @@
 import chai from 'chai';
 import chaiAsPromised from 'chai-as-promised';
+import chaiSpies from 'chai-spies';
 import {on} from '../src/Foundation/res/events.js';
 
 chai.use(chaiAsPromised);
+chai.use(chaiSpies);
 
 describe(
   'events', function ()
@@ -118,6 +120,29 @@ describe(
           }
         );
         _dispatch(target, eventName, check);
+      }
+    );
+
+    it(
+      'on - nocancel', function ()
+      {
+        const {delegate, target} = _getElements();
+        const _fn = chai.spy(function (e) {/* should not be called*/});
+        on(delegate, eventName, _fn);
+        _dispatch(target, eventName);
+        chai.expect(_fn).to.have.been.called();
+      }
+    );
+
+    it(
+      'on - cancel', function ()
+      {
+        const {delegate, target} = _getElements();
+        const _fn = chai.spy(function (e) {/* should not be called*/});
+        const cancel = on(delegate, eventName, _fn);
+        cancel();
+        _dispatch(target, eventName);
+        chai.expect(_fn).to.not.have.been.called();
       }
     );
   }

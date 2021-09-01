@@ -7,22 +7,23 @@ export function on(delegate, eventName, selector, callback)
     callback = selector;
     selector = '';
   }
-  delegate.addEventListener(
-    eventName,
-    function (e)
+
+  function _fn(e)
+  {
+    let t = e.path && e.path[0] || e.target;
+    do
     {
-      let t = e.path && e.path[0] || e.target;
-      do
+      if((!selector) || t.matches(selector))
       {
-        if((!selector) || t.matches(selector))
-        {
-          e.delegateTarget = t;
-          return callback(e);
-        }
+        e.delegateTarget = t;
+        return callback(e);
       }
-      while((t = t.parentElement || (t.getRootNode() && t.getRootNode().host)) && delegate.contains(t));
-    },
-  );
+    }
+    while((t = t.parentElement || (t.getRootNode() && t.getRootNode().host)) && delegate.contains(t));
+  }
+
+  delegate.addEventListener(eventName, _fn);
+  return () => delegate.removeEventListener(eventName, _fn);
 }
 
 export function onReady(fn)
