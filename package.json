@@ -20,6 +20,7 @@
     "autoprefixer": "^10.2.4",
     "chai": "^4.3.4",
     "chai-as-promised": "^7.1.1",
+    "chai-spies": "^1.0.0",
     "core-js": "^3.15.2",
     "esm": "^3.2.25",
     "jsdom": "16.6.0",
@@ -42,7 +43,6 @@
   "dependencies": {
     "@packaged-ui/modal": "^1.6.2",
     "@packaged-ui/ready-promise": "^1.0.0",
-    "chai-spies": "^1.0.0",
     "clipboard-polyfill": "^3.0.3",
     "lodash.debounce": "^4.0.8",
     "microtip": "^0.2.2",
