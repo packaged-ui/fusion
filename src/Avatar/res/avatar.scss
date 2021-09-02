@@ -1,6 +1,7 @@
 $this: '.avatar';
 
 #{$this} {
+  --f-font-size: 17px;
   --f-avatar-size: 48px;
 
   width: var(--f-avatar-size);
@@ -11,6 +12,7 @@ $this: '.avatar';
   border-radius: 50%;
   display: inline-block;
   position: relative;
+  font-weight: 400;
 
   &:after {
     content: attr(data-text);
@@ -22,17 +24,19 @@ $this: '.avatar';
   }
 
   &--small {
-    --f-font-size: 12px;
+    --f-font-size: 10px;
     --f-avatar-size: 22px;
+    font-weight: 500;
   }
 
   &--medium {
-    --f-font-size: 14px;
+    --f-font-size: 15px;
     --f-avatar-size: 32px;
   }
 
   &--large {
-    --f-font-size: 18px;
+    --f-font-size: 28px;
     --f-avatar-size: 58px;
+    font-weight: normal;
   }
 }

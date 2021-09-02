@@ -84,10 +84,6 @@
   display: block;
 }
 
-.tile > .tile__primary .tile__avatar > * {
-  color: inherit;
-}
-
 .tile > .tile__primary .tile__label {
   margin-bottom: 3px;
   white-space: pre-wrap;
@@ -345,6 +341,7 @@
 .tile.grey.colour-bg .tile__primary {
   background-color: rgba(var(--color-grey), 0.06);
 }
+
 .tile.dark-grey:before {
   background-color: rgb(var(--color-dark-grey));
 }
