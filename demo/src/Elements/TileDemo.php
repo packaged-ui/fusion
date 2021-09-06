@@ -300,7 +300,7 @@ class TileDemo extends AbstractDemoElement
   {
     return Tile::create()
       ->setLabel('Senior PHP Developer')
-      ->setTitle('John Doe')
+      ->setTitle(Link::create("#", 'John Doe'))
       ->setDescription('Programming since the dawn of time')
       ->setAvatar(Avatar::image('https://i.pravatar.cc/60'))
       ->setColor(Color::ORANGE())

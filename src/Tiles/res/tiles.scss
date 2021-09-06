@@ -99,6 +99,10 @@
   color: #5a5a5a;
 }
 
+.tile__title a {
+  font-weight: bold;
+}
+
 .tile > .tile__primary .tile__description {
   margin-top: 3px;
   overflow-wrap: break-word;
