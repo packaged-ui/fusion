@@ -56,6 +56,17 @@ describe(
     );
 
     it(
+      'on - no selector (document)', function ()
+      {
+        const {target} = _getElements();
+        const _fn = _getSpy();
+        on(document, eventName, _fn);
+        _dispatch(target, eventName);
+        chai.expect(_fn).to.have.been.called();
+      }
+    );
+
+    it(
       'on - selector (target)', function ()
       {
         const {target} = _getElements();
@@ -64,7 +75,7 @@ describe(
         const _fn1 = _getSpy();
         const _fn2 = _getSpy();
         on(target, eventName, '.' + successClass, _fn1);
-        on(target, eventName, '.nope' + successClass, _fn2);
+        on(target, eventName, '.nope', _fn2);
         _dispatch(target, eventName);
         chai.expect(_fn1).to.have.been.called();
         chai.expect(_fn2).to.not.have.been.called();
@@ -80,7 +91,7 @@ describe(
         const _fn2 = _getSpy();
         target.classList.add(successClass);
         on(intermediate, eventName, '.' + successClass, _fn1);
-        on(intermediate, eventName, '.nope' + successClass, _fn2);
+        on(intermediate, eventName, '.nope', _fn2);
         _dispatch(target, eventName);
         chai.expect(_fn1).to.have.been.called();
         chai.expect(_fn2).to.not.have.been.called();
@@ -96,7 +107,23 @@ describe(
         const _fn2 = _getSpy();
         target.classList.add(successClass);
         on(delegate, eventName, '.' + successClass, _fn1);
-        on(delegate, eventName, '.nope' + successClass, _fn2);
+        on(delegate, eventName, '.nope', _fn2);
+        _dispatch(target, eventName);
+        chai.expect(_fn1).to.have.been.called();
+        chai.expect(_fn2).to.not.have.been.called();
+      }
+    );
+
+    it(
+      'on - selector (document)', function ()
+      {
+        const {target} = _getElements();
+        const successClass = 'do-it';
+        const _fn1 = _getSpy();
+        const _fn2 = _getSpy();
+        target.classList.add(successClass);
+        on(document, eventName, '.' + successClass, _fn1);
+        on(document, eventName, '.nope', _fn2);
         _dispatch(target, eventName);
         chai.expect(_fn1).to.have.been.called();
         chai.expect(_fn2).to.not.have.been.called();
@@ -126,9 +153,12 @@ function _getElements()
 {
   const delegate = document.createElement('div');
   const intermediate = document.createElement('div');
-  delegate.append(intermediate);
   const target = document.createElement('div');
+
+  document.body.append(delegate);
+  delegate.append(intermediate);
   intermediate.append(target);
+
   return {delegate, intermediate, target};
 }
 

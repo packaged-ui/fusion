@@ -13,7 +13,7 @@ export function on(delegate, eventName, selector, callback)
     let t = e.path && e.path[0] || e.target;
     do
     {
-      if((!selector) || t.matches(selector))
+      if((!selector) || (t.matches && t.matches(selector)))
       {
         e.delegateTarget = t;
         return callback(e);

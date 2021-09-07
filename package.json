@@ -1,6 +1,6 @@
 {
   "name": "@packaged-ui/fusion",
-  "version": "2.10.3",
+  "version": "2.10.4",
   "main": "fusion.js",
   "type": "module",
   "files": [
@@ -23,8 +23,8 @@
     "chai-spies": "^1.0.0",
     "core-js": "^3.15.2",
     "esm": "^3.2.25",
-    "jsdom": "16.6.0",
-    "jsdom-global": "3.0.2",
+    "jsdom": "^17.0.0",
+    "jsdom-global": "^3.0.2",
     "mocha": "^8.4.0",
     "postcss": "^8.3.6",
     "postcss-clean": "^1.2.2",
