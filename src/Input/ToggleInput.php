@@ -30,7 +30,7 @@ class ToggleInput extends Div implements Component
 
   public function getBlockName(): string
   {
-    return 'toggle-button';
+    return 'toggle-input';
   }
 
   public function setCheckedClass(...$class)

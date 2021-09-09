@@ -1,29 +1,29 @@
-.toggle-button {
+.toggle-input {
   cursor: pointer;
 }
 
-.toggle-button > .toggle-button__checkbox {
+.toggle-input > .toggle-input__checkbox {
   pointer-events: none;
   position: absolute;
   opacity: 0;
 }
 
-.toggle-button > .toggle-button__unchecked-content,
-.toggle-button > .toggle-button__checked-content {
+.toggle-input > .toggle-input__unchecked-content,
+.toggle-input > .toggle-input__checked-content {
   display: inherit;
 }
 
 @supports (display: contents) {
-  .toggle-button > .toggle-button__unchecked-content,
-  .toggle-button > .toggle-button__checked-content {
+  .toggle-input > .toggle-input__unchecked-content,
+  .toggle-input > .toggle-input__checked-content {
     display: contents;
   }
 }
 
-.toggle-button[checked] > .toggle-button__unchecked-content {
+.toggle-input[checked] > .toggle-input__unchecked-content {
   display: none;
 }
 
-.toggle-button:not([checked]) > .toggle-button__checked-content {
+.toggle-input:not([checked]) > .toggle-input__checked-content {
   display: none;
 }

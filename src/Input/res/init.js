@@ -1,10 +1,11 @@
 import './toggleInput.css';
-import {on} from '../../Foundation/res/events.js';
+import './togglebutton.scss';
+
+import {on} from '../../Foundation/res';
 
 let _init = new WeakSet();
 
-export function init(rootElement = document)
-{
+export function init(rootElement = document) {
   if(_init.has(rootElement))
   {
     return;
@@ -12,13 +13,12 @@ export function init(rootElement = document)
   _init.add(rootElement);
 
   on(
-    rootElement, 'click', '.toggle-button',
-    (e) =>
-    {
+    rootElement, 'click', '.toggle-input',
+    (e) => {
       e.preventDefault();
 
       let button = e.delegateTarget;
-      let checkEle = button.querySelector('.toggle-button__checkbox');
+      let checkEle = button.querySelector('.toggle-input__checkbox');
       if(checkEle.getAttribute('type') === 'radio' && checkEle.checked)
       {
         return;
@@ -32,14 +32,13 @@ export function init(rootElement = document)
       if(checkEle.hasAttribute('name') && checkEle.getAttribute('type') === 'radio')
       {
         const radioElements = rootElement.querySelectorAll(
-          '.toggle-button__checkbox[type="radio"][name="' + checkEle.getAttribute('name') + '"]',
+          '.toggle-input__checkbox[type="radio"][name="' + checkEle.getAttribute('name') + '"]',
         );
         radioElements.forEach(
-          radio =>
-          {
+          radio => {
             if(radio !== checkEle)
             {
-              const radioButton = radio.closest('.toggle-button');
+              const radioButton = radio.closest('.toggle-input');
               _updateStyle(radioButton);
             }
           },
@@ -49,10 +48,9 @@ export function init(rootElement = document)
   );
 }
 
-function _updateStyle(button)
-{
+function _updateStyle(button) {
   const checkedClasses = (button.getAttribute('checked-class') || '').split(' ').filter(name => !!name);
-  const checkEle = button.querySelector('.toggle-button__checkbox');
+  const checkEle = button.querySelector('.toggle-input__checkbox');
   if(checkEle.checked)
   {
     button.setAttribute('checked', '');

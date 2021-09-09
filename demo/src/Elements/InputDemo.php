@@ -10,6 +10,7 @@ use Packaged\SafeHtml\SafeHtml;
 use PackagedUi\FontAwesome\FaIcon;
 use PackagedUi\Fusion\Button\Button;
 use PackagedUi\Fusion\Button\ButtonInterface;
+use PackagedUi\Fusion\Input\ToggleButton;
 use PackagedUi\Fusion\Input\ToggleInput;
 use PackagedUi\FusionDemo\AbstractDemoPage;
 
@@ -89,6 +90,8 @@ class InputDemo extends AbstractDemoPage
         ->setName('button_test')
         ->setType(Input::TYPE_RADIO),
     ];
+
+    $return[] = ToggleButton::create();
 
     return $return;
   }
