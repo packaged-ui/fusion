@@ -2,6 +2,7 @@
 namespace PackagedUi\FusionDemo\Elements;
 
 use Packaged\Glimpse\Core\HtmlTag;
+use Packaged\Glimpse\Tags\Div;
 use Packaged\Glimpse\Tags\Span;
 use PackagedUi\FontAwesome\FaIcon;
 use PackagedUi\Fusion\Badge\Badge;
@@ -25,15 +26,34 @@ class BadgeDemo extends AbstractDemoElement
    */
   final public function DefaultBadge(): HtmlTag
   {
-    return Badge::create(Span::create('Inbox'), 4);
+    return Div::create(Badge::create(Span::create('Inbox'), 4), 'text');
+  }
+
+  /**
+   * Example of Text within a Badge.
+   *
+   * @return HtmlTag
+   */
+  final public function TextBadge(): HtmlTag
+  {
+    return Div::create(Badge::create(Span::create('Inbox'), 'info'), 'text');
   }
 
   /**
    * @return HtmlTag
    */
-  final public function OutboxBadge(): HtmlTag
+  final public function OverlapBadge(): HtmlTag
   {
-    return Badge::create(Span::create('Outbox'), 5);
+    return Div::create(Badge::overlap(Span::create('Inbox'), 5), 'text');
   }
 
+  /**
+   * Example of Text within a Badge.
+   *
+   * @return HtmlTag
+   */
+  final public function TextOverlapBadge(): HtmlTag
+  {
+    return Div::create(Badge::overlap(Span::create('Inbox'), 'info'), 'text');
+  }
 }
