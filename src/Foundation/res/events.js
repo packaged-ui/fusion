@@ -10,7 +10,8 @@ export function on(delegate, eventName, selector, callback)
 
   function _fn(e)
   {
-    let t = e.path && e.path[0] || e.target;
+    const path = e.path || e.composedPath();
+    let t = path && path[0] || e.target;
     do
     {
       if((!selector) || (t.matches && t.matches(selector)))
