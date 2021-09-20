@@ -98,7 +98,7 @@ abstract class AbstractDemoElement extends AbstractDemoPage
       $dom->preserveWhiteSpace = false;
       $dom->formatOutput = true;
 
-      $dom->loadHTML(AbstractContainerTag::create($this->$method())->render(), LIBXML_HTML_NOIMPLIED);
+      $dom->loadHTML(AbstractContainerTag::create($this->$method())->render(), LIBXML_NOERROR);
 
       $html = CodeBlock::create($dom->saveHTML($dom->documentElement))->addClass('language-html');
 
