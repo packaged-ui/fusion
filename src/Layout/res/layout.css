@@ -307,3 +307,12 @@
 .am {
     vertical-align: middle !important;
 }
+
+.panel {
+    border: 1px solid rgba(24, 28, 33, 0.2);
+    border-radius: .125rem;
+    background-clip: padding-box;
+    min-width: 0;
+    position: relative;
+    padding: var(--f-spacing-large);
+}

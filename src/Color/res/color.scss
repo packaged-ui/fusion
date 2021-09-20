@@ -25,26 +25,26 @@ $colors: (
 
   .c-#{''+$color} {
     --f-text-color: var(--color-#{''+$color});
-    color: #{'rgb(var(--f-text-color))'};
+    color: #{'rgb(var(--f-text-color))'} !important;
   }
 
   .bgc-#{''+$color} {
     --f-background-color: var(--color-#{''+$color});
-    background-color: #{'rgba(var(--f-background-color), 0.1)'};
+    background-color: #{'rgba(var(--f-background-color), 0.1)'} !important;
   }
 
   .bgc-sld-#{''+$color} {
     --f-background-color: var(--color-#{''+$color});
-    background-color: #{'rgba(var(--f-background-color), 1)'};
+    background-color: #{'rgba(var(--f-background-color), 1)'} !important;
   }
 
   .brdrc-#{''+$color} {
     --f-border-color: var(--color-#{''+$color});
-    border-color: #{'rgba(var(--f-border-color), 0.5)'};
+    border-color: #{'rgba(var(--f-border-color), 0.5)'} !important;
   }
   .brdrc-sld-#{''+$color} {
     --f-border-color: var(--color-#{''+$color});
-    border-color: #{'rgba(var(--f-border-color), 1)'};
+    border-color: #{'rgba(var(--f-border-color), 1)'} !important;
   }
 }
 

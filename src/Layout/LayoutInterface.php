@@ -100,6 +100,8 @@ interface LayoutInterface
   const DISP_BLOCK_MOBILE = 'block-mobile';
   const DISP_HIDE_MOBILE = 'hide-mobile';
 
+  const PANEL = 'panel';
+
   const DRAWER_TOGGLE = 'drawer__toggle';
 
   //Hide on mobile
