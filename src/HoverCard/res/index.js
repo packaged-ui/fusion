@@ -121,6 +121,7 @@ export class HoverCard
   show(triggerElement)
   {
     this.hoverCard.classList.remove('hidden');
+    this.hoverCard.style.width = null;
     this.calculatePosition(triggerElement);
   }
 
@@ -133,33 +134,39 @@ export class HoverCard
   {
     if(triggerElement)
     {
-      let triggerRect = triggerElement.getBoundingClientRect();
-      let hoverReact = this.hoverCard.getBoundingClientRect();
-      let clientWidth = this.rootElement.body.clientWidth;
       const margin = 10;
 
-      let top = (triggerRect.y > hoverReact.height) && (triggerRect.x > hoverReact.width);
-      let right = clientWidth - (triggerRect.x + triggerRect.width + hoverReact.width) > 0;
-      let left = !right && triggerRect.x > hoverReact.width;
+      const triggerRect = triggerElement.getBoundingClientRect();
+      const hoverReact = this.hoverCard.getBoundingClientRect();
+      const clientWidth = this.rootElement.body.clientWidth;
+      const scrollTop = (window.pageYOffset !== undefined) ?
+        window.pageYOffset :
+        (document.documentElement || document.body.parentNode || document.body).scrollTop;
+
+      const top = triggerRect.y > (hoverReact.height + margin);
+      const right = clientWidth - (triggerRect.x + triggerRect.width) > (hoverReact.width + (margin * 2));
+      const left = !right && triggerRect.x > hoverReact.width;
+
+      const scrolledTop = triggerRect.y + scrollTop;
 
       if(top)
       {
-        this.hoverCard.style.top = (triggerRect.y - hoverReact.height) - margin + 'px';
+        this.hoverCard.style.top = (scrolledTop - hoverReact.height) - margin + 'px';
         this.hoverCard.style.left = triggerRect.x + 'px';
       }
       else if(right)
       {
-        this.hoverCard.style.top = triggerRect.y + 'px';
+        this.hoverCard.style.top = scrolledTop + 'px';
         this.hoverCard.style.left = (triggerRect.x + triggerRect.width) + margin + 'px';
       }
       else if(left)
       {
-        this.hoverCard.style.top = triggerRect.y + 'px';
+        this.hoverCard.style.top = scrolledTop + 'px';
         this.hoverCard.style.left = (triggerRect.x - hoverReact.width) - margin + 'px';
       }
       else
       {
-        this.hoverCard.style.top = triggerRect.y + triggerRect.height + margin + 'px';
+        this.hoverCard.style.top = scrolledTop + triggerRect.height + margin + 'px';
         this.hoverCard.style.left = triggerRect.x + 'px';
       }
 
