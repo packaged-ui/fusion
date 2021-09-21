@@ -138,7 +138,7 @@ export class HoverCard
       let clientWidth = this.rootElement.body.clientWidth;
       const margin = 10;
 
-      let top = triggerRect.y > hoverReact.height;
+      let top = (triggerRect.y > hoverReact.height) && (triggerRect.x > hoverReact.width);
       let right = clientWidth - (triggerRect.x + triggerRect.width + hoverReact.width) > 0;
       let left = !right && triggerRect.x > hoverReact.width;
 
@@ -161,6 +161,14 @@ export class HoverCard
       {
         this.hoverCard.style.top = triggerRect.y + triggerRect.height + margin + 'px';
         this.hoverCard.style.left = triggerRect.x + 'px';
+      }
+
+      const hoverWidth = this.hoverCard.offsetLeft + hoverReact.width + (margin * 2);
+      if(hoverWidth > clientWidth)
+      {
+        const difference = hoverWidth - clientWidth;
+        const calc = (hoverWidth - difference) - this.hoverCard.offsetLeft - (margin * 2);
+        this.hoverCard.style.width = calc + 'px';
       }
     }
   }

@@ -42,7 +42,9 @@ class HoverCardDemo extends AbstractDemoElement
    */
   final public function anotherHoverCard(): array
   {
-    $hoverCard = HoverCard::create('Hello, I\'m a hover card');
+    $hoverCard = HoverCard::create(
+      'Lorem ipsum dolor sit amet, consectetur adipisicing elit. A animi, aperiam debitis distinctio doloribus eius enim eos excepturi harum ipsa iure modi molestiae nihil numquam, omnis optio perspiciatis unde voluptatum? Lorem ipsum dolor sit amet, consectetur adipisicing elit. A animi, aperiam debitis distinctio doloribus eius enim eos excepturi harum ipsa iure modi molestiae nihil numquam, omnis optio perspiciatis unde voluptatum?'
+    );
     $trigger = $hoverCard->createTrigger(Chip::create('Hello World, Im a chip'));
     return [
       $trigger,
