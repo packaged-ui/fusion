@@ -6,8 +6,6 @@ $this: '.hover-card';
 
 #{$this} {
   $margin: -15px;
-  height: 500px;
-  width: 500px;
 
   &:before {
     content: '';
