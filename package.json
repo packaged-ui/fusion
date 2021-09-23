@@ -41,7 +41,7 @@
     "sass": "^1.38.1"
   },
   "dependencies": {
-    "@packaged-ui/modal": "^1.6.2",
+    "@packaged-ui/modal": "^1.7.0",
     "@packaged-ui/ready-promise": "^1.0.0",
     "clipboard-polyfill": "^3.0.3",
     "lodash.debounce": "^4.0.8",

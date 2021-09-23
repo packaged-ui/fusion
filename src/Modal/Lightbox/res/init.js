@@ -39,7 +39,7 @@ export function init(rootElement = document)
     {
       if(e.key === 'Escape' || e.key === 'Esc' || e.keyCode === 27)
       {
-        // find the last modal's closer
+        // find the last modal
         const closer = rootElement.querySelector('.modal:last-of-type .modal__content.lightbox');
         if(closer)
         {
