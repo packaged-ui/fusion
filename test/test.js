@@ -115,6 +115,19 @@ describe(
     );
 
     it(
+      'on - selector (traversal stops at listener)', function ()
+      {
+        const {delegate, intermediate, target} = _getElements();
+        const successClass = 'do-it';
+        const _fn1 = _getSpy();
+        delegate.classList.add(successClass);
+        on(intermediate, eventName, '.' + successClass, _fn1);
+        _dispatch(target, eventName);
+        chai.expect(_fn1).to.not.have.been.called();
+      }
+    );
+
+    it(
       'on - selector (document)', function ()
       {
         const {target} = _getElements();

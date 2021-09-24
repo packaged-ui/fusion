@@ -19,8 +19,14 @@ export function on(delegate, eventName, selector, callback)
         e.delegateTarget = t;
         return callback(e);
       }
+
+      // stop traversing up the dom once we reach the delegate
+      if(delegate === t)
+      {
+        break;
+      }
     }
-    while((t = t.parentElement || (t.getRootNode() && t.getRootNode().host)) && delegate.contains(t));
+    while((t = t.parentElement || (t.getRootNode() && t.getRootNode().host)));
   }
 
   delegate.addEventListener(eventName, _fn);
