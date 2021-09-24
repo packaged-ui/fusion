@@ -3,6 +3,7 @@ namespace PackagedUi\Fusion\Card;
 
 use Packaged\Glimpse\Tags\Div;
 use Packaged\Glimpse\Tags\Link;
+use Packaged\SafeHtml\ISafeHtmlProducer;
 use Packaged\Ui\Html\HtmlElement;
 use PackagedUi\BemComponent\BemComponentTrait;
 use PackagedUi\Fusion\Color\Color;
@@ -29,6 +30,7 @@ class Card extends Div implements Component
   protected $_header;
   protected $_footer;
   protected $_title;
+  protected $_icon;
   protected $_footerActions = [];
   protected $_withContentContainer = true;
   /**
@@ -112,12 +114,32 @@ class Card extends Div implements Component
     return $this;
   }
 
+  /**
+   * @return \Packaged\SafeHtml\ISafeHtmlProducer|null
+   */
+  public function getIcon()
+  {
+    return $this->_icon;
+  }
+
+  /**
+   * @param ISafeHtmlProducer $icon
+   *
+   * @return Card
+   */
+  public function setIcon(ISafeHtmlProducer $icon)
+  {
+    $this->_icon = $icon;
+    return $this;
+  }
+
   protected function _getContentForRender()
   {
     $return = [];
-    if($this->_header || $this->_title)
+    if($this->_header || $this->_title || $this->_icon)
     {
       $return[] = Div::create(
+        $this->_icon ? Div::create($this->_icon)->addClass($this->getElementName('header', 'icon')) : null,
         $this->_title ? Div::create($this->_title)->addClass($this->getElementName('header', 'title')) : null,
         $this->_header
       )->addClass($this->getElementName('header'));

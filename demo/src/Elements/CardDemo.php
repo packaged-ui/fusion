@@ -56,12 +56,23 @@ class CardDemo extends AbstractDemoPage
 
     $common[] = $this->_showCard(Card::create('')->setTitle("Card Title"));
     $common[] = $this->_showCard(
+      Card::create('')->setTitle("Card Title")
+        ->setIcon(FaIcon::create(FaIcon::ID_CARD)->sizeX2())
+    );
+    $common[] = $this->_showCard(
       Card::create('')
         ->setTitle("Card Title W/Act")->setHeader(Button::create("Action Button")->sizeXsmall()->flat())
     );
     $common[] = $this->_showCard(
       Card::create('')
         ->setTitle("Card Title W/Act")->setHeader(
+          [FlexGrow::create("Header"), Button::create("Action Button")->sizeXsmall()->outline()->primary()]
+        )
+    );
+    $common[] = $this->_showCard(
+      Card::create('')
+        ->setIcon(FaIcon::create(FaIcon::ID_CARD)->sizeX2())
+        ->setTitle("Card Title W/Act+Icon")->setHeader(
           [FlexGrow::create("Header"), Button::create("Action Button")->sizeXsmall()->outline()->primary()]
         )
     );
