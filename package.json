@@ -1,6 +1,6 @@
 {
   "name": "@packaged-ui/fusion",
-  "version": "2.11.4",
+  "version": "2.11.5",
   "main": "fusion.js",
   "type": "module",
   "files": [
@@ -25,7 +25,7 @@
     "esm": "^3.2.25",
     "jsdom": "^17.0.0",
     "jsdom-global": "^3.0.2",
-    "mocha": "^9.1.1",
+    "mocha": "^9.1.2",
     "postcss": "^8.3.6",
     "postcss-clean": "^1.2.2",
     "postcss-discard-comments": "^4.0.2",
