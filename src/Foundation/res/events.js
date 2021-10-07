@@ -10,7 +10,7 @@ export function on(delegate, eventName, selector, callback)
 
   function _fn(e)
   {
-    const path = e.path || e.composedPath();
+    const path = e.path || (e.composedPath && e.composedPath());
     let t = path && path[0] || e.target;
     do
     {
