@@ -2,7 +2,7 @@ build:
   nodes:
     analysis:
       resources:
-        cpus: 2
+        cpus: 1
       tests:
         override:
           - php-scrutinizer-run --enable-security-analysis
