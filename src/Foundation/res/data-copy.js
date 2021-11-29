@@ -15,6 +15,10 @@ export function init(rootElement = document)
     rootElement, 'click', '[data-copy]', (e) =>
     {
       clipboard.writeText(e.delegateTarget.getAttribute('data-copy'));
+      if(e.delegateTarget.getAttribute('data-copy-text'))
+      {
+        e.delegateTarget.innerText = e.delegateTarget.getAttribute('data-copy-text');
+      }
     }
   );
 }

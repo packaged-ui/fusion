@@ -1,0 +1,22 @@
+build:
+  nodes:
+    analysis:
+      resources:
+        cpus: 1
+      tests:
+        override:
+          - php-scrutinizer-run --enable-security-analysis
+          - js-scrutinizer-run
+          - command: phpcs-run --standard=vendor/packaged/codestandards/ruleset.xml ./src
+            use_website_config: false
+  environment:
+    php:
+      version: 7.4
+    node: "v12.13.0"
+filter:
+  paths:
+    - "src/"
+  excluded_paths:
+    - "tests/"
+  dependency_paths:
+    - "vendor/"
